@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#42b883" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- SEO: Primary Meta Tags -->
+    <title>AguBear Tools - 時間戳轉換 | MD5 雜湊 | Unicode 編碼 | 拼音查詢 | QR Code 產生器</title>
+    <meta
+      name="description"
+      content="免費線上開發者工具集：Unix 時間戳轉換器、MD5 雜湊產生器、Unicode 編碼轉換、中文拼音查詢、QR Code 產生器。支援多時區、歷史紀錄，純前端無需安裝。"
+    />
+    <meta
+      name="keywords"
+      content="timestamp, unix, 時間戳, 日期轉換, MD5, 雜湊, unicode, 編碼轉換, 拼音, pinyin, qrcode, QR Code, 二維碼, converter, devtools, agubear, 開發工具"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="AguBear" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AguBear Tools" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="geo.region" content="TW" />
+    <meta name="geo.placename" content="Taiwan" />
+    <link rel="canonical" href="<%= VITE_SITE_URL %>" />
+    <meta property="og:url" content="<%= VITE_SITE_URL %>" />
+    <meta property="og:image" content="<%= VITE_SITE_URL %>/favicon.svg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AguBear Tools",
+        "url": "<%= VITE_SITE_URL %>",
+        "description": "免費線上開發者工具集：Unix 時間戳轉換器、MD5 雜湊產生器、Unicode 編碼轉換、中文拼音查詢、QR Code 產生器。",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "TWD"
+        },
+        "featureList": [
+          "Unix Timestamp 與日期時間互轉",
+          "MD5 雜湊值產生器",
+          "Unicode 編碼與解碼",
+          "中文拼音轉換（含聲調）",
+          "QR Code 產生器（自訂尺寸、顏色、錯誤校正）",
+          "多時區支援 (UTC-12 ~ UTC+12)",
+          "轉換歷史紀錄"
+        ],
+        "inLanguage": "zh-TW",
+        "isAccessibleForFree": true
+      }
+    </script>
+
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      defer
+      src="https://www.googletagmanager.com/gtag/js?id=<%= VITE_GA4_ID %>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', '<%= VITE_GA4_ID %>');
+    </script>
+
+    <!-- Google AdSense -->
+    <script
+      async
+      defer
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= VITE_ADSENSE_ID %>"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- BFCache optimization -->
+    <script>
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          console.debug('Page restored from bfcache');
+        }
+      });
+      if (window.performance?.mark) {
+        performance.mark('page-init-start');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      if (window.performance?.mark) {
+        performance.mark('page-init-end');
+        performance.measure('page-init', 'page-init-start', 'page-init-end');
+      }
+    </script>
+  </body>
+</html>

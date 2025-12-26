@@ -1,0 +1,20 @@
+{
+  "threshold": 15,
+  "reporters": ["console", "html"],
+  "ignore": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "report",
+    ".dependency-cruiser.cjs",
+    "package-lock.json",
+    "README.md",
+    "**/tests/**",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "src/locales/**"
+  ],
+  "minLines": 5,
+  "minTokens": 50,
+  "absolute": true
+}

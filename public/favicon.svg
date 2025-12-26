@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Definitions for gradients/shadows -->
+  <defs>
+    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#4a4a4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c2c2c;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Group: Bear Upper Body -->
+  <g id="bear">
+    <!-- Left Ear -->
+    <circle cx="25" cy="25" r="10" fill="#2c2c2c" />
+    <circle cx="25" cy="25" r="5" fill="#5a4a42" opacity="0.8" />
+
+    <!-- Right Ear -->
+    <circle cx="75" cy="25" r="10" fill="#2c2c2c" />
+    <circle cx="75" cy="25" r="5" fill="#5a4a42" opacity="0.8" />
+
+    <!-- Head -->
+    <circle cx="50" cy="50" r="32" fill="url(#grad1)" />
+
+    <!-- Body (Shoulders) -->
+    <path d="M 18 85 Q 18 55 50 60 Q 82 55 82 85 L 82 100 L 18 100 Z" fill="#2c2c2c" />
+
+    <!-- Snout Area -->
+    <ellipse cx="50" cy="55" rx="14" ry="11" fill="#eaddcf" />
+    
+    <!-- Nose -->
+    <ellipse cx="50" cy="52" rx="5" ry="3.5" fill="#1a1a1a" />
+    
+    <!-- Mouth -->
+    <path d="M 47 59 Q 50 62 53 59" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round" />
+
+    <!-- Eyes -->
+    <circle cx="42" cy="45" r="2.5" fill="#fff" />
+    <circle cx="42" cy="45" r="1" fill="#000" />
+    
+    <circle cx="58" cy="45" r="2.5" fill="#fff" />
+    <circle cx="58" cy="45" r="1" fill="#000" />
+    
+    <!-- Cheeks -->
+    <circle cx="35" cy="58" r="3" fill="#ff7f7f" opacity="0.4" />
+    <circle cx="65" cy="58" r="3" fill="#ff7f7f" opacity="0.4" />
+  </g>
+
+  <!-- Toolbox Badge (Small, held or in front) -->
+  <g id="toolbox" transform="translate(60, 70) scale(0.6)">
+    <rect x="0" y="10" width="40" height="25" rx="3" fill="#e67e22" stroke="#fff" stroke-width="2" />
+    <rect x="15" y="10" width="10" height="8" fill="#d35400" opacity="0.2" />
+    <path d="M 14 10 L 14 5 Q 14 0 20 0 Q 26 0 26 5 L 26 10" stroke="#e67e22" stroke-width="3" fill="none" />
+    <rect x="17" y="10" width="6" height="5" fill="#bdc3c7" rx="1" />
+  </g>
+</svg>

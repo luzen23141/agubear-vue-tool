@@ -1,0 +1,10 @@
+dist
+node_modules
+bundle-analysis.html
+report/
+bundle-analysis.html
+
+reports/
+coverage/
+
+scripts/check-all.js
