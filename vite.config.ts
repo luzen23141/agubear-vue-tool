@@ -6,27 +6,28 @@ import vue from '@vitejs/plugin-vue';
 import { visualizer } from 'rollup-plugin-visualizer';
 import eslint from 'vite-plugin-eslint';
 
-const getPlugins = (env: Record<string, string>) => [
-  vue(),
-  eslint(), // Add eslint plugin
-  createHtmlPlugin({
-    minify: true,
-    inject: {
-      data: {
-        VITE_GA4_ID: env.VITE_GA4_ID,
-        VITE_ADSENSE_ID: env.VITE_ADSENSE_ID,
-        VITE_SITE_URL: env.VITE_SITE_URL
+const getPlugins = (env: Record<string, string>, mode: string) =>
+  [
+    vue(),
+    mode !== 'production' && eslint(),
+    createHtmlPlugin({
+      minify: true,
+      inject: {
+        data: {
+          VITE_GA4_ID: env.VITE_GA4_ID,
+          VITE_ADSENSE_ID: env.VITE_ADSENSE_ID,
+          VITE_SITE_URL: env.VITE_SITE_URL || 'https://agubear.black'
+        }
       }
-    }
-  }),
-  // Removed compression plugins as per instruction
-  visualizer({
-    open: false,
-    filename: 'bundle-analysis.html',
-    gzipSize: true,
-    brotliSize: true
-  })
-];
+    }),
+    // Removed compression plugins as per instruction
+    visualizer({
+      open: false,
+      filename: 'bundle-analysis.html',
+      gzipSize: true,
+      brotliSize: true
+    })
+  ].filter(Boolean);
 
 const buildConfig = {
   target: 'es2015',
@@ -40,8 +41,9 @@ const buildConfig = {
     output: {
       manualChunks(id: string) {
         if (id.includes('node_modules')) {
-          if (id.includes('/node_modules/vue/') || id.includes('/node_modules/@vue/'))
-            {return 'vue-core';}
+          if (id.includes('/node_modules/vue/') || id.includes('/node_modules/@vue/')) {
+            return 'vue-core';
+          }
           if (id.includes('date-fns')) return 'date-fns';
           if (id.includes('crypto-js')) return 'crypto-js';
           if (id.includes('pinyin-pro')) return 'pinyin-pro';
@@ -66,7 +68,7 @@ export default defineConfig(({ mode }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },
-    plugins: getPlugins(env),
+    plugins: getPlugins(env, mode),
     build: buildConfig,
     esbuild: {
       drop: mode === 'production' ? ['console', 'debugger'] : []

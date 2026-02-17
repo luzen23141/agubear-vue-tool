@@ -9,10 +9,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
 
 const steps = [
+  { name: 'Case Check', type: 'internal', fn: checkCaseSensitivity },
   { name: 'Lint (Strict)', command: 'npm', args: ['run', 'lint:strict'] },
   { name: 'Lint (Architecture)', command: 'npm', args: ['run', 'lint:arch'] },
   { name: 'Type Check', command: 'npm', args: ['run', 'type-check'] },
-  { name: 'Test', command: 'npm', args: ['run', 'test'] },
+  { name: 'Test', command: 'npm', args: ['run', 'test:unit'] },
   { name: 'Security Audit', command: 'npm', args: ['run', 'scan:security'] },
   { name: 'Duplicate Check', command: 'npm', args: ['run', 'scan:dup'] },
   { name: 'Build Check', command: 'npm', args: ['run', 'build'] }
@@ -21,81 +22,73 @@ const steps = [
 const results = [];
 
 async function runStep(step) {
-  console.log(chalk.blue.bold(`\n▶ Starting: ${step.name}...`));
+  process.stdout.write(chalk.blue(`▶ [${step.name}] `));
   const startTime = Date.now();
 
+  if (step.type === 'internal') {
+    const success = step.fn();
+    const duration = ((Date.now() - startTime) / 1000).toFixed(2);
+    results.push({ name: step.name, success, duration });
+    console.log(
+      success ? chalk.green(`✔ Passed (${duration}s)`) : chalk.red(`✘ Failed (${duration}s)`)
+    );
+    return success;
+  }
+
   return new Promise((resolve) => {
-    const child = spawn(step.command, step.args, { stdio: 'inherit', shell: false });
+    const child = spawn(step.command, step.args, { stdio: 'ignore', shell: false });
 
     child.on('close', (code) => {
       const duration = ((Date.now() - startTime) / 1000).toFixed(2);
       const success = code === 0;
 
       if (success) {
-        console.log(chalk.green(`✔ ${step.name} completed in ${duration}s`));
+        console.log(chalk.green(`✔ Passed (${duration}s)`));
       } else {
-        console.log(chalk.red(`✘ ${step.name} failed in ${duration}s`));
+        console.log(chalk.red(`✘ Failed (${duration}s)`));
       }
 
-      results.push({ ...step, success, duration });
+      results.push({ name: step.name, success, duration });
       resolve(success);
     });
   });
 }
 
 function checkCaseSensitivity() {
-  console.log(chalk.blue.bold(`\n▶ Starting: Case Sensitivity Check...`));
-  const startTime = Date.now();
   let issues = [];
-
   try {
     const gitFiles = execSync('git ls-files', { encoding: 'utf-8', cwd: projectRoot })
       .split('\n')
       .filter(Boolean);
 
     for (const file of gitFiles) {
-      const parts = file.split('/');
-      let currentPath = projectRoot;
+      const fullPath = path.resolve(projectRoot, file);
+      try {
+        // macOS APFS native check for real case-sensitive path
+        const realPath = fs.realpathSync.native(fullPath);
+        const relativePath = path.relative(projectRoot, realPath);
 
-      for (const part of parts) {
-        // eslint-disable-next-line security/detect-non-literal-fs-filename
-        const actualNames = fs.readdirSync(currentPath);
-        const match = actualNames.find((n) => n.toLowerCase() === part.toLowerCase());
-
-        if (match && match !== part) {
-          issues.push(`${file}: Path segment '${part}' matches '${match}' on disk (Case Mismatch)`);
-        } else if (!match) {
-          // Should not happen for git files unless ignored/deleted
+        if (relativePath !== file) {
+          issues.push(`${file} (on disk: ${relativePath})`);
         }
-
-        currentPath = path.join(currentPath, part);
-        try {
-          // eslint-disable-next-line security/detect-non-literal-fs-filename
-          if (!fs.statSync(currentPath).isDirectory()) break;
-        } catch {
-          break;
-        }
+      } catch {
+        // Skip missing files
       }
     }
   } catch (e) {
-    console.warn(chalk.yellow('⚠️  Could not run git ls-files or access fs:', e.message));
-  }
-
-  const duration = ((Date.now() - startTime) / 1000).toFixed(2);
-  if (issues.length > 0) {
-    console.log(chalk.red(`✘ Case Sensitivity Check failed in ${duration}s`));
-    issues.forEach((i) => console.error(chalk.yellow(`  - ${i}`)));
-    results.push({ name: 'Case Check', success: false, duration });
+    console.warn(chalk.yellow('! Unable to access git index:', e.message));
     return false;
   }
 
-  console.log(chalk.green(`✔ Case Sensitivity Check completed in ${duration}s`));
-  results.push({ name: 'Case Check', success: true, duration });
+  if (issues.length > 0) {
+    issues.forEach((i) => console.error(chalk.yellow(`  └─ ${i}`)));
+    return false;
+  }
   return true;
 }
 
 async function main() {
-  console.log(chalk.cyan.bold('🚀 Starting full project check...'));
+  console.log(chalk.cyan.bold('\nStarting Project Audit\n'));
 
   let allPassed = true;
 
@@ -103,32 +96,16 @@ async function main() {
     const success = await runStep(step);
     if (!success) {
       allPassed = false;
-      console.log(chalk.red.bold('\n🛑 Check failed. Stopping execution.'));
+      console.log(chalk.red.bold('\n[ABORT] Audit failed. Correct errors and retry.'));
       break;
     }
   }
 
   if (allPassed) {
-    const caseSuccess = checkCaseSensitivity();
-    if (!caseSuccess) allPassed = false;
+    console.log(chalk.green.bold('\nAudit completed successfully. All systems green.\n'));
   }
 
-  console.log(chalk.white.bold('\n📊 Check Summary:'));
-  console.table(
-    results.map((r) => ({
-      Step: r.name,
-      Status: r.success ? 'PASS' : 'FAIL',
-      Duration: `${r.duration}s`
-    }))
-  );
-
-  if (allPassed) {
-    console.log(chalk.green.bold('\n✨ All checks passed successfully!'));
-    process.exit(0);
-  } else {
-    console.log(chalk.red.bold('\n💥 Some checks failed.'));
-    process.exit(1);
-  }
+  process.exit(allPassed ? 0 : 1);
 }
 
 main();
