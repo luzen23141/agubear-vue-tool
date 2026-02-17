@@ -58,3 +58,6 @@ bundle-analysis.html
 # Playwright
 playwright-report/
 test-results/
+
+# Artifacts
+artifacts/
