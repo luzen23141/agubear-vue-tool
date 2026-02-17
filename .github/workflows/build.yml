@@ -14,8 +14,8 @@ concurrency:
 
 permissions:
   contents: read
-  pages: write      # 👈 授權部屬 Pages
-  id-token: write   # 👈 授權 OIDC token
+  pages: write # 👈 授權部屬 Pages
+  id-token: write # 👈 授權 OIDC token
 
 jobs:
   build:
@@ -40,6 +40,9 @@ jobs:
       # 3. 安裝依賴（npm ci 比 npm install 更快且確定性）
       - name: Install dependencies
         run: npm ci --prefer-offline
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       # 4. 執行整合檢查
       - name: Lint
