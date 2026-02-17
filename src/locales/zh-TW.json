@@ -1,5 +1,6 @@
 {
   "app": {
+    "title": "AguBear Tools",
     "tabs": {
       "timestamp": "⏳ 時間戳",
       "hash": "🔐 雜湊",
