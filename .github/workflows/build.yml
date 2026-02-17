@@ -17,9 +17,13 @@ permissions:
   id-token: write
 
 jobs:
-  # Job 1: 快速檢查 (Lint + Unit Test)
-  lint-and-unit:
-    name: Lint & Unit Test
+  # ======================================================================================
+  #  Parallel Check Jobs (All run at the same time)
+  # ======================================================================================
+
+  # Job 1: Static Analysis (Lint, Dep-check, Duplicates)
+  static-analysis:
+    name: Static Analysis
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Taipei
@@ -29,28 +33,83 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci --prefer-offline
       
-      - name: Lint
-        run: npm run lint
-      
-      - name: Unit Test
-        run: npm run test:unit
+      # Advanced Tooling Cache
+      - name: Cache dependencies & tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.cache
+          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            tooling-${{ runner.os }}-
 
-  # Job 2: E2E 測試 (支援平行化 Sharding)
+      - run: npm ci --prefer-offline
+
+      - name: Lint Strict
+        run: npm run lint:strict
+      
+      - name: Lint Architecture
+        run: npm run lint:arch
+        
+      - name: Check Duplicates
+        run: npm run scan:dup
+
+  # Job 2: Type Check (Isolated CPU task)
+  type-check:
+    name: Type Check
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Taipei
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      
+      - name: Cache dependencies & tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.cache
+          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            tooling-${{ runner.os }}-
+
+      - run: npm ci --prefer-offline
+      - run: npm run type-check
+
+  # Job 3: Unit Test
+  unit-test:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Taipei
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Cache dependencies & tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.cache
+          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            tooling-${{ runner.os }}-
+
+      - run: npm ci --prefer-offline
+      - run: npm run test:unit
+
+  # Job 4: E2E Test
   e2e-test:
-    name: E2E Test (Shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
+    name: E2E Test
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        # 目前專案規模小，先用 1 個 shard。
-        # 未來如果測試變慢，只需增加這個 array，例如 [1, 2, 3, 4]
-        shardIndex: [1] 
-        shardTotal: [1]
-    env:
-      TZ: Asia/Taipei
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -59,7 +118,6 @@ jobs:
           cache: 'npm'
       - run: npm ci --prefer-offline
 
-      # Playwright 緩存策略
       - name: Get Playwright Version
         id: playwright-version
         shell: bash
@@ -78,46 +136,69 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
-      # 執行 E2E 測試
       - name: Run Playwright tests
-        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: npx playwright test
 
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: playwright-report-${{ matrix.shardIndex }}
+          name: playwright-report
           path: playwright-report/
           retention-days: 7
 
-  # Job 3: 建置與部署 (等待測試通過)
-  build-deploy:
-    needs: [lint-and-unit, e2e-test]
+  # Job 5: Build (Runs concurrent with tests)
+  build:
+    name: Build
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Taipei
+      NODE_ENV: production
+      VITE_SITE_URL: https://agubear.black
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Need full history for version info if needed
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
+
+      - name: Cache dependencies & tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.cache
+          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            tooling-${{ runner.os }}-
+      
       - run: npm ci --prefer-offline
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
+      
+      # Use build:ci to skip type-check (Job 2 handles that)
       - name: Build
-        run: npm run build
-        env:
-          NODE_ENV: production
-          VITE_SITE_URL: https://agubear.black
+        run: npm run build:ci
 
-      - name: Upload artifact
+      - name: Generate Deploy Config
+        run: node scripts/generate-deploy-config.mjs
+
+      - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
+  # ======================================================================================
+  #  Deploy Job (Runs only if ALL above pass)
+  # ======================================================================================
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: [static-analysis, type-check, unit-test, e2e-test, build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.ref == 'refs/heads/main'
         uses: actions/deploy-pages@v4

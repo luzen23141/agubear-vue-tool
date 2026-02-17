@@ -11,7 +11,7 @@ const publicDir = path.join(projectRoot, 'public');
 const localVersionPath = path.join(publicDir, 'version.json');
 
 const LIVE_URL = 'https://agubear.black/version.json';
-const MAX_RETRIES = 10;
+const MAX_RETRIES = 20;
 
 async function sleep(ms) {
   return new Promise((resolve) => {
