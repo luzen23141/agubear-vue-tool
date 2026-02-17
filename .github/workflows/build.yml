@@ -15,6 +15,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write # Required for cancelling workflow
 
 jobs:
   # ======================================================================================
@@ -27,6 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Taipei
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -54,6 +56,12 @@ jobs:
         
       - name: Check Duplicates
         run: npm run scan:dup
+        
+      # Fail-Fast: Cancel entire workflow if this job fails
+      - name: Cancel Workflow on Failure
+        if: failure()
+        run: gh run cancel ${{ github.run_id }}
+        shell: bash
 
   # Job 2: Type Check (Isolated CPU task)
   type-check:
@@ -61,6 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Taipei
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -80,12 +89,19 @@ jobs:
       - run: npm ci --prefer-offline
       - run: npm run type-check
 
+      # Fail-Fast
+      - name: Cancel Workflow on Failure
+        if: failure()
+        run: gh run cancel ${{ github.run_id }}
+        shell: bash
+
   # Job 3: Unit Test
   unit-test:
     name: Unit Test
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Taipei
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -105,11 +121,19 @@ jobs:
       - run: npm ci --prefer-offline
       - run: npm run test:unit
 
+      # Fail-Fast
+      - name: Cancel Workflow on Failure
+        if: failure()
+        run: gh run cancel ${{ github.run_id }}
+        shell: bash
+
   # Job 4: E2E Test
   e2e-test:
     name: E2E Test
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -146,14 +170,20 @@ jobs:
           path: playwright-report/
           retention-days: 7
 
+      # Fail-Fast
+      - name: Cancel Workflow on Failure
+        if: failure()
+        run: gh run cancel ${{ github.run_id }}
+        shell: bash
+
   # Job 5: Build (Runs concurrent with tests)
   build:
     name: Build
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Taipei
-      NODE_ENV: production
       VITE_SITE_URL: https://agubear.black
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -173,11 +203,15 @@ jobs:
           restore-keys: |
             tooling-${{ runner.os }}-
       
+      # FIX: Removed global NODE_ENV: production so npm ci installs devDeps (like husky)
       - run: npm ci --prefer-offline
       
-      # Use build:ci to skip type-check (Job 2 handles that)
+      # Use build:ci to skip type-check
+      # FIX: Apply NODE_ENV: production ONLY here
       - name: Build
         run: npm run build:ci
+        env:
+          NODE_ENV: production
 
       - name: Generate Deploy Config
         run: node scripts/generate-deploy-config.mjs
@@ -186,6 +220,12 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
+      
+      # Fail-Fast
+      - name: Cancel Workflow on Failure
+        if: failure()
+        run: gh run cancel ${{ github.run_id }}
+        shell: bash
 
   # ======================================================================================
   #  Deploy Job (Runs only if ALL above pass)
