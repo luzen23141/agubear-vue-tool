@@ -97,8 +97,13 @@ jobs:
 
   # Job 3: Unit Test
   unit-test:
-    name: Unit Test
+    name: Unit Test (${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2]
+        shardTotal: [2]
     env:
       TZ: Asia/Taipei
       GH_TOKEN: ${{ github.token }}
@@ -119,7 +124,7 @@ jobs:
             tooling-${{ runner.os }}-
 
       - run: npm ci --prefer-offline
-      - run: npm run test:unit
+      - run: npm run test:unit -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
       # Fail-Fast
       - name: Cancel Workflow on Failure
