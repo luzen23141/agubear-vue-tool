@@ -54,3 +54,7 @@ bundle-analysis.html
 
 # Optional eslint cache
 .eslintcache
+
+# Playwright
+playwright-report/
+test-results/
