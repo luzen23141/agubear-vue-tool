@@ -61,9 +61,44 @@
   --transition-slow: 0.3s ease;
 }
 
-/* Dark Mode Tokens */
+/* Dark Mode Tokens - Support both media query and class selector */
+
+/* Helper mixin-like structure not possible in vanilla CSS, so we repeat vars or use a class strategies.
+   Strategy here: .dark class on :root overrides variables.
+*/
+
+html.dark {
+  color: #e4e6ea;
+  background-color: #111118;
+
+  --primary: #42d98f;
+  --primary-hover: #38c47e;
+  --primary-soft: rgba(66, 217, 143, 0.08);
+  --primary-glow: rgba(66, 217, 143, 0.12);
+
+  --surface: #1a1a24;
+  --surface-hover: #22222e;
+  --surface-raised: #1e1e2a;
+  --surface-overlay: rgba(26, 26, 36, 0.95);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --border-focus: var(--primary);
+
+  --text-primary: #e4e6ea;
+  --text-secondary: #9ca0aa;
+  --text-muted: #8b919e;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-focus: 0 0 0 3px rgba(66, 217, 143, 0.25);
+}
+
+/* Retain media query for initial load/fallback if JS fails or default */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
+    /* Same values as .dark above to ensure system pref works by default without JS */
     color: #e4e6ea;
     background-color: #111118;
 

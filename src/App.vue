@@ -3,33 +3,47 @@
     <!-- App Header -->
     <header class="app-header">
       <h1 class="app-title">🐻 AguBear Tools</h1>
-      <div class="lang-switcher" @click.stop>
+      <div class="header-actions">
         <button
-          :aria-label="t('app.ariaLabels.languageSwitch')"
+          :title="t('app.theme_' + theme)"
+          :aria-label="t('app.theme_' + theme)"
           type="button"
-          class="lang-btn"
-          @click="showLangMenu = !showLangMenu"
+          class="theme-toggle"
+          @click="toggleTheme"
         >
-          <span class="lang-flag">{{ currentLocale.icon }}</span>
-          <span class="lang-name">{{ currentLocale.name }}</span>
-          <span :class="{ open: showLangMenu }" class="lang-arrow">▾</span>
+          <span v-if="theme === 'light'">☀️</span>
+          <span v-else-if="theme === 'dark'">🌙</span>
+          <span v-else>🖥️</span>
         </button>
-        <Transition name="lang-menu">
-          <div v-if="showLangMenu" class="lang-dropdown">
-            <button
-              v-for="loc in SUPPORTED_LOCALES"
-              :key="loc.code"
-              :class="[{ active: locale === loc.code }]"
-              :aria-pressed="locale === loc.code"
-              type="button"
-              class="lang-option"
-              @click="changeLocale(loc.code)"
-            >
-              <span class="lang-option-flag">{{ loc.icon }}</span>
-              <span>{{ loc.name }}</span>
-            </button>
-          </div>
-        </Transition>
+
+        <div class="lang-switcher" @click.stop>
+          <button
+            :aria-label="t('app.ariaLabels.languageSwitch')"
+            type="button"
+            class="lang-btn"
+            @click="showLangMenu = !showLangMenu"
+          >
+            <span class="lang-flag">{{ currentLocale.icon }}</span>
+            <span class="lang-name">{{ currentLocale.name }}</span>
+            <span :class="{ open: showLangMenu }" class="lang-arrow">▾</span>
+          </button>
+          <Transition name="lang-menu">
+            <div v-if="showLangMenu" class="lang-dropdown">
+              <button
+                v-for="loc in SUPPORTED_LOCALES"
+                :key="loc.code"
+                :class="[{ active: locale === loc.code }]"
+                :aria-pressed="locale === loc.code"
+                type="button"
+                class="lang-option"
+                @click="changeLocale(loc.code)"
+              >
+                <span class="lang-option-flag">{{ loc.icon }}</span>
+                <span>{{ loc.name }}</span>
+              </button>
+            </div>
+          </Transition>
+        </div>
       </div>
     </header>
 
@@ -104,35 +118,50 @@
 
     <!-- Tab Content -->
     <main class="tab-content tool-container">
-      <component :is="activeComponent" />
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </main>
 
     <footer class="app-footer">
-      <p>{{ t('app.footer.poweredBy') }}</p>
       <p class="footer-copyright">
         {{ t('app.footer.copyright') }}
       </p>
     </footer>
+
+    <Toast ref="toastRef" />
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  ref,
-  shallowRef,
-  markRaw,
-  defineAsyncComponent,
-  onMounted,
-  watch,
-  computed,
-  type Component
-} from 'vue';
+import { ref, onMounted, watch, computed, provide } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@vueuse/head';
+import { useRouter, useRoute } from 'vue-router';
 import { SUPPORTED_LOCALES, type LocaleInfo } from './i18n';
-import TimestampConverter from './components/TimestampConverter.vue';
+import { useTheme } from './composables/useTheme';
+
+// Components are loaded via router, manual imports removed for performance.
+// TimestampConverter import removed as it's no longer used in ToolDef
+import Toast from './components/common/Toast.vue'; // Import Toast container
+
+// Global Toast logic - simple provide for now or just expose via window/store?
+// For simplicity in this refactor, we can use provide/inject.
+
+const toastRef = ref<InstanceType<typeof Toast> | null>(null);
+
+const showToast = (msg: string, type: 'success' | 'error' | 'info' = 'info') => {
+  toastRef.value?.show(msg, type);
+};
+
+provide('showToast', showToast);
 
 const { t, locale } = useI18n();
+const router = useRouter();
+const route = useRoute();
+const { theme, toggleTheme } = useTheme();
 
 // SEO and Meta configuration
 useHead({
@@ -156,81 +185,65 @@ useHead({
     }
   ]
 });
-
-// Lazy load components to reduce initial JavaScript
-const HashGenerator = defineAsyncComponent(() => import('./components/HashGenerator.vue'));
-const Base64Converter = defineAsyncComponent(() => import('./components/Base64Converter.vue'));
-const UrlConverter = defineAsyncComponent(() => import('./components/UrlConverter.vue'));
-const UnicodeConverter = defineAsyncComponent(() => import('./components/UnicodeConverter.vue'));
-const PinyinConverter = defineAsyncComponent(() => import('./components/PinyinConverter.vue'));
-const QrCodeGenerator = defineAsyncComponent(() => import('./components/QrCodeGenerator.vue'));
-const JsonFormatter = defineAsyncComponent(() => import('./components/JsonFormatter.vue'));
+// Component definitions removed as they are handled by router now
 
 interface ToolDef {
   id: string;
   nameKey: string;
   ariaKey: string;
   category: string;
-  component: Component;
 }
 
+// Tool definitions — names use i18n keys resolved in computed
 // Tool definitions — names use i18n keys resolved in computed
 const toolDefs: ToolDef[] = [
   {
     id: 'timestamp',
     nameKey: 'app.tabs.timestamp',
     ariaKey: 'app.ariaLabels.timestamp',
-    category: 'conversion',
-    component: markRaw(TimestampConverter)
+    category: 'conversion'
   },
   {
     id: 'hash',
     nameKey: 'app.tabs.hash',
     ariaKey: 'app.ariaLabels.hash',
-    category: 'generators',
-    component: markRaw(HashGenerator)
+    category: 'generators'
   },
   {
     id: 'base64',
     nameKey: 'app.tabs.base64',
     ariaKey: 'app.ariaLabels.base64',
-    category: 'conversion',
-    component: markRaw(Base64Converter)
+    category: 'conversion'
   },
   {
     id: 'url',
     nameKey: 'app.tabs.url',
     ariaKey: 'app.ariaLabels.url',
-    category: 'conversion',
-    component: markRaw(UrlConverter)
+    category: 'conversion'
   },
   {
     id: 'unicode',
     nameKey: 'app.tabs.unicode',
     ariaKey: 'app.ariaLabels.unicode',
-    category: 'conversion',
-    component: markRaw(UnicodeConverter)
+    category: 'conversion'
   },
   {
     id: 'pinyin',
     nameKey: 'app.tabs.pinyin',
     ariaKey: 'app.ariaLabels.pinyin',
-    category: 'conversion',
-    component: markRaw(PinyinConverter)
+    category: 'conversion'
   },
   {
     id: 'qrcode',
     nameKey: 'app.tabs.qrcode',
     ariaKey: 'app.ariaLabels.qrcode',
-    category: 'generators',
-    component: markRaw(QrCodeGenerator)
+    category: 'generators'
   },
   {
     id: 'json',
     nameKey: 'app.tabs.json',
     ariaKey: 'app.ariaLabels.json',
-    category: 'formatters',
-    component: markRaw(JsonFormatter)
+    category: 'formatters'
   }
 ];
 
@@ -247,21 +260,7 @@ const tools = computed(() =>
 const favorites = ref<string[]>([]);
 
 // Initialize favorites from localStorage
-const loadFavorites = () => {
-  if (globalThis.window === undefined || !globalThis.localStorage) return;
-
-  try {
-    const stored = globalThis.localStorage.getItem('agubear-favorites');
-    if (!stored) return;
-
-    const parsed = JSON.parse(stored);
-    if (Array.isArray(parsed)) {
-      favorites.value = parsed;
-    }
-  } catch (e) {
-    console.error('Failed to load favorites:', e);
-  }
-};
+// Favorites loading moved to loadPreferences
 
 const toggleFavorite = (toolId: string) => {
   const index = favorites.value.indexOf(toolId);
@@ -293,34 +292,50 @@ const filteredTools = computed(() =>
   })
 );
 
-// Restore active tab from localStorage
-const getSavedTab = () => {
-  if (globalThis.window !== undefined && globalThis.localStorage) {
-    return globalThis.localStorage.getItem('activeTab') || 'timestamp';
-  }
-  return 'timestamp';
+const activeTab = computed(() => (route.name as string) || 'timestamp');
+
+const switchTab = async (tool: ToolDef) => {
+  await router.push({ name: tool.id });
 };
-const savedTab = getSavedTab();
-const savedTool = toolDefs.find((td) => td.id === savedTab) || toolDefs[0];
 
-if (!savedTool) {
-  // Should not happen strictly speaking if toolDefs is populated
-  throw new Error('No tools defined');
-}
+const loadPreferences = () => {
+  if (globalThis.window === undefined || !globalThis.localStorage) return;
 
-const activeTab = ref(savedTool.id);
-const activeComponent = shallowRef(savedTool.component);
-
-const switchTab = (tool: ToolDef) => {
-  activeTab.value = tool.id;
-  activeComponent.value = tool.component;
-  if (globalThis.window !== undefined && globalThis.localStorage) {
-    globalThis.localStorage.setItem('activeTab', tool.id);
+  // Load Favorites
+  try {
+    const storedFavs = globalThis.localStorage.getItem('agubear-favorites');
+    if (storedFavs) {
+      const parsed = JSON.parse(storedFavs);
+      if (Array.isArray(parsed)) favorites.value = parsed;
+    }
+  } catch (e) {
+    console.error('Failed to load favorites:', e);
   }
+
+  // Load Category
+  const storedCat = globalThis.localStorage.getItem('agubear-category');
+  if (storedCat) selectedCategory.value = storedCat;
+
+  // Load Show Favorites Only
+  const storedShowFav = globalThis.localStorage.getItem('agubear-show-fav-only');
+  if (storedShowFav) showFavoritesOnly.value = storedShowFav === 'true';
 };
+
+// Watchers for persistence
+watch(selectedCategory, (newVal) => {
+  if (globalThis.window !== undefined && globalThis.localStorage) {
+    globalThis.localStorage.setItem('agubear-category', newVal);
+  }
+});
+
+watch(showFavoritesOnly, (newVal) => {
+  if (globalThis.window !== undefined && globalThis.localStorage) {
+    globalThis.localStorage.setItem('agubear-show-fav-only', String(newVal));
+  }
+});
 
 onMounted(() => {
-  loadFavorites();
+  loadPreferences();
 });
 
 // ...

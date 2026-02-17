@@ -92,6 +92,7 @@
               name="timestampInput"
               type="text"
               inputmode="numeric"
+              pattern="[0-9]*"
               maxlength="15"
               @keyup.enter="convertToDate"
             />
@@ -191,12 +192,15 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import { useHistory } from '../composables/useHistory';
 import { useTimestampConverter } from '../composables/useTimestampConverter';
+
+type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
+const showToast = inject('showToast', (() => {}) as ToastFunction);
 
 const { t } = useI18n();
 
@@ -224,8 +228,10 @@ const copyText = async (text: string | number) => {
   if (!text) return;
   try {
     await navigator.clipboard.writeText(String(text));
+    showToast(t('common.copied') || 'Copied!', 'success');
   } catch (err) {
     console.warn('Clipboard write failed:', err);
+    showToast('Failed to copy', 'error');
   }
 };
 

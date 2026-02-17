@@ -59,6 +59,14 @@ const buildConfig = {
   chunkSizeWarningLimit: 500
 };
 
+const ssgOptions = {
+  script: 'async',
+  formatting: 'minify',
+  onFinished() {
+    // generateSitemap() // Optional: if we add sitemap plugin later
+  }
+};
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
@@ -70,6 +78,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: getPlugins(env, mode),
     build: buildConfig,
+    ssgOptions,
     esbuild: {
       drop: mode === 'production' ? ['console', 'debugger'] : []
     },

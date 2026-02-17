@@ -1,11 +1,37 @@
 import { mount, flushPromises } from '@vue/test-utils';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { createRouter, createMemoryHistory } from 'vue-router';
+// import { routes } from '../router'; // Using local testRoutes
 import App from '../App.vue';
 import i18n from '../i18n';
 
-const { useHeadMock } = vi.hoisted(() => ({
-  useHeadMock: vi.fn()
-}));
+const { useHeadMock, createMockSFC } = vi.hoisted(() => {
+  const mockComponent = { template: '<div />', render: () => null };
+  const createMockSFC = (name: string) => {
+    const component = { ...mockComponent, name };
+    return {
+      __isTeleport: false,
+      __isKeepAlive: false,
+      __isFragment: false,
+      __v_isVNode: false,
+      __isSuspense: false,
+      __isAsync: false,
+      __isSSR: false,
+      __v_isRef: false,
+      __v_isReactive: false,
+      __v_raw: component,
+      __v_skip: true,
+      name,
+      default: component
+    };
+  };
+
+  return {
+    useHeadMock: vi.fn(),
+    createMockSFC
+  };
+});
+
 vi.mock('@vueuse/head', () => ({
   useHead: useHeadMock
 }));
@@ -25,32 +51,6 @@ Object.defineProperty(window, 'matchMedia', {
   }))
 });
 
-// Module-level mocks for async components to prevent lazy-loading RPC errors in CI
-const mockComponent = { template: '<div />', render: () => null };
-
-/**
- * Creates a robust mock for a Vue SFC that satisfies both Vitest's
- * module export checks and Vue's internal flag checks.
- */
-const createMockSFC = (name: string) => {
-  const component = { ...mockComponent, name };
-  return {
-    __isTeleport: false,
-    __isKeepAlive: false,
-    __isFragment: false,
-    __v_isVNode: false,
-    __isSuspense: false,
-    __isAsync: false,
-    __isSSR: false,
-    __v_isRef: false,
-    __v_isReactive: false,
-    __v_raw: component,
-    __v_skip: true,
-    name,
-    default: component
-  };
-};
-
 vi.mock('../components/HashGenerator.vue', () => createMockSFC('HashGenerator'));
 vi.mock('../components/Base64Converter.vue', () => createMockSFC('Base64Converter'));
 vi.mock('../components/UrlConverter.vue', () => createMockSFC('UrlConverter'));
@@ -58,10 +58,29 @@ vi.mock('../components/UnicodeConverter.vue', () => createMockSFC('UnicodeConver
 vi.mock('../components/PinyinConverter.vue', () => createMockSFC('PinyinConverter'));
 vi.mock('../components/QrCodeGenerator.vue', () => createMockSFC('QrCodeGenerator'));
 vi.mock('../components/JsonFormatter.vue', () => createMockSFC('JsonFormatter'));
+vi.mock('../components/TimestampConverter.vue', () => createMockSFC('TimestampConverter'));
+
+// Define synchronous routes for testing to avoid dynamic import issues
+const testRoutes = [
+  { path: '/', redirect: '/timestamp' },
+  { path: '/timestamp', name: 'timestamp', component: createMockSFC('TimestampConverter').default },
+  { path: '/hash', name: 'hash', component: createMockSFC('HashGenerator').default },
+  { path: '/base64', name: 'base64', component: createMockSFC('Base64Converter').default },
+  { path: '/url', name: 'url', component: createMockSFC('UrlConverter').default },
+  { path: '/unicode', name: 'unicode', component: createMockSFC('UnicodeConverter').default },
+  { path: '/pinyin', name: 'pinyin', component: createMockSFC('PinyinConverter').default },
+  { path: '/qrcode', name: 'qrcode', component: createMockSFC('QrCodeGenerator').default },
+  { path: '/json', name: 'json', component: createMockSFC('JsonFormatter').default }
+];
+
+const router = createRouter({
+  history: createMemoryHistory(),
+  routes: testRoutes
+});
 
 const mountOptions = {
   global: {
-    plugins: [i18n]
+    plugins: [i18n, router]
   }
 };
 
@@ -87,11 +106,13 @@ Object.defineProperty(window, 'localStorage', {
 });
 
 describe('App.vue', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     i18n.global.locale.value = 'zh-TW';
     localStorageMock.clear();
     localStorageMock.getItem.mockClear();
     localStorageMock.setItem.mockClear();
+    await router.push('/');
+    await router.isReady();
   });
 
   it('預設應顯示時間戳轉換器', async () => {
@@ -115,14 +136,19 @@ describe('App.vue', () => {
     // Click Hash tab (index 1)
     const hashBtn = buttons[1];
     if (hashBtn) {
+      console.log('Before click:', router.currentRoute.value.name);
       await hashBtn.trigger('click');
       await flushPromises();
+      console.log('After click:', router.currentRoute.value.name);
+
+      // Ensure router has updated
+      expect(router.currentRoute.value.name).toBe('hash');
       expect(hashBtn.classes()).toContain('active');
       expect(buttons[0]?.classes()).not.toContain('active');
     }
   });
 
-  it('切換頁籤應儲存到 localStorage', async () => {
+  it('切換頁籤應更新 active class', async () => {
     const wrapper = mount(App, mountOptions);
     const buttons = wrapper.findAll('.tab-btn');
 
@@ -130,7 +156,9 @@ describe('App.vue', () => {
     const base64Btn = buttons[2];
     if (base64Btn) {
       await base64Btn.trigger('click');
-      expect(localStorageMock.setItem).toHaveBeenCalledWith('activeTab', 'base64');
+      await flushPromises();
+      // Active class check is enough to verify navigation
+      expect(base64Btn.classes()).toContain('active');
     }
   });
 
@@ -170,23 +198,12 @@ describe('App.vue', () => {
     const wrapper = mount(App, mountOptions);
     const footer = wrapper.find('.app-footer');
     expect(footer.exists()).toBe(true);
-    expect(footer.text()).toContain('Vue 3');
+    expect(footer.text()).toContain('AguBear Tools');
   });
 
   it('點擊每個頁籤都應切換', async () => {
     const wrapper = mount(App, mountOptions);
     const buttons = wrapper.findAll('.tab-btn');
-
-    const expectedIds = [
-      'timestamp',
-      'hash',
-      'base64',
-      'url',
-      'unicode',
-      'pinyin',
-      'qrcode',
-      'json'
-    ];
 
     for (let i = 0; i < buttons.length; i++) {
       const btn = buttons[i];
@@ -194,7 +211,6 @@ describe('App.vue', () => {
         await btn.trigger('click');
         await flushPromises();
         expect(btn.classes()).toContain('active');
-        expect(localStorageMock.setItem).toHaveBeenCalledWith('activeTab', expectedIds[i]);
       }
     }
   });
