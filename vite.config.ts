@@ -4,29 +4,22 @@ import { fileURLToPath, URL } from 'node:url';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import vue from '@vitejs/plugin-vue';
 import { visualizer } from 'rollup-plugin-visualizer';
-import compression from 'vite-plugin-compression';
+import eslint from 'vite-plugin-eslint';
+
 const getPlugins = (env: Record<string, string>) => [
   vue(),
+  eslint(), // Add eslint plugin
   createHtmlPlugin({
     minify: true,
     inject: {
       data: {
-        VITE_GA4_ID: env.VITE_GA4_ID || '',
-        VITE_ADSENSE_ID: env.VITE_ADSENSE_ID || '',
-        VITE_SITE_URL: env.VITE_SITE_URL || 'https://agubear.black'
+        VITE_GA4_ID: env.VITE_GA4_ID,
+        VITE_ADSENSE_ID: env.VITE_ADSENSE_ID,
+        VITE_SITE_URL: env.VITE_SITE_URL
       }
     }
   }),
-  compression({
-    threshold: 10240,
-    algorithm: 'gzip',
-    ext: '.gz'
-  }),
-  compression({
-    threshold: 10240,
-    algorithm: 'brotliCompress',
-    ext: '.br'
-  }),
+  // Removed compression plugins as per instruction
   visualizer({
     open: false,
     filename: 'bundle-analysis.html',
@@ -38,24 +31,17 @@ const getPlugins = (env: Record<string, string>) => [
 const buildConfig = {
   target: 'es2015',
   cssTarget: 'chrome61',
-  cssMinify: false,
   sourcemap: false,
   modulePreload: {
     polyfill: true
   },
   cssCodeSplit: true,
-  minify: 'terser' as const,
-  terserOptions: {
-    compress: {
-      drop_console: true,
-      drop_debugger: true
-    }
-  },
   rollupOptions: {
     output: {
       manualChunks(id: string) {
         if (id.includes('node_modules')) {
-          if (id.includes('vue')) return 'vue';
+          if (id.includes('/node_modules/vue/') || id.includes('/node_modules/@vue/'))
+            {return 'vue-core';}
           if (id.includes('date-fns')) return 'date-fns';
           if (id.includes('crypto-js')) return 'crypto-js';
           if (id.includes('pinyin-pro')) return 'pinyin-pro';
@@ -74,7 +60,7 @@ const buildConfig = {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
-    base: './',
+    base: '/',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -82,6 +68,9 @@ export default defineConfig(({ mode }) => {
     },
     plugins: getPlugins(env),
     build: buildConfig,
+    esbuild: {
+      drop: mode === 'production' ? ['console', 'debugger'] : []
+    },
     test: {
       globals: true,
       environment: 'jsdom',
