@@ -1,7 +1,7 @@
 <template>
   <div class="timestamp-converter">
     <!-- 時區選擇 -->
-    <div class="timezone-bar">
+    <div class="timezone-bar reveal-delay-1">
       <label for="tz-select">{{ t('timestamp.timezone') }}</label>
       <select id="tz-select" v-model.number="utcOffset" :aria-label="t('timestamp.timezoneAria')">
         <option :value="-12">UTC-12</option>
@@ -36,7 +36,7 @@
 
     <div class="converter-grid">
       <!-- Timestamp -> Date -->
-      <BaseCard :title="t('timestamp.title')">
+      <BaseCard :title="t('timestamp.title')" class="reveal-delay-2">
         <!-- 輸入模式切換 -->
         <div class="mode-toggle">
           <label for="ts-mode-auto">
@@ -111,7 +111,7 @@
           </div>
         </div>
         <div class="result-container">
-          <div class="result-group">
+          <div :class="{ 'result-flash': dateResult }" class="result-group">
             <div class="result">{{ dateResult }}</div>
             <div v-if="relativeTime" class="relative-time">({{ relativeTime }})</div>
           </div>
@@ -128,7 +128,7 @@
       </BaseCard>
 
       <!-- Date -> Timestamp -->
-      <BaseCard :title="t('timestamp.titleReverse')">
+      <BaseCard :title="t('timestamp.titleReverse')" class="reveal-delay-3">
         <!-- 格式切換 -->
         <div class="format-toggle">
           <span :class="{ active: !useMilliseconds }">{{ t('timestamp.modeSeconds') }}</span>
@@ -178,7 +178,9 @@
           </button>
         </div>
         <div class="result-container">
-          <div class="result">{{ timestampResult }}</div>
+          <div :class="{ 'result-flash': timestampResult }" class="result">
+            {{ timestampResult }}
+          </div>
           <button
             v-if="timestampResult"
             :title="t('common.copy')"
@@ -410,12 +412,34 @@ const clearDateInput = () => {
 .result-group {
   display: flex;
   flex-direction: column;
+  transition: all var(--transition-normal);
 }
 
-.relative-time {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  font-weight: normal;
-  margin-top: 2px;
+.result-flash {
+  animation: resultFlash 1s var(--transition-spring-smooth);
+}
+
+@keyframes resultFlash {
+  0% {
+    filter: brightness(1);
+  }
+  20% {
+    filter: brightness(1.5) drop-shadow(0 0 8px var(--primary));
+    transform: scale(1.02);
+  }
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+}
+
+.reveal-delay-1 {
+  animation: pageReveal var(--transition-fluid) 0.1s backwards;
+}
+.reveal-delay-2 {
+  animation: pageReveal var(--transition-fluid) 0.2s backwards;
+}
+.reveal-delay-3 {
+  animation: pageReveal var(--transition-fluid) 0.3s backwards;
 }
 </style>

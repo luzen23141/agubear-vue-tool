@@ -39,6 +39,17 @@ defineProps<{
     box-shadow var(--transition-fluid),
     border-color var(--transition-fluid),
     transform var(--transition-normal);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .card::before {
@@ -69,9 +80,10 @@ defineProps<{
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: var(--border-hover);
-  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--primary-soft);
+  transform: translateY(-4px) scale(1.01);
+  animation-play-state: paused;
 }
 
 .card:hover::before {
@@ -98,13 +110,27 @@ defineProps<{
 
 .card-title-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--gradient-primary);
   flex-shrink: 0;
-  animation: pulseGlow 3s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.6);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

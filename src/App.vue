@@ -121,9 +121,11 @@
     <!-- Tab Content -->
     <main class="tab-content tool-container">
       <router-view v-slot="{ Component }">
-        <keep-alive>
-          <component :is="Component" />
-        </keep-alive>
+        <transition name="page-fade" mode="out-in">
+          <keep-alive>
+            <component :is="Component" :key="route.fullPath" />
+          </keep-alive>
+        </transition>
       </router-view>
     </main>
 
@@ -433,6 +435,25 @@ const closeLangMenu = () => {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/* ── Page Transitions ── */
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: all var(--transition-spring-smooth);
+}
+
+.page-fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+  filter: blur(4px);
+}
+
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.99);
+  filter: blur(4px);
 }
 
 /* ── Header ── */
@@ -453,25 +474,25 @@ const closeLangMenu = () => {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--gradient-accent);
+  background: var(--gradient-primary);
   background-size: 200% 100%;
   animation: shimmer 4s ease-in-out infinite;
   border-radius: 1px;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .app-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  background: var(--gradient-accent);
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .title-icon {
@@ -707,10 +728,10 @@ const closeLangMenu = () => {
 }
 
 .fav-toggle-btn.active {
-  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  background: var(--gradient-accent);
   color: white;
-  border-color: #f59e0b;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
 }
 
 .star-icon {
@@ -771,31 +792,57 @@ const closeLangMenu = () => {
 }
 
 .tab-btn {
-  padding: 10px 32px 10px 16px;
+  padding: 10px 24px;
   background: transparent;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
   transition: all var(--transition-normal);
   position: relative;
   border: 1px solid transparent;
 }
 
 .tab-btn:hover {
-  background: var(--primary-soft);
+  background: var(--surface-hover);
   color: var(--primary);
-  transform: scale(1.02);
+  transform: translateY(-1px);
 }
 
 .tab-btn.active {
   background: var(--gradient-primary);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   box-shadow: var(--shadow-glow-strong);
-  transform: scale(1);
+  transform: scale(1.05);
   border-color: transparent;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-glow);
+  animation: tabIndicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes tabIndicatorPulse {
+  0%,
+  100% {
+    width: 40%;
+    opacity: 0.8;
+  }
+  50% {
+    width: 60%;
+    opacity: 1;
+  }
 }
 
 /* Star Action on Tab */

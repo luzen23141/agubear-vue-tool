@@ -44,13 +44,16 @@ const getPlugins = (env: Record<string, string>, _mode: string) =>
         globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}']
       }
     }),
-    visualizer({
-      open: false,
-      filename: 'reports/bundle-analysis.html',
-      gzipSize: true,
-      brotliSize: true
-    })
-  ].filter(Boolean);
+    process.env.CI
+      ? null
+      : visualizer({
+          open: false,
+          filename: 'reports/bundle-analysis.html',
+          gzipSize: true,
+          brotliSize: true
+        })
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ].filter((p): p is any => Boolean(p));
 
 const buildConfig = {
   target: 'es2015',
@@ -125,6 +128,7 @@ export default defineConfig(({ mode }) => {
       exclude: ['e2e/**', 'node_modules/**'],
       coverage: {
         provider: 'v8',
+        enabled: process.env.COVERAGE === 'true', // Only run coverage if requested
         reporter: ['text', 'json', 'html', 'lcov'],
         exclude: [
           'src/locales/**',
