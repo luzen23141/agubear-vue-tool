@@ -363,6 +363,14 @@
     "noInput": "Please enter text to compare",
     "seo": {
       "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    },
+    "context": {
+      "title": "關於文字比對工具 (Diff Checker)",
+      "content": [
+        "Diff Checker 是一個用來比對兩段文字差異的工具。它常被開發者用來追蹤程式碼變更、找出 Bug 以及解決合併衝突。",
+        "本工具使用語意化比對演算法，清晰地標示出新增與刪除的內容，並支援行內比對以提升閱讀性。",
+        "AguBear Tools 確保您的資料隱私，所有比對皆在您的瀏覽器端本地執行，不會上傳至伺服器。"
+      ]
     }
   },
   "cmd": {

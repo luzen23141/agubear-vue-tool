@@ -9,7 +9,6 @@
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Pinyin",
       "qrcode": "📱 QR Code",
-
       "json": "📋 JSON",
       "jwt": "🔓 JWT",
       "uuid": "🆔 UUID",
@@ -346,6 +345,14 @@
     "noInput": "Please enter text to compare",
     "seo": {
       "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    },
+    "context": {
+      "title": "About Diff Checker",
+      "content": [
+        "A Diff Checker is a tool used to compare two text inputs and highlight their differences. It is widely used by developers to track code changes, identify bugs, and merge conflicts.",
+        "This tool uses a semantic comparison algorithm to show insertions and deletions clearly. It supports inline diffing for better readability.",
+        "AguBear Tools ensures your data remains private as all comparisons happen locally in your browser."
+      ]
     }
   },
   "cmd": {

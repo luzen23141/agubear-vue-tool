@@ -9,7 +9,6 @@
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ 拼音",
       "qrcode": "📱 QR Code",
-
       "json": "📋 JSON",
       "jwt": "🔓 JWT",
       "uuid": "🆔 UUID",
@@ -303,7 +302,6 @@
     "copied": "已複製",
     "error": "錯誤",
     "line": "行",
-
     "column": "列"
   },
   "jwt": {
@@ -347,6 +345,14 @@
     "noInput": "請輸入兩段文字進行比對",
     "seo": {
       "diffDescription": "線上 Diff Checker 文字比對工具，快速比對兩段程式碼或文字的差異。支援高亮顯示新增與刪除內容。"
+    },
+    "context": {
+      "title": "關於文字比對工具 (Diff Checker)",
+      "content": [
+        "Diff Checker 是一個用來比對兩段文字差異的工具。它常被開發者用來追蹤程式碼變更、找出 Bug 以及解決合併衝突。",
+        "本工具使用語意化比對演算法，清晰地標示出新增與刪除的內容，並支援行內比對以提升閱讀性。",
+        "AguBear Tools 確保您的資料隱私，所有比對皆在您的瀏覽器端本地執行，不會上傳至伺服器。"
+      ]
     }
   },
   "cmd": {
