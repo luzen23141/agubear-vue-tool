@@ -14,7 +14,6 @@ node_modules
 dist
 dist-ssr
 *.local
-bundle-analysis.html
 .aConfig
 
 # Test coverage
@@ -41,7 +40,6 @@ coverage
 # Technical reports and scanner work
 reports/
 .scannerwork/
-bundle-analysis.html
 
 # Vite cache
 .vite
@@ -49,8 +47,9 @@ bundle-analysis.html
 # TypeScript cache
 *.tsbuildinfo
 
-# Optional npm cache
+# Package manager cache
 .npm
+.pnpm-store/
 
 # Optional eslint cache
 .eslintcache

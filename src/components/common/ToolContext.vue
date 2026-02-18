@@ -1,7 +1,7 @@
 <template>
   <div class="tool-context">
     <!-- Educational Content (GEO/SEO) -->
-    <article class="context-article">
+    <article v-if="contextParagraphs.length > 0" class="context-article">
       <header>
         <h2>{{ t(`${toolKey}.context.title`) }}</h2>
       </header>
@@ -13,7 +13,12 @@
     </article>
 
     <!-- Q&A Section (AEO) -->
-    <section class="faq-section" itemtype="https://schema.org/FAQPage" itemscope>
+    <section
+      v-if="faqItems.length > 0"
+      class="faq-section"
+      itemtype="https://schema.org/FAQPage"
+      itemscope
+    >
       <h3>{{ t('common.faqTitle') || '常見問題' }}</h3>
       <div
         v-for="(item, index) in faqItems"

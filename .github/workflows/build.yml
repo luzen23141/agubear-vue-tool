@@ -31,31 +31,24 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
-      # Advanced Tooling Cache
-      - name: Cache dependencies & tools
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules/.cache
-          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            tooling-${{ runner.os }}-
-
-      - run: npm ci --prefer-offline
+      - run: pnpm install --frozen-lockfile
 
       - name: Lint Strict
-        run: npm run lint:strict
+        run: pnpm run lint:strict
 
       - name: Lint Architecture
-        run: npm run lint:arch
+        run: pnpm run lint:arch
 
       - name: Check Duplicates
-        run: npm run scan:dup
+        run: pnpm run scan:dup
 
       # Fail-Fast: Cancel entire workflow if this job fails
       - name: Cancel Workflow on Failure
@@ -72,22 +65,16 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Cache dependencies & tools
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules/.cache
-          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            tooling-${{ runner.os }}-
-
-      - run: npm ci --prefer-offline
-      - run: npm run type-check
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run type-check
 
       # Fail-Fast
       - name: Cancel Workflow on Failure
@@ -109,22 +96,16 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Cache dependencies & tools
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules/.cache
-          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            tooling-${{ runner.os }}-
-
-      - run: npm ci --prefer-offline
-      - run: npm run test:unit -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:unit -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
       # Fail-Fast
       - name: Cancel Workflow on Failure
@@ -146,23 +127,26 @@ jobs:
         shardTotal: [2]
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-      - run: npm ci --prefer-offline
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
 
       - name: Get Playwright Version
         id: playwright-version
         shell: bash
-        run: echo "PLAYWRIGHT_VERSION=$(npm list @playwright/test --depth=0 | grep @playwright/test | awk '{print $2}')" >> $GITHUB_ENV
+        run: echo "PLAYWRIGHT_VERSION=$(pnpm list @playwright/test --depth=0 | grep @playwright/test | awk '{print $2}')" >> $GITHUB_ENV
 
       - name: Cache Playwright Browsers
         uses: actions/cache@v4
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-playwright-
 
@@ -199,27 +183,19 @@ jobs:
         with:
           fetch-depth: 0 # Need full history for version info if needed
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Cache dependencies & tools
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules/.cache
-          key: tooling-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            tooling-${{ runner.os }}-
-
-      # FIX: Removed global NODE_ENV: production so npm ci installs devDeps (like husky)
-      - run: npm ci --prefer-offline
+      - run: pnpm install --frozen-lockfile
 
       # Use build:ci to skip type-check
-      # FIX: Apply NODE_ENV: production ONLY here
       - name: Build
-        run: npm run build:ci
+        run: pnpm run build:ci
         env:
           NODE_ENV: production
 
@@ -253,7 +229,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # ==================================================================  ====================
+  # ======================================================================================
   #  Purge CDN Job (Runs after Deployment)
   # ======================================================================================
   purge-cdn:

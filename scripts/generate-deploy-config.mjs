@@ -79,8 +79,21 @@ const xhtmlLinks = LOCALES.map(
   .join('\n');
 
 // Each locale gets its own <url> entry (Google multi-language sitemap best practice)
-// Define tools list - keep in sync with vite.config.ts
-const TOOLS = ['timestamp', 'hash', 'base64', 'url', 'unicode', 'pinyin', 'qrcode', 'json'];
+// Define tools list - keep in sync with vite.config.ts and router/index.ts
+const TOOLS = [
+  'timestamp',
+  'hash',
+  'base64',
+  'url',
+  'unicode',
+  'pinyin',
+  'qrcode',
+  'json',
+  'jwt',
+  'uuid',
+  'color',
+  'diff'
+];
 
 // Generate URLs for all tools across all locales
 const urlEntries = LOCALES.flatMap((code) => {

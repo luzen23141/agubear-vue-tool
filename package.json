@@ -4,32 +4,28 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run generate-version && vite",
-    "build": "npm run type-check && vite-ssg build",
+    "dev": "pnpm run generate-version && vite",
+    "build": "pnpm run type-check && vite-ssg build",
     "build:ci": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest run",
-    "test:unit:1": "vitest run --shard=1/3",
-    "test:unit:2": "vitest run --shard=2/3",
-    "test:unit:3": "vitest run --shard=3/3",
     "test:watch": "vitest",
-    "test": "npm run test:unit && npm run test:e2e",
+    "test": "pnpm run test:unit && pnpm run test:e2e",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx --fix",
     "lint:strict": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx --max-warnings 0",
     "lint:arch": "depcruise src --config .dependency-cruiser.cjs --output-type err-long",
     "format": "prettier --write .",
     "type-check": "vue-tsc --noEmit",
-    "audit": "npm audit --audit-level=critical",
-    "report": "vite build --mode report",
-    "verify": "npm-run-all lint:strict lint:arch type-check test audit",
+    "audit": "pnpm audit --audit-level=critical",
+    "verify": "pnpm run lint:strict && pnpm run lint:arch && pnpm run type-check && pnpm run test && pnpm run audit",
     "check-all": "node scripts/check-all.js",
     "sonar": "node scripts/run-sonar.js",
     "test:e2e": "playwright test",
     "prepare": "husky install",
-    "scan:security": "mkdir -p reports && npm audit --audit-level=critical > reports/security-audit.txt || true",
+    "scan:security": "mkdir -p reports && pnpm audit --audit-level=critical > reports/security-audit.txt || true",
     "generate-version": "node scripts/generate-version.js",
     "verify-deploy": "node scripts/verify-deploy.js",
-    "prebuild": "npm run generate-version",
+    "prebuild": "pnpm run generate-version",
     "postbuild": "node scripts/generate-deploy-config.mjs",
     "scan:dup": "mkdir -p reports && jscpd src --reporters json,html --output reports/duplicates --threshold 3"
   },
@@ -88,14 +84,12 @@
     "jscpd": "^4.0.8",
     "jsdom": "^28.0.0",
     "lint-staged": "^16.2.7",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.5.6",
     "postcss-discard-comments": "^7.0.5",
     "prettier": "^3.8.1",
     "rollup-plugin-visualizer": "^6.0.5",
     "typescript": "~5.5.0",
     "vite": "^7.2.4",
-    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.18",
@@ -104,11 +98,13 @@
     "zod": "^4.3.6"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "npm run lint:strict",
+    "*.{js,ts,vue}": "pnpm run lint:strict",
     "*.{js,ts,vue,json,css,md}": "prettier --write",
     "src/**/*.{js,ts,vue}": "vitest related --run"
   },
-  "overrides": {
-    "axios": "^1.13.5"
+  "pnpm": {
+    "overrides": {
+      "axios": "^1.13.5"
+    }
   }
 }

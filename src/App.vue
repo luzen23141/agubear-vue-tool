@@ -181,32 +181,40 @@ watch(
 );
 
 // SEO and Meta configuration
+// SEO and Meta configuration
 useHead(
-  computed(() => ({
-    title: t('app.title'),
-    htmlAttrs: {
-      lang: locale.value
-    },
-    meta: [
-      { name: 'description', content: t('seo.description') },
-      { name: 'keywords', content: t('seo.keywords') },
-      { property: 'og:title', content: t('seo.title') },
-      { property: 'og:description', content: t('seo.ogDescription') },
-      { property: 'og:type', content: 'website' }
-    ],
-    script: [
-      {
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebApplication',
-          name: t('app.title'),
-          description: t('seo.description'),
-          inLanguage: locale.value
-        })
-      }
-    ]
-  }))
+  computed(() => {
+    const routeTitleKey = route.meta.title as string;
+    const pageTitle = routeTitleKey ? t(routeTitleKey) : '';
+    const appTitle = t('app.title');
+    const fullTitle = pageTitle ? `${pageTitle} - ${appTitle}` : appTitle;
+
+    return {
+      title: fullTitle,
+      htmlAttrs: {
+        lang: locale.value
+      },
+      meta: [
+        { name: 'description', content: t('seo.description') },
+        { name: 'keywords', content: t('seo.keywords') },
+        { property: 'og:title', content: fullTitle },
+        { property: 'og:description', content: t('seo.ogDescription') },
+        { property: 'og:type', content: 'website' }
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: appTitle,
+            description: t('seo.description'),
+            inLanguage: locale.value
+          })
+        }
+      ]
+    };
+  })
 );
 // Component definitions removed as they are handled by router now
 

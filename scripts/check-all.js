@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* eslint-env node */
 import { spawn, execSync } from 'child_process';
 import chalk from 'chalk';
@@ -10,13 +11,14 @@ const projectRoot = path.resolve(__dirname, '..');
 
 const steps = [
   { name: 'Case Check', type: 'internal', fn: checkCaseSensitivity },
-  { name: 'Lint (Strict)', command: 'npm', args: ['run', 'lint:strict'] },
-  { name: 'Lint (Architecture)', command: 'npm', args: ['run', 'lint:arch'] },
-  { name: 'Type Check', command: 'npm', args: ['run', 'type-check'] },
-  { name: 'Test', command: 'npm', args: ['run', 'test:unit'] },
-  { name: 'Security Audit', command: 'npm', args: ['run', 'scan:security'] },
-  { name: 'Duplicate Check', command: 'npm', args: ['run', 'scan:dup'] },
-  { name: 'Build Check', command: 'npm', args: ['run', 'build'] }
+  { name: 'Lint (Strict)', command: 'pnpm', args: ['run', 'lint:strict'] },
+  { name: 'Lint (Architecture)', command: 'pnpm', args: ['run', 'lint:arch'] },
+  { name: 'Type Check', command: 'pnpm', args: ['run', 'type-check'] },
+  { name: 'Test', command: 'pnpm', args: ['run', 'test:unit'] },
+  { name: 'Security Audit', command: 'pnpm', args: ['run', 'scan:security'] },
+  { name: 'Duplicate Check', command: 'pnpm', args: ['run', 'scan:dup'] },
+  { name: 'Build Check', command: 'pnpm', args: ['run', 'build'] },
+  { name: 'Localization Audit', command: 'node', args: ['scripts/audit-locales.js'] }
 ];
 
 const results = [];

@@ -4,13 +4,11 @@ import { fileURLToPath, URL } from 'node:url';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import vue from '@vitejs/plugin-vue';
 import { visualizer } from 'rollup-plugin-visualizer';
-import eslint from 'vite-plugin-eslint';
 import { VitePWA } from 'vite-plugin-pwa';
 
-const getPlugins = (env: Record<string, string>, mode: string) =>
+const getPlugins = (env: Record<string, string>, _mode: string) =>
   [
     vue(),
-    mode !== 'production' && eslint(),
     createHtmlPlugin({
       minify: true,
       inject: {

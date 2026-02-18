@@ -292,6 +292,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/zh-TW/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-TW/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-TW/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-TW/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=zh-CN</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -551,6 +667,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-CN/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-CN/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-CN/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/zh-CN/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=yue</loc>
@@ -814,6 +1046,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/yue/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/yue/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/yue/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/yue/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=ja</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -1073,6 +1421,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ja/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ja/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ja/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ja/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=ko</loc>
@@ -1336,6 +1800,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/ko/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ko/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ko/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ko/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=en</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -1595,6 +2175,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/en/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/en/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/en/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/en/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=es</loc>
@@ -1858,6 +2554,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/es/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/es/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/es/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/es/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=fr</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -2117,6 +2929,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/fr/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/fr/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/fr/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/fr/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=de</loc>
@@ -2380,6 +3308,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/de/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/de/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/de/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/de/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=pt</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -2639,6 +3683,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pt/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pt/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pt/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pt/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=it</loc>
@@ -2902,6 +4062,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/it/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/it/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/it/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/it/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=nl</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -3161,6 +4437,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/nl/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/nl/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/nl/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/nl/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=pl</loc>
@@ -3424,6 +4816,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/pl/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pl/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pl/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/pl/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=tr</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -3683,6 +5191,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/tr/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/tr/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/tr/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/tr/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=ru</loc>
@@ -3946,6 +5570,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/ru/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ru/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ru/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ru/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=uk</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -4205,6 +5945,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/uk/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/uk/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/uk/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/uk/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=th</loc>
@@ -4468,6 +6324,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/th/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/th/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/th/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/th/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=vi</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -4727,6 +6699,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/vi/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/vi/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/vi/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/vi/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=id</loc>
@@ -4990,6 +7078,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/id/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/id/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/id/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/id/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=ms</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -5249,6 +7453,122 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ms/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ms/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ms/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ms/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
   <url>
     <loc>https://agubear.black/?lang=hi</loc>
@@ -5512,6 +7832,122 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
   </url>
   <url>
+    <loc>https://agubear.black/hi/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/hi/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/hi/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/hi/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+  </url>
+  <url>
     <loc>https://agubear.black/?lang=ar</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -5771,5 +8207,121 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ar/jwt</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/jwt"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/jwt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/jwt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/jwt"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/jwt"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/jwt"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/jwt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/jwt"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/jwt"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ar/uuid</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/uuid"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/uuid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/uuid"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/uuid"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/uuid"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/uuid"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/uuid"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/uuid"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/uuid"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ar/color</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/color"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/color"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/color"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/color"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/color"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/color"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/color"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/color"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/color"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/color"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/color"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/color"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/color"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/color"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/color"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/color"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/color"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+  </url>
+  <url>
+    <loc>https://agubear.black/ar/diff</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/diff"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/diff"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/diff"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/diff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/diff"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/diff"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/diff"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/diff"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/diff"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/diff"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/diff"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/diff"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/diff"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/diff"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/diff"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/diff"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/diff"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
   </url>
 </urlset>
