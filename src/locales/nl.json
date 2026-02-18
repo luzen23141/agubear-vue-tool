@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Pinyin",
-      "qrcode": "📱 QR-code"
+      "qrcode": "📱 QR-code",
+      "hash": "🔐 Hashes",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Kleur",
+      "diff": "🔍 Vergelijking"
     },
     "ariaLabels": {
       "timestamp": "Tijdstempel Converter",
@@ -14,13 +22,33 @@
       "pinyin": "Pinyin Converter",
       "qrcode": "QR-code Generator",
       "toolSwitch": "Wissel van tool",
-      "languageSwitch": "Taal wijzigen"
+      "languageSwitch": "Taal wijzigen",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "Taal"
+    "language": "Taal",
+    "title": "AguBear Tools",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - Tijdstempel Converter | MD5 Hash | Unicode Codering | Pinyin Zoeken | QR-code Generator",
@@ -87,7 +115,41 @@
     "tzTokyo": "Tokio",
     "tzAustraliaCentral": "Centraal-Australië",
     "tzSydney": "Sydney",
-    "tzNewZealand": "Nieuw-Zeeland"
+    "tzNewZealand": "Nieuw-Zeeland",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 MD5 Hash Generator",
@@ -117,7 +179,7 @@
     "toText": "Unicode → Tekst ▲",
     "toTextAria": "Unicode naar Tekst",
     "fieldUnicode": "Unicode Codering",
-    "unicodePlaceholder": "Voer Unicode in",
+    "unicodePlaceholder": "Voer Unicode in, bijv. \\u0048\\u0061",
     "unicodeAria": "Unicode Codering",
     "copyEncoding": "📋 Codering kopiëren",
     "copyText": "📋 Tekst kopiëren",
@@ -128,11 +190,11 @@
   },
   "pinyin": {
     "title": "🗣️ Pinyin Converter",
-    "showTone": "Tonen weergeven",
+    "showTone": "Toon Tonen",
     "showToneAria": "Tonen weergeven",
-    "placeholder": "Voer Chinese tekens in",
+    "placeholder": "Voer Chinese tekens in...",
     "inputAria": "Voer Chinese tekens in om te converteren",
-    "convert": "Naar Pinyin converteren ▼",
+    "convert": "Converteer naar Pinyin ▼",
     "convertAria": "Naar Pinyin converteren",
     "resultLabel": "Pinyin Resultaat:",
     "copyHint": "Klik op resultaat om te kopiëren",
@@ -140,12 +202,14 @@
     "historyTitle": "📜 Geschiedenis",
     "clear": "Wissen",
     "clearAllAria": "Geschiedenis wissen",
-    "deleteAria": "Record verwijderen"
+    "deleteAria": "Record verwijderen",
+    "showSpaces": "Toon Spaties",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
     "title": "📱 QR-code Generator",
     "contentLabel": "Inhoud",
-    "placeholder": "Voer tekst of URL in...",
+    "placeholder": "Tekst of URL...",
     "inputAria": "Voer tekst of URL in voor QR-code",
     "size": "Grootte: {n}px",
     "sizeAria": "QR-code grootte",
@@ -172,5 +236,144 @@
     "clear": "Wissen",
     "clearAllAria": "Geschiedenis wissen",
     "deleteAria": "Record verwijderen"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Base64 Converter",
+    "encode": "Coderen",
+    "decode": "Decoderen",
+    "inputLabel": "Tekst Invoer",
+    "base64Label": "Base64 Uitvoer",
+    "inputPlaceholder": "Voer tekst in om te coderen...",
+    "base64Placeholder": "Voer Base64 in om te decoderen..."
+  },
+  "url": {
+    "title": "🔗 URL Encoder",
+    "encode": "Coderen",
+    "decode": "Decoderen",
+    "inputLabel": "Tekst Invoer",
+    "urlLabel": "URL Gecodeerd",
+    "inputPlaceholder": "Voer tekst in...",
+    "urlPlaceholder": "Voer URL-entiteiten in..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "Veelgestelde Vragen (FAQ)"
+  },
+  "json": {
+    "title": "📋 JSON Formatter",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "Formatteren",
+    "formatAria": "Format JSON",
+    "minify": "Minify",
+    "minifyAria": "Minify JSON",
+    "toTs": "Naar TS Interface",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "JSON Invoer",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "Resultaat",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT Debugger",
+    "description": "Decoderen en verifiëren van JSON Web Tokens.",
+    "inputLabel": "JWT Token",
+    "inputPlaceholder": "Plak JWT Token (eyJ...)",
+    "invalidToken": "Ongeldig JWT Token",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID Generator",
+    "description": "Genereer UUID v4, v7 en ULID.",
+    "typeLabel": "Format Type",
+    "quantityLabel": "Aantal",
+    "generate": "Genereren",
+    "resultLabel": "Resultaat",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Kleur Converter",
+    "description": "Conversie tussen HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Verschil Checker",
+    "description": "Vergelijk tekstverschillen.",
+    "original": "Originele Tekst",
+    "modified": "Gewijzigde Tekst",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

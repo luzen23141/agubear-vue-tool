@@ -29,7 +29,7 @@
                 @click="execute(item.item)"
                 @mouseenter="selectedIndex = index"
               >
-                <div class="cmd-icon">{{ item.item.icon }}</div>
+                <div class="cmd-icon"><SvgIcon :name="item.item.icon" size="1.1rem" /></div>
                 <div class="cmd-content">
                   <div class="cmd-title">{{ item.item.title }}</div>
                   <div class="cmd-desc">{{ item.item.description || item.item.category }}</div>
@@ -57,6 +57,7 @@ import { useMagicKeys, whenever } from '@vueuse/core';
 import Fuse from 'fuse.js';
 
 import { useCommands } from '@/composables/useCommands';
+import SvgIcon from '../icons/SvgIcon.vue';
 
 const { t } = useI18n();
 const { commands } = useCommands();

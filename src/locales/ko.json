@@ -3,9 +3,17 @@
     "tabs": {
       "timestamp": "⏳ 타임스탬프",
       "md5": "🔐 MD5",
-      "unicode": "🔤 Unicode",
-      "pinyin": "🗣️ 병음",
-      "qrcode": "📱 QR 코드"
+      "unicode": "🔤 유니코드",
+      "pinyin": "🗣️ 한어병음",
+      "qrcode": "📱 QR 코드",
+      "hash": "🔐 해시",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 색상",
+      "diff": "🔍 차이 비교"
     },
     "ariaLabels": {
       "timestamp": "타임스탬프 변환기",
@@ -14,13 +22,33 @@
       "pinyin": "병음 변환기",
       "qrcode": "QR 코드 생성기",
       "toolSwitch": "도구 전환",
-      "languageSwitch": "언어 전환"
+      "languageSwitch": "언어 전환",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "언어"
+    "language": "언어",
+    "title": "AguBear Tools",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - 타임스탬프 변환 | MD5 해시 | Unicode 인코딩 | 병음 검색 | QR 코드 생성",
@@ -87,7 +115,41 @@
     "tzTokyo": "도쿄",
     "tzAustraliaCentral": "호주 중부",
     "tzSydney": "시드니",
-    "tzNewZealand": "뉴질랜드"
+    "tzNewZealand": "뉴질랜드",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 MD5 해시 생성기",
@@ -106,18 +168,18 @@
     "deleteAria": "이 기록 삭제"
   },
   "unicode": {
-    "title": "🔤 Unicode 변환기",
-    "skipAscii": "영숫자 변환 안 함",
+    "title": "🔤 유니코드 변환기",
+    "skipAscii": "영숫자 건너뛰기",
     "skipAsciiAria": "영숫자 변환 안 함",
     "fieldText": "텍스트 ｜ 문자",
-    "textPlaceholder": "텍스트 입력, 예: 안녕하세요",
+    "textPlaceholder": "텍스트 입력, 예: Hello World",
     "textAria": "변환할 텍스트 입력",
-    "toUnicode": "텍스트 → Unicode ▼",
+    "toUnicode": "텍스트 → 유니코드 ▼",
     "toUnicodeAria": "텍스트를 Unicode로 변환",
-    "toText": "Unicode → 텍스트 ▲",
+    "toText": "유니코드 → 텍스트 ▲",
     "toTextAria": "Unicode를 텍스트로 변환",
-    "fieldUnicode": "Unicode 인코딩",
-    "unicodePlaceholder": "Unicode 입력, 예: \\uc548\\ub155",
+    "fieldUnicode": "유니코드 인코딩",
+    "unicodePlaceholder": "유니코드 입력, 예: \\u0048\\u0061",
     "unicodeAria": "Unicode 인코딩",
     "copyEncoding": "📋 인코딩 복사",
     "copyText": "📋 텍스트 복사",
@@ -127,12 +189,12 @@
     "deleteAria": "이 기록 삭제"
   },
   "pinyin": {
-    "title": "🗣️ 병음 변환기",
+    "title": "🗣️ 한어병음 변환기",
     "showTone": "성조 표시",
     "showToneAria": "성조 표시",
-    "placeholder": "중국어 문자 입력, 예: 你好世界",
+    "placeholder": "중국어 입력...",
     "inputAria": "변환할 중국어 문자 입력",
-    "convert": "병음 변환 ▼",
+    "convert": "병음으로 변환 ▼",
     "convertAria": "병음으로 변환",
     "resultLabel": "병음 결과:",
     "copyHint": "위의 결과를 클릭하여 복사",
@@ -140,12 +202,14 @@
     "historyTitle": "📜 변환 기록",
     "clear": "지우기",
     "clearAllAria": "모든 기록 지우기",
-    "deleteAria": "이 기록 삭제"
+    "deleteAria": "이 기록 삭제",
+    "showSpaces": "공백 표시",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
     "title": "📱 QR 코드 생성기",
     "contentLabel": "내용",
-    "placeholder": "텍스트 또는 URL 입력...",
+    "placeholder": "텍스트 또는 URL...",
     "inputAria": "QR 코드를 생성할 텍스트 또는 URL 입력",
     "size": "크기: {n}px",
     "sizeAria": "QR 코드 크기",
@@ -155,7 +219,7 @@
     "fgColorAria": "QR 코드 전경색",
     "bgColor": "배경색",
     "bgColorAria": "QR 코드 배경색",
-    "errorCorrection": "오류 정정",
+    "errorCorrection": "오류 수정",
     "ecAria": "오류 정정 수준 {level}",
     "preview": "미리보기",
     "dragTitle": "이 QR 코드를 다른 앱으로 드래그",
@@ -172,5 +236,144 @@
     "clear": "지우기",
     "clearAllAria": "모든 기록 지우기",
     "deleteAria": "이 기록 삭제"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Base64 변환기",
+    "encode": "인코딩",
+    "decode": "디코딩",
+    "inputLabel": "텍스트 입력",
+    "base64Label": "Base64 출력",
+    "inputPlaceholder": "인코딩할 텍스트 입력...",
+    "base64Placeholder": "디코딩할 Base64 입력..."
+  },
+  "url": {
+    "title": "🔗 URL 인코더",
+    "encode": "인코딩",
+    "decode": "디코딩",
+    "inputLabel": "텍스트 입력",
+    "urlLabel": "URL 인코딩됨",
+    "inputPlaceholder": "텍스트 입력...",
+    "urlPlaceholder": "URL 엔티티 입력..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "자주 묻는 질문 (FAQ)"
+  },
+  "json": {
+    "title": "📋 JSON 포맷터",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "포맷",
+    "formatAria": "Format JSON",
+    "minify": "압축",
+    "minifyAria": "Minify JSON",
+    "toTs": "TS 인터페이스로",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "JSON 입력",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "결과",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT 디버거",
+    "description": "JSON Web Token 디코딩 및 검증.",
+    "inputLabel": "JWT 토큰",
+    "inputPlaceholder": "JWT 토큰 붙여넣기 (eyJ...)",
+    "invalidToken": "유효하지 않은 JWT 토큰",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID 생성기",
+    "description": "UUID v4, v7 및 ULID 생성.",
+    "typeLabel": "포맷 유형",
+    "quantityLabel": "수량",
+    "generate": "생성",
+    "resultLabel": "결과",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 색상 변환기",
+    "description": "HEX, RGB, HSL, CMYK 간 변환.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 차이 검사기",
+    "description": "텍스트 차이 비교.",
+    "original": "원본 텍스트",
+    "modified": "수정된 텍스트",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

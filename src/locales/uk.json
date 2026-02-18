@@ -1,11 +1,19 @@
 {
   "app": {
     "tabs": {
-      "timestamp": "⏳ Мітка часу",
+      "timestamp": "⏳ Часова мітка",
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Піньїнь",
-      "qrcode": "📱 QR-код"
+      "qrcode": "📱 QR-код",
+      "hash": "🔐 Хеші",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Колір",
+      "diff": "🔍 Порівняння"
     },
     "ariaLabels": {
       "timestamp": "Конвертер мітки часу",
@@ -14,13 +22,33 @@
       "pinyin": "Конвертер піньїнь",
       "qrcode": "Генератор QR-коду",
       "toolSwitch": "Змінити інструмент",
-      "languageSwitch": "Змінити мову"
+      "languageSwitch": "Змінити мову",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "Мова"
+    "language": "Мова",
+    "title": "Інструменти AguBear",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - Конвертер Timestamp | Хеш MD5 | Кодування Unicode | Пошук Піньїнь | Генератор QR",
@@ -87,7 +115,41 @@
     "tzTokyo": "Токіо",
     "tzAustraliaCentral": "Центральна Австралія",
     "tzSydney": "Сідней",
-    "tzNewZealand": "Нова Зеландія"
+    "tzNewZealand": "Нова Зеландія",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 Генератор хешу MD5",
@@ -107,17 +169,17 @@
   },
   "unicode": {
     "title": "🔤 Конвертер Unicode",
-    "skipAscii": "Пропустити буквено-цифрові",
+    "skipAscii": "Пропустити цифри/літери",
     "skipAsciiAria": "Пропустити буквено-цифрові",
     "fieldText": "Текст ｜ Символи",
-    "textPlaceholder": "Введіть текст",
+    "textPlaceholder": "Введіть текст, наприклад, Привіт Світ",
     "textAria": "Введіть текст для конвертації",
     "toUnicode": "Текст → Unicode ▼",
     "toUnicodeAria": "Текст у Unicode",
     "toText": "Unicode → Текст ▲",
     "toTextAria": "Unicode у текст",
     "fieldUnicode": "Кодування Unicode",
-    "unicodePlaceholder": "Введіть Unicode",
+    "unicodePlaceholder": "Введіть Unicode, наприклад, \\u041f\\u0440",
     "unicodeAria": "Кодування Unicode",
     "copyEncoding": "📋 Копіювати кодування",
     "copyText": "📋 Копіювати текст",
@@ -127,25 +189,27 @@
     "deleteAria": "Видалити запис"
   },
   "pinyin": {
-    "title": "🗣️ Конвертер піньїнь",
+    "title": "🗣️ Конвертер Піньїнь",
     "showTone": "Показати тони",
     "showToneAria": "Показати тони",
-    "placeholder": "Введіть китайські ієрогліфи",
+    "placeholder": "Введіть китайські ієрогліфи...",
     "inputAria": "Введіть ієрогліфи",
-    "convert": "У піньїнь ▼",
+    "convert": "Конвертувати в Піньїнь ▼",
     "convertAria": "Конвертувати у піньїнь",
-    "resultLabel": "Результат:",
+    "resultLabel": "Результат Піньїнь:",
     "copyHint": "Натисніть для копіювання",
     "copyTitle": "Натисніть для копіювання",
     "historyTitle": "📜 Історія",
     "clear": "Очистити",
     "clearAllAria": "Очистити історію",
-    "deleteAria": "Видалити запис"
+    "deleteAria": "Видалити запис",
+    "showSpaces": "Показати пробіли",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
     "title": "📱 Генератор QR-коду",
-    "contentLabel": "Зміст",
-    "placeholder": "Введіть текст або URL...",
+    "contentLabel": "Вміст",
+    "placeholder": "Текст або URL...",
     "inputAria": "Введіть текст або URL для QR-коду",
     "size": "Розмір: {n}px",
     "sizeAria": "Розмір QR",
@@ -172,5 +236,144 @@
     "clear": "Очистити",
     "clearAllAria": "Очистити історію",
     "deleteAria": "Видалити запис"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Конвертер Base64",
+    "encode": "Кодувати",
+    "decode": "Декодувати",
+    "inputLabel": "Введення тексту",
+    "base64Label": "Виведення Base64",
+    "inputPlaceholder": "Введіть текст для кодування...",
+    "base64Placeholder": "Введіть Base64 для декодування..."
+  },
+  "url": {
+    "title": "🔗 URL Кодувальник",
+    "encode": "Кодувати",
+    "decode": "Декодувати",
+    "inputLabel": "Введення тексту",
+    "urlLabel": "URL кодований",
+    "inputPlaceholder": "Введіть текст...",
+    "urlPlaceholder": "Введіть URL сутності..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "Часті питання (FAQ)"
+  },
+  "json": {
+    "title": "📋 Форматувальник JSON",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "Форматувати",
+    "formatAria": "Format JSON",
+    "minify": "Стиснути",
+    "minifyAria": "Minify JSON",
+    "toTs": "В інтерфейс TS",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "Введення JSON",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "Результат",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 Налагоджувач JWT",
+    "description": "Декодування та перевірка JSON Web Token.",
+    "inputLabel": "Токен JWT",
+    "inputPlaceholder": "Вставте токен JWT (eyJ...)",
+    "invalidToken": "Невірний токен JWT",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 Генератор UUID/ULID",
+    "description": "Генерація UUID v4, v7 та ULID.",
+    "typeLabel": "Тип формату",
+    "quantityLabel": "Кількість",
+    "generate": "Генерувати",
+    "resultLabel": "Результат",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Конвертер кольорів",
+    "description": "Миттєве перетворення форматів кольорів.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Перевірка відмінностей",
+    "description": "Порівняти текстові відмінності.",
+    "original": "Оригінальний текст",
+    "modified": "Змінений текст",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

@@ -34,7 +34,7 @@
         <!-- Action -->
         <div class="control-group action-group">
           <button class="generate-btn" type="button" @click="generateIds">
-            🔄 {{ t('uuid.generate') }}
+            <SvgIcon name="refresh-cw" /> {{ t('uuid.generate') }}
           </button>
         </div>
       </div>
@@ -45,7 +45,7 @@
           <h3>{{ t('uuid.resultLabel') }}</h3>
           <div class="output-actions">
             <button class="copy-btn" type="button" @click="copyAll">
-              📋 {{ t('common.copy') }}
+              <SvgIcon name="copy" /> {{ t('common.copy') }}
             </button>
           </div>
         </div>
@@ -71,6 +71,7 @@ import { v4 as uuidv4, v7 as uuidv7 } from 'uuid';
 import { ulid } from 'ulid';
 import BaseCard from './common/BaseCard.vue';
 import ToolContext from './common/ToolContext.vue';
+import SvgIcon from './icons/SvgIcon.vue';
 
 const { t } = useI18n();
 

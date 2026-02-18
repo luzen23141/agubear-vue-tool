@@ -80,7 +80,7 @@
               class="paste-btn"
               @click="pasteToTimestamp"
             >
-              📋 {{ t('common.paste') }}
+              <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
             </button>
           </div>
           <div class="input-group">
@@ -122,7 +122,7 @@
             class="copy-btn"
             @click="copyText(dateResult)"
           >
-            📋
+            <SvgIcon name="copy" />
           </button>
         </div>
       </BaseCard>
@@ -155,7 +155,7 @@
             class="paste-btn"
             @click="pasteToDate"
           >
-            📋 {{ t('common.paste') }}
+            <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
           </button>
         </div>
         <div class="input-group">
@@ -186,7 +186,7 @@
             class="copy-btn"
             @click="copyText(timestampResult)"
           >
-            📋
+            <SvgIcon name="copy" />
           </button>
         </div>
       </BaseCard>
@@ -215,6 +215,7 @@ import { useTimestampConverter } from '../composables/useTimestampConverter';
 import { formatDistanceToNow } from 'date-fns';
 import { zhTW } from 'date-fns/locale';
 import DurationCalculator from './DurationCalculator.vue';
+import SvgIcon from './icons/SvgIcon.vue';
 
 type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
 const showToast = inject('showToast', (() => {}) as ToastFunction);

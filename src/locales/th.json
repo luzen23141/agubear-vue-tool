@@ -1,11 +1,19 @@
 {
   "app": {
     "tabs": {
-      "timestamp": "⏳ ไทม์สแตมป์",
+      "timestamp": "⏳ การประทับเวลา",
       "md5": "🔐 MD5",
-      "unicode": "🔤 Unicode",
+      "unicode": "🔤 ยูนิโค้ด",
       "pinyin": "🗣️ พินอิน",
-      "qrcode": "📱 QR Code"
+      "qrcode": "📱 คิวอาร์โค้ด",
+      "hash": "🔐 แฮช",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 สี",
+      "diff": "🔍 เปรียบเทียบ"
     },
     "ariaLabels": {
       "timestamp": "ตัวแปลงไทม์สแตมป์",
@@ -14,13 +22,33 @@
       "pinyin": "ตัวแปลงพินอิน",
       "qrcode": "ตัวสร้าง QR Code",
       "toolSwitch": "สลับเครื่องมือ",
-      "languageSwitch": "เปลี่ยนภาษา"
+      "languageSwitch": "เปลี่ยนภาษา",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "ภาษา"
+    "language": "ภาษา",
+    "title": "เครื่องมือ AguBear",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - แปลงไทม์สแตมป์ | แฮช MD5 | เข้ารหัส Unicode | ค้นหาพินอิน | สร้าง QR Code",
@@ -87,7 +115,41 @@
     "tzTokyo": "โตเกียว",
     "tzAustraliaCentral": "ออสเตรเลียกลาง",
     "tzSydney": "ซิดนีย์",
-    "tzNewZealand": "นิวซีแลนด์"
+    "tzNewZealand": "นิวซีแลนด์",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 ตัวสร้างแฮช MD5",
@@ -109,15 +171,15 @@
     "title": "🔤 ตัวแปลง Unicode",
     "skipAscii": "ข้ามตัวอักษรและตัวเลข",
     "skipAsciiAria": "ข้ามตัวอักษรและตัวเลข",
-    "fieldText": "ข้อความ ｜ อักขระ",
-    "textPlaceholder": "ใส่ข้อความ เช่น สวัสดีชาวโลก",
+    "fieldText": "ข้อความ ｜ ตัวอักษร",
+    "textPlaceholder": "ป้อนข้อความ เช่น Hello World",
     "textAria": "ใส่ข้อความที่ต้องการแปลง",
     "toUnicode": "ข้อความ → Unicode ▼",
     "toUnicodeAria": "แปลงข้อความเป็น Unicode",
     "toText": "Unicode → ข้อความ ▲",
     "toTextAria": "แปลง Unicode เป็นข้อความ",
     "fieldUnicode": "การเข้ารหัส Unicode",
-    "unicodePlaceholder": "ใส่ Unicode เช่น \\u0e2a\\u0e27\\u0e31\\u0e2a\\u0e14\\u0e35",
+    "unicodePlaceholder": "ป้อน Unicode เช่น \\u0048\\u0061",
     "unicodeAria": "การเข้ารหัส Unicode",
     "copyEncoding": "📋 คัดลอกการเข้ารหัส",
     "copyText": "📋 คัดลอกข้อความ",
@@ -128,24 +190,26 @@
   },
   "pinyin": {
     "title": "🗣️ ตัวแปลงพินอิน",
-    "showTone": "แสดงวรรณยุกต์",
+    "showTone": "แสดงวิรรณยุกต์",
     "showToneAria": "แสดงวรรณยุกต์",
-    "placeholder": "ใส่อักษรจีน เช่น 你好世界",
+    "placeholder": "ป้อนอักษรจีน...",
     "inputAria": "ใส่อักษรจีนที่ต้องการแปลง",
     "convert": "แปลงเป็นพินอิน ▼",
     "convertAria": "แปลงเป็นพินอิน",
-    "resultLabel": "ผลพินอิน:",
+    "resultLabel": "ผลลัพธ์พินอิน:",
     "copyHint": "คลิกผลด้านบนเพื่อคัดลอก",
     "copyTitle": "คลิกเพื่อคัดลอก",
     "historyTitle": "📜 ประวัติการแปลง",
     "clear": "ล้าง",
     "clearAllAria": "ล้างประวัติทั้งหมด",
-    "deleteAria": "ลบรายการนี้"
+    "deleteAria": "ลบรายการนี้",
+    "showSpaces": "แสดงช่องว่าง",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
-    "title": "📱 ตัวสร้าง QR Code",
+    "title": "📱 เครื่องสร้าง QR Code",
     "contentLabel": "เนื้อหา",
-    "placeholder": "ใส่ข้อความหรือ URL...",
+    "placeholder": "ข้อความหรือ URL...",
     "inputAria": "ใส่ข้อความหรือ URL เพื่อสร้าง QR Code",
     "size": "ขนาด: {n}px",
     "sizeAria": "ขนาด QR Code",
@@ -172,5 +236,144 @@
     "clear": "ล้าง",
     "clearAllAria": "ล้างประวัติทั้งหมด",
     "deleteAria": "ลบรายการนี้"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 ตัวแปลง Base64",
+    "encode": "เข้ารหัส",
+    "decode": "ถอดรหัส",
+    "inputLabel": "ป้อนข้อความ",
+    "base64Label": "ผลลัพธ์ Base64",
+    "inputPlaceholder": "ป้อนข้อความเพื่อเข้ารหัส...",
+    "base64Placeholder": "ป้อน Base64 เพื่อถอดรหัส..."
+  },
+  "url": {
+    "title": "🔗 ตัวเข้ารหัส URL",
+    "encode": "เข้ารหัส",
+    "decode": "ถอดรหัส",
+    "inputLabel": "ป้อนข้อความ",
+    "urlLabel": "เข้ารหัส URL แล้ว",
+    "inputPlaceholder": "ป้อนข้อความ...",
+    "urlPlaceholder": "ป้อนเอนทิตี URL..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "คำถามที่พบบ่อย (FAQ)"
+  },
+  "json": {
+    "title": "📋 ตัวจัดรูปแบบ JSON",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "จัดรูปแบบ",
+    "formatAria": "Format JSON",
+    "minify": "ย่อขนาด",
+    "minifyAria": "Minify JSON",
+    "toTs": "ไปยังอินเทอร์เฟซ TS",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "อินพุต JSON",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "ผลลัพธ์",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 ดีบักเกอร์ JWT",
+    "description": "ถอดรหัสและตรวจสอบ JSON Web Token",
+    "inputLabel": "โทเค็น JWT",
+    "inputPlaceholder": "วางโทเค็น JWT (eyJ...)",
+    "invalidToken": "โทเค็น JWT ไม่ถูกต้อง",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 ตัวสร้าง UUID/ULID",
+    "description": "สร้าง UUID v4, v7 และ ULID",
+    "typeLabel": "ประเภทรูปแบบ",
+    "quantityLabel": "จำนวน",
+    "generate": "สร้าง",
+    "resultLabel": "ผลลัพธ์",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 ตัวแปลงสี",
+    "description": "แปลงระหว่าง HEX, RGB, HSL, CMYK",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 ตัวตรวจสอบความแตกต่าง",
+    "description": "เปรียบเทียบความแตกต่างของข้อความ",
+    "original": "ข้อความต้นฉบับ",
+    "modified": "ข้อความที่แก้ไข",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

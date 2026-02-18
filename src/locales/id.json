@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Pinyin",
-      "qrcode": "📱 Kode QR"
+      "qrcode": "📱 Kode QR",
+      "hash": "🔐 Hash",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Warna",
+      "diff": "🔍 Perbedaan"
     },
     "ariaLabels": {
       "timestamp": "Konverter Stempel Waktu",
@@ -14,13 +22,33 @@
       "pinyin": "Konverter Pinyin",
       "qrcode": "Generator Kode QR",
       "toolSwitch": "Ganti alat",
-      "languageSwitch": "Ganti bahasa"
+      "languageSwitch": "Ganti bahasa",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "Bahasa"
+    "language": "Bahasa",
+    "title": "Alat AguBear",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - Konverter Timestamp | Hash MD5 | Pengkodean Unicode | Pencarian Pinyin | Generator QR",
@@ -87,7 +115,41 @@
     "tzTokyo": "Tokyo",
     "tzAustraliaCentral": "Australia Tengah",
     "tzSydney": "Sydney",
-    "tzNewZealand": "Selandia Baru"
+    "tzNewZealand": "Selandia Baru",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 Generator Hash MD5",
@@ -107,20 +169,20 @@
   },
   "unicode": {
     "title": "🔤 Konverter Unicode",
-    "skipAscii": "Lewati alfanumerik",
+    "skipAscii": "Lewati Alfanumerik",
     "skipAsciiAria": "Lewati alfanumerik",
     "fieldText": "Teks ｜ Karakter",
-    "textPlaceholder": "Masukkan teks",
+    "textPlaceholder": "Masukkan teks, cth. Hello World",
     "textAria": "Masukkan teks untuk dikonversi",
     "toUnicode": "Teks → Unicode ▼",
     "toUnicodeAria": "Teks ke Unicode",
     "toText": "Unicode → Teks ▲",
     "toTextAria": "Unicode ke Teks",
-    "fieldUnicode": "Pengkodean Unicode",
-    "unicodePlaceholder": "Masukkan Unicode",
+    "fieldUnicode": "Pengodean Unicode",
+    "unicodePlaceholder": "Masukkan Unicode, cth. \\u0048\\u0061",
     "unicodeAria": "Pengkodean Unicode",
-    "copyEncoding": "📋 Salin pengkodean",
-    "copyText": "📋 Salin teks",
+    "copyEncoding": "📋 Salin Pengodean",
+    "copyText": "📋 Salin Teks",
     "historyTitle": "📜 Riwayat",
     "clear": "Hapus",
     "clearAllAria": "Hapus riwayat",
@@ -128,9 +190,9 @@
   },
   "pinyin": {
     "title": "🗣️ Konverter Pinyin",
-    "showTone": "Tampilkan nada",
+    "showTone": "Tampilkan Nada",
     "showToneAria": "Tampilkan nada",
-    "placeholder": "Masukkan karakter Cina",
+    "placeholder": "Masukkan karakter Cina...",
     "inputAria": "Masukkan karakter Cina",
     "convert": "Konversi ke Pinyin ▼",
     "convertAria": "Konversi ke Pinyin",
@@ -140,29 +202,31 @@
     "historyTitle": "📜 Riwayat",
     "clear": "Hapus",
     "clearAllAria": "Hapus riwayat",
-    "deleteAria": "Hapus catatan"
+    "deleteAria": "Hapus catatan",
+    "showSpaces": "Tampilkan Spasi",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
     "title": "📱 Generator Kode QR",
     "contentLabel": "Konten",
-    "placeholder": "Masukkan teks atau URL...",
+    "placeholder": "Teks atau URL...",
     "inputAria": "Masukkan teks atau URL untuk kode QR",
     "size": "Ukuran: {n}px",
     "sizeAria": "Ukuran QR",
     "margin": "Margin: {n}",
     "marginAria": "Margin QR",
-    "fgColor": "Warna depan",
+    "fgColor": "Warna Depan",
     "fgColorAria": "Warna depan QR",
-    "bgColor": "Warna latar",
+    "bgColor": "Warna Belakang",
     "bgColorAria": "Warna latar QR",
-    "errorCorrection": "Koreksi kesalahan",
+    "errorCorrection": "Koreksi Kesalahan",
     "ecAria": "Level koreksi {level}",
     "preview": "Pratinjau",
     "dragTitle": "Seret kode QR ke aplikasi lain",
     "downloadPng": "⬇️ Unduh PNG",
     "downloaded": "✅ Terunduh",
     "downloadAria": "Unduh PNG",
-    "copyImage": "📋 Salin gambar",
+    "copyImage": "📋 Salin Gambar",
     "copied": "✅ Tersalin",
     "copyAria": "Salin ke clipboard",
     "record": "📝 Catat",
@@ -172,5 +236,144 @@
     "clear": "Hapus",
     "clearAllAria": "Hapus riwayat",
     "deleteAria": "Hapus catatan"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Konverter Base64",
+    "encode": "Enkode",
+    "decode": "Dekode",
+    "inputLabel": "Input Teks",
+    "base64Label": "Output Base64",
+    "inputPlaceholder": "Masukkan teks untuk dienkode...",
+    "base64Placeholder": "Masukkan Base64 untuk didekode..."
+  },
+  "url": {
+    "title": "🔗 Encoder URL",
+    "encode": "Enkode",
+    "decode": "Dekode",
+    "inputLabel": "Input Teks",
+    "urlLabel": "URL Terenkode",
+    "inputPlaceholder": "Masukkan teks...",
+    "urlPlaceholder": "Masukkan entitas URL..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "Pertanyaan yang Sering Diajukan (FAQ)"
+  },
+  "json": {
+    "title": "📋 Pemformat JSON",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "Format",
+    "formatAria": "Format JSON",
+    "minify": "Kecilkan",
+    "minifyAria": "Minify JSON",
+    "toTs": "Ke Antarmuka TS",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "Input JSON",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "Hasil",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 Debugger JWT",
+    "description": "Dekode dan verifikasi JSON Web Token.",
+    "inputLabel": "Token JWT",
+    "inputPlaceholder": "Tempel Token JWT (eyJ...)",
+    "invalidToken": "Token JWT Tidak Valid",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 Generator UUID/ULID",
+    "description": "Buat UUID v4, v7, dan ULID.",
+    "typeLabel": "Tipe Format",
+    "quantityLabel": "Jumlah",
+    "generate": "Buat",
+    "resultLabel": "Hasil",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Konverter Warna",
+    "description": "Konversi antara HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Pemeriksa Perbedaan",
+    "description": "Bandingkan perbedaan teks.",
+    "original": "Teks Asli",
+    "modified": "Teks Diubah",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

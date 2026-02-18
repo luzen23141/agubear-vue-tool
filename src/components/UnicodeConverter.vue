@@ -48,7 +48,7 @@
             class="paste-btn"
             @click="pasteToText"
           >
-            📋 {{ t('common.paste') }}
+            <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
           </button>
         </div>
         <textarea
@@ -65,7 +65,7 @@
           class="copy-btn-overlay"
           @click="copyResult(textInput)"
         >
-          📋
+          <SvgIcon name="copy" />
         </button>
       </div>
 
@@ -90,7 +90,7 @@
             class="paste-btn"
             @click="pasteToUnicode"
           >
-            📋 {{ t('common.paste') }}
+            <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
           </button>
         </div>
         <textarea
@@ -107,7 +107,7 @@
           class="copy-btn-overlay"
           @click="copyResult(unicodeInput)"
         >
-          📋
+          <SvgIcon name="copy" />
         </button>
       </div>
     </BaseCard>
@@ -125,6 +125,7 @@ import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import { textToUnicode, unicodeToText, textToHtmlEntity, htmlEntityToText } from '../utils/unicode';
 import { useHistory } from '../composables/useHistory';
+import SvgIcon from './icons/SvgIcon.vue';
 
 const { t } = useI18n();
 

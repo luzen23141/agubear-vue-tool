@@ -16,7 +16,7 @@
               type="button"
               @click="pasteInput"
             >
-              📋 {{ t('common.paste') }}
+              <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
             </button>
             <button class="clear-btn" type="button" @click="handleClear">
               {{ t('common.clear') }}
@@ -30,7 +30,7 @@
           spellcheck="false"
         />
         <div v-if="error" class="error-message">
-          <span class="error-icon">⚠️</span>
+          <span class="error-icon"><SvgIcon name="alert-triangle" size="0.9rem" /></span>
           <span>{{ error }}</span>
         </div>
       </BaseCard>
@@ -76,6 +76,7 @@ import { useHead } from '@unhead/vue';
 import { jwtDecode } from 'jwt-decode';
 import BaseCard from './common/BaseCard.vue';
 import ToolContext from './common/ToolContext.vue';
+import SvgIcon from './icons/SvgIcon.vue';
 
 const { t } = useI18n();
 

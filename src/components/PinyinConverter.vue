@@ -35,7 +35,7 @@
             class="paste-btn"
             @click="pasteInput"
           >
-            📋 {{ t('common.paste') }}
+            <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
           </button>
         </div>
         <textarea
@@ -78,6 +78,7 @@ import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import { pinyin } from 'pinyin-pro';
 import { useHistory } from '../composables/useHistory';
+import SvgIcon from './icons/SvgIcon.vue';
 
 const { t } = useI18n();
 

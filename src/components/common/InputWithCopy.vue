@@ -9,7 +9,7 @@
         class="action-btn paste-btn"
         @click="handlePaste"
       >
-        📋 {{ t('common.paste') }}
+        <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
       </button>
     </div>
     <div class="textarea-wrapper">
@@ -31,7 +31,7 @@
         class="action-btn copy-btn-overlay"
         @click="handleCopy"
       >
-        📋 {{ t('common.copy') }}
+        <SvgIcon name="copy" /> {{ t('common.copy') }}
       </button>
     </div>
   </div>
@@ -40,6 +40,7 @@
 <script setup lang="ts">
 import { ref, onMounted, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
+import SvgIcon from '../icons/SvgIcon.vue';
 
 type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
 
@@ -137,11 +138,11 @@ const handleCopy = async () => {
   justify-content: center;
   gap: 4px;
   background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
   font-size: 0.78rem;
   cursor: pointer;
   color: var(--text-secondary);
@@ -149,10 +150,11 @@ const handleCopy = async () => {
 }
 
 .action-btn:hover {
-  background: var(--primary-soft);
-  color: var(--primary);
-  border-color: var(--primary);
-  transform: scale(1.02);
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  transform: scale(1.04);
+  box-shadow: var(--shadow-glow);
 }
 
 .textarea-wrapper {
@@ -178,6 +180,7 @@ const handleCopy = async () => {
   color: var(--text-primary);
   resize: vertical;
   box-sizing: border-box;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
   transition:
     border-color var(--transition-normal),
     box-shadow var(--transition-normal);
@@ -188,7 +191,8 @@ const handleCopy = async () => {
   outline: none;
   box-shadow:
     var(--shadow-focus),
-    inset 0 1px 3px rgba(0, 0, 0, 0.03);
+    inset 0 1px 3px rgba(0, 0, 0, 0.03),
+    0 0 0 1px rgba(34, 197, 94, 0.08);
 }
 
 .custom-textarea.is-readonly {

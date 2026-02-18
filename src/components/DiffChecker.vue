@@ -7,13 +7,13 @@
     <BaseCard :title="t('diff.title')">
       <div class="diff-actions">
         <button type="button" class="action-btn" @click="computeDiff">
-          🔍 {{ t('diff.compare') }}
+          <SvgIcon name="search" /> {{ t('diff.compare') }}
         </button>
         <button type="button" class="action-btn secondary" @click="swapInputs">
-          🔄 {{ t('diff.swap') }}
+          <SvgIcon name="arrow-down" /> {{ t('diff.swap') }}
         </button>
         <button type="button" class="action-btn secondary" @click="clearAll">
-          🗑️ {{ t('common.clear') }}
+          <SvgIcon name="trash" /> {{ t('common.clear') }}
         </button>
       </div>
 
@@ -46,6 +46,7 @@ import { useHead } from '@unhead/vue';
 import { diff_match_patch as DiffMatchPatch, type Diff } from 'diff-match-patch';
 import BaseCard from './common/BaseCard.vue';
 import ToolContext from './common/ToolContext.vue';
+import SvgIcon from './icons/SvgIcon.vue';
 
 const { t } = useI18n();
 

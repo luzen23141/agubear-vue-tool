@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Bính âm",
-      "qrcode": "📱 Mã QR"
+      "qrcode": "📱 Mã QR",
+      "hash": "🔐 Hàm băm",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Màu sắc",
+      "diff": "🔍 So sánh"
     },
     "ariaLabels": {
       "timestamp": "Bộ chuyển đổi dấu thời gian",
@@ -14,13 +22,33 @@
       "pinyin": "Bộ chuyển đổi bính âm",
       "qrcode": "Trình tạo mã QR",
       "toolSwitch": "Chuyển công cụ",
-      "languageSwitch": "Đổi ngôn ngữ"
+      "languageSwitch": "Đổi ngôn ngữ",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "title": "Công cụ AguBear",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - Chuyển đổi Dấu thời gian | Băm MD5 | Mã hóa Unicode | Tra cứu Bính âm | Tạo mã QR",
@@ -87,7 +115,41 @@
     "tzTokyo": "Tokyo",
     "tzAustraliaCentral": "Trung Úc",
     "tzSydney": "Sydney",
-    "tzNewZealand": "New Zealand"
+    "tzNewZealand": "New Zealand",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 Trình tạo băm MD5",
@@ -106,18 +168,18 @@
     "deleteAria": "Xóa bản ghi này"
   },
   "unicode": {
-    "title": "🔤 Bộ chuyển đổi Unicode",
-    "skipAscii": "Bỏ qua ký tự chữ số",
+    "title": "🔤 Chuyển đổi Unicode",
+    "skipAscii": "Bỏ qua chữ số",
     "skipAsciiAria": "Bỏ qua ký tự chữ số",
     "fieldText": "Văn bản ｜ Ký tự",
-    "textPlaceholder": "Nhập văn bản, vd: Xin chào thế giới",
+    "textPlaceholder": "Nhập văn bản, ví dụ: Hello World",
     "textAria": "Nhập văn bản để chuyển đổi",
     "toUnicode": "Văn bản → Unicode ▼",
     "toUnicodeAria": "Chuyển văn bản sang Unicode",
     "toText": "Unicode → Văn bản ▲",
     "toTextAria": "Chuyển Unicode sang văn bản",
     "fieldUnicode": "Mã hóa Unicode",
-    "unicodePlaceholder": "Nhập Unicode, vd: \\u0058\\u0069\\u006e",
+    "unicodePlaceholder": "Nhập Unicode, ví dụ: \\u0048\\u0061",
     "unicodeAria": "Mã hóa Unicode",
     "copyEncoding": "📋 Sao chép mã hóa",
     "copyText": "📋 Sao chép văn bản",
@@ -127,10 +189,10 @@
     "deleteAria": "Xóa bản ghi này"
   },
   "pinyin": {
-    "title": "🗣️ Bộ chuyển đổi Bính âm",
-    "showTone": "Hiển thị thanh điệu",
+    "title": "🗣️ Chuyển đổi Bính âm",
+    "showTone": "Hiện thanh điệu",
     "showToneAria": "Hiển thị thanh điệu",
-    "placeholder": "Nhập chữ Hán, vd: 你好世界",
+    "placeholder": "Nhập ký tự tiếng Trung...",
     "inputAria": "Nhập chữ Hán để chuyển đổi",
     "convert": "Chuyển sang Bính âm ▼",
     "convertAria": "Chuyển sang Bính âm",
@@ -140,26 +202,28 @@
     "historyTitle": "📜 Lịch sử chuyển đổi",
     "clear": "Xóa",
     "clearAllAria": "Xóa toàn bộ lịch sử",
-    "deleteAria": "Xóa bản ghi này"
+    "deleteAria": "Xóa bản ghi này",
+    "showSpaces": "Hiện khoảng trắng",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
-    "title": "📱 Trình tạo mã QR",
+    "title": "📱 Tạo mã QR",
     "contentLabel": "Nội dung",
-    "placeholder": "Nhập văn bản hoặc URL...",
+    "placeholder": "Văn bản hoặc URL...",
     "inputAria": "Nhập văn bản hoặc URL để tạo mã QR",
     "size": "Kích thước: {n}px",
     "sizeAria": "Kích thước mã QR",
     "margin": "Lề: {n}",
     "marginAria": "Lề mã QR",
-    "fgColor": "Màu nền trước",
+    "fgColor": "Màu trước",
     "fgColorAria": "Màu nền trước mã QR",
-    "bgColor": "Màu nền sau",
+    "bgColor": "Màu nền",
     "bgColorAria": "Màu nền sau mã QR",
     "errorCorrection": "Sửa lỗi",
     "ecAria": "Mức sửa lỗi {level}",
     "preview": "Xem trước",
     "dragTitle": "Kéo mã QR này đến ứng dụng khác",
-    "downloadPng": "⬇️ Tải PNG",
+    "downloadPng": "⬇️ Tải xuống PNG",
     "downloaded": "✅ Đã tải",
     "downloadAria": "Tải PNG",
     "copyImage": "📋 Sao chép hình ảnh",
@@ -172,5 +236,144 @@
     "clear": "Xóa",
     "clearAllAria": "Xóa toàn bộ lịch sử",
     "deleteAria": "Xóa bản ghi này"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Chuyển đổi Base64",
+    "encode": "Mã hóa",
+    "decode": "Giải mã",
+    "inputLabel": "Nhập văn bản",
+    "base64Label": "Đầu ra Base64",
+    "inputPlaceholder": "Nhập văn bản để mã hóa...",
+    "base64Placeholder": "Nhập Base64 để giải mã..."
+  },
+  "url": {
+    "title": "🔗 Mã hóa URL",
+    "encode": "Mã hóa",
+    "decode": "Giải mã",
+    "inputLabel": "Nhập văn bản",
+    "urlLabel": "Đã mã hóa URL",
+    "inputPlaceholder": "Nhập văn bản...",
+    "urlPlaceholder": "Nhập các thực thể URL..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "Câu hỏi thường gặp (FAQ)"
+  },
+  "json": {
+    "title": "📋 Định dạng JSON",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "Định dạng",
+    "formatAria": "Format JSON",
+    "minify": "Thu nhỏ",
+    "minifyAria": "Minify JSON",
+    "toTs": "Sang Giao diện TS",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "Đầu vào JSON",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "Kết quả",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 Trình gỡ lỗi JWT",
+    "description": "Giải mã và xác minh JSON Web Token.",
+    "inputLabel": "Token JWT",
+    "inputPlaceholder": "Dán Token JWT (eyJ...)",
+    "invalidToken": "Token JWT không hợp lệ",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 Tạo UUID/ULID",
+    "description": "Tạo UUID v4, v7 và ULID.",
+    "typeLabel": "Loại định dạng",
+    "quantityLabel": "Số lượng",
+    "generate": "Tạo",
+    "resultLabel": "Kết quả",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Chuyển đổi màu sắc",
+    "description": "Chuyển đổi giữa HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Kiểm tra khác biệt",
+    "description": "So sánh sự khác biệt văn bản.",
+    "original": "Văn bản gốc",
+    "modified": "Văn bản đã sửa",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

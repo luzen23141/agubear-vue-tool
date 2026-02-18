@@ -1,11 +1,19 @@
 {
   "app": {
     "tabs": {
-      "timestamp": "⏳ طابع زمني",
+      "timestamp": "⏳ الطابع الزمني",
       "md5": "🔐 MD5",
       "unicode": "🔤 يونيكود",
       "pinyin": "🗣️ بينيين",
-      "qrcode": "📱 رمز QR"
+      "qrcode": "📱 رمز QR",
+      "hash": "🔐 التجزئة",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 لون",
+      "diff": "🔍 فرق"
     },
     "ariaLabels": {
       "timestamp": "محوّل الطابع الزمني",
@@ -14,13 +22,33 @@
       "pinyin": "محوّل بينيين",
       "qrcode": "مولّد رمز QR",
       "toolSwitch": "تبديل الأداة",
-      "languageSwitch": "تغيير اللغة"
+      "languageSwitch": "تغيير اللغة",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "اللغة"
+    "language": "اللغة",
+    "title": "أدوات AguBear",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - محوّل الطابع الزمني | تجزئة MD5 | ترميز يونيكود | بحث بينيين | مولّد رمز QR",
@@ -87,7 +115,41 @@
     "tzTokyo": "طوكيو",
     "tzAustraliaCentral": "وسط أستراليا",
     "tzSydney": "سيدني",
-    "tzNewZealand": "نيوزيلندا"
+    "tzNewZealand": "نيوزيلندا",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 مولّد تجزئة MD5",
@@ -106,18 +168,18 @@
     "deleteAria": "حذف هذا السجل"
   },
   "unicode": {
-    "title": "🔤 محوّل يونيكود",
-    "skipAscii": "تخطي الأحرف الأبجدية الرقمية",
+    "title": "🔤 محول يونيكود",
+    "skipAscii": "تخطي الأرقام والحروف",
     "skipAsciiAria": "تخطي الأحرف الأبجدية الرقمية",
     "fieldText": "نص ｜ أحرف",
-    "textPlaceholder": "أدخل نصاً، مثال: مرحبا بالعالم",
+    "textPlaceholder": "أدخل النص...",
     "textAria": "أدخل نصاً للتحويل",
-    "toUnicode": "نص → يونيكود ▼",
+    "toUnicode": "نص ← يونيكود ▼",
     "toUnicodeAria": "تحويل النص إلى يونيكود",
-    "toText": "يونيكود → نص ▲",
+    "toText": "يونيكود ← نص ▲",
     "toTextAria": "تحويل يونيكود إلى نص",
     "fieldUnicode": "ترميز يونيكود",
-    "unicodePlaceholder": "أدخل يونيكود، مثال: \\u0645\\u0631\\u062d\\u0628\\u0627",
+    "unicodePlaceholder": "أدخل يونيكود...",
     "unicodeAria": "ترميز يونيكود",
     "copyEncoding": "📋 نسخ الترميز",
     "copyText": "📋 نسخ النص",
@@ -127,10 +189,10 @@
     "deleteAria": "حذف هذا السجل"
   },
   "pinyin": {
-    "title": "🗣️ محوّل بينيين",
+    "title": "🗣️ محول بينيين",
     "showTone": "إظهار النغمات",
     "showToneAria": "إظهار النغمات",
-    "placeholder": "أدخل أحرف صينية، مثال: 你好世界",
+    "placeholder": "أدخل أحرف صينية...",
     "inputAria": "أدخل أحرف صينية للتحويل",
     "convert": "تحويل إلى بينيين ▼",
     "convertAria": "تحويل إلى بينيين",
@@ -140,22 +202,24 @@
     "historyTitle": "📜 سجل التحويل",
     "clear": "مسح",
     "clearAllAria": "مسح كل السجل",
-    "deleteAria": "حذف هذا السجل"
+    "deleteAria": "حذف هذا السجل",
+    "showSpaces": "إظهار المسافات",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
-    "title": "📱 مولّد رمز QR",
+    "title": "📱 مولد رموز QR",
     "contentLabel": "المحتوى",
-    "placeholder": "أدخل نصاً أو رابط URL...",
+    "placeholder": "نص أو رابط...",
     "inputAria": "أدخل نصاً أو رابط URL لتوليد رمز QR",
     "size": "الحجم: {n}px",
     "sizeAria": "حجم رمز QR",
     "margin": "الهامش: {n}",
     "marginAria": "هامش رمز QR",
-    "fgColor": "لون المقدمة",
+    "fgColor": "لون الأمامية",
     "fgColorAria": "لون مقدمة رمز QR",
     "bgColor": "لون الخلفية",
     "bgColorAria": "لون خلفية رمز QR",
-    "errorCorrection": "تصحيح الأخطاء",
+    "errorCorrection": "تصحيح الخطأ",
     "ecAria": "مستوى تصحيح الأخطاء {level}",
     "preview": "معاينة",
     "dragTitle": "اسحب رمز QR هذا إلى تطبيقات أخرى",
@@ -172,5 +236,144 @@
     "clear": "مسح",
     "clearAllAria": "مسح كل السجل",
     "deleteAria": "حذف هذا السجل"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 محول Base64",
+    "encode": "تشفر",
+    "decode": "فك التشفير",
+    "inputLabel": "إدخال النص",
+    "base64Label": "مخرجات Base64",
+    "inputPlaceholder": "أدخل النص للتشفير...",
+    "base64Placeholder": "أدخل Base64 لفك التشفير..."
+  },
+  "url": {
+    "title": "🔗 مشفر URL",
+    "encode": "تشفير",
+    "decode": "فك التشفير",
+    "inputLabel": "إدخال النص",
+    "urlLabel": "URL مشفر",
+    "inputPlaceholder": "أدخل النص...",
+    "urlPlaceholder": "أدخل رموز URL..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "الأسئلة الشائعة"
+  },
+  "json": {
+    "title": "📋 منسق JSON",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "تنسيق",
+    "formatAria": "Format JSON",
+    "minify": "تصغير",
+    "minifyAria": "Minify JSON",
+    "toTs": "إلى واجهة TS",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "إدخال JSON",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "النتيجة",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 مصحح JWT",
+    "description": "فك تشفير والتحقق من رموز JSON Web.",
+    "inputLabel": "رمز JWT",
+    "inputPlaceholder": "لصق رمز JWT (eyJ...)",
+    "invalidToken": "رمز JWT غير صالح",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 مولد UUID/ULID",
+    "description": "توليد UUID v4, v7 و ULID.",
+    "typeLabel": "نوع التنسيق",
+    "quantityLabel": "الكمية",
+    "generate": "توليد",
+    "resultLabel": "النتيجة",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 محول الألوان",
+    "description": "تحويل بين HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 مدقق الفروقات",
+    "description": "مقارنة الاختلافات النصية.",
+    "original": "النص الأصلي",
+    "modified": "النص المعدل",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

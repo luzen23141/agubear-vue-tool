@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Pinyin",
-      "qrcode": "📱 QR Code"
+      "qrcode": "📱 Código QR",
+      "hash": "🔐 Hashes",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Cor",
+      "diff": "🔍 Diff"
     },
     "ariaLabels": {
       "timestamp": "Conversor de Timestamp",
@@ -14,13 +22,33 @@
       "pinyin": "Conversor de Pinyin",
       "qrcode": "Gerador de QR Code",
       "toolSwitch": "Trocar ferramenta",
-      "languageSwitch": "Trocar idioma"
+      "languageSwitch": "Trocar idioma",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "Idioma"
+    "language": "Idioma",
+    "title": "Ferramentas AguBear",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - Conversor Timestamp | Hash MD5 | Codificação Unicode | Pesquisa Pinyin | Gerador QR Code",
@@ -87,7 +115,41 @@
     "tzTokyo": "Tóquio",
     "tzAustraliaCentral": "Austrália Central",
     "tzSydney": "Sydney",
-    "tzNewZealand": "Nova Zelândia"
+    "tzNewZealand": "Nova Zelândia",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 Gerador de Hash MD5",
@@ -107,30 +169,30 @@
   },
   "unicode": {
     "title": "🔤 Conversor Unicode",
-    "skipAscii": "Ignorar alfanuméricos",
+    "skipAscii": "Pular alfanuméricos",
     "skipAsciiAria": "Ignorar caracteres alfanuméricos",
     "fieldText": "Texto ｜ Caracteres",
-    "textPlaceholder": "Insira texto, ex. Olá Mundo",
+    "textPlaceholder": "Digite texto...",
     "textAria": "Insira texto para converter",
     "toUnicode": "Texto → Unicode ▼",
     "toUnicodeAria": "Converter Texto para Unicode",
     "toText": "Unicode → Texto ▲",
     "toTextAria": "Converter Unicode para Texto",
     "fieldUnicode": "Codificação Unicode",
-    "unicodePlaceholder": "Insira Unicode, ex. \\u004f\\u006c\\u00e1",
+    "unicodePlaceholder": "Digite Unicode...",
     "unicodeAria": "Codificação Unicode",
-    "copyEncoding": "📋 Copiar codificação",
-    "copyText": "📋 Copiar texto",
+    "copyEncoding": "📋 Copiar Codificação",
+    "copyText": "📋 Copiar Texto",
     "historyTitle": "📜 Histórico de conversão",
     "clear": "Limpar",
     "clearAllAria": "Limpar todo o histórico",
     "deleteAria": "Excluir este registro"
   },
   "pinyin": {
-    "title": "🗣️ Conversor de Pinyin",
-    "showTone": "Mostrar tons",
+    "title": "🗣️ Conversor Pinyin",
+    "showTone": "Mostrar Tons",
     "showToneAria": "Mostrar tons",
-    "placeholder": "Insira caracteres chineses, ex. 你好世界",
+    "placeholder": "Digite caracteres chineses...",
     "inputAria": "Insira caracteres chineses para converter",
     "convert": "Converter para Pinyin ▼",
     "convertAria": "Converter para Pinyin",
@@ -140,29 +202,31 @@
     "historyTitle": "📜 Histórico de conversão",
     "clear": "Limpar",
     "clearAllAria": "Limpar todo o histórico",
-    "deleteAria": "Excluir este registro"
+    "deleteAria": "Excluir este registro",
+    "showSpaces": "Mostrar Espaços",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
-    "title": "📱 Gerador de QR Code",
+    "title": "📱 Gerador QR Code",
     "contentLabel": "Conteúdo",
-    "placeholder": "Insira texto ou URL...",
+    "placeholder": "Texto ou URL...",
     "inputAria": "Insira texto ou URL para gerar QR Code",
     "size": "Tamanho: {n}px",
     "sizeAria": "Tamanho do QR Code",
     "margin": "Margem: {n}",
     "marginAria": "Margem do QR Code",
-    "fgColor": "Cor de primeiro plano",
+    "fgColor": "Primeiro plano",
     "fgColorAria": "Cor de primeiro plano do QR",
-    "bgColor": "Cor de fundo",
+    "bgColor": "Fundo",
     "bgColorAria": "Cor de fundo do QR",
-    "errorCorrection": "Correção de erros",
+    "errorCorrection": "Correção de Erro",
     "ecAria": "Nível de correção {level}",
-    "preview": "Pré-visualização",
+    "preview": "Prévia",
     "dragTitle": "Arraste este QR Code para outros apps",
     "downloadPng": "⬇️ Baixar PNG",
     "downloaded": "✅ Baixado",
     "downloadAria": "Baixar PNG",
-    "copyImage": "📋 Copiar imagem",
+    "copyImage": "📋 Copiar Imagem",
     "copied": "✅ Copiado",
     "copyAria": "Copiar para área de transferência",
     "record": "📝 Registrar",
@@ -172,5 +236,144 @@
     "clear": "Limpar",
     "clearAllAria": "Limpar todo o histórico",
     "deleteAria": "Excluir este registro"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Conversor Base64",
+    "encode": "Codificar",
+    "decode": "Decodificar",
+    "inputLabel": "Entrada de Texto",
+    "base64Label": "Saída Base64",
+    "inputPlaceholder": "Digite texto para codificar...",
+    "base64Placeholder": "Digite Base64 para decodificar..."
+  },
+  "url": {
+    "title": "🔗 Codificador URL",
+    "encode": "Codificar",
+    "decode": "Decodificar",
+    "inputLabel": "Entrada de Texto",
+    "urlLabel": "URL Codificada",
+    "inputPlaceholder": "Digite texto...",
+    "urlPlaceholder": "Digite entidades URL..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "Perguntas Frequentes (FAQ)"
+  },
+  "json": {
+    "title": "📋 Formatador JSON",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "Formatar",
+    "formatAria": "Format JSON",
+    "minify": "Minificar",
+    "minifyAria": "Minify JSON",
+    "toTs": "Para Interface TS",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "Entrada JSON",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "Resultado",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 Depurador JWT",
+    "description": "Decodificar e verificar JSON Web Tokens.",
+    "inputLabel": "Token JWT",
+    "inputPlaceholder": "Colar Token JWT (eyJ...)",
+    "invalidToken": "Token JWT Inválido",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 Gerador UUID/ULID",
+    "description": "Gerar UUID v4, v7 e ULID.",
+    "typeLabel": "Tipo de Formato",
+    "quantityLabel": "Quantidade",
+    "generate": "Gerar",
+    "resultLabel": "Resultado",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Conversor de Cor",
+    "description": "Conversão entre HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Verificador de Diferenças",
+    "description": "Comparar diferenças de texto.",
+    "original": "Texto Original",
+    "modified": "Texto Modificado",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

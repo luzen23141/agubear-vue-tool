@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 यूनिकोड",
       "pinyin": "🗣️ पिनयिन",
-      "qrcode": "📱 QR कोड"
+      "qrcode": "📱 QR कोड",
+      "hash": "🔐 हैश",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 रंग",
+      "diff": "🔍 अंतर"
     },
     "ariaLabels": {
       "timestamp": "टाइमस्टैम्प कन्वर्टर",
@@ -14,13 +22,33 @@
       "pinyin": "पिनयिन कन्वर्टर",
       "qrcode": "QR कोड जनरेटर",
       "toolSwitch": "टूल बदलें",
-      "languageSwitch": "भाषा बदलें"
+      "languageSwitch": "भाषा बदलें",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "भाषा"
+    "language": "भाषा",
+    "title": "AguBear टूल्स",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - टाइमस्टैम्प कन्वर्टर | MD5 हैश | यूनिकोड एन्कोडिंग | पिनयिन खोज | QR कोड जनरेटर",
@@ -87,7 +115,41 @@
     "tzTokyo": "टोक्यो",
     "tzAustraliaCentral": "मध्य ऑस्ट्रेलिया",
     "tzSydney": "सिडनी",
-    "tzNewZealand": "न्यूज़ीलैंड"
+    "tzNewZealand": "न्यूज़ीलैंड",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 MD5 हैश जनरेटर",
@@ -107,17 +169,17 @@
   },
   "unicode": {
     "title": "🔤 यूनिकोड कन्वर्टर",
-    "skipAscii": "अक्षरांकीय छोड़ें",
+    "skipAscii": "अल्फान्यूमेरिक छोड़ें",
     "skipAsciiAria": "अक्षरांकीय छोड़ें",
     "fieldText": "टेक्स्ट ｜ अक्षर",
-    "textPlaceholder": "टेक्स्ट दर्ज करें",
+    "textPlaceholder": "टेक्स्ट दर्ज करें, जैसे नमस्ते दुनिया",
     "textAria": "बदलने के लिए टेक्स्ट दर्ज करें",
     "toUnicode": "टेक्स्ट → यूनिकोड ▼",
     "toUnicodeAria": "टेक्स्ट को यूनिकोड में बदलें",
     "toText": "यूनिकोड → टेक्स्ट ▲",
     "toTextAria": "यूनिकोड को टेक्स्ट में बदलें",
     "fieldUnicode": "यूनिकोड एन्कोडिंग",
-    "unicodePlaceholder": "यूनिकोड दर्ज करें",
+    "unicodePlaceholder": "यूनिकोड दर्ज करें, जैसे \\u0928\\u092e",
     "unicodeAria": "यूनिकोड एन्कोडिंग",
     "copyEncoding": "📋 एन्कोडिंग कॉपी करें",
     "copyText": "📋 टेक्स्ट कॉपी करें",
@@ -128,9 +190,9 @@
   },
   "pinyin": {
     "title": "🗣️ पिनयिन कन्वर्टर",
-    "showTone": "स्वर दिखाएं",
+    "showTone": "टोन दिखाएं",
     "showToneAria": "स्वर दिखाएं",
-    "placeholder": "चीनी अक्षर दर्ज करें",
+    "placeholder": "चीनी अक्षर दर्ज करें...",
     "inputAria": "चीनी अक्षर दर्ज करें",
     "convert": "पिनयिन में बदलें ▼",
     "convertAria": "पिनयिन में बदलें",
@@ -140,12 +202,14 @@
     "historyTitle": "📜 इतिहास",
     "clear": "मिटाएं",
     "clearAllAria": "इतिहास मिटाएं",
-    "deleteAria": "रिकॉर्ड हटाएं"
+    "deleteAria": "रिकॉर्ड हटाएं",
+    "showSpaces": "स्पेस दिखाएं",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
     "title": "📱 QR कोड जनरेटर",
     "contentLabel": "सामग्री",
-    "placeholder": "टेक्स्ट या URL दर्ज करें...",
+    "placeholder": "टेक्स्ट या URL...",
     "inputAria": "QR कोड के लिए टेक्स्ट या URL दर्ज करें",
     "size": "आकार: {n}px",
     "sizeAria": "QR आकार",
@@ -159,7 +223,7 @@
     "ecAria": "सुधार स्तर {level}",
     "preview": "पूर्वावलोकन",
     "dragTitle": "QR कोड को अन्य ऐप्स में खींचें",
-    "downloadPng": "⬇️ PNG डाउनलोड",
+    "downloadPng": "⬇️ PNG डाउनलोड करें",
     "downloaded": "✅ डाउनलोड हुआ",
     "downloadAria": "PNG डाउनलोड",
     "copyImage": "📋 छवि कॉपी करें",
@@ -172,5 +236,144 @@
     "clear": "मिटाएं",
     "clearAllAria": "इतिहास मिटाएं",
     "deleteAria": "रिकॉर्ड हटाएं"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Base64 कन्वर्टर",
+    "encode": "एन्कोड",
+    "decode": "डिकोड",
+    "inputLabel": "टेक्स्ट इनपुट",
+    "base64Label": "Base64 आउटपुट",
+    "inputPlaceholder": "एन्कोड करने के लिए टेक्स्ट दर्ज करें...",
+    "base64Placeholder": "डिकोड करने के लिए Base64 दर्ज करें..."
+  },
+  "url": {
+    "title": "🔗 URL एनकोडर",
+    "encode": "एन्कोड",
+    "decode": "डिकोड",
+    "inputLabel": "टेक्स्ट इनपुट",
+    "urlLabel": "URL एन्कोडेड",
+    "inputPlaceholder": "टेक्स्ट दर्ज करें...",
+    "urlPlaceholder": "URL एंटिटी दर्ज करें..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "अक्सर पूछे जाने वाले प्रश्न (FAQ)"
+  },
+  "json": {
+    "title": "📋 JSON फॉर्मेटर",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "फॉर्मेट",
+    "formatAria": "Format JSON",
+    "minify": "मिनिफाई",
+    "minifyAria": "Minify JSON",
+    "toTs": "TS इंटरफ़ेस के लिए",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "JSON इनपुट",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "परिणाम",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT डिबगर",
+    "description": "JSON Web Tokens को डिकोड और सत्यापित करें।",
+    "inputLabel": "JWT टोकन",
+    "inputPlaceholder": "JWT टोकन पेस्ट करें (eyJ...)",
+    "invalidToken": "अमान्य JWT टोकन",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID जनरेटर",
+    "description": "UUID v4, v7 और ULID जनरेट करें।",
+    "typeLabel": "फॉर्मेट प्रकार",
+    "quantityLabel": "मात्रा",
+    "generate": "जनरेट करें",
+    "resultLabel": "परिणाम",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 रंग कन्वर्टर",
+    "description": "HEX, RGB, HSL, CMYK के बीच कनवर्ट करें।",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 अंतर चेकर",
+    "description": "टेक्स्ट अंतर की तुलना करें।",
+    "original": "मूल टेक्स्ट",
+    "modified": "संशोधित टेक्स्ट",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

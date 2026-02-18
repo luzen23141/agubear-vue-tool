@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ ピンイン",
-      "qrcode": "📱 QRコード"
+      "qrcode": "📱 QRコード",
+      "hash": "🔐 ハッシュ",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 カラー",
+      "diff": "🔍 差分比較"
     },
     "ariaLabels": {
       "timestamp": "タイムスタンプ変換ツール",
@@ -14,13 +22,33 @@
       "pinyin": "ピンイン変換ツール",
       "qrcode": "QRコード生成ツール",
       "toolSwitch": "ツール切替",
-      "languageSwitch": "言語切替"
+      "languageSwitch": "言語切替",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "言語"
+    "language": "言語",
+    "title": "AguBear Tools",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - タイムスタンプ変換 | MD5ハッシュ | Unicodeエンコード | ピンイン検索 | QRコード生成",
@@ -87,7 +115,41 @@
     "tzTokyo": "東京",
     "tzAustraliaCentral": "オーストラリア中部",
     "tzSydney": "シドニー",
-    "tzNewZealand": "ニュージーランド"
+    "tzNewZealand": "ニュージーランド",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 MD5 ハッシュ生成",
@@ -106,20 +168,20 @@
     "deleteAria": "この記録を削除"
   },
   "unicode": {
-    "title": "🔤 Unicode 変換器",
-    "skipAscii": "英数字を変換しない",
+    "title": "🔤 Unicode コンバーター",
+    "skipAscii": "英数字をスキップ",
     "skipAsciiAria": "英数字を変換しない",
     "fieldText": "テキスト ｜ 文字",
-    "textPlaceholder": "テキストを入力、例：こんにちは世界",
+    "textPlaceholder": "テキストを入力、例: Hello World",
     "textAria": "変換するテキストを入力",
     "toUnicode": "テキスト → Unicode ▼",
     "toUnicodeAria": "テキストをUnicodeに変換",
     "toText": "Unicode → テキスト ▲",
     "toTextAria": "Unicodeをテキストに変換",
     "fieldUnicode": "Unicode エンコーディング",
-    "unicodePlaceholder": "Unicodeを入力、例：\\u3053\\u3093\\u306b\\u3061\\u306f",
+    "unicodePlaceholder": "Unicode を入力、例: \\u0048\\u0061",
     "unicodeAria": "Unicode エンコーディング",
-    "copyEncoding": "📋 エンコードをコピー",
+    "copyEncoding": "📋 エンコーディングをコピー",
     "copyText": "📋 テキストをコピー",
     "historyTitle": "📜 変換履歴",
     "clear": "クリア",
@@ -127,39 +189,41 @@
     "deleteAria": "この記録を削除"
   },
   "pinyin": {
-    "title": "🗣️ ピンイン変換器",
+    "title": "🗣️ ピンイン コンバーター",
     "showTone": "声調を表示",
     "showToneAria": "声調を表示",
-    "placeholder": "中国語を入力、例：你好世界",
+    "placeholder": "中国語を入力...",
     "inputAria": "変換する中国語を入力",
     "convert": "ピンインに変換 ▼",
     "convertAria": "ピンインに変換",
-    "resultLabel": "ピンイン結果：",
+    "resultLabel": "ピンイン結果:",
     "copyHint": "上の結果をクリックしてコピー",
     "copyTitle": "クリックしてコピー",
     "historyTitle": "📜 変換履歴",
     "clear": "クリア",
     "clearAllAria": "全ての履歴を消去",
-    "deleteAria": "この記録を削除"
+    "deleteAria": "この記録を削除",
+    "showSpaces": "スペースを表示",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
-    "title": "📱 QRコード生成器",
+    "title": "📱 QRコード ジェネレーター",
     "contentLabel": "内容",
-    "placeholder": "テキストまたはURLを入力...",
+    "placeholder": "テキストまたは URL...",
     "inputAria": "QRコードを生成するテキストまたはURLを入力",
-    "size": "サイズ：{n}px",
+    "size": "サイズ: {n}px",
     "sizeAria": "QRコードサイズ",
-    "margin": "余白：{n}",
+    "margin": "マージン: {n}",
     "marginAria": "QRコード余白",
     "fgColor": "前景色",
     "fgColorAria": "QRコード前景色",
     "bgColor": "背景色",
     "bgColorAria": "QRコード背景色",
-    "errorCorrection": "誤り訂正",
+    "errorCorrection": "エラー訂正",
     "ecAria": "誤り訂正レベル {level}",
     "preview": "プレビュー",
     "dragTitle": "このQRコードを他のアプリにドラッグ",
-    "downloadPng": "⬇️ PNG ダウンロード",
+    "downloadPng": "⬇️ PNG をダウンロード",
     "downloaded": "✅ ダウンロード済み",
     "downloadAria": "PNGダウンロード",
     "copyImage": "📋 画像をコピー",
@@ -172,5 +236,144 @@
     "clear": "クリア",
     "clearAllAria": "全ての履歴を消去",
     "deleteAria": "この記録を削除"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Base64 コンバーター",
+    "encode": "エンコード",
+    "decode": "デコード",
+    "inputLabel": "テキスト入力",
+    "base64Label": "Base64 出力",
+    "inputPlaceholder": "エンコードするテキストを入力...",
+    "base64Placeholder": "デコードする Base64 を入力..."
+  },
+  "url": {
+    "title": "🔗 URL エンコーダー",
+    "encode": "エンコード",
+    "decode": "デコード",
+    "inputLabel": "テキスト入力",
+    "urlLabel": "URL エンコード済み",
+    "inputPlaceholder": "テキストを入力...",
+    "urlPlaceholder": "URL エンティティを入力..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "よくある質問 (FAQ)"
+  },
+  "json": {
+    "title": "📋 JSON フォーマッター",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "整形",
+    "formatAria": "Format JSON",
+    "minify": "圧縮",
+    "minifyAria": "Minify JSON",
+    "toTs": "TS インターフェースへ",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "JSON 入力",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "結果",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT デバッガー",
+    "description": "JSON Web Token のデコードと検証。",
+    "inputLabel": "JWT トークン",
+    "inputPlaceholder": "JWT トークンを貼り付け (eyJ...)",
+    "invalidToken": "無効な JWT トークン",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID ジェネレーター",
+    "description": "UUID v4, v7 および ULID を生成。",
+    "typeLabel": "フォーマットタイプ",
+    "quantityLabel": "数量",
+    "generate": "生成",
+    "resultLabel": "結果",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 カラーコンバーター",
+    "description": "HEX, RGB, HSL, CMYK 間の変換。",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 差分チェッカー",
+    "description": "テキストの差分比較。",
+    "original": "元のテキスト",
+    "modified": "変更後のテキスト",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

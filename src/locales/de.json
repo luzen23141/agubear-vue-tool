@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Pinyin",
-      "qrcode": "📱 QR-Code"
+      "qrcode": "📱 QR-Code",
+      "hash": "🔐 Hashes",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Farbe",
+      "diff": "🔍 Vergleich"
     },
     "ariaLabels": {
       "timestamp": "Zeitstempel-Konverter",
@@ -13,14 +21,34 @@
       "unicode": "Unicode-Konverter",
       "pinyin": "Pinyin-Konverter",
       "qrcode": "QR-Code-Generator",
-      "toolSwitch": "Werkzeug wechseln",
-      "languageSwitch": "Sprache wechseln"
+      "toolSwitch": "Tool wechseln",
+      "languageSwitch": "Sprache wechseln",
+      "hash": "Hash-Generator (MD5, SHA)",
+      "base64": "Base64-Konverter",
+      "url": "URL-Encoder/Decoder",
+      "json": "JSON-Formatierer",
+      "uuid": "UUID-Generator",
+      "categorySelect": "Nach Kategorie filtern",
+      "toggleFavorites": "Nur Favoriten anzeigen",
+      "star": "Zu Favoriten hinzufügen",
+      "unstar": "Aus Favoriten entfernen"
     },
     "footer": {
-      "poweredBy": "Powered by 💚 Vue 3 & Vite",
-      "copyright": "© 2026 AguBear Tools. All rights reserved."
+      "poweredBy": "Bereitgestellt von 💚 Vue 3 & Vite",
+      "copyright": "© 2026 AguBear Tools. Alle Rechte vorbehalten."
     },
-    "language": "Sprache"
+    "language": "Sprache",
+    "title": "AguBear Tools",
+    "categories": {
+      "all": "Alle Tools",
+      "conversion": "Konvertierung",
+      "generators": "Generatoren",
+      "formatters": "Formatierer"
+    },
+    "favorites": {
+      "showOnly": "Nur Favoriten",
+      "empty": "Keine Favoriten gefunden. Klicken Sie auf das Sternsymbol, um Tools hinzuzufügen!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - Zeitstempel-Konverter | MD5-Hash | Unicode-Kodierung | Pinyin-Suche | QR-Code-Generator",
@@ -87,7 +115,41 @@
     "tzTokyo": "Tokio",
     "tzAustraliaCentral": "Zentralaustralien",
     "tzSydney": "Sydney",
-    "tzNewZealand": "Neuseeland"
+    "tzNewZealand": "Neuseeland",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "Über Unix-Zeitstempel-Konverter",
+      "content": [
+        "Unix-Zeitstempel ist die Anzahl der Sekunden seit dem 1. Januar 1970 00:00:00 UTC. Es ist ein Standard zur Zeiterfassung in Computersystemen.",
+        "Dieses Tool bietet eine bidirektionale Konvertierung für 10-stellige (Sekunden) und 13-stellige (Millisekunden) Unix-Zeitstempel.",
+        "AguBear Tools unterstützt Datumserkennung und Echtzeitkonvertierung in verschiedene Zeitzonen."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Was ist ein Unix-Zeitstempel?",
+        "a": "Die Anzahl der Sekunden seit dem 1. Januar 1970 UTC."
+      },
+      {
+        "q": "Warum 10 vs 13 Stellen?",
+        "a": "10 Stellen sind Sekunden (Linux/DB), 13 Stellen sind Millisekunden (JS/Java)."
+      },
+      {
+        "q": "Wie konvertiert man?",
+        "a": "Geben Sie einfach den Wert ein, das Tool erkennt das Format automatisch."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 MD5-Hash-Generator",
@@ -106,7 +168,7 @@
     "deleteAria": "Diesen Eintrag löschen"
   },
   "unicode": {
-    "title": "🔤 Unicode-Konverter",
+    "title": "🔤 Unicode Konverter",
     "skipAscii": "Alphanumerische überspringen",
     "skipAsciiAria": "Alphanumerische Zeichen überspringen",
     "fieldText": "Text ｜ Zeichen",
@@ -116,7 +178,7 @@
     "toUnicodeAria": "Text in Unicode konvertieren",
     "toText": "Unicode → Text ▲",
     "toTextAria": "Unicode in Text konvertieren",
-    "fieldUnicode": "Unicode-Kodierung",
+    "fieldUnicode": "Unicode Kodierung",
     "unicodePlaceholder": "Unicode eingeben, z.B. \\u0048\\u0061\\u006c\\u006c\\u006f",
     "unicodeAria": "Unicode-Kodierung",
     "copyEncoding": "📋 Kodierung kopieren",
@@ -127,33 +189,35 @@
     "deleteAria": "Diesen Eintrag löschen"
   },
   "pinyin": {
-    "title": "🗣️ Pinyin-Konverter",
+    "title": "🗣️ Pinyin Konverter",
     "showTone": "Töne anzeigen",
     "showToneAria": "Töne anzeigen",
-    "placeholder": "Chinesische Zeichen eingeben, z.B. 你好世界",
+    "placeholder": "Chinesische Zeichen eingeben...",
     "inputAria": "Chinesische Zeichen zum Konvertieren eingeben",
     "convert": "In Pinyin konvertieren ▼",
     "convertAria": "In Pinyin konvertieren",
-    "resultLabel": "Pinyin-Ergebnis:",
+    "resultLabel": "Pinyin Ergebnis:",
     "copyHint": "Ergebnis anklicken zum Kopieren",
     "copyTitle": "Klicken zum Kopieren",
     "historyTitle": "📜 Konvertierungsverlauf",
     "clear": "Löschen",
     "clearAllAria": "Gesamten Verlauf löschen",
-    "deleteAria": "Diesen Eintrag löschen"
+    "deleteAria": "Diesen Eintrag löschen",
+    "showSpaces": "Leerzeichen anzeigen",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
-    "title": "📱 QR-Code-Generator",
+    "title": "📱 QR-Code Generator",
     "contentLabel": "Inhalt",
-    "placeholder": "Text oder URL eingeben...",
+    "placeholder": "Text oder URL...",
     "inputAria": "Text oder URL für QR-Code eingeben",
     "size": "Größe: {n}px",
     "sizeAria": "QR-Code-Größe",
     "margin": "Rand: {n}",
     "marginAria": "QR-Code-Rand",
-    "fgColor": "Vordergrundfarbe",
+    "fgColor": "Vordergrund",
     "fgColorAria": "QR-Code Vordergrundfarbe",
-    "bgColor": "Hintergrundfarbe",
+    "bgColor": "Hintergrund",
     "bgColorAria": "QR-Code Hintergrundfarbe",
     "errorCorrection": "Fehlerkorrektur",
     "ecAria": "Fehlerkorrekturstufe {level}",
@@ -172,5 +236,144 @@
     "clear": "Löschen",
     "clearAllAria": "Gesamten Verlauf löschen",
     "deleteAria": "Diesen Eintrag löschen"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "Über MD5 und SHA-Hashing",
+      "content": [
+        "Eine Hash-Funktion wandelt Eingabedaten beliebiger Länge in eine Zeichenfolge fester Länge um.",
+        "MD5 erzeugt einen 128-Bit-Hash. Obwohl nicht mehr kryptografisch sicher, wird es oft für Checksummen verwendet.",
+        "Dieses Tool läuft vollständig in Ihrem Browser. Keine Daten werden an einen Server gesendet."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Ist MD5 Verschlüsselung?",
+        "a": "Nein, es ist ein Hash (Einwegfunktion), keine Verschlüsselung (reversibel)."
+      },
+      {
+        "q": "Unterschied SHA-256 vs MD5?",
+        "a": "SHA-256 ist sicherer und hat eine geringere Kollisionswahrscheinlichkeit als MD5."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Base64 Konverter",
+    "encode": "Kodieren",
+    "decode": "Dekodieren",
+    "inputLabel": "Texteingabe",
+    "base64Label": "Base64 Ausgabe",
+    "inputPlaceholder": "Text zum Kodieren eingeben...",
+    "base64Placeholder": "Base64 zum Dekodieren eingeben..."
+  },
+  "url": {
+    "title": "🔗 URL Encoder",
+    "encode": "Kodieren",
+    "decode": "Dekodieren",
+    "inputLabel": "Texteingabe",
+    "urlLabel": "URL-kodiert",
+    "inputPlaceholder": "Text eingeben...",
+    "urlPlaceholder": "URL-Entities eingeben..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "Häufig gestellte Fragen (FAQ)"
+  },
+  "json": {
+    "title": "📋 JSON Formatierer",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "Formatieren",
+    "formatAria": "Format JSON",
+    "minify": "Minimieren",
+    "minifyAria": "Minify JSON",
+    "toTs": "Zu TS Interface",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "JSON Eingabe",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "Ergebnis",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT Debugger",
+    "description": "JSON Web Tokens dekodieren und überprüfen.",
+    "inputLabel": "JWT Token",
+    "inputPlaceholder": "JWT Token einfügen (eyJ...)",
+    "invalidToken": "Ungültiges JWT Token",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID Generator",
+    "description": "UUID v4, v7 und ULID generieren.",
+    "typeLabel": "Format Typ",
+    "quantityLabel": "Anzahl",
+    "generate": "Generieren",
+    "resultLabel": "Ergebnis",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Farbkonverter",
+    "description": "Konvertierung zwischen HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Diff Checker",
+    "description": "Textunterschiede vergleichen.",
+    "original": "Originaltext",
+    "modified": "Geänderter Text",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

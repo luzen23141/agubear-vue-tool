@@ -5,7 +5,15 @@
       "md5": "🔐 MD5",
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ 拼音",
-      "qrcode": "📱 QR Code"
+      "qrcode": "📱 QR Code",
+      "hash": "🔐 哈希",
+      "base64": "🔢 Base64",
+      "url": "🔗 URL",
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 顏色",
+      "diff": "🔍 差異"
     },
     "ariaLabels": {
       "timestamp": "時間戳轉換工具",
@@ -14,13 +22,33 @@
       "pinyin": "拼音轉換工具",
       "qrcode": "QR Code 產生器",
       "toolSwitch": "工具切換",
-      "languageSwitch": "切換語言"
+      "languageSwitch": "切換語言",
+      "hash": "Hash Generator (MD5, SHA)",
+      "base64": "Base64 Converter",
+      "url": "URL Encoder/Decoder",
+      "json": "JSON Formatter",
+      "uuid": "UUID Generator",
+      "categorySelect": "Filter by Category",
+      "toggleFavorites": "Show Only Favorites",
+      "star": "Add to Favorites",
+      "unstar": "Remove from Favorites"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
       "copyright": "© 2026 AguBear Tools. All rights reserved."
     },
-    "language": "語言"
+    "language": "語言",
+    "title": "AguBear 工具",
+    "categories": {
+      "all": "All Tools",
+      "conversion": "Conversion",
+      "generators": "Generators",
+      "formatters": "Formatters"
+    },
+    "favorites": {
+      "showOnly": "Favorites Only",
+      "empty": "No favorites found. Click the star icon to add tools!"
+    }
   },
   "seo": {
     "title": "AguBear Tools - 時間戳轉換 | MD5 雜湊 | Unicode 編碼 | 拼音查詢 | QR Code 產生器",
@@ -87,7 +115,41 @@
     "tzTokyo": "東京",
     "tzAustraliaCentral": "澳洲中部",
     "tzSydney": "雪梨",
-    "tzNewZealand": "紐西蘭"
+    "tzNewZealand": "紐西蘭",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "context": {
+      "title": "About Unix Timestamp Converter",
+      "content": [
+        "Unix Timestamp is the count of seconds that have elapsed since January 1, 1970 00:00:00 UTC. It is a standard for tracking time in computer systems and is widely used in operating systems, databases, and web development.",
+        "This tool provides two-way conversion for 10-digit (seconds) and 13-digit (milliseconds) Unix Timestamps, suitable for backend API integration and data verification. 10-digit is common in PHP/MySQL; 13-digit is common in JavaScript/Java.",
+        "AguBear Tools supports date detection and real-time conversion to various timezones, helping developers debug quickly."
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is a Unix Timestamp?",
+        "a": "A Unix Timestamp is the total seconds elapsed since January 1, 1970 00:00:00 UTC. It is a timezone-independent way to represent time."
+      },
+      {
+        "q": "Why are there 10-digit and 13-digit timestamps?",
+        "a": "10-digit timestamps represent 'seconds', common in Linux systems and databases; 13-digit timestamps represent 'milliseconds', common in JavaScript and high-precision timing applications."
+      },
+      {
+        "q": "How to convert timestamp to date?",
+        "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
+      }
+    ]
   },
   "md5": {
     "title": "🔐 MD5 雜湊產生器",
@@ -107,17 +169,17 @@
   },
   "unicode": {
     "title": "🔤 Unicode 轉換器",
-    "skipAscii": "唔轉換字母數字",
+    "skipAscii": "跳過字母數字",
     "skipAsciiAria": "唔轉換字母數字",
-    "fieldText": "中文 ｜ 字元",
-    "textPlaceholder": "輸入文字，例如：你好世界",
+    "fieldText": "文字 ｜ 字符",
+    "textPlaceholder": "輸入文字，例如 Hello World",
     "textAria": "輸入要轉換嘅文字",
     "toUnicode": "文字 → Unicode ▼",
     "toUnicodeAria": "文字轉 Unicode",
     "toText": "Unicode → 文字 ▲",
     "toTextAria": "Unicode 轉文字",
     "fieldUnicode": "Unicode 編碼",
-    "unicodePlaceholder": "輸入 Unicode，例如：\\u4f60\\u597d",
+    "unicodePlaceholder": "輸入 Unicode，例如 \\u0048\\u0061",
     "unicodeAria": "Unicode 編碼",
     "copyEncoding": "📋 複製編碼",
     "copyText": "📋 複製文字",
@@ -130,9 +192,9 @@
     "title": "🗣️ 拼音轉換器",
     "showTone": "顯示聲調",
     "showToneAria": "顯示聲調",
-    "placeholder": "輸入中文字，例如：你好世界",
+    "placeholder": "輸入中文字苻...",
     "inputAria": "輸入要轉換嘅中文字",
-    "convert": "轉換拼音 ▼",
+    "convert": "轉換為拼音 ▼",
     "convertAria": "轉換做拼音",
     "resultLabel": "拼音結果：",
     "copyHint": "撳上面結果可以複製",
@@ -140,12 +202,14 @@
     "historyTitle": "📜 轉換紀錄",
     "clear": "清除",
     "clearAllAria": "清除全部紀錄",
-    "deleteAria": "刪除呢條紀錄"
+    "deleteAria": "刪除呢條紀錄",
+    "showSpaces": "顯示空格",
+    "showSpacesAria": "Show Spaces"
   },
   "qrcode": {
     "title": "📱 QR Code 產生器",
     "contentLabel": "內容",
-    "placeholder": "輸入文字或網址...",
+    "placeholder": "文字或網址...",
     "inputAria": "輸入要產生 QR Code 嘅文字或網址",
     "size": "尺寸：{n}px",
     "sizeAria": "QR Code 尺寸",
@@ -155,7 +219,7 @@
     "fgColorAria": "QR Code 前景色",
     "bgColor": "背景色",
     "bgColorAria": "QR Code 背景色",
-    "errorCorrection": "錯誤校正",
+    "errorCorrection": "容錯率",
     "ecAria": "錯誤校正等級 {level}",
     "preview": "預覽",
     "dragTitle": "可以拖呢個 QR Code 去其他應用",
@@ -172,5 +236,144 @@
     "clear": "清除",
     "clearAllAria": "清除全部紀錄",
     "deleteAria": "刪除呢條紀錄"
+  },
+  "hash": {
+    "title": "🔐 Hash Generator",
+    "algorithm": "Algorithm",
+    "uppercase": "Uppercase Output",
+    "uppercaseAria": "Toggle Uppercase Output",
+    "inputLabel": "Content",
+    "inputAria": "Enter content to hash",
+    "placeholder": "Enter text...",
+    "record": "📝 Record",
+    "recordAria": "Record this hash result",
+    "resultLabel": "Hash Result:",
+    "copyHint": "Click hash above to copy",
+    "copyTitle": "Click to copy",
+    "historyTitle": "📜 Hash History",
+    "clear": "Clear",
+    "clearAllAria": "Clear All History",
+    "deleteAria": "Delete This Record",
+    "pasteTitle": "Paste from Clipboard",
+    "context": {
+      "title": "About MD5 and SHA Hashing",
+      "content": [
+        "A Hash Function is an algorithm that converts input data of any length into a fixed-length string. Common algorithms include MD5, SHA-1, SHA-256, etc. They are widely used for password storage, file integrity verification, and digital signatures.",
+        "MD5 (Message-Digest Algorithm 5) produces a 128-bit (16-byte) hash value, typically expressed as a 32-digit hexadecimal number. Although MD5 is no longer considered cryptographically secure, it is still commonly used for checksum verification.",
+        "This tool runs entirely in your browser. Your data is not sent to any server, ensuring privacy and security."
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is MD5 encryption?",
+        "a": "No, MD5 is a 'hash', not encryption. Encryption is usually reversible (can be decrypted), whereas hashing is one-way and cannot be reversed to the original data."
+      },
+      {
+        "q": "What is the difference between SHA-256 and MD5?",
+        "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
+      }
+    ]
+  },
+  "base64": {
+    "title": "🔢 Base64 轉換器",
+    "encode": "編碼",
+    "decode": "解碼",
+    "inputLabel": "文字輸入",
+    "base64Label": "Base64 輸出",
+    "inputPlaceholder": "輸入文字進行編碼...",
+    "base64Placeholder": "輸入 Base64 進行解碼..."
+  },
+  "url": {
+    "title": "🔗 URL 編碼器",
+    "encode": "編碼",
+    "decode": "解碼",
+    "inputLabel": "文字輸入",
+    "urlLabel": "URL 編碼結果",
+    "inputPlaceholder": "輸入文字...",
+    "urlPlaceholder": "輸入 URL 實體..."
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "record": "Record",
+    "clear": "Clear",
+    "history": "History",
+    "faqTitle": "常見問題 (FAQ)"
+  },
+  "json": {
+    "title": "📋 JSON 格式化",
+    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
+    "format": "格式化",
+    "formatAria": "Format JSON",
+    "minify": "壓縮",
+    "minifyAria": "Minify JSON",
+    "toTs": "轉 TS 介面",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
+    "optionUnescape": "Unescape",
+    "optionUnicode": "Decode Unicode",
+    "inputLabel": "JSON 輸入",
+    "inputPlaceholder": "Paste JSON here...",
+    "outputLabel": "結果",
+    "outputPlaceholder": "Result will appear here...",
+    "clear": "Clear",
+    "copy": "Copy",
+    "copied": "Copied",
+    "error": "Error",
+    "line": "Line",
+    "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT 調試器",
+    "description": "解碼並驗證 JSON Web Token。",
+    "inputLabel": "JWT Token",
+    "inputPlaceholder": "貼上 JWT Token (eyJ...)",
+    "invalidToken": "無效的 JWT Token",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID 產生器",
+    "description": "產生 UUID v4, v7 和 ULID。",
+    "typeLabel": "格式類型",
+    "quantityLabel": "數量",
+    "generate": "產生",
+    "resultLabel": "結果",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 顏色轉換器",
+    "description": "HEX, RGB, HSL, CMYK 之間轉換。",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 差異比對",
+    "description": "比對文字差異。",
+    "original": "原始文字",
+    "modified": "修改後文字",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

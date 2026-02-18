@@ -41,7 +41,7 @@
       />
 
       <!-- Arrow Indicator -->
-      <div class="direction-arrow">⬇</div>
+      <div class="direction-arrow"><SvgIcon name="arrow-down" size="1.2rem" /></div>
 
       <!-- Output Area -->
       <InputWithCopy
@@ -76,6 +76,7 @@ import { useI18n } from 'vue-i18n';
 import BaseCard from './BaseCard.vue';
 import HistoryList from './HistoryList.vue';
 import InputWithCopy from './InputWithCopy.vue';
+import SvgIcon from '../icons/SvgIcon.vue';
 
 interface HistoryItem {
   id: number;

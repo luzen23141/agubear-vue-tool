@@ -61,7 +61,7 @@
                 type="button"
                 @click="pasteInput"
               >
-                📋 {{ t('common.paste') }}
+                <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
               </button>
               <button class="clear-btn" type="button" @click="handleClear">
                 {{ t('json.clear') }}
@@ -77,7 +77,7 @@
           />
           <!-- Error Display -->
           <div v-if="error" class="error-message">
-            <span class="error-icon">⚠️</span>
+            <span class="error-icon"><SvgIcon name="alert-triangle" size="0.9rem" /></span>
             <span class="error-text">
               {{ t('json.error') }}: {{ error.message }} ({{ t('json.line') }} {{ error.line }},
               {{ t('json.column') }} {{ error.column }})
@@ -114,6 +114,7 @@ import { useHead } from '@unhead/vue';
 import JsonToTS from 'json-to-ts';
 import BaseCard from './common/BaseCard.vue';
 import { formatJson, validateJson, type JsonError } from '../utils/jsonUtils';
+import SvgIcon from './icons/SvgIcon.vue';
 
 type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
 const showToast = inject('showToast', (() => {}) as ToastFunction);

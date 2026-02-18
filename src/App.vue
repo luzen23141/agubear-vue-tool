@@ -2,7 +2,9 @@
   <div class="app-container" @click="closeLangMenu">
     <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title"><span class="title-icon">🐻</span> AguBear Tools</h1>
+      <h1 class="app-title">
+        <span class="title-icon"><SvgIcon name="bear" size="1.4rem" /></span> AguBear Tools
+      </h1>
       <div class="header-actions">
         <button
           :title="t('app.theme_' + theme)"
@@ -11,9 +13,9 @@
           class="theme-toggle"
           @click="toggleTheme"
         >
-          <span v-if="theme === 'light'">☀️</span>
-          <span v-else-if="theme === 'dark'">🌙</span>
-          <span v-else>🖥️</span>
+          <SvgIcon v-if="theme === 'light'" name="sun" />
+          <SvgIcon v-else-if="theme === 'dark'" name="moon" />
+          <SvgIcon v-else name="monitor" />
         </button>
 
         <div class="lang-switcher" @click.stop>
@@ -75,7 +77,7 @@
             class="filter-btn fav-toggle-btn"
             @click="showFavoritesOnly = !showFavoritesOnly"
           >
-            <span class="star-icon">{{ showFavoritesOnly ? '★' : '☆' }}</span>
+            <SvgIcon :name="showFavoritesOnly ? 'star' : 'star-off'" size="0.85rem" />
             <span>{{ t('app.favorites.showOnly') }}</span>
           </button>
         </div>
@@ -105,7 +107,7 @@
               class="star-action-btn"
               @click.stop="toggleFavorite(tool.id)"
             >
-              {{ favorites.includes(tool.id) ? '★' : '☆' }}
+              <SvgIcon :name="favorites.includes(tool.id) ? 'star' : 'star-off'" size="0.85rem" />
             </button>
           </div>
 
@@ -146,8 +148,9 @@ import { SUPPORTED_LOCALES, type LocaleInfo } from './i18n';
 import { useTheme } from './composables/useTheme';
 
 // Components are loaded via router, manual imports removed for performance.
-import Toast from './components/common/Toast.vue'; // Import Toast container
-import CommandPalette from './components/common/CommandPalette.vue'; // Import Command Palette
+import Toast from './components/common/Toast.vue';
+import CommandPalette from './components/common/CommandPalette.vue';
+import SvgIcon from './components/icons/SvgIcon.vue';
 
 // Global Toast logic
 const toastRef = ref<InstanceType<typeof Toast> | null>(null);
@@ -431,20 +434,36 @@ const closeLangMenu = () => {
   justify-content: space-between;
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;
-  border-bottom: 2px solid transparent;
-  border-image: var(--gradient-accent) 1;
+  border-bottom: none;
   position: relative;
 }
 
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  border-radius: 1px;
+  opacity: 0.6;
+}
+
 .app-title {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--primary);
+  background: var(--gradient-accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 0;
   letter-spacing: -0.03em;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .title-icon {
@@ -452,10 +471,22 @@ const closeLangMenu = () => {
   font-size: 1.4rem;
   transition: transform var(--transition-spring);
   cursor: default;
+  -webkit-text-fill-color: initial;
 }
 
 .title-icon:hover {
-  transform: rotate(-15deg) scale(1.15);
+  transform: rotate(-15deg) scale(1.2);
+  animation: titleBounce 0.5s ease;
+}
+
+@keyframes titleBounce {
+  0%,
+  100% {
+    transform: rotate(-15deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.3);
+  }
 }
 
 .header-actions {
@@ -469,22 +500,24 @@ const closeLangMenu = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all var(--transition-normal);
+  color: var(--text-secondary);
 }
 
 .theme-toggle:hover {
   background: var(--primary-soft);
   border-color: var(--primary);
-  box-shadow: var(--shadow-glow);
-  transform: scale(1.08);
+  box-shadow: var(--shadow-glow-strong);
+  transform: scale(1.1) rotate(15deg);
+  color: var(--primary);
 }
 
 /* ── Language Switcher ── */
@@ -599,7 +632,7 @@ const closeLangMenu = () => {
 .lang-menu-enter-from,
 .lang-menu-leave-to {
   opacity: 0;
-  transform: translateY(-6px) scale(0.96);
+  transform: translateY(-8px) scale(0.95);
 }
 
 /* ── Filters & Navigation ── */
@@ -682,13 +715,15 @@ const closeLangMenu = () => {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
-  padding: 8px;
-  background: var(--gradient-subtle);
+  padding: 10px;
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  min-height: 50px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--glass-border-shine);
+  border-radius: var(--radius-xl);
+  min-height: 52px;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--shadow-elevated);
 }
 
 .tab-list-container {
@@ -707,9 +742,9 @@ const closeLangMenu = () => {
 .tab-btn {
   padding: 10px 32px 10px 16px;
   background: transparent;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
   transition: all var(--transition-normal);
@@ -718,7 +753,7 @@ const closeLangMenu = () => {
 }
 
 .tab-btn:hover {
-  background: var(--primary-glow);
+  background: var(--primary-soft);
   color: var(--primary);
   transform: scale(1.02);
 }
@@ -727,8 +762,9 @@ const closeLangMenu = () => {
   background: var(--gradient-primary);
   color: white;
   font-weight: 600;
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-glow-strong);
   transform: scale(1);
+  border-color: transparent;
 }
 
 /* Star Action on Tab */
@@ -790,9 +826,11 @@ const closeLangMenu = () => {
 }
 
 .footer-divider {
-  height: 1px;
+  height: 2px;
   background: var(--gradient-accent);
-  opacity: 0.3;
+  background-size: 200% 100%;
+  animation: shimmer 6s ease-in-out infinite;
+  opacity: 0.25;
   margin-bottom: 1rem;
   border-radius: 1px;
 }

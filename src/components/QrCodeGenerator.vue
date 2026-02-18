@@ -41,7 +41,7 @@
             class="paste-btn"
             @click="pasteInput"
           >
-            📋 {{ t('common.paste') }}
+            <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
           </button>
         </div>
         <textarea
@@ -77,7 +77,7 @@
             class="icon-toggle"
             @click="wifi.hiddenPassword = !wifi.hiddenPassword"
           >
-            {{ wifi.hiddenPassword ? '👁️' : '🔒' }}
+            <SvgIcon :name="wifi.hiddenPassword ? 'eye' : 'eye-off'" size="0.9rem" />
           </button>
         </div>
         <div class="form-row">
@@ -284,6 +284,7 @@ import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import { useHistory } from '../composables/useHistory';
+import SvgIcon from './icons/SvgIcon.vue';
 
 const { t } = useI18n();
 

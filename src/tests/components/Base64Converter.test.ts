@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import Base64Converter from '../../components/Base64Converter.vue';
 import { setupI18n } from '../../i18n';
@@ -39,6 +39,11 @@ Object.assign(navigator, {
 
 describe('Base64Converter.vue', () => {
   let wrapper: any;
+  // Pre-warm the dynamic import('crypto-js') used by toBase64/fromBase64
+  // so that flushPromises can resolve the async conversion in tests
+  beforeAll(async () => {
+    await import('crypto-js');
+  });
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
     historyMocks.history = [];
@@ -68,12 +73,9 @@ describe('Base64Converter.vue', () => {
 
   describe('功能: 編碼', () => {
     it('輸入文字應自動編碼為 Base64', async () => {
-      await wrapper.find('input[value="encode"]').setValue();
       await wrapper.find('#base64-input').setValue('hello');
       await wrapper.vm.$nextTick();
-      await new Promise((resolve) => {
-        setTimeout(resolve, 100);
-      }); // Wait for chunks
+      await flushPromises();
 
       expect(wrapper.find('#base64-output').element.value).toBe('aGVsbG8=');
     });

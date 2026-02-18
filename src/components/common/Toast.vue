@@ -1,7 +1,7 @@
 <template>
   <Transition name="toast">
     <div v-if="visible" :class="type" class="toast">
-      <span class="toast-icon">{{ icon }}</span>
+      <span class="toast-icon"><SvgIcon :name="icon" size="1.1rem" /></span>
       <span class="toast-message">{{ message }}</span>
     </div>
   </Transition>
@@ -9,11 +9,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import SvgIcon from '../icons/SvgIcon.vue';
 
 const visible = ref(false);
 const message = ref('');
 const type = ref<'success' | 'error' | 'info'>('info');
-const icon = ref('ℹ️');
+const icon = ref('info');
 
 let timer: number | null = null;
 
@@ -23,13 +24,13 @@ const show = (msg: string, toastType: 'success' | 'error' | 'info' = 'info', dur
 
   switch (toastType) {
     case 'success':
-      icon.value = '✅';
+      icon.value = 'check-circle';
       break;
     case 'error':
-      icon.value = '❌';
+      icon.value = 'x-circle';
       break;
     default:
-      icon.value = 'ℹ️';
+      icon.value = 'info';
   }
 
   visible.value = true;

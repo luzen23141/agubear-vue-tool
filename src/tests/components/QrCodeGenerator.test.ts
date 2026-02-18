@@ -89,7 +89,7 @@ describe('QrCodeGenerator.vue', () => {
 
   describe('渲染', () => {
     it('應正確渲染標題', () => {
-      expect(wrapper.find('h2').text()).toBe('📱 QR Code 產生器');
+      expect(wrapper.find('h2').text()).toContain('QR Code 產生器');
     });
 
     it('應渲染文字輸入框', () => {

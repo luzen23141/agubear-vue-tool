@@ -19,7 +19,9 @@
             <label>HEX</label>
             <div class="input-wrapper">
               <input v-model="hexInput" type="text" placeholder="#000000" @input="updateFromHex" />
-              <button type="button" class="copy-btn" @click="copy(hexInput)">📋</button>
+              <button type="button" class="copy-btn" @click="copy(hexInput)">
+                <SvgIcon name="copy" />
+              </button>
             </div>
           </div>
 
@@ -33,7 +35,9 @@
                 placeholder="rgb(0, 0, 0)"
                 @input="updateFromRgb"
               />
-              <button type="button" class="copy-btn" @click="copy(rgbInput)">📋</button>
+              <button type="button" class="copy-btn" @click="copy(rgbInput)">
+                <SvgIcon name="copy" />
+              </button>
             </div>
           </div>
 
@@ -47,7 +51,9 @@
                 placeholder="hsl(0, 0%, 0%)"
                 @input="updateFromHsl"
               />
-              <button type="button" class="copy-btn" @click="copy(hslInput)">📋</button>
+              <button type="button" class="copy-btn" @click="copy(hslInput)">
+                <SvgIcon name="copy" />
+              </button>
             </div>
           </div>
 
@@ -61,7 +67,9 @@
                 placeholder="cmyk(0%, 0%, 0%, 100%)"
                 @input="updateFromCmyk"
               />
-              <button type="button" class="copy-btn" @click="copy(cmykInput)">📋</button>
+              <button type="button" class="copy-btn" @click="copy(cmykInput)">
+                <SvgIcon name="copy" />
+              </button>
             </div>
           </div>
         </div>
@@ -81,6 +89,7 @@ import cmykPlugin from 'colord/plugins/cmyk';
 import namesPlugin from 'colord/plugins/names';
 import BaseCard from './common/BaseCard.vue';
 import ToolContext from './common/ToolContext.vue';
+import SvgIcon from './icons/SvgIcon.vue';
 
 // Extend colord
 extend([cmykPlugin, namesPlugin]);

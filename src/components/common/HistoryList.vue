@@ -67,9 +67,10 @@ const { t } = useI18n();
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-border-shine);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-elevated);
   position: relative;
   overflow: hidden;
 }
@@ -82,7 +83,8 @@ const { t } = useI18n();
   right: 0;
   height: 2px;
   background: var(--gradient-accent);
-  opacity: 0.4;
+  background-size: 200% 100%;
+  opacity: 0.5;
 }
 
 .history-header {
@@ -107,16 +109,17 @@ const { t } = useI18n();
   background: transparent;
   color: #e53e3e;
   border: 1px solid rgba(229, 62, 62, 0.2);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition: all var(--transition-normal);
 }
 
 .clear-btn:hover {
-  background: #e53e3e;
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
   color: white;
-  border-color: #e53e3e;
-  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.2);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(229, 62, 62, 0.25);
+  transform: scale(1.04);
 }
 
 .history-list {
@@ -148,11 +151,13 @@ const { t } = useI18n();
   animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
   position: relative;
+  border-left: 2px solid transparent;
 }
 
 .history-item:hover {
   background: var(--primary-glow);
   transform: translateX(2px);
+  border-left-color: var(--primary);
 }
 
 .timeline-dot {
@@ -161,7 +166,8 @@ const { t } = useI18n();
   border-radius: 50%;
   background: var(--primary);
   flex-shrink: 0;
-  opacity: 0.6;
+  opacity: 0.8;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
 }
 
 .history-body {
@@ -210,16 +216,17 @@ const { t } = useI18n();
   color: var(--text-muted);
   border: none;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: var(--radius-pill);
   transition: all var(--transition-normal);
   opacity: 0.5;
   flex-shrink: 0;
 }
 
 .delete-btn:hover {
-  background: #e53e3e;
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
   color: white;
   opacity: 1;
+  transform: scale(1.1);
 }
 
 @media (max-width: 500px) {
