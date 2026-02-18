@@ -688,4 +688,72 @@ const closeLangMenu = () => {
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
+
+/* ── Mobile Optimization (Thumb Zone) ── */
+@media (max-width: 768px) {
+  .app-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom)); /* Space for bottom nav */
+  }
+
+  .app-header {
+    margin-bottom: 1rem;
+  }
+
+  /* Filters remain at top but compacted */
+  .filters-bar {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px; /* Scrollbar space */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+  }
+  .filters-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Move Tabs to Bottom */
+  .tab-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    background: var(--surface-overlay);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
+
+    /* Horizontal Scroll */
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .tab-list-container {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .tab-item-wrapper {
+    flex-shrink: 0;
+  }
+
+  .tab-btn {
+    padding: 8px 28px 8px 14px; /* Slightly smaller padding */
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  /* Stack tool content */
+  .tool-container {
+    width: 100%;
+  }
+}
 </style>
+```

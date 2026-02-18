@@ -20,4 +20,12 @@ test.describe('AguBear Tools E2E', () => {
     await hashTab.click();
     await expect(hashTab).toHaveClass(/active/);
   });
+
+  test('視覺回歸測試：手機版面配置', async ({ page }: { page: Page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/');
+    await expect(page).toHaveScreenshot('mobile-layout.png', {
+      maxDiffPixelRatio: 0.1
+    });
+  });
 });

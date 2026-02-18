@@ -92,7 +92,7 @@ npm run verify-deploy
 
 ---
 
-### 6. 質感通知推送 (Refined Notification)
+### 6.優雅通知推送 (Refined Notification)
 
 通知內容應包含 Markdown 表格或 Emoji 區塊。
 

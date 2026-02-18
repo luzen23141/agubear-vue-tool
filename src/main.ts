@@ -2,7 +2,8 @@ import { ViteSSG } from 'vite-ssg';
 import { createUnhead } from '@unhead/vue';
 import App from './App.vue';
 import { routes } from './router';
-import { setupI18n, SUPPORTED_LOCALES } from './i18n';
+import { setupRouterGuard } from './router/guard';
+import { setupI18n } from './i18n';
 import './style.css';
 
 // Performance: Mark app creation start
@@ -14,41 +15,16 @@ export const createApp = ViteSSG(
   ({ app, router, isClient }) => {
     const head = createUnhead();
     const i18n = setupI18n(); // Create fresh instance
+    // @ts-expect-error: Unhead plugin type mismatch
     app.use(head);
     app.use(i18n);
 
-    // Router Guard for Locale
-    router.beforeEach((to, _from, next) => {
-      const lang = to.params.lang as string;
-      // console.log(`[DEBUG] Navigating to: ${to.fullPath}, param lang: ${lang}`);
-
-      const localeCode = SUPPORTED_LOCALES.find((l) => l.code === lang)?.code;
-
-      if (lang && !localeCode && to.path !== '/') {
-        // Invalid lang param found, redirect.
-        return next({ path: `/zh-TW/timestamp`, replace: true });
-      }
-
-      if (localeCode) {
-        // console.log(`[DEBUG] Found locale: ${localeCode}`);
-        if (i18n.global.locale.value !== localeCode) {
-          // console.log(`[DEBUG] Switching to ${localeCode}`);
-          i18n.global.locale.value = localeCode;
-        }
-        if (isClient) {
-          localStorage.setItem('agubear-locale', localeCode);
-          document.documentElement.lang = localeCode;
-        }
-      }
-      next();
-    });
+    // Setup Router Guard
+    setupRouterGuard(router);
 
     // Global Error Handler
     app.config.errorHandler = (err, _instance, info) => {
-      // eslint-disable-next-line no-console
-      console.error('Global Vue Error:', err);
-      // eslint-disable-next-line no-console
-      console.error('Info:', info);
+      console.error('Global Error:', err, info);
     };
 
     if (isClient) {
