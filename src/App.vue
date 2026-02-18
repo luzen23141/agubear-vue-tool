@@ -713,7 +713,8 @@ const closeLangMenu = () => {
 /* ── Tab Navigation ── */
 .tab-nav {
   display: flex;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
   flex-wrap: wrap;
   padding: 10px;
   background: var(--glass-bg);
@@ -724,6 +725,28 @@ const closeLangMenu = () => {
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: var(--shadow-elevated);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 640px) {
+  .tab-nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .tab-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
 }
 
 .tab-list-container {
