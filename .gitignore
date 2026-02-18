@@ -61,3 +61,6 @@ test-results/
 
 # Artifacts
 artifacts/
+
+# Generated Version File
+public/version.json
