@@ -239,6 +239,7 @@ body {
   display: block;
   min-width: 320px;
   min-height: 100vh;
+  /* Use the updated off-white/surface background */
   background-color: var(--surface-bg);
   color: var(--text-primary);
   transition:
@@ -254,10 +255,12 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
+  /* Updated to use the new Pastel/Macaron palette variables */
   background:
-    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(122, 160, 179, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 85% 75%, rgba(166, 210, 218, 0.1) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(222, 124, 140, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 10% 20%, var(--primary-soft) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 85% 75%, rgba(166, 210, 218, 0.15) 0%, transparent 55%),
+    /* Secondary Light Blue */
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(222, 124, 140, 0.08) 0%, transparent 50%); /* Accent Rose */
   background-size: 200% 200%;
   animation: gradientShift 20s ease-in-out infinite;
   pointer-events: none;

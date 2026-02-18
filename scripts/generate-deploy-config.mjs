@@ -79,15 +79,40 @@ const xhtmlLinks = LOCALES.map(
   .join('\n');
 
 // Each locale gets its own <url> entry (Google multi-language sitemap best practice)
-const urlEntries = LOCALES.map(
-  (code) => `  <url>
+// Define tools list - keep in sync with vite.config.ts
+const TOOLS = ['timestamp', 'hash', 'base64', 'url', 'unicode', 'pinyin', 'qrcode', 'json'];
+
+// Generate URLs for all tools across all locales
+const urlEntries = LOCALES.flatMap((code) => {
+  // 1. Root for locale
+  const rootEntry = `  <url>
     <loc>${SITE_URL}/?lang=${code}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    ${xhtmlLinks}
+  </url>`;
+
+  // 2. Tool pages for locale
+  const toolEntries = TOOLS.map(tool => {
+    // Generate alternates for this specific tool
+    const toolAlternates = LOCALES.map(
+      (c) => `    <xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}/${c}/${tool}"/>`
+    )
+    .concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en/${tool}"/>`])
+    .join('\n');
+
+    return `  <url>
+    <loc>${SITE_URL}/${code}/${tool}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-${xhtmlLinks}
-  </url>`
-).join('\n');
+${toolAlternates}
+  </url>`;
+  });
+
+  return [rootEntry, ...toolEntries];
+}).join('\n');
 
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
