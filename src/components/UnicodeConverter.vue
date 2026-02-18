@@ -118,14 +118,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import { textToUnicode, unicodeToText, textToHtmlEntity, htmlEntityToText } from '../utils/unicode';
 import { useHistory } from '../composables/useHistory';
 
 const { t } = useI18n();
+
+useHead({
+  title: computed(() => `${t('app.tabs.unicode')} - ${t('app.title')}`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('seo.description'))
+    }
+  ]
+});
 
 const { history, addToHistory, clearHistory, removeFromHistory } = useHistory();
 

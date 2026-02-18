@@ -18,6 +18,8 @@
       :placeholder="placeholder"
       :readonly="readonly"
       :maxlength="maxlength"
+      :inputmode="inputmode"
+      :spellcheck="spellcheck"
       :class="{ 'is-readonly': readonly }"
       class="custom-textarea"
       @input="handleInput"
@@ -34,19 +36,31 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const props = defineProps<{
-  id: string;
-  modelValue: string;
-  label?: string;
-  placeholder?: string;
-  readonly?: boolean;
-  allowPaste?: boolean;
-  allowCopy?: boolean;
-  maxlength?: number | string;
-}>();
+type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
+
+const props = withDefaults(
+  defineProps<{
+    id: string;
+    modelValue: string;
+    label?: string;
+    placeholder?: string;
+    readonly?: boolean;
+    allowPaste?: boolean;
+    allowCopy?: boolean;
+    maxlength?: number | string;
+    inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+    spellcheck?: boolean;
+  }>(),
+  {
+    label: '',
+    placeholder: '',
+    maxlength: undefined,
+    inputmode: 'text'
+  }
+);
 
 const emit = defineEmits<{
   (_e: 'update:modelValue', _value: string): void;
@@ -54,6 +68,7 @@ const emit = defineEmits<{
   (_e: 'copy', _value: string): void;
 }>();
 
+const showToast = inject('showToast', (() => {}) as ToastFunction);
 const { t } = useI18n();
 
 const canPaste = ref(false);
@@ -75,9 +90,11 @@ const handlePaste = async () => {
     if (text) {
       emit('update:modelValue', text);
       emit('paste', text);
+      // Optional: showToast(t('common.pasted'), 'info');
     }
   } catch (err) {
     console.warn('Clipboard read failed:', err);
+    showToast('Failed to paste', 'error');
   }
 };
 
@@ -86,8 +103,10 @@ const handleCopy = async () => {
   try {
     await navigator.clipboard.writeText(props.modelValue);
     emit('copy', props.modelValue);
+    showToast(t('common.copied') || 'Copied!', 'success');
   } catch (err) {
     console.warn('Clipboard write failed:', err);
+    showToast('Failed to copy', 'error');
   }
 };
 </script>

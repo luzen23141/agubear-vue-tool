@@ -1,8 +1,16 @@
 import { render, screen, fireEvent } from '@testing-library/vue';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
-import i18n from '../../i18n';
 import TimestampConverter from '../../components/TimestampConverter.vue';
+import { setupI18n } from '../../i18n';
+
+// Mock useHead
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn(),
+  useSeoMeta: vi.fn()
+}));
+
+const i18n = setupI18n();
 
 const renderOptions = {
   global: {

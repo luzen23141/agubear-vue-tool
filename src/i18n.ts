@@ -132,13 +132,13 @@ function getInitialLocale(): string {
   return getLocaleFromURL() || getLocaleFromStorage() || getLocaleFromBrowser() || 'zh-TW';
 }
 
-const i18n = createI18n({
-  legacy: false, // Use Composition API mode
-  locale: getInitialLocale(),
-  fallbackLocale: 'zh-TW',
-  messages,
-  missingWarn: false,
-  fallbackWarn: false
-});
-
-export default i18n;
+export function setupI18n() {
+  return createI18n({
+    legacy: false, // Use Composition API mode
+    locale: getInitialLocale(),
+    fallbackLocale: 'zh-TW',
+    messages,
+    missingWarn: false,
+    fallbackWarn: false
+  });
+}

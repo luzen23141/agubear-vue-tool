@@ -2,7 +2,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
 import { mount } from '@vue/test-utils';
 import QrCodeGenerator from '../../components/QrCodeGenerator.vue';
-import i18n from '../../i18n';
+import { setupI18n } from '../../i18n';
+
+const i18n = setupI18n();
 
 const mountOptions = {
   global: {
@@ -18,6 +20,11 @@ vi.mock('qrcode', () => ({
       mockToCanvas(_canvas, _text, _options, callback)
     )
   }
+}));
+
+// Mock useHead
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn()
 }));
 
 // Mock useHistory

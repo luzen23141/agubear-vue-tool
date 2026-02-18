@@ -30,6 +30,7 @@
         :label="t('hash.inputLabel')"
         :placeholder="t('hash.placeholder')"
         :maxlength="5000"
+        :spellcheck="false"
         allow-paste
         allow-copy
         @paste="inputText = $event"
@@ -68,7 +69,9 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import InputWithCopy from './common/InputWithCopy.vue';
@@ -76,6 +79,17 @@ import { useHistory } from '../composables/useHistory';
 import { computeHash } from '../utils/crypto';
 
 const { t } = useI18n();
+
+useHead({
+  title: computed(() => `${t('app.tabs.hash')} - ${t('app.title')}`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('seo.description'))
+    }
+  ]
+});
+
 const { history, addToHistory, clearHistory, removeFromHistory } = useHistory();
 
 const inputText = ref('');

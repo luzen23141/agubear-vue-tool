@@ -12,6 +12,7 @@
     :input-text="inputText"
     :output-text="outputText"
     :history="history"
+    :spellcheck="false"
     name="base64"
     encode-value="encode"
     decode-value="decode"
@@ -25,13 +26,26 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@unhead/vue';
 import TwoWayConverter from './common/TwoWayConverter.vue';
 import { useHistory } from '../composables/useHistory';
 import { useTwoWayConverter } from '../composables/useTwoWayConverter';
 import { toBase64, fromBase64 } from '../utils/crypto';
 
 const { t } = useI18n();
+
+useHead({
+  title: computed(() => `${t('app.tabs.base64')} - ${t('app.title')}`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('seo.description'))
+    }
+  ]
+});
+
 const { history, clearHistory, removeFromHistory } = useHistory();
 
 // Adapter for fromBase64 which returns string | null vs logic expectation

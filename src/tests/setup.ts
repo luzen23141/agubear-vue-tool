@@ -51,3 +51,9 @@ if (!window.matchMedia) {
     }))
   });
 }
+
+// Mock scrollTo
+Object.defineProperty(window, 'scrollTo', {
+  value: vi.fn(),
+  writable: true
+});

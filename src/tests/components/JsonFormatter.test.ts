@@ -1,7 +1,9 @@
 import { mount } from '@vue/test-utils';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import JsonFormatter from '../../components/JsonFormatter.vue';
-import i18n from '../../i18n';
+import { setupI18n } from '../../i18n';
+
+const i18n = setupI18n();
 
 // Mock clipboard
 const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
@@ -12,6 +14,11 @@ Object.assign(navigator, {
     readText: mockClipboardRead
   }
 });
+
+// Mock useHead
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn()
+}));
 
 const mountOptions = {
   global: {

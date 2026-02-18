@@ -3,7 +3,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createRouter, createMemoryHistory } from 'vue-router';
 // import { routes } from '../router'; // Using local testRoutes
 import App from '../App.vue';
-import i18n from '../i18n';
+import { setupI18n } from '../i18n';
+
+const i18n = setupI18n();
 
 const { useHeadMock, createMockSFC } = vi.hoisted(() => {
   const mockComponent = { template: '<div />', render: () => null };
@@ -32,7 +34,7 @@ const { useHeadMock, createMockSFC } = vi.hoisted(() => {
   };
 });
 
-vi.mock('@vueuse/head', () => ({
+vi.mock('@unhead/vue', () => ({
   useHead: useHeadMock
 }));
 
@@ -47,8 +49,15 @@ Object.defineProperty(window, 'matchMedia', {
     removeListener: vi.fn(), // deprecated
     addEventListener: vi.fn(),
     removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn()
+    dispatchEvent: vi.fn(),
+    scrollTo: vi.fn()
   }))
+});
+
+// Mock window.scrollTo
+Object.defineProperty(window, 'scrollTo', {
+  value: vi.fn(),
+  writable: true
 });
 
 vi.mock('../components/HashGenerator.vue', () => createMockSFC('HashGenerator'));
@@ -61,21 +70,44 @@ vi.mock('../components/JsonFormatter.vue', () => createMockSFC('JsonFormatter'))
 vi.mock('../components/TimestampConverter.vue', () => createMockSFC('TimestampConverter'));
 
 // Define synchronous routes for testing to avoid dynamic import issues
+// Define routes matching production structure
 const testRoutes = [
-  { path: '/', redirect: '/timestamp' },
-  { path: '/timestamp', name: 'timestamp', component: createMockSFC('TimestampConverter').default },
-  { path: '/hash', name: 'hash', component: createMockSFC('HashGenerator').default },
-  { path: '/base64', name: 'base64', component: createMockSFC('Base64Converter').default },
-  { path: '/url', name: 'url', component: createMockSFC('UrlConverter').default },
-  { path: '/unicode', name: 'unicode', component: createMockSFC('UnicodeConverter').default },
-  { path: '/pinyin', name: 'pinyin', component: createMockSFC('PinyinConverter').default },
-  { path: '/qrcode', name: 'qrcode', component: createMockSFC('QrCodeGenerator').default },
-  { path: '/json', name: 'json', component: createMockSFC('JsonFormatter').default }
+  { path: '/', redirect: '/zh-TW/timestamp' },
+  {
+    path: '/:lang',
+    children: [
+      {
+        path: 'timestamp',
+        name: 'timestamp',
+        component: createMockSFC('TimestampConverter').default
+      },
+      { path: 'hash', name: 'hash', component: createMockSFC('HashGenerator').default },
+      { path: 'base64', name: 'base64', component: createMockSFC('Base64Converter').default },
+      { path: 'url', name: 'url', component: createMockSFC('UrlConverter').default },
+      { path: 'unicode', name: 'unicode', component: createMockSFC('UnicodeConverter').default },
+      { path: 'pinyin', name: 'pinyin', component: createMockSFC('PinyinConverter').default },
+      { path: 'qrcode', name: 'qrcode', component: createMockSFC('QrCodeGenerator').default },
+      { path: 'json', name: 'json', component: createMockSFC('JsonFormatter').default }
+    ]
+  }
 ];
 
 const router = createRouter({
   history: createMemoryHistory(),
   routes: testRoutes
+});
+
+// Add mock guard from main.ts
+router.beforeEach((to, _from, next) => {
+  const lang = to.params.lang as string;
+  const SUPPORTED_LOCALES = ['zh-TW', 'en', 'ja'];
+
+  if (lang && SUPPORTED_LOCALES.includes(lang)) {
+    if (i18n.global.locale.value !== lang) {
+      i18n.global.locale.value = lang;
+    }
+  }
+  next();
 });
 
 const mountOptions = {
@@ -349,6 +381,7 @@ describe('App.vue', () => {
         .find((opt) => opt.text().includes('English'));
       if (enOption) {
         await enOption.trigger('click');
+        await flushPromises();
       }
 
       expect(i18n.global.locale.value).toBe('en');
@@ -384,13 +417,15 @@ describe('App.vue', () => {
     it('useHead 應包含正確的 SEO meta tags', () => {
       mount(App, mountOptions);
       const { calls } = useHeadMock.mock;
-      const seoCall = calls.find(
-        (call: any) => call[0].meta && call[0].meta.some((m: any) => m.name === 'description')
-      );
+      const seoCall = calls.find((call: any) => {
+        const headObj = call[0].value || call[0];
+        return headObj.meta && headObj.meta.some((m: any) => m.name === 'description');
+      });
 
       expect(seoCall).toBeDefined();
       if (seoCall) {
-        expect(seoCall[0].meta).toEqual(
+        const headObj = seoCall[0].value || seoCall[0];
+        expect(headObj.meta).toEqual(
           expect.arrayContaining([
             expect.objectContaining({ name: 'description' }),
             expect.objectContaining({ name: 'keywords' }),
@@ -403,13 +438,15 @@ describe('App.vue', () => {
     it('useHead 應包含 JSON-LD 結構化資料', () => {
       mount(App, mountOptions);
       const { calls } = useHeadMock.mock;
-      const jsonLdCall = calls.find((call: any) => call[0].script);
+      const jsonLdCall = calls.find((call: any) => {
+        const headObj = call[0].value || call[0];
+        return headObj.script;
+      });
 
       expect(jsonLdCall).toBeDefined();
       if (jsonLdCall) {
-        const scripts = jsonLdCall[0].script.value
-          ? jsonLdCall[0].script.value
-          : jsonLdCall[0].script;
+        const headObj = jsonLdCall[0].value || jsonLdCall[0];
+        const scripts = headObj.script;
         expect(scripts).toEqual(
           expect.arrayContaining([expect.objectContaining({ type: 'application/ld+json' })])
         );

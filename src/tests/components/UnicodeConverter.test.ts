@@ -1,7 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import UnicodeConverter from '../../components/UnicodeConverter.vue';
-import i18n from '../../i18n';
+import { setupI18n } from '../../i18n';
+
+const i18n = setupI18n();
 
 const mountOptions = {
   global: {
@@ -18,6 +20,11 @@ const historyMocks = {
 };
 vi.mock('../../composables/useHistory', () => ({
   useHistory: () => historyMocks
+}));
+
+// Mock useHead
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn()
 }));
 
 // Mock clipboard

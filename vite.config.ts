@@ -5,6 +5,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import vue from '@vitejs/plugin-vue';
 import { visualizer } from 'rollup-plugin-visualizer';
 import eslint from 'vite-plugin-eslint';
+import { VitePWA } from 'vite-plugin-pwa';
 
 const getPlugins = (env: Record<string, string>, mode: string) =>
   [
@@ -20,7 +21,31 @@ const getPlugins = (env: Record<string, string>, mode: string) =>
         }
       }
     }),
-    // Removed compression plugins as per instruction
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'AguBear Tools',
+        short_name: 'AguBear',
+        description: 'Essential developer tools: Timestamp, Base64, Hash, JSON, and more.',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}']
+      }
+    }),
     visualizer({
       open: false,
       filename: 'bundle-analysis.html',
@@ -64,6 +89,24 @@ const ssgOptions = {
   formatting: 'minify',
   onFinished() {
     // generateSitemap() // Optional: if we add sitemap plugin later
+  },
+  includedRoutes() {
+    const locales = ['zh-TW', 'en', 'ja'];
+    // Use paths and routes or ignore them with underscore?
+    // Actually we are ignoring them and generating our own list.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const tools = [
+      'timestamp',
+      'hash',
+      'base64',
+      'urldecode',
+      'uencode',
+      'pinyin',
+      'qrcode',
+      'json'
+    ];
+
+    return locales.flatMap((locale) => tools.map((tool) => `/${locale}/${tool}`));
   }
 };
 
@@ -80,7 +123,7 @@ export default defineConfig(({ mode }) => {
     build: buildConfig,
     ssgOptions,
     esbuild: {
-      drop: mode === 'production' ? ['console', 'debugger'] : []
+      // drop: mode === 'production' ? ['console', 'debugger'] : []
     },
     test: {
       globals: true,

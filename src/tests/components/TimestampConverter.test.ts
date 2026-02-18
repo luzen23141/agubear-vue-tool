@@ -2,7 +2,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
 import { mount } from '@vue/test-utils';
 import TimestampConverter from '../../components/TimestampConverter.vue';
-import i18n from '../../i18n';
+import { setupI18n } from '../../i18n';
+
+const i18n = setupI18n();
 
 const mountOptions = {
   global: {
@@ -19,6 +21,11 @@ const mockUseHistory = reactive({
 
 vi.mock('../../composables/useHistory', () => ({
   useHistory: () => mockUseHistory
+}));
+
+// Mock useHead
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn()
 }));
 
 // Mock clipboard

@@ -33,6 +33,8 @@
         :model-value="inputText"
         :label="mode === encodeValue ? inputLabel : outputLabel"
         :placeholder="mode === encodeValue ? inputPlaceholder : outputPlaceholder"
+        :inputmode="inputmode"
+        :spellcheck="spellcheck"
         allow-paste
         allow-copy
         @update:model-value="$emit('update:inputText', $event)"
@@ -99,6 +101,8 @@ const props = defineProps<{
   inputText: string;
   outputText: string;
   history: HistoryItem[];
+  inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+  spellcheck?: boolean;
 }>();
 
 /* eslint-enable @typescript-eslint/no-unused-vars */

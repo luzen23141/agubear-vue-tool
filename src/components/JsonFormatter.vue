@@ -82,7 +82,7 @@
           <div class="pane-header">
             <h3>{{ t('json.outputLabel') }}</h3>
             <button :disabled="!outputJson" class="copy-btn" type="button" @click="copyOutput">
-              {{ copyStatus || t('json.copy') }}
+              {{ t('json.copy') }}
             </button>
           </div>
           <div class="json-output-container">
@@ -100,17 +100,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watch, onMounted } from 'vue';
+import { ref, reactive, watch, onMounted, computed, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import { formatJson, validateJson, type JsonError } from '../utils/jsonUtils';
 
+type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
+const showToast = inject('showToast', (() => {}) as ToastFunction);
+
 const { t } = useI18n();
+
+useHead({
+  title: computed(() => `${t('app.tabs.json')} - ${t('app.title')}`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('seo.description'))
+    }
+  ]
+});
 
 const inputJson = ref('');
 const outputJson = ref('');
 const error = ref<JsonError | null>(null);
-const copyStatus = ref('');
 
 const options = reactive({
   unescape: false,
@@ -168,12 +181,10 @@ const copyOutput = async () => {
   if (!outputJson.value) return;
   try {
     await navigator.clipboard.writeText(outputJson.value);
-    copyStatus.value = t('json.copied');
-    setTimeout(() => {
-      copyStatus.value = '';
-    }, 2000);
+    showToast(t('common.copied') || 'Copied!', 'success');
   } catch (err) {
     console.error('Failed to copy', err);
+    showToast('Failed to copy', 'error');
   }
 };
 

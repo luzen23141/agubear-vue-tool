@@ -192,8 +192,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, inject } from 'vue';
+import { onMounted, ref, inject, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import { useHistory } from '../composables/useHistory';
@@ -203,6 +204,16 @@ type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void
 const showToast = inject('showToast', (() => {}) as ToastFunction);
 
 const { t } = useI18n();
+
+useHead({
+  title: computed(() => `${t('app.tabs.timestamp')} - ${t('app.title')}`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => t('seo.description')) // Consider specialized description if available
+    }
+  ]
+});
 
 // --- Main Setup ---
 const { history, addToHistory, clearHistory, removeFromHistory } = useHistory();

@@ -138,18 +138,15 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, computed, provide } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 import { useRouter, useRoute } from 'vue-router';
 import { SUPPORTED_LOCALES, type LocaleInfo } from './i18n';
 import { useTheme } from './composables/useTheme';
 
 // Components are loaded via router, manual imports removed for performance.
-// TimestampConverter import removed as it's no longer used in ToolDef
 import Toast from './components/common/Toast.vue'; // Import Toast container
 
-// Global Toast logic - simple provide for now or just expose via window/store?
-// For simplicity in this refactor, we can use provide/inject.
-
+// Global Toast logic
 const toastRef = ref<InstanceType<typeof Toast> | null>(null);
 
 const showToast = (msg: string, type: 'success' | 'error' | 'info' = 'info') => {
@@ -158,33 +155,53 @@ const showToast = (msg: string, type: 'success' | 'error' | 'info' = 'info') => 
 
 provide('showToast', showToast);
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n(); // Back to local useI18n (safe now with fresh instance)
 const router = useRouter();
 const route = useRoute();
 const { theme, toggleTheme } = useTheme();
 
-// SEO and Meta configuration
-useHead({
-  title: t('app.title'),
-  meta: [
-    { name: 'description', content: t('app.description') },
-    { name: 'keywords', content: t('app.keywords') },
-    { property: 'og:title', content: t('app.title') },
-    { property: 'og:description', content: t('app.description') },
-    { property: 'og:type', content: 'website' }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: t('app.title'),
-        description: t('app.description')
-      })
+// Sync locale from route immediately (Fix for SSG)
+watch(
+  () => route.params.lang,
+  (newLang) => {
+    if (newLang && typeof newLang === 'string') {
+      const supported = SUPPORTED_LOCALES.find((l) => l.code === newLang);
+      if (supported && locale.value !== supported.code) {
+        locale.value = supported.code;
+      }
     }
-  ]
-});
+  },
+  { immediate: true }
+);
+
+// SEO and Meta configuration
+useHead(
+  computed(() => ({
+    title: t('app.title'),
+    htmlAttrs: {
+      lang: locale.value
+    },
+    meta: [
+      { name: 'description', content: t('seo.description') },
+      { name: 'keywords', content: t('seo.keywords') },
+      { property: 'og:title', content: t('seo.title') },
+      { property: 'og:description', content: t('seo.ogDescription') },
+      { property: 'og:type', content: 'website' }
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: t('app.title'),
+          description: t('seo.description'),
+          inLanguage: locale.value
+        })
+      }
+    ]
+  }))
+);
 // Component definitions removed as they are handled by router now
 
 interface ToolDef {
@@ -295,7 +312,7 @@ const filteredTools = computed(() =>
 const activeTab = computed(() => (route.name as string) || 'timestamp');
 
 const switchTab = async (tool: ToolDef) => {
-  await router.push({ name: tool.id });
+  await router.push({ name: tool.id, params: { lang: locale.value } });
 };
 
 const loadPreferences = () => {
@@ -348,23 +365,16 @@ const currentLocale = computed<LocaleInfo>(
 );
 
 const changeLocale = (code: string) => {
-  locale.value = code;
+  router.push({
+    name: route.name as string,
+    params: { ...route.params, lang: code },
+    query: route.query
+  });
   showLangMenu.value = false;
 };
 
-// Sync locale to localStorage and URL
-watch(locale, (newLocale) => {
-  if (globalThis.window !== undefined && globalThis.localStorage) {
-    globalThis.localStorage.setItem('agubear-locale', newLocale as string);
-  }
-
-  // Update URL query param without reloading
-  if (globalThis.window !== undefined) {
-    const url = new URL(globalThis.window.location.href);
-    url.searchParams.set('lang', newLocale as string);
-    globalThis.window.history.pushState({}, '', url);
-  }
-});
+// Locale persistence is now handled by the router guard in main.ts
+// We do not need to watch locale to set localStorage or URL here.
 
 // Close language menu on outside click
 const closeLangMenu = () => {
