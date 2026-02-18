@@ -129,7 +129,16 @@ filesToGenerate.forEach(({ name, content }) => {
 fs.writeFileSync(path.join(distDir, 'CNAME'), DOMAIN);
 console.log(`✔ dist/CNAME generated (${DOMAIN})`);
 
-// 4. Update README.md (Source)
+// 4. Generate dist/404.html (SPA Fallback for GitHub Pages)
+const indexHtmlPath = path.join(distDir, 'index.html');
+if (fs.existsSync(indexHtmlPath)) {
+  fs.copyFileSync(indexHtmlPath, path.join(distDir, '404.html'));
+  console.log('✔ dist/404.html generated (SPA Fallback)');
+} else {
+  console.warn('⚠️ Warning: dist/index.html not found, skipping 404.html generation');
+}
+
+// 5. Update README.md (Source)
 const readmePath = path.join(rootDir, 'README.md');
 if (fs.existsSync(readmePath)) {
   let readmeContent = fs.readFileSync(readmePath, 'utf-8');

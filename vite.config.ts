@@ -95,16 +95,7 @@ const ssgOptions = {
     // Use paths and routes or ignore them with underscore?
     // Actually we are ignoring them and generating our own list.
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const tools = [
-      'timestamp',
-      'hash',
-      'base64',
-      'urldecode',
-      'uencode',
-      'pinyin',
-      'qrcode',
-      'json'
-    ];
+    const tools = ['timestamp', 'hash', 'base64', 'url', 'unicode', 'pinyin', 'qrcode', 'json'];
 
     return locales.flatMap((locale) => tools.map((tool) => `/${locale}/${tool}`));
   }
