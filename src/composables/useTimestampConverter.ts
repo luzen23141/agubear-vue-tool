@@ -1,4 +1,5 @@
 import { ref, computed, watch } from 'vue';
+import { useLocalStorage } from './useLocalStorage';
 import { format } from 'date-fns';
 import { timestampToDate, dateToTimestamp } from '../utils/converter';
 
@@ -18,9 +19,9 @@ export const useTimestampConverter = (addToHistory?: AddToHistoryFn) => {
   const dateInput = ref(DEFAULT_DATE());
   const timestampResult = ref<string | number>('');
 
-  const useMilliseconds = ref(false);
-  const timestampMode = ref<'auto' | 's' | 'ms'>('auto');
-  const utcOffset = ref(8);
+  const useMilliseconds = useLocalStorage<boolean>('timestamp_use_ms', false);
+  const timestampMode = useLocalStorage<'auto' | 's' | 'ms'>('timestamp_mode', 'auto');
+  const utcOffset = useLocalStorage<number>('timestamp_utc_offset', 8);
 
   const timestampLength = computed(() =>
     timestampInput.value ? String(timestampInput.value).length : 0

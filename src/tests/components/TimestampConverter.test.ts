@@ -43,6 +43,7 @@ describe('TimestampConverter.vue', () => {
     i18n.global.locale.value = 'zh-TW';
     mockClipboardWrite.mockClear();
     mockClipboardRead.mockClear();
+    localStorage.clear();
   });
 
   describe('渲染', () => {
