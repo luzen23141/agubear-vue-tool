@@ -1,8 +1,9 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
-import { mount } from '@vue/test-utils';
+import { mount, flushPromises } from '@vue/test-utils';
 import QrCodeGenerator from '../../components/QrCodeGenerator.vue';
 import { setupI18n } from '../../i18n';
+import qrcode from 'qrcode';
 
 const i18n = setupI18n();
 
@@ -12,13 +13,9 @@ const mountOptions = {
   }
 };
 
-// Mock QRCode library
-const mockToCanvas = vi.fn().mockResolvedValue(undefined);
 vi.mock('qrcode', () => ({
   default: {
-    toCanvas: vi.fn((_canvas, _text, _options, callback) =>
-      mockToCanvas(_canvas, _text, _options, callback)
-    )
+    toCanvas: vi.fn().mockResolvedValue(undefined)
   }
 }));
 
@@ -77,14 +74,17 @@ describe('QrCodeGenerator.vue', () => {
 
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
-    mockToCanvas.mockClear();
-    mockToCanvas.mockClear();
+    vi.mocked(qrcode.toCanvas).mockClear();
     mockUseHistory.addToHistory.mockClear();
     mockUseHistory.clearHistory.mockClear();
     mockUseHistory.removeFromHistory.mockClear();
     mockUseHistory.history = [];
     mockClipboardWrite.mockClear();
     wrapper = mount(QrCodeGenerator, mountOptions);
+  });
+
+  afterEach(() => {
+    wrapper?.unmount();
   });
 
   describe('渲染', () => {
@@ -180,24 +180,29 @@ describe('QrCodeGenerator.vue', () => {
     });
 
     it('輸入文字後應呼叫 QRCode.toCanvas', async () => {
-      await wrapper.find('textarea').setValue('https://example.com');
-      await wrapper.vm.$nextTick();
+      await wrapper.find('textarea').setValue('http://test.com');
+      await wrapper.vm.$nextTick(); // Wait for v-if
+      await wrapper.vm.$nextTick(); // Wait for ref update?
+      await flushPromises();
 
-      // watch triggers nextTick → generateQrCode
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
-
-      expect(mockToCanvas).toHaveBeenCalled();
+      expect(wrapper.find('canvas').exists()).toBe(true);
+      // Wait a bit more just in case
+      await new Promise((resolve) => {
+        setTimeout(resolve, 500);
+      }); // Wait for chunks
+      expect(wrapper.vm.hasQrCode).toBe(true);
+      expect(qrcode.toCanvas).toHaveBeenCalled();
     });
 
     it('toCanvas 應收到正確的選項', async () => {
       await wrapper.find('textarea').setValue('test data');
       await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
-      if (mockToCanvas.mock.calls.length > 0) {
-        const lastCall = mockToCanvas.mock.calls[mockToCanvas.mock.calls.length - 1];
+      if (vi.mocked(qrcode.toCanvas).mock.calls.length > 0) {
+        const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
+          vi.mocked(qrcode.toCanvas).mock.calls.length - 1
+        ];
         const options = lastCall ? lastCall[2] : null;
         expect(options).toMatchObject({
           width: 256,
@@ -216,14 +221,17 @@ describe('QrCodeGenerator.vue', () => {
       const marginInput = wrapper.find('#qr-margin');
 
       await sizeInput.setValue(100);
+      await wrapper.vm.$nextTick();
       await marginInput.setValue(0);
+      await wrapper.vm.$nextTick();
       await wrapper.find('textarea').setValue('boundary test');
 
       await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
-      const lastCall = mockToCanvas.mock.calls[mockToCanvas.mock.calls.length - 1];
+      const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
+        vi.mocked(qrcode.toCanvas).mock.calls.length - 1
+      ];
       expect(lastCall?.[2].width).toBe(100);
       expect(lastCall?.[2].margin).toBe(0);
     });
@@ -232,20 +240,21 @@ describe('QrCodeGenerator.vue', () => {
       const longText = 'A'.repeat(2000);
       await wrapper.find('textarea').setValue(longText);
       await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
-      expect(mockToCanvas).toHaveBeenCalled();
-      const lastCall = mockToCanvas.mock.calls[mockToCanvas.mock.calls.length - 1];
+      expect(vi.mocked(qrcode.toCanvas)).toHaveBeenCalled();
+      const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
+        vi.mocked(qrcode.toCanvas).mock.calls.length - 1
+      ];
       expect(lastCall?.[1]).toBe(longText);
     });
 
     it('產生失敗時應重置 hasQrCode', async () => {
-      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
-      mockToCanvas.mockRejectedValueOnce(new Error('Canvas error'));
+      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      vi.mocked(qrcode.toCanvas).mockRejectedValueOnce(new Error('Canvas error'));
       await wrapper.find('textarea').setValue('error');
       await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick(); // Wait for async error handling
+      await flushPromises();
 
       expect(wrapper.vm.hasQrCode).toBe(false);
       expect(consoleSpy).toHaveBeenCalled();
@@ -255,7 +264,8 @@ describe('QrCodeGenerator.vue', () => {
     it('修改顏色應重新產生 QR Code', async () => {
       await wrapper.find('textarea').setValue('color test');
       await wrapper.vm.$nextTick();
-      mockToCanvas.mockClear();
+      await flushPromises();
+      vi.mocked(qrcode.toCanvas).mockClear();
 
       const fgInput = wrapper.find('#qr-fg-color');
       await fgInput.setValue('#ff0000');
@@ -264,10 +274,12 @@ describe('QrCodeGenerator.vue', () => {
       await bgInput.setValue('#0000ff');
 
       await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
-      expect(mockToCanvas).toHaveBeenCalled();
-      const lastCall = mockToCanvas.mock.calls[mockToCanvas.mock.calls.length - 1];
+      expect(vi.mocked(qrcode.toCanvas)).toHaveBeenCalled();
+      const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
+        vi.mocked(qrcode.toCanvas).mock.calls.length - 1
+      ];
       expect(lastCall?.[2].color.dark).toBe('#ff0000');
       expect(lastCall?.[2].color.light).toBe('#0000ff');
     });
@@ -344,8 +356,7 @@ describe('QrCodeGenerator.vue', () => {
       const mockClick = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
 
       await wrapper.find('textarea').setValue('download test');
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       const downloadBtn = wrapper.find('.download-btn');
       await downloadBtn.trigger('click');
@@ -364,7 +375,7 @@ describe('QrCodeGenerator.vue', () => {
       vi.useFakeTimers();
       await wrapper.find('textarea').setValue('copy test');
       wrapper.vm.hasQrCode = true;
-      await nextTick();
+      await flushPromises();
 
       await wrapper.vm.copyToClipboard();
 
@@ -378,9 +389,7 @@ describe('QrCodeGenerator.vue', () => {
 
     it('應能記錄到歷史', async () => {
       await wrapper.find('textarea').setValue('history test');
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       const recordBtn = wrapper.find('.record-btn');
       await recordBtn.trigger('click');
@@ -413,8 +422,7 @@ describe('QrCodeGenerator.vue', () => {
 
     it('拖曳時應設置正確的 dataTransfer', async () => {
       await wrapper.find('textarea').setValue('drag test');
-      await wrapper.vm.$nextTick();
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       const canvas = wrapper.find('.qr-canvas');
       const mockSetData = vi.fn();

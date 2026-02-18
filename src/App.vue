@@ -386,8 +386,14 @@ const closeLangMenu = () => {
 .app-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 2rem 1.5rem;
-  min-height: 100vh;
+  padding: 2rem 2rem calc(2rem + env(safe-area-inset-bottom));
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-container {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }

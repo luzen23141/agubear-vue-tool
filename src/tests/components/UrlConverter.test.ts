@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, flushPromises } from '@vue/test-utils';
 import UrlConverter from '../../components/UrlConverter.vue';
 import { setupI18n } from '../../i18n';
 
@@ -60,6 +60,8 @@ describe('UrlConverter.vue', () => {
     it('輸入文字應自動編碼', async () => {
       await wrapper.find('input[value="encode"]').setValue();
       await wrapper.find('#url-input').setValue('hello world');
+      await wrapper.vm.$nextTick();
+      await flushPromises();
       expect(wrapper.find('#url-output').element.value).toBe('hello%20world');
     });
   });
@@ -68,6 +70,8 @@ describe('UrlConverter.vue', () => {
     it('輸入編碼網址應自動解碼', async () => {
       await wrapper.find('input[value="decode"]').setValue();
       await wrapper.find('#url-input').setValue('hello%20world');
+      await wrapper.vm.$nextTick();
+      await flushPromises();
       expect(wrapper.find('#url-output').element.value).toBe('hello world');
     });
   });
@@ -75,7 +79,7 @@ describe('UrlConverter.vue', () => {
   describe('歷史紀錄', () => {
     it('點擊紀錄按鈕應呼叫 addToHistory', async () => {
       await wrapper.find('#url-input').setValue('test');
-      await wrapper.vm.$nextTick();
+      await flushPromises();
       const recordBtn = wrapper.find('.record-btn');
       await recordBtn.trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith('url', 'test', 'test');
@@ -98,7 +102,7 @@ describe('UrlConverter.vue', () => {
 
     it('記錄到歷史時應截斷長內容', async () => {
       await wrapper.find('#url-input').setValue('a'.repeat(50));
-      await wrapper.vm.$nextTick();
+      await flushPromises();
       await wrapper.find('.record-btn').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith(
         'url',
@@ -111,7 +115,7 @@ describe('UrlConverter.vue', () => {
   describe('操作', () => {
     it('點擊輸入框複製按鈕應觸發 clipboard write', async () => {
       await wrapper.find('#url-input').setValue('input copy');
-      await wrapper.vm.$nextTick();
+      await flushPromises();
       const copyBtn = wrapper.find('.copy-btn-overlay');
       await copyBtn.trigger('click');
       expect(mockClipboardWrite).toHaveBeenCalledWith('input copy');
@@ -119,7 +123,7 @@ describe('UrlConverter.vue', () => {
 
     it('點擊結果框複製按鈕應觸發 clipboard write', async () => {
       await wrapper.find('#url-input').setValue('test');
-      await wrapper.vm.$nextTick();
+      await flushPromises();
       const copyBtn = wrapper.findAll('.copy-btn-overlay')[1]; // Output copy
       await copyBtn.trigger('click');
       expect(mockClipboardWrite).toHaveBeenCalledWith('test');
@@ -135,8 +139,10 @@ describe('UrlConverter.vue', () => {
     it('切換模式應交換輸入輸出', async () => {
       await wrapper.find('#url-input').setValue('hello world');
       await wrapper.vm.$nextTick();
+      await flushPromises();
       await wrapper.find('input[value="decode"]').setValue();
       await wrapper.vm.$nextTick();
+      await flushPromises();
       expect(wrapper.vm.inputText).toBe('hello%20world');
     });
   });

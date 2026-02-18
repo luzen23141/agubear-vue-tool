@@ -172,7 +172,6 @@ import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
-import QRCode from 'qrcode';
 import { useHistory } from '../composables/useHistory';
 
 const { t } = useI18n();
@@ -213,24 +212,38 @@ const ecLevels = [
 
 // ── 產生 QR Code ──
 const generateQrCode = async () => {
-  if (!inputText.value || !canvasRef.value) {
+  if (!inputText.value) {
     hasQrCode.value = false;
     return;
   }
 
+  await nextTick(); // Ensure canvas is rendered
+
+  const canvas = canvasRef.value;
+  if (!canvas) {
+    // eslint-disable-next-line no-console
+    console.error('Canvas ref is null/undefined');
+    return;
+  }
+
   try {
-    await QRCode.toCanvas(canvasRef.value, inputText.value, {
+    const QRCode = (await import('qrcode')).default;
+    await QRCode.toCanvas(canvas, inputText.value, {
       width: qrSize.value,
       margin: margin.value,
       color: {
         dark: foregroundColor.value,
         light: backgroundColor.value
       },
-      errorCorrectionLevel: errorCorrectionLevel.value as QRCode.QRCodeErrorCorrectionLevel
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      errorCorrectionLevel: errorCorrectionLevel.value as any
     });
+
     hasQrCode.value = true;
-  } catch (err) {
-    console.warn('QR Code generation failed:', err);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('toCanvas error:', error);
+    // if (!isCancelled) hasQrCode.value = false; // isCancelled not defined
     hasQrCode.value = false;
   }
 };
@@ -238,8 +251,9 @@ const generateQrCode = async () => {
 // ── 監聽輸入變化，即時更新 ──
 watch(
   [inputText, qrSize, foregroundColor, backgroundColor, errorCorrectionLevel, margin],
-  () => {
-    nextTick(generateQrCode);
+  async () => {
+    await nextTick();
+    await generateQrCode();
   },
   { immediate: true }
 );

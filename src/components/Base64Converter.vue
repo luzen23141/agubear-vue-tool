@@ -17,7 +17,7 @@
     encode-value="encode"
     decode-value="decode"
     output-placeholder=""
-    @update:mode="mode = $event"
+    @update:mode="mode = $event as 'encode' | 'decode'"
     @update:input-text="inputText = $event"
     @record="recordHistory"
     @clear-history="clearHistory"
@@ -51,7 +51,7 @@ const { history, clearHistory, removeFromHistory } = useHistory();
 // Adapter for fromBase64 which returns string | null vs logic expectation
 const { mode, inputText, outputText, recordHistory } = useTwoWayConverter(
   'base64',
-  (input) => toBase64(input),
+  (input) => toBase64(input), // Explicit wait to ensure async handling
   (input) => fromBase64(input)
 );
 </script>

@@ -331,6 +331,17 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex-grow: 1;
+}
+
+.converter-grid > .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allow cards to grow equally on mobile if space permits */
+}
+
+.converter-grid .result-container {
+  margin-top: auto; /* Push result to bottom of card */
 }
 
 @media (min-width: 768px) {

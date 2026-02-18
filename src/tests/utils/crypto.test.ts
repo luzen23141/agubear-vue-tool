@@ -5,36 +5,36 @@ describe('Crypto Utilities', () => {
   describe('computeHash', () => {
     const text = 'hello world';
 
-    it('should compute MD5 hash', () => {
+    it('should compute MD5 hash', async () => {
       // echo -n "hello world" | md5
-      expect(computeHash(text, 'MD5')).toBe('5eb63bbbe01eeed093cb22bb8f5acdc3');
+      expect(await computeHash(text, 'MD5')).toBe('5eb63bbbe01eeed093cb22bb8f5acdc3');
     });
 
-    it('should compute SHA1 hash', () => {
+    it('should compute SHA1 hash', async () => {
       // echo -n "hello world" | shasum -a 1
-      expect(computeHash(text, 'SHA1')).toBe('2aae6c35c94fcfb415dbe95f408b9ce91ee846ed');
+      expect(await computeHash(text, 'SHA1')).toBe('2aae6c35c94fcfb415dbe95f408b9ce91ee846ed');
     });
 
-    it('should compute SHA256 hash', () => {
+    it('should compute SHA256 hash', async () => {
       // echo -n "hello world" | shasum -a 256
-      expect(computeHash(text, 'SHA256')).toBe(
+      expect(await computeHash(text, 'SHA256')).toBe(
         'b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9'
       );
     });
 
-    it('should compute SHA512 hash', () => {
+    it('should compute SHA512 hash', async () => {
       // echo -n "hello world" | shasum -a 512
-      expect(computeHash(text, 'SHA512')).toBe(
+      expect(await computeHash(text, 'SHA512')).toBe(
         '309ecc489c12d6eb4cc40f50c902f2b4d0ed77ee511a7c7a9bcd3ca86d4cd86f989dd35bc5ff499670da34255b45b0cfd830e81f605dcf7dc5542e93ae9cd76f'
       );
     });
 
-    it('should return null for unsupported algorithm', () => {
-      expect(computeHash(text, 'UNKNOWN')).toBeNull();
+    it('should return null for unsupported algorithm', async () => {
+      expect(await computeHash(text, 'UNKNOWN')).toBeNull();
     });
 
-    it('should return empty string for empty input', () => {
-      expect(computeHash('', 'MD5')).toBe('');
+    it('should return empty string for empty input', async () => {
+      expect(await computeHash('', 'MD5')).toBe('');
     });
   });
 
@@ -44,21 +44,21 @@ describe('Crypto Utilities', () => {
     const chineseText = '你好';
     const chineseEncoded = '5L2g5aW9'; // UTF-8 bytes to Base64
 
-    it('should encode text to Base64', () => {
-      expect(toBase64(text)).toBe(encoded);
+    it('should encode text to Base64', async () => {
+      expect(await toBase64(text)).toBe(encoded);
     });
 
-    it('should decode Base64 to text', () => {
-      expect(fromBase64(encoded)).toBe(text);
+    it('should decode Base64 to text', async () => {
+      expect(await fromBase64(encoded)).toBe(text);
     });
 
-    it('should handle UTF-8 characters correctly', () => {
-      expect(toBase64(chineseText)).toBe(chineseEncoded);
-      expect(fromBase64(chineseEncoded)).toBe(chineseText);
+    it('should handle UTF-8 characters correctly', async () => {
+      expect(await toBase64(chineseText)).toBe(chineseEncoded);
+      expect(await fromBase64(chineseEncoded)).toBe(chineseText);
     });
 
-    it('should return null for invalid Base64 input', () => {
-      expect(fromBase64('invalid-base64!')).toBeNull();
+    it('should return null for invalid Base64 input', async () => {
+      expect(await fromBase64('invalid-base64!')).toBeNull();
     });
   });
 

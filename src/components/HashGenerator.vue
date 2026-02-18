@@ -68,7 +68,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, watch, computed, onMounted } from 'vue';
 
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
@@ -96,11 +96,29 @@ const inputText = ref('');
 const isUpperCase = ref(false);
 const algo = ref('MD5');
 
-const hashResult = computed(() => {
-  if (!inputText.value) return '';
-  const hash = computeHash(inputText.value, algo.value);
-  return isUpperCase.value && hash ? hash.toUpperCase() : hash || '';
-});
+const hashResult = ref('');
+const isComputing = ref(false);
+
+watch(
+  [inputText, algo, isUpperCase],
+  async ([text, alg, upper]: [string, string, boolean]) => {
+    if (!text) {
+      hashResult.value = '';
+      return;
+    }
+    isComputing.value = true;
+    try {
+      const hash = await computeHash(text, alg);
+      hashResult.value = upper && hash ? hash.toUpperCase() : hash || '';
+    } catch (e) {
+      console.error(e);
+      hashResult.value = '';
+    } finally {
+      isComputing.value = false;
+    }
+  },
+  { immediate: true }
+);
 
 const generateAndRecord = () => {
   if (!hashResult.value) return;

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, flushPromises } from '@vue/test-utils';
 import Base64Converter from '../../components/Base64Converter.vue';
 import { setupI18n } from '../../i18n';
 
@@ -70,6 +70,10 @@ describe('Base64Converter.vue', () => {
     it('輸入文字應自動編碼為 Base64', async () => {
       await wrapper.find('input[value="encode"]').setValue();
       await wrapper.find('#base64-input').setValue('hello');
+      await wrapper.vm.$nextTick();
+      await new Promise((resolve) => {
+        setTimeout(resolve, 100);
+      }); // Wait for chunks
 
       expect(wrapper.find('#base64-output').element.value).toBe('aGVsbG8=');
     });
@@ -77,6 +81,8 @@ describe('Base64Converter.vue', () => {
     it('應處理 UTF-8', async () => {
       await wrapper.find('input[value="encode"]').setValue();
       await wrapper.find('#base64-input').setValue('你好');
+      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       expect(wrapper.find('#base64-output').element.value).toBe('5L2g5aW9');
     });
@@ -86,6 +92,8 @@ describe('Base64Converter.vue', () => {
     it('輸入 Base64 應自動解碼為文字', async () => {
       await wrapper.find('input[value="decode"]').setValue();
       await wrapper.find('#base64-input').setValue('aGVsbG8=');
+      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       expect(wrapper.find('#base64-output').element.value).toBe('hello');
     });
@@ -93,6 +101,7 @@ describe('Base64Converter.vue', () => {
     it('輸入無效 Base64 應顯示空', async () => {
       await wrapper.find('input[value="decode"]').setValue();
       await wrapper.find('#base64-input').setValue('!!invalid!!');
+      await flushPromises();
       expect(wrapper.find('#base64-output').element.value).toBe('');
     });
   });
@@ -100,7 +109,7 @@ describe('Base64Converter.vue', () => {
   describe('操作', () => {
     it('點擊複製按鈕應獲取輸出內容', async () => {
       await wrapper.find('#base64-input').setValue('test');
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       const copyBtns = wrapper.findAll('.copy-btn-overlay');
       const outputCopyBtn = copyBtns[1] || copyBtns[0];
@@ -119,7 +128,7 @@ describe('Base64Converter.vue', () => {
 
     it('點擊紀錄按鈕應呼叫 addToHistory', async () => {
       await wrapper.find('#base64-input').setValue('test');
-      await wrapper.vm.$nextTick();
+      await flushPromises();
 
       const recordBtn = wrapper.find('.record-btn');
       await recordBtn.trigger('click');
@@ -139,7 +148,7 @@ describe('Base64Converter.vue', () => {
 
     it('記錄到歷史時應截斷長輸入', async () => {
       await wrapper.find('#base64-input').setValue('a'.repeat(50));
-      await wrapper.vm.$nextTick();
+      await flushPromises();
       await wrapper.find('.record-btn').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith(
         'base64',

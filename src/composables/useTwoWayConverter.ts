@@ -1,40 +1,60 @@
-import { ref, computed, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useHistory } from './useHistory';
 
-export function useTwoWayConverter(
-  type: string,
-  encode: (_input: string) => string | null,
-  decode: (_input: string) => string | null
-) {
+export type ConverterFunc = (_input: string) => string | null | Promise<string | null>;
+
+// eslint-disable-next-line max-lines-per-function
+export function useTwoWayConverter(type: string, encode: ConverterFunc, decode: ConverterFunc) {
   const { addToHistory } = useHistory();
-  const mode = ref('encode');
+  const mode = ref<'encode' | 'decode'>('encode');
   const inputText = ref('');
-  const lastOutput = ref('');
+  const outputText = ref('');
+  const isConverting = ref(false);
 
-  const outputText = computed(() => {
-    if (!inputText.value) return '';
-    if (mode.value === 'encode') {
-      const res = encode(inputText.value);
-      return res ?? '';
+  // Watch for input/mode changes to trigger conversion
+  const performConversion = async (
+    text: string,
+    currentMode: 'encode' | 'decode',
+    checkCancelled: () => boolean
+  ) => {
+    isConverting.value = true;
+    // try {
+    const result = currentMode === 'encode' ? await encode(text) : await decode(text);
+    if (!checkCancelled()) {
+      outputText.value = result || '';
     }
-    const res = decode(inputText.value);
-    return res ?? '';
-  });
+    // } catch (error) {
+    //   // eslint-disable-next-line no-console
+    //   console.error('Conversion error:', error);
+    //   if (!checkCancelled()) outputText.value = '';
+    // } finally {
+    if (!checkCancelled()) isConverting.value = false;
+    // }
+  };
 
-  watch(outputText, (newVal) => {
-    if (newVal) lastOutput.value = newVal;
-  });
+  watch(
+    [inputText, mode],
+    ([newInput, newMode], [_oldInput, oldMode], onCleanup) => {
+      // Swap input/output if mode changes
+      if (oldMode && newMode !== oldMode && outputText.value) {
+        inputText.value = outputText.value;
+        return;
+      }
 
-  watch(mode, () => {
-    // Swap input/output when switching modes
-    // If we have a valid output, use it as the new input
-    if (lastOutput.value) {
-      inputText.value = lastOutput.value;
-      lastOutput.value = '';
-    } else {
-      inputText.value = '';
-    }
-  });
+      let isCancelled = false;
+      onCleanup(() => {
+        isCancelled = true;
+      });
+
+      if (!newInput) {
+        outputText.value = '';
+        return;
+      }
+
+      performConversion(newInput, newMode, () => isCancelled);
+    },
+    { immediate: true }
+  );
 
   const recordHistory = () => {
     if (!outputText.value) return;
@@ -49,6 +69,7 @@ export function useTwoWayConverter(
     mode,
     inputText,
     outputText,
+    isConverting,
     recordHistory
   };
 }

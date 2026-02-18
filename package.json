@@ -94,7 +94,7 @@
     "zod": "^4.3.6"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "eslint --fix",
+    "*.{js,ts,vue}": "npm run lint:strict",
     "*.{js,ts,vue,json,css,md}": "prettier --write",
     "src/**/*.{js,ts,vue}": "vitest related --run"
   },
