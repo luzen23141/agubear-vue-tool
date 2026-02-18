@@ -302,6 +302,9 @@ const clearDateInput = () => {
 .timestamp-converter {
   width: 100%;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ensure it fills parent tool-container */
 }
 
 /* 時區選擇列 */
@@ -317,6 +320,7 @@ const clearDateInput = () => {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   font-size: 0.92rem;
+  flex-shrink: 0;
 }
 
 .timezone-bar label {
@@ -347,7 +351,8 @@ const clearDateInput = () => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  flex-grow: 1;
+  /* Removed flex-grow: 1 to let History list take the space instead */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .converter-grid > .card {
@@ -369,4 +374,14 @@ const clearDateInput = () => {
 }
 
 /* History Styles - Handled by common components */
+:deep(.history-card) {
+  flex-grow: 1; /* Fill remaining space on tall screens */
+  display: flex;
+  flex-direction: column;
+}
+
+:deep(.history-list) {
+  flex-grow: 1; /* Allow list to scroll/occupy space */
+  overflow-y: auto;
+}
 </style>

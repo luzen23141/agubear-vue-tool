@@ -20,9 +20,10 @@
 ```bash
 npm install       # 安裝依賴
 npm run dev       # 開發模式 (http://localhost:5173)
+npm run check-all # 執行完整檢查 (Lint + Test + Security)
 npm run build     # 建置生產版本
-npm run test      # 執行單元測試 (66 tests)
-./deploy.sh       # 部署到 GitHub Pages
+git push          # 觸發 GitHub Actions 部署
+npm run verify-deploy # 驗證部署狀態
 ```
 
 ## 技術棧

@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 import chalk from 'chalk';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -127,7 +128,39 @@ async function warmUpCache() {
   }
 }
 
+function checkGitStatus() {
+  try {
+    // eslint-disable-next-line sonarjs/no-os-command-from-path
+    const status = execSync('git status --porcelain').toString();
+    if (status) {
+      console.warn(chalk.yellow('⚠️  Warning: You have uncommitted changes.'));
+    }
+
+    // Check if local is ahead of remote
+    // eslint-disable-next-line sonarjs/no-os-command-from-path
+    const ahead = execSync('git log @{u}..HEAD').toString();
+    if (ahead) {
+      console.error(chalk.red('\n🚨 Error: You have unpushed commits. Local is ahead of remote.'));
+      console.error(chalk.red('   Run "git push" to deploy your changes before verifying.\n'));
+      return false;
+    }
+    return true;
+  } catch (e) {
+    // If no upstream is configured, git log @{u}..HEAD might fail
+    console.warn(
+      chalk.yellow(
+        `⚠️  Warning: Could not check git upstream status. Assuming okay. (${e.message})`
+      )
+    );
+    return true;
+  }
+}
+
 (async () => {
+  if (!checkGitStatus()) {
+    process.exit(1);
+  }
+
   const verificationSuccess = await verify();
   if (!verificationSuccess) {
     process.exit(1);

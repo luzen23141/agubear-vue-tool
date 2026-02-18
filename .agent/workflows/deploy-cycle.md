@@ -78,9 +78,9 @@ git push origin main
 執行部署並驗證線上版本 (含 Cache-Busting)。
 
 ```bash
-./deploy.sh
+# Deployment is triggered automatically by git push in Step 4
+# Just wait for GitHub Actions to complete (approx 30s-1m)
 npm run verify-deploy
-# Verify script now uses timestamp query param to bypass cache
 ```
 
 > [!WARNING]
