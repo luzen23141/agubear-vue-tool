@@ -48,7 +48,7 @@ const getPlugins = (env: Record<string, string>, mode: string) =>
     }),
     visualizer({
       open: false,
-      filename: 'bundle-analysis.html',
+      filename: 'reports/bundle-analysis.html',
       gzipSize: true,
       brotliSize: true
     })
