@@ -94,7 +94,9 @@
               inputmode="numeric"
               pattern="[0-9]*"
               maxlength="15"
+              autofocus
               @keyup.enter="convertToDate"
+              @keyup.esc="clearTimestampInput"
             />
             <button
               :aria-label="t('timestamp.convertToDateAria')"
@@ -162,6 +164,7 @@
             name="dateInput"
             type="text"
             @keyup.enter="convertToTimestamp"
+            @keyup.esc="clearDateInput"
           />
           <button
             :aria-label="t('timestamp.convertToTimestampAria')"
@@ -188,6 +191,9 @@
 
     <!-- 歷史紀錄 -->
     <HistoryList :history="history" @clear="clearHistory" @remove="removeFromHistory" />
+
+    <!-- SEO/GEO/AEO Context -->
+    <ToolContext tool-key="timestamp" />
   </div>
 </template>
 
@@ -197,6 +203,7 @@ import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
+import ToolContext from './common/ToolContext.vue';
 import { useHistory } from '../composables/useHistory';
 import { useTimestampConverter } from '../composables/useTimestampConverter';
 
@@ -280,6 +287,15 @@ onMounted(() => {
   convertToDate();
   convertToTimestamp();
 });
+
+// Keyboard Actions
+const clearTimestampInput = () => {
+  timestampInput.value = '';
+};
+
+const clearDateInput = () => {
+  dateInput.value = '';
+};
 </script>
 
 <style scoped>

@@ -64,6 +64,9 @@
         <span class="val hash-val">{{ item.output }}</span>
       </template>
     </HistoryList>
+
+    <!-- SEO/GEO/AEO Context -->
+    <ToolContext tool-key="hash" />
   </div>
 </template>
 
@@ -75,6 +78,7 @@ import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
 import HistoryList from './common/HistoryList.vue';
 import InputWithCopy from './common/InputWithCopy.vue';
+import ToolContext from './common/ToolContext.vue';
 import { useHistory } from '../composables/useHistory';
 import { computeHash } from '../utils/crypto';
 

@@ -131,11 +131,20 @@ html.dark {
 
 body {
   margin: 0;
-  display: block; /* 改為 block 以便正常滾動 */
+  display: block;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--surface);
-  transition: background-color var(--transition-slow);
+  background-color: var(--surface);
+  color: var(--text-primary);
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212; /* Deep dark background for OLED/Dark mode */
+  }
 }
 
 h1 {

@@ -138,7 +138,14 @@ if (fs.existsSync(indexHtmlPath)) {
   console.warn('⚠️ Warning: dist/index.html not found, skipping 404.html generation');
 }
 
-// 5. Update README.md (Source)
+// 5. Generate dist/_headers (Netlify/Cloudflare Cache Control)
+const headersContent = `/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+`;
+fs.writeFileSync(path.join(distDir, '_headers'), headersContent);
+console.log('✔ dist/_headers generated');
+
+// 6. Update README.md (Source)
 const readmePath = path.join(rootDir, 'README.md');
 if (fs.existsSync(readmePath)) {
   let readmeContent = fs.readFileSync(readmePath, 'utf-8');

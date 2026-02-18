@@ -253,7 +253,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # ======================================================================================
+  # ==================================================================  ====================
   #  Purge CDN Job (Runs after Deployment)
   # ======================================================================================
   purge-cdn:
@@ -261,9 +261,19 @@ jobs:
     needs: [deploy]
     runs-on: ubuntu-latest
     steps:
-      - name: Purge Cache
+      - name: Debug Check
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
-          -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+          echo "Zone ID 長度: ${#ZONE_ID}"
+          echo "Token 長度: ${#TOKEN}"
+        env:
+          ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Purge Cache
+        env:
+          CF_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" \
+          -H "Authorization: Bearer $CF_API_TOKEN" \
           -H "Content-Type: application/json" \
           --data '{"purge_everything":true}'

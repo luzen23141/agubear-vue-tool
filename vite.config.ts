@@ -66,13 +66,17 @@ const buildConfig = {
     output: {
       manualChunks(id: string) {
         if (id.includes('node_modules')) {
-          if (id.includes('/node_modules/vue/') || id.includes('/node_modules/@vue/')) {
-            return 'vue-core';
-          }
-          if (id.includes('date-fns')) return 'date-fns';
-          if (id.includes('crypto-js')) return 'crypto-js';
-          if (id.includes('pinyin-pro')) return 'pinyin-pro';
-          if (id.includes('qrcode')) return 'qrcode';
+          // Core Framework
+          if (id.includes('vue') || id.includes('@vue')) return 'vue-core';
+
+          // Large independent tools
+          if (id.includes('crypto-js')) return 'crypto-tools';
+          if (id.includes('pinyin-pro')) return 'pinyin-tools';
+          if (id.includes('qrcode')) return 'qr-tools';
+
+          // Common utilities (date-fns is small enough to be in vendor or separate, keeping separate for clarity)
+          if (id.includes('date-fns')) return 'date-utils';
+
           return 'vendor';
         }
       },
