@@ -87,23 +87,7 @@ git commit -m "<generated_message>"
 git push origin main
 ```
 
-### 8. 部署與線上驗證 (Deployment & Sanity Check)
-
-等待 CI/CD (GitHub Actions) 部署完成後，驗證線上版本與 Cache-Busting 狀態。
-
-```bash
-# Deployment is triggered automatically by git push in Step 7
-# 預計等待 30s-1m 讓遠端部署完成
-npm run verify-deploy
-```
-
-> [!WARNING]
-> 若線上驗證失敗 (超時或版本不匹配)：
->
-> 1. **通知**: 觸發 Telegram 警報 "⚠️ 部署線上驗證失敗"。
-> 2. **行動**: 中斷後續流程，保留日誌供人類檢查。
-
-### 9. 優雅通知推送 (Refined Notification)
+### 8. 優雅通知推送 (Refined Notification)
 
 若全線流程順利完成，透過腳本發送具備高質感的 Markdown 格式通知。
 

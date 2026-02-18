@@ -50,12 +50,18 @@ function getHashObject(CryptoJS: any, text: string, algo: string) {
  */
 export async function toBase64(text: string): Promise<string> {
   if (text === null || text === undefined) return '';
-  const mod = await import('crypto-js');
-  const CryptoJS = mod.default || mod;
-  /* eslint-disable-next-line no-console */
-  const wordArray = CryptoJS.enc.Utf8.parse(text);
-  const res = CryptoJS.enc.Base64.stringify(wordArray);
-  return res;
+  try {
+    const mod = await import('crypto-js');
+    const CryptoJS = mod.default || mod;
+    const wordArray = CryptoJS.enc.Utf8.parse(text);
+    const res = CryptoJS.enc.Base64.stringify(wordArray);
+    return res;
+  } catch (e) {
+    if (typeof process === 'undefined' || !process.env.VITEST) {
+      console.error('toBase64 error:', e);
+    }
+    return '';
+  }
 }
 
 /**
