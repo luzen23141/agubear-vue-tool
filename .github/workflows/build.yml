@@ -84,8 +84,12 @@ jobs:
 
   # Job 3: Unit Test
   unit-test:
-    name: Unit Test
+    name: Unit Test (${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shardIndex: [1, 2, 3]
+        shardTotal: [3]
     env:
       TZ: Asia/Taipei
       GH_TOKEN: ${{ github.token }}
@@ -100,7 +104,7 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run test:unit
+      - run: pnpm run test:unit -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
       # Fail-Fast
       - name: Cancel Workflow on Failure
@@ -110,11 +114,15 @@ jobs:
 
   # Job 4: E2E Test
   e2e-test:
-    name: E2E Test
+    name: E2E Test (${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
+    strategy:
+      matrix:
+        shardIndex: [1, 2]
+        shardTotal: [2]
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -145,7 +153,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --workers=2
+        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --workers=2
 
       - uses: actions/upload-artifact@v4
         if: failure()
