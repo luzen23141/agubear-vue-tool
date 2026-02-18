@@ -134,6 +134,7 @@ const handleCopy = async () => {
 .action-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   background: var(--glass-bg);
   backdrop-filter: blur(8px);

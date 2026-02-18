@@ -741,6 +741,9 @@ const closeLangMenu = () => {
   border: none;
   color: var(--text-muted);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1rem;
   line-height: 1;
   padding: 2px;

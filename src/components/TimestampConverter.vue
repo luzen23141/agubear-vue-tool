@@ -390,7 +390,7 @@ const clearDateInput = () => {
   .converter-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: start;
+    align-items: stretch;
   }
 }
 
