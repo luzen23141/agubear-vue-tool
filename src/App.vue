@@ -2,7 +2,7 @@
   <div class="app-container" @click="closeLangMenu">
     <!-- App Header -->
     <header class="app-header">
-      <h1 class="app-title">🐻 AguBear Tools</h1>
+      <h1 class="app-title"><span class="title-icon">🐻</span> AguBear Tools</h1>
       <div class="header-actions">
         <button
           :title="t('app.theme_' + theme)"
@@ -126,6 +126,7 @@
     </main>
 
     <footer class="app-footer">
+      <div class="footer-divider" />
       <p class="footer-copyright">
         {{ t('app.footer.copyright') }}
       </p>
@@ -213,7 +214,6 @@ interface ToolDef {
   category: string;
 }
 
-// Tool definitions — names use i18n keys resolved in computed
 // Tool definitions — names use i18n keys resolved in computed
 const toolDefs: ToolDef[] = [
   {
@@ -410,7 +410,7 @@ const closeLangMenu = () => {
 
 <style scoped>
 .app-container {
-  max-width: 800px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 2rem 2rem calc(2rem + env(safe-area-inset-bottom));
   min-height: 100dvh;
@@ -431,15 +431,60 @@ const closeLangMenu = () => {
   justify-content: space-between;
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid transparent;
+  border-image: var(--gradient-accent) 1;
+  position: relative;
 }
 
 .app-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary);
   margin: 0;
   letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title-icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  transition: transform var(--transition-spring);
+  cursor: default;
+}
+
+.title-icon:hover {
+  transform: rotate(-15deg) scale(1.15);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Theme Toggle ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.08);
 }
 
 /* ── Language Switcher ── */
@@ -454,13 +499,15 @@ const closeLangMenu = () => {
   gap: 6px;
   padding: 7px 14px;
   border: 1px solid var(--border);
-  background: var(--primary-soft);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--primary);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   white-space: nowrap;
 }
 
@@ -469,10 +516,14 @@ const closeLangMenu = () => {
   line-height: 1;
 }
 
+.lang-name {
+  font-weight: 500;
+}
+
 .lang-arrow {
   font-size: 0.7rem;
-  transition: transform var(--transition-fast);
-  opacity: 0.6;
+  transition: transform var(--transition-normal);
+  opacity: 0.5;
 }
 
 .lang-arrow.open {
@@ -482,22 +533,23 @@ const closeLangMenu = () => {
 .lang-btn:hover {
   background: var(--primary-glow);
   border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
 }
 
 .lang-dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   right: 0;
-  background: var(--surface-overlay);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  padding: 6px;
+  padding: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  gap: 3px;
   max-height: 360px;
   overflow-y: auto;
   min-width: 280px;
@@ -507,7 +559,7 @@ const closeLangMenu = () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 12px;
+  padding: 9px 14px;
   border: none;
   background: transparent;
   border-radius: var(--radius-sm);
@@ -515,37 +567,39 @@ const closeLangMenu = () => {
   font-size: 0.82rem;
   color: var(--text-secondary);
   text-align: left;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   white-space: nowrap;
 }
 
 .lang-option-flag {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1;
 }
 
 .lang-option:hover {
   background: var(--primary-soft);
   color: var(--primary);
+  transform: translateX(2px);
 }
 
 .lang-option.active {
-  background: var(--primary);
+  background: var(--gradient-primary);
   color: white;
   font-weight: 600;
+  box-shadow: var(--shadow-glow);
 }
 
 /* ── Language menu transition ── */
 .lang-menu-enter-active,
 .lang-menu-leave-active {
   transition:
-    opacity var(--transition-fast),
-    transform var(--transition-fast);
+    opacity var(--transition-normal),
+    transform var(--transition-normal);
 }
 .lang-menu-enter-from,
 .lang-menu-leave-to {
   opacity: 0;
-  transform: translateY(-4px) scale(0.98);
+  transform: translateY(-6px) scale(0.96);
 }
 
 /* ── Filters & Navigation ── */
@@ -558,7 +612,7 @@ const closeLangMenu = () => {
 
 .filters-bar {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -569,46 +623,53 @@ const closeLangMenu = () => {
 }
 
 .category-select {
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text-primary);
   font-size: 0.9rem;
+  font-family: inherit;
   cursor: pointer;
   outline: none;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
 }
 
 .category-select:hover,
 .category-select:focus {
   border-color: var(--primary);
+  box-shadow: var(--shadow-focus);
 }
 
-.filter-btn {
+.fav-toggle-btn {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text-secondary);
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
 }
 
-.filter-btn:hover {
-  background: var(--primary-soft);
-  color: var(--primary);
-  border-color: var(--primary);
+.fav-toggle-btn:hover {
+  background: rgba(251, 191, 36, 0.08);
+  color: #f59e0b;
+  border-color: rgba(251, 191, 36, 0.3);
 }
 
-.filter-btn.active {
-  background: var(--primary);
+.fav-toggle-btn.active {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
   color: white;
-  border-color: var(--primary);
+  border-color: #f59e0b;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
 
 .star-icon {
@@ -619,18 +680,20 @@ const closeLangMenu = () => {
 /* ── Tab Navigation ── */
 .tab-nav {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
   padding: 8px;
-  background: var(--primary-soft);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  min-height: 50px; /* Prevent collapse if empty */
+  background: var(--gradient-subtle);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  min-height: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .tab-list-container {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -642,28 +705,30 @@ const closeLangMenu = () => {
 }
 
 .tab-btn {
-  padding: 10px 32px 10px 18px; /* Extra padding right for star */
+  padding: 10px 32px 10px 16px;
   background: transparent;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-muted);
   transition: all var(--transition-normal);
   position: relative;
-  border: 1px solid transparent; /* Prevent layout shift on active */
+  border: 1px solid transparent;
 }
 
 .tab-btn:hover {
   background: var(--primary-glow);
   color: var(--primary);
+  transform: scale(1.02);
 }
 
 .tab-btn.active {
-  background: var(--primary);
+  background: var(--gradient-primary);
   color: white;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(45, 157, 106, 0.25);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1);
 }
 
 /* Star Action on Tab */
@@ -680,13 +745,13 @@ const closeLangMenu = () => {
   line-height: 1;
   padding: 2px;
   border-radius: 50%;
-  transition: all var(--transition-fast);
-  opacity: 0.5;
+  transition: all var(--transition-spring);
+  opacity: 0.4;
   z-index: 2;
 }
 
 .star-action-btn:hover {
-  transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.3);
   opacity: 1;
   color: #fbbf24;
 }
@@ -696,49 +761,73 @@ const closeLangMenu = () => {
   opacity: 1;
 }
 
-/* Adjust star color when tab is active */
 .tab-btn.active + .star-action-btn {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .tab-btn.active + .star-action-btn:hover,
 .tab-btn.active + .star-action-btn.starred {
-  color: #fbbf24; /* Keep yellow even on active tab? Or white? Let's use Gold */
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  color: #fbbf24;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .no-tools-msg {
   width: 100%;
   text-align: center;
-  padding: 1rem;
-  color: var(--text-secondary);
+  padding: 1.5rem;
+  color: var(--text-muted);
   font-size: 0.9rem;
+  font-style: italic;
 }
 
-/* ── Mobile Optimization (Thumb Zone) ── */
+/* ── Footer ── */
+.app-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--gradient-accent);
+  opacity: 0.3;
+  margin-bottom: 1rem;
+  border-radius: 1px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* ── Mobile Optimization ── */
 @media (max-width: 768px) {
   .app-container {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: calc(80px + env(safe-area-inset-bottom)); /* Space for bottom nav */
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
   }
 
   .app-header {
     margin-bottom: 1rem;
   }
 
-  /* Filters remain at top but compacted */
+  .app-title {
+    font-size: 1.15rem;
+  }
+
   .filters-bar {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 4px; /* Scrollbar space */
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+    padding-bottom: 4px;
+    scrollbar-width: none;
   }
   .filters-bar::-webkit-scrollbar {
     display: none;
   }
 
-  /* Move Tabs to Bottom */
   .tab-nav {
     position: fixed;
     bottom: 0;
@@ -746,16 +835,14 @@ const closeLangMenu = () => {
     right: 0;
     z-index: 1000;
     margin: 0;
-    border-radius: 16px 16px 0 0;
-    border: 1px solid var(--border);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border: 1px solid var(--glass-border);
     border-bottom: none;
-    background: var(--surface-overlay);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
-    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
-
-    /* Horizontal Scroll */
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
     overflow-x: auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -763,7 +850,7 @@ const closeLangMenu = () => {
 
   .tab-list-container {
     flex-wrap: nowrap;
-    gap: 8px;
+    gap: 6px;
   }
 
   .tab-item-wrapper {
@@ -771,15 +858,13 @@ const closeLangMenu = () => {
   }
 
   .tab-btn {
-    padding: 8px 28px 8px 14px; /* Slightly smaller padding */
-    font-size: 0.9rem;
+    padding: 8px 28px 8px 12px;
+    font-size: 0.88rem;
     white-space: nowrap;
   }
 
-  /* Stack tool content */
   .tool-container {
     width: 100%;
   }
 }
 </style>
-```

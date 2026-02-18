@@ -137,28 +137,31 @@ const decodeValue = props.decodeValue || 'decode';
 
 .mode-select {
   display: flex;
-  background: var(--surface);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 4px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
 }
 
 .mode-select label {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 16px;
+  padding: 8px 20px;
   cursor: pointer;
   border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
 .mode-select label:has(input:checked) {
-  background: var(--primary);
+  background: var(--gradient-primary);
   color: white;
-  font-weight: 500;
+  font-weight: 600;
+  box-shadow: var(--shadow-glow);
 }
 
 .mode-select input {
@@ -168,27 +171,32 @@ const decodeValue = props.decodeValue || 'decode';
 .direction-arrow {
   text-align: center;
   font-size: 1.2rem;
-  color: var(--text-muted);
-  margin: 0.5rem 0;
+  color: var(--primary);
+  margin: 0.75rem 0;
+  opacity: 0.6;
+  transition: opacity var(--transition-normal);
 }
 
 .action-group {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   display: flex;
   justify-content: center;
 }
 
 .record-btn {
-  padding: 10px 24px;
-  background: var(--primary);
+  padding: 10px 28px;
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-weight: 600;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-glow);
 }
 
 .record-btn:hover {
-  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(45, 157, 106, 0.3);
 }
 </style>

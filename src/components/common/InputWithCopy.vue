@@ -6,32 +6,34 @@
         v-if="allowPaste && canPaste"
         :title="t('common.paste')"
         type="button"
-        class="paste-btn"
+        class="action-btn paste-btn"
         @click="handlePaste"
       >
-        clipboard {{ t('common.paste') }}
+        📋 {{ t('common.paste') }}
       </button>
     </div>
-    <textarea
-      :id="id"
-      :value="modelValue"
-      :placeholder="placeholder"
-      :readonly="readonly"
-      :maxlength="maxlength"
-      :inputmode="inputmode"
-      :spellcheck="spellcheck"
-      :class="{ 'is-readonly': readonly }"
-      class="custom-textarea"
-      @input="handleInput"
-    />
-    <button
-      v-if="modelValue && allowCopy"
-      type="button"
-      class="copy-btn-overlay"
-      @click="handleCopy"
-    >
-      {{ t('common.copy') }}
-    </button>
+    <div class="textarea-wrapper">
+      <textarea
+        :id="id"
+        :value="modelValue"
+        :placeholder="placeholder"
+        :readonly="readonly"
+        :maxlength="maxlength"
+        :inputmode="inputmode"
+        :spellcheck="spellcheck"
+        :class="{ 'is-readonly': readonly }"
+        class="custom-textarea"
+        @input="handleInput"
+      />
+      <button
+        v-if="modelValue && allowCopy"
+        type="button"
+        class="action-btn copy-btn-overlay"
+        @click="handleCopy"
+      >
+        📋 {{ t('common.copy') }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -90,7 +92,6 @@ const handlePaste = async () => {
     if (text) {
       emit('update:modelValue', text);
       emit('paste', text);
-      // Optional: showToast(t('common.pasted'), 'info');
     }
   } catch (err) {
     console.warn('Clipboard read failed:', err);
@@ -125,33 +126,42 @@ const handleCopy = async () => {
 }
 
 .input-label {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-secondary);
 }
 
-.paste-btn,
-.copy-btn-overlay {
-  background: transparent;
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 0.8rem;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
   cursor: pointer;
-  color: var(--text-primary);
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
 }
-.paste-btn:hover,
-.copy-btn-overlay:hover {
-  background: var(--surface-hover);
+
+.action-btn:hover {
+  background: var(--primary-soft);
   color: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.02);
+}
+
+.textarea-wrapper {
+  position: relative;
 }
 
 .copy-btn-overlay {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: var(--surface-overlay);
-  border: 1px solid var(--border);
+  bottom: 10px;
+  right: 10px;
 }
 
 .custom-textarea {
@@ -161,21 +171,32 @@ const handleCopy = async () => {
   padding: 12px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  font-size: 1rem;
-  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
   background: var(--surface);
   color: var(--text-primary);
   resize: vertical;
   box-sizing: border-box;
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
 .custom-textarea:focus {
   border-color: var(--primary);
   outline: none;
+  box-shadow:
+    var(--shadow-focus),
+    inset 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .custom-textarea.is-readonly {
   background: var(--surface-hover);
   color: var(--text-secondary);
+}
+
+.custom-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
 }
 </style>

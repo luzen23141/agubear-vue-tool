@@ -1,5 +1,5 @@
 <template>
-  <div v-if="history.length > 0" class="card history-card">
+  <div v-if="history.length > 0" class="history-card">
     <div class="history-header">
       <h2>{{ t('common.history') }}</h2>
       <button type="button" class="clear-btn" @click="$emit('clear')">
@@ -7,14 +7,22 @@
       </button>
     </div>
     <div class="history-list">
-      <div v-for="item in history" :key="item.id" class="history-item">
-        <div class="history-time">{{ item.timestamp }}</div>
-        <div class="history-content">
-          <slot :item="item" name="item">
-            <span class="val">{{ item.input }}</span>
-            <span class="arrow">➜</span>
-            <span class="val">{{ item.output }}</span>
-          </slot>
+      <div
+        v-for="(item, index) in history"
+        :key="item.id"
+        :style="{ animationDelay: `${index * 0.04}s` }"
+        class="history-item"
+      >
+        <div class="timeline-dot" />
+        <div class="history-body">
+          <div class="history-time">{{ item.timestamp }}</div>
+          <div class="history-content">
+            <slot :item="item" name="item">
+              <span class="val">{{ item.input }}</span>
+              <span class="arrow">→</span>
+              <span class="val">{{ item.output }}</span>
+            </slot>
+          </div>
         </div>
         <button
           :aria-label="t('timestamp.deleteAria')"
@@ -55,11 +63,26 @@ const { t } = useI18n();
 <style scoped>
 .history-card {
   margin-top: 1.5rem;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.history-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+  opacity: 0.4;
 }
 
 .history-header {
@@ -67,29 +90,33 @@ const { t } = useI18n();
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
 }
 
 .history-header h2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
 .clear-btn {
-  padding: 4px 12px;
-  font-size: 0.82rem;
+  padding: 5px 14px;
+  font-size: 0.8rem;
   background: transparent;
-  color: #c81e1e;
-  border: 1px solid rgba(200, 30, 30, 0.3);
+  color: #e53e3e;
+  border: 1px solid rgba(229, 62, 62, 0.2);
   border-radius: var(--radius-sm);
   cursor: pointer;
+  transition: all var(--transition-normal);
 }
 
 .clear-btn:hover {
-  background: #c81e1e;
+  background: #e53e3e;
   color: white;
+  border-color: #e53e3e;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.2);
 }
 
 .history-list {
@@ -98,20 +125,58 @@ const { t } = useI18n();
   gap: 6px;
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .history-item {
   display: flex;
   align-items: center;
-  padding: 8px 10px;
+  gap: 10px;
+  padding: 10px 12px;
   background: var(--primary-soft);
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
+  transition: all var(--transition-normal);
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.history-item:hover {
+  background: var(--primary-glow);
+  transform: translateX(2px);
+}
+
+.timeline-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.history-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .history-time {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  margin-right: 12px;
-  min-width: 55px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  min-width: 52px;
+  flex-shrink: 0;
 }
 
 .history-content {
@@ -123,13 +188,20 @@ const { t } = useI18n();
 }
 
 .history-content :deep(.val) {
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-weight: 600;
+  font-size: 0.85rem;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 40%;
+}
+
+.history-content :deep(.arrow) {
+  color: var(--primary);
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .delete-btn {
@@ -138,23 +210,32 @@ const { t } = useI18n();
   color: var(--text-muted);
   border: none;
   cursor: pointer;
+  border-radius: 6px;
+  transition: all var(--transition-normal);
+  opacity: 0.5;
+  flex-shrink: 0;
 }
 
 .delete-btn:hover {
-  background: #c81e1e;
+  background: #e53e3e;
   color: white;
-  border-radius: 4px;
+  opacity: 1;
 }
 
 @media (max-width: 500px) {
   .history-item {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-    padding: 12px !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px;
   }
-  .history-time {
-    margin-bottom: 4px;
+  .timeline-dot {
+    display: none;
+  }
+  .history-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
   .history-content {
     width: 100%;

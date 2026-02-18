@@ -71,7 +71,7 @@ describe('InputWithCopy.vue', () => {
       }
     });
 
-    const pasteBtn = await findByText('clipboard common.paste');
+    const pasteBtn = await findByText(/common\.paste/);
     await fireEvent.click(pasteBtn);
 
     expect(mockReadText).toHaveBeenCalled();
@@ -94,7 +94,7 @@ describe('InputWithCopy.vue', () => {
       }
     });
 
-    const copyBtn = getByText('common.copy');
+    const copyBtn = getByText(/common\.copy/);
     await fireEvent.click(copyBtn);
 
     expect(mockWriteText).toHaveBeenCalledWith('content to copy');
@@ -111,7 +111,7 @@ describe('InputWithCopy.vue', () => {
       }
     });
 
-    expect(queryByText('clipboard common.paste')).toBeNull();
+    expect(queryByText(/common\.paste/)).toBeNull();
   });
 
   it('does not show copy button if content is empty', () => {
@@ -123,6 +123,6 @@ describe('InputWithCopy.vue', () => {
       }
     });
 
-    expect(queryByText('common.copy')).toBeNull();
+    expect(queryByText(/common\.copy/)).toBeNull();
   });
 });
