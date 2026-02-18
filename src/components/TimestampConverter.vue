@@ -111,7 +111,10 @@
           </div>
         </div>
         <div class="result-container">
-          <div class="result">{{ dateResult }}</div>
+          <div class="result-group">
+            <div class="result">{{ dateResult }}</div>
+            <div v-if="relativeTime" class="relative-time">({{ relativeTime }})</div>
+          </div>
           <button
             v-if="dateResult"
             :title="t('common.copy')"
@@ -187,6 +190,9 @@
           </button>
         </div>
       </BaseCard>
+
+      <!-- Duration Calculator -->
+      <DurationCalculator />
     </div>
 
     <!-- 歷史紀錄 -->
@@ -206,6 +212,9 @@ import HistoryList from './common/HistoryList.vue';
 import ToolContext from './common/ToolContext.vue';
 import { useHistory } from '../composables/useHistory';
 import { useTimestampConverter } from '../composables/useTimestampConverter';
+import { formatDistanceToNow } from 'date-fns';
+import { zhTW } from 'date-fns/locale';
+import DurationCalculator from './DurationCalculator.vue';
 
 type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
 const showToast = inject('showToast', (() => {}) as ToastFunction);
@@ -235,9 +244,21 @@ const {
   timestampMode,
   timestampLength,
   utcOffset,
+
   convertToDate,
   convertToTimestamp
 } = useTimestampConverter(addToHistory);
+
+const relativeTime = computed(() => {
+  if (!dateResult.value) return '';
+  try {
+    const date = new Date(dateResult.value);
+    if (isNaN(date.getTime())) return '';
+    return formatDistanceToNow(date, { addSuffix: true, locale: zhTW });
+  } catch {
+    return '';
+  }
+});
 
 // Copy/Paste Logic
 const canPaste = ref(false);
@@ -383,5 +404,17 @@ const clearDateInput = () => {
 :deep(.history-list) {
   flex-grow: 1; /* Allow list to scroll/occupy space */
   overflow-y: auto;
+}
+
+.result-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.relative-time {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: normal;
+  margin-top: 2px;
 }
 </style>

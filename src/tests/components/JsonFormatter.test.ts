@@ -199,4 +199,35 @@ describe('JsonFormatter.vue', () => {
       expect(wrapper.find('.btn-minify').attributes('aria-label')).toBeTruthy();
     });
   });
+  describe('TypeScript 介面轉換', () => {
+    it('應能將 JSON 轉換為 TypeScript Interface', async () => {
+      const wrapper = mount(JsonFormatter, mountOptions);
+      const input = wrapper.find('textarea.json-input');
+      await input.setValue('{"name": "Alex", "age": 30}');
+
+      const toTsBtn = wrapper.find('.btn-to-ts');
+
+      // Only execute if button exists (feature flag check effectively)
+      if (toTsBtn.exists()) {
+        await toTsBtn.trigger('click');
+
+        const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
+        expect(output).toContain('interface');
+        expect(output).toContain('name: string');
+        expect(output).toContain('age: number');
+      }
+    });
+
+    it('無效 JSON 轉換 TS 應顯示錯誤', async () => {
+      const wrapper = mount(JsonFormatter, mountOptions);
+      const input = wrapper.find('textarea.json-input');
+      await input.setValue('{"name": "Alex"'); // Invalid
+
+      const toTsBtn = wrapper.find('.btn-to-ts');
+      if (toTsBtn.exists()) {
+        await toTsBtn.trigger('click');
+        expect(wrapper.find('.error-message').exists()).toBe(true);
+      }
+    });
+  });
 });

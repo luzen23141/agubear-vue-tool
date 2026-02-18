@@ -25,6 +25,14 @@
           >
             {{ t('json.minify') }}
           </button>
+          <button
+            :aria-label="t('json.toTsAria')"
+            class="btn-secondary btn-ts"
+            type="button"
+            @click="handleToTs"
+          >
+            {{ t('json.toTs') }}
+          </button>
         </div>
 
         <div class="options-group">
@@ -103,6 +111,7 @@
 import { ref, reactive, watch, onMounted, computed, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
+import JsonToTS from 'json-to-ts';
 import BaseCard from './common/BaseCard.vue';
 import { formatJson, validateJson, type JsonError } from '../utils/jsonUtils';
 
@@ -168,6 +177,38 @@ const handleMinify = () => {
       console.warn('Minify failed:', e);
       // Should not happen if handleFormat succeeded
     }
+  }
+};
+
+const handleToTs = () => {
+  error.value = null;
+  if (!inputJson.value.trim()) {
+    outputJson.value = '';
+    return;
+  }
+
+  // First ensure valid JSON
+  const { result: validJson, error: fmtError } = formatJson(inputJson.value, {
+    unescape: options.unescape,
+    decodeUnicode: options.decodeUnicode
+  });
+
+  if (fmtError) {
+    error.value = fmtError;
+    return;
+  }
+
+  try {
+    const obj = JSON.parse(validJson || '{}');
+    const interfaces = JsonToTS(obj);
+    outputJson.value = interfaces.join('\n\n');
+  } catch (e) {
+    console.error('TS Conversion failed', e);
+    error.value = {
+      message: `Conversion failed: ${(e as Error).message}`,
+      line: 0,
+      column: 0
+    };
   }
 };
 

@@ -132,6 +132,7 @@
     </footer>
 
     <Toast ref="toastRef" />
+    <CommandPalette />
   </div>
 </template>
 
@@ -145,6 +146,7 @@ import { useTheme } from './composables/useTheme';
 
 // Components are loaded via router, manual imports removed for performance.
 import Toast from './components/common/Toast.vue'; // Import Toast container
+import CommandPalette from './components/common/CommandPalette.vue'; // Import Command Palette
 
 // Global Toast logic
 const toastRef = ref<InstanceType<typeof Toast> | null>(null);
@@ -261,6 +263,30 @@ const toolDefs: ToolDef[] = [
     nameKey: 'app.tabs.json',
     ariaKey: 'app.ariaLabels.json',
     category: 'formatters'
+  },
+  {
+    id: 'jwt',
+    nameKey: 'app.tabs.jwt',
+    ariaKey: 'app.ariaLabels.json' /* reusing json aria or make new */,
+    category: 'formatters'
+  },
+  {
+    id: 'uuid',
+    nameKey: 'app.tabs.uuid',
+    ariaKey: 'app.ariaLabels.uuid',
+    category: 'generators'
+  },
+  {
+    id: 'color',
+    nameKey: 'app.tabs.color',
+    ariaKey: 'app.ariaLabels.timestamp' /* reusing timestamp aria or make new */,
+    category: 'conversion'
+  },
+  {
+    id: 'diff',
+    nameKey: 'app.tabs.diff',
+    ariaKey: 'app.ariaLabels.json',
+    category: 'generators'
   }
 ];
 

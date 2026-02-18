@@ -1,5 +1,4 @@
 import { ViteSSG } from 'vite-ssg';
-import { createUnhead } from '@unhead/vue';
 import App from './App.vue';
 import { routes } from './router';
 import { setupRouterGuard } from './router/guard';
@@ -13,10 +12,7 @@ export const createApp = ViteSSG(
   App,
   { routes, base: import.meta.env.BASE_URL },
   ({ app, router, isClient }) => {
-    const head = createUnhead();
     const i18n = setupI18n(); // Create fresh instance
-    // @ts-expect-error: Unhead plugin type mismatch
-    app.use(head);
     app.use(i18n);
 
     // Setup Router Guard

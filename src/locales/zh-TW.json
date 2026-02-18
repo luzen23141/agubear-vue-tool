@@ -9,7 +9,12 @@
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ 拼音",
       "qrcode": "📱 QR Code",
-      "json": "📋 JSON"
+
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 顏色",
+      "diff": "🔍 比對"
     },
     "ariaLabels": {
       "timestamp": "時間戳轉換工具",
@@ -20,6 +25,7 @@
       "pinyin": "拼音轉換工具",
       "qrcode": "QR Code 產生器",
       "json": "JSON 格式化工具",
+      "uuid": "UUID 產生器",
       "toolSwitch": "工具切換",
       "languageSwitch": "切換語言",
       "categorySelect": "分類篩選",
@@ -83,6 +89,18 @@
     "dateInputAria": "輸入日期",
     "convertToTimestampAria": "轉換日期為 Timestamp",
     "switchSecOrMs": "切換秒或毫秒格式",
+    "relativeTime": "相對時間",
+    "durationTitle": "⏳ 時間間隔計算 (Duration)",
+    "startTime": "開始時間",
+    "endTime": "結束時間",
+    "duration": "間隔",
+    "calculate": "計算",
+    "years": "年",
+    "months": "月",
+    "days": "天",
+    "hours": "時",
+    "minutes": "分",
+    "seconds": "秒",
     "historyTitle": "📜 轉換紀錄",
     "clear": "清除",
     "clearAllAria": "清除全部紀錄",
@@ -272,6 +290,8 @@
     "formatAria": "格式化 JSON",
     "minify": "壓縮",
     "minifyAria": "壓縮 JSON",
+    "toTs": "轉 TypeScript",
+    "toTsAria": "轉換為 TypeScript Interface",
     "optionUnescape": "去除跳脫字元",
     "optionUnicode": "Unicode 解碼",
     "inputLabel": "輸入 JSON",
@@ -283,6 +303,61 @@
     "copied": "已複製",
     "error": "錯誤",
     "line": "行",
+
     "column": "列"
+  },
+  "jwt": {
+    "title": "🔓 JWT 除錯",
+    "description": "JWT (JSON Web Token) 解碼與除錯工具。支援 Header/Payload 解析與過期時間檢查。",
+    "inputLabel": "JWT Token",
+    "inputPlaceholder": "貼上 JWT Token (eyJ...)",
+    "invalidToken": "無效的 JWT Token",
+    "seo": {
+      "jwtDescription": "線上 JWT (JSON Web Token) 解碼器，支援 HS256/RS256 等演算法解析，檢查過期時間 (exp)，完全前端執行確保資安。"
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID 產生器",
+    "description": "批次產生 UUID v4 (隨機), v7 (時間排序) 與 ULID。支援一鍵複製。",
+    "typeLabel": "格式類型",
+    "quantityLabel": "產生數量",
+    "generate": "產生",
+    "resultLabel": "結果預覽",
+    "seo": {
+      "uuidDescription": "免費線上 UUID 產生器，支援 UUID v4, v7 與 ULID。一次產生多組 ID，方便開發者使用。"
+    }
+  },
+  "color": {
+    "title": "🎨 顏色轉換器",
+    "description": "即時顏色格式轉換與挑選。支援 HEX, RGB, HSL, CMYK 互轉。",
+    "seo": {
+      "colorDescription": "線上顏色轉換工具。支援 HEX, RGB, HSL, CMYK 格式互轉，內建顏色挑選器 (Color Picker)，網頁設計師必備。"
+    }
+  },
+  "diff": {
+    "title": "🔍 文字比對工具",
+    "description": "線上文字比對工具 (Diff Checker)。快速找出兩段文字的差異，支援行內比對與語意分析。",
+    "original": "原始文字",
+    "modified": "修改後文字",
+    "pasteOriginal": "貼上原始文字...",
+    "pasteModified": "貼上修改後文字...",
+    "compare": "開始比對",
+    "swap": "交換",
+    "result": "比對結果",
+    "noInput": "請輸入兩段文字進行比對",
+    "seo": {
+      "diffDescription": "線上 Diff Checker 文字比對工具，快速比對兩段程式碼或文字的差異。支援高亮顯示新增與刪除內容。"
+    }
+  },
+  "cmd": {
+    "placeholder": "輸入指令或搜尋...",
+    "noResults": "找不到結果",
+    "navHint": "使用 ↑↓ 選擇，Enter 確認，Esc 關閉",
+    "actions": {
+      "toggleTheme": "切換主題 (深色/淺色)"
+    },
+    "categories": {
+      "system": "系統功能"
+    }
   }
 }

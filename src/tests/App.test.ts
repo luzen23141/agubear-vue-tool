@@ -67,7 +67,12 @@ vi.mock('../components/UnicodeConverter.vue', () => createMockSFC('UnicodeConver
 vi.mock('../components/PinyinConverter.vue', () => createMockSFC('PinyinConverter'));
 vi.mock('../components/QrCodeGenerator.vue', () => createMockSFC('QrCodeGenerator'));
 vi.mock('../components/JsonFormatter.vue', () => createMockSFC('JsonFormatter'));
+vi.mock('../components/JsonFormatter.vue', () => createMockSFC('JsonFormatter'));
 vi.mock('../components/TimestampConverter.vue', () => createMockSFC('TimestampConverter'));
+vi.mock('../components/JwtDebugger.vue', () => createMockSFC('JwtDebugger'));
+vi.mock('../components/UuidGenerator.vue', () => createMockSFC('UuidGenerator'));
+vi.mock('../components/ColorConverter.vue', () => createMockSFC('ColorConverter'));
+vi.mock('../components/DiffChecker.vue', () => createMockSFC('DiffChecker'));
 
 // Define synchronous routes for testing to avoid dynamic import issues
 // Define routes matching production structure
@@ -87,7 +92,11 @@ const testRoutes = [
       { path: 'unicode', name: 'unicode', component: createMockSFC('UnicodeConverter').default },
       { path: 'pinyin', name: 'pinyin', component: createMockSFC('PinyinConverter').default },
       { path: 'qrcode', name: 'qrcode', component: createMockSFC('QrCodeGenerator').default },
-      { path: 'json', name: 'json', component: createMockSFC('JsonFormatter').default }
+      { path: 'json', name: 'json', component: createMockSFC('JsonFormatter').default },
+      { path: 'jwt', name: 'jwt', component: createMockSFC('JwtDebugger').default },
+      { path: 'uuid', name: 'uuid', component: createMockSFC('UuidGenerator').default },
+      { path: 'color', name: 'color', component: createMockSFC('ColorConverter').default },
+      { path: 'diff', name: 'diff', component: createMockSFC('DiffChecker').default }
     ]
   }
 ];
@@ -157,7 +166,7 @@ describe('App.vue', () => {
 
     // Check nav buttons
     const buttons = wrapper.findAll('.tab-btn');
-    expect(buttons.length).toBe(8);
+    expect(buttons.length).toBe(12);
     expect(buttons[0]?.classes()).toContain('active'); // Timestamp default
   });
 
@@ -260,36 +269,36 @@ describe('App.vue', () => {
       const categorySelect = wrapper.find('.category-select');
       expect((categorySelect.element as HTMLSelectElement).value).toBe('all');
 
-      // 所有 8 個工具都應該顯示
-      expect(wrapper.findAll('.tab-btn').length).toBe(8);
+      // 所有 12 個工具都應該顯示
+      expect(wrapper.findAll('.tab-btn').length).toBe(12);
     });
 
     it('切換分類應過濾工具', async () => {
       const wrapper = mount(App, mountOptions);
       const categorySelect = wrapper.find('.category-select');
 
-      // 1. 生成工具 (Hash, QRCode)
+      // 1. 生成工具 (Hash, QRCode, UUID, Diff)
       await categorySelect.setValue('generators');
       let buttons = wrapper.findAll('.tab-btn');
-      expect(buttons.length).toBe(2);
+      expect(buttons.length).toBe(4);
       expect(buttons[0]?.text()).toContain('雜湊');
       expect(buttons[1]?.text()).toContain('QR Code');
 
-      // 2. 轉換工具 (Timestamp, Base64, Url, Unicode, Pinyin)
+      // 2. 轉換工具 (Timestamp, Base64, Url, Unicode, Pinyin, Color)
       await categorySelect.setValue('conversion');
       buttons = wrapper.findAll('.tab-btn');
-      expect(buttons.length).toBe(5);
+      expect(buttons.length).toBe(6);
 
-      // 3. 格式化工具 (JSON)
+      // 3. 格式化工具 (JSON, JWT)
       await categorySelect.setValue('formatters');
       buttons = wrapper.findAll('.tab-btn');
-      expect(buttons.length).toBe(1);
+      expect(buttons.length).toBe(2);
       expect(buttons[0]?.text()).toContain('JSON');
 
       // 4. 全部工具
       await categorySelect.setValue('all');
       buttons = wrapper.findAll('.tab-btn');
-      expect(buttons.length).toBe(8);
+      expect(buttons.length).toBe(12);
     });
 
     it('點擊星星應加入或移除收藏', async () => {

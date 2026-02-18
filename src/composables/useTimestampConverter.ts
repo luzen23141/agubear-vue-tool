@@ -1,6 +1,5 @@
 import { ref, computed, watch } from 'vue';
 import { useLocalStorage } from './useLocalStorage';
-import { format } from 'date-fns';
 import { timestampToDate, dateToTimestamp } from '../utils/converter';
 
 type AddToHistoryFn = (
@@ -11,7 +10,18 @@ type AddToHistoryFn = (
 ) => void;
 
 const DEFAULT_TS = () => Math.floor(Date.now() / 1000).toString();
-const DEFAULT_DATE = () => format(new Date(), 'yyyy-MM-dd HH:mm:ss');
+const DEFAULT_DATE = () =>
+  new Date()
+    .toLocaleString('en-CA', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    })
+    .replace(/,/, ''); // Simple format yyyy-mm-dd hh:mm:ss
 
 export const useTimestampConverter = (addToHistory?: AddToHistoryFn) => {
   const timestampInput = ref(DEFAULT_TS());

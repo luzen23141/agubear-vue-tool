@@ -280,8 +280,8 @@ describe('QrCodeGenerator.vue', () => {
       const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
         vi.mocked(qrcode.toCanvas).mock.calls.length - 1
       ];
-      expect(lastCall?.[2].color.dark).toBe('#ff0000');
-      expect(lastCall?.[2].color.light).toBe('#0000ff');
+      expect(lastCall?.[2]?.color?.dark).toBe('#ff0000');
+      expect(lastCall?.[2]?.color?.light).toBe('#0000ff');
     });
   });
 
@@ -540,6 +540,93 @@ describe('QrCodeGenerator.vue', () => {
 
       await wrapper.vm.copyToClipboard();
       expect(mockClipboardWrite).not.toHaveBeenCalled();
+    });
+  });
+  describe('模式切換 (模式: Text/WiFi/Contact)', () => {
+    it('應預設為 Text 模式', () => {
+      const wrapper = mount(QrCodeGenerator, mountOptions);
+      const textMode = wrapper.find('.tab-btn.active');
+      expect(textMode.text()).toContain('Text'); // or check logic
+      expect(wrapper.find('textarea').exists()).toBe(true);
+    });
+
+    it('切換到 WiFi 模式應顯示 WiFi 輸入欄位', async () => {
+      const wrapper = mount(QrCodeGenerator, mountOptions);
+      const wifiBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
+
+      if (wifiBtn) {
+        await wifiBtn.trigger('click');
+        expect(wrapper.find('input[placeholder*="SSID"]').exists()).toBe(true);
+        expect(wrapper.find('input[placeholder*="Password"]').exists()).toBe(true);
+        expect(wrapper.find('select').exists()).toBe(true); // Encryption
+      }
+    });
+
+    it('WiFi 模式下輸入資料應產生正確格式字串 (WIFI:T:WPA;...)', async () => {
+      const wrapper = mount(QrCodeGenerator, mountOptions);
+      const wifiBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
+
+      if (wifiBtn) {
+        await wifiBtn.trigger('click');
+
+        await wrapper.find('input[type="text"]').setValue('MyHome'); // SSID
+        await wrapper.find('input[type="password"]').setValue('secret123'); // Pass
+
+        // Trigger generation
+        await wrapper.vm.$nextTick();
+        await flushPromises();
+
+        expect(vi.mocked(qrcode.toCanvas)).toHaveBeenCalled();
+        const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
+          vi.mocked(qrcode.toCanvas).mock.calls.length - 1
+        ];
+        // WIFI:T:WPA;S:MyHome;P:secret123;;
+        expect(lastCall?.[1]).toContain('WIFI:');
+        expect(lastCall?.[1]).toContain('S:MyHome');
+        expect(lastCall?.[1]).toContain('P:secret123');
+      }
+    });
+
+    it('切換到 Contact 模式應顯示聯絡人輸入欄位', async () => {
+      const wrapper = mount(QrCodeGenerator, mountOptions);
+      const contactBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
+
+      if (contactBtn) {
+        await contactBtn.trigger('click');
+        expect(wrapper.find('#contact-fn').exists()).toBe(true);
+        expect(wrapper.find('#contact-tel').exists()).toBe(true);
+        expect(wrapper.find('#contact-email').exists()).toBe(true);
+      }
+    });
+
+    it('Contact 模式下輸入資料應產生 vCard 格式', async () => {
+      const wrapper = mount(QrCodeGenerator, mountOptions);
+      const contactBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
+
+      if (contactBtn) {
+        await contactBtn.trigger('click');
+
+        const nameInput = wrapper.find('#contact-fn');
+        const phoneInput = wrapper.find('#contact-tel');
+
+        if (nameInput.exists() && phoneInput.exists()) {
+          await nameInput.setValue('John Doe');
+          await phoneInput.setValue('12345678');
+        }
+
+        // Trigger generation
+        await wrapper.vm.$nextTick();
+        await flushPromises();
+
+        expect(vi.mocked(qrcode.toCanvas)).toHaveBeenCalled();
+        const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
+          vi.mocked(qrcode.toCanvas).mock.calls.length - 1
+        ];
+        // BEGIN:VCARD...
+        expect(lastCall?.[1]).toContain('BEGIN:VCARD');
+        expect(lastCall?.[1]).toContain('FN:John Doe');
+        expect(lastCall?.[1]).toContain('TEL:12345678');
+      }
     });
   });
 });

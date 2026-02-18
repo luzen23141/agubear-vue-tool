@@ -9,7 +9,12 @@
       "unicode": "🔤 Unicode",
       "pinyin": "🗣️ Pinyin",
       "qrcode": "📱 QR Code",
-      "json": "📋 JSON"
+
+      "json": "📋 JSON",
+      "jwt": "🔓 JWT",
+      "uuid": "🆔 UUID",
+      "color": "🎨 Color",
+      "diff": "🔍 Diff"
     },
     "ariaLabels": {
       "timestamp": "Timestamp Converter",
@@ -20,6 +25,7 @@
       "pinyin": "Pinyin Converter",
       "qrcode": "QR Code Generator",
       "json": "JSON Formatter",
+      "uuid": "UUID Generator",
       "toolSwitch": "Switch Tools",
       "languageSwitch": "Switch Language",
       "categorySelect": "Filter by Category",
@@ -83,6 +89,18 @@
     "dateInputAria": "Enter Date",
     "convertToTimestampAria": "Convert Date to Timestamp",
     "switchSecOrMs": "Toggle seconds or milliseconds",
+    "relativeTime": "Relative",
+    "durationTitle": "⏳ Duration Calculator",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "duration": "Duration",
+    "calculate": "Calculate",
+    "years": "y",
+    "months": "mo",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
     "historyTitle": "📜 Conversion History",
     "clear": "Clear",
     "clearAllAria": "Clear All History",
@@ -231,6 +249,8 @@
     "formatAria": "Format JSON",
     "minify": "Minify",
     "minifyAria": "Minify JSON",
+    "toTs": "To TS Interface",
+    "toTsAria": "Convert JSON to TypeScript Interfaces",
     "optionUnescape": "Unescape",
     "optionUnicode": "Decode Unicode",
     "inputLabel": "Input JSON",
@@ -243,5 +263,59 @@
     "error": "Error",
     "line": "Line",
     "column": "Col"
+  },
+  "jwt": {
+    "title": "🔓 JWT Debugger",
+    "description": "Decode, verify custom claims, and check expiration of JSON Web Tokens.",
+    "inputLabel": "JWT Token",
+    "inputPlaceholder": "Paste JWT Token (eyJ...)",
+    "invalidToken": "Invalid JWT Token",
+    "seo": {
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+    }
+  },
+  "uuid": {
+    "title": "🆔 UUID/ULID Generator",
+    "description": "Bulk generate UUID v4 (Random), v7 (Time-sortable), and ULID. One-click copy.",
+    "typeLabel": "Format Type",
+    "quantityLabel": "Quantity",
+    "generate": "Generate",
+    "resultLabel": "Result",
+    "seo": {
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+    }
+  },
+  "color": {
+    "title": "🎨 Color Converter",
+    "description": "Real-time color format conversion and picker. Supports HEX, RGB, HSL, CMYK.",
+    "seo": {
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+    }
+  },
+  "diff": {
+    "title": "🔍 Diff Checker",
+    "description": "Online text difference checker. Improve readability of differences with semantic comparison.",
+    "original": "Original Text",
+    "modified": "Modified Text",
+    "pasteOriginal": "Paste original text...",
+    "pasteModified": "Paste modified text...",
+    "compare": "Compare",
+    "swap": "Swap",
+    "result": "Difference",
+    "noInput": "Please enter text to compare",
+    "seo": {
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+    }
+  },
+  "cmd": {
+    "placeholder": "Type a command or search...",
+    "noResults": "No results found.",
+    "navHint": "Use ↑↓ to navigate, Enter to select, Esc to close",
+    "actions": {
+      "toggleTheme": "Toggle Theme"
+    },
+    "categories": {
+      "system": "System"
+    }
   }
 }

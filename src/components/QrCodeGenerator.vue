@@ -1,9 +1,37 @@
 <template>
   <div class="qrcode-generator">
-    <!-- 主設定卡片 -->
+    <!-- Main Configuration Card -->
     <BaseCard :title="t('qrcode.title')">
-      <!-- 文字輸入 -->
-      <div class="input-group">
+      <!-- Mode Tabs -->
+      <div class="mode-tabs">
+        <button
+          :class="[{ active: mode === 'text' }]"
+          class="tab-btn"
+          type="button"
+          @click="mode = 'text'"
+        >
+          {{ t('qrcode.modeText') }}
+        </button>
+        <button
+          :class="[{ active: mode === 'wifi' }]"
+          class="tab-btn"
+          type="button"
+          @click="mode = 'wifi'"
+        >
+          {{ t('qrcode.modeWifi') }}
+        </button>
+        <button
+          :class="[{ active: mode === 'contact' }]"
+          class="tab-btn"
+          type="button"
+          @click="mode = 'contact'"
+        >
+          {{ t('qrcode.modeContact') }}
+        </button>
+      </div>
+
+      <!-- Text Input Mode -->
+      <div v-if="mode === 'text'" class="input-group">
         <div class="input-header">
           <label for="qr-input" class="input-label">{{ t('qrcode.contentLabel') }}</label>
           <button
@@ -25,9 +53,92 @@
         />
       </div>
 
-      <!-- 控制面板 -->
+      <!-- WiFi Input Mode -->
+      <div v-if="mode === 'wifi'" class="wifi-form">
+        <div class="form-group">
+          <label for="wifi-ssid">{{ t('qrcode.wifiSsid') }}</label>
+          <input
+            id="wifi-ssid"
+            v-model="wifi.ssid"
+            :placeholder="t('qrcode.wifiSsidPlaceholder')"
+            type="text"
+          />
+        </div>
+        <div class="form-group">
+          <label for="wifi-password">{{ t('qrcode.wifiPassword') }}</label>
+          <input
+            id="wifi-password"
+            v-model="wifi.password"
+            :type="wifi.hiddenPassword ? 'password' : 'text'"
+            :placeholder="t('qrcode.wifiPasswordPlaceholder')"
+          />
+          <button
+            type="button"
+            class="icon-toggle"
+            @click="wifi.hiddenPassword = !wifi.hiddenPassword"
+          >
+            {{ wifi.hiddenPassword ? '👁️' : '🔒' }}
+          </button>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="wifi-encryption">{{ t('qrcode.wifiEncryption') }}</label>
+            <select id="wifi-encryption" v-model="wifi.encryption">
+              <option value="WPA">WPA/WPA2</option>
+              <option value="WEP">WEP</option>
+              <option value="nopass">None</option>
+            </select>
+          </div>
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input v-model="wifi.hidden" type="checkbox" />
+              {{ t('qrcode.wifiHidden') }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Input Mode -->
+      <div v-if="mode === 'contact'" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-fn">{{ t('qrcode.contactName') }}</label>
+            <input
+              id="contact-fn"
+              v-model="contact.name"
+              :placeholder="t('qrcode.contactNamePlaceholder')"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-org">{{ t('qrcode.contactOrg') }}</label>
+            <input id="contact-org" v-model="contact.org" type="text" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-tel">{{ t('qrcode.contactPhone') }}</label>
+            <input
+              id="contact-tel"
+              v-model="contact.phone"
+              :placeholder="t('qrcode.contactPhonePlaceholder')"
+              type="tel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">{{ t('qrcode.contactEmail') }}</label>
+            <input id="contact-email" v-model="contact.email" type="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact-url">{{ t('qrcode.contactUrl') }}</label>
+          <input id="contact-url" v-model="contact.url" type="url" placeholder="https://" />
+        </div>
+      </div>
+
+      <!-- Control Panel (Common) -->
       <div class="controls-grid">
-        <!-- 尺寸 -->
+        <!-- Size -->
         <div class="control-item">
           <label for="qr-size">{{ t('qrcode.size', { n: qrSize }) }}</label>
           <input
@@ -41,7 +152,7 @@
           />
         </div>
 
-        <!-- 邊距 -->
+        <!-- Margin -->
         <div class="control-item">
           <label for="qr-margin">{{ t('qrcode.margin', { n: margin }) }}</label>
           <input
@@ -55,7 +166,7 @@
           />
         </div>
 
-        <!-- 前景色 -->
+        <!-- Foreground Color -->
         <div class="control-item color-control">
           <label for="qr-fg-color">{{ t('qrcode.fgColor') }}</label>
           <div class="color-picker-row">
@@ -69,7 +180,7 @@
           </div>
         </div>
 
-        <!-- 背景色 -->
+        <!-- Background Color -->
         <div class="control-item color-control">
           <label for="qr-bg-color">{{ t('qrcode.bgColor') }}</label>
           <div class="color-picker-row">
@@ -83,7 +194,7 @@
           </div>
         </div>
 
-        <!-- 錯誤校正等級 -->
+        <!-- Error Correction Level -->
         <fieldset class="control-item ec-control">
           <legend class="input-label">{{ t('qrcode.errorCorrection') }}</legend>
           <div class="ec-options">
@@ -104,8 +215,8 @@
       </div>
     </BaseCard>
 
-    <!-- 預覽 & 操作卡片 -->
-    <BaseCard v-if="inputText" :title="t('qrcode.preview')" class="preview-card">
+    <!-- Preview & Action Card -->
+    <BaseCard v-if="finalQrText" :title="t('qrcode.preview')" class="preview-card">
       <div class="canvas-wrapper">
         <canvas
           ref="canvasRef"
@@ -147,7 +258,7 @@
       </template>
     </BaseCard>
 
-    <!-- 歷史紀錄 -->
+    <!-- History List -->
     <HistoryList :history="history" @clear="clearHistory" @remove="removeFromHistory">
       <template #item="{ item }">
         <div class="history-qr-preview">
@@ -167,7 +278,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick, onMounted, computed } from 'vue';
+import { ref, reactive, watch, nextTick, onMounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import BaseCard from './common/BaseCard.vue';
@@ -188,21 +299,76 @@ useHead({
 
 const { history, addToHistory, clearHistory, removeFromHistory } = useHistory();
 
-// ── 輸入狀態 ──
+// ── Tabs ──
+const mode = ref<'text' | 'wifi' | 'contact'>('text');
+
+// ── Text Mode ──
 const inputText = ref('');
+
+// ── WiFi Mode ──
+const wifi = reactive({
+  ssid: '',
+  password: '',
+  encryption: 'WPA',
+  hidden: false,
+  hiddenPassword: true
+});
+
+// ── Contact Mode ──
+const contact = reactive({
+  name: '',
+  org: '',
+  phone: '',
+  email: '',
+  url: ''
+});
+
+// ── Computed Final Text ──
+// eslint-disable-next-line sonarjs/cognitive-complexity, max-lines-per-function, complexity
+const finalQrText = computed(() => {
+  if (mode.value === 'text') return inputText.value;
+
+  if (mode.value === 'wifi') {
+    if (!wifi.ssid) return '';
+    const { encryption, ssid, password, hidden } = wifi;
+    return `WIFI:T:${encryption};S:${ssid};P:${password};H:${hidden};;`;
+  }
+
+  if (mode.value === 'contact') {
+    const { name, phone, email, org, url } = contact;
+    if (!name && !phone && !email) return '';
+
+    const parts = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      `N:${name || ''}`,
+      `FN:${name || ''}`,
+      org ? `ORG:${org}` : '',
+      phone ? `TEL:${phone}` : '',
+      email ? `EMAIL:${email}` : '',
+      url ? `URL:${url}` : '',
+      'END:VCARD'
+    ];
+    return parts.filter(Boolean).join('\n');
+  }
+
+  return '';
+});
+
+// ── Options ──
 const qrSize = ref(256);
 const foregroundColor = ref('#000000');
 const backgroundColor = ref('#ffffff');
 const errorCorrectionLevel = ref('M');
 const margin = ref(4);
 
-// ── Canvas 參照 ──
+// ── Canvas Ref ──
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const hasQrCode = ref(false);
 const copySuccess = ref(false);
 const downloadTriggered = ref(false);
 
-// ── 錯誤校正等級選項 ──
+// ── EC Levels ──
 const ecLevels = [
   { value: 'L', label: 'L (7%)' },
   { value: 'M', label: 'M (15%)' },
@@ -210,10 +376,17 @@ const ecLevels = [
   { value: 'H', label: 'H (30%)' }
 ];
 
-// ── 產生 QR Code ──
+// ── Generate QR Code ──
+// eslint-disable-next-line max-statements
 const generateQrCode = async () => {
-  if (!inputText.value) {
+  if (!finalQrText.value) {
     hasQrCode.value = false;
+    // Clear canvas if empty
+    const canvas = canvasRef.value;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
     return;
   }
 
@@ -221,14 +394,12 @@ const generateQrCode = async () => {
 
   const canvas = canvasRef.value;
   if (!canvas) {
-    // eslint-disable-next-line no-console
-    console.error('Canvas ref is null/undefined');
     return;
   }
 
   try {
     const QRCode = (await import('qrcode')).default;
-    await QRCode.toCanvas(canvas, inputText.value, {
+    await QRCode.toCanvas(canvas, finalQrText.value, {
       width: qrSize.value,
       margin: margin.value,
       color: {
@@ -241,24 +412,26 @@ const generateQrCode = async () => {
 
     hasQrCode.value = true;
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error('toCanvas error:', error);
-    // if (!isCancelled) hasQrCode.value = false; // isCancelled not defined
     hasQrCode.value = false;
   }
 };
 
-// ── 監聽輸入變化，即時更新 ──
+// ── Watch for changes ──
 watch(
-  [inputText, qrSize, foregroundColor, backgroundColor, errorCorrectionLevel, margin],
+  [finalQrText, qrSize, foregroundColor, backgroundColor, errorCorrectionLevel, margin],
   async () => {
+    // If text is empty, clear.
+    if (!finalQrText.value) {
+      hasQrCode.value = false;
+    }
     await nextTick();
     await generateQrCode();
   },
   { immediate: true }
 );
 
-// ── 下載 PNG ──
+// ── Download PNG ──
 const downloadPng = () => {
   if (!canvasRef.value || !hasQrCode.value) return;
   const link = document.createElement('a');
@@ -272,7 +445,7 @@ const downloadPng = () => {
   }, 1500);
 };
 
-// ── 複製到剪貼簿 ──
+// ── Copy to Clipboard ──
 const copyToClipboard = async () => {
   if (!canvasRef.value || !hasQrCode.value) return;
   try {
@@ -294,24 +467,23 @@ const copyToClipboard = async () => {
     }
   } catch (err) {
     console.warn('Clipboard write failed:', err);
-    // 瀏覽器不支援或權限不足，靜默處理
   }
 };
 
-// ── 拖曳支援 ──
+// ── Drag Support ──
 const onDragStart = (event: DragEvent) => {
   if (!canvasRef.value || !hasQrCode.value || !event.dataTransfer) return;
   const dataUrl = canvasRef.value.toDataURL('image/png');
   event.dataTransfer.setData('text/uri-list', dataUrl);
-  event.dataTransfer.setData('text/plain', inputText.value);
+  event.dataTransfer.setData('text/plain', finalQrText.value);
 };
 
-// ── 記錄到歷史 ──
+// ── Record to History ──
 const recordToHistory = () => {
-  if (!inputText.value || !hasQrCode.value || !canvasRef.value) return;
+  if (!finalQrText.value || !hasQrCode.value || !canvasRef.value) return;
   const displayInput =
-    inputText.value.length > 30 ? `${inputText.value.slice(0, 30)}...` : inputText.value;
-  const config = `${qrSize.value}px / ${errorCorrectionLevel.value}`;
+    finalQrText.value.length > 30 ? `${finalQrText.value.slice(0, 30)}...` : finalQrText.value;
+  const config = `${qrSize.value}px / ${errorCorrectionLevel.value} / ${mode.value}`;
   const dataUrl = canvasRef.value.toDataURL('image/png');
 
   addToHistory('qrcode', displayInput, config, { dataUrl });
@@ -324,13 +496,10 @@ const pasteInput = async () => {
     const text = await navigator.clipboard.readText();
     if (text) inputText.value = text;
   } catch (e) {
-    if (typeof process === 'undefined' || !process.env.VITEST) {
-      console.warn('pasteInput error:', e);
-    }
+    console.error('Failed to read clipboard:', e);
   }
 };
 
-// ── 效能標記 ──
 onMounted(() => {
   performance.mark('QrCodeGenerator-mounted');
   if (navigator.clipboard) {
@@ -344,6 +513,102 @@ onMounted(() => {
   width: 100%;
 }
 
+.mode-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tab-btn:hover:not(.active) {
+  background: var(--surface-hover);
+}
+
+.wifi-form,
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.icon-toggle {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 2px;
+}
+
+.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-group {
+  justify-content: center;
+}
+
+/* Common Styles */
 .card {
   background: var(--surface-raised);
   border: 1px solid var(--border);
@@ -626,8 +891,6 @@ canvas {
   align-items: center;
   margin-bottom: 4px;
 }
-
-/* .input-label defined at line 361 */
 
 .paste-btn {
   background: transparent;

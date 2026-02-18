@@ -78,6 +78,30 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('../components/JsonFormatter.vue'),
     meta: { title: 'app.tabs.json' }
   },
+  {
+    path: '/:lang/jwt',
+    name: 'jwt',
+    component: () => import('../components/JwtDebugger.vue'),
+    meta: { title: 'app.tabs.jwt' }
+  },
+  {
+    path: '/:lang/uuid',
+    name: 'uuid',
+    component: () => import('../components/UuidGenerator.vue'),
+    meta: { title: 'app.tabs.uuid' }
+  },
+  {
+    path: '/:lang/color',
+    name: 'color',
+    component: () => import('../components/ColorConverter.vue'),
+    meta: { title: 'app.tabs.color' }
+  },
+  {
+    path: '/:lang/diff',
+    name: 'diff',
+    component: () => import('../components/DiffChecker.vue'),
+    meta: { title: 'app.tabs.diff' }
+  },
   // Catch-all for 404 - Redirect to default lang
   {
     path: '/:pathMatch(.*)*',
