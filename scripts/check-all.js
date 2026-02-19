@@ -9,8 +9,23 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
 
+import { checkDependencyIntegrity } from './check-deps.js';
+
 const steps = [
   { name: 'Case Check', type: 'internal', fn: checkCaseSensitivity },
+  {
+    name: 'Dependency Integrity',
+    type: 'internal',
+    fn: () => {
+      const { success, issues } = checkDependencyIntegrity();
+      if (!success) {
+        issues.forEach(({ pkg, files }) => {
+          console.error(chalk.yellow(`  └─ "${pkg}" imported by: ${files.join(', ')}`));
+        });
+      }
+      return success;
+    }
+  },
   { name: 'Lint (Strict)', command: 'pnpm', args: ['run', 'lint:strict'] },
   { name: 'Lint (Architecture)', command: 'pnpm', args: ['run', 'lint:arch'] },
   { name: 'Type Check', command: 'pnpm', args: ['run', 'type-check'] },
