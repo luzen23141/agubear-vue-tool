@@ -9,6 +9,7 @@ description: Vue 3 + Vite 菁英特遣隊開發與自動化部署循環 (Elite S
 ## 前置作業 (Prerequisites)
 
 - 確保 `.env` 已正確設定（包含 `TELEGRAM_BOT_TOKEN` 和 `TELEGRAM_CHAT_ID`）。
+- 確保 `gh` CLI 已安裝並認證（`gh auth login`），用於步驟 8 的 CI 驗證。
 - 開發環境預設為 macOS，並使用 Node.js / npm 工具鏈。
 
 ---
@@ -87,7 +88,25 @@ git commit -m "<generated_message>"
 git push origin main
 ```
 
-### 8. 優雅通知推送 (Refined Notification)
+### 8. CI 流水線驗證 (CI Pipeline Verification)
+
+Push 後等待 GitHub Actions 完成，確保遠端環境也通過所有檢查。
+
+```bash
+# 等待最新 run 完成（阻塞式，串流 log）
+// turbo
+gh run watch --repo luzen23141/agubear-vue-tool --exit-status
+```
+
+> **判定邏輯**：
+>
+> 1. **CI 通過** → 繼續至步驟 9（通知）。
+> 2. **CI 失敗** →
+>    a. 執行 `gh run view <run-id> --repo luzen23141/agubear-vue-tool --log-failed` 取得失敗 log。
+>    b. 分析錯誤原因，進入「迭代修復循環」(步驟 6)。
+>    c. 修復後重新 commit + push，回到步驟 8。
+
+### 9. 優雅通知推送 (Refined Notification)
 
 若全線流程順利完成，透過腳本發送具備高質感的 Markdown 格式通知。
 
