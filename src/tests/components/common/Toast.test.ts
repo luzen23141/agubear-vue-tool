@@ -9,7 +9,7 @@ describe('Toast', () => {
 
   it('is hidden by default', () => {
     const wrapper = mount(Toast);
-    expect(wrapper.find('.toast').exists()).toBe(false);
+    expect(wrapper.find('.success, .error, .info').exists()).toBe(false);
   });
 
   it('shows a toast with correct message and type', async () => {
@@ -17,7 +17,7 @@ describe('Toast', () => {
     const vm = wrapper.vm as unknown as { show: (msg: string, type: string) => void };
     vm.show('Success!', 'success');
     await wrapper.vm.$nextTick();
-    const toast = wrapper.find('.toast');
+    const toast = wrapper.find('.success');
     expect(toast.exists()).toBe(true);
     expect(toast.text()).toContain('Success!');
     expect(toast.classes()).toContain('success');
@@ -28,7 +28,7 @@ describe('Toast', () => {
     const vm = wrapper.vm as unknown as { show: (msg: string, type: string) => void };
     vm.show('Error!', 'error');
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('.toast-icon').exists()).toBe(true);
+    expect(wrapper.find('.error').exists()).toBe(true);
   });
 
   it('shows correct icon for info type', async () => {
@@ -36,7 +36,7 @@ describe('Toast', () => {
     const vm = wrapper.vm as unknown as { show: (msg: string, type: string) => void };
     vm.show('Info', 'info');
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('.toast-icon').exists()).toBe(true);
+    expect(wrapper.find('.info').exists()).toBe(true);
   });
 
   it('hides after the specified duration', async () => {
@@ -46,11 +46,11 @@ describe('Toast', () => {
     };
     vm.show('Bye', 'info', 1000);
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('.toast').exists()).toBe(true);
+    expect(wrapper.find('.info').exists()).toBe(true);
 
     vi.advanceTimersByTime(1000);
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('.toast').exists()).toBe(false);
+    expect(wrapper.find('.info').exists()).toBe(false);
   });
 
   it('resets timer when show is called again', async () => {
@@ -68,7 +68,7 @@ describe('Toast', () => {
     vi.advanceTimersByTime(500);
     await wrapper.vm.$nextTick();
     // Should still be visible — second show restarted the timer
-    expect(wrapper.find('.toast').exists()).toBe(true);
-    expect(wrapper.find('.toast-message').text()).toBe('Second');
+    expect(wrapper.find('.success').exists()).toBe(true);
+    expect(wrapper.find('.success').text()).toContain('Second');
   });
 });

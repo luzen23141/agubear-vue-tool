@@ -80,7 +80,7 @@ describe('UrlConverter.vue', () => {
     it('點擊紀錄按鈕應呼叫 addToHistory', async () => {
       await wrapper.find('#url-input').setValue('test');
       await flushPromises();
-      const recordBtn = wrapper.find('.record-btn');
+      const recordBtn = wrapper.find('.btn-primary');
       await recordBtn.trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith('url', 'test', 'test');
     });
@@ -103,7 +103,7 @@ describe('UrlConverter.vue', () => {
     it('記錄到歷史時應截斷長內容', async () => {
       await wrapper.find('#url-input').setValue('a'.repeat(50));
       await flushPromises();
-      await wrapper.find('.record-btn').trigger('click');
+      await wrapper.find('.btn-primary').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith(
         'url',
         expect.stringContaining('...'),

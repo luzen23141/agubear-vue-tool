@@ -4,6 +4,7 @@ import { routes } from './router';
 import { setupRouterGuard } from './router/guard';
 import { setupI18n } from './i18n';
 import './style.css';
+import 'virtual:uno.css';
 
 // Performance: Mark app creation start
 performance.mark('vue-app-start');

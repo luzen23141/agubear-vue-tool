@@ -1,25 +1,27 @@
 <template>
-  <div class="two-way-converter">
+  <div class="w-full">
     <BaseCard :title="title">
       <!-- Mode Selection -->
-      <div class="options-bar">
+      <div class="flex justify-center mb-6">
         <div class="mode-select">
-          <label>
+          <label class="mode-label">
             <input
               :name="name"
               :value="encodeValue"
               :checked="mode === encodeValue"
               type="radio"
+              class="hidden"
               @change="$emit('update:mode', encodeValue)"
             />
             <span>{{ encodeLabel }}</span>
           </label>
-          <label>
+          <label class="mode-label">
             <input
               :name="name"
               :value="decodeValue"
               :checked="mode === decodeValue"
               type="radio"
+              class="hidden"
               @change="$emit('update:mode', decodeValue)"
             />
             <span>{{ decodeLabel }}</span>
@@ -54,8 +56,8 @@
 
       <!-- History Action -->
       <template #footer>
-        <div v-if="outputText" class="action-group">
-          <button type="button" class="record-btn" @click="$emit('record')">
+        <div v-if="outputText" class="mt-5 flex justify-center">
+          <button type="button" class="btn-primary" @click="$emit('record')">
             {{ t('common.record') }}
           </button>
         </div>
@@ -118,35 +120,13 @@ defineEmits<{
 
 const { t } = useI18n();
 
-// Interface moved up
-
 // Default defaults for optional props if needed (using withDefaults is better usually but simple works)
 const encodeValue = props.encodeValue || 'encode';
 const decodeValue = props.decodeValue || 'decode';
 </script>
 
 <style scoped>
-.two-way-converter {
-  width: 100%;
-}
-
-.options-bar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.mode-select {
-  display: flex;
-  background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 4px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--glass-border);
-}
-
-.mode-select label {
+.mode-label {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -157,47 +137,10 @@ const decodeValue = props.decodeValue || 'decode';
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
-
-.mode-select label:has(input:checked) {
+.mode-label:has(input:checked) {
   background: var(--gradient-primary);
   color: white;
   font-weight: 600;
   box-shadow: var(--shadow-glow);
-}
-
-.mode-select input {
-  display: none;
-}
-
-.direction-arrow {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin: 0.75rem 0;
-  opacity: 0.6;
-  transition: opacity var(--transition-normal);
-}
-
-.action-group {
-  margin-top: 1.25rem;
-  display: flex;
-  justify-content: center;
-}
-
-.record-btn {
-  padding: 10px 28px;
-  background: var(--gradient-primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all var(--transition-normal);
-  box-shadow: var(--shadow-glow);
-}
-
-.record-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(45, 157, 106, 0.3);
 }
 </style>

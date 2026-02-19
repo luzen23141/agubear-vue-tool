@@ -54,7 +54,7 @@ module.exports = {
   ],
   options: {
     exclude: {
-      path: ['node_modules', 'vite/client']
+      path: ['node_modules', 'vite/client', '^virtual:']
     },
     tsPreCompilationDeps: true,
     tsConfig: {

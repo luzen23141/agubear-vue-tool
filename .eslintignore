@@ -1,10 +1,8 @@
 dist
+dist-temp
+.vite-ssg-temp
 node_modules
 bundle-analysis.html
 report/
-bundle-analysis.html
-
 reports/
 coverage/
-
-

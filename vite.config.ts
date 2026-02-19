@@ -5,10 +5,12 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import vue from '@vitejs/plugin-vue';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { VitePWA } from 'vite-plugin-pwa';
+import UnoCSS from 'unocss/vite';
 
 const getPlugins = (env: Record<string, string>, _mode: string) =>
   [
     vue(),
+    UnoCSS(),
     createHtmlPlugin({
       minify: true,
       inject: {
@@ -41,7 +43,8 @@ const getPlugins = (env: Record<string, string>, _mode: string) =>
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}']
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}'],
+        navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/, /^\/CNAME$/]
       }
     }),
     process.env.CI

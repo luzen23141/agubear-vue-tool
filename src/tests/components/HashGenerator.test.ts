@@ -125,7 +125,7 @@ describe('HashGenerator.vue', () => {
     it('點擊紀錄按鈕應呼叫 addToHistory', async () => {
       await wrapper.find('#hash-input').setValue('test');
       await wrapper.vm.$nextTick();
-      await wrapper.find('.record-btn').trigger('click');
+      await wrapper.find('.btn-primary').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith('hash', 'test', expect.any(String));
     });
 
@@ -149,7 +149,7 @@ describe('HashGenerator.vue', () => {
     it('記錄到歷史時應截斷長輸入', async () => {
       await wrapper.find('#hash-input').setValue('a'.repeat(50));
       await wrapper.vm.$nextTick();
-      await wrapper.find('.record-btn').trigger('click');
+      await wrapper.find('.btn-primary').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith(
         'hash',
         expect.stringContaining('...'),

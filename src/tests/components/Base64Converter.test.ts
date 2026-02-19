@@ -132,7 +132,7 @@ describe('Base64Converter.vue', () => {
       await wrapper.find('#base64-input').setValue('test');
       await flushPromises();
 
-      const recordBtn = wrapper.find('.record-btn');
+      const recordBtn = wrapper.find('.btn-primary');
       await recordBtn.trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith('base64', 'test', 'dGVzdA==');
     });
@@ -151,7 +151,7 @@ describe('Base64Converter.vue', () => {
     it('記錄到歷史時應截斷長輸入', async () => {
       await wrapper.find('#base64-input').setValue('a'.repeat(50));
       await flushPromises();
-      await wrapper.find('.record-btn').trigger('click');
+      await wrapper.find('.btn-primary').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith(
         'base64',
         expect.stringContaining('...'),

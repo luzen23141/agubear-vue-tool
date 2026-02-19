@@ -1,30 +1,34 @@
 <template>
   <BaseCard :title="t('timestamp.durationTitle')">
-    <div class="duration-calc">
-      <div class="inputs-row">
-        <div class="input-group">
-          <label>{{ t('timestamp.startTime') }}</label>
+    <div class="flex-col gap-4">
+      <div class="inputs-row grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-0.85rem font-600 text-[var(--text-secondary)]">{{
+            t('timestamp.startTime')
+          }}</label>
           <input
             v-model="startTime"
             type="datetime-local"
-            class="dt-input"
+            class="input-base"
             @change="calculateDuration"
           />
         </div>
-        <div class="input-group">
-          <label>{{ t('timestamp.endTime') }}</label>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-0.85rem font-600 text-[var(--text-secondary)]">{{
+            t('timestamp.endTime')
+          }}</label>
           <input
             v-model="endTime"
             type="datetime-local"
-            class="dt-input"
+            class="input-base"
             @change="calculateDuration"
           />
         </div>
       </div>
 
       <div v-if="durationResult" class="result-box">
-        <span class="label">{{ t('timestamp.duration') }}:</span>
-        <span class="value">{{ durationResult }}</span>
+        <span class="font-600 text-[var(--text-secondary)]">{{ t('timestamp.duration') }}:</span>
+        <span class="text-[var(--primary)] font-600">{{ durationResult }}</span>
       </div>
     </div>
   </BaseCard>
@@ -64,66 +68,3 @@ const calculateDuration = () => {
   });
 };
 </script>
-
-<style scoped>
-.duration-calc {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.inputs-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .inputs-row {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.input-group label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.dt-input {
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-
-.result-box {
-  margin-top: 0.5rem;
-  padding: 12px;
-  background: var(--surface-raised);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.result-box .label {
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.result-box .value {
-  color: var(--primary);
-  font-weight: 600;
-}
-</style>

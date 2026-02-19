@@ -45,75 +45,24 @@ Sitemap: ${SITE_URL}/sitemap.xml
 
 const today = new Date().toISOString().split('T')[0];
 
-// All supported locale codes — keep in sync with src/i18n.js
+// All supported locale codes
 const LOCALES = [
-  'zh-TW',
-  'zh-CN',
-  'yue',
-  'ja',
-  'ko',
-  'en',
-  'es',
-  'fr',
-  'de',
-  'pt',
-  'it',
-  'nl',
-  'pl',
-  'tr',
-  'ru',
-  'uk',
-  'th',
-  'vi',
-  'id',
-  'ms',
-  'hi',
-  'ar'
+  'zh-TW', 'zh-CN', 'yue', 'ja', 'ko', 'en', 'es', 'fr', 'de', 'pt',
+  'it', 'nl', 'pl', 'tr', 'ru', 'uk', 'th', 'vi', 'id', 'ms', 'hi', 'ar'
 ];
 
-// Build xhtml:link alternates shared by every <url> entry
-const xhtmlLinks = LOCALES.map(
-  (code) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${SITE_URL}/?lang=${code}"/>`
-)
-  .concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/"/>`])
-  .join('\n');
-
-// Each locale gets its own <url> entry (Google multi-language sitemap best practice)
-// Define tools list - keep in sync with vite.config.ts and router/index.ts
 const TOOLS = [
-  'timestamp',
-  'hash',
-  'base64',
-  'url',
-  'unicode',
-  'pinyin',
-  'qrcode',
-  'json',
-  'jwt',
-  'uuid',
-  'color',
-  'diff'
+  'timestamp', 'hash', 'base64', 'url', 'unicode', 'pinyin',
+  'qrcode', 'json', 'jwt', 'uuid', 'color', 'diff'
 ];
 
 // Generate URLs for all tools across all locales
 const urlEntries = LOCALES.flatMap((code) => {
-  // 1. Root for locale
-  const rootEntry = `  <url>
-    <loc>${SITE_URL}/?lang=${code}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    ${xhtmlLinks}
-  </url>`;
-
-  // 2. Tool pages for locale
+  // Tool pages for locale
   const toolEntries = TOOLS.map(tool => {
-    // Generate alternates for this specific tool
     const toolAlternates = LOCALES.map(
       (c) => `    <xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}/${c}/${tool}"/>`
-    )
-    .concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en/${tool}"/>`])
-    .join('\n');
+    ).concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en/${tool}"/>`]).join('\n');
 
     return `  <url>
     <loc>${SITE_URL}/${code}/${tool}</loc>
@@ -123,8 +72,7 @@ const urlEntries = LOCALES.flatMap((code) => {
 ${toolAlternates}
   </url>`;
   });
-
-  return [rootEntry, ...toolEntries];
+  return toolEntries;
 }).join('\n');
 
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
@@ -135,7 +83,7 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-${xhtmlLinks}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/"/>
   </url>
 ${urlEntries}
 </urlset>

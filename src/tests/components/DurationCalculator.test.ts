@@ -19,7 +19,7 @@ describe('DurationCalculator.vue', () => {
   it('renders correctly', () => {
     const wrapper = mount(DurationCalculator);
     expect(wrapper.exists()).toBe(true);
-    expect(wrapper.find('.duration-calc').exists()).toBe(true);
+    expect(wrapper.find('.flex-col').exists()).toBe(true);
     // 2 inputs for start and end time
     expect(wrapper.findAll('input[type="datetime-local"]').length).toBe(2);
   });
@@ -39,8 +39,9 @@ describe('DurationCalculator.vue', () => {
 
     expect(wrapper.find('.result-box').exists()).toBe(true);
     // en-US locale for date-fns formatDuration usually outputs "x hours, y minutes"
-    expect(wrapper.find('.value').text()).toContain('2 hours');
-    expect(wrapper.find('.value').text()).toContain('30 minutes');
+    const valueSpan = wrapper.findAll('.result-box span').at(1);
+    expect(valueSpan?.text()).toContain('2 hours');
+    expect(valueSpan?.text()).toContain('30 minutes');
   });
 
   it('handles empty input gracefully', async () => {

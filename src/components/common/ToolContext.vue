@@ -1,12 +1,14 @@
 <template>
-  <div class="tool-context">
+  <div class="mt-12 pt-8 border-t border-[var(--border)] text-[var(--text-secondary)]">
     <!-- Educational Content (GEO/SEO) -->
-    <article v-if="contextParagraphs.length > 0" class="context-article">
+    <article v-if="contextParagraphs.length > 0">
       <header>
-        <h2>{{ t(`${toolKey}.context.title`) }}</h2>
+        <h2 class="text-1.5rem text-[var(--text-primary)] mb-4">
+          {{ t(`${toolKey}.context.title`) }}
+        </h2>
       </header>
-      <div class="context-body">
-        <p v-for="(paragraph, index) in contextParagraphs" :key="index">
+      <div>
+        <p v-for="(paragraph, index) in contextParagraphs" :key="index" class="mb-4 leading-7">
           {{ paragraph }}
         </p>
       </div>
@@ -15,27 +17,26 @@
     <!-- Q&A Section (AEO) -->
     <section
       v-if="faqItems.length > 0"
-      class="faq-section"
+      class="mt-10"
       itemtype="https://schema.org/FAQPage"
       itemscope
     >
-      <h3>{{ t('common.faqTitle') || '常見問題' }}</h3>
+      <h3 class="text-1.3rem text-[var(--text-primary)] mb-6">
+        {{ t('common.faqTitle') || '常見問題' }}
+      </h3>
       <div
         v-for="(item, index) in faqItems"
         :key="index"
-        class="faq-item"
+        class="mb-6"
         itemprop="mainEntity"
         itemtype="https://schema.org/Question"
         itemscope
       >
-        <h4 itemprop="name">{{ item.question }}</h4>
-        <div
-          class="faq-answer"
-          itemprop="acceptedAnswer"
-          itemtype="https://schema.org/Answer"
-          itemscope
-        >
-          <p itemprop="text">{{ item.answer }}</p>
+        <h4 class="text-1.1rem font-600 text-[var(--text-primary)] m-0 mb-2" itemprop="name">
+          {{ item.question }}
+        </h4>
+        <div itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" itemscope>
+          <p class="m-0 text-[var(--text-muted)]" itemprop="text">{{ item.answer }}</p>
         </div>
       </div>
     </section>
@@ -122,49 +123,3 @@ onMounted(() => {
   generateJsonLd();
 });
 </script>
-
-<style scoped>
-.tool-context {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  color: var(--text-secondary);
-}
-
-.context-article h2 {
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.context-body p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-.faq-section {
-  margin-top: 2.5rem;
-}
-
-.faq-section h3 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-}
-
-.faq-item {
-  margin-bottom: 1.5rem;
-}
-
-.faq-item h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem 0;
-}
-
-.faq-answer p {
-  margin: 0;
-  color: var(--text-muted);
-}
-</style>

@@ -43,7 +43,7 @@ describe('ToolContext', () => {
     const wrapper = mount(ToolContext, {
       props: { toolKey: 'timestamp' }
     });
-    const paragraphs = wrapper.findAll('.context-body p');
+    const paragraphs = wrapper.findAll('article p');
     expect(paragraphs).toHaveLength(2);
     expect(paragraphs[0]?.text()).toBe('Paragraph 1');
     expect(paragraphs[1]?.text()).toBe('Paragraph 2');
@@ -53,24 +53,26 @@ describe('ToolContext', () => {
     const wrapper = mount(ToolContext, {
       props: { toolKey: 'timestamp' }
     });
-    const items = wrapper.findAll('.faq-item');
+    const items = wrapper.findAll('[itemprop="mainEntity"]');
     expect(items).toHaveLength(2);
     expect(items[0]?.find('h4').text()).toBe('What is a timestamp?');
-    expect(items[0]?.find('.faq-answer p').text()).toBe('A numeric representation of time.');
+    expect(items[0]?.find('[itemprop="text"]').text()).toBe('A numeric representation of time.');
   });
 
   it('shows FAQ title', () => {
     const wrapper = mount(ToolContext, {
       props: { toolKey: 'timestamp' }
     });
-    expect(wrapper.find('.faq-section h3').text()).toBe('FAQ');
+    expect(wrapper.find('section h3').text()).toBe('FAQ');
   });
 
   it('uses schema.org microdata attributes', () => {
     const wrapper = mount(ToolContext, {
       props: { toolKey: 'timestamp' }
     });
-    expect(wrapper.find('.faq-section').attributes('itemtype')).toBe('https://schema.org/FAQPage');
-    expect(wrapper.find('.faq-item').attributes('itemprop')).toBe('mainEntity');
+    expect(wrapper.find('section[itemtype]').attributes('itemtype')).toBe(
+      'https://schema.org/FAQPage'
+    );
+    expect(wrapper.find('[itemprop="mainEntity"]').attributes('itemprop')).toBe('mainEntity');
   });
 });
