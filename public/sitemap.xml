@@ -6,6 +6,28 @@
     <lastmod>2026-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://agubear.black/zh-CN/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="yue" href="https://agubear.black/yue/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agubear.black/ja/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agubear.black/ko/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agubear.black/es/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agubear.black/fr/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agubear.black/de/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://agubear.black/pt/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://agubear.black/it/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agubear.black/nl/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://agubear.black/pl/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://agubear.black/tr/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agubear.black/ru/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://agubear.black/uk/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://agubear.black/th/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://agubear.black/vi/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://agubear.black/id/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
@@ -35,7 +57,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/hash</loc>
@@ -64,7 +86,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/base64</loc>
@@ -93,7 +115,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/url</loc>
@@ -122,7 +144,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/unicode</loc>
@@ -151,7 +173,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/pinyin</loc>
@@ -180,7 +202,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/qrcode</loc>
@@ -209,7 +231,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/json</loc>
@@ -238,7 +260,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/jwt</loc>
@@ -267,7 +289,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/uuid</loc>
@@ -296,7 +318,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/color</loc>
@@ -325,7 +347,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/diff</loc>
@@ -354,7 +376,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/timestamp</loc>
@@ -383,7 +405,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/hash</loc>
@@ -412,7 +434,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/base64</loc>
@@ -441,7 +463,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/url</loc>
@@ -470,7 +492,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/unicode</loc>
@@ -499,7 +521,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/pinyin</loc>
@@ -528,7 +550,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/qrcode</loc>
@@ -557,7 +579,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/json</loc>
@@ -586,7 +608,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/jwt</loc>
@@ -615,7 +637,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/uuid</loc>
@@ -644,7 +666,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/color</loc>
@@ -673,7 +695,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/diff</loc>
@@ -702,7 +724,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/timestamp</loc>
@@ -731,7 +753,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/hash</loc>
@@ -760,7 +782,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/base64</loc>
@@ -789,7 +811,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/url</loc>
@@ -818,7 +840,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/unicode</loc>
@@ -847,7 +869,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/pinyin</loc>
@@ -876,7 +898,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/qrcode</loc>
@@ -905,7 +927,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/json</loc>
@@ -934,7 +956,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/jwt</loc>
@@ -963,7 +985,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/uuid</loc>
@@ -992,7 +1014,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/color</loc>
@@ -1021,7 +1043,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/yue/diff</loc>
@@ -1050,7 +1072,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/timestamp</loc>
@@ -1079,7 +1101,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/hash</loc>
@@ -1108,7 +1130,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/base64</loc>
@@ -1137,7 +1159,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/url</loc>
@@ -1166,7 +1188,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/unicode</loc>
@@ -1195,7 +1217,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/pinyin</loc>
@@ -1224,7 +1246,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/qrcode</loc>
@@ -1253,7 +1275,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/json</loc>
@@ -1282,7 +1304,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/jwt</loc>
@@ -1311,7 +1333,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/uuid</loc>
@@ -1340,7 +1362,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/color</loc>
@@ -1369,7 +1391,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ja/diff</loc>
@@ -1398,7 +1420,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/timestamp</loc>
@@ -1427,7 +1449,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/hash</loc>
@@ -1456,7 +1478,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/base64</loc>
@@ -1485,7 +1507,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/url</loc>
@@ -1514,7 +1536,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/unicode</loc>
@@ -1543,7 +1565,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/pinyin</loc>
@@ -1572,7 +1594,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/qrcode</loc>
@@ -1601,7 +1623,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/json</loc>
@@ -1630,7 +1652,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/jwt</loc>
@@ -1659,7 +1681,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/uuid</loc>
@@ -1688,7 +1710,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/color</loc>
@@ -1717,7 +1739,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ko/diff</loc>
@@ -1746,7 +1768,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/timestamp</loc>
@@ -1775,7 +1797,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/hash</loc>
@@ -1804,7 +1826,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/base64</loc>
@@ -1833,7 +1855,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/url</loc>
@@ -1862,7 +1884,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/unicode</loc>
@@ -1891,7 +1913,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/pinyin</loc>
@@ -1920,7 +1942,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/qrcode</loc>
@@ -1949,7 +1971,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/json</loc>
@@ -1978,7 +2000,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/jwt</loc>
@@ -2007,7 +2029,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/uuid</loc>
@@ -2036,7 +2058,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/color</loc>
@@ -2065,7 +2087,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/en/diff</loc>
@@ -2094,7 +2116,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/timestamp</loc>
@@ -2123,7 +2145,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/hash</loc>
@@ -2152,7 +2174,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/base64</loc>
@@ -2181,7 +2203,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/url</loc>
@@ -2210,7 +2232,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/unicode</loc>
@@ -2239,7 +2261,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/pinyin</loc>
@@ -2268,7 +2290,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/qrcode</loc>
@@ -2297,7 +2319,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/json</loc>
@@ -2326,7 +2348,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/jwt</loc>
@@ -2355,7 +2377,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/uuid</loc>
@@ -2384,7 +2406,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/color</loc>
@@ -2413,7 +2435,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/es/diff</loc>
@@ -2442,7 +2464,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/timestamp</loc>
@@ -2471,7 +2493,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/hash</loc>
@@ -2500,7 +2522,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/base64</loc>
@@ -2529,7 +2551,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/url</loc>
@@ -2558,7 +2580,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/unicode</loc>
@@ -2587,7 +2609,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/pinyin</loc>
@@ -2616,7 +2638,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/qrcode</loc>
@@ -2645,7 +2667,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/json</loc>
@@ -2674,7 +2696,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/jwt</loc>
@@ -2703,7 +2725,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/uuid</loc>
@@ -2732,7 +2754,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/color</loc>
@@ -2761,7 +2783,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/fr/diff</loc>
@@ -2790,7 +2812,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/timestamp</loc>
@@ -2819,7 +2841,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/hash</loc>
@@ -2848,7 +2870,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/base64</loc>
@@ -2877,7 +2899,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/url</loc>
@@ -2906,7 +2928,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/unicode</loc>
@@ -2935,7 +2957,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/pinyin</loc>
@@ -2964,7 +2986,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/qrcode</loc>
@@ -2993,7 +3015,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/json</loc>
@@ -3022,7 +3044,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/jwt</loc>
@@ -3051,7 +3073,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/uuid</loc>
@@ -3080,7 +3102,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/color</loc>
@@ -3109,7 +3131,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/de/diff</loc>
@@ -3138,7 +3160,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/timestamp</loc>
@@ -3167,7 +3189,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/hash</loc>
@@ -3196,7 +3218,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/base64</loc>
@@ -3225,7 +3247,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/url</loc>
@@ -3254,7 +3276,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/unicode</loc>
@@ -3283,7 +3305,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/pinyin</loc>
@@ -3312,7 +3334,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/qrcode</loc>
@@ -3341,7 +3363,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/json</loc>
@@ -3370,7 +3392,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/jwt</loc>
@@ -3399,7 +3421,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/uuid</loc>
@@ -3428,7 +3450,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/color</loc>
@@ -3457,7 +3479,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pt/diff</loc>
@@ -3486,7 +3508,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/timestamp</loc>
@@ -3515,7 +3537,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/hash</loc>
@@ -3544,7 +3566,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/base64</loc>
@@ -3573,7 +3595,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/url</loc>
@@ -3602,7 +3624,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/unicode</loc>
@@ -3631,7 +3653,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/pinyin</loc>
@@ -3660,7 +3682,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/qrcode</loc>
@@ -3689,7 +3711,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/json</loc>
@@ -3718,7 +3740,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/jwt</loc>
@@ -3747,7 +3769,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/uuid</loc>
@@ -3776,7 +3798,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/color</loc>
@@ -3805,7 +3827,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/it/diff</loc>
@@ -3834,7 +3856,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/timestamp</loc>
@@ -3863,7 +3885,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/hash</loc>
@@ -3892,7 +3914,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/base64</loc>
@@ -3921,7 +3943,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/url</loc>
@@ -3950,7 +3972,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/unicode</loc>
@@ -3979,7 +4001,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/pinyin</loc>
@@ -4008,7 +4030,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/qrcode</loc>
@@ -4037,7 +4059,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/json</loc>
@@ -4066,7 +4088,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/jwt</loc>
@@ -4095,7 +4117,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/uuid</loc>
@@ -4124,7 +4146,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/color</loc>
@@ -4153,7 +4175,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/nl/diff</loc>
@@ -4182,7 +4204,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/timestamp</loc>
@@ -4211,7 +4233,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/hash</loc>
@@ -4240,7 +4262,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/base64</loc>
@@ -4269,7 +4291,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/url</loc>
@@ -4298,7 +4320,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/unicode</loc>
@@ -4327,7 +4349,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/pinyin</loc>
@@ -4356,7 +4378,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/qrcode</loc>
@@ -4385,7 +4407,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/json</loc>
@@ -4414,7 +4436,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/jwt</loc>
@@ -4443,7 +4465,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/uuid</loc>
@@ -4472,7 +4494,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/color</loc>
@@ -4501,7 +4523,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/pl/diff</loc>
@@ -4530,7 +4552,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/timestamp</loc>
@@ -4559,7 +4581,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/hash</loc>
@@ -4588,7 +4610,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/base64</loc>
@@ -4617,7 +4639,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/url</loc>
@@ -4646,7 +4668,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/unicode</loc>
@@ -4675,7 +4697,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/pinyin</loc>
@@ -4704,7 +4726,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/qrcode</loc>
@@ -4733,7 +4755,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/json</loc>
@@ -4762,7 +4784,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/jwt</loc>
@@ -4791,7 +4813,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/uuid</loc>
@@ -4820,7 +4842,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/color</loc>
@@ -4849,7 +4871,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/tr/diff</loc>
@@ -4878,7 +4900,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/timestamp</loc>
@@ -4907,7 +4929,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/hash</loc>
@@ -4936,7 +4958,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/base64</loc>
@@ -4965,7 +4987,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/url</loc>
@@ -4994,7 +5016,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/unicode</loc>
@@ -5023,7 +5045,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/pinyin</loc>
@@ -5052,7 +5074,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/qrcode</loc>
@@ -5081,7 +5103,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/json</loc>
@@ -5110,7 +5132,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/jwt</loc>
@@ -5139,7 +5161,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/uuid</loc>
@@ -5168,7 +5190,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/color</loc>
@@ -5197,7 +5219,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ru/diff</loc>
@@ -5226,7 +5248,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/timestamp</loc>
@@ -5255,7 +5277,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/hash</loc>
@@ -5284,7 +5306,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/base64</loc>
@@ -5313,7 +5335,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/url</loc>
@@ -5342,7 +5364,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/unicode</loc>
@@ -5371,7 +5393,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/pinyin</loc>
@@ -5400,7 +5422,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/qrcode</loc>
@@ -5429,7 +5451,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/json</loc>
@@ -5458,7 +5480,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/jwt</loc>
@@ -5487,7 +5509,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/uuid</loc>
@@ -5516,7 +5538,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/color</loc>
@@ -5545,7 +5567,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/uk/diff</loc>
@@ -5574,7 +5596,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/timestamp</loc>
@@ -5603,7 +5625,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/hash</loc>
@@ -5632,7 +5654,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/base64</loc>
@@ -5661,7 +5683,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/url</loc>
@@ -5690,7 +5712,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/unicode</loc>
@@ -5719,7 +5741,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/pinyin</loc>
@@ -5748,7 +5770,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/qrcode</loc>
@@ -5777,7 +5799,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/json</loc>
@@ -5806,7 +5828,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/jwt</loc>
@@ -5835,7 +5857,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/uuid</loc>
@@ -5864,7 +5886,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/color</loc>
@@ -5893,7 +5915,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/th/diff</loc>
@@ -5922,7 +5944,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/timestamp</loc>
@@ -5951,7 +5973,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/hash</loc>
@@ -5980,7 +6002,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/base64</loc>
@@ -6009,7 +6031,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/url</loc>
@@ -6038,7 +6060,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/unicode</loc>
@@ -6067,7 +6089,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/pinyin</loc>
@@ -6096,7 +6118,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/qrcode</loc>
@@ -6125,7 +6147,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/json</loc>
@@ -6154,7 +6176,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/jwt</loc>
@@ -6183,7 +6205,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/uuid</loc>
@@ -6212,7 +6234,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/color</loc>
@@ -6241,7 +6263,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/vi/diff</loc>
@@ -6270,7 +6292,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/timestamp</loc>
@@ -6299,7 +6321,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/hash</loc>
@@ -6328,7 +6350,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/base64</loc>
@@ -6357,7 +6379,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/url</loc>
@@ -6386,7 +6408,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/unicode</loc>
@@ -6415,7 +6437,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/pinyin</loc>
@@ -6444,7 +6466,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/qrcode</loc>
@@ -6473,7 +6495,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/json</loc>
@@ -6502,7 +6524,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/jwt</loc>
@@ -6531,7 +6553,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/uuid</loc>
@@ -6560,7 +6582,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/color</loc>
@@ -6589,7 +6611,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/id/diff</loc>
@@ -6618,7 +6640,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/timestamp</loc>
@@ -6647,7 +6669,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/hash</loc>
@@ -6676,7 +6698,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/base64</loc>
@@ -6705,7 +6727,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/url</loc>
@@ -6734,7 +6756,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/unicode</loc>
@@ -6763,7 +6785,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/pinyin</loc>
@@ -6792,7 +6814,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/qrcode</loc>
@@ -6821,7 +6843,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/json</loc>
@@ -6850,7 +6872,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/jwt</loc>
@@ -6879,7 +6901,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/uuid</loc>
@@ -6908,7 +6930,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/color</loc>
@@ -6937,7 +6959,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ms/diff</loc>
@@ -6966,7 +6988,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/timestamp</loc>
@@ -6995,7 +7017,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/hash</loc>
@@ -7024,7 +7046,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/base64</loc>
@@ -7053,7 +7075,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/url</loc>
@@ -7082,7 +7104,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/unicode</loc>
@@ -7111,7 +7133,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/pinyin</loc>
@@ -7140,7 +7162,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/qrcode</loc>
@@ -7169,7 +7191,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/json</loc>
@@ -7198,7 +7220,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/jwt</loc>
@@ -7227,7 +7249,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/uuid</loc>
@@ -7256,7 +7278,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/color</loc>
@@ -7285,7 +7307,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/hi/diff</loc>
@@ -7314,7 +7336,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/timestamp</loc>
@@ -7343,7 +7365,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/timestamp"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/timestamp"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/timestamp"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/timestamp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/hash</loc>
@@ -7372,7 +7394,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/hash"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/hash"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/hash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/hash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/base64</loc>
@@ -7401,7 +7423,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/base64"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/base64"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/base64"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/base64"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/url</loc>
@@ -7430,7 +7452,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/url"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/url"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/url"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/unicode</loc>
@@ -7459,7 +7481,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/unicode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/unicode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/unicode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/unicode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/pinyin</loc>
@@ -7488,7 +7510,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/pinyin"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/pinyin"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/pinyin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/pinyin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/qrcode</loc>
@@ -7517,7 +7539,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/qrcode"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/qrcode"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/qrcode"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/qrcode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/json</loc>
@@ -7546,7 +7568,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/json"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/json"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/json"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/json"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/jwt</loc>
@@ -7575,7 +7597,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/jwt"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/jwt"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/jwt"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/jwt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/uuid</loc>
@@ -7604,7 +7626,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/uuid"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/uuid"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/uuid"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/uuid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/color</loc>
@@ -7633,7 +7655,7 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/color"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/color"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/color"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/color"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
   <url>
     <loc>https://agubear.black/ar/diff</loc>
@@ -7662,6 +7684,6 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://agubear.black/ms/diff"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://agubear.black/hi/diff"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://agubear.black/ar/diff"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/en/diff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agubear.black/"/>
   </url>
 </urlset>

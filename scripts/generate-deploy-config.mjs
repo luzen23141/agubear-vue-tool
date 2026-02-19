@@ -47,33 +47,68 @@ const today = new Date().toISOString().split('T')[0];
 
 // All supported locale codes
 const LOCALES = [
-  'zh-TW', 'zh-CN', 'yue', 'ja', 'ko', 'en', 'es', 'fr', 'de', 'pt',
-  'it', 'nl', 'pl', 'tr', 'ru', 'uk', 'th', 'vi', 'id', 'ms', 'hi', 'ar'
+  'zh-TW',
+  'zh-CN',
+  'yue',
+  'ja',
+  'ko',
+  'en',
+  'es',
+  'fr',
+  'de',
+  'pt',
+  'it',
+  'nl',
+  'pl',
+  'tr',
+  'ru',
+  'uk',
+  'th',
+  'vi',
+  'id',
+  'ms',
+  'hi',
+  'ar'
 ];
 
 const TOOLS = [
-  'timestamp', 'hash', 'base64', 'url', 'unicode', 'pinyin',
-  'qrcode', 'json', 'jwt', 'uuid', 'color', 'diff'
+  'timestamp',
+  'hash',
+  'base64',
+  'url',
+  'unicode',
+  'pinyin',
+  'qrcode',
+  'json',
+  'jwt',
+  'uuid',
+  'color',
+  'diff'
 ];
 
-// Generate URLs for all tools across all locales
-const urlEntries = LOCALES.flatMap((code) => {
-  // Tool pages for locale
-  const toolEntries = TOOLS.map(tool => {
-    const toolAlternates = LOCALES.map(
-      (c) => `    <xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}/${c}/${tool}"/>`
-    ).concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en/${tool}"/>`]).join('\n');
+// Generate alternate links helper
+const buildAlternates = (pathFn) =>
+  LOCALES.map(
+    (c) => `    <xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}/${pathFn(c)}"/>`
+  )
+    .concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/"/>`])
+    .join('\n');
 
-    return `  <url>
+// Generate URLs for all tools across all locales
+const urlEntries = LOCALES.flatMap((code) =>
+  TOOLS.map(
+    (tool) => `  <url>
     <loc>${SITE_URL}/${code}/${tool}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-${toolAlternates}
-  </url>`;
-  });
-  return toolEntries;
-}).join('\n');
+${buildAlternates((c) => `${c}/${tool}`)}
+  </url>`
+  )
+).join('\n');
+
+// Root homepage alternate links (point to each locale's default tool)
+const rootAlternates = buildAlternates((c) => `${c}/timestamp`);
 
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -83,7 +118,7 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/"/>
+${rootAlternates}
   </url>
 ${urlEntries}
 </urlset>
