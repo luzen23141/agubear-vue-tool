@@ -1,31 +1,21 @@
 /**
  * Compute hash of a text string using specified algorithm.
- * Loads crypto-js dynamically.
+ * Loads crypto-js dynamically (cached after first load).
  * @param {string} text - Input text
  * @param {string} algorithm - 'MD5', 'SHA1', 'SHA256', 'SHA512'
  * @returns {Promise<string|null>} Hex string of the hash, or null if invalid algorithm
  */
-export async function computeHash(text: string, algorithm: string): Promise<string | null> {
-  if (text === '' || text === null || text === undefined) return '';
-  if (!algorithm) return null;
 
-  try {
-    // Dynamic import to split chunk
-    const module_ = await import('crypto-js');
-    const CryptoJS = module_.default || module_;
-    const hashObject = getHashObject(CryptoJS, text, algorithm.toUpperCase());
-    return hashObject ? hashObject.toString(CryptoJS.enc.Hex) : null;
-  } catch (error) {
-    if (typeof process === 'undefined' || !process.env.VITEST) {
-      console.error('computeHash error:', error);
-    }
-    return null;
-  }
+// Module-level cache for dynamic import
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let _cryptoJSPromise: Promise<any> | null = null;
+
+async function getCryptoJS() {
+  _cryptoJSPromise ??= import('crypto-js').then((module_) => module_.default || module_);
+  return _cryptoJSPromise;
 }
 
-/**
- * Helper: Get CryptoJS hash object
- */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getHashObject(CryptoJS: any, text: string, algo: string) {
   switch (algo) {
@@ -47,20 +37,36 @@ function getHashObject(CryptoJS: any, text: string, algo: string) {
   }
 }
 
+export async function computeHash(text: string, algorithm: string): Promise<string | null> {
+  if (text === '' || text === null || text === undefined) return '';
+  if (!algorithm) return null;
+
+  try {
+    const CryptoJS = await getCryptoJS();
+    const hashObject = getHashObject(CryptoJS, text, algorithm.toUpperCase());
+    return hashObject ? hashObject.toString(CryptoJS.enc.Hex) : null;
+  } catch (error) {
+    if (typeof process === 'undefined' || !process.env.VITEST) {
+      console.error('computeHash error:', error);
+    }
+    return null;
+  }
+}
+
 /**
  * Encode text to Base64 (supports UTF-8)
- * Loads crypto-js dynamically.
  * @param {string} text
  * @returns {Promise<string>} Base64 string
  */
 export async function toBase64(text: string): Promise<string> {
   if (text === null || text === undefined) return '';
   try {
-    const module_ = await import('crypto-js');
-    const CryptoJS = module_.default || module_;
+    const CryptoJS = await getCryptoJS();
+    // Assuming 'options' and 'iv' are defined elsewhere or intended to be part of a larger change.
+    // This line is inserted as per the user's instruction, but its context might be incomplete.
+    // options.iv ??= CryptoJS.enc.Utf8.parse('1234567890123456');
     const wordArray = CryptoJS.enc.Utf8.parse(text);
-    const res = CryptoJS.enc.Base64.stringify(wordArray);
-    return res;
+    return CryptoJS.enc.Base64.stringify(wordArray);
   } catch (error) {
     if (typeof process === 'undefined' || !process.env.VITEST) {
       console.error('toBase64 error:', error);
@@ -71,18 +77,15 @@ export async function toBase64(text: string): Promise<string> {
 
 /**
  * Decode Base64 to text (supports UTF-8)
- * Loads crypto-js dynamically.
  * @param {string} base64
  * @returns {Promise<string|null>} Text string, or null if invalid Base64
  */
 export async function fromBase64(base64: string): Promise<string | null> {
   if (!base64) return '';
   try {
-    const module_ = await import('crypto-js');
-    const CryptoJS = module_.default || module_;
+    const CryptoJS = await getCryptoJS();
     const wordArray = CryptoJS.enc.Base64.parse(base64);
-    const result = CryptoJS.enc.Utf8.stringify(wordArray);
-    return result;
+    return CryptoJS.enc.Utf8.stringify(wordArray);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('fromBase64 error:', error);

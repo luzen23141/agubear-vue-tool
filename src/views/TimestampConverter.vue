@@ -104,7 +104,7 @@
       </BaseCard>
 
       <!-- Date -> Timestamp -->
-      <BaseCard :title="t('timestamp.titleReverse')" class="reveal-delay-3">
+      <BaseCard :title="t('timestamp.titleReverse')" heading-tag="h2" class="reveal-delay-3">
         <!-- 格式切換 -->
         <div class="format-toggle">
           <span :class="{ active: !useMilliseconds }">{{ t('timestamp.modeSeconds') }}</span>
@@ -116,7 +116,6 @@
               :aria-checked="useMilliseconds ? 'true' : 'false'"
               name="msSwitch"
               type="checkbox"
-              role="switch"
             />
             <span class="slider" />
           </label>
@@ -178,7 +177,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import BaseCard from '@/components/common/BaseCard.vue';
@@ -186,12 +185,10 @@ import HistoryList from '@/components/common/HistoryList.vue';
 import ToolContext from '@/components/common/ToolContext.vue';
 import { UseHistory } from '@/composables/use-history';
 import { UseTimestampConverter } from '@/composables/use-timestamp-converter';
+import { useCopyToClipboard } from '@/composables/use-copy-to-clipboard';
 import DurationCalculator from '@/components/DurationCalculator.vue';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
 import { TIMEZONE_OPTIONS } from '@/utils/constants';
-
-type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
-const showToast = inject('showToast', (() => {}) as ToastFunction);
 
 const { t } = useI18n();
 
@@ -227,16 +224,7 @@ const {
   pasteToDate
 } = UseTimestampConverter(addToHistory);
 
-const copyText = async (text: string | number) => {
-  if (!text) return;
-  try {
-    await navigator.clipboard.writeText(String(text));
-    showToast(t('common.copied') || 'Copied!', 'success');
-  } catch (error) {
-    console.warn('Clipboard write failed:', error);
-    showToast('Failed to copy', 'error');
-  }
-};
+const { copyText } = useCopyToClipboard();
 
 // Provide properties to the tests
 defineExpose({

@@ -20,7 +20,7 @@ const message = ref('');
 const type = ref<'success' | 'error' | 'info'>('info');
 const icon = ref('info');
 
-let timer: number | null = null;
+let timer: ReturnType<typeof setTimeout> | null = null;
 
 const show = (
   message_: string,
@@ -47,7 +47,7 @@ const show = (
   visible.value = true;
 
   if (timer) clearTimeout(timer);
-  timer = window.setTimeout(() => {
+  timer = globalThis.setTimeout(() => {
     visible.value = false;
   }, duration);
 };

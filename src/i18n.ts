@@ -1,28 +1,8 @@
 import { createI18n } from 'vue-i18n';
 
-// Import all locale files
+// Only pre-load primary locales; others loaded on-demand
 import zhTW from './locales/zh-TW.json';
 import en from './locales/en.json';
-import ja from './locales/ja.json';
-import ko from './locales/ko.json';
-import zhCN from './locales/zh-CN.json';
-import es from './locales/es.json';
-import fr from './locales/fr.json';
-import de from './locales/de.json';
-import pt from './locales/pt.json';
-import yue from './locales/yue.json';
-import th from './locales/th.json';
-import vi from './locales/vi.json';
-import ar from './locales/ar.json';
-import ru from './locales/ru.json';
-import it from './locales/it.json';
-import nl from './locales/nl.json';
-import pl from './locales/pl.json';
-import tr from './locales/tr.json';
-import id from './locales/id.json';
-import ms from './locales/ms.json';
-import hi from './locales/hi.json';
-import uk from './locales/uk.json';
 
 /**
  * Supported languages with native display names and BCP-47 codes.
@@ -60,31 +40,70 @@ export const SUPPORTED_LOCALES: LocaleInfo[] = [
   { code: 'ar', name: 'العربية', icon: '🇸🇦', dir: 'rtl' }
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const messages: Record<string, any> = {
-  'zh-TW': zhTW,
-  en,
-  ja,
-  ko,
-  'zh-CN': zhCN,
-  es,
-  fr,
-  de,
-  pt,
-  yue,
-  th,
-  vi,
-  ar,
-  ru,
-  it,
-  nl,
-  pl,
-  tr,
-  id,
-  ms,
-  hi,
-  uk
+const SUPPORTED_LOCALE_CODES = new Set(SUPPORTED_LOCALES.map((l) => l.code));
+
+/**
+ * Lazy-load mapping: locale code → dynamic import function.
+ * zh-TW and en are pre-loaded; others loaded on demand.
+ */
+const LOCALE_LOADERS: Record<string, () => Promise<{ default: Record<string, unknown> }>> = {
+  ja: () => import('./locales/ja.json'),
+  ko: () => import('./locales/ko.json'),
+  'zh-CN': () => import('./locales/zh-CN.json'),
+  es: () => import('./locales/es.json'),
+  fr: () => import('./locales/fr.json'),
+  de: () => import('./locales/de.json'),
+  pt: () => import('./locales/pt.json'),
+  yue: () => import('./locales/yue.json'),
+  th: () => import('./locales/th.json'),
+  vi: () => import('./locales/vi.json'),
+  ar: () => import('./locales/ar.json'),
+  ru: () => import('./locales/ru.json'),
+  it: () => import('./locales/it.json'),
+  nl: () => import('./locales/nl.json'),
+  pl: () => import('./locales/pl.json'),
+  tr: () => import('./locales/tr.json'),
+  id: () => import('./locales/id.json'),
+  ms: () => import('./locales/ms.json'),
+  hi: () => import('./locales/hi.json'),
+  uk: () => import('./locales/uk.json')
 };
+
+// Track which locales have been loaded
+const loadedLocales = new Set(['zh-TW', 'en']);
+
+/**
+ * Load a locale's messages on demand.
+ * Returns true if messages were loaded, false if already loaded or unsupported.
+ */
+export async function loadLocaleMessages(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  i18n: any,
+  locale: string
+): Promise<boolean> {
+  if (loadedLocales.has(locale)) return true;
+
+  // eslint-disable-next-line security/detect-object-injection
+  const loader = LOCALE_LOADERS[locale];
+  if (!loader) return false;
+
+  try {
+    const messages = await loader();
+    i18n.global.setLocaleMessage(locale, messages.default || messages);
+    loadedLocales.add(locale);
+    return true;
+  } catch (error) {
+    console.error(`Failed to load locale "${locale}":`, error);
+    return false;
+  }
+}
+
+/**
+ * Check if locale code is supported.
+ */
+export function isLocaleSupported(code: string): boolean {
+  return SUPPORTED_LOCALE_CODES.has(code);
+}
 
 /**
  * Resolve initial locale:
@@ -97,8 +116,7 @@ function getLocaleFromURL(): string | null {
   if (globalThis.window !== undefined) {
     const parameters = new URLSearchParams(globalThis.window.location.search);
     const langParameter = parameters.get('lang');
-    // eslint-disable-next-line security/detect-object-injection
-    if (langParameter && messages[langParameter]) return langParameter;
+    if (langParameter && SUPPORTED_LOCALE_CODES.has(langParameter)) return langParameter;
   }
   return null;
 }
@@ -107,8 +125,7 @@ function getLocaleFromStorage(): string | null {
   try {
     if (globalThis.window?.localStorage) {
       const stored = globalThis.window.localStorage.getItem('agubear-locale');
-      // eslint-disable-next-line security/detect-object-injection
-      if (stored && messages[stored]) return stored;
+      if (stored && SUPPORTED_LOCALE_CODES.has(stored)) return stored;
     }
   } catch (error) {
     console.error('getLocaleFromStorage error:', error);
@@ -120,11 +137,12 @@ function getLocaleFromBrowser(): string | null {
   if (typeof navigator === 'undefined') return null;
   const browserLang =
     navigator.language || (navigator as unknown as Record<string, string>).userLanguage || '';
-  // eslint-disable-next-line security/detect-object-injection
-  if (messages[browserLang]) return browserLang;
+  if (SUPPORTED_LOCALE_CODES.has(browserLang)) return browserLang;
   const base = browserLang.split('-')[0] ?? '';
-  // eslint-disable-next-line security/detect-object-injection
-  if (messages[base]) return base;
+  if (SUPPORTED_LOCALE_CODES.has(base)) return base;
+  // Try to find a supported locale that shares the same base
+  const found = SUPPORTED_LOCALES.find((l) => l.code.split('-')[0] === base);
+  if (found) return found.code;
   return null;
 }
 
@@ -137,7 +155,10 @@ export function setupI18n() {
     legacy: false, // Use Composition API mode
     locale: getInitialLocale(),
     fallbackLocale: 'zh-TW',
-    messages,
+    messages: {
+      'zh-TW': zhTW,
+      en
+    },
     missingWarn: false,
     fallbackWarn: false
   });

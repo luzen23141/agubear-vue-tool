@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import UuidGenerator from '../../views/UuidGenerator.vue';
+import { TOAST_KEY } from '../../composables/use-toast-key';
 
 // Mock vue-i18n
 vi.mock('vue-i18n', async () => {
@@ -34,7 +35,7 @@ describe('UuidGenerator.vue', () => {
   const mountOptions = {
     global: {
       provide: {
-        showToast
+        [TOAST_KEY as symbol]: showToast
       }
     }
   };

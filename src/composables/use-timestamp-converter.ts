@@ -1,17 +1,63 @@
-/* eslint-disable max-lines-per-function, max-statements */
-
 import { ref, computed, watch, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { formatDistanceToNow } from 'date-fns';
-import { zhTW, ja, enUS } from 'date-fns/locale';
+import { formatDistanceToNow, type Locale } from 'date-fns';
 import { UseLocalStorage } from './use-local-storage';
 import { timestampToDate, dateToTimestamp } from '../utils/converter';
 
-const LOCALE_MAP: Record<string, typeof zhTW> = {
-  'zh-TW': zhTW,
-  ja,
-  en: enUS
-};
+// Lazy-load date-fns locales; cache after first load
+const dateFnsLocaleCache = new Map<string, Locale>();
+
+// eslint-disable-next-line max-statements
+async function getDateFnsLocale(code: string): Promise<Locale | undefined> {
+  if (dateFnsLocaleCache.has(code)) return dateFnsLocaleCache.get(code);
+  try {
+    let locale: Locale;
+    switch (code) {
+      case 'zh-TW': {
+        const module_ = await import('date-fns/locale/zh-TW');
+        locale = module_.zhTW;
+        break;
+      }
+      case 'ja': {
+        const module_ = await import('date-fns/locale/ja');
+        locale = module_.ja;
+        break;
+      }
+      case 'en': {
+        const module_ = await import('date-fns/locale/en-US');
+        locale = module_.enUS;
+        break;
+      }
+      case 'ko': {
+        const module_ = await import('date-fns/locale/ko');
+        locale = module_.ko;
+        break;
+      }
+      case 'fr': {
+        const module_ = await import('date-fns/locale/fr');
+        locale = module_.fr;
+        break;
+      }
+      case 'de': {
+        const module_ = await import('date-fns/locale/de');
+        locale = module_.de;
+        break;
+      }
+      case 'es': {
+        const module_ = await import('date-fns/locale/es');
+        locale = module_.es;
+        break;
+      }
+      default: {
+        return undefined;
+      }
+    }
+    dateFnsLocaleCache.set(code, locale);
+    return locale;
+  } catch {
+    return undefined;
+  }
+}
 
 type AddToHistoryFunction = (
   _type: string,
@@ -51,6 +97,7 @@ const sanitizeTimestamp = (value: string) => value.replaceAll(/(?!^-)\D/g, '').s
 /**
  * Composable for managing timestamp conversion and state
  */
+// eslint-disable-next-line max-lines-per-function, max-statements
 export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
   const { locale: appLocale } = useI18n();
 
@@ -69,14 +116,24 @@ export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
   // --- Computed ---
   const timestampLength = computed(() => timestampInput.value?.length || 0);
 
-  const relativeTime = computed(() => {
-    if (!dateResult.value) return '';
+  const relativeTime = ref('');
+
+  // Async relative time computation with lazy locale loading
+  const updateRelativeTime = async () => {
+    if (!dateResult.value) {
+      relativeTime.value = '';
+      return;
+    }
     const date = new Date(dateResult.value);
-    const dateFnsLocale = LOCALE_MAP[appLocale.value] || enUS;
-    return Number.isNaN(date.getTime())
-      ? ''
-      : formatDistanceToNow(date, { addSuffix: true, locale: dateFnsLocale });
-  });
+    if (Number.isNaN(date.getTime())) {
+      relativeTime.value = '';
+      return;
+    }
+    const locale = await getDateFnsLocale(appLocale.value);
+    relativeTime.value = formatDistanceToNow(date, { addSuffix: true, locale });
+  };
+
+  watch([dateResult, () => appLocale.value], () => updateRelativeTime(), { immediate: true });
 
   // --- Methods ---
   const convertToDate = (recordHistory = true) => {

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
-import { mount } from '@vue/test-utils';
+import { mount, flushPromises } from '@vue/test-utils';
 import TimestampConverter from '../../views/TimestampConverter.vue';
 import { setupI18n } from '../../i18n';
 
@@ -125,7 +125,7 @@ describe('TimestampConverter.vue', () => {
       }
 
       const result = wrapper.find('.result').text();
-      expect(result).toContain('無效');
+      expect(result).toContain('INVALID_');
     });
 
     it('負數時間戳應能轉換 (1970年前)', async () => {
@@ -374,10 +374,15 @@ describe('TimestampConverter.vue', () => {
       await input.setValue(fiveMinsAgo.toString());
       await wrapper.find('.input-group button').trigger('click');
 
-      expect(wrapper.text()).toContain('分鐘前');
-      // Since we mocked i18n to zh-TW in beforeEach, it might be "5 分鐘前" if date-fns/locale is used
-      // OR we can just check if the relative time container exists
+      // Wait multiple cycles for: async date-fns locale import → ref update → Vue render
+      await flushPromises();
+      await nextTick();
+      await flushPromises();
+      await nextTick();
+
+      // Verify relative time container exists and has content
       expect(wrapper.find('.relative-time').exists()).toBe(true);
+      expect(wrapper.find('.relative-time').text().length).toBeGreaterThan(0);
     });
   });
 

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import ColorConverter from '../../views/ColorConverter.vue';
+import { TOAST_KEY } from '../../composables/use-toast-key';
 
 // Mock vue-i18n
 vi.mock('vue-i18n', async () => {
@@ -39,7 +40,7 @@ describe('ColorConverter.vue', () => {
   const mountOptions = {
     global: {
       provide: {
-        showToast
+        [TOAST_KEY as symbol]: showToast
       }
     }
   };

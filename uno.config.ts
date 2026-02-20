@@ -28,7 +28,8 @@ export default defineConfig({
       text: {
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
-        muted: 'var(--text-muted)'
+        muted: 'var(--text-muted)',
+        inverted: 'var(--text-inverted)'
       },
       glass: {
         bg: 'var(--glass-bg)',
@@ -65,7 +66,7 @@ export default defineConfig({
 
     // Common patterns from component styles
     'btn-primary':
-      'px-7 py-2.5 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] text-white border-none rounded-sm cursor-pointer font-600 shadow-glow transition-all duration-250',
+      'px-7 py-2.5 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] text-text-inverted border-none rounded-sm cursor-pointer font-600 shadow-glow transition-all duration-250',
     'input-base':
       'p-2.5 border border-border rounded-sm bg-surface text-text-primary font-inherit text-0.9rem',
     'result-box':

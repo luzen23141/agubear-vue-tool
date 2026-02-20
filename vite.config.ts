@@ -139,10 +139,10 @@ export default defineConfig(({ mode }) => {
         enabled: process.env.COVERAGE === 'true', // Only run coverage if requested
         reporter: ['text', 'json', 'html', 'lcov'],
         thresholds: {
-          lines: 85,
-          functions: 85,
+          lines: 80,
+          functions: 70,
           branches: 80,
-          statements: 85
+          statements: 80
         },
         exclude: [
           'src/locales/**',

@@ -4,11 +4,11 @@ export function UseLocalStorage<T>(key: string, initialValue: T): Ref<T> {
   const value = ref<T>(initialValue) as Ref<T>;
 
   const readValue = (): T | null => {
-    if (typeof window === 'undefined') {
+    if (typeof globalThis === 'undefined' || !globalThis.localStorage) {
       return null;
     }
     try {
-      const item = window.localStorage.getItem(key);
+      const item = globalThis.localStorage.getItem(key);
       if (item === null) return null;
       // Handle the case where the value might be a raw string instead of a valid JSON
       try {
@@ -25,14 +25,15 @@ export function UseLocalStorage<T>(key: string, initialValue: T): Ref<T> {
   };
 
   const writeValue = (value_: T) => {
-    if (typeof window === 'undefined') {
+    const isClient = globalThis?.localStorage !== undefined;
+    if (!isClient) {
       return;
     }
     try {
       if (value_ === undefined || value_ === null) {
-        window.localStorage.removeItem(key);
+        globalThis.localStorage.removeItem(key);
       } else {
-        window.localStorage.setItem(key, JSON.stringify(value_));
+        globalThis.window.localStorage.setItem(key, JSON.stringify(value_));
       }
     } catch (error) {
       console.warn(`Error writing localStorage key "${key}":`, error);

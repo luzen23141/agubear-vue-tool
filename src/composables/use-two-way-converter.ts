@@ -22,18 +22,18 @@ export function UseTwoWayConverter(
     checkCancelled: () => boolean
   ) => {
     isConverting.value = true;
-    // try {
-    const result = currentMode === 'encode' ? await encode(text) : await decode(text);
-    if (!checkCancelled()) {
-      outputText.value = result || '';
+    try {
+      const result = currentMode === 'encode' ? await encode(text) : await decode(text);
+      if (!checkCancelled()) {
+        outputText.value = result || '';
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Conversion error:', error);
+      if (!checkCancelled()) outputText.value = '';
+    } finally {
+      if (!checkCancelled()) isConverting.value = false;
     }
-    // } catch (error) {
-    //   // eslint-disable-next-line no-console
-    //   console.error('Conversion error:', error);
-    //   if (!checkCancelled()) outputText.value = '';
-    // } finally {
-    if (!checkCancelled()) isConverting.value = false;
-    // }
   };
 
   watch(

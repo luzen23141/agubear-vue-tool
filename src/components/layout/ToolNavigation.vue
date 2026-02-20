@@ -33,35 +33,35 @@
     </div>
 
     <!-- Tool Tabs -->
-      <div class="tab-list-container">
-        <div v-for="tool in filteredTools" :key="tool.id" class="tab-item-wrapper">
-          <button
-            :class="[{ active: activeTab === tool.id }]"
-            :aria-label="tool.ariaLabel"
-            :aria-current="activeTab === tool.id ? 'page' : undefined"
-            type="button"
-            class="tab-btn"
-            @click="switchTab(tool)"
-          >
-            {{ tool.name }}
-          </button>
-          <button
-            :class="{ starred: favorites.includes(tool.id) }"
-            :aria-label="
-              favorites.includes(tool.id) ? t('app.ariaLabels.unstar') : t('app.ariaLabels.star')
-            "
-            type="button"
-            class="star-action-btn"
-            @click.stop="toggleFavorite(tool.id)"
-          >
-            <SvgIcon :name="favorites.includes(tool.id) ? 'star' : 'star-off'" size="0.85rem" />
-          </button>
-        </div>
-
-        <div v-if="filteredTools.length === 0" class="no-tools-msg">
-          {{ t('app.favorites.empty') }}
-        </div>
+    <div class="tab-list-container">
+      <div v-for="tool in filteredTools" :key="tool.id" class="tab-item-wrapper">
+        <button
+          :class="[{ active: activeTab === tool.id }]"
+          :aria-label="tool.ariaLabel"
+          :aria-current="activeTab === tool.id ? 'page' : undefined"
+          type="button"
+          class="tab-btn"
+          @click="switchTab(tool)"
+        >
+          {{ tool.name }}
+        </button>
+        <button
+          :class="{ starred: favorites.includes(tool.id) }"
+          :aria-label="
+            favorites.includes(tool.id) ? t('app.ariaLabels.unstar') : t('app.ariaLabels.star')
+          "
+          type="button"
+          class="star-action-btn"
+          @click.stop="toggleFavorite(tool.id)"
+        >
+          <SvgIcon :name="favorites.includes(tool.id) ? 'star' : 'star-off'" size="0.85rem" />
+        </button>
       </div>
+
+      <div v-if="filteredTools.length === 0" class="no-tools-msg">
+        {{ t('app.favorites.empty') }}
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -223,7 +223,7 @@ onMounted(() => {
 
 .fav-toggle-btn:hover {
   background: rgba(251, 191, 36, 0.08);
-  color: #f59e0b;
+  color: #8b3e04;
   border-color: rgba(251, 191, 36, 0.3);
 }
 

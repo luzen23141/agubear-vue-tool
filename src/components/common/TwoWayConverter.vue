@@ -79,14 +79,7 @@ import BaseCard from './BaseCard.vue';
 import HistoryList from './HistoryList.vue';
 import InputWithCopy from './InputWithCopy.vue';
 import SvgIcon from '../icons/SvgIcon.vue';
-
-interface HistoryItem {
-  id: number;
-  timestamp: string;
-  input: string;
-  output: string | number;
-  [key: string]: unknown;
-}
+import type { HistoryItem } from '@/stores/history';
 
 withDefaults(
   defineProps<{

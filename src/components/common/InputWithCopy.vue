@@ -41,8 +41,7 @@
 import { ref, onMounted, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import SvgIcon from '../icons/SvgIcon.vue';
-
-type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
+import { TOAST_KEY } from '@/composables/use-toast-key';
 
 const props = withDefaults(
   defineProps<{
@@ -71,7 +70,7 @@ const emit = defineEmits<{
   (_event: 'copy', _value: string): void;
 }>();
 
-const showToast = inject('showToast', (() => {}) as ToastFunction);
+const showToast = inject(TOAST_KEY, () => {});
 const { t } = useI18n();
 
 const canPaste = ref(false);

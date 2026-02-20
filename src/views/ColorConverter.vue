@@ -16,9 +16,15 @@
         <div class="inputs-section">
           <!-- HEX -->
           <div class="input-group">
-            <label>HEX</label>
+            <label for="color-hex">HEX</label>
             <div class="input-wrapper">
-              <input v-model="hexInput" type="text" placeholder="#000000" @input="updateFromHex" />
+              <input
+                id="color-hex"
+                v-model="hexInput"
+                type="text"
+                placeholder="#000000"
+                @input="updateFromHex"
+              />
               <button type="button" class="copy-btn" @click="copy(hexInput)">
                 <SvgIcon name="copy" />
               </button>
@@ -27,9 +33,10 @@
 
           <!-- RGB -->
           <div class="input-group">
-            <label>RGB</label>
+            <label for="color-rgb">RGB</label>
             <div class="input-wrapper">
               <input
+                id="color-rgb"
                 v-model="rgbInput"
                 type="text"
                 placeholder="rgb(0, 0, 0)"
@@ -43,9 +50,10 @@
 
           <!-- HSL -->
           <div class="input-group">
-            <label>HSL</label>
+            <label for="color-hsl">HSL</label>
             <div class="input-wrapper">
               <input
+                id="color-hsl"
                 v-model="hslInput"
                 type="text"
                 placeholder="hsl(0, 0%, 0%)"
@@ -59,9 +67,10 @@
 
           <!-- CMYK -->
           <div class="input-group">
-            <label>CMYK</label>
+            <label for="color-cmyk">CMYK</label>
             <div class="input-wrapper">
               <input
+                id="color-cmyk"
                 v-model="cmykInput"
                 type="text"
                 placeholder="cmyk(0%, 0%, 0%, 100%)"
@@ -82,6 +91,7 @@
 
 <script setup lang="ts">
 import { computed, inject } from 'vue';
+import { TOAST_KEY } from '@/composables/use-toast-key';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import BaseCard from '@/components/common/BaseCard.vue';
@@ -101,8 +111,7 @@ useHead({
   ]
 });
 
-type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
-const showToast = inject('showToast', (() => {}) as ToastFunction);
+const showToast = inject(TOAST_KEY, () => {});
 
 const {
   hexValue,

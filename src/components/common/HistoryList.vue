@@ -107,7 +107,7 @@ const { t } = useI18n();
   padding: 5px 14px;
   font-size: 0.8rem;
   background: transparent;
-  color: #e53e3e;
+  color: #c53030;
   border: 1px solid rgba(229, 62, 62, 0.2);
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -115,7 +115,7 @@ const { t } = useI18n();
 }
 
 .clear-btn:hover {
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
   color: white;
   border-color: transparent;
   box-shadow: 0 4px 16px rgba(229, 62, 62, 0.25);
@@ -223,7 +223,7 @@ const { t } = useI18n();
 }
 
 .delete-btn:hover {
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
   color: white;
   opacity: 1;
   transform: scale(1.1);

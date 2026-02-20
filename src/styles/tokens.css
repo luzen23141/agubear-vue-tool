@@ -4,65 +4,66 @@
   --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
 
-  /* Design Tokens — Light (Pro Max Edition) */
-  --primary: #6366f1; /* Indigo */
-  --primary-hover: #4f46e5;
-  --primary-soft: rgba(99, 102, 241, 0.1);
-  --primary-glow: rgba(99, 102, 241, 0.2);
+  /* Design Tokens — Japanese Modern Theme (Unified - Denim Background) */
+  --primary: #efd0cf; /* 煙粉色 (作為亮部的視線焦點/按鈕) */
+  --primary-hover: #f4d9d8;
+  --primary-soft: rgba(239, 208, 207, 0.15);
+  --primary-glow: rgba(239, 208, 207, 0.25);
 
-  --secondary: #0ea5e9; /* Sky Blue */
-  --accent: #f43f5e; /* Rose */
-  --accent-soft: rgba(244, 63, 94, 0.1);
-  --surface-soft: #f1f5f9;
+  --secondary: #ad9098; /* 藕紫色 (灰紫) */
+  --accent: #e9dedf; /* 淺淡粉灰 */
+  --accent-soft: rgba(233, 222, 223, 0.15);
+  --surface-soft: rgba(146, 169, 189, 0.2);
 
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
-  --gradient-accent: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+  --gradient-primary: linear-gradient(135deg, #efd0cf 0%, #ad9098 100%);
+  --gradient-accent: linear-gradient(135deg, #e9dedf 0%, #efd0cf 100%);
   --gradient-subtle: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.05) 0%,
-    rgba(14, 165, 233, 0.05) 100%
+    rgba(239, 208, 207, 0.05) 0%,
+    rgba(173, 144, 152, 0.05) 100%
   );
   --gradient-glass: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 0.4) 100%
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
   );
 
-  --surface: #ffffff;
-  --surface-bg: #f8fafc;
-  --surface-hover: #f1f5f9;
-  --surface-raised: #ffffff;
-  --surface-overlay: rgba(255, 255, 255, 0.9);
-  --surface-glass: rgba(255, 255, 255, 0.6);
+  --surface: #92a9bd; /* 淺霧藍 (做為放在背景上的卡片色) */
+  --surface-bg: #6b7d93; /* 灰藍色 (牛仔藍) 作為深底色 */
+  --surface-hover: #829aaa;
+  --surface-raised: #92a9bd;
+  --surface-overlay: rgba(146, 169, 189, 0.85);
+  --surface-glass: rgba(146, 169, 189, 0.4);
 
-  --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.12);
+  --border: rgba(233, 222, 223, 0.2); /* 淺粉灰邊框 */
+  --border-hover: rgba(233, 222, 223, 0.35);
   --border-focus: var(--primary);
-  --border-glass: rgba(255, 255, 255, 0.4);
+  --border-glass: rgba(233, 222, 223, 0.15);
   --border-iridescent: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.2),
-    rgba(244, 63, 94, 0.2),
-    rgba(14, 165, 233, 0.2)
+    rgba(239, 208, 207, 0.2),
+    rgba(173, 144, 152, 0.2),
+    rgba(233, 222, 223, 0.2)
   );
 
-  --text-primary: #0f172a;
-  --text-secondary: #334155; /* Darker for better contrast */
-  --text-muted: #52525b; /* Meets 4.5:1 on white */
+  --text-primary: #fcf8f8; /* 提亮粉灰至近白，打造最高對比度的極簡文字 */
+  --text-secondary: #e9dedf; /* 使用原先的淺淡粉灰，做為次要資訊 */
+  --text-muted: #d1dee8; /* 將淺霧藍調亮，讓弱文字層在灰藍底上仍舊清晰 */
+  --text-inverted: #2c3a48; /* 特調的極深灰藍，用於淺色按鈕上的高對比文字 */
 
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-elevated: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
-  --shadow-glow-strong: 0 0 30px rgba(99, 102, 241, 0.25);
-  --shadow-focus: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  --shadow-elevated: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 20px rgba(239, 208, 207, 0.15);
+  --shadow-glow-strong: 0 0 30px rgba(239, 208, 207, 0.25);
+  --shadow-focus: 0 0 0 4px rgba(239, 208, 207, 0.2);
 
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-border-shine: rgba(255, 255, 255, 0.8);
+  --glass-bg: rgba(146, 169, 189, 0.35); /* 讓毛玻璃稍微偏向淺霧藍，但透出底部的灰藍 */
+  --glass-border: rgba(239, 208, 207, 0.15);
+  --glass-border-shine: rgba(239, 208, 207, 0.3);
   --glass-blur: 24px;
-  --glass-saturate: 1.5;
+  --glass-saturate: 1.2;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -78,62 +79,4 @@
   --transition-spring-bouncy: 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   --transition-spring-smooth: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   --transition-fluid: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Dark Mode Tokens (Midnight Macaron) */
-html.dark {
-  --primary: #818cf8; /* Lighter Indigo */
-  --primary-hover: #6366f1;
-  --primary-soft: rgba(129, 140, 248, 0.15);
-  --primary-glow: rgba(129, 140, 248, 0.3);
-
-  --secondary: #38bdf8;
-  --accent: #fb7185;
-  --accent-soft: rgba(251, 113, 133, 0.15);
-  --surface-soft: #1e293b;
-
-  --gradient-primary: linear-gradient(135deg, #818cf8 0%, #38bdf8 100%);
-  --gradient-accent: linear-gradient(135deg, #fb7185 0%, #f43f5e 100%);
-  --gradient-subtle: linear-gradient(
-    135deg,
-    rgba(129, 140, 248, 0.1) 0%,
-    rgba(56, 189, 248, 0.1) 100%
-  );
-  --gradient-glass: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 100%);
-
-  --surface: #0f172a;
-  --surface-bg: #020617;
-  --surface-hover: #1e293b;
-  --surface-raised: #1e293b;
-  --surface-overlay: rgba(15, 23, 42, 0.9);
-  --surface-glass: rgba(15, 23, 42, 0.6);
-
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.12);
-  --border-focus: var(--primary);
-  --border-glass: rgba(255, 255, 255, 0.1);
-  --border-iridescent: linear-gradient(
-    135deg,
-    rgba(129, 140, 248, 0.3),
-    rgba(251, 113, 133, 0.2),
-    rgba(56, 189, 248, 0.2)
-  );
-
-  --text-primary: #f8fafc;
-  --text-secondary: #e2e8f0; /* Lighter for better contrast on dark bg */
-  --text-muted: #a1a1aa; /* Meets 4.5:1 on dark blue */
-
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.45);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
-  --shadow-elevated: 0 20px 25px -5px rgb(0 0 0 / 0.8), 0 8px 10px -6px rgb(0 0 0 / 0.8);
-  --shadow-glow: 0 0 30px rgba(129, 140, 248, 0.2);
-  --shadow-glow-strong: 0 0 40px rgba(129, 140, 248, 0.3);
-  --shadow-focus: 0 0 0 4px rgba(129, 140, 248, 0.2);
-
-  --glass-bg: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-border-shine: rgba(255, 255, 255, 0.1);
-  --glass-blur: 24px;
-  --glass-saturate: 1.4;
 }

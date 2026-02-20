@@ -4,6 +4,10 @@ import { setActivePinia, createPinia } from 'pinia';
 
 beforeEach(() => {
   setActivePinia(createPinia());
+  // G2: Reset storage state to prevent cross-test contamination
+  if (typeof window !== 'undefined' && window.localStorage) {
+    window.localStorage.clear();
+  }
 });
 
 // Global localStorage and sessionStorage mock to prevent jsdom persistence warnings
@@ -112,14 +116,13 @@ if (!navigator.clipboard) {
 
 // Mock vue-i18n partially
 vi.mock('vue-i18n', async (importOriginal) => {
-  // @ts-ignore - Mocking actual module
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const actual: any = await importOriginal();
+  const actual = (await importOriginal()) as Record<string, unknown>;
+  const originalUseI18n = actual.useI18n as (..._args: unknown[]) => unknown;
   return {
     ...actual,
     useI18n: vi.fn(() => {
       try {
-        return actual.useI18n();
+        return originalUseI18n();
       } catch {
         // Fallback for composable tests
         return {

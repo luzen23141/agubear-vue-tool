@@ -27,11 +27,11 @@ export function timestampToDate(
 ): TimestampResult {
   try {
     const parsed = parseTimestampInput(timestamp, mode);
-    if (!parsed) return { success: false, value: '無效的時間戳' };
+    if (!parsed) return { success: false, value: 'INVALID_TIMESTAMP' };
 
     const { ts, isMs } = parsed;
     const date = new Date(ts);
-    if (Number.isNaN(date.getTime())) return { success: false, value: '無效的時間戳' };
+    if (Number.isNaN(date.getTime())) return { success: false, value: 'INVALID_TIMESTAMP' };
 
     const fmt = isMs ? 'yyyy-MM-dd HH:mm:ss.SSS' : 'yyyy-MM-dd HH:mm:ss';
     const value =
@@ -41,7 +41,7 @@ export function timestampToDate(
     if (typeof process === 'undefined' || !process.env.VITEST) {
       console.error('timestampToDate error:', error);
     }
-    return { success: false, value: '無效的時間戳' };
+    return { success: false, value: 'INVALID_TIMESTAMP' };
   }
 }
 
@@ -89,7 +89,7 @@ export function dateToTimestamp(
     const date = new Date(finalDateString);
 
     if (Number.isNaN(date.getTime())) {
-      return { success: false, value: '無效的日期' };
+      return { success: false, value: 'INVALID_DATE' };
     }
 
     let ms;
@@ -110,7 +110,7 @@ export function dateToTimestamp(
     if (typeof process === 'undefined' || !process.env.VITEST) {
       console.error('dateToTimestamp error:', error);
     }
-    return { success: false, value: '無效的日期' };
+    return { success: false, value: 'INVALID_DATE' };
   }
 }
 

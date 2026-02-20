@@ -64,3 +64,8 @@ artifacts/
 # Generated Version File
 public/version.json
 npm-cache/
+
+# Temporary build/lint/test outputs
+dist-temp/
+*.test_results*.json
+fix_*.py

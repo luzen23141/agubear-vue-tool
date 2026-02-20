@@ -41,8 +41,8 @@ describe('UseHistory', () => {
       expect(history.value[9].input).toBe('input5'); // 最舊
     });
 
-    it('不應新增無效的紀錄 (含「無效」字串)', () => {
-      addToHistory('ts2date', '123', '無效的時間戳');
+    it('不應新增無效的紀錄 (含 INVALID_ 前綴)', () => {
+      addToHistory('ts2date', '123', 'INVALID_TIMESTAMP');
       expect(history.value).toHaveLength(0);
     });
 

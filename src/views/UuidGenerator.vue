@@ -8,8 +8,8 @@
       <!-- Controls -->
       <div class="controls-grid">
         <!-- Type Selection -->
-        <div class="control-group">
-          <label class="group-label">{{ t('uuid.typeLabel') }}</label>
+        <fieldset class="control-group">
+          <legend class="group-label">{{ t('uuid.typeLabel') }}</legend>
           <div class="type-toggles">
             <label
               v-for="type in idTypes"
@@ -17,18 +17,31 @@
               :class="{ active: selectedType === type.value }"
               class="type-radio"
             >
-              <input v-model="selectedType" :value="type.value" type="radio" class="sr-only" />
+              <input
+                v-model="selectedType"
+                :value="type.value"
+                type="radio"
+                name="idType"
+                class="sr-only"
+              />
               {{ type.label }}
             </label>
           </div>
-        </div>
+        </fieldset>
 
         <!-- Quantity -->
         <div class="control-group">
-          <label class="group-label">
+          <label for="uuid-quantity" class="group-label">
             {{ t('uuid.quantityLabel') }}: <span class="qty-val">{{ quantity }}</span>
           </label>
-          <input v-model.number="quantity" type="range" min="1" max="50" class="qty-slider" />
+          <input
+            id="uuid-quantity"
+            v-model.number="quantity"
+            type="range"
+            min="1"
+            max="50"
+            class="qty-slider"
+          />
         </div>
 
         <!-- Action -->
@@ -50,8 +63,10 @@
           </div>
         </div>
         <textarea
+          id="uuid-output"
           ref="outputRef"
           :value="outputString"
+          :aria-label="t('uuid.resultLabel')"
           class="uuid-output"
           readonly
           @click="selectAll"
@@ -65,6 +80,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, inject } from 'vue';
+import { TOAST_KEY } from '@/composables/use-toast-key';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import { v4 as uuidv4, v7 as uuidv7 } from 'uuid';
@@ -85,8 +101,7 @@ useHead({
   ]
 });
 
-type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
-const showToast = inject('showToast', (() => {}) as ToastFunction);
+const showToast = inject(TOAST_KEY, () => {});
 
 const idTypes = [
   { value: 'v4', label: 'UUID v4' },

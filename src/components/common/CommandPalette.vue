@@ -18,14 +18,12 @@
             <div v-if="results.length === 0" class="cmd-empty">
               {{ t('cmd.noResults') }}
             </div>
-            <ul v-else class="cmd-list" role="listbox">
+            <ul v-else class="cmd-list">
               <li
                 v-for="(item, index) in results"
                 :key="item.item.id"
                 :class="[{ active: selectedIndex === index }]"
-                :aria-selected="selectedIndex === index"
                 class="cmd-item"
-                role="option"
                 @click="execute(item.item)"
                 @mouseenter="selectedIndex = index"
               >
@@ -56,7 +54,7 @@ import { useI18n } from 'vue-i18n';
 import { useMagicKeys, whenever } from '@vueuse/core';
 import Fuse from 'fuse.js';
 
-import { UseCommands } from '@/composables/use-commands';
+import { UseCommands, type Command } from '@/composables/use-commands';
 import SvgIcon from '../icons/SvgIcon.vue';
 
 const { t } = useI18n();

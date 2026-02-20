@@ -107,7 +107,7 @@ describe('UseTimestampConverter (extended)', () => {
       const { timestampInput, dateResult, convertToDate } = UseTimestampConverter(addToHistoryMock);
       timestampInput.value = '';
       convertToDate();
-      expect(dateResult.value).toContain('無效');
+      expect(dateResult.value).toContain('INVALID_');
     });
 
     it('負數時間戳應正確轉換', () => {
@@ -135,7 +135,7 @@ describe('UseTimestampConverter (extended)', () => {
         UseTimestampConverter(addToHistoryMock);
       dateInput.value = 'not-a-date';
       convertToTimestamp();
-      expect(timestampResult.value).toContain('無效');
+      expect(timestampResult.value).toContain('INVALID_');
     });
 
     it('輸入非數字字元應被過濾', async () => {

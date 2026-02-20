@@ -216,7 +216,7 @@ describe('timestampToDate', () => {
     it.each(timestampToDateErrorCases)('$desc: 應回傳失敗', (case_: any) => {
       const result = timestampToDate(case_.input, case_.mode);
       expect(result.success).toBe(false);
-      expect(result.value).toContain('無效');
+      expect(result.value).toContain('INVALID_');
     });
   });
 
@@ -278,7 +278,7 @@ describe('dateToTimestamp', () => {
     it.each(dateToTimestampErrorCases)('$desc: 應回傳失敗', (case_: any) => {
       const result = dateToTimestamp(case_.input);
       expect(result.success).toBe(false);
-      expect(result.value).toContain('無效');
+      expect(result.value).toContain('INVALID_');
     });
   });
 

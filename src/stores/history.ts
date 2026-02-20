@@ -2,6 +2,8 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import { format } from 'date-fns';
 
+let _historyIdCounter = 0;
+
 export interface HistoryItem {
   id: number;
   type: string;
@@ -9,6 +11,7 @@ export interface HistoryItem {
   output: string | number;
   extra?: Record<string, unknown> | string | null;
   timestamp: string;
+  [key: string]: unknown;
 }
 
 export const useHistoryStore = defineStore('history', () => {
@@ -26,13 +29,14 @@ export const useHistoryStore = defineStore('history', () => {
       output === undefined ||
       output === null ||
       output === '' ||
-      outputString.includes('無效')
+      outputString.startsWith('INVALID_')
     ) {
       return;
     }
 
+    _historyIdCounter += 1;
     const newItem: HistoryItem = {
-      id: Date.now(),
+      id: _historyIdCounter,
       type,
       input,
       output,

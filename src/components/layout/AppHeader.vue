@@ -9,18 +9,6 @@
       <span class="sr-only">{{ t('seo.description') }}</span>
     </div>
     <div class="flex items-center gap-2">
-      <button
-        :title="t('app.theme_' + theme)"
-        :aria-label="t('app.theme_' + theme)"
-        type="button"
-        class="theme-toggle flex items-center justify-center w-10 h-10 p-0 rounded-full border-1 border-solid border-[var(--border)] bg-[var(--glass-bg)] backdrop-blur-12 transition-all duration-300 text-[var(--text-secondary)] hover:bg-[var(--primary-soft)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-glow-strong)] hover:scale-110 hover:rotate-15 hover:text-[var(--primary)]"
-        @click="toggleTheme"
-      >
-        <SvgIcon v-if="theme === 'light'" name="sun" />
-        <SvgIcon v-else-if="theme === 'dark'" name="moon" />
-        <SvgIcon v-else name="monitor" />
-      </button>
-
       <LanguageSwitcher ref="langSwitcherRef" />
     </div>
   </header>
@@ -29,12 +17,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { UseTheme } from '@/composables/use-theme';
 import SvgIcon from '../icons/SvgIcon.vue';
 import LanguageSwitcher from './LanguageSwitcher.vue';
 
 const { t } = useI18n();
-const { theme, toggleTheme } = UseTheme();
 
 const langSwitcherRef = ref<InstanceType<typeof LanguageSwitcher> | null>(null);
 

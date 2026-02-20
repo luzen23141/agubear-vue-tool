@@ -1,8 +1,9 @@
 import type { Router } from 'vue-router';
-import { SUPPORTED_LOCALES } from '../i18n';
+import { SUPPORTED_LOCALES, loadLocaleMessages } from '../i18n';
 
-export const setupRouterGuard = (router: Router) => {
-  router.beforeEach((to, _from, next) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const setupRouterGuard = (router: Router, i18n: any) => {
+  router.beforeEach(async (to, _from, next) => {
     const { params } = to;
     const lang = params.lang as string;
     const localeCode = SUPPORTED_LOCALES.find((l) => l.code === lang)?.code;
@@ -18,8 +19,13 @@ export const setupRouterGuard = (router: Router) => {
       });
     }
 
-    if (localeCode && typeof window !== 'undefined') {
-      localStorage.setItem('agubear-locale', localeCode);
+    if (localeCode) {
+      // Lazy-load locale messages before entering the route
+      await loadLocaleMessages(i18n, localeCode);
+
+      if (globalThis?.window !== undefined) {
+        localStorage.setItem('agubear-locale', localeCode);
+      }
     }
 
     next();

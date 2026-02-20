@@ -19,54 +19,31 @@ const setupErrorHandlers = (app: VueApp, isClient: boolean) => {
   };
 
   if (isClient) {
-    window.addEventListener('error', (event) => {
+    globalThis.addEventListener('error', (event) => {
       // eslint-disable-next-line no-console
       console.error('Global Window Error:', event.error);
     });
-    window.addEventListener('unhandledrejection', (event) => {
+    globalThis.window?.scrollTo({ top: 0, behavior: 'smooth' });
+    globalThis.addEventListener('unhandledrejection', (event) => {
       // eslint-disable-next-line no-console
       console.error('Unhandled Promise Rejection:', event.reason);
     });
   }
 };
 
-const logPerformanceMetric = (name: string, metric: unknown) =>
-  // eslint-disable-next-line no-console
-  console.log(
-    `[Performance] ${name}:`,
-    Object.hasOwn(metric, 'value') ? (metric as { value: unknown }).value : undefined,
-    metric
-  );
-
-const setupPerformanceReporting = (isClient: boolean) => {
-  if (isClient && import.meta.env.DEV) {
-    import('web-vitals')
-      .then(({ onCLS, onINP, onLCP, onFCP, onTTFB }) => {
-        onCLS((metric) => logPerformanceMetric('CLS', metric));
-        onINP((metric) => logPerformanceMetric('INP', metric));
-        onLCP((metric) => logPerformanceMetric('LCP', metric));
-        onFCP((metric) => logPerformanceMetric('FCP', metric));
-        onTTFB((metric) => logPerformanceMetric('TTFB', metric));
-        return true;
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('Web Vitals load error:', error);
-      });
-  }
-};
+// Removed performance reporting function
 
 export const createApp = ViteSSG(
   App,
   { routes, base: import.meta.env.BASE_URL },
-  ({ app, router, isClient }) => {
+  ({ app, router }) => {
+    const isClient = globalThis?.window !== undefined;
     const i18n = setupI18n();
     const pinia = createPinia();
     app.use(i18n);
     app.use(pinia);
 
-    setupRouterGuard(router);
+    setupRouterGuard(router, i18n);
     setupErrorHandlers(app, isClient);
-    setupPerformanceReporting(isClient);
   }
 );

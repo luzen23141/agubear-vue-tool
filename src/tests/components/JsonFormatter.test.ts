@@ -161,7 +161,7 @@ describe('JsonFormatter.vue', () => {
   });
 
   it('複製失敗時應處理錯誤', async () => {
-    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const wrapper = mount(JsonFormatter, mountOptions);
     mockClipboardWrite.mockRejectedValueOnce(new Error('copy fail'));
     await wrapper.find('textarea.json-input').setValue('{"a":1}');

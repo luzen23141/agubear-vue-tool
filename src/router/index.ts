@@ -8,8 +8,8 @@ const defaultLocale = 'zh-TW';
 
 // Helper to get browser locale or default
 const getBrowserLocale = () => {
-  if (typeof navigator !== 'undefined') {
-    const browserLang = navigator.language;
+  if (globalThis?.window !== undefined) {
+    const browserLang = globalThis.navigator?.language;
     if (localeCodes.has(browserLang)) return browserLang;
     const base = browserLang.split('-')[0];
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,7 +24,8 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: () => {
-      const saved = typeof window === 'undefined' ? null : localStorage.getItem('agubear-locale');
+      const saved =
+        globalThis?.window === undefined ? null : localStorage.getItem('agubear-locale');
       const target = saved && localeCodes.has(saved) ? saved : getBrowserLocale();
       return `/${target}/timestamp`;
     }

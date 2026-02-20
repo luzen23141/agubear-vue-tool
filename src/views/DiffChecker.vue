@@ -19,12 +19,22 @@
 
       <div class="inputs-grid">
         <div class="input-col">
-          <label>{{ t('diff.original') }}</label>
-          <textarea v-model="text1" :placeholder="t('diff.pasteOriginal')" class="diff-input" />
+          <label for="diff-original">{{ t('diff.original') }}</label>
+          <textarea
+            id="diff-original"
+            v-model="text1"
+            :placeholder="t('diff.pasteOriginal')"
+            class="diff-input"
+          />
         </div>
         <div class="input-col">
-          <label>{{ t('diff.modified') }}</label>
-          <textarea v-model="text2" :placeholder="t('diff.pasteModified')" class="diff-input" />
+          <label for="diff-modified">{{ t('diff.modified') }}</label>
+          <textarea
+            id="diff-modified"
+            v-model="text2"
+            :placeholder="t('diff.pasteModified')"
+            class="diff-input"
+          />
         </div>
       </div>
 
@@ -41,6 +51,7 @@
 
 <script setup lang="ts">
 import { ref, computed, inject } from 'vue';
+import { TOAST_KEY } from '@/composables/use-toast-key';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import { diff_match_patch as DiffMatchPatch, type Diff } from 'diff-match-patch';
@@ -60,8 +71,7 @@ useHead({
   ]
 });
 
-type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
-const showToast = inject('showToast', (() => {}) as ToastFunction);
+const showToast = inject(TOAST_KEY, () => {});
 
 const text1 = ref('');
 const text2 = ref('');

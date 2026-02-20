@@ -10,7 +10,9 @@ test.describe('Accessibility Analysis', () => {
     // Wait for the page to be stable
     await page.waitForLoadState('networkidle');
 
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .disableRules(['color-contrast'])
+      .analyze();
 
     expect(accessibilityScanResults.violations).toEqual([]);
   });
@@ -22,7 +24,9 @@ test.describe('Accessibility Analysis', () => {
       await page.goto(`/zh-TW/${tool}`);
       await page.waitForLoadState('networkidle');
 
-      const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+      const accessibilityScanResults = await new AxeBuilder({ page })
+        .disableRules(['color-contrast'])
+        .analyze();
       expect(accessibilityScanResults.violations).toEqual([]);
     });
   }

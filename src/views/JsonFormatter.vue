@@ -108,15 +108,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import BaseCard from '@/components/common/BaseCard.vue';
 import { UseJsonFormatter } from '@/composables/use-json-formatter';
+import { useCopyToClipboard } from '@/composables/use-copy-to-clipboard';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
-
-type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
-const showToast = inject('showToast', (() => {}) as ToastFunction);
 
 const { t } = useI18n();
 
@@ -138,15 +136,11 @@ const {
   pasteInput
 } = UseJsonFormatter();
 
-const copyOutput = async () => {
+const { copyText } = useCopyToClipboard();
+
+const copyOutput = () => {
   if (!outputJson.value) return;
-  try {
-    await navigator.clipboard.writeText(outputJson.value);
-    showToast(t('common.copied') || 'Copied!', 'success');
-  } catch (error_) {
-    console.error('Failed to copy', error_);
-    showToast('Failed to copy', 'error');
-  }
+  copyText(outputJson.value);
 };
 </script>
 
@@ -223,7 +217,8 @@ const copyOutput = async () => {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  height: 600px;
+  min-height: 400px;
+  max-height: 80vh;
 }
 @media (min-width: 768px) {
   .editor-grid {
@@ -304,9 +299,9 @@ const copyOutput = async () => {
 }
 .error-message {
   padding: 10px 16px;
-  background: #fef2f2;
-  border-top: 1px solid #fee2e2;
-  color: #b91c1c;
+  background: var(--accent-soft);
+  border-top: 1px solid var(--border);
+  color: var(--accent);
   font-size: 0.85rem;
   display: flex;
   align-items: flex-start;

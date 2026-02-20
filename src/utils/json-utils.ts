@@ -29,7 +29,7 @@ export const unescapeString = (input: string): string => {
 export const decodeUnicode = (input: string): string => {
   if (!input) return '';
   return input.replaceAll(/\\u[\da-f]{4}/gi, (match) =>
-    String.fromCodePoint(Number.parseInt(match.replaceAll('\\u', ''), 16))
+    String.fromCodePoint(Number.parseInt(match.replaceAll(String.raw`\u`, ''), 16))
   );
 };
 

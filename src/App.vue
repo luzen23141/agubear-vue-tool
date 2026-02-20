@@ -11,7 +11,7 @@
     <main class="flex-grow flex flex-col relative tab-content tool-container">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
-          <keep-alive>
+          <keep-alive :max="5">
             <component :is="Component" :key="route.fullPath" />
           </keep-alive>
         </transition>
@@ -31,6 +31,7 @@ import { useI18n } from 'vue-i18n';
 import { useHead } from '@unhead/vue';
 import { useRoute } from 'vue-router';
 import { SUPPORTED_LOCALES } from './i18n';
+import { TOAST_KEY } from './composables/use-toast-key';
 
 import AppHeader from './components/layout/AppHeader.vue';
 import AppFooter from './components/layout/AppFooter.vue';
@@ -49,7 +50,7 @@ const toastRef = ref<InstanceType<typeof Toast> | null>(null);
 const showToast = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
   toastRef.value?.show(message, type);
 };
-provide('showToast', showToast);
+provide(TOAST_KEY, showToast);
 
 // Sync locale from route immediately (Fix for SSG)
 watch(
