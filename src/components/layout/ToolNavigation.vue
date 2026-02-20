@@ -38,7 +38,7 @@
           <button
             :class="[{ active: activeTab === tool.id }]"
             :aria-label="tool.ariaLabel"
-            :aria-selected="activeTab === tool.id"
+            :aria-current="activeTab === tool.id ? 'page' : undefined"
             type="button"
             class="tab-btn"
             @click="switchTab(tool)"
