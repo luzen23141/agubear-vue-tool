@@ -557,7 +557,7 @@ describe('QrCodeGenerator.vue', () => {
       if (wifiButton) {
         await wifiButton.trigger('click');
         expect(wrapper.find('input[placeholder*="SSID"]').exists()).toBe(true);
-        expect(wrapper.find('input[placeholder*="Password"]').exists()).toBe(true);
+        expect(wrapper.find('input[placeholder*="密碼"]').exists()).toBe(true);
         expect(wrapper.find('select').exists()).toBe(true); // Encryption
       }
     });
