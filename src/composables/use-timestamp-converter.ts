@@ -20,6 +20,8 @@ type AddToHistoryFunction = (
   _extra?: Record<string, unknown> | string | null
 ) => void;
 
+type TimestampMode = 'auto' | 's' | 'ms';
+
 /**
  * Default timestamp (current time in seconds)
  */
@@ -113,7 +115,17 @@ export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
 
   // --- Watchers & Lifecycle ---
   // Re-run conversions when settings change without recording history
-  watch([useMilliseconds, timestampMode, utcOffset], () => {
+  watch([useMilliseconds, timestampMode, utcOffset], (newVals, oldVals) => {
+    // Auto-convert timestamp digits when mode changes between s and ms
+    const [, newMode] = newVals as [boolean, TimestampMode, number];
+    const [, oldMode] = oldVals as [boolean, TimestampMode, number];
+
+    if (newMode === 'ms' && oldMode === 's' && timestampInput.value.length === 10) {
+      timestampInput.value += '000';
+    } else if (newMode === 's' && oldMode === 'ms' && timestampInput.value.length === 13) {
+      timestampInput.value = timestampInput.value.slice(0, 10);
+    }
+
     convertToDate(false);
     convertToTimestamp(false);
   });

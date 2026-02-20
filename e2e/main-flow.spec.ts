@@ -13,21 +13,24 @@ test.describe('Timestamp Converter Flow', () => {
   });
 
   test('手動輸入 Timestamp 應連動更新日期字串', async ({ page }) => {
-    const timestampInput = page.locator('input').first(); // 假設第一個是 Timestamp
-    await timestampInput.fill('1708416000'); // 2024-02-20
+    const timestampInput = page.locator('#timestamp-input');
+    await timestampInput.fill('1708416000');
+    await timestampInput.press('Enter');
 
     // 檢查轉換後的日期字串是否正確顯示
-    const dateOutput = page.getByText(/2024-02-20/);
-    await expect(dateOutput).toBeVisible();
+    const dateResult = page.locator('.result').first();
+    await expect(dateResult).toContainText('2024-02-20');
   });
 
   test('切換 Unit (秒/毫秒) 應正確轉換數值', async ({ page }) => {
-    const unitSelect = page.locator('select'); // 假設有一個 select 控制單位
-    if (await unitSelect.isVisible()) {
-      await unitSelect.selectOption('ms');
-      const timestampInput = page.locator('input').first();
-      await expect(timestampInput).toHaveValue(/^\d{13}$/); // 13 位數代表毫秒
-    }
+    // 點擊「秒」確保初始狀態 (加上 force: true 避免動畫干擾)
+    await page.click('label[for="ts-mode-s"]', { force: true });
+    const timestampInput = page.locator('#timestamp-input');
+    await timestampInput.fill('1708416000');
+
+    // 點擊「毫秒」模式標籤
+    await page.click('label[for="ts-mode-ms"]', { force: true });
+    await expect(timestampInput).toHaveValue(/^\d{13}$/); // 13 位數代表毫秒
   });
 
   test('點擊複製按鈕應觸發 Clipboard', async ({ page }) => {
