@@ -3,10 +3,11 @@
     <div class="flex-col gap-4">
       <div class="inputs-row grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="flex flex-col gap-1.5">
-          <label class="text-0.85rem font-600 text-[var(--text-secondary)]">{{
+          <label for="start-time" class="text-0.85rem font-600 text-[var(--text-secondary)]">{{
             t('timestamp.startTime')
           }}</label>
           <input
+            id="start-time"
             v-model="startTime"
             type="datetime-local"
             class="input-base"
@@ -14,10 +15,11 @@
           />
         </div>
         <div class="flex flex-col gap-1.5">
-          <label class="text-0.85rem font-600 text-[var(--text-secondary)]">{{
+          <label for="end-time" class="text-0.85rem font-600 text-[var(--text-secondary)]">{{
             t('timestamp.endTime')
           }}</label>
           <input
+            id="end-time"
             v-model="endTime"
             type="datetime-local"
             class="input-base"

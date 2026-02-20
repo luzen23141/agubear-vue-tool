@@ -52,7 +52,7 @@
         <!-- Input Area -->
         <div class="editor-pane input-pane">
           <div class="pane-header">
-            <h3>{{ t('json.inputLabel') }}</h3>
+            <h2>{{ t('json.inputLabel') }}</h2>
             <div class="pane-controls">
               <button
                 v-if="canPaste"
@@ -88,7 +88,7 @@
         <!-- Output Area -->
         <div class="editor-pane output-pane">
           <div class="pane-header">
-            <h3>{{ t('json.outputLabel') }}</h3>
+            <h2>{{ t('json.outputLabel') }}</h2>
             <button :disabled="!outputJson" class="copy-btn" type="button" @click="copyOutput">
               {{ t('json.copy') }}
             </button>

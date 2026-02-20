@@ -57,7 +57,7 @@
 
       <!-- 結果 -->
       <div v-if="pinyinResult" class="result-group">
-        <h3>{{ t('pinyin.resultLabel') }}</h3>
+        <h2>{{ t('pinyin.resultLabel') }}</h2>
         <div :title="t('pinyin.copyTitle')" class="result-box" @click="copyResult">
           {{ pinyinResult }}
         </div>

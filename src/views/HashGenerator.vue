@@ -43,9 +43,9 @@
       />
 
       <div v-if="hashResult" class="mt-6">
-        <h3 class="text-0.9rem text-[var(--text-muted)] mb-2 font-500">
+        <h2 class="text-0.9rem text-[var(--text-muted)] mb-2 font-500">
           {{ t('hash.resultLabel') }} ({{ algo }})
-        </h3>
+        </h2>
         <InputWithCopy id="hash-output" :model-value="hashResult" readonly allow-copy />
         <p class="text-0.8rem text-[var(--text-muted)] text-center mt-2">
           {{ t('hash.copyHint') }}

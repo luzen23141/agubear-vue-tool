@@ -33,12 +33,13 @@
     </div>
 
     <!-- Tool Tabs -->
-      <div class="tab-list-container">
+      <div class="tab-list-container" role="tablist" aria-orientation="horizontal">
         <div v-for="tool in filteredTools" :key="tool.id" class="tab-item-wrapper">
           <button
             :class="[{ active: activeTab === tool.id }]"
             :aria-label="tool.ariaLabel"
-            :aria-current="activeTab === tool.id ? 'page' : undefined"
+            :aria-selected="activeTab === tool.id"
+            role="tab"
             type="button"
             class="tab-btn"
             @click="switchTab(tool)"

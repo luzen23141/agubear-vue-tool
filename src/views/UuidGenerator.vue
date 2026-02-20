@@ -42,7 +42,7 @@
       <!-- Output -->
       <div class="output-section">
         <div class="output-header">
-          <h3>{{ t('uuid.resultLabel') }}</h3>
+          <h2>{{ t('uuid.resultLabel') }}</h2>
           <div class="output-actions">
             <button class="copy-btn" type="button" @click="copyAll">
               <SvgIcon name="copy" /> {{ t('common.copy') }}

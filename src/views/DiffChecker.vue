@@ -29,7 +29,7 @@
       </div>
 
       <div v-if="diffResult.length > 0" class="diff-output-container">
-        <h3>{{ t('diff.result') }}</h3>
+        <h2>{{ t('diff.result') }}</h2>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="diff-output" v-html="diffHtml" />
       </div>
