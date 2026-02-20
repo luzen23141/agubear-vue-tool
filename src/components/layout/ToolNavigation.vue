@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav-section" :aria-label="t('app.ariaLabels.toolNavigation')">
+  <nav :aria-label="t('app.ariaLabels.toolNavigation')" class="nav-section">
     <!-- Filters Toolbar -->
     <div class="filters-bar">
       <!-- Category Dropdown -->
