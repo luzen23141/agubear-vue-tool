@@ -96,7 +96,17 @@ const closeLangMenu = () => {
 /* Keeping complex page transitions and media query fine-tuning */
 .page-fade-enter-active,
 .page-fade-leave-active {
-  transition: all var(--transition-spring-smooth);
+  transition:
+    opacity var(--transition-spring-smooth),
+    transform var(--transition-spring-smooth),
+    filter var(--transition-spring-smooth);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fade-enter-active,
+  .page-fade-leave-active {
+    transition: none !important;
+  }
 }
 
 .page-fade-enter-from {

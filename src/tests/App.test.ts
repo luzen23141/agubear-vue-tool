@@ -201,27 +201,27 @@ describe('App.vue', () => {
     }
   });
 
-  it('所有頁籤按鈕都應有 role=tab', () => {
+  it('所有頁籤按鈕都應有 aria-label', () => {
     const wrapper = mount(App, mountOptions);
     const buttons = wrapper.findAll('.tab-btn');
 
     for (const button of buttons) {
-      expect(button.attributes('role')).toBe('tab');
+      expect(button.attributes('aria-label')).toBeTruthy();
     }
   });
 
-  it('頁籤導航應有 role=tablist', () => {
+  it('頁籤導航應使用 nav 標籤', () => {
     const wrapper = mount(App, mountOptions);
-    const nav = wrapper.find('.tab-list-container');
-    expect(nav.attributes('role')).toBe('tablist');
+    const nav = wrapper.find('nav.nav-section');
+    expect(nav.exists()).toBe(true);
   });
 
-  it('active 頁籤應有 aria-selected=true', async () => {
+  it('active 頁籤應有 aria-current=page', async () => {
     const wrapper = mount(App, mountOptions);
     const buttons = wrapper.findAll('.tab-btn');
 
-    expect(buttons[0]?.attributes('aria-selected')).toBe('true');
-    expect(buttons[1]?.attributes('aria-selected')).toBe('false');
+    expect(buttons[0]?.attributes('aria-current')).toBe('page');
+    expect(buttons[1]?.attributes('aria-current')).toBeUndefined();
   });
 
   it('每個頁籤按鈕應有 aria-label', () => {

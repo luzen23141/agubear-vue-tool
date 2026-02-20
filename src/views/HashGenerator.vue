@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <BaseCard :title="t('hash.title')" heading-tag="h1">
+    <BaseCard :title="t('hash.title')" heading-tag="h2">
       <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
         <div class="flex items-center gap-2">
           <label for="algo-select">{{ t('hash.algorithm') }}</label>

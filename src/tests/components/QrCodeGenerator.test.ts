@@ -546,13 +546,13 @@ describe('QrCodeGenerator.vue', () => {
     it('應預設為 Text 模式', () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
       const textMode = wrapper.find('.tab-btn.active');
-      expect(textMode.text()).toContain('Text'); // or check logic
+      expect(textMode.text()).toContain('純文字');
       expect(wrapper.find('textarea').exists()).toBe(true);
     });
 
     it('切換到 WiFi 模式應顯示 WiFi 輸入欄位', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const wifiButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
+      const wifiButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Wi-Fi'));
 
       if (wifiButton) {
         await wifiButton.trigger('click');
@@ -564,7 +564,7 @@ describe('QrCodeGenerator.vue', () => {
 
     it('WiFi 模式下輸入資料應產生正確格式字串 (WIFI:T:WPA;...)', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const wifiButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
+      const wifiButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Wi-Fi'));
 
       if (wifiButton) {
         await wifiButton.trigger('click');
@@ -589,7 +589,7 @@ describe('QrCodeGenerator.vue', () => {
 
     it('切換到 Contact 模式應顯示聯絡人輸入欄位', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const contactButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
+      const contactButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('聯絡人'));
 
       if (contactButton) {
         await contactButton.trigger('click');
@@ -601,7 +601,7 @@ describe('QrCodeGenerator.vue', () => {
 
     it('Contact 模式下輸入資料應產生 vCard 格式', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const contactButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
+      const contactButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('聯絡人'));
 
       if (contactButton) {
         await contactButton.trigger('click');

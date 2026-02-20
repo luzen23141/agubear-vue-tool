@@ -129,3 +129,8 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+p {
+  max-width: 65ch;
+  line-height: 1.6;
+}

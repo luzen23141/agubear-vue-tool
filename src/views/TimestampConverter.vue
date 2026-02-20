@@ -12,7 +12,7 @@
 
     <div class="converter-grid">
       <!-- Timestamp -> Date -->
-      <BaseCard :title="t('timestamp.title')" heading-tag="h1" class="reveal-delay-2">
+      <BaseCard :title="t('timestamp.title')" heading-tag="h2" class="reveal-delay-2">
         <!-- 輸入模式切換 -->
         <div class="mode-toggle">
           <label for="ts-mode-auto">

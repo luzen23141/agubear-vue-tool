@@ -6,6 +6,7 @@
       <div class="mode-tabs">
         <button
           :class="[{ active: mode === 'text' }]"
+          :aria-pressed="mode === 'text'"
           class="tab-btn"
           type="button"
           @click="mode = 'text'"
@@ -14,6 +15,7 @@
         </button>
         <button
           :class="[{ active: mode === 'wifi' }]"
+          :aria-pressed="mode === 'wifi'"
           class="tab-btn"
           type="button"
           @click="mode = 'wifi'"
@@ -22,6 +24,7 @@
         </button>
         <button
           :class="[{ active: mode === 'contact' }]"
+          :aria-pressed="mode === 'contact'"
           class="tab-btn"
           type="button"
           @click="mode = 'contact'"

@@ -1,11 +1,11 @@
 <template>
   <header class="flex items-center justify-between mb-8 pb-5 border-none relative">
     <div class="flex flex-col">
-      <h2
-        class="text-1.5rem font-800 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent m-0 tracking--0.04em flex items-center gap-2"
-      >
-        <span class="title-icon"><SvgIcon name="bear" size="1.4rem" /></span> AguBear Tools
-      </h2>
+      <h1 class="app-title-h1">
+        <span class="title-text">
+          <span class="title-icon"><SvgIcon name="bear" size="1.4rem" /></span> AguBear Tools
+        </span>
+      </h1>
       <span class="sr-only">{{ t('seo.description') }}</span>
     </div>
     <div class="flex items-center gap-2">
@@ -46,6 +46,24 @@ defineExpose({
 </script>
 
 <style scoped>
+.app-title-h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--primary); /* Solid color fallback */
+}
+
+.title-text {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* Only keeping complex animations/pseudo-elements here */
 header::after {
   content: '';
