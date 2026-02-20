@@ -53,8 +53,8 @@ defineProps<{
 }>();
 
 defineEmits<{
-  (_e: 'clear'): void;
-  (_e: 'remove', _id: number): void;
+  (_event: 'clear'): void;
+  (_event: 'remove', _id: number): void;
 }>();
 
 const { t } = useI18n();

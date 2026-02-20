@@ -16,7 +16,7 @@ test.describe('AguBear Tools E2E', () => {
 
   test('功能測試：切換分頁', async ({ page }: { page: Page }) => {
     await page.goto('/');
-    const hashTab = page.getByRole('tab', { name: /MD5/i });
+    const hashTab = page.getByRole('tab', { name: /md5/i });
     await hashTab.click();
     await expect(hashTab).toHaveClass(/active/);
   });

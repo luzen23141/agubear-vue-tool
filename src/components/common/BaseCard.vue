@@ -2,10 +2,10 @@
   <div class="base-card">
     <div class="card">
       <slot name="header">
-        <h2 v-if="title" class="card-title">
+        <component :is="headingTag || 'h2'" v-if="title" class="card-title">
           <span class="card-title-dot" />
           {{ title }}
-        </h2>
+        </component>
       </slot>
       <slot />
       <slot name="footer" />
@@ -16,6 +16,7 @@
 <script setup lang="ts">
 defineProps<{
   title?: string;
+  headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }>();
 </script>
 

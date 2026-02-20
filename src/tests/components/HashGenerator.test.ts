@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import HashGenerator from '../../components/HashGenerator.vue';
+import HashGenerator from '../../views/HashGenerator.vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -11,15 +11,15 @@ const mountOptions = {
   }
 };
 
-// Mock useHistory
+// Mock UseHistory
 const historyMocks = {
   history: [] as any[],
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 };
-vi.mock('../../composables/useHistory', () => ({
-  useHistory: () => historyMocks
+vi.mock('../../composables/use-history', () => ({
+  UseHistory: () => historyMocks
 }));
 
 // Mock useHead
@@ -34,7 +34,7 @@ const mockComputeHash = vi.fn().mockImplementation((text, algo) => {
   try {
     const hash = CryptoJS[algo](text);
     return hash.toString(CryptoJS.enc.Hex);
-  } catch (e) {
+  } catch {
     return null;
   }
 });
@@ -47,7 +47,7 @@ vi.mock('../../utils/crypto', async () => {
 });
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 const mockClipboardRead = vi.fn().mockResolvedValue('pasted content');
 Object.assign(navigator, {
   clipboard: {
@@ -160,8 +160,8 @@ describe('HashGenerator.vue', () => {
 
   describe('其他功能', () => {
     it('點擊貼上按鈕應更新輸入', async () => {
-      const pasteBtn = wrapper.find('.paste-btn');
-      await pasteBtn.trigger('click');
+      const pasteButton = wrapper.find('.paste-btn');
+      await pasteButton.trigger('click');
       expect(mockClipboardRead).toHaveBeenCalled();
       expect(wrapper.vm.inputText).toBe('pasted content');
     });
@@ -169,8 +169,8 @@ describe('HashGenerator.vue', () => {
     it('點擊輸入框旁複製按鈕應觸發', async () => {
       await wrapper.find('#hash-input').setValue('copy me');
       await wrapper.vm.$nextTick();
-      const copyBtn = wrapper.findAll('.copy-btn-overlay')[0];
-      await copyBtn.trigger('click');
+      const copyButton = wrapper.findAll('.copy-btn-overlay')[0];
+      await copyButton.trigger('click');
       expect(mockClipboardWrite).toHaveBeenCalledWith('copy me');
     });
 

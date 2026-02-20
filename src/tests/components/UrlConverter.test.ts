@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
-import UrlConverter from '../../components/UrlConverter.vue';
+import UrlConverter from '../../views/UrlConverter.vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n(); // Create i18n instance
@@ -11,15 +11,15 @@ const mountOptions = {
   }
 };
 
-// Mock useHistory
+// Mock UseHistory
 const historyMocks = {
   history: [] as any[],
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 };
-vi.mock('../../composables/useHistory', () => ({
-  useHistory: () => historyMocks
+vi.mock('../../composables/use-history', () => ({
+  UseHistory: () => historyMocks
 }));
 
 // Mock useHead
@@ -28,7 +28,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 const mockClipboardRead = vi.fn().mockResolvedValue('test content');
 Object.assign(navigator, {
   clipboard: {
@@ -80,8 +80,8 @@ describe('UrlConverter.vue', () => {
     it('點擊紀錄按鈕應呼叫 addToHistory', async () => {
       await wrapper.find('#url-input').setValue('test');
       await flushPromises();
-      const recordBtn = wrapper.find('.btn-primary');
-      await recordBtn.trigger('click');
+      const recordButton = wrapper.find('.btn-primary');
+      await recordButton.trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith('url', 'test', 'test');
     });
 
@@ -116,22 +116,22 @@ describe('UrlConverter.vue', () => {
     it('點擊輸入框複製按鈕應觸發 clipboard write', async () => {
       await wrapper.find('#url-input').setValue('input copy');
       await flushPromises();
-      const copyBtn = wrapper.find('.copy-btn-overlay');
-      await copyBtn.trigger('click');
+      const copyButton = wrapper.find('.copy-btn-overlay');
+      await copyButton.trigger('click');
       expect(mockClipboardWrite).toHaveBeenCalledWith('input copy');
     });
 
     it('點擊結果框複製按鈕應觸發 clipboard write', async () => {
       await wrapper.find('#url-input').setValue('test');
       await flushPromises();
-      const copyBtn = wrapper.findAll('.copy-btn-overlay')[1]; // Output copy
-      await copyBtn.trigger('click');
+      const copyButton = wrapper.findAll('.copy-btn-overlay')[1]; // Output copy
+      await copyButton.trigger('click');
       expect(mockClipboardWrite).toHaveBeenCalledWith('test');
     });
 
     it('點擊貼上按鈕應更新輸入', async () => {
-      const pasteBtn = wrapper.find('.paste-btn');
-      await pasteBtn.trigger('click');
+      const pasteButton = wrapper.find('.paste-btn');
+      await pasteButton.trigger('click');
       expect(mockClipboardRead).toHaveBeenCalled();
       expect(wrapper.vm.inputText).toBe('test content');
     });

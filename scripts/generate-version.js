@@ -8,7 +8,7 @@ import chalk from 'chalk';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
-const publicDir = path.join(projectRoot, 'public');
+const publicDirectory = path.join(projectRoot, 'public');
 
 function getCommitHash() {
   try {
@@ -22,7 +22,7 @@ function getCommitHash() {
 function getPackageVersion() {
   try {
     const packageJsonPath = path.join(projectRoot, 'package.json');
-    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
     return packageJson.version || '0.0.0';
   } catch {
     return '0.0.0';
@@ -37,17 +37,17 @@ const versionInfo = {
 };
 
 // Ensure public directory exists
-if (!fs.existsSync(publicDir)) {
-  fs.mkdirSync(publicDir, { recursive: true });
+if (!fs.existsSync(publicDirectory)) {
+  fs.mkdirSync(publicDirectory, { recursive: true });
 }
 
-const outputPath = path.join(publicDir, 'version.json');
+const outputPath = path.join(publicDirectory, 'version.json');
 
 try {
   fs.writeFileSync(outputPath, JSON.stringify(versionInfo, null, 2));
   console.log(chalk.blue('▶ [Version] Generated version.json'));
-  console.log(chalk.gray(`  └─ Commit: ${versionInfo.commitHash.substring(0, 7)}`));
-} catch (e) {
-  console.error(chalk.red('[ERROR] Failed to write version.json:'), e.message);
+  console.log(chalk.gray(`  └─ Commit: ${versionInfo.commitHash.slice(0, 7)}`));
+} catch (error) {
+  console.error(chalk.red('[ERROR] Failed to write version.json:'), error.message);
   process.exit(1);
 }

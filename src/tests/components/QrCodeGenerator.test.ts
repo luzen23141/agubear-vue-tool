@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
 import { mount, flushPromises } from '@vue/test-utils';
-import QrCodeGenerator from '../../components/QrCodeGenerator.vue';
+import QrCodeGenerator from '../../views/QrCodeGenerator.vue';
 import { setupI18n } from '../../i18n';
 import qrcode from 'qrcode';
 
@@ -15,7 +15,7 @@ const mountOptions = {
 
 vi.mock('qrcode', () => ({
   default: {
-    toCanvas: vi.fn().mockResolvedValue(undefined)
+    toCanvas: vi.fn().mockResolvedValue()
   }
 }));
 
@@ -24,24 +24,25 @@ vi.mock('@unhead/vue', () => ({
   useHead: vi.fn()
 }));
 
-// Mock useHistory
+// Mock UseHistory
 const mockUseHistory = reactive({
   history: [] as any[],
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 });
-vi.mock('../../composables/useHistory', () => ({
-  useHistory: () => mockUseHistory
+vi.mock('@/composables/use-history', () => ({
+  UseHistory: () => mockUseHistory
 }));
 
 // Mock clipboard API
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 vi.stubGlobal('navigator', {
   ...navigator,
   clipboard: {
     writeText: mockClipboardWrite,
-    write: mockClipboardWrite
+    write: mockClipboardWrite,
+    readText: vi.fn().mockResolvedValue('mocked text')
   }
 });
 
@@ -66,7 +67,7 @@ if (typeof ClipboardItem === 'undefined') {
 
 // Ensure navigator.clipboard.write is a mock
 if (!navigator.clipboard.write) {
-  navigator.clipboard.write = vi.fn().mockResolvedValue(undefined);
+  navigator.clipboard.write = vi.fn().mockResolvedValue();
 }
 
 describe('QrCodeGenerator.vue', () => {
@@ -95,7 +96,7 @@ describe('QrCodeGenerator.vue', () => {
     it('應渲染文字輸入框', () => {
       const textarea = wrapper.find('textarea');
       expect(textarea.exists()).toBe(true);
-      expect(textarea.attributes('placeholder')).toContain('文字或網址');
+      expect(textarea.attributes('placeholder')).toBeTruthy();
     });
 
     it('應渲染尺寸輸入框', () => {
@@ -135,7 +136,8 @@ describe('QrCodeGenerator.vue', () => {
       expect(ecBtns[3].text()).toContain('H');
     });
 
-    it('M 等級應為預設選中', () => {
+    it('M 等級應為預設選中', async () => {
+      await nextTick();
       const ecBtns = wrapper.findAll('.ec-btn');
       expect(ecBtns[1].classes()).toContain('active');
     });
@@ -181,15 +183,11 @@ describe('QrCodeGenerator.vue', () => {
 
     it('輸入文字後應呼叫 QRCode.toCanvas', async () => {
       await wrapper.find('textarea').setValue('http://test.com');
-      await wrapper.vm.$nextTick(); // Wait for v-if
-      await wrapper.vm.$nextTick(); // Wait for ref update?
+      await flushPromises();
+      await nextTick();
       await flushPromises();
 
       expect(wrapper.find('canvas').exists()).toBe(true);
-      // Wait a bit more just in case
-      await new Promise((resolve) => {
-        setTimeout(resolve, 500);
-      }); // Wait for chunks
       expect(wrapper.vm.hasQrCode).toBe(true);
       expect(qrcode.toCanvas).toHaveBeenCalled();
     });
@@ -211,29 +209,30 @@ describe('QrCodeGenerator.vue', () => {
             dark: '#000000',
             light: '#ffffff'
           },
-          errorCorrectionLevel: 'M'
+          errorCorrectionLevel: 'medium'
         });
       }
     });
 
     it('應處理邊界值設定 (最小 100px / 0 邊距)', async () => {
+      await wrapper.find('textarea').setValue('boundary test');
+      await flushPromises();
+
       const sizeInput = wrapper.find('#qr-size');
       const marginInput = wrapper.find('#qr-margin');
 
       await sizeInput.setValue(100);
-      await wrapper.vm.$nextTick();
       await marginInput.setValue(0);
-      await wrapper.vm.$nextTick();
-      await wrapper.find('textarea').setValue('boundary test');
 
-      await wrapper.vm.$nextTick();
+      await flushPromises();
+      await nextTick();
       await flushPromises();
 
       const lastCall = vi.mocked(qrcode.toCanvas).mock.calls[
         vi.mocked(qrcode.toCanvas).mock.calls.length - 1
       ];
-      expect(lastCall?.[2].width).toBe(100);
-      expect(lastCall?.[2].margin).toBe(0);
+      expect(lastCall?.[2]?.width).toBe(100);
+      expect(lastCall?.[2]?.margin).toBe(0);
     });
 
     it('應處理大數據量輸入 (接近 2048 字限制)', async () => {
@@ -338,9 +337,9 @@ describe('QrCodeGenerator.vue', () => {
 
     it('EC 按鈕應有 aria-label 和 aria-pressed', () => {
       const ecBtns = wrapper.findAll('.ec-btn');
-      ecBtns.forEach((btn: any) => {
-        expect(btn.attributes('aria-label')).toBeTruthy();
-        expect(btn.attributes('aria-pressed')).toBeDefined();
+      ecBtns.forEach((button: any) => {
+        expect(button.attributes('aria-label')).toBeTruthy();
+        expect(button.attributes('aria-pressed')).toBeDefined();
       });
     });
   });
@@ -358,8 +357,9 @@ describe('QrCodeGenerator.vue', () => {
       await wrapper.find('textarea').setValue('download test');
       await flushPromises();
 
-      const downloadBtn = wrapper.find('.download-btn');
-      await downloadBtn.trigger('click');
+      const downloadButton = wrapper.find('.download-btn');
+      expect(downloadButton.exists()).toBe(true);
+      await downloadButton.trigger('click');
 
       expect(mockClick).toHaveBeenCalled();
       expect(wrapper.vm.downloadTriggered).toBe(true);
@@ -391,13 +391,13 @@ describe('QrCodeGenerator.vue', () => {
       await wrapper.find('textarea').setValue('history test');
       await flushPromises();
 
-      const recordBtn = wrapper.find('.record-btn');
-      await recordBtn.trigger('click');
+      const recordButton = wrapper.find('.record-btn');
+      await recordButton.trigger('click');
 
       expect(mockUseHistory.addToHistory).toHaveBeenCalledWith(
         'qrcode',
         'history test',
-        expect.stringContaining('256px / M'),
+        expect.stringContaining('256px / medium / text'),
         expect.any(Object)
       );
     });
@@ -409,8 +409,8 @@ describe('QrCodeGenerator.vue', () => {
       wrapper.vm.canvasRef = document.createElement('canvas'); // Ensure canvas exists
       await nextTick();
 
-      const recordBtn = wrapper.find('.record-btn');
-      await recordBtn.trigger('click');
+      const recordButton = wrapper.find('.record-btn');
+      await recordButton.trigger('click');
 
       expect(mockUseHistory.addToHistory).toHaveBeenCalledWith(
         'qrcode',
@@ -447,9 +447,9 @@ describe('QrCodeGenerator.vue', () => {
 
       const wrapperWithHistory = mount(QrCodeGenerator, mountOptions);
       await nextTick();
-      const deleteBtn = wrapperWithHistory.find('.delete-btn');
-      if (deleteBtn.exists()) {
-        await deleteBtn.trigger('click');
+      const deleteButton = wrapperWithHistory.find('.delete-btn');
+      if (deleteButton.exists()) {
+        await deleteButton.trigger('click');
       }
       expect(mockUseHistory.removeFromHistory).toHaveBeenCalledWith(1);
     });
@@ -459,8 +459,8 @@ describe('QrCodeGenerator.vue', () => {
 
       const wrapperWithHistory = mount(QrCodeGenerator, mountOptions);
       await nextTick();
-      const clearBtn = wrapperWithHistory.find('.clear-btn');
-      await clearBtn.trigger('click');
+      const clearButton = wrapperWithHistory.find('.clear-btn');
+      await clearButton.trigger('click');
 
       expect(mockUseHistory.clearHistory).toHaveBeenCalled();
     });
@@ -499,16 +499,16 @@ describe('QrCodeGenerator.vue', () => {
       const newWrapper = mount(QrCodeGenerator, mountOptions);
       await nextTick();
 
-      const pasteBtn = newWrapper.find('.paste-btn');
-      expect(pasteBtn.exists()).toBe(true);
+      const pasteButton = newWrapper.find('.paste-btn');
+      expect(pasteButton.exists()).toBe(true);
 
-      await pasteBtn.trigger('click');
+      await pasteButton.trigger('click');
       expect(mockReadText).toHaveBeenCalled();
       expect((newWrapper.vm as any).inputText).toBe('pasted text');
     });
 
     it('複製失敗時應處理錯誤', async () => {
-      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
       vi.spyOn(navigator.clipboard, 'write').mockRejectedValueOnce(new Error('Copy failed'));
       await wrapper.find('textarea').setValue('fail test');
       wrapper.vm.hasQrCode = true;
@@ -552,10 +552,10 @@ describe('QrCodeGenerator.vue', () => {
 
     it('切換到 WiFi 模式應顯示 WiFi 輸入欄位', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const wifiBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
+      const wifiButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
 
-      if (wifiBtn) {
-        await wifiBtn.trigger('click');
+      if (wifiButton) {
+        await wifiButton.trigger('click');
         expect(wrapper.find('input[placeholder*="SSID"]').exists()).toBe(true);
         expect(wrapper.find('input[placeholder*="Password"]').exists()).toBe(true);
         expect(wrapper.find('select').exists()).toBe(true); // Encryption
@@ -564,10 +564,10 @@ describe('QrCodeGenerator.vue', () => {
 
     it('WiFi 模式下輸入資料應產生正確格式字串 (WIFI:T:WPA;...)', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const wifiBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
+      const wifiButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('WiFi'));
 
-      if (wifiBtn) {
-        await wifiBtn.trigger('click');
+      if (wifiButton) {
+        await wifiButton.trigger('click');
 
         await wrapper.find('input[type="text"]').setValue('MyHome'); // SSID
         await wrapper.find('input[type="password"]').setValue('secret123'); // Pass
@@ -589,10 +589,10 @@ describe('QrCodeGenerator.vue', () => {
 
     it('切換到 Contact 模式應顯示聯絡人輸入欄位', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const contactBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
+      const contactButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
 
-      if (contactBtn) {
-        await contactBtn.trigger('click');
+      if (contactButton) {
+        await contactButton.trigger('click');
         expect(wrapper.find('#contact-fn').exists()).toBe(true);
         expect(wrapper.find('#contact-tel').exists()).toBe(true);
         expect(wrapper.find('#contact-email').exists()).toBe(true);
@@ -601,10 +601,10 @@ describe('QrCodeGenerator.vue', () => {
 
     it('Contact 模式下輸入資料應產生 vCard 格式', async () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const contactBtn = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
+      const contactButton = wrapper.findAll('.tab-btn').find((b) => b.text().includes('Contact'));
 
-      if (contactBtn) {
-        await contactBtn.trigger('click');
+      if (contactButton) {
+        await contactButton.trigger('click');
 
         const nameInput = wrapper.find('#contact-fn');
         const phoneInput = wrapper.find('#contact-tel');

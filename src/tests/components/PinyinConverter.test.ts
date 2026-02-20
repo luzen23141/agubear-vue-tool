@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import PinyinConverter from '../../components/PinyinConverter.vue';
+import { ref } from 'vue';
+import PinyinConverter from '../../views/PinyinConverter.vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -11,15 +12,15 @@ const mountOptions = {
   }
 };
 
-// Mock useHistory
+// Mock UseHistory
 const addToHistoryMock = vi.fn();
 const clearHistoryMock = vi.fn();
 const removeFromHistoryMock = vi.fn();
 let mockHistory: any[] = [];
 
-vi.mock('../../composables/useHistory', () => ({
-  useHistory: () => ({
-    history: mockHistory,
+vi.mock('@/composables/use-history', () => ({
+  UseHistory: () => ({
+    history: ref(mockHistory),
     addToHistory: addToHistoryMock,
     clearHistory: clearHistoryMock,
     removeFromHistory: removeFromHistoryMock
@@ -32,7 +33,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 const mockClipboardRead = vi.fn().mockResolvedValue('test content');
 Object.assign(navigator, {
   clipboard: {
@@ -65,9 +66,9 @@ describe('PinyinConverter.vue', () => {
 
     it('應渲染轉換按鈕', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
-      const btn = wrapper.find('.action-buttons button');
-      expect(btn.exists()).toBe(true);
-      expect(btn.text()).toContain('拼音');
+      const button = wrapper.find('.action-buttons button');
+      expect(button.exists()).toBe(true);
+      expect(button.text()).toContain('拼音');
     });
 
     it('應渲染聲調開關', () => {
@@ -175,7 +176,7 @@ describe('PinyinConverter.vue', () => {
       await wrapper.find('textarea').setValue(longText);
       await wrapper.find('.action-buttons button').trigger('click');
 
-      const lastCall = addToHistoryMock.mock.calls[addToHistoryMock.mock.calls.length - 1];
+      const lastCall = addToHistoryMock.mock.calls.at(-1);
       const calledInput = lastCall ? lastCall[1] : '';
       expect(calledInput).toContain('...');
       expect(calledInput.length).toBeLessThanOrEqual(18); // 15 + '...'
@@ -184,9 +185,9 @@ describe('PinyinConverter.vue', () => {
     it('清除歷史應觸發 clearHistory', async () => {
       mockHistory = [{ id: 1, timestamp: '12:00', input: 'test', output: 'test' }];
       const wrapper = mount(PinyinConverter, mountOptions);
-      const clearBtn = wrapper.find('.clear-btn');
-      if (clearBtn.exists()) {
-        await clearBtn.trigger('click');
+      const clearButton = wrapper.find('.clear-btn');
+      if (clearButton.exists()) {
+        await clearButton.trigger('click');
         expect(clearHistoryMock).toHaveBeenCalled();
       }
     });
@@ -194,9 +195,9 @@ describe('PinyinConverter.vue', () => {
     it('應能刪除單筆紀錄', async () => {
       mockHistory = [{ id: 1, timestamp: '12:00', input: 'test', output: 'test' }];
       const wrapper = mount(PinyinConverter, mountOptions);
-      const btn = wrapper.find('.delete-btn');
-      if (btn.exists()) {
-        await btn.trigger('click');
+      const button = wrapper.find('.delete-btn');
+      if (button.exists()) {
+        await button.trigger('click');
       }
       expect(removeFromHistoryMock).toHaveBeenCalledWith(1);
     });
@@ -215,9 +216,9 @@ describe('PinyinConverter.vue', () => {
 
     it('點擊貼上按鈕應更新輸入', async () => {
       const wrapper = mount(PinyinConverter, mountOptions);
-      const pasteBtn = wrapper.find('.paste-btn');
-      if (pasteBtn.exists()) {
-        await pasteBtn.trigger('click');
+      const pasteButton = wrapper.find('.paste-btn');
+      if (pasteButton.exists()) {
+        await pasteButton.trigger('click');
         expect(mockClipboardRead).toHaveBeenCalled();
         expect((wrapper.vm as any).inputText).toBe('test content');
       }
@@ -228,9 +229,9 @@ describe('PinyinConverter.vue', () => {
       mockClipboardRead.mockRejectedValueOnce(new Error('paste fail'));
       (wrapper.vm as any).inputText = 'original';
 
-      const pasteBtn = wrapper.find('.paste-btn');
-      if (pasteBtn.exists()) {
-        await pasteBtn.trigger('click');
+      const pasteButton = wrapper.find('.paste-btn');
+      if (pasteButton.exists()) {
+        await pasteButton.trigger('click');
         await wrapper.vm.$nextTick();
         expect((wrapper.vm as any).inputText).toBe('original');
       }
@@ -258,8 +259,8 @@ describe('PinyinConverter.vue', () => {
 
     it('轉換按鈕應有 aria-label', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
-      const btn = wrapper.find('.action-buttons button');
-      expect(btn.attributes('aria-label')).toBeTruthy();
+      const button = wrapper.find('.action-buttons button');
+      expect(button.attributes('aria-label')).toBeTruthy();
     });
 
     it('聲調 checkbox 應有 aria-label', () => {

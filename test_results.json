@@ -1,0 +1,2664 @@
+{
+  "numTotalTestSuites": 98,
+  "numPassedTestSuites": 85,
+  "numFailedTestSuites": 13,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 258,
+  "numPassedTests": 258,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1771578247403,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useCommands\" from \"src/components/common/CommandPalette.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/App.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 應包含至少 20 個語系",
+          "status": "passed",
+          "title": "應包含至少 20 個語系",
+          "duration": 1.1164999999999736,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 每個語系應有 code, name, icon, dir 欄位",
+          "status": "passed",
+          "title": "每個語系應有 code, name, icon, dir 欄位",
+          "duration": 3.6191250000000537,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES code 應唯一",
+          "status": "passed",
+          "title": "code 應唯一",
+          "duration": 0.17304199999989578,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 繁體中文 (zh-TW) 應為第一個",
+          "status": "passed",
+          "title": "繁體中文 (zh-TW) 應為第一個",
+          "duration": 0.11020799999994324,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 應包含 zh-TW, en, ja, ko 等主要語系",
+          "status": "passed",
+          "title": "應包含 zh-TW, en, ja, ko 等主要語系",
+          "duration": 0.19887499999992997,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 阿拉伯語應為 RTL",
+          "status": "passed",
+          "title": "阿拉伯語應為 RTL",
+          "duration": 0.11520800000005238,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 非阿拉伯語系應為 LTR",
+          "status": "passed",
+          "title": "非阿拉伯語系應為 LTR",
+          "duration": 0.2748750000000655,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["SUPPORTED_LOCALES"],
+          "fullName": "SUPPORTED_LOCALES 每個語系應有 icon (國旗 emoji)",
+          "status": "passed",
+          "title": "每個語系應有 icon (國旗 emoji)",
+          "duration": 0.4859589999999798,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 URL query param 優先於其他來源",
+          "status": "passed",
+          "title": "URL query param 優先於其他來源",
+          "duration": 0.12195899999994708,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 URL query param 無效時應 fallback 到 localStorage",
+          "status": "passed",
+          "title": "URL query param 無效時應 fallback 到 localStorage",
+          "duration": 0.11312499999996817,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 URL query param 和 localStorage 都無效時應用 navigator.language",
+          "status": "passed",
+          "title": "URL query param 和 localStorage 都無效時應用 navigator.language",
+          "duration": 0.0695419999999558,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 navigator.language 完整碼應正確匹配 (zh-TW)",
+          "status": "passed",
+          "title": "navigator.language 完整碼應正確匹配 (zh-TW)",
+          "duration": 0.05941700000005312,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 navigator.language base 碼應正確匹配 (en-US → en)",
+          "status": "passed",
+          "title": "navigator.language base 碼應正確匹配 (en-US → en)",
+          "duration": 0.05816699999991215,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 navigator.language base 碼應正確匹配 (ja-JP → ja)",
+          "status": "passed",
+          "title": "navigator.language base 碼應正確匹配 (ja-JP → ja)",
+          "duration": 0.04908400000010715,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 所有來源都無效時應 fallback 到 zh-TW",
+          "status": "passed",
+          "title": "所有來源都無效時應 fallback 到 zh-TW",
+          "duration": 0.05158300000005056,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 所有來源都是無效語系時也應 fallback 到 zh-TW",
+          "status": "passed",
+          "title": "所有來源都是無效語系時也應 fallback 到 zh-TW",
+          "duration": 0.07641599999999471,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 每個支援語系都能透過 query param 選取",
+          "status": "passed",
+          "title": "每個支援語系都能透過 query param 選取",
+          "duration": 0.24254100000007384,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["getInitialLocale 邏輯"],
+          "fullName": "getInitialLocale 邏輯 每個支援語系都能透過 localStorage 選取",
+          "status": "passed",
+          "title": "每個支援語系都能透過 localStorage 選取",
+          "duration": 0.24529099999995196,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251235,
+      "endTime": 1771578251242.2454,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/i18n.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useCommands\" from \"src/tests/composables/use-commands.test.ts\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-commands.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 應成功新增紀錄",
+          "status": "passed",
+          "title": "應成功新增紀錄",
+          "duration": 4.15429099999983,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 應在開頭新增 (最新在前)",
+          "status": "passed",
+          "title": "應在開頭新增 (最新在前)",
+          "duration": 0.42774999999983265,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 應限制最多 10 筆紀錄",
+          "status": "passed",
+          "title": "應限制最多 10 筆紀錄",
+          "duration": 1.1189159999998992,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 不應新增無效的紀錄 (含「無效」字串)",
+          "status": "passed",
+          "title": "不應新增無效的紀錄 (含「無效」字串)",
+          "duration": 0.34625000000005457,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 不應新增空輸入的紀錄",
+          "status": "passed",
+          "title": "不應新增空輸入的紀錄",
+          "duration": 0.27166600000009566,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 應正確處理數字類型的 output (date2ts)",
+          "status": "passed",
+          "title": "應正確處理數字類型的 output (date2ts)",
+          "duration": 0.28774999999996,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 應正確記錄 md5 類型",
+          "status": "passed",
+          "title": "應正確記錄 md5 類型",
+          "duration": 0.23833300000023883,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 每筆紀錄應包含 timestamp 欄位",
+          "status": "passed",
+          "title": "每筆紀錄應包含 timestamp 欄位",
+          "duration": 0.2261660000003758,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "addToHistory"],
+          "fullName": "useHistory addToHistory 每筆紀錄應有 id 欄位",
+          "status": "passed",
+          "title": "每筆紀錄應有 id 欄位",
+          "duration": 0.26925000000028376,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "removeFromHistory"],
+          "fullName": "useHistory removeFromHistory 應成功刪除指定紀錄",
+          "status": "passed",
+          "title": "應成功刪除指定紀錄",
+          "duration": 0.41212499999983265,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "removeFromHistory"],
+          "fullName": "useHistory removeFromHistory 刪除不存在的 ID 應無影響",
+          "status": "passed",
+          "title": "刪除不存在的 ID 應無影響",
+          "duration": 0.15774999999985084,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["useHistory", "clearHistory"],
+          "fullName": "useHistory clearHistory 應清除所有紀錄",
+          "status": "passed",
+          "title": "應清除所有紀錄",
+          "duration": 0.23529199999984485,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578249936,
+      "endTime": 1771578249944.2354,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-history.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useLocalStorage\" from \"src/tests/composables/use-local-storage.test.ts\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-local-storage.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"../../composables/useQrCode\" from \"src/tests/composables/use-qr-code.test.ts\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-qr-code.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["use-theme"],
+          "fullName": "use-theme defaults to auto theme",
+          "status": "passed",
+          "title": "defaults to auto theme",
+          "duration": 13.400332999999932,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-theme"],
+          "fullName": "use-theme loads saved theme from localStorage on mount",
+          "status": "passed",
+          "title": "loads saved theme from localStorage on mount",
+          "duration": 4.9244169999999485,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-theme"],
+          "fullName": "use-theme applies dark class when theme is dark",
+          "status": "passed",
+          "title": "applies dark class when theme is dark",
+          "duration": 1.742917000000034,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-theme"],
+          "fullName": "use-theme removes dark class when theme is light",
+          "status": "passed",
+          "title": "removes dark class when theme is light",
+          "duration": 1.1072500000000218,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-theme"],
+          "fullName": "use-theme toggleTheme cycles auto → light → dark → auto",
+          "status": "passed",
+          "title": "toggleTheme cycles auto → light → dark → auto",
+          "duration": 1.0410409999999501,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-theme"],
+          "fullName": "use-theme removes localStorage entry when theme is set to auto",
+          "status": "passed",
+          "title": "removes localStorage entry when theme is set to auto",
+          "duration": 1.703375000000051,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251053,
+      "endTime": 1771578251077.7034,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-theme.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"../../composables/UseTimestampConverter\" from \"src/tests/composables/use-timestamp-converter.test.ts\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-timestamp-converter.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter initializes with default values",
+          "status": "passed",
+          "title": "initializes with default values",
+          "duration": 2.069749999999999,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter encodes input correctly",
+          "status": "passed",
+          "title": "encodes input correctly",
+          "duration": 1.4991250000000491,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter decodes input correctly when mode is decode",
+          "status": "passed",
+          "title": "decodes input correctly when mode is decode",
+          "duration": 0.4561669999999367,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter updates output when input changes",
+          "status": "passed",
+          "title": "updates output when input changes",
+          "duration": 6.6668750000000045,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter swaps input and output when switching modes",
+          "status": "passed",
+          "title": "swaps input and output when switching modes",
+          "duration": 3.1247500000000628,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter records history correctly",
+          "status": "passed",
+          "title": "records history correctly",
+          "duration": 6.15041599999995,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["use-two-way-converter"],
+          "fullName": "use-two-way-converter does not record history if output is empty",
+          "status": "passed",
+          "title": "does not record history if output is empty",
+          "duration": 0.3605000000000018,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251142,
+      "endTime": 1771578251162.3606,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/composables/use-two-way-converter.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useHistory\" from \"src/views/Base64Converter.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/Base64Converter.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useColorConverter\" from \"src/views/ColorConverter.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/ColorConverter.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["DiffChecker.vue"],
+          "fullName": "DiffChecker.vue renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 27.998708999999963,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DiffChecker.vue"],
+          "fullName": "DiffChecker.vue computes diff correctly",
+          "status": "passed",
+          "title": "computes diff correctly",
+          "duration": 14.332415999999967,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DiffChecker.vue"],
+          "fullName": "DiffChecker.vue swaps inputs",
+          "status": "passed",
+          "title": "swaps inputs",
+          "duration": 4.42450000000008,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DiffChecker.vue"],
+          "fullName": "DiffChecker.vue clears inputs",
+          "status": "passed",
+          "title": "clears inputs",
+          "duration": 4.029500000000098,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DiffChecker.vue"],
+          "fullName": "DiffChecker.vue shows warning on empty input",
+          "status": "passed",
+          "title": "shows warning on empty input",
+          "duration": 3.817457999999988,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578249707,
+      "endTime": 1771578249761.8174,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/DiffChecker.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["DurationCalculator.vue"],
+          "fullName": "DurationCalculator.vue renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 19.6901670000002,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DurationCalculator.vue"],
+          "fullName": "DurationCalculator.vue calculates duration correctly",
+          "status": "passed",
+          "title": "calculates duration correctly",
+          "duration": 7.180417000000034,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["DurationCalculator.vue"],
+          "fullName": "DurationCalculator.vue handles empty input gracefully",
+          "status": "passed",
+          "title": "handles empty input gracefully",
+          "duration": 3.2177090000000135,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578253004,
+      "endTime": 1771578253034.2178,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/DurationCalculator.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["HashGenerator.vue", "渲染"],
+          "fullName": "HashGenerator.vue 渲染 應正確渲染標題",
+          "status": "passed",
+          "title": "應正確渲染標題",
+          "duration": 51.43049999999994,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "渲染"],
+          "fullName": "HashGenerator.vue 渲染 應渲染算法選擇器",
+          "status": "passed",
+          "title": "應渲染算法選擇器",
+          "duration": 6.060500000000047,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "雜湊產生"],
+          "fullName": "HashGenerator.vue 雜湊產生 預設應使用 MD5",
+          "status": "passed",
+          "title": "預設應使用 MD5",
+          "duration": 21.39325000000008,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "雜湊產生"],
+          "fullName": "HashGenerator.vue 雜湊產生 切換 SHA1 應產生正確雜湊",
+          "status": "passed",
+          "title": "切換 SHA1 應產生正確雜湊",
+          "duration": 8.12824999999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "雜湊產生"],
+          "fullName": "HashGenerator.vue 雜湊產生 切換 SHA256 應產生正確雜湊",
+          "status": "passed",
+          "title": "切換 SHA256 應產生正確雜湊",
+          "duration": 7.160957999999937,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "雜湊產生"],
+          "fullName": "HashGenerator.vue 雜湊產生 切換 SHA512 應產生正確雜湊",
+          "status": "passed",
+          "title": "切換 SHA512 應產生正確雜湊",
+          "duration": 6.517582999999831,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "雜湊產生"],
+          "fullName": "HashGenerator.vue 雜湊產生 應能切換大寫模式",
+          "status": "passed",
+          "title": "應能切換大寫模式",
+          "duration": 6.8150839999998425,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "歷史紀錄"],
+          "fullName": "HashGenerator.vue 歷史紀錄 點擊紀錄按鈕應呼叫 addToHistory",
+          "status": "passed",
+          "title": "點擊紀錄按鈕應呼叫 addToHistory",
+          "duration": 17.011250000000018,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "歷史紀錄"],
+          "fullName": "HashGenerator.vue 歷史紀錄 應顯示並能清除歷史紀錄",
+          "status": "passed",
+          "title": "應顯示並能清除歷史紀錄",
+          "duration": 17.881791999999905,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "歷史紀錄"],
+          "fullName": "HashGenerator.vue 歷史紀錄 應能刪除單筆紀錄",
+          "status": "passed",
+          "title": "應能刪除單筆紀錄",
+          "duration": 15.309499999999844,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "歷史紀錄"],
+          "fullName": "HashGenerator.vue 歷史紀錄 記錄到歷史時應截斷長輸入",
+          "status": "passed",
+          "title": "記錄到歷史時應截斷長輸入",
+          "duration": 4.846625000000131,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "其他功能"],
+          "fullName": "HashGenerator.vue 其他功能 點擊貼上按鈕應更新輸入",
+          "status": "passed",
+          "title": "點擊貼上按鈕應更新輸入",
+          "duration": 5.126957999999831,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "其他功能"],
+          "fullName": "HashGenerator.vue 其他功能 點擊輸入框旁複製按鈕應觸發",
+          "status": "passed",
+          "title": "點擊輸入框旁複製按鈕應觸發",
+          "duration": 5.414457999999968,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HashGenerator.vue", "其他功能"],
+          "fullName": "HashGenerator.vue 其他功能 應處理雜湊產生失敗的情況",
+          "status": "passed",
+          "title": "應處理雜湊產生失敗的情況",
+          "duration": 21.869874999999865,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578249673,
+      "endTime": 1771578249867.8699,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/HashGenerator.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"./useLocalStorage\" from \"src/composables/use-timestamp-converter.ts\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/IntegrationDemo.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useJsonFormatter\" from \"src/views/JsonFormatter.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/JsonFormatter.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["JwtDebugger.vue"],
+          "fullName": "JwtDebugger.vue renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 51.76516599999991,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["JwtDebugger.vue"],
+          "fullName": "JwtDebugger.vue decodes valid JWT",
+          "status": "passed",
+          "title": "decodes valid JWT",
+          "duration": 35.044374999999945,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["JwtDebugger.vue"],
+          "fullName": "JwtDebugger.vue handles invalid JWT",
+          "status": "passed",
+          "title": "handles invalid JWT",
+          "duration": 8.729250000000093,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["JwtDebugger.vue"],
+          "fullName": "JwtDebugger.vue clears input",
+          "status": "passed",
+          "title": "clears input",
+          "duration": 19.891832999999906,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["JwtDebugger.vue"],
+          "fullName": "JwtDebugger.vue checks expiration status",
+          "status": "passed",
+          "title": "checks expiration status",
+          "duration": 6.525290999999925,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578249710,
+      "endTime": 1771578249831.5254,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/JwtDebugger.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "渲染"],
+          "fullName": "PinyinConverter.vue 渲染 應正確渲染標題",
+          "status": "passed",
+          "title": "應正確渲染標題",
+          "duration": 31.617915999999923,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "渲染"],
+          "fullName": "PinyinConverter.vue 渲染 應渲染 textarea",
+          "status": "passed",
+          "title": "應渲染 textarea",
+          "duration": 5.880625000000009,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "渲染"],
+          "fullName": "PinyinConverter.vue 渲染 應渲染轉換按鈕",
+          "status": "passed",
+          "title": "應渲染轉換按鈕",
+          "duration": 21.374500000000126,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "渲染"],
+          "fullName": "PinyinConverter.vue 渲染 應渲染聲調開關",
+          "status": "passed",
+          "title": "應渲染聲調開關",
+          "duration": 7.261250000000018,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "渲染"],
+          "fullName": "PinyinConverter.vue 渲染 無結果時不應顯示結果區域",
+          "status": "passed",
+          "title": "無結果時不應顯示結果區域",
+          "duration": 4.343082999999979,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 輸入中文應轉換為不帶聲調拼音 (預設)",
+          "status": "passed",
+          "title": "輸入中文應轉換為不帶聲調拼音 (預設)",
+          "duration": 7.11241700000005,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 開啟聲調應產生帶聲調拼音",
+          "status": "passed",
+          "title": "開啟聲調應產生帶聲調拼音",
+          "duration": 5.312791000000061,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 關閉空格應產生無空格拼音",
+          "status": "passed",
+          "title": "關閉空格應產生無空格拼音",
+          "duration": 4.926375000000007,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 空輸入不應產生結果",
+          "status": "passed",
+          "title": "空輸入不應產生結果",
+          "duration": 19.58208300000001,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 只有空白不應產生結果",
+          "status": "passed",
+          "title": "只有空白不應產生結果",
+          "duration": 5.955083000000059,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 多個漢字應正確轉換",
+          "status": "passed",
+          "title": "多個漢字應正確轉換",
+          "duration": 9.430417000000034,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 應處理中英混合與標點",
+          "status": "passed",
+          "title": "應處理中英混合與標點",
+          "duration": 3.19137499999988,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 應能正確轉換拼音 (含聲調與空格)",
+          "status": "passed",
+          "title": "應能正確轉換拼音 (含聲調與空格)",
+          "duration": 3.736499999999978,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "拼音轉換"],
+          "fullName": "PinyinConverter.vue 拼音轉換 應能正確轉換拼音 (無聲調、無空格)",
+          "status": "passed",
+          "title": "應能正確轉換拼音 (無聲調、無空格)",
+          "duration": 6.004417000000103,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "歷史紀錄"],
+          "fullName": "PinyinConverter.vue 歷史紀錄 轉換後應記錄到歷史",
+          "status": "passed",
+          "title": "轉換後應記錄到歷史",
+          "duration": 6.872290999999905,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "歷史紀錄"],
+          "fullName": "PinyinConverter.vue 歷史紀錄 長文字應被截斷後記錄",
+          "status": "passed",
+          "title": "長文字應被截斷後記錄",
+          "duration": 3.229042000000163,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "歷史紀錄"],
+          "fullName": "PinyinConverter.vue 歷史紀錄 清除歷史應觸發 clearHistory",
+          "status": "passed",
+          "title": "清除歷史應觸發 clearHistory",
+          "duration": 3.712583999999879,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "歷史紀錄"],
+          "fullName": "PinyinConverter.vue 歷史紀錄 應能刪除單筆紀錄",
+          "status": "passed",
+          "title": "應能刪除單筆紀錄",
+          "duration": 2.8312089999999444,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "操作功能"],
+          "fullName": "PinyinConverter.vue 操作功能 點擊結果區域應觸發複製",
+          "status": "passed",
+          "title": "點擊結果區域應觸發複製",
+          "duration": 2.8177080000000387,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "操作功能"],
+          "fullName": "PinyinConverter.vue 操作功能 點擊貼上按鈕應更新輸入",
+          "status": "passed",
+          "title": "點擊貼上按鈕應更新輸入",
+          "duration": 1.8497500000000855,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "操作功能"],
+          "fullName": "PinyinConverter.vue 操作功能 貼上失敗時應保持不變",
+          "status": "passed",
+          "title": "貼上失敗時應保持不變",
+          "duration": 1.8282910000000356,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "操作功能"],
+          "fullName": "PinyinConverter.vue 操作功能 應處理全英文輸入",
+          "status": "passed",
+          "title": "應處理全英文輸入",
+          "duration": 20.9323330000002,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "操作功能"],
+          "fullName": "PinyinConverter.vue 操作功能 onMounted 應偵測剪貼簿支援",
+          "status": "passed",
+          "title": "onMounted 應偵測剪貼簿支援",
+          "duration": 1.691665999999941,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "Accessibility"],
+          "fullName": "PinyinConverter.vue Accessibility textarea 應有 aria-label",
+          "status": "passed",
+          "title": "textarea 應有 aria-label",
+          "duration": 1.6802919999997812,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "Accessibility"],
+          "fullName": "PinyinConverter.vue Accessibility 轉換按鈕應有 aria-label",
+          "status": "passed",
+          "title": "轉換按鈕應有 aria-label",
+          "duration": 8.126708000000008,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["PinyinConverter.vue", "Accessibility"],
+          "fullName": "PinyinConverter.vue Accessibility 聲調 checkbox 應有 aria-label",
+          "status": "passed",
+          "title": "聲調 checkbox 應有 aria-label",
+          "duration": 14.798166000000037,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578249834,
+      "endTime": 1771578250040.798,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/PinyinConverter.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useQrCode\" from \"src/views/QrCodeGenerator.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/QrCodeGenerator.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"./useLocalStorage\" from \"src/composables/use-timestamp-converter.ts\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/TimestampConverter.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "渲染"],
+          "fullName": "UnicodeConverter.vue 渲染 應正確渲染標題",
+          "status": "passed",
+          "title": "應正確渲染標題",
+          "duration": 40.24549999999999,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "渲染"],
+          "fullName": "UnicodeConverter.vue 渲染 應渲染兩個 textarea",
+          "status": "passed",
+          "title": "應渲染兩個 textarea",
+          "duration": 9.614583000000039,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "文字 → Unicode"],
+          "fullName": "UnicodeConverter.vue 文字 → Unicode 中文字應轉為 Unicode 編碼",
+          "status": "passed",
+          "title": "中文字應轉為 Unicode 編碼",
+          "duration": 15.985291999999845,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "文字 → Unicode"],
+          "fullName": "UnicodeConverter.vue 文字 → Unicode 應能轉為 HTML Entities",
+          "status": "passed",
+          "title": "應能轉為 HTML Entities",
+          "duration": 19.873874999999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "文字 → Unicode"],
+          "fullName": "UnicodeConverter.vue 文字 → Unicode 開啟 skipAscii 應正確跳過 ASCII",
+          "status": "passed",
+          "title": "開啟 skipAscii 應正確跳過 ASCII",
+          "duration": 20.38158300000009,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "文字 → Unicode"],
+          "fullName": "UnicodeConverter.vue 文字 → Unicode 空輸入應提早回傳",
+          "status": "passed",
+          "title": "空輸入應提早回傳",
+          "duration": 4.097375000000056,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "Unicode → 文字"],
+          "fullName": "UnicodeConverter.vue Unicode → 文字 Unicode 編碼應轉為 中文字",
+          "status": "passed",
+          "title": "Unicode 編碼應轉為 中文字",
+          "duration": 5.514499999999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "Unicode → 文字"],
+          "fullName": "UnicodeConverter.vue Unicode → 文字 應能解碼 HTML Entities",
+          "status": "passed",
+          "title": "應能解碼 HTML Entities",
+          "duration": 6.292666999999938,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "Unicode → 文字"],
+          "fullName": "UnicodeConverter.vue Unicode → 文字 空編碼輸入應提早回傳",
+          "status": "passed",
+          "title": "空編碼輸入應提早回傳",
+          "duration": 8.458083000000215,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "歷史紀錄"],
+          "fullName": "UnicodeConverter.vue 歷史紀錄 轉換後應記錄到歷史",
+          "status": "passed",
+          "title": "轉換後應記錄到歷史",
+          "duration": 32.71941600000014,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "歷史紀錄"],
+          "fullName": "UnicodeConverter.vue 歷史紀錄 應顯示並能清除歷史紀錄",
+          "status": "passed",
+          "title": "應顯示並能清除歷史紀錄",
+          "duration": 7.944000000000187,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "歷史紀錄"],
+          "fullName": "UnicodeConverter.vue 歷史紀錄 應能刪除單筆紀錄",
+          "status": "passed",
+          "title": "應能刪除單筆紀錄",
+          "duration": 16.86591700000008,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "歷史紀錄"],
+          "fullName": "UnicodeConverter.vue 歷史紀錄 紀錄到歷史時應截斷長內容",
+          "status": "passed",
+          "title": "紀錄到歷史時應截斷長內容",
+          "duration": 7.224249999999984,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "複製與貼上"],
+          "fullName": "UnicodeConverter.vue 複製與貼上 應能複製輸入文字",
+          "status": "passed",
+          "title": "應能複製輸入文字",
+          "duration": 3.7097919999998794,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "複製與貼上"],
+          "fullName": "UnicodeConverter.vue 複製與貼上 應能複製編碼結果",
+          "status": "passed",
+          "title": "應能複製編碼結果",
+          "duration": 5.920249999999896,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "複製與貼上"],
+          "fullName": "UnicodeConverter.vue 複製與貼上 點擊貼上按鈕應更新輸入",
+          "status": "passed",
+          "title": "點擊貼上按鈕應更新輸入",
+          "duration": 3.057708000000048,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "複製與貼上"],
+          "fullName": "UnicodeConverter.vue 複製與貼上 應能點擊第二個貼上按鈕更新編碼輸入",
+          "status": "passed",
+          "title": "應能點擊第二個貼上按鈕更新編碼輸入",
+          "duration": 3.1071249999999964,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UnicodeConverter.vue", "複製與貼上"],
+          "fullName": "UnicodeConverter.vue 複製與貼上 應能切換格式與 skipAscii 反向狀態",
+          "status": "passed",
+          "title": "應能切換格式與 skipAscii 反向狀態",
+          "duration": 2.9877500000000055,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578249859,
+      "endTime": 1771578250073.9878,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/UnicodeConverter.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useHistory\" from \"src/views/UrlConverter.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/UrlConverter.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["UuidGenerator.vue"],
+          "fullName": "UuidGenerator.vue renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 33.65499999999997,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UuidGenerator.vue"],
+          "fullName": "UuidGenerator.vue generates UUID v4 by default",
+          "status": "passed",
+          "title": "generates UUID v4 by default",
+          "duration": 5.378624999999943,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UuidGenerator.vue"],
+          "fullName": "UuidGenerator.vue generates multiple IDs",
+          "status": "passed",
+          "title": "generates multiple IDs",
+          "duration": 7.341250000000059,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UuidGenerator.vue"],
+          "fullName": "UuidGenerator.vue switches types",
+          "status": "passed",
+          "title": "switches types",
+          "duration": 12.058125000000018,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["UuidGenerator.vue"],
+          "fullName": "UuidGenerator.vue copies output to clipboard",
+          "status": "passed",
+          "title": "copies output to clipboard",
+          "duration": 5.07650000000001,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250176,
+      "endTime": 1771578250239.0764,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/UuidGenerator.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '10位秒級時間戳'",
+          "status": "passed",
+          "title": "'10位秒級時間戳'",
+          "duration": 1.8010839999999462,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '13位毫秒時間戳'",
+          "status": "passed",
+          "title": "'13位毫秒時間戳'",
+          "duration": 0.21450000000004366,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '時間戳 0 (Unix 紀元)'",
+          "status": "passed",
+          "title": "'時間戳 0 (Unix 紀元)'",
+          "duration": 0.12920899999994617,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '負數時間戳 (1970年前)'",
+          "status": "passed",
+          "title": "'負數時間戳 (1970年前)'",
+          "duration": 0.12379100000021026,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '[秒模式] 10位時間戳'",
+          "status": "passed",
+          "title": "'[秒模式] 10位時間戳'",
+          "duration": 0.13474999999993997,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '[毫秒模式] 13位時間戳'",
+          "status": "passed",
+          "title": "'[毫秒模式] 13位時間戳'",
+          "duration": 0.10720800000012787,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '極端未來 (9999年) UTC'",
+          "status": "passed",
+          "title": "'極端未來 (9999年) UTC'",
+          "duration": 0.12112499999989268,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '極端過去 (0001年) UTC'",
+          "status": "passed",
+          "title": "'極端過去 (0001年) UTC'",
+          "duration": 0.09004200000003948,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '閏年 (2000) UTC'",
+          "status": "passed",
+          "title": "'閏年 (2000) UTC'",
+          "duration": 0.10345800000004601,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '平年 (2100) UTC'",
+          "status": "passed",
+          "title": "'平年 (2100) UTC'",
+          "duration": 0.13054200000010496,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '一般閏年 (2024) UTC'",
+          "status": "passed",
+          "title": "'一般閏年 (2024) UTC'",
+          "duration": 0.0960419999998976,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '邊界案例: 999,999,999,999 (12位，< 1e12 應視為…'",
+          "status": "passed",
+          "title": "'邊界案例: 999,999,999,999 (12位，< 1e12 應視為…'",
+          "duration": 0.07958399999984067,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 '邊界案例: 1,000,000,000,000 (13位，>= 1e12 …'",
+          "status": "passed",
+          "title": "'邊界案例: 1,000,000,000,000 (13位，>= 1e12 …'",
+          "duration": 0.0759170000001177,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "成功轉換"],
+          "fullName": "timestampToDate 成功轉換 'JS Date Max Limit (8.64e15 毫秒)'",
+          "status": "passed",
+          "title": "'JS Date Max Limit (8.64e15 毫秒)'",
+          "duration": 0.06312499999989996,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "錯誤處理"],
+          "fullName": "timestampToDate 錯誤處理 '非數字字串': 應回傳失敗",
+          "status": "passed",
+          "title": "'非數字字串': 應回傳失敗",
+          "duration": 0.1566250000000764,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "錯誤處理"],
+          "fullName": "timestampToDate 錯誤處理 '一般文字': 應回傳失敗",
+          "status": "passed",
+          "title": "'一般文字': 應回傳失敗",
+          "duration": 0.055292000000008557,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "錯誤處理"],
+          "fullName": "timestampToDate 錯誤處理 'NaN': 應回傳失敗",
+          "status": "passed",
+          "title": "'NaN': 應回傳失敗",
+          "duration": 0.04837499999985084,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "錯誤處理"],
+          "fullName": "timestampToDate 錯誤處理 'undefined': 應回傳失敗",
+          "status": "passed",
+          "title": "'undefined': 應回傳失敗",
+          "duration": 0.04520800000000236,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "錯誤處理"],
+          "fullName": "timestampToDate 錯誤處理 'Symbol (trigger catch)': 應回傳失敗",
+          "status": "passed",
+          "title": "'Symbol (trigger catch)': 應回傳失敗",
+          "duration": 0.0747919999998885,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "錯誤處理"],
+          "fullName": "timestampToDate 錯誤處理 '超出 Date 範圍 (8.64e15)': 應回傳失敗",
+          "status": "passed",
+          "title": "'超出 Date 範圍 (8.64e15)': 應回傳失敗",
+          "duration": 0.0467079999998532,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "特殊模式行為"],
+          "fullName": "timestampToDate 特殊模式行為 秒模式: 13位數值應視為秒 (產生遙遠未來)",
+          "status": "passed",
+          "title": "秒模式: 13位數值應視為秒 (產生遙遠未來)",
+          "duration": 0.1166249999998854,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "特殊模式行為"],
+          "fullName": "timestampToDate 特殊模式行為 毫秒模式: 10位數值應視為毫秒 (產生1970年附近)",
+          "status": "passed",
+          "title": "毫秒模式: 10位數值應視為毫秒 (產生1970年附近)",
+          "duration": 0.08845799999994597,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "特殊模式行為"],
+          "fullName": "timestampToDate 特殊模式行為 應能處理科學記號字串",
+          "status": "passed",
+          "title": "應能處理科學記號字串",
+          "duration": 0.06966699999998127,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC+0 時間戳 0'",
+          "status": "passed",
+          "title": "'UTC+0 時間戳 0'",
+          "duration": 0.0681250000000091,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC+8 時間戳 0'",
+          "status": "passed",
+          "title": "'UTC+8 時間戳 0'",
+          "duration": 0.051124999999956344,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC-5 時間戳 0'",
+          "status": "passed",
+          "title": "'UTC-5 時間戳 0'",
+          "duration": 0.050416000000041095,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC+9 (東京) 時間戳 0'",
+          "status": "passed",
+          "title": "'UTC+9 (東京) 時間戳 0'",
+          "duration": 0.04841699999997218,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC+0 一般時間戳'",
+          "status": "passed",
+          "title": "'UTC+0 一般時間戳'",
+          "duration": 0.053125000000136424,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC+8 一般時間戳'",
+          "status": "passed",
+          "title": "'UTC+8 一般時間戳'",
+          "duration": 0.046790999999984706,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["timestampToDate", "時區轉換 (utcOffset)"],
+          "fullName": "timestampToDate 時區轉換 (utcOffset) 'UTC+5:30 (印度) 一般時間戳'",
+          "status": "passed",
+          "title": "'UTC+5:30 (印度) 一般時間戳'",
+          "duration": 0.04695799999990413,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 'ISO 格式 (T分隔)': '2023-11-15T06:13:20'",
+          "status": "passed",
+          "title": "'ISO 格式 (T分隔)': '2023-11-15T06:13:20'",
+          "duration": 0.190166999999974,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 '空格分隔格式': '2023-11-15 06:13:20'",
+          "status": "passed",
+          "title": "'空格分隔格式': '2023-11-15 06:13:20'",
+          "duration": 0.050167000000101325,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 '斜線分隔 (/)': '2023/11/15 06:13:20'",
+          "status": "passed",
+          "title": "'斜線分隔 (/)': '2023/11/15 06:13:20'",
+          "duration": 0.04941699999994853,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 '點分隔 (.)': '2023.11.15 06:13:20'",
+          "status": "passed",
+          "title": "'點分隔 (.)': '2023.11.15 06:13:20'",
+          "duration": 0.04699999999979809,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 '13位毫秒輸出': '2023-11-15 06:13:20'",
+          "status": "passed",
+          "title": "'13位毫秒輸出': '2023-11-15 06:13:20'",
+          "duration": 0.053625000000010914,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 '帶多餘空格的斜線格式': '  2023/11/15   06:13:20  '",
+          "status": "passed",
+          "title": "'帶多餘空格的斜線格式': '  2023/11/15   06:13:20  '",
+          "duration": 0.050707999999985987,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "成功轉換"],
+          "fullName": "dateToTimestamp 成功轉換 '點分隔帶 T': '2023.11.15T06:13:20'",
+          "status": "passed",
+          "title": "'點分隔帶 T': '2023.11.15T06:13:20'",
+          "duration": 0.04729100000008657,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "毫秒保留"],
+          "fullName": "dateToTimestamp 毫秒保留 '帶毫秒輸入 (空格分隔)': 應保留毫秒 123",
+          "status": "passed",
+          "title": "'帶毫秒輸入 (空格分隔)': 應保留毫秒 123",
+          "duration": 0.08358300000008967,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "毫秒保留"],
+          "fullName": "dateToTimestamp 毫秒保留 '帶毫秒輸入 (ISO T分隔)': 應保留毫秒 456",
+          "status": "passed",
+          "title": "'帶毫秒輸入 (ISO T分隔)': 應保留毫秒 456",
+          "duration": 0.05237499999998363,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "錯誤處理"],
+          "fullName": "dateToTimestamp 錯誤處理 '無效日期字串': 應回傳失敗",
+          "status": "passed",
+          "title": "'無效日期字串': 應回傳失敗",
+          "duration": 0.07037500000001273,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "錯誤處理"],
+          "fullName": "dateToTimestamp 錯誤處理 '超出範圍的月日': 應回傳失敗",
+          "status": "passed",
+          "title": "'超出範圍的月日': 應回傳失敗",
+          "duration": 0.04683399999998983,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "錯誤處理"],
+          "fullName": "dateToTimestamp 錯誤處理 '空字串': 應回傳失敗",
+          "status": "passed",
+          "title": "'空字串': 應回傳失敗",
+          "duration": 0.05566699999985758,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "錯誤處理"],
+          "fullName": "dateToTimestamp 錯誤處理 'Symbol (trigger catch)': 應回傳失敗",
+          "status": "passed",
+          "title": "'Symbol (trigger catch)': 應回傳失敗",
+          "duration": 0.09812499999998181,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "時區轉換 (utcOffset)"],
+          "fullName": "dateToTimestamp 時區轉換 (utcOffset) 'UTC+8 → 時間戳 0'",
+          "status": "passed",
+          "title": "'UTC+8 → 時間戳 0'",
+          "duration": 0.09016599999995378,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "時區轉換 (utcOffset)"],
+          "fullName": "dateToTimestamp 時區轉換 (utcOffset) 'UTC+0 → 時間戳 0'",
+          "status": "passed",
+          "title": "'UTC+0 → 時間戳 0'",
+          "duration": 0.06137499999999818,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "時區轉換 (utcOffset)"],
+          "fullName": "dateToTimestamp 時區轉換 (utcOffset) 'UTC+8 → 一般時間戳'",
+          "status": "passed",
+          "title": "'UTC+8 → 一般時間戳'",
+          "duration": 0.059166000000004715,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["dateToTimestamp", "時區轉換 (utcOffset)"],
+          "fullName": "dateToTimestamp 時區轉換 (utcOffset) 'UTC+0 → 一般時間戳'",
+          "status": "passed",
+          "title": "'UTC+0 → 一般時間戳'",
+          "duration": 0.05741599999987557,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578252282,
+      "endTime": 1771578252288.0981,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/utils/converter.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Crypto Utilities", "computeHash"],
+          "fullName": "Crypto Utilities computeHash should compute MD5 hash",
+          "status": "passed",
+          "title": "should compute MD5 hash",
+          "duration": 29.249917000000096,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "computeHash"],
+          "fullName": "Crypto Utilities computeHash should compute SHA1 hash",
+          "status": "passed",
+          "title": "should compute SHA1 hash",
+          "duration": 0.7647920000000568,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "computeHash"],
+          "fullName": "Crypto Utilities computeHash should compute SHA256 hash",
+          "status": "passed",
+          "title": "should compute SHA256 hash",
+          "duration": 0.660415999999941,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "computeHash"],
+          "fullName": "Crypto Utilities computeHash should compute SHA512 hash",
+          "status": "passed",
+          "title": "should compute SHA512 hash",
+          "duration": 1.3766669999999976,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "computeHash"],
+          "fullName": "Crypto Utilities computeHash should return null for unsupported algorithm",
+          "status": "passed",
+          "title": "should return null for unsupported algorithm",
+          "duration": 0.4122499999999718,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "computeHash"],
+          "fullName": "Crypto Utilities computeHash should return empty string for empty input",
+          "status": "passed",
+          "title": "should return empty string for empty input",
+          "duration": 0.3275830000000042,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "Base64 Encoding"],
+          "fullName": "Crypto Utilities Base64 Encoding should encode text to Base64",
+          "status": "passed",
+          "title": "should encode text to Base64",
+          "duration": 0.4152080000000069,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "Base64 Encoding"],
+          "fullName": "Crypto Utilities Base64 Encoding should decode Base64 to text",
+          "status": "passed",
+          "title": "should decode Base64 to text",
+          "duration": 0.4395829999999705,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "Base64 Encoding"],
+          "fullName": "Crypto Utilities Base64 Encoding should handle UTF-8 characters correctly",
+          "status": "passed",
+          "title": "should handle UTF-8 characters correctly",
+          "duration": 0.34554100000002563,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "Base64 Encoding"],
+          "fullName": "Crypto Utilities Base64 Encoding should return null for invalid Base64 input",
+          "status": "passed",
+          "title": "should return null for invalid Base64 input",
+          "duration": 5.151707999999985,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "URL Encoding"],
+          "fullName": "Crypto Utilities URL Encoding should encode URL components",
+          "status": "passed",
+          "title": "should encode URL components",
+          "duration": 0.11083399999995436,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "URL Encoding"],
+          "fullName": "Crypto Utilities URL Encoding should decode URL components",
+          "status": "passed",
+          "title": "should decode URL components",
+          "duration": 0.07483300000001236,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Crypto Utilities", "URL Encoding"],
+          "fullName": "Crypto Utilities URL Encoding should handle malformed URI sequence gracefully",
+          "status": "passed",
+          "title": "should handle malformed URI sequence gracefully",
+          "duration": 0.3970000000000482,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250820,
+      "endTime": 1771578250860.397,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/utils/crypto.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["jsonUtils", "formatJson"],
+          "fullName": "jsonUtils formatJson should format valid JSON with indentation",
+          "status": "passed",
+          "title": "should format valid JSON with indentation",
+          "duration": 1.293916999999965,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "formatJson"],
+          "fullName": "jsonUtils formatJson should return error for invalid JSON",
+          "status": "passed",
+          "title": "should return error for invalid JSON",
+          "duration": 0.25100000000009004,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "formatJson"],
+          "fullName": "jsonUtils formatJson should handle unescape option",
+          "status": "passed",
+          "title": "should handle unescape option",
+          "duration": 0.2127500000000282,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "formatJson"],
+          "fullName": "jsonUtils formatJson should handle unicode decode option",
+          "status": "passed",
+          "title": "should handle unicode decode option",
+          "duration": 0.20849999999995816,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "validateJson"],
+          "fullName": "jsonUtils validateJson should return valid for correct JSON",
+          "status": "passed",
+          "title": "should return valid for correct JSON",
+          "duration": 0.14416699999992488,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "validateJson"],
+          "fullName": "jsonUtils validateJson should return invalid with error details for incorrect JSON",
+          "status": "passed",
+          "title": "should return invalid with error details for incorrect JSON",
+          "duration": 0.18791699999997036,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "unescapeString"],
+          "fullName": "jsonUtils unescapeString should remove backslashes before quotes",
+          "status": "passed",
+          "title": "should remove backslashes before quotes",
+          "duration": 0.08408399999996163,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "unescapeString"],
+          "fullName": "jsonUtils unescapeString should handle escaped newlines",
+          "status": "passed",
+          "title": "should handle escaped newlines",
+          "duration": 0.0681250000000091,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "decodeUnicode"],
+          "fullName": "jsonUtils decodeUnicode should decode unicode sequences",
+          "status": "passed",
+          "title": "should decode unicode sequences",
+          "duration": 0.09654199999999946,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "decodeUnicode"],
+          "fullName": "jsonUtils decodeUnicode should leave non-unicode text alone",
+          "status": "passed",
+          "title": "should leave non-unicode text alone",
+          "duration": 0.10758299999997689,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["jsonUtils", "decodeUnicode"],
+          "fullName": "jsonUtils decodeUnicode should handle mixed content",
+          "status": "passed",
+          "title": "should handle mixed content",
+          "duration": 0.06737499999996999,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251493,
+      "endTime": 1771578251496.1077,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/utils/json-utils.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["qrcode utils", "generateWifiString"],
+          "fullName": "qrcode utils generateWifiString should return empty string if SSID is empty",
+          "status": "passed",
+          "title": "should return empty string if SSID is empty",
+          "duration": 1.170082999999977,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["qrcode utils", "generateWifiString"],
+          "fullName": "qrcode utils generateWifiString should generate correct WIFI string with password",
+          "status": "passed",
+          "title": "should generate correct WIFI string with password",
+          "duration": 0.1413750000000391,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["qrcode utils", "generateWifiString"],
+          "fullName": "qrcode utils generateWifiString should handle hidden network",
+          "status": "passed",
+          "title": "should handle hidden network",
+          "duration": 0.09466700000007222,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["qrcode utils", "generateWifiString"],
+          "fullName": "qrcode utils generateWifiString should handle no password (nopass)",
+          "status": "passed",
+          "title": "should handle no password (nopass)",
+          "duration": 0.11612500000001091,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251711,
+      "endTime": 1771578251712.1702,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/utils/qrcode.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '中文字轉 Unicode'",
+          "status": "passed",
+          "title": "'中文字轉 Unicode'",
+          "duration": 1.3497080000000778,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '英文字母轉 Unicode'",
+          "status": "passed",
+          "title": "'英文字母轉 Unicode'",
+          "duration": 0.1672080000000733,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '跳過 ASCII 字母'",
+          "status": "passed",
+          "title": "'跳過 ASCII 字母'",
+          "duration": 0.10987499999998818,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '跳過 ASCII 數字'",
+          "status": "passed",
+          "title": "'跳過 ASCII 數字'",
+          "duration": 0.11541700000009314,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '混合文字跳過 ASCII'",
+          "status": "passed",
+          "title": "'混合文字跳過 ASCII'",
+          "duration": 0.124541000000022,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode 'Emoji (Surrogate Pairs)'",
+          "status": "passed",
+          "title": "'Emoji (Surrogate Pairs)'",
+          "duration": 0.0831670000000031,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '空格轉 Unicode'",
+          "status": "passed",
+          "title": "'空格轉 Unicode'",
+          "duration": 0.06845799999996416,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '空字串回傳空字串'",
+          "status": "passed",
+          "title": "'空字串回傳空字串'",
+          "duration": 0.05908399999998437,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToUnicode"],
+          "fullName": "textToUnicode '家庭 Emoji (多重 Surrogate Pairs)'",
+          "status": "passed",
+          "title": "'家庭 Emoji (多重 Surrogate Pairs)'",
+          "duration": 0.09583300000008421,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText 'Unicode 轉中文字'",
+          "status": "passed",
+          "title": "'Unicode 轉中文字'",
+          "duration": 0.22149999999999181,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText 'Unicode 轉英文字母'",
+          "status": "passed",
+          "title": "'Unicode 轉英文字母'",
+          "duration": 0.09058300000003783,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText '混合文字 Unicode 解碼'",
+          "status": "passed",
+          "title": "'混合文字 Unicode 解碼'",
+          "duration": 0.05508399999996527,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText 'Emoji Unicode 解碼'",
+          "status": "passed",
+          "title": "'Emoji Unicode 解碼'",
+          "duration": 0.04341599999997925,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText '空字串回傳空字串'",
+          "status": "passed",
+          "title": "'空字串回傳空字串'",
+          "duration": 0.03674999999998363,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText '無 Unicode 序列原樣回傳'",
+          "status": "passed",
+          "title": "'無 Unicode 序列原樣回傳'",
+          "duration": 0.05416700000000674,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText '原始 Emoji (無轉義) 原樣回傳'",
+          "status": "passed",
+          "title": "'原始 Emoji (無轉義) 原樣回傳'",
+          "duration": 0.0800410000000511,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText '不完整 Unicode 序列 (2位)'",
+          "status": "passed",
+          "title": "'不完整 Unicode 序列 (2位)'",
+          "duration": 0.04099999999993997,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText '非十六進位 Unicode 序列'",
+          "status": "passed",
+          "title": "'非十六進位 Unicode 序列'",
+          "duration": 0.04383400000006077,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["unicodeToText"],
+          "fullName": "unicodeToText 雙向轉換一致性",
+          "status": "passed",
+          "title": "雙向轉換一致性",
+          "duration": 0.07570800000007694,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToHtmlEntity"],
+          "fullName": "textToHtmlEntity '中文轉 HTML Entity'",
+          "status": "passed",
+          "title": "'中文轉 HTML Entity'",
+          "duration": 0.07795899999996436,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToHtmlEntity"],
+          "fullName": "textToHtmlEntity '跳過 ASCII 字母'",
+          "status": "passed",
+          "title": "'跳過 ASCII 字母'",
+          "duration": 0.03645800000003874,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToHtmlEntity"],
+          "fullName": "textToHtmlEntity '跳過 ASCII 數字'",
+          "status": "passed",
+          "title": "'跳過 ASCII 數字'",
+          "duration": 0.05420800000001691,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToHtmlEntity"],
+          "fullName": "textToHtmlEntity '混合 ASCII 與 Unicode (跳過 ASCII)'",
+          "status": "passed",
+          "title": "'混合 ASCII 與 Unicode (跳過 ASCII)'",
+          "duration": 0.04445900000007441,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["textToHtmlEntity"],
+          "fullName": "textToHtmlEntity '空字串回傳空字串'",
+          "status": "passed",
+          "title": "'空字串回傳空字串'",
+          "duration": 0.042708000000061475,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText 'HTML Entity 轉中文'",
+          "status": "passed",
+          "title": "'HTML Entity 轉中文'",
+          "duration": 0.12012500000003001,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText 'HTML Entity 轉英文'",
+          "status": "passed",
+          "title": "'HTML Entity 轉英文'",
+          "duration": 0.0378329999999778,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText '空字串回傳空字串'",
+          "status": "passed",
+          "title": "'空字串回傳空字串'",
+          "duration": 0.04312500000003183,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText '無 Entity 原樣回傳'",
+          "status": "passed",
+          "title": "'無 Entity 原樣回傳'",
+          "duration": 0.032709000000068045,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText '空 HTML Entity'",
+          "status": "passed",
+          "title": "'空 HTML Entity'",
+          "duration": 0.03337500000009186,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText '無效 HTML Entity'",
+          "status": "passed",
+          "title": "'無效 HTML Entity'",
+          "duration": 0.03212499999995089,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["htmlEntityToText"],
+          "fullName": "htmlEntityToText 雙向轉換一致性",
+          "status": "passed",
+          "title": "雙向轉換一致性",
+          "duration": 0.05208400000003621,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251523,
+      "endTime": 1771578251526.12,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/utils/unicode.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["vcard utils", "generateVCard"],
+          "fullName": "vcard utils generateVCard should return empty string if mandatory fields are missing",
+          "status": "passed",
+          "title": "should return empty string if mandatory fields are missing",
+          "duration": 1.189707999999996,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["vcard utils", "generateVCard"],
+          "fullName": "vcard utils generateVCard should generate a basic vCard with only name",
+          "status": "passed",
+          "title": "should generate a basic vCard with only name",
+          "duration": 0.2857500000000073,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["vcard utils", "generateVCard"],
+          "fullName": "vcard utils generateVCard should generate a full vCard",
+          "status": "passed",
+          "title": "should generate a full vCard",
+          "duration": 0.15958399999999529,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["vcard utils", "generateVCard"],
+          "fullName": "vcard utils generateVCard should handle partial fields correctly",
+          "status": "passed",
+          "title": "should handle partial fields correctly",
+          "duration": 0.20474999999999,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251602,
+      "endTime": 1771578251604.2048,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/utils/vcard.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["BaseCard.vue"],
+          "fullName": "BaseCard.vue renders title when provided",
+          "status": "passed",
+          "title": "renders title when provided",
+          "duration": 29.917958,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["BaseCard.vue"],
+          "fullName": "BaseCard.vue renders default slot content",
+          "status": "passed",
+          "title": "renders default slot content",
+          "duration": 7.586665999999923,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["BaseCard.vue"],
+          "fullName": "BaseCard.vue renders header slot",
+          "status": "passed",
+          "title": "renders header slot",
+          "duration": 2.257625000000189,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["BaseCard.vue"],
+          "fullName": "BaseCard.vue renders footer slot",
+          "status": "passed",
+          "title": "renders footer slot",
+          "duration": 1.9672920000000431,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250959,
+      "endTime": 1771578251000.9673,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/BaseCard.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1771578247403,
+      "endTime": 1771578247403,
+      "status": "failed",
+      "message": "Failed to resolve import \"@/composables/useCommands\" from \"src/components/common/CommandPalette.vue\". Does the file exist?",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/CommandPalette.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["HistoryList.vue"],
+          "fullName": "HistoryList.vue renders nothing when history is empty",
+          "status": "passed",
+          "title": "renders nothing when history is empty",
+          "duration": 20.519457999999986,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HistoryList.vue"],
+          "fullName": "HistoryList.vue renders history items when provided",
+          "status": "passed",
+          "title": "renders history items when provided",
+          "duration": 21.780624999999873,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HistoryList.vue"],
+          "fullName": "HistoryList.vue emits clear event when clear button clicked",
+          "status": "passed",
+          "title": "emits clear event when clear button clicked",
+          "duration": 8.636541999999963,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["HistoryList.vue"],
+          "fullName": "HistoryList.vue emits remove event when delete button clicked",
+          "status": "passed",
+          "title": "emits remove event when delete button clicked",
+          "duration": 7.0128749999998945,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578251093,
+      "endTime": 1771578251151.013,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/HistoryList.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["InputWithCopy.vue"],
+          "fullName": "InputWithCopy.vue renders label and textarea with correct props",
+          "status": "passed",
+          "title": "renders label and textarea with correct props",
+          "duration": 30.086042000000134,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["InputWithCopy.vue"],
+          "fullName": "InputWithCopy.vue emits update:modelValue on input",
+          "status": "passed",
+          "title": "emits update:modelValue on input",
+          "duration": 4.82329199999981,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["InputWithCopy.vue"],
+          "fullName": "InputWithCopy.vue handles paste functionality",
+          "status": "passed",
+          "title": "handles paste functionality",
+          "duration": 21.648415999999997,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["InputWithCopy.vue"],
+          "fullName": "InputWithCopy.vue handles copy functionality",
+          "status": "passed",
+          "title": "handles copy functionality",
+          "duration": 3.5653749999999036,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["InputWithCopy.vue"],
+          "fullName": "InputWithCopy.vue does not show paste button if allowPaste is false",
+          "status": "passed",
+          "title": "does not show paste button if allowPaste is false",
+          "duration": 1.5372079999999642,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["InputWithCopy.vue"],
+          "fullName": "InputWithCopy.vue does not show copy button if content is empty",
+          "status": "passed",
+          "title": "does not show copy button if content is empty",
+          "duration": 1.1868329999999787,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250609,
+      "endTime": 1771578250672.1868,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/InputWithCopy.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Toast"],
+          "fullName": "Toast is hidden by default",
+          "status": "passed",
+          "title": "is hidden by default",
+          "duration": 17.57737499999996,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Toast"],
+          "fullName": "Toast shows a toast with correct message and type",
+          "status": "passed",
+          "title": "shows a toast with correct message and type",
+          "duration": 10.936041000000046,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Toast"],
+          "fullName": "Toast shows correct icon for error type",
+          "status": "passed",
+          "title": "shows correct icon for error type",
+          "duration": 3.1884169999999585,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Toast"],
+          "fullName": "Toast shows correct icon for info type",
+          "status": "passed",
+          "title": "shows correct icon for info type",
+          "duration": 2.2382920000000013,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Toast"],
+          "fullName": "Toast hides after the specified duration",
+          "status": "passed",
+          "title": "hides after the specified duration",
+          "duration": 2.697667000000024,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["Toast"],
+          "fullName": "Toast resets timer when show is called again",
+          "status": "passed",
+          "title": "resets timer when show is called again",
+          "duration": 2.893374999999992,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250511,
+      "endTime": 1771578250550.8933,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/Toast.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["ToolContext"],
+          "fullName": "ToolContext renders the context title",
+          "status": "passed",
+          "title": "renders the context title",
+          "duration": 25.311083999999937,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["ToolContext"],
+          "fullName": "ToolContext renders context paragraphs",
+          "status": "passed",
+          "title": "renders context paragraphs",
+          "duration": 3.0990419999998267,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["ToolContext"],
+          "fullName": "ToolContext renders FAQ items",
+          "status": "passed",
+          "title": "renders FAQ items",
+          "duration": 15.29774999999995,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["ToolContext"],
+          "fullName": "ToolContext shows FAQ title",
+          "status": "passed",
+          "title": "shows FAQ title",
+          "duration": 2.2220830000001115,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["ToolContext"],
+          "fullName": "ToolContext uses schema.org microdata attributes",
+          "status": "passed",
+          "title": "uses schema.org microdata attributes",
+          "duration": 2.5019159999999374,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250940,
+      "endTime": 1771578250988.502,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/ToolContext.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["TwoWayConverter.vue"],
+          "fullName": "TwoWayConverter.vue renders with correct title and labels",
+          "status": "passed",
+          "title": "renders with correct title and labels",
+          "duration": 38.77770799999985,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["TwoWayConverter.vue"],
+          "fullName": "TwoWayConverter.vue switches mode when radio clicked",
+          "status": "passed",
+          "title": "switches mode when radio clicked",
+          "duration": 10.090625000000045,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["TwoWayConverter.vue"],
+          "fullName": "TwoWayConverter.vue emits update:inputText on typing",
+          "status": "passed",
+          "title": "emits update:inputText on typing",
+          "duration": 5.780459000000064,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": ["TwoWayConverter.vue"],
+          "fullName": "TwoWayConverter.vue emits record event",
+          "status": "passed",
+          "title": "emits record event",
+          "duration": 5.875540999999885,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1771578250620,
+      "endTime": 1771578250680.8755,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/alex/Code/front/timestamp-converter/src/tests/components/common/TwoWayConverter.test.ts"
+    }
+  ]
+}

@@ -1,26 +1,26 @@
 /* eslint-disable no-console, security/detect-object-injection */
 /* eslint-env node */
-import https from 'https';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import https from 'node:https';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // Load .env manually
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const envPath = path.resolve(__dirname, '../.env');
+const environmentPath = path.resolve(__dirname, '../.env');
 
-if (fs.existsSync(envPath)) {
-  const envConfig = fs.readFileSync(envPath, 'utf-8');
-  envConfig.split('\n').forEach((line) => {
+if (fs.existsSync(environmentPath)) {
+  const environmentConfig = fs.readFileSync(environmentPath, 'utf8');
+  for (const line of environmentConfig.split('\n')) {
     const match = line.match(/^([^=]+)=(.*)$/);
-    if (match) {
-      const key = match[1].trim();
-      const val = match[2].trim().replace(/^['"]|['"]$/g, ''); // Remove quotes
-      if (key && val && !process.env[key]) {
-        process.env[key] = val;
-      }
+    if (!match) continue;
+
+    const key = match[1].trim();
+    const value = match[2].trim().replaceAll(/^["']|["']$/g, ''); // Remove quotes
+    if (key && value && !process.env[key]) {
+      process.env[key] = value;
     }
-  });
+  }
 }
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -31,10 +31,10 @@ if (!BOT_TOKEN || !CHAT_ID) {
   process.exit(1);
 }
 
-const args = process.argv.slice(2);
-const status = args[0] || 'INFO'; // SUCCESS, FAILURE, INFO
-const message = args[1] || 'No message provided';
-const version = args[2] || 'N/A';
+const arguments_ = process.argv.slice(2);
+const status = arguments_[0] || 'INFO'; // SUCCESS, FAILURE, INFO
+const message = arguments_[1] || 'No message provided';
+const version = arguments_[2] || 'N/A';
 
 const icons = {
   SUCCESS: '✅',
@@ -62,7 +62,7 @@ ${message}
 
 const data = JSON.stringify(payload);
 
-const req = https.request(
+const request = https.request(
   {
     hostname: 'api.telegram.org',
     port: 443,
@@ -79,21 +79,21 @@ const req = https.request(
       responseBody += d;
     });
     res.on('end', () => {
-      if (res.statusCode !== 200) {
+      if (res.statusCode === 200) {
+        console.log('✔ Telegram notification sent.');
+      } else {
         console.error(`❌ Telegram API Error: ${res.statusCode}`);
         console.error(responseBody);
         process.exit(1);
-      } else {
-        console.log('✔ Telegram notification sent.');
       }
     });
   }
 );
 
-req.on('error', (e) => {
-  console.error(`❌ Network Error: ${e.message}`);
+request.on('error', (error) => {
+  console.error(`❌ Network Error: ${error.message}`);
   process.exit(1);
 });
 
-req.write(data);
-req.end();
+request.write(data);
+request.end();

@@ -14,7 +14,7 @@ describe('Toast', () => {
 
   it('shows a toast with correct message and type', async () => {
     const wrapper = mount(Toast);
-    const vm = wrapper.vm as unknown as { show: (msg: string, type: string) => void };
+    const vm = wrapper.vm as unknown as { show: (message: string, type: string) => void };
     vm.show('Success!', 'success');
     await wrapper.vm.$nextTick();
     const toast = wrapper.find('.success');
@@ -25,7 +25,7 @@ describe('Toast', () => {
 
   it('shows correct icon for error type', async () => {
     const wrapper = mount(Toast);
-    const vm = wrapper.vm as unknown as { show: (msg: string, type: string) => void };
+    const vm = wrapper.vm as unknown as { show: (message: string, type: string) => void };
     vm.show('Error!', 'error');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.error').exists()).toBe(true);
@@ -33,7 +33,7 @@ describe('Toast', () => {
 
   it('shows correct icon for info type', async () => {
     const wrapper = mount(Toast);
-    const vm = wrapper.vm as unknown as { show: (msg: string, type: string) => void };
+    const vm = wrapper.vm as unknown as { show: (message: string, type: string) => void };
     vm.show('Info', 'info');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.info').exists()).toBe(true);
@@ -42,7 +42,7 @@ describe('Toast', () => {
   it('hides after the specified duration', async () => {
     const wrapper = mount(Toast);
     const vm = wrapper.vm as unknown as {
-      show: (msg: string, type: string, duration: number) => void;
+      show: (message: string, type: string, duration: number) => void;
     };
     vm.show('Bye', 'info', 1000);
     await wrapper.vm.$nextTick();
@@ -56,7 +56,7 @@ describe('Toast', () => {
   it('resets timer when show is called again', async () => {
     const wrapper = mount(Toast);
     const vm = wrapper.vm as unknown as {
-      show: (msg: string, type: string, duration: number) => void;
+      show: (message: string, type: string, duration: number) => void;
     };
     vm.show('First', 'info', 1000);
     await wrapper.vm.$nextTick();

@@ -1,4 +1,10 @@
-import { vi } from 'vitest';
+import { vi, beforeEach } from 'vitest';
+import { ref } from 'vue';
+import { setActivePinia, createPinia } from 'pinia';
+
+beforeEach(() => {
+  setActivePinia(createPinia());
+});
 
 // Global localStorage and sessionStorage mock to prevent jsdom persistence warnings
 const storageMock = (() => {
@@ -60,6 +66,7 @@ Object.defineProperty(window, 'scrollTo', {
 
 // Mock Canvas for QRCode
 if (typeof HTMLCanvasElement !== 'undefined') {
+  // @ts-expect-error - Prototype hijacking for testing
   HTMLCanvasElement.prototype.getContext = vi.fn(() => ({
     fillRect: vi.fn(),
     clearRect: vi.fn(),
@@ -91,3 +98,37 @@ if (typeof HTMLCanvasElement !== 'undefined') {
   // Also mock toDataURL
   HTMLCanvasElement.prototype.toDataURL = vi.fn(() => 'data:image/png;base64,mock');
 }
+
+// Mock navigator.clipboard
+if (!navigator.clipboard) {
+  Object.defineProperty(navigator, 'clipboard', {
+    value: {
+      writeText: vi.fn().mockResolvedValue(),
+      readText: vi.fn().mockResolvedValue('mocked paste text')
+    },
+    writable: true
+  });
+}
+
+// Mock vue-i18n partially
+vi.mock('vue-i18n', async (importOriginal) => {
+  // @ts-ignore - Mocking actual module
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const actual: any = await importOriginal();
+  return {
+    ...actual,
+    useI18n: vi.fn(() => {
+      try {
+        return actual.useI18n();
+      } catch {
+        // Fallback for composable tests
+        return {
+          t: (key: string) => key,
+          locale: ref('en'),
+          fallbackLocale: ref('en'),
+          availableLocales: ['en', 'zh-TW']
+        };
+      }
+    })
+  };
+});

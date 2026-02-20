@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
-import Base64Converter from '../../components/Base64Converter.vue';
+import Base64Converter from '../../views/Base64Converter.vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -11,15 +11,15 @@ const mountOptions = {
   }
 };
 
-// Mock useHistory
+// Mock UseHistory
 const historyMocks = {
   history: [] as any[],
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 };
-vi.mock('../../composables/useHistory', () => ({
-  useHistory: () => historyMocks
+vi.mock('../../composables/use-history', () => ({
+  UseHistory: () => historyMocks
 }));
 
 // Mock useHead
@@ -28,7 +28,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 const mockClipboardRead = vi.fn().mockResolvedValue('pasted text');
 Object.assign(navigator, {
   clipboard: {
@@ -114,16 +114,16 @@ describe('Base64Converter.vue', () => {
       await flushPromises();
 
       const copyBtns = wrapper.findAll('.copy-btn-overlay');
-      const outputCopyBtn = copyBtns[1] || copyBtns[0];
-      if (outputCopyBtn) {
-        await outputCopyBtn.trigger('click');
+      const outputCopyButton = copyBtns[1] || copyBtns[0];
+      if (outputCopyButton) {
+        await outputCopyButton.trigger('click');
         expect(mockClipboardWrite).toHaveBeenCalledWith('dGVzdA==');
       }
     });
 
     it('點擊貼上按鈕應更新輸入', async () => {
-      const pasteBtn = wrapper.find('.paste-btn');
-      await pasteBtn.trigger('click');
+      const pasteButton = wrapper.find('.paste-btn');
+      await pasteButton.trigger('click');
       expect(mockClipboardRead).toHaveBeenCalled();
       expect(wrapper.vm.inputText).toBe('pasted text');
     });
@@ -132,8 +132,8 @@ describe('Base64Converter.vue', () => {
       await wrapper.find('#base64-input').setValue('test');
       await flushPromises();
 
-      const recordBtn = wrapper.find('.btn-primary');
-      await recordBtn.trigger('click');
+      const recordButton = wrapper.find('.btn-primary');
+      await recordButton.trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith('base64', 'test', 'dGVzdA==');
     });
 

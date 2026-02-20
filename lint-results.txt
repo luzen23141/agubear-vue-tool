@@ -1,0 +1,45 @@
+
+> timestamp-converter@0.0.0 lint
+> eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx --fix
+
+
+/Users/alex/Code/front/timestamp-converter/scripts/check-all.js
+   39:7   error    Either use this collection's contents or remove the collection                       sonarjs/no-unused-collection
+   74:1   warning  Function 'checkCaseSensitivity' has too many statements (16). Maximum allowed is 15  max-statements
+   77:31  error    Make sure the "PATH" variable only contains fixed, unwriteable directories           sonarjs/no-os-command-from-path
+   77:59  error    Prefer `utf8` over `utf-8`                                                           unicorn/text-encoding-identifier-case
+   88:9   error    Blocks are nested too deeply (4). Maximum allowed is 3                               max-depth
+  113:21  warning  Unexpected `await` inside a loop                                                     no-await-in-loop
+
+/Users/alex/Code/front/timestamp-converter/scripts/check_locales.cjs
+   1:1   error    Filename is not in kebab case or pascal case. Rename it to `check-locales.cjs` or `CheckLocales.cjs`                                       unicorn/filename-case
+   2:12  error    'require' is not defined                                                                                                                   no-undef
+   3:14  error    'require' is not defined                                                                                                                   no-undef
+   5:7   error    Please rename the variable `localesDir`. Suggested names are: `localesDirection`, `localesDirectory`. A more descriptive name will do too  unicorn/prevent-abbreviations
+   5:30  error    '__dirname' is not defined                                                                                                                 no-undef
+   8:6   warning  Found existsSync from package "node:fs" with non literal argument at index 0                                                               security/detect-non-literal-fs-filename
+  10:3   error    'process' is not defined                                                                                                                   no-undef
+  13:34  warning  Found readFileSync from package "node:fs" with non literal argument at index 0                                                             security/detect-non-literal-fs-filename
+  19:16  warning  Generic Object Injection Sink                                                                                                              security/detect-object-injection
+  19:44  warning  Generic Object Injection Sink                                                                                                              security/detect-object-injection
+  19:83  warning  Function Call Object Injection Sink                                                                                                        security/detect-object-injection
+  20:19  error    Prefer the spread operator over `Array#concat(…)`                                                                                          unicorn/prefer-spread
+  20:34  warning  Function Call Object Injection Sink                                                                                                        security/detect-object-injection
+  29:15  warning  Found readdirSync from package "node:fs" with non literal argument at index 0                                                              security/detect-non-literal-fs-filename
+  34:30  warning  Found readFileSync from package "node:fs" with non literal argument at index 0                                                             security/detect-non-literal-fs-filename
+  50:3   error    'process' is not defined                                                                                                                   no-undef
+
+/Users/alex/Code/front/timestamp-converter/src/composables/use-qr-code.ts
+  41:8   warning  Function 'UseQrCode' has too many lines (123). Maximum allowed is 50      max-lines-per-function
+  41:8   warning  Function 'UseQrCode' has too many statements (18). Maximum allowed is 15  max-statements
+  82:26  warning  Async arrow function has too many statements (17). Maximum allowed is 15  max-statements
+
+/Users/alex/Code/front/timestamp-converter/src/composables/use-timestamp-converter.ts
+  50:38  warning  Arrow function has too many lines (84). Maximum allowed is 50       max-lines-per-function
+  50:38  warning  Arrow function has too many statements (18). Maximum allowed is 15  max-statements
+
+/Users/alex/Code/front/timestamp-converter/src/main.ts
+  35:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 28 problems (13 errors, 15 warnings)
+

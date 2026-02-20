@@ -1,37 +1,37 @@
 /* eslint-env node */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // Helper to load .env
-const loadEnv = () => {
+const loadEnvironment = () => {
   try {
-    const envPath = path.resolve(process.cwd(), '.env');
-    if (!fs.existsSync(envPath)) return process.env;
-    const content = fs.readFileSync(envPath, 'utf-8');
-    const dotEnv = content.split('\n').reduce((acc, line) => {
-      const [key, val] = line.split('=');
-      if (key && val) acc[key.trim()] = val.trim();
-      return acc;
-    }, {});
-    return { ...process.env, ...dotEnv };
-  } catch (e) {
-    console.error('loadEnv error:', e);
+    const environmentPath = path.resolve(process.cwd(), '.env');
+    if (!fs.existsSync(environmentPath)) return process.env;
+    const content = fs.readFileSync(environmentPath, 'utf8');
+    const dotEnvironment = {};
+    for (const line of content.split('\n')) {
+      const [key, value] = line.split('=');
+      if (key && value) dotEnvironment[key.trim()] = value.trim();
+    }
+    return { ...process.env, ...dotEnvironment };
+  } catch (error) {
+    console.error('loadEnv error:', error);
     return process.env;
   }
 };
 
-const env = loadEnv();
-const SITE_URL = env.VITE_SITE_URL || 'https://agubear.black';
+const environment = loadEnvironment();
+const SITE_URL = environment.VITE_SITE_URL || 'https://agubear.black';
 const DOMAIN = SITE_URL.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const rootDir = path.resolve(__dirname, '..');
-const distDir = path.resolve(rootDir, 'dist');
+const rootDirectory = path.resolve(__dirname, '..');
+const distributionDirectory = path.resolve(rootDirectory, 'dist');
 
 console.log(`🔧 Generating deployment config for: ${SITE_URL}`);
 
-if (!fs.existsSync(distDir)) {
+if (!fs.existsSync(distributionDirectory)) {
   console.error('❌ Error: dist/ directory not found. Please run build first.');
   process.exit(1);
 }
@@ -87,11 +87,10 @@ const TOOLS = [
 ];
 
 // Generate alternate links helper
-const buildAlternates = (pathFn) =>
-  LOCALES.map(
-    (c) => `    <xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}/${pathFn(c)}"/>`
-  )
-    .concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/"/>`])
+const buildAlternates = (pathFunction) =>
+  [...LOCALES.map(
+    (c) => `    <xhtml:link rel="alternate" hreflang="${c}" href="${SITE_URL}/${pathFunction(c)}"/>`
+  ), `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/"/>`]
     .join('\n');
 
 // Generate URLs for all tools across all locales
@@ -130,30 +129,30 @@ const filesToGenerate = [
   { name: 'sitemap.xml', content: sitemapContent }
 ];
 
-filesToGenerate.forEach(({ name, content }) => {
+for (const { name, content } of filesToGenerate) {
   // Write to dist/ (Deployment artifact)
   // eslint-disable-next-line security/detect-non-literal-fs-filename
-  fs.writeFileSync(path.join(distDir, name), content);
+  fs.writeFileSync(path.join(distributionDirectory, name), content);
   console.log(`✔ dist/${name} generated`);
 
   // Write to public/ (Source consistency)
-  const publicFile = path.join(rootDir, 'public', name);
+  const publicFile = path.join(rootDirectory, 'public', name);
   // eslint-disable-next-line security/detect-non-literal-fs-filename
   if (fs.existsSync(path.dirname(publicFile))) {
     // eslint-disable-next-line security/detect-non-literal-fs-filename
     fs.writeFileSync(publicFile, content);
     console.log(`✔ public/${name} updated (Source)`);
   }
-});
+}
 
 // 3. Generate dist/CNAME
-fs.writeFileSync(path.join(distDir, 'CNAME'), DOMAIN);
+fs.writeFileSync(path.join(distributionDirectory, 'CNAME'), DOMAIN);
 console.log(`✔ dist/CNAME generated (${DOMAIN})`);
 
 // 4. Generate dist/404.html (SPA Fallback for GitHub Pages)
-const indexHtmlPath = path.join(distDir, 'index.html');
+const indexHtmlPath = path.join(distributionDirectory, 'index.html');
 if (fs.existsSync(indexHtmlPath)) {
-  fs.copyFileSync(indexHtmlPath, path.join(distDir, '404.html'));
+  fs.copyFileSync(indexHtmlPath, path.join(distributionDirectory, '404.html'));
   console.log('✔ dist/404.html generated (SPA Fallback)');
 } else {
   console.warn('⚠️ Warning: dist/index.html not found, skipping 404.html generation');
@@ -163,14 +162,14 @@ if (fs.existsSync(indexHtmlPath)) {
 const headersContent = `/assets/*
   Cache-Control: public, max-age=31536000, immutable
 `;
-fs.writeFileSync(path.join(distDir, '_headers'), headersContent);
+fs.writeFileSync(path.join(distributionDirectory, '_headers'), headersContent);
 console.log('✔ dist/_headers generated');
 
 // 6. Update README.md (Source)
-const readmePath = path.join(rootDir, 'README.md');
+const readmePath = path.join(rootDirectory, 'README.md');
 if (fs.existsSync(readmePath)) {
-  let readmeContent = fs.readFileSync(readmePath, 'utf-8');
-  const regex = /🌐 \*\*線上 Demo\*\*：\[.*?\]\(.*?\)/;
+  let readmeContent = fs.readFileSync(readmePath, 'utf8');
+  const regex = /🌐 \*\*線上 Demo\*\*：\[.*?]\(.*?\)/;
   const newLine = `🌐 **線上 Demo**：[${DOMAIN}](${SITE_URL})`;
 
   if (regex.test(readmeContent)) {

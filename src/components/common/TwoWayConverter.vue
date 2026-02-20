@@ -88,41 +88,41 @@ interface HistoryItem {
   [key: string]: unknown;
 }
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-const props = defineProps<{
-  title: string;
-  name: string;
-  mode: string;
-  encodeValue?: string;
-  decodeValue?: string;
-  encodeLabel: string;
-  decodeLabel: string;
-  inputLabel: string;
-  outputLabel: string;
-  inputPlaceholder: string;
-  outputPlaceholder: string;
-  inputText: string;
-  outputText: string;
-  history: HistoryItem[];
-  inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
-  spellcheck?: boolean;
-}>();
-
-/* eslint-enable @typescript-eslint/no-unused-vars */
+withDefaults(
+  defineProps<{
+    title: string;
+    name: string;
+    mode: string;
+    encodeValue?: string;
+    decodeValue?: string;
+    encodeLabel: string;
+    decodeLabel: string;
+    inputLabel: string;
+    outputLabel: string;
+    inputPlaceholder: string;
+    outputPlaceholder: string;
+    inputText: string;
+    outputText: string;
+    history: HistoryItem[];
+    inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+    spellcheck?: boolean;
+  }>(),
+  {
+    encodeValue: 'encode',
+    decodeValue: 'decode',
+    inputmode: 'text'
+  }
+);
 
 defineEmits<{
-  (_e: 'update:mode', _value: string): void;
-  (_e: 'update:inputText', _value: string): void;
-  (_e: 'record'): void;
-  (_e: 'clearHistory'): void;
-  (_e: 'removeFromHistory', _id: number): void;
+  (_event: 'update:mode', _value: string): void;
+  (_event: 'update:inputText', _value: string): void;
+  (_event: 'record'): void;
+  (_event: 'clearHistory'): void;
+  (_event: 'removeFromHistory', _id: number): void;
 }>();
 
 const { t } = useI18n();
-
-// Default defaults for optional props if needed (using withDefaults is better usually but simple works)
-const encodeValue = props.encodeValue || 'encode';
-const decodeValue = props.decodeValue || 'decode';
 </script>
 
 <style scoped>

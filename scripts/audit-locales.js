@@ -3,13 +3,13 @@
 /* eslint-disable no-console */
 /* eslint-env node */
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const localesDir = path.resolve(__dirname, '../src/locales');
-const enPath = path.join(localesDir, 'en.json');
+const localesDirectory = path.resolve(__dirname, '../src/locales');
+const enPath = path.join(localesDirectory, 'en.json');
 
 // Helper to confirm file exists
 if (!fs.existsSync(enPath)) {
@@ -18,29 +18,33 @@ if (!fs.existsSync(enPath)) {
 }
 
 // Helper to flatten object keys (e.g., { a: { b: 1 } } -> ['a.b'])
-const flattenKeys = (obj, prefix = '') =>
-  Object.keys(obj).reduce((acc, key) => {
-    const pre = prefix.length ? `${prefix}.` : '';
-    if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
-      Object.assign(acc, flattenKeys(obj[key], pre + key));
+const flattenKeys = (object, prefix = '') => {
+  const accumulator = {};
+  for (const key of Object.keys(object)) {
+    const pre = prefix.length > 0 ? `${prefix}.` : '';
+    if (typeof object[key] === 'object' && object[key] !== null && !Array.isArray(object[key])) {
+      Object.assign(accumulator, flattenKeys(object[key], pre + key));
     } else {
-      acc[pre + key] = true;
+      accumulator[pre + key] = true;
     }
-    return acc;
-  }, {});
+  }
+  return accumulator;
+};
 
 console.log('🔍 Starting Localization Audit...');
 
-const enContent = JSON.parse(fs.readFileSync(enPath, 'utf-8'));
+const enContent = JSON.parse(fs.readFileSync(enPath, 'utf8'));
 const enKeys = flattenKeys(enContent);
 const enKeyList = Object.keys(enKeys);
 
-const files = fs.readdirSync(localesDir).filter((f) => f.endsWith('.json') && f !== 'en.json');
+const files = fs
+  .readdirSync(localesDirectory)
+  .filter((f) => f.endsWith('.json') && f !== 'en.json');
 let hasErrors = false;
 
-files.forEach((file) => {
-  const filePath = path.join(localesDir, file);
-  const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+for (const file of files) {
+  const filePath = path.join(localesDirectory, file);
+  const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   const keys = flattenKeys(content);
 
   const missingKeys = enKeyList.filter((k) => !keys[k]);
@@ -48,14 +52,14 @@ files.forEach((file) => {
   if (missingKeys.length > 0) {
     console.error(`❌ [${file}] Missing ${missingKeys.length} keys:`);
     // Show first 5 missing keys
-    missingKeys.slice(0, 5).forEach((k) => console.error(`   - ${k}`));
+    for (const k of missingKeys.slice(0, 5)) console.error(`   - ${k}`);
     if (missingKeys.length > 5) console.error(`   ...and ${missingKeys.length - 5} more.`);
     hasErrors = true;
   } else {
     // Optional: Check for extra keys? Maybe not strict error but warning.
     console.log(`✅ [${file}] Passed`);
   }
-});
+}
 
 if (hasErrors) {
   console.error(

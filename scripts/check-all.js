@@ -1,15 +1,15 @@
-/* eslint-disable */
+/* eslint-disable no-console, max-statements, no-await-in-loop */
 /* eslint-env node */
-import { spawn, execSync } from 'child_process';
+import { spawn, execSync } from 'node:child_process';
 import chalk from 'chalk';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { checkDependencyIntegrity } from './check-deps.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
-
-import { checkDependencyIntegrity } from './check-deps.js';
 
 const steps = [
   { name: 'Case Check', type: 'internal', fn: checkCaseSensitivity },
@@ -19,9 +19,9 @@ const steps = [
     fn: () => {
       const { success, issues } = checkDependencyIntegrity();
       if (!success) {
-        issues.forEach(({ pkg, files }) => {
+        for (const { pkg, files } of issues) {
           console.error(chalk.yellow(`  └─ "${pkg}" imported by: ${files.join(', ')}`));
-        });
+        }
       }
       return success;
     }
@@ -36,8 +36,6 @@ const steps = [
   { name: 'Localization Audit', command: 'node', args: ['scripts/audit-locales.js'] }
 ];
 
-const results = [];
-
 async function runStep(step) {
   process.stdout.write(chalk.blue(`▶ [${step.name}] `));
   const startTime = Date.now();
@@ -45,7 +43,6 @@ async function runStep(step) {
   if (step.type === 'internal') {
     const success = step.fn();
     const duration = ((Date.now() - startTime) / 1000).toFixed(2);
-    results.push({ name: step.name, success, duration });
     console.log(
       success ? chalk.green(`✔ Passed (${duration}s)`) : chalk.red(`✘ Failed (${duration}s)`)
     );
@@ -65,16 +62,16 @@ async function runStep(step) {
         console.log(chalk.red(`✘ Failed (${duration}s)`));
       }
 
-      results.push({ name: step.name, success, duration });
       resolve(success);
     });
   });
 }
 
 function checkCaseSensitivity() {
-  let issues = [];
+  const issues = [];
   try {
-    const gitFiles = execSync('git ls-files', { encoding: 'utf-8', cwd: projectRoot })
+    // eslint-disable-next-line sonarjs/no-os-command-from-path
+    const gitFiles = execSync('git ls-files', { encoding: 'utf8', cwd: projectRoot })
       .split('\n')
       .filter(Boolean);
 
@@ -85,6 +82,7 @@ function checkCaseSensitivity() {
         const realPath = fs.realpathSync.native(fullPath);
         const relativePath = path.relative(projectRoot, realPath);
 
+        // eslint-disable-next-line max-depth
         if (relativePath !== file) {
           issues.push(`${file} (on disk: ${relativePath})`);
         }
@@ -92,13 +90,13 @@ function checkCaseSensitivity() {
         // Skip missing files
       }
     }
-  } catch (e) {
-    console.warn(chalk.yellow('! Unable to access git index:', e.message));
+  } catch (error) {
+    console.warn(chalk.yellow('! Unable to access git index:', error.message));
     return false;
   }
 
   if (issues.length > 0) {
-    issues.forEach((i) => console.error(chalk.yellow(`  └─ ${i}`)));
+    for (const index of issues) console.error(chalk.yellow(`  └─ ${index}`));
     return false;
   }
   return true;

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import ColorConverter from '../../components/ColorConverter.vue';
+import ColorConverter from '../../views/ColorConverter.vue';
 
 // Mock vue-i18n
 vi.mock('vue-i18n', async () => {

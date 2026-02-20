@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/vue';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
-import TimestampConverter from '../../components/TimestampConverter.vue';
+import TimestampConverter from '../../views/TimestampConverter.vue';
 import { setupI18n } from '../../i18n';
 
 // Mock useHead

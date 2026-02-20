@@ -54,9 +54,9 @@ vi.mock('@vueuse/core', async (importOriginal) => {
 
       return { Meta_K: metaK, Ctrl_K: ctrlK, Escape: escape };
     },
-    whenever: (source: any, cb: any) => {
+    whenever: (source: any, callback: any) => {
       watch(source, (v: any) => {
-        if (v) cb();
+        if (v) callback();
       });
     },
     onClickOutside: vi.fn()

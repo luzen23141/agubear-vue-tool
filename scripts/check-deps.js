@@ -11,9 +11,9 @@
  * 這是為了在本地 check-all 就能攔截 CI 會遇到的 ERR_MODULE_NOT_FOUND。
  */
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -67,7 +67,7 @@ const VIRTUAL_PREFIXES = ['virtual:', '@/', '~/', '#'];
 const SKIP_DIRS = new Set(['node_modules', '.git', 'dist', 'dist-temp', 'reports']);
 
 // Quoted string pattern: captures content between quotes
-const QUOTED = /['"]([^'"]+)['"]/;
+const QUOTED = /["']([^"']+)["']/;
 
 // Build regex for each import style (source is a compile-time constant, not user input)
 /* eslint-disable security/detect-non-literal-regexp */
@@ -94,19 +94,19 @@ function isExternalPackage(specifier) {
   if (specifier.startsWith('.') || specifier.startsWith('/')) return false;
   if (VIRTUAL_PREFIXES.some((p) => specifier.startsWith(p))) return false;
 
-  const pkgName = getPackageName(specifier);
-  return !BUILTINS.has(pkgName) && !pkgName.startsWith('node:');
+  const packageName = getPackageName(specifier);
+  return !BUILTINS.has(packageName) && !packageName.startsWith('node:');
 }
 
 /** Recursively collect files to scan */
-function collectFiles(dir, extensions, result = []) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const fullPath = path.join(dir, entry.name);
+function collectFiles(directory, extensions, result = []) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const fullPath = path.join(directory, entry.name);
 
     if (entry.isDirectory() && !SKIP_DIRS.has(entry.name)) {
       collectFiles(fullPath, extensions, result);
     }
-    if (entry.isFile() && extensions.some((ext) => entry.name.endsWith(ext))) {
+    if (entry.isFile() && extensions.some((extension) => entry.name.endsWith(extension))) {
       result.push(fullPath);
     }
   }
@@ -114,12 +114,12 @@ function collectFiles(dir, extensions, result = []) {
 }
 
 /** Strip comments from source to avoid false positives */
-function stripComments(src) {
+function stripComments(source) {
   // Remove block comments (non-greedy via split/join is lint-safe)
-  const noBlock = src
+  const noBlock = source
     .split(/\/\*/)
-    .map((part, i) => {
-      if (i === 0) return part;
+    .map((part, index) => {
+      if (index === 0) return part;
       const end = part.indexOf('*/');
       return end >= 0 ? part.slice(end + 2) : '';
     })
@@ -129,18 +129,18 @@ function stripComments(src) {
   return noBlock
     .split('\n')
     .map((line) => {
-      const idx = line.indexOf('//');
-      if (idx < 0) return line;
+      const index = line.indexOf('//');
+      if (index < 0) return line;
       // Keep if preceded by : (URL like https://)
-      if (idx > 0 && line[idx - 1] === ':') return line;
-      return line.slice(0, idx);
+      if (index > 0 && line[index - 1] === ':') return line;
+      return line.slice(0, index);
     })
     .join('\n');
 }
 
 /** Extract all external package names from a file */
 function extractImports(filePath) {
-  const content = stripComments(fs.readFileSync(filePath, 'utf-8'));
+  const content = stripComments(fs.readFileSync(filePath, 'utf8'));
   const imports = new Set();
 
   for (const pattern of IMPORT_PATTERNS) {
@@ -155,25 +155,25 @@ function extractImports(filePath) {
 
 /** Build the set of all declared package names from package.json */
 function getDeclaredPackages() {
-  const pkgPath = path.join(projectRoot, 'package.json');
-  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+  const packagePath = path.join(projectRoot, 'package.json');
+  const package_ = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
 
   return new Set([
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.devDependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {})
+    ...Object.keys(package_.dependencies || {}),
+    ...Object.keys(package_.devDependencies || {}),
+    ...Object.keys(package_.peerDependencies || {})
   ]);
 }
 
 /** Collect and deduplicate all project files */
 function getAllProjectFiles() {
-  const exts = ['.ts', '.mjs', '.cjs', '.js', '.vue'];
-  const rootFiles = collectFiles(projectRoot, exts).filter(
+  const extensions = ['.ts', '.mjs', '.cjs', '.js', '.vue'];
+  const rootFiles = collectFiles(projectRoot, extensions).filter(
     (f) => !f.includes('/node_modules/') && !f.includes('/dist/')
   );
-  const srcFiles = collectFiles(path.join(projectRoot, 'src'), exts);
+  const sourceFiles = collectFiles(path.join(projectRoot, 'src'), extensions);
 
-  return [...new Set([...rootFiles, ...srcFiles])];
+  return [...new Set([...rootFiles, ...sourceFiles])];
 }
 
 /** Find undeclared imports across all files */
@@ -181,10 +181,10 @@ function findUndeclaredImports(files, declared) {
   const undeclared = new Map();
 
   for (const file of files) {
-    for (const pkg of extractImports(file)) {
-      if (declared.has(pkg)) continue;
-      if (!undeclared.has(pkg)) undeclared.set(pkg, []);
-      undeclared.get(pkg).push(path.relative(projectRoot, file));
+    for (const package_ of extractImports(file)) {
+      if (declared.has(package_)) continue;
+      if (!undeclared.has(package_)) undeclared.set(package_, []);
+      undeclared.get(package_).push(path.relative(projectRoot, file));
     }
   }
   return undeclared;
@@ -196,7 +196,7 @@ export function checkDependencyIntegrity() {
   const files = getAllProjectFiles();
   const undeclared = findUndeclaredImports(files, declared);
 
-  const issues = [...undeclared].map(([pkg, files]) => ({ pkg, files }));
+  const issues = [...undeclared].map(([package_, files]) => ({ pkg: package_, files }));
   return { success: issues.length === 0, issues };
 }
 

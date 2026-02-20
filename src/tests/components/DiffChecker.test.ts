@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import DiffChecker from '../../components/DiffChecker.vue';
+import DiffChecker from '../../views/DiffChecker.vue';
 
 // Mock vue-i18n
 vi.mock('vue-i18n', async () => {
@@ -53,9 +53,9 @@ describe('DiffChecker.vue', () => {
     await textareas[0]?.setValue('Hello World');
     await textareas[1]?.setValue('Hello Vue');
 
-    const computeBtn = wrapper.findAll('button').find((b) => b.text().includes('compare'));
-    expect(computeBtn).toBeDefined();
-    await computeBtn?.trigger('click');
+    const computeButton = wrapper.findAll('button').find((b) => b.text().includes('compare'));
+    expect(computeButton).toBeDefined();
+    await computeButton?.trigger('click');
 
     // Result should be visible
     expect(wrapper.find('.diff-output-container').exists()).toBe(true);
@@ -77,8 +77,8 @@ describe('DiffChecker.vue', () => {
     await textareas[0]?.setValue('A');
     await textareas[1]?.setValue('B');
 
-    const swapBtn = wrapper.findAll('button').find((b) => b.text().includes('swap'));
-    await swapBtn?.trigger('click');
+    const swapButton = wrapper.findAll('button').find((b) => b.text().includes('swap'));
+    await swapButton?.trigger('click');
 
     expect(textareas[0]?.element.value).toBe('B');
     expect(textareas[1]?.element.value).toBe('A');
@@ -91,8 +91,8 @@ describe('DiffChecker.vue', () => {
     await textareas[0]?.setValue('A');
     await textareas[1]?.setValue('B');
 
-    const clearBtn = wrapper.findAll('button').find((b) => b.text().includes('clear'));
-    await clearBtn?.trigger('click');
+    const clearButton = wrapper.findAll('button').find((b) => b.text().includes('clear'));
+    await clearButton?.trigger('click');
 
     expect(textareas[0]?.element.value).toBe('');
     expect(textareas[1]?.element.value).toBe('');
@@ -101,9 +101,9 @@ describe('DiffChecker.vue', () => {
 
   it('shows warning on empty input', async () => {
     const wrapper = mount(DiffChecker, mountOptions);
-    const computeBtn = wrapper.findAll('button').find((b) => b.text().includes('compare'));
+    const computeButton = wrapper.findAll('button').find((b) => b.text().includes('compare'));
 
-    await computeBtn?.trigger('click');
+    await computeButton?.trigger('click');
 
     expect(showToast).toHaveBeenCalledWith(expect.anything(), 'info');
     expect(wrapper.find('.diff-output-container').exists()).toBe(false);

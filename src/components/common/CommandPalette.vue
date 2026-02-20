@@ -56,11 +56,11 @@ import { useI18n } from 'vue-i18n';
 import { useMagicKeys, whenever } from '@vueuse/core';
 import Fuse from 'fuse.js';
 
-import { useCommands } from '@/composables/useCommands';
+import { UseCommands } from '@/composables/use-commands';
 import SvgIcon from '../icons/SvgIcon.vue';
 
 const { t } = useI18n();
-const { commands } = useCommands();
+const { commands } = UseCommands();
 
 // ── State ──
 const isOpen = ref(false);
@@ -104,19 +104,30 @@ if (Escape) {
 }
 
 // ── Navigation Logic ──
-const onKeydown = (e: KeyboardEvent) => {
-  if (e.key === 'ArrowDown') {
-    e.preventDefault();
-    selectedIndex.value = (selectedIndex.value + 1) % results.value.length;
-  } else if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    selectedIndex.value = (selectedIndex.value - 1 + results.value.length) % results.value.length;
-  } else if (e.key === 'Enter') {
-    e.preventDefault();
-    const selected = results.value[selectedIndex.value];
-    if (selected) {
-      execute(selected.item);
+const onKeydown = (event: KeyboardEvent) => {
+  switch (event.key) {
+    case 'ArrowDown': {
+      event.preventDefault();
+      selectedIndex.value = (selectedIndex.value + 1) % results.value.length;
+
+      break;
     }
+    case 'ArrowUp': {
+      event.preventDefault();
+      selectedIndex.value = (selectedIndex.value - 1 + results.value.length) % results.value.length;
+
+      break;
+    }
+    case 'Enter': {
+      event.preventDefault();
+      const selected = results.value[selectedIndex.value];
+      if (selected) {
+        execute(selected.item);
+      }
+
+      break;
+    }
+    // No default
   }
 };
 

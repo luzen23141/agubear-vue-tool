@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import JwtDebugger from '../../components/JwtDebugger.vue';
+import JwtDebugger from '../../views/JwtDebugger.vue';
 
 // Mock vue-i18n
 vi.mock('vue-i18n', async () => {
@@ -27,7 +27,7 @@ vi.mock('jwt-decode', () => ({
     if (options?.header) {
       return { alg: 'HS256', typ: 'JWT' };
     }
-    return { sub: '1234567890', name: 'John Doe', iat: 1516239022, exp: 1999999999 };
+    return { sub: '1234567890', name: 'John Doe', iat: 1_516_239_022, exp: 1_999_999_999 };
   })
 }));
 
@@ -82,8 +82,8 @@ describe('JwtDebugger.vue', () => {
     await textarea?.setValue('valid.token');
     expect(wrapper.find('.output-section').exists()).toBe(true);
 
-    const clearBtn = wrapper.findAll('button').find((b) => b.text().includes('common.clear'));
-    await clearBtn?.trigger('click');
+    const clearButton = wrapper.findAll('button').find((b) => b.text().includes('common.clear'));
+    await clearButton?.trigger('click');
 
     expect(textarea?.element.value).toBe('');
     expect(wrapper.find('.output-section').exists()).toBe(false);

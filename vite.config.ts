@@ -7,7 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import { VitePWA } from 'vite-plugin-pwa';
 import UnoCSS from 'unocss/vite';
 
-const getPlugins = (env: Record<string, string>, _mode: string) =>
+const getPlugins = (environment: Record<string, string>, _mode: string) =>
   [
     vue(),
     UnoCSS(),
@@ -15,9 +15,9 @@ const getPlugins = (env: Record<string, string>, _mode: string) =>
       minify: true,
       inject: {
         data: {
-          VITE_GA4_ID: env.VITE_GA4_ID,
-          VITE_ADSENSE_ID: env.VITE_ADSENSE_ID,
-          VITE_SITE_URL: env.VITE_SITE_URL || 'https://agubear.black'
+          VITE_GA4_ID: environment.VITE_GA4_ID,
+          VITE_ADSENSE_ID: environment.VITE_ADSENSE_ID,
+          VITE_SITE_URL: environment.VITE_SITE_URL || 'https://agubear.black'
         }
       }
     }),
@@ -56,7 +56,7 @@ const getPlugins = (env: Record<string, string>, _mode: string) =>
           brotliSize: true
         })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ].filter((p): p is any => Boolean(p));
+  ].filter(Boolean);
 
 const buildConfig = {
   target: 'es2015',
@@ -70,17 +70,8 @@ const buildConfig = {
     output: {
       manualChunks(id: string) {
         if (id.includes('node_modules')) {
-          // Core Framework
           if (id.includes('vue') || id.includes('@vue')) return 'vue-core';
-
-          // Large independent tools
-          if (id.includes('crypto-js')) return 'crypto-tools';
-          if (id.includes('pinyin-pro')) return 'pinyin-tools';
-          if (id.includes('qrcode')) return 'qr-tools';
-
-          // Common utilities (date-fns is small enough to be in vendor or separate, keeping separate for clarity)
-          if (id.includes('date-fns')) return 'date-utils';
-
+          if (id.includes('pinia')) return 'vue-store';
           return 'vendor';
         }
       },
@@ -95,30 +86,44 @@ const buildConfig = {
 const ssgOptions = {
   script: 'async',
   formatting: 'minify',
-  onFinished() {
-    // generateSitemap() // Optional: if we add sitemap plugin later
+  async onFinished() {
+    // Generate sitemap after SSG build
+    await import('./scripts/generate-sitemap.mjs');
   },
   includedRoutes() {
     const locales = ['zh-TW', 'en', 'ja'];
     // Use paths and routes or ignore them with underscore?
     // Actually we are ignoring them and generating our own list.
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const tools = ['timestamp', 'hash', 'base64', 'url', 'unicode', 'pinyin', 'qrcode', 'json'];
+    const tools = [
+      'timestamp',
+      'hash',
+      'base64',
+      'url',
+      'unicode',
+      'pinyin',
+      'qrcode',
+      'json',
+      'jwt',
+      'uuid',
+      'color',
+      'diff'
+    ];
 
     return locales.flatMap((locale) => tools.map((tool) => `/${locale}/${tool}`));
   }
 };
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '');
+  const environment = loadEnv(mode, process.cwd(), '');
   return {
     base: '/',
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
+        '@': fileURLToPath(new URL('src', import.meta.url))
       }
     },
-    plugins: getPlugins(env, mode),
+    plugins: getPlugins(environment, mode),
     build: buildConfig,
     ssgOptions,
     esbuild: {
@@ -133,6 +138,12 @@ export default defineConfig(({ mode }) => {
         provider: 'v8',
         enabled: process.env.COVERAGE === 'true', // Only run coverage if requested
         reporter: ['text', 'json', 'html', 'lcov'],
+        thresholds: {
+          lines: 85,
+          functions: 85,
+          branches: 80,
+          statements: 85
+        },
         exclude: [
           'src/locales/**',
           '**/node_modules/**',

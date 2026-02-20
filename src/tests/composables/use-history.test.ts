@@ -1,14 +1,14 @@
 /**
- * useHistory Composable 測試
+ * UseHistory Composable 測試
  */
 import { describe, it, expect, beforeEach } from 'vitest';
-import { useHistory } from '../../composables/useHistory';
+import { UseHistory } from '@/composables/use-history';
 
-describe('useHistory', () => {
+describe('UseHistory', () => {
   let history, addToHistory, clearHistory, removeFromHistory;
 
   beforeEach(() => {
-    ({ history, addToHistory, clearHistory, removeFromHistory } = useHistory());
+    ({ history, addToHistory, clearHistory, removeFromHistory } = UseHistory());
   });
 
   describe('addToHistory', () => {
@@ -32,8 +32,8 @@ describe('useHistory', () => {
     });
 
     it('應限制最多 10 筆紀錄', () => {
-      for (let i = 0; i < 15; i++) {
-        addToHistory('ts2date', `input${i}`, `output${i}`);
+      for (let index = 0; index < 15; index++) {
+        addToHistory('ts2date', `input${index}`, `output${index}`);
       }
 
       expect(history.value).toHaveLength(10);
@@ -52,9 +52,9 @@ describe('useHistory', () => {
     });
 
     it('應正確處理數字類型的 output (date2ts)', () => {
-      addToHistory('date2ts', '2023-11-15', 1700000000);
+      addToHistory('date2ts', '2023-11-15', 1_700_000_000);
       expect(history.value).toHaveLength(1);
-      expect(history.value[0].output).toBe(1700000000);
+      expect(history.value[0].output).toBe(1_700_000_000);
     });
 
     it('應正確記錄 md5 類型', () => {
@@ -90,7 +90,7 @@ describe('useHistory', () => {
     it('刪除不存在的 ID 應無影響', () => {
       addToHistory('ts2date', 'item1', 'result1');
 
-      removeFromHistory(99999);
+      removeFromHistory(99_999);
 
       expect(history.value).toHaveLength(1);
     });

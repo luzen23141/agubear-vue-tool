@@ -18,10 +18,8 @@ export const setupRouterGuard = (router: Router) => {
       });
     }
 
-    if (localeCode) {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('agubear-locale', localeCode);
-      }
+    if (localeCode && typeof window !== 'undefined') {
+      localStorage.setItem('agubear-locale', localeCode);
     }
 
     next();

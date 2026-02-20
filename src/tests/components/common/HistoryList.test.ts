@@ -46,8 +46,8 @@ describe('HistoryList.vue', () => {
       }
     });
 
-    const clearBtn = getByText('common.clear');
-    await fireEvent.click(clearBtn);
+    const clearButton = getByText('common.clear');
+    await fireEvent.click(clearButton);
 
     expect(emitted().clear).toBeTruthy();
   });

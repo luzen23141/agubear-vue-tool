@@ -42,7 +42,7 @@ import { ref, onMounted, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import SvgIcon from '../icons/SvgIcon.vue';
 
-type ToastFunction = (_msg: string, _type: 'success' | 'error' | 'info') => void;
+type ToastFunction = (_message: string, _type: 'success' | 'error' | 'info') => void;
 
 const props = withDefaults(
   defineProps<{
@@ -66,9 +66,9 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
-  (_e: 'update:modelValue', _value: string): void;
-  (_e: 'paste', _value: string): void;
-  (_e: 'copy', _value: string): void;
+  (_event: 'update:modelValue', _value: string): void;
+  (_event: 'paste', _value: string): void;
+  (_event: 'copy', _value: string): void;
 }>();
 
 const showToast = inject('showToast', (() => {}) as ToastFunction);
@@ -94,8 +94,8 @@ const handlePaste = async () => {
       emit('update:modelValue', text);
       emit('paste', text);
     }
-  } catch (err) {
-    console.warn('Clipboard read failed:', err);
+  } catch (error) {
+    console.warn('Clipboard read failed:', error);
     showToast('Failed to paste', 'error');
   }
 };
@@ -106,8 +106,8 @@ const handleCopy = async () => {
     await navigator.clipboard.writeText(props.modelValue);
     emit('copy', props.modelValue);
     showToast(t('common.copied') || 'Copied!', 'success');
-  } catch (err) {
-    console.warn('Clipboard write failed:', err);
+  } catch (error) {
+    console.warn('Clipboard write failed:', error);
     showToast('Failed to copy', 'error');
   }
 };

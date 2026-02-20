@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
 import { mount } from '@vue/test-utils';
-import TimestampConverter from '../../components/TimestampConverter.vue';
+import TimestampConverter from '../../views/TimestampConverter.vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -19,8 +19,8 @@ const mockUseHistory = reactive({
   removeFromHistory: vi.fn()
 });
 
-vi.mock('../../composables/useHistory', () => ({
-  useHistory: () => mockUseHistory
+vi.mock('../../composables/use-history', () => ({
+  UseHistory: () => mockUseHistory
 }));
 
 // Mock useHead
@@ -29,7 +29,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 const mockClipboardRead = vi.fn().mockResolvedValue('1700000000');
 Object.assign(navigator, {
   clipboard: {
@@ -242,8 +242,8 @@ describe('TimestampConverter.vue', () => {
 
       const wrapper = mount(TimestampConverter, mountOptions);
       await nextTick();
-      const deleteBtn = wrapper.find('.delete-btn');
-      await (deleteBtn as any).trigger('click');
+      const deleteButton = wrapper.find('.delete-btn');
+      await (deleteButton as any).trigger('click');
 
       expect(mockUseHistory.removeFromHistory).toHaveBeenCalledWith(1);
     });
@@ -256,8 +256,8 @@ describe('TimestampConverter.vue', () => {
 
       const wrapper = mount(TimestampConverter, mountOptions);
       await nextTick();
-      const clearBtn = wrapper.find('.clear-btn');
-      await (clearBtn as any).trigger('click');
+      const clearButton = wrapper.find('.clear-btn');
+      await (clearButton as any).trigger('click');
 
       expect(mockUseHistory.clearHistory).toHaveBeenCalled();
     });
@@ -277,9 +277,9 @@ describe('TimestampConverter.vue', () => {
 
     it('應能貼上至 Timestamp', async () => {
       const wrapper: any = mount(TimestampConverter, mountOptions);
-      const pasteBtn = wrapper.findAll('.paste-btn')[0];
-      if (pasteBtn) {
-        await (pasteBtn as any).trigger('click');
+      const pasteButton = wrapper.findAll('.paste-btn')[0];
+      if (pasteButton) {
+        await (pasteButton as any).trigger('click');
         expect(mockClipboardRead).toHaveBeenCalled();
         expect(wrapper.vm.timestampInput).toBe('1700000000');
       }
@@ -288,9 +288,9 @@ describe('TimestampConverter.vue', () => {
     it('應能貼上至 Date', async () => {
       const wrapper: any = mount(TimestampConverter, mountOptions);
       mockClipboardRead.mockResolvedValueOnce('2023-11-15 00:00:00');
-      const pasteBtn = wrapper.findAll('.paste-btn')[1];
-      if (pasteBtn) {
-        await (pasteBtn as any).trigger('click');
+      const pasteButton = wrapper.findAll('.paste-btn')[1];
+      if (pasteButton) {
+        await (pasteButton as any).trigger('click');
         expect(wrapper.vm.dateInput).toBe('2023-11-15 00:00:00');
       }
     });
@@ -311,9 +311,9 @@ describe('TimestampConverter.vue', () => {
       mockClipboardRead.mockRejectedValueOnce(new Error('paste fail'));
       wrapper.vm.timestampInput = 'original';
 
-      const pasteBtn = wrapper.findAll('.paste-btn')[0];
-      if (pasteBtn) {
-        await pasteBtn.trigger('click');
+      const pasteButton = wrapper.findAll('.paste-btn')[0];
+      if (pasteButton) {
+        await pasteButton.trigger('click');
         await wrapper.vm.$nextTick();
         expect(wrapper.vm.timestampInput).toBe('original');
       }
@@ -344,8 +344,8 @@ describe('TimestampConverter.vue', () => {
     it('應能點擊轉換為時間戳按鈕', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
       const cards = wrapper.findAll('.card');
-      const convertBtn = cards[1]?.find('button');
-      await convertBtn?.trigger('click');
+      const convertButton = cards[1]?.find('button');
+      await convertButton?.trigger('click');
       // Should trigger convertToTimestamp and update result
       await wrapper.vm.$nextTick();
       expect((wrapper.vm as any).timestampResult).toBeTruthy();
@@ -395,9 +395,9 @@ describe('TimestampConverter.vue', () => {
         await endInput.setValue('2023-01-01T14:30');
 
         // Trigger calculation (either auto or button)
-        const calcBtn = wrapper.find('.duration-calc-btn');
-        if (calcBtn.exists()) {
-          await calcBtn.trigger('click');
+        const calcButton = wrapper.find('.duration-calc-btn');
+        if (calcButton.exists()) {
+          await calcButton.trigger('click');
         } else {
           // trigger update if computed
           await wrapper.vm.$nextTick();

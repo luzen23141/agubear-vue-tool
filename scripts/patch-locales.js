@@ -1,11 +1,11 @@
 /* eslint-disable no-console, security/detect-non-literal-fs-filename */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const localesDir = path.resolve(__dirname, '../src/locales');
-const files = fs.readdirSync(localesDir).filter((f) => f.endsWith('.json'));
+const localesDirectory = path.resolve(__dirname, '../src/locales');
+const files = fs.readdirSync(localesDirectory).filter((f) => f.endsWith('.json'));
 
 const diffContextEn = {
   title: 'About Diff Checker',
@@ -25,28 +25,25 @@ const diffContextZhTw = {
   ]
 };
 
-files.forEach((file) => {
-  const filePath = path.join(localesDir, file);
-  const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+for (const file of files) {
+  const filePath = path.join(localesDirectory, file);
+  const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
   if (!content.diff) {
     content.diff = {};
   }
 
   // Ensure diff.context exists
-  if (!content.diff.context) {
+  if (content.diff.context) {
+    console.log(`Skipping ${file} (already has context)`);
+  } else {
     console.log(`Patching ${file}...`);
 
-    if (file === 'zh-TW.json' || file === 'zh-CN.json') {
-      content.diff.context = diffContextZhTw;
-    } else {
-      content.diff.context = diffContextEn;
-    }
+    content.diff.context =
+      file === 'zh-TW.json' || file === 'zh-CN.json' ? diffContextZhTw : diffContextEn;
 
     fs.writeFileSync(filePath, `${JSON.stringify(content, null, 2)}\n`);
-  } else {
-    console.log(`Skipping ${file} (already has context)`);
   }
-});
+}
 
 console.log('All locales patched successfully.');

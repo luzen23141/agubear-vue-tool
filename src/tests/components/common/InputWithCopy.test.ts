@@ -71,8 +71,8 @@ describe('InputWithCopy.vue', () => {
       }
     });
 
-    const pasteBtn = await findByText(/common\.paste/);
-    await fireEvent.click(pasteBtn);
+    const pasteButton = await findByText(/common\.paste/);
+    await fireEvent.click(pasteButton);
 
     expect(mockReadText).toHaveBeenCalled();
     // Wait for async paste
@@ -94,8 +94,8 @@ describe('InputWithCopy.vue', () => {
       }
     });
 
-    const copyBtn = getByText(/common\.copy/);
-    await fireEvent.click(copyBtn);
+    const copyButton = getByText(/common\.copy/);
+    await fireEvent.click(copyButton);
 
     expect(mockWriteText).toHaveBeenCalledWith('content to copy');
     expect(emitted().copy).toBeTruthy();

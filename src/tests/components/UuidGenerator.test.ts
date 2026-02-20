@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
-import UuidGenerator from '../../components/UuidGenerator.vue';
+import UuidGenerator from '../../views/UuidGenerator.vue';
 
 // Mock vue-i18n
 vi.mock('vue-i18n', async () => {
@@ -61,8 +61,8 @@ describe('UuidGenerator.vue', () => {
     const slider = wrapper.find('input[type="range"]');
 
     await slider.setValue(3);
-    const generateBtn = wrapper.find('.generate-btn');
-    await generateBtn.trigger('click');
+    const generateButton = wrapper.find('.generate-btn');
+    await generateButton.trigger('click');
 
     const textarea = wrapper.find('textarea');
     const lines = textarea.element.value.split('\n');
@@ -74,21 +74,23 @@ describe('UuidGenerator.vue', () => {
     const wrapper = mount(UuidGenerator, mountOptions);
 
     // Switch to v7
-    const v7Input = wrapper.findAll('input[type="radio"]').find((i) => i.element.value === 'v7');
+    const v7Input = wrapper
+      .findAll('input[type="radio"]')
+      .find((index) => index.element.value === 'v7');
     await v7Input?.setValue();
 
-    const generateBtn = wrapper.find('.generate-btn');
-    await generateBtn.trigger('click');
+    const generateButton = wrapper.find('.generate-btn');
+    await generateButton.trigger('click');
 
     expect(wrapper.find('textarea').element.value).toContain('mock-uuid-v7');
 
     // Switch to ULID
     const ulidInput = wrapper
       .findAll('input[type="radio"]')
-      .find((i) => i.element.value === 'ulid');
+      .find((index) => index.element.value === 'ulid');
     await ulidInput?.setValue();
 
-    await generateBtn.trigger('click');
+    await generateButton.trigger('click');
     expect(wrapper.find('textarea').element.value).toContain('mock-ulid');
   });
 
@@ -101,9 +103,9 @@ describe('UuidGenerator.vue', () => {
     });
 
     const wrapper = mount(UuidGenerator, mountOptions);
-    const copyBtn = wrapper.find('.copy-btn');
+    const copyButton = wrapper.find('.copy-btn');
 
-    await copyBtn.trigger('click');
+    await copyButton.trigger('click');
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
       expect.stringContaining('mock-uuid-v4')
     );

@@ -17,7 +17,7 @@ function processText(
 ): string {
   if (!text) return '';
 
-  return Array.from(text)
+  return [...text]
     .map((char) => {
       const code = char.codePointAt(0);
       if (code === undefined) return '';
@@ -41,9 +41,9 @@ function processText(
 export function textToUnicode(text: string, skipAscii = false): string {
   return processText(text, skipAscii, (code) =>
     // 處理 BMP 範圍內的字元 (U+0000 ~ U+FFFF)
-    code <= 0xffff
+    code <= 0xff_ff
       ? String.raw`\u${code.toString(16).padStart(4, '0')}`
-      : String.raw`\u${(Math.floor((code - 0x10000) / 0x400) + 0xd800).toString(16).padStart(4, '0')}\u${(((code - 0x10000) % 0x400) + 0xdc00).toString(16).padStart(4, '0')}`
+      : String.raw`\u${(Math.floor((code - 0x1_00_00) / 0x4_00) + 0xd8_00).toString(16).padStart(4, '0')}\u${(((code - 0x1_00_00) % 0x4_00) + 0xdc_00).toString(16).padStart(4, '0')}`
   );
 }
 
@@ -57,12 +57,12 @@ export function unicodeToText(encoded: string): string {
 
   try {
     // 處理 \uXXXX 格式
-    return encoded.replaceAll(/\\u([0-9a-fA-F]{4})/g, (_, hex) =>
+    return encoded.replaceAll(/\\u([\dA-Fa-f]{4})/g, (_, hex) =>
       String.fromCodePoint(Number.parseInt(hex, 16))
     );
-  } catch (e) {
+  } catch (error) {
     if (typeof process === 'undefined' || !process.env.VITEST) {
-      console.error('unicodeToText error:', e);
+      console.error('unicodeToText error:', error);
     }
     return encoded;
   }
@@ -87,12 +87,12 @@ export function htmlEntityToText(encoded: string): string {
   if (!encoded) return '';
 
   try {
-    return encoded.replaceAll(/&#x([0-9a-f]+);/gi, (_, hex) =>
+    return encoded.replaceAll(/&#x([\da-f]+);/gi, (_, hex) =>
       String.fromCodePoint(Number.parseInt(hex, 16))
     );
-  } catch (e) {
+  } catch (error) {
     if (typeof process === 'undefined' || !process.env.VITEST) {
-      console.error('htmlEntityToText error:', e);
+      console.error('htmlEntityToText error:', error);
     }
     return encoded;
   }

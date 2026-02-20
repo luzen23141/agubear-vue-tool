@@ -101,7 +101,35 @@
     </script>
   </head>
   <body>
-    <div id="app"></div>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif">
+        <h1>AguBear Tools - 線上開發者工具集</h1>
+        <p>
+          您的瀏覽器似乎不支援或已禁用 JavaScript。AguBear Tools 提供多項免費線上開發者工具，包括：
+        </p>
+        <ul>
+          <li>Unix 時間戳轉換器 (Unix Timestamp Converter)</li>
+          <li>MD5, SHA-1, SHA-256 雜湊產生器 (Hash Generator)</li>
+          <li>Base64 編碼與解碼</li>
+          <li>URL 編碼與解碼</li>
+          <li>Unicode 轉換</li>
+          <li>中文拼音查詢</li>
+          <li>QR Code 產生器</li>
+          <li>JSON 格式化與驗證</li>
+        </ul>
+        <p>請啟用 JavaScript 以獲取完整的互動體驗。</p>
+      </div>
+    </noscript>
+
+    <div id="app">
+      <!-- Initial SEO Content (Hidden or replaced by Vue) -->
+      <section style="display: none" aria-hidden="true">
+        <h2>AguBear Tools</h2>
+        <p>
+          免費線上開發者工具集：Unix 時間戳轉換器、雜湊產生器、編碼轉換、拼音查詢、QR Code 產生器。
+        </p>
+      </section>
+    </div>
     <script type="module" src="/src/main.js"></script>
     <script>
       if (window.performance?.mark) {

@@ -95,10 +95,10 @@ const messages: Record<string, any> = {
  */
 function getLocaleFromURL(): string | null {
   if (globalThis.window !== undefined) {
-    const params = new URLSearchParams(globalThis.window.location.search);
-    const langParam = params.get('lang');
+    const parameters = new URLSearchParams(globalThis.window.location.search);
+    const langParameter = parameters.get('lang');
     // eslint-disable-next-line security/detect-object-injection
-    if (langParam && messages[langParam]) return langParam;
+    if (langParameter && messages[langParameter]) return langParameter;
   }
   return null;
 }
@@ -110,8 +110,8 @@ function getLocaleFromStorage(): string | null {
       // eslint-disable-next-line security/detect-object-injection
       if (stored && messages[stored]) return stored;
     }
-  } catch (e) {
-    console.error('getLocaleFromStorage error:', e);
+  } catch (error) {
+    console.error('getLocaleFromStorage error:', error);
   }
   return null;
 }

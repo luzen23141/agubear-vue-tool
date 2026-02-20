@@ -34,11 +34,12 @@ export function timestampToDate(
     if (Number.isNaN(date.getTime())) return { success: false, value: '無效的時間戳' };
 
     const fmt = isMs ? 'yyyy-MM-dd HH:mm:ss.SSS' : 'yyyy-MM-dd HH:mm:ss';
-    const val = utcOffset === null ? format(date, fmt) : formatWithUtcOffset(date, utcOffset, fmt);
-    return { success: true, value: val };
-  } catch (e) {
+    const value =
+      utcOffset === null ? format(date, fmt) : formatWithUtcOffset(date, utcOffset, fmt);
+    return { success: true, value };
+  } catch (error) {
     if (typeof process === 'undefined' || !process.env.VITEST) {
-      console.error('timestampToDate error:', e);
+      console.error('timestampToDate error:', error);
     }
     return { success: false, value: '無效的時間戳' };
   }
@@ -65,10 +66,10 @@ function parseTimestampInput(
 /**
  * 私有輔助函式：處理時區偏移格式化
  */
-function formatWithUtcOffset(date: Date, utcOffset: number, formatStr: string): string {
-  const utcMs = date.getTime() + date.getTimezoneOffset() * 60000;
-  const targetDate = new Date(utcMs + utcOffset * 3600000);
-  return format(targetDate, formatStr);
+function formatWithUtcOffset(date: Date, utcOffset: number, formatString: string): string {
+  const utcMs = date.getTime() + date.getTimezoneOffset() * 60_000;
+  const targetDate = new Date(utcMs + utcOffset * 3_600_000);
+  return format(targetDate, formatString);
 }
 
 /**
@@ -96,8 +97,8 @@ export function dateToTimestamp(
       ms = date.getTime();
     } else {
       // 修正時區差值
-      const localTzMs = -date.getTimezoneOffset() * 60000;
-      const targetTzMs = utcOffset * 3600000;
+      const localTzMs = -date.getTimezoneOffset() * 60_000;
+      const targetTzMs = utcOffset * 3_600_000;
       ms = date.getTime() + (localTzMs - targetTzMs);
     }
 
@@ -105,9 +106,9 @@ export function dateToTimestamp(
       success: true,
       value: useMilliseconds ? ms : Math.floor(ms / 1000)
     };
-  } catch (e) {
+  } catch (error) {
     if (typeof process === 'undefined' || !process.env.VITEST) {
-      console.error('dateToTimestamp error:', e);
+      console.error('dateToTimestamp error:', error);
     }
     return { success: false, value: '無效的日期' };
   }
@@ -131,5 +132,5 @@ function normalizeDateInput(dateString: string): string {
     timePart = ` ${parts.slice(1).join(' ')}`;
   }
 
-  return datePart.replaceAll(/[/.]/g, '-') + timePart;
+  return datePart.replaceAll(/[./]/g, '-') + timePart;
 }

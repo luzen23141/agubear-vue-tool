@@ -25,6 +25,9 @@ module.exports = {
     // Promise 規範
     'plugin:promise/recommended',
 
+    // Unicorn 現代極簡規則
+    'plugin:unicorn/recommended',
+
     // Prettier 整合（關閉所有與 Prettier 衝突的規則，必須放最後）
     '@vue/eslint-config-prettier/skip-formatting'
   ],
@@ -225,7 +228,42 @@ module.exports = {
           'CONTENT'
         ]
       }
-    ]
+    ],
+
+    // ===== Unicorn 現代化規則自訂 =====
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        allowList: {
+          env: true,
+          props: true,
+          param: true,
+          params: true,
+          ref: true,
+          Ref: true,
+          refs: true,
+          args: true,
+          cmd: true,
+          err: true,
+          vars: true,
+          res: true
+        }
+      }
+    ],
+    'unicorn/no-null': 'off', // Vue/DOM API 經常需要 null
+    'unicorn/filename-case': [
+      'error',
+      {
+        cases: {
+          kebabCase: true,
+          pascalCase: true
+        },
+        ignore: [/^\[.*]\.vue$/]
+      }
+    ],
+    'unicorn/prefer-module': 'off', // 此專案包含部分 CJS 腳本
+    'unicorn/no-process-exit': 'off', // 腳本中常使用
+    'unicorn/prefer-top-level-await': 'off'
   },
 
   // ── 針對特定檔案的覆寫 ────────────────────────────────────
@@ -267,7 +305,11 @@ module.exports = {
         'security/detect-object-injection': 'off',
         'complexity': 'off',
         'max-statements': 'off',
-        'max-lines-per-function': 'off'
+        'max-lines-per-function': 'off',
+        'unicorn/consistent-function-scoping': 'off',
+        'unicorn/no-await-expression-member': 'off',
+        'unicorn/no-array-for-each': 'off',
+        'unicorn/prefer-ternary': 'off'
       }
     },
     // Schema 檔案（Zod 需要鏈式 API）

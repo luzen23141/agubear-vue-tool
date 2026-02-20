@@ -14,7 +14,7 @@ describe('SUPPORTED_LOCALES', () => {
   });
 
   it('每個語系應有 code, name, icon, dir 欄位', () => {
-    SUPPORTED_LOCALES.forEach((locale) => {
+    for (const locale of SUPPORTED_LOCALES) {
       expect(locale).toHaveProperty('code');
       expect(locale).toHaveProperty('name');
       expect(locale).toHaveProperty('icon');
@@ -23,7 +23,7 @@ describe('SUPPORTED_LOCALES', () => {
       expect(typeof locale.name).toBe('string');
       expect(typeof locale.icon).toBe('string');
       expect(['ltr', 'rtl']).toContain(locale.dir);
-    });
+    }
   });
 
   it('code 應唯一', () => {
@@ -51,16 +51,16 @@ describe('SUPPORTED_LOCALES', () => {
   });
 
   it('非阿拉伯語系應為 LTR', () => {
-    SUPPORTED_LOCALES.filter((l) => l.code !== 'ar').forEach((locale) => {
+    for (const locale of SUPPORTED_LOCALES.filter((l) => l.code !== 'ar')) {
       expect(locale.dir).toBe('ltr');
-    });
+    }
   });
 
   it('每個語系應有 icon (國旗 emoji)', () => {
-    SUPPORTED_LOCALES.forEach((locale) => {
+    for (const locale of SUPPORTED_LOCALES) {
       expect(locale.icon).toBeTruthy();
       expect(locale.icon.length).toBeGreaterThan(0);
-    });
+    }
   });
 });
 
@@ -126,14 +126,14 @@ describe('getInitialLocale 邏輯', () => {
   });
 
   it('每個支援語系都能透過 query param 選取', () => {
-    SUPPORTED_LOCALES.forEach((locale) => {
+    for (const locale of SUPPORTED_LOCALES) {
       expect(resolveLocale(locale.code, null, null)).toBe(locale.code);
-    });
+    }
   });
 
   it('每個支援語系都能透過 localStorage 選取', () => {
-    SUPPORTED_LOCALES.forEach((locale) => {
+    for (const locale of SUPPORTED_LOCALES) {
       expect(resolveLocale(null, locale.code, null)).toBe(locale.code);
-    });
+    }
   });
 });

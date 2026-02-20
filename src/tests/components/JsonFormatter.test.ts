@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import JsonFormatter from '../../components/JsonFormatter.vue';
+import JsonFormatter from '../../views/JsonFormatter.vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue(undefined);
+const mockClipboardWrite = vi.fn().mockResolvedValue();
 const mockClipboardRead = vi.fn().mockResolvedValue('{"a":1}');
 Object.assign(navigator, {
   clipboard: {
@@ -103,7 +103,7 @@ describe('JsonFormatter.vue', () => {
     await wrapper.vm.$nextTick();
 
     const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
-    expect(output.replace(/\s/g, '')).toContain('"a":1');
+    expect(output.replaceAll(/\s/g, '')).toContain('"a":1');
   });
 
   it('測試 Unicode 解碼選項', async () => {
@@ -131,16 +131,16 @@ describe('JsonFormatter.vue', () => {
     await wrapper.find('.btn-format').trigger('click');
     await wrapper.vm.$nextTick();
 
-    const copyBtn = wrapper.find('.copy-btn');
-    await copyBtn.trigger('click');
+    const copyButton = wrapper.find('.copy-btn');
+    await copyButton.trigger('click');
     expect(mockClipboardWrite).toHaveBeenCalledWith(expect.stringContaining('"test": true'));
   });
 
   it('貼上按鈕應觸發 clipboard read', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    const pasteBtn = wrapper.find('.icon-btn');
-    if (pasteBtn.exists()) {
-      await pasteBtn.trigger('click');
+    const pasteButton = wrapper.find('.icon-btn');
+    if (pasteButton.exists()) {
+      await pasteButton.trigger('click');
       expect(mockClipboardRead).toHaveBeenCalled();
       await wrapper.vm.$nextTick();
       expect((wrapper.vm as any).inputJson).toBe('{"a":1}');
@@ -152,9 +152,9 @@ describe('JsonFormatter.vue', () => {
     mockClipboardRead.mockRejectedValueOnce(new Error('paste fail'));
     (wrapper.vm as any).inputJson = 'original';
 
-    const pasteBtn = wrapper.find('.icon-btn');
-    if (pasteBtn.exists()) {
-      await pasteBtn.trigger('click');
+    const pasteButton = wrapper.find('.icon-btn');
+    if (pasteButton.exists()) {
+      await pasteButton.trigger('click');
       await wrapper.vm.$nextTick();
       expect((wrapper.vm as any).inputJson).toBe('original');
     }
@@ -167,8 +167,8 @@ describe('JsonFormatter.vue', () => {
     await wrapper.find('textarea.json-input').setValue('{"a":1}');
     await wrapper.find('.btn-format').trigger('click');
 
-    const copyBtn = wrapper.find('.copy-btn');
-    await copyBtn.trigger('click');
+    const copyButton = wrapper.find('.copy-btn');
+    await copyButton.trigger('click');
     // Error is logged to console
     expect(consoleSpy).toHaveBeenCalled();
     consoleSpy.mockRestore();
@@ -205,11 +205,11 @@ describe('JsonFormatter.vue', () => {
       const input = wrapper.find('textarea.json-input');
       await input.setValue('{"name": "Alex", "age": 30}');
 
-      const toTsBtn = wrapper.find('.btn-to-ts');
+      const toTsButton = wrapper.find('.btn-to-ts');
 
       // Only execute if button exists (feature flag check effectively)
-      if (toTsBtn.exists()) {
-        await toTsBtn.trigger('click');
+      if (toTsButton.exists()) {
+        await toTsButton.trigger('click');
 
         const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
         expect(output).toContain('interface');
@@ -223,9 +223,9 @@ describe('JsonFormatter.vue', () => {
       const input = wrapper.find('textarea.json-input');
       await input.setValue('{"name": "Alex"'); // Invalid
 
-      const toTsBtn = wrapper.find('.btn-to-ts');
-      if (toTsBtn.exists()) {
-        await toTsBtn.trigger('click');
+      const toTsButton = wrapper.find('.btn-to-ts');
+      if (toTsButton.exists()) {
+        await toTsButton.trigger('click');
         expect(wrapper.find('.error-message').exists()).toBe(true);
       }
     });

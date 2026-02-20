@@ -22,19 +22,26 @@ const icon = ref('info');
 
 let timer: number | null = null;
 
-const show = (msg: string, toastType: 'success' | 'error' | 'info' = 'info', duration = 2000) => {
-  message.value = msg;
+const show = (
+  message_: string,
+  toastType: 'success' | 'error' | 'info' = 'info',
+  duration = 2000
+) => {
+  message.value = message_;
   type.value = toastType;
 
   switch (toastType) {
-    case 'success':
+    case 'success': {
       icon.value = 'check-circle';
       break;
-    case 'error':
+    }
+    case 'error': {
       icon.value = 'x-circle';
       break;
-    default:
+    }
+    default: {
       icon.value = 'info';
+    }
   }
 
   visible.value = true;

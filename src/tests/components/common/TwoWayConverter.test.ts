@@ -10,10 +10,10 @@ vi.mock('vue-i18n', () => ({
 }));
 
 // Mock composables if needed, or let them run if they are simple logic
-// useTwoWayConverter is simple logic. useHistory uses localStorage which might need mocking or JSDOM handles it.
-// mocking useHistory to avoid side effects
-vi.mock('@/composables/useHistory', () => ({
-  useHistory: () => ({
+// use-two-way-converter is simple logic. UseHistory uses localStorage which might need mocking or JSDOM handles it.
+// mocking UseHistory to avoid side effects
+vi.mock('@/composables/use-history', () => ({
+  UseHistory: () => ({
     history: [],
     addToHistory: vi.fn(),
     removeFromHistory: vi.fn(),
@@ -84,8 +84,8 @@ describe('TwoWayConverter.vue', () => {
       }
     });
 
-    const recordBtn = getByText('common.record');
-    await fireEvent.click(recordBtn);
+    const recordButton = getByText('common.record');
+    await fireEvent.click(recordButton);
 
     expect(emitted().record).toBeTruthy();
   });
