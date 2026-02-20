@@ -17,6 +17,7 @@ declare module 'vue' {
     InputWithCopy: typeof import('./components/common/InputWithCopy.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SvgIcon: typeof import('./components/icons/SvgIcon.vue')['default']
     Toast: typeof import('./components/common/Toast.vue')['default']
     ToolContext: typeof import('./components/common/ToolContext.vue')['default']
     TwoWayConverter: typeof import('./components/common/TwoWayConverter.vue')['default']
