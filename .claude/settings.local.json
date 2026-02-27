@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__notion-mcp-server__API-get-self",
+      "mcp__qdrant__qdrant-find",
+      "mcp__sonarqube__search_my_sonarqube_projects",
+      "Bash(git diff:*)",
+      "Bash(node:*)",
+      "Bash(npx vitest:*)",
+      "Bash(npx vue-tsc:*)",
+      "Bash(git:*)",
+      "Bash(pnpm run:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
