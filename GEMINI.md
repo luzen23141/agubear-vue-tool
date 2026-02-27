@@ -1,0 +1,1 @@
+/Users/alex/ai_config/project/timestamp-converter/RULES.md

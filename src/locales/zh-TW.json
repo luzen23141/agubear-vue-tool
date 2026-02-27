@@ -82,6 +82,7 @@
     "modeMilliseconds": "13 位 (毫秒)",
     "inputPlaceholder": "輸入 Timestamp (例如 1700000000)",
     "inputAria": "輸入 Unix Timestamp",
+    "resultLabel": "轉換結果",
     "convertButton": "轉換 ⬇",
     "convertToDateAria": "轉換 Timestamp 為日期",
     "currentDigits": "當前位數: {n} 位",
@@ -148,7 +149,10 @@
         "q": "如何將時間戳轉換為日期？",
         "a": "您可以使用本工具，輸入時間戳後系統會自動判斷位數並轉換。若需手動計算，JavaScript 中可使用 new Date(timestamp * 1000) 處理秒級時間戳。"
       }
-    ]
+    ],
+    "seo": {
+      "description": "線上 Unix Timestamp 轉換器。支援 10 位及 13 位時間戳、多時區顯示與轉換歷史紀錄，是開發者除錯時間資料的最佳幫手。"
+    }
   },
   "hash": {
     "title": "🔐 雜湊產生器",
@@ -185,7 +189,10 @@
         "q": "SHA-256 與 MD5 有何不同？",
         "a": "SHA-256 比 MD5 更安全且碰撞機率更低，產生的長度也更長 (64 字元 vs 32 字元)。現代安全應用推薦使用 SHA-256 或更高版本。"
       }
-    ]
+    ],
+    "seo": {
+      "description": "免費線上雜湊產生器 (Hash Generator)。支援 MD5, SHA-1, SHA-256 演算法，純前端運算確保您的原始資料安全不外洩。"
+    }
   },
   "base64": {
     "title": "🔢 Base64 轉換器",
@@ -194,7 +201,10 @@
     "inputLabel": "文字輸入",
     "base64Label": "Base64 輸出",
     "inputPlaceholder": "輸入文字進行編碼...",
-    "base64Placeholder": "輸入 Base64 進行解碼..."
+    "base64Placeholder": "輸入 Base64 進行解碼...",
+    "seo": {
+      "description": "線上 Base64 編碼與解碼工具。快速轉換純文字為 Base64 格式，支援 UTF-8 字元，純前端運作。"
+    }
   },
   "url": {
     "title": "🔗 URL 編碼器",
@@ -203,7 +213,10 @@
     "inputLabel": "文字輸入",
     "urlLabel": "URL 編碼結果",
     "inputPlaceholder": "輸入文字...",
-    "urlPlaceholder": "輸入 URL 編碼..."
+    "urlPlaceholder": "輸入 URL 編碼...",
+    "seo": {
+      "description": "URL 編碼與解碼 (URL Encode/Decode) 工具。確保您的網址參數正確處理特殊字元，提升網頁相容性。"
+    }
   },
   "common": {
     "copy": "複製",
@@ -232,7 +245,10 @@
     "historyTitle": "📜 轉換紀錄",
     "clear": "清除",
     "clearAllAria": "清除全部紀錄",
-    "deleteAria": "刪除此紀錄"
+    "deleteAria": "刪除此紀錄",
+    "seo": {
+      "description": "Unicode 轉換工具。支援文字與 Unicode 編碼 (\\uXXXX) 互轉，可處理中文字元與 Emoji，開發者必備工具。"
+    }
   },
   "pinyin": {
     "title": "🗣️ 拼音轉換器",
@@ -250,7 +266,10 @@
     "historyTitle": "📜 轉換紀錄",
     "clear": "清除",
     "clearAllAria": "清除全部紀錄",
-    "deleteAria": "刪除此紀錄"
+    "deleteAria": "刪除此紀錄",
+    "seo": {
+      "description": "中文拼音轉換器。輕鬆將中文字轉換為拼音，支援聲調標示與空格調整，適用於學習與技術開發。"
+    }
   },
   "qrcode": {
     "title": "📱 QR Code 產生器",
@@ -303,71 +322,67 @@
     "historyTitle": "📜 產生紀錄",
     "clear": "清除",
     "clearAllAria": "清除全部紀錄",
-    "deleteAria": "刪除此紀錄"
+    "deleteAria": "刪除此紀錄",
+    "seo": {
+      "description": "免費 QR Code 產生器。自訂尺寸、顏色與錯誤校正等級，支援純文字、Wi-Fi 網路及 vCard 聯絡人資訊。"
+    }
   },
   "json": {
     "title": "📋 JSON 格式化",
-    "description": "線上 JSON 格式化與驗證工具，支援去除跳脫字元、Unicode 解碼、錯誤標示。",
-    "format": "格式化",
-    "formatAria": "格式化 JSON",
-    "minify": "壓縮",
-    "minifyAria": "壓縮 JSON",
-    "toTs": "轉 TypeScript",
-    "toTsAria": "轉換為 TypeScript Interface",
-    "optionUnescape": "去除跳脫字元",
-    "optionUnicode": "Unicode 解碼",
+    "optionUnescape": "反轉義字元",
+    "optionUnicode": "解碼 Unicode",
+    "format": "格式化 JSON",
+    "minify": "壓縮 JSON",
+    "toTs": "轉為 TypeScript",
+    "clear": "清除內容",
     "inputLabel": "輸入 JSON",
-    "inputPlaceholder": "貼上 JSON...",
-    "outputLabel": "結果",
+    "inputPlaceholder": "在此貼上 JSON 內容...",
+    "outputLabel": "格式化結果",
     "outputPlaceholder": "結果將顯示於此...",
-    "clear": "清空",
-    "copy": "複製",
-    "copied": "已複製",
-    "error": "錯誤",
+    "error": "語法錯誤",
     "line": "行",
-    "column": "列"
+    "column": "列",
+    "seo": {
+      "description": "線上 JSON 格式化與驗證工具。提供美麗的排版與壓縮功能，並支援將 JSON 轉換為 TypeScript Interface。"
+    }
   },
   "jwt": {
-    "title": "🔓 JWT 除錯",
-    "description": "JWT (JSON Web Token) 解碼與除錯工具。支援 Header/Payload 解析與過期時間檢查。",
+    "title": "🔓 JWT 解碼器",
     "inputLabel": "JWT Token",
-    "inputPlaceholder": "貼上 JWT Token (eyJ...)",
+    "inputPlaceholder": "在此貼上 JWT Token...",
     "invalidToken": "無效的 JWT Token",
     "seo": {
-      "jwtDescription": "線上 JWT (JSON Web Token) 解碼器，支援 HS256/RS256 等演算法解析，檢查過期時間 (exp)，完全前端執行確保資安。"
+      "description": "線上 JWT (JSON Web Token) 解碼器，支援 HS256/RS256 等演算法解析，檢查過期時間 (exp)，完全前端執行確保資安。"
     }
   },
   "uuid": {
     "title": "🆔 UUID/ULID 產生器",
-    "description": "批次產生 UUID v4 (隨機), v7 (時間排序) 與 ULID。支援一鍵複製。",
-    "typeLabel": "格式類型",
-    "quantityLabel": "產生數量",
+    "typeLabel": "ID 類型",
+    "quantityLabel": "數量",
     "generate": "產生",
     "resultLabel": "結果預覽",
     "seo": {
-      "uuidDescription": "免費線上 UUID 產生器，支援 UUID v4, v7 與 ULID。一次產生多組 ID，方便開發者使用。"
+      "description": "免費線上 UUID 產生器，支援 UUID v4, v7 與 ULID。一次產生多組 ID，方便開發者使用。"
     }
   },
   "color": {
     "title": "🎨 顏色轉換器",
-    "description": "即時顏色格式轉換與挑選。支援 HEX, RGB, HSL, CMYK 互轉。",
     "seo": {
-      "colorDescription": "線上顏色轉換工具。支援 HEX, RGB, HSL, CMYK 格式互轉，內建顏色挑選器 (Color Picker)，網頁設計師必備。"
+      "description": "線上顏色轉換工具。支援 HEX, RGB, HSL, CMYK 格式互轉，內建顏色挑選器 (Color Picker)，網頁設計師必備。"
     }
   },
   "diff": {
     "title": "🔍 文字比對工具",
-    "description": "線上文字比對工具 (Diff Checker)。快速找出兩段文字的差異，支援行內比對與語意分析。",
-    "original": "原始文字",
-    "modified": "修改後文字",
-    "pasteOriginal": "貼上原始文字...",
-    "pasteModified": "貼上修改後文字...",
+    "noInput": "請在兩個欄位中輸入文字後再進行比對。",
     "compare": "開始比對",
-    "swap": "交換",
+    "swap": "左右對調",
+    "original": "原始文字",
+    "pasteOriginal": "貼上原始文字內容...",
+    "modified": "修改後文字",
+    "pasteModified": "貼上修改後的內容...",
     "result": "比對結果",
-    "noInput": "請輸入兩段文字進行比對",
     "seo": {
-      "diffDescription": "線上 Diff Checker 文字比對工具，快速比對兩段程式碼或文字的差異。支援高亮顯示新增與刪除內容。"
+      "description": "線上 Diff Checker 文字比對工具，快速比對兩段程式碼或文字的差異。支援高亮顯示新增與刪除內容。"
     },
     "context": {
       "title": "關於文字比對工具 (Diff Checker)",

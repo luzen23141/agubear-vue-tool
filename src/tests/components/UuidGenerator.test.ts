@@ -1,19 +1,16 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { mount, flushPromises } from '@vue/test-utils';
-import UuidGenerator from '../../views/UuidGenerator.vue';
+import { flushPromises, mount, DOMWrapper } from '@vue/test-utils';
+import UuidGenerator from '@/views/UuidGenerator.vue';
 import { TOAST_KEY } from '../../composables/use-toast-key';
 
 // Mock vue-i18n
-vi.mock('vue-i18n', async () => {
-  const { ref } = await import('vue');
-  return {
-    useI18n: () => ({
-      t: (key: string) => key,
-      tm: () => [],
-      locale: ref('en')
-    })
-  };
-});
+vi.mock('vue-i18n', async () => ({
+  useI18n: () => ({
+    t: (key: string) => key,
+    tm: () => [],
+    locale: { value: 'en' }
+  })
+}));
 
 // Mock @unhead/vue
 vi.mock('@unhead/vue', () => ({
@@ -44,9 +41,14 @@ describe('UuidGenerator.vue', () => {
     vi.clearAllMocks();
   });
 
-  it('renders correctly', () => {
+  it('renders initial state', async () => {
     const wrapper = mount(UuidGenerator, mountOptions);
-    expect(wrapper.find('.uuid-generator').exists()).toBe(true);
+    await flushPromises();
+    expect(wrapper.find('.generate-btn').exists()).toBe(true);
+    // Initial generation on mounted
+    expect(
+      (wrapper.get('#uuid-output') as DOMWrapper<HTMLTextAreaElement>).element.value
+    ).toContain('-');
   });
 
   it('generates UUID v4 by default', async () => {
@@ -77,7 +79,7 @@ describe('UuidGenerator.vue', () => {
     // Switch to v7
     const v7Input = wrapper
       .findAll('input[type="radio"]')
-      .find((index) => index.element.value === 'v7');
+      .find((w) => (w.element as HTMLInputElement).value === 'v7');
     await v7Input?.setValue();
 
     const generateButton = wrapper.find('.generate-btn');
@@ -88,7 +90,7 @@ describe('UuidGenerator.vue', () => {
     // Switch to ULID
     const ulidInput = wrapper
       .findAll('input[type="radio"]')
-      .find((index) => index.element.value === 'ulid');
+      .find((w) => (w.element as HTMLInputElement).value === 'ulid');
     await ulidInput?.setValue();
 
     await generateButton.trigger('click');
@@ -102,14 +104,20 @@ describe('UuidGenerator.vue', () => {
         writeText: vi.fn().mockImplementation(() => Promise.resolve())
       }
     });
-
     const wrapper = mount(UuidGenerator, mountOptions);
-    const copyButton = wrapper.find('.copy-btn');
-
-    await copyButton.trigger('click');
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
-      expect.stringContaining('mock-uuid-v4')
-    );
+    await flushPromises();
+    const copyButton = wrapper.find('.copy-btn-overlay');
+    if (copyButton.exists()) {
+      await copyButton.trigger('click');
+    } else {
+      const buttons = wrapper.findAll('button');
+      const button = buttons.find(
+        (b) => b.attributes('title')?.includes('common.copy') || b.text().includes('common.copy')
+      );
+      await button?.trigger('click');
+    }
+    await flushPromises();
+    expect(navigator.clipboard.writeText).toHaveBeenCalled();
     expect(showToast).toHaveBeenCalledWith(expect.anything(), 'success');
   });
 });

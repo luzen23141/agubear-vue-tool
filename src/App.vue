@@ -26,12 +26,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed, provide } from 'vue';
+import { ref, watch, provide } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
 import { useRoute } from 'vue-router';
 import { SUPPORTED_LOCALES } from './i18n';
 import { TOAST_KEY } from './composables/use-toast-key';
+import { useSeo } from './composables/use-seo';
 
 import AppHeader from './components/layout/AppHeader.vue';
 import AppFooter from './components/layout/AppFooter.vue';
@@ -41,7 +41,8 @@ import Toast from './components/common/Toast.vue';
 import CommandPalette from './components/common/CommandPalette.vue';
 
 const route = useRoute();
-const { t, locale } = useI18n();
+const { locale } = useI18n();
+const { setMeta } = useSeo();
 
 const headerRef = ref<InstanceType<typeof AppHeader> | null>(null);
 
@@ -66,27 +67,8 @@ watch(
   { immediate: true }
 );
 
-// SEO and Meta configuration
-useHead(
-  computed(() => {
-    const routeTitleKey = route.meta.title as string;
-    const pageTitle = routeTitleKey ? t(routeTitleKey) : '';
-    const appTitle = t('app.title');
-    const fullTitle = pageTitle ? `${pageTitle} - ${appTitle}` : appTitle;
-
-    return {
-      title: fullTitle,
-      htmlAttrs: { lang: locale.value },
-      meta: [
-        { name: 'description', content: t('seo.description') },
-        { name: 'keywords', content: t('seo.keywords') },
-        { property: 'og:title', content: fullTitle },
-        { property: 'og:description', content: t('seo.ogDescription') },
-        { property: 'og:type', content: 'website' }
-      ]
-    };
-  })
-);
+// SEO and Meta configuration (Default)
+setMeta({});
 
 const closeLangMenu = () => {
   headerRef.value?.closeLangMenu();

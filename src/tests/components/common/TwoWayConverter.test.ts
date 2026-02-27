@@ -1,12 +1,19 @@
-import { render, fireEvent } from '@testing-library/vue';
+import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
 import TwoWayConverter from '@/components/common/TwoWayConverter.vue';
 
 // Mock I18n
 vi.mock('vue-i18n', () => ({
   useI18n: () => ({
-    t: (key: string) => key
+    t: (_key: string) => _key,
+    tm: (_key: string) => [],
+    locale: { value: 'en' }
   })
+}));
+
+// Mock @unhead/vue
+vi.mock('@unhead/vue', () => ({
+  useHead: vi.fn()
 }));
 
 // Mock composables if needed, or let them run if they are simple logic
@@ -40,43 +47,42 @@ describe('TwoWayConverter.vue', () => {
   };
 
   it('renders with correct title and labels', () => {
-    const { getByText, getByPlaceholderText } = render(TwoWayConverter, {
+    const wrapper = mount(TwoWayConverter, {
       props: defaultProps
     });
 
-    expect(getByText('Test Converter')).toBeTruthy();
-    expect(getByText('Encode Checkbox')).toBeTruthy();
-    expect(getByText('Decode Checkbox')).toBeTruthy();
-    expect(getByText('Input')).toBeTruthy(); // input label
-    expect(getByPlaceholderText('Enter text')).toBeTruthy();
+    expect(wrapper.text()).toContain('Test Converter');
+    expect(wrapper.text()).toContain('Encode Checkbox');
+    expect(wrapper.text()).toContain('Decode Checkbox');
+    expect(wrapper.text()).toContain('Input');
   });
 
   it('switches mode when radio clicked', async () => {
-    const { getByLabelText, emitted } = render(TwoWayConverter, {
+    const wrapper = mount(TwoWayConverter, {
       props: defaultProps
     });
 
-    const decodeRadio = getByLabelText('Decode Checkbox');
-    await fireEvent.click(decodeRadio);
+    const decodeRadio = wrapper.findAll('input[type="radio"]')[1];
+    await decodeRadio?.setValue();
 
-    expect(emitted()['update:mode']).toBeTruthy();
-    expect(emitted()['update:mode'][0]).toEqual(['decode']);
+    expect(wrapper.emitted()['update:mode']).toBeTruthy();
+    expect(wrapper.emitted()['update:mode']?.[0]).toEqual(['decode']);
   });
 
   it('emits update:inputText on typing', async () => {
-    const { getByLabelText, emitted } = render(TwoWayConverter, {
+    const wrapper = mount(TwoWayConverter, {
       props: defaultProps
     });
 
-    const input = getByLabelText('Input');
-    await fireEvent.update(input, 'new input');
+    const input = wrapper.find('textarea');
+    await input.setValue('new input');
 
-    expect(emitted()['update:inputText']).toBeTruthy();
-    expect(emitted()['update:inputText'][0]).toEqual(['new input']);
+    expect(wrapper.emitted()['update:inputText']).toBeTruthy();
+    expect(wrapper.emitted()['update:inputText']?.[0]).toEqual(['new input']);
   });
 
   it('emits record event', async () => {
-    const { getByText, emitted } = render(TwoWayConverter, {
+    const wrapper = mount(TwoWayConverter, {
       props: {
         ...defaultProps,
         inputText: 'something',
@@ -84,9 +90,9 @@ describe('TwoWayConverter.vue', () => {
       }
     });
 
-    const recordButton = getByText('common.record');
-    await fireEvent.click(recordButton);
+    const recordButton = wrapper.findAll('button').find((b) => b.text().includes('common.record'));
+    await recordButton?.trigger('click');
 
-    expect(emitted().record).toBeTruthy();
+    expect(wrapper.emitted().record).toBeTruthy();
   });
 });

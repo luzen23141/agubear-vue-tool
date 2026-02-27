@@ -1,82 +1,78 @@
 <template>
-  <div class="w-full">
-    <BaseCard :title="title">
-      <!-- Mode Selection -->
-      <div class="flex justify-center mb-6">
-        <div class="mode-select">
-          <label class="mode-label">
-            <input
-              :name="name"
-              :value="encodeValue"
-              :checked="mode === encodeValue"
-              type="radio"
-              class="hidden"
-              @change="$emit('update:mode', encodeValue)"
-            />
-            <span>{{ encodeLabel }}</span>
-          </label>
-          <label class="mode-label">
-            <input
-              :name="name"
-              :value="decodeValue"
-              :checked="mode === decodeValue"
-              type="radio"
-              class="hidden"
-              @change="$emit('update:mode', decodeValue)"
-            />
-            <span>{{ decodeLabel }}</span>
-          </label>
-        </div>
+  <ToolPageLayout
+    :title="title"
+    :tool-key="name"
+    :history="history"
+    @clear-history="$emit('clearHistory')"
+    @remove-history="(id: number) => $emit('removeFromHistory', id)"
+  >
+    <!-- Mode Selection -->
+    <div class="flex justify-center mb-6">
+      <div class="mode-select">
+        <label class="mode-label">
+          <input
+            :name="name"
+            :value="encodeValue"
+            :checked="mode === encodeValue"
+            type="radio"
+            class="hidden"
+            @change="$emit('update:mode', encodeValue)"
+          />
+          <span>{{ encodeLabel }}</span>
+        </label>
+        <label class="mode-label">
+          <input
+            :name="name"
+            :value="decodeValue"
+            :checked="mode === decodeValue"
+            type="radio"
+            class="hidden"
+            @change="$emit('update:mode', decodeValue)"
+          />
+          <span>{{ decodeLabel }}</span>
+        </label>
       </div>
+    </div>
 
-      <!-- Input Area -->
-      <InputWithCopy
-        :id="`${name}-input`"
-        :model-value="inputText"
-        :label="mode === encodeValue ? inputLabel : outputLabel"
-        :placeholder="mode === encodeValue ? inputPlaceholder : outputPlaceholder"
-        :inputmode="inputmode"
-        :spellcheck="spellcheck"
-        allow-paste
-        allow-copy
-        @update:model-value="$emit('update:inputText', $event)"
-      />
-
-      <!-- Arrow Indicator -->
-      <div class="direction-arrow"><SvgIcon name="arrow-down" size="1.2rem" /></div>
-
-      <!-- Output Area -->
-      <InputWithCopy
-        :id="`${name}-output`"
-        :model-value="outputText"
-        :label="mode === encodeValue ? outputLabel : inputLabel"
-        readonly
-        allow-copy
-      />
-
-      <!-- History Action -->
-      <template #footer>
-        <div v-if="outputText" class="mt-5 flex justify-center">
-          <button type="button" class="btn-primary" @click="$emit('record')">
-            {{ t('common.record') }}
-          </button>
-        </div>
-      </template>
-    </BaseCard>
-
-    <!-- History -->
-    <HistoryList
-      :history="history"
-      @clear="$emit('clearHistory')"
-      @remove="(id) => $emit('removeFromHistory', id)"
+    <!-- Input Area -->
+    <InputWithCopy
+      :id="`${name}-input`"
+      :model-value="inputText"
+      :label="mode === encodeValue ? inputLabel : outputLabel"
+      :placeholder="mode === encodeValue ? inputPlaceholder : outputPlaceholder"
+      :inputmode="inputmode"
+      :spellcheck="spellcheck"
+      allow-paste
+      allow-copy
+      @update:model-value="$emit('update:inputText', $event)"
     />
-  </div>
+
+    <!-- Arrow Indicator -->
+    <div class="direction-arrow"><SvgIcon name="arrow-down" size="1.2rem" /></div>
+
+    <!-- Output Area -->
+    <InputWithCopy
+      :id="`${name}-output`"
+      :model-value="outputText"
+      :label="mode === encodeValue ? outputLabel : inputLabel"
+      readonly
+      allow-copy
+    />
+
+    <!-- History Action -->
+    <template #footer>
+      <div v-if="outputText" class="mt-5 flex justify-center">
+        <button type="button" class="btn-primary" @click="$emit('record')">
+          {{ t('common.record') }}
+        </button>
+      </div>
+    </template>
+  </ToolPageLayout>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import BaseCard from './BaseCard.vue';
-import HistoryList from './HistoryList.vue';
+import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import InputWithCopy from './InputWithCopy.vue';
 import SvgIcon from '../icons/SvgIcon.vue';
 import type { HistoryItem } from '@/stores/history';

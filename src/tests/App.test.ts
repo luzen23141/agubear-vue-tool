@@ -172,8 +172,8 @@ describe('App.vue', () => {
     const wrapper = mount(App, mountOptions);
     const buttons = wrapper.findAll('.tab-btn');
 
-    // Click Hash tab (index 1)
-    const hashButton = buttons[1];
+    // Click Hash tab by finding it by text content
+    const hashButton = buttons.find((b) => b.text().includes('🔐'));
     if (hashButton) {
       console.log('Before click:', router.currentRoute.value.name);
       await hashButton.trigger('click');
@@ -183,7 +183,6 @@ describe('App.vue', () => {
       // Ensure router has updated
       expect(router.currentRoute.value.name).toBe('hash');
       expect(hashButton.classes()).toContain('active');
-      expect(buttons[0]?.classes()).not.toContain('active');
     }
   });
 

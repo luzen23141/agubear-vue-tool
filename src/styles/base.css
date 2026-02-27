@@ -61,7 +61,7 @@ html.dark body::before {
   background:
     radial-gradient(ellipse 80% 60% at 10% 20%, rgba(34, 197, 94, 0.06) 0%, transparent 60%),
     radial-gradient(ellipse 60% 80% at 85% 75%, rgba(6, 182, 212, 0.05) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20, 184, 166, 0.04) 0%, transparent 50%);
 }
 
 html.dark body::after {

@@ -10,24 +10,50 @@ import { timestampToDate, dateToTimestamp } from '../../utils/converter';
 // ============================================
 
 const timestampToDateSuccessCases = [
-  // Auto 模式 (依賴系統時區 Asia/Taipei / UTC+8)
-  { input: 1_700_000_000, mode: 'auto', expected: '2023-11-15 06:13:20', desc: '10位秒級時間戳' },
+  // Auto 模式 (顯式使用 UTC+8 以確保測試一致性)
+  {
+    input: 1_700_000_000,
+    mode: 'auto',
+    offset: 8,
+    expected: '2023-11-15 06:13:20',
+    desc: '10位秒級時間戳'
+  },
   {
     input: 1_700_000_000_123,
     mode: 'auto',
+    offset: 8,
     expected: '2023-11-15 06:13:20.123',
     desc: '13位毫秒時間戳'
   },
-  { input: 0, mode: 'auto', expected: '1970-01-01 08:00:00', desc: '時間戳 0 (Unix 紀元)' },
-  { input: -100, mode: 'auto', expected: '1970-01-01 07:58:20', desc: '負數時間戳 (1970年前)' },
+  {
+    input: 0,
+    mode: 'auto',
+    offset: 8,
+    expected: '1970-01-01 08:00:00',
+    desc: '時間戳 0 (Unix 紀元)'
+  },
+  {
+    input: -100,
+    mode: 'auto',
+    offset: 8,
+    expected: '1970-01-01 07:58:20',
+    desc: '負數時間戳 (1970年前)'
+  },
 
-  // s 模式 (依賴系統時區 Asia/Taipei / UTC+8)
-  { input: 1_700_000_000, mode: 's', expected: '2023-11-15 06:13:20', desc: '[秒模式] 10位時間戳' },
+  // s 模式
+  {
+    input: 1_700_000_000,
+    mode: 's',
+    offset: 8,
+    expected: '2023-11-15 06:13:20',
+    desc: '[秒模式] 10位時間戳'
+  },
 
-  // ms 模式 (依賴系統時區 Asia/Taipei / UTC+8)
+  // ms 模式
   {
     input: 1_700_000_000_123,
     mode: 'ms',
+    offset: 8,
     expected: '2023-11-15 06:13:20.123',
     desc: '[毫秒模式] 13位時間戳'
   },
@@ -143,30 +169,74 @@ const timestampToDateTimezoneCases = [
 // ============================================
 
 const dateToTimestampSuccessCases = [
-  // 成功轉換案例 (預設使用系統本地時區)
-  { input: '2023-11-15T06:13:20', useMs: false, expected: 1_700_000_000, desc: 'ISO 格式 (T分隔)' },
-  { input: '2023-11-15 06:13:20', useMs: false, expected: 1_700_000_000, desc: '空格分隔格式' },
-  { input: '2023/11/15 06:13:20', useMs: false, expected: 1_700_000_000, desc: '斜線分隔 (/)' },
-  { input: '2023.11.15 06:13:20', useMs: false, expected: 1_700_000_000, desc: '點分隔 (.)' },
+  // 成功轉換案例 (顯式使用 UTC+8)
+  {
+    input: '2023-11-15T06:13:20',
+    useMs: false,
+    offset: 8,
+    expected: 1_700_000_000,
+    desc: 'ISO 格式 (T分隔)'
+  },
+  {
+    input: '2023-11-15 06:13:20',
+    useMs: false,
+    offset: 8,
+    expected: 1_700_000_000,
+    desc: '空格分隔格式'
+  },
+  {
+    input: '2023/11/15 06:13:20',
+    useMs: false,
+    offset: 8,
+    expected: 1_700_000_000,
+    desc: '斜線分隔 (/)'
+  },
+  {
+    input: '2023.11.15 06:13:20',
+    useMs: false,
+    offset: 8,
+    expected: 1_700_000_000,
+    desc: '點分隔 (.)'
+  },
 
   // 毫秒輸出
-  { input: '2023-11-15 06:13:20', useMs: true, expected: 1_700_000_000_000, desc: '13位毫秒輸出' },
+  {
+    input: '2023-11-15 06:13:20',
+    useMs: true,
+    offset: 8,
+    expected: 1_700_000_000_000,
+    desc: '13位毫秒輸出'
+  },
 
   // 帶毫秒的輸入
-  { input: '2023-11-15 06:13:20.123', useMs: true, expectedMs: 123, desc: '帶毫秒輸入 (空格分隔)' },
+  {
+    input: '2023-11-15 06:13:20.123',
+    useMs: true,
+    offset: 8,
+    expectedMs: 123,
+    desc: '帶毫秒輸入 (空格分隔)'
+  },
   {
     input: '2023-11-15T06:13:20.456',
     useMs: true,
+    offset: 8,
     expectedMs: 456,
     desc: '帶毫秒輸入 (ISO T分隔)'
   },
   {
     input: '  2023/11/15   06:13:20  ',
     useMs: false,
+    offset: 8,
     expected: 1_700_000_000,
     desc: '帶多餘空格的斜線格式'
   },
-  { input: '2023.11.15T06:13:20', useMs: false, expected: 1_700_000_000, desc: '點分隔帶 T' }
+  {
+    input: '2023.11.15T06:13:20',
+    useMs: false,
+    offset: 8,
+    expected: 1_700_000_000,
+    desc: '點分隔帶 T'
+  }
 ];
 
 const dateToTimestampErrorCases = [
@@ -242,7 +312,7 @@ describe('timestampToDate', () => {
 
   describe('時區轉換 (utcOffset)', () => {
     it.each(timestampToDateTimezoneCases)('$desc', ({ input, mode, offset, expected }) => {
-      const result = timestampToDate(input, mode, offset);
+      const result = timestampToDate(input, mode as any, offset);
       expect(result.success).toBe(true);
       expect(result.value).toBe(expected);
     });
@@ -265,7 +335,7 @@ describe('dateToTimestamp', () => {
     it.each(dateToTimestampSuccessCases.filter((c) => c.expectedMs !== undefined))(
       '$desc: 應保留毫秒 $expectedMs',
       (case_: any) => {
-        const result = dateToTimestamp(case_.input, case_.useMs);
+        const result = dateToTimestamp(case_.input, case_.useMs, case_.offset);
         expect(result.success).toBe(true);
 
         const date = new Date(result.value as number);

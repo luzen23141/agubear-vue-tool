@@ -1,8 +1,14 @@
 <template>
-  <div class="timestamp-converter">
+  <ToolPageLayout
+    :title="t('app.tabs.timestamp')"
+    :history="history"
+    tool-key="timestamp"
+    @clear-history="clearHistory"
+    @remove-history="removeFromHistory"
+  >
     <!-- 時區選擇 -->
-    <div class="timezone-bar reveal-delay-1">
-      <label for="tz-select">{{ t('timestamp.timezone') }}</label>
+    <div class="timezone-bar mb-8">
+      <label for="tz-select" class="mr-4 font-600">{{ t('timestamp.timezone') }}</label>
       <select id="tz-select" v-model.number="utcOffset" :aria-label="t('timestamp.timezoneAria')">
         <option v-for="tz in TIMEZONE_OPTIONS" :key="tz.value" :value="tz.value">
           {{ tz.prefix ? `${tz.prefix} (${t(tz.labelKey)})` : t(tz.labelKey) }}
@@ -12,177 +18,118 @@
 
     <div class="converter-grid">
       <!-- Timestamp -> Date -->
-      <BaseCard :title="t('timestamp.title')" heading-tag="h2" class="reveal-delay-2">
-        <!-- 輸入模式切換 -->
-        <div class="mode-toggle">
-          <label for="ts-mode-auto">
+      <BaseCard :title="t('timestamp.title')" heading-tag="h2" class="tool-card">
+        <div class="mode-toggle mb-4">
+          <label
+            v-for="mode in modeOptions"
+            :key="mode.value"
+            :class="{ active: timestampMode === mode.value }"
+            class="mode-btn"
+          >
             <input
-              id="ts-mode-auto"
               v-model="timestampMode"
+              :value="mode.value"
               type="radio"
               name="timestampMode"
-              value="auto"
+              class="sr-only"
             />
-            <span>{{ t('timestamp.modeAuto') }}</span>
-          </label>
-          <label for="ts-mode-s">
-            <input
-              id="ts-mode-s"
-              v-model="timestampMode"
-              type="radio"
-              name="timestampMode"
-              value="s"
-            />
-            <span>{{ t('timestamp.modeSeconds') }}</span>
-          </label>
-          <label for="ts-mode-ms">
-            <input
-              id="ts-mode-ms"
-              v-model="timestampMode"
-              type="radio"
-              name="timestampMode"
-              value="ms"
-            />
-            <span>{{ t('timestamp.modeMilliseconds') }}</span>
+            <span>{{ t(mode.labelKey) }}</span>
           </label>
         </div>
 
-        <div class="input-wrapper">
-          <div class="input-header">
-            <button
-              v-if="canPaste"
-              :title="t('common.paste')"
-              type="button"
-              class="paste-btn"
-              @click="pasteToTimestamp"
-            >
-              <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
-            </button>
-          </div>
-          <div class="input-group">
-            <input
-              id="timestamp-input"
-              v-model="timestampInput"
-              :placeholder="t('timestamp.inputPlaceholder')"
-              :aria-label="t('timestamp.inputAria')"
-              name="timestampInput"
-              type="text"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              maxlength="15"
-              autofocus
-              @keyup.enter="() => convertToDate()"
-              @keyup.esc="clearTimestampInput"
-            />
-            <button
-              :aria-label="t('timestamp.convertToDateAria')"
-              type="button"
-              @click="() => convertToDate()"
-            >
-              {{ t('timestamp.convertButton') }}
-            </button>
-          </div>
-          <div v-if="timestampLength > 0" class="input-hint">
+        <div class="input-section mb-6">
+          <InputWithCopy
+            id="timestamp-input"
+            v-model="timestampInput"
+            :placeholder="t('timestamp.inputPlaceholder')"
+            inputmode="numeric"
+            allow-paste
+            @enter="() => convertToDate()"
+          />
+          <div v-if="timestampLength > 0" class="input-hint mt-2">
             {{ t('timestamp.currentDigits', { n: timestampLength }) }}
           </div>
-        </div>
-        <div class="result-container">
-          <div :class="{ 'result-flash': dateResult }" class="result-group">
-            <div class="result">{{ dateResult }}</div>
-            <div v-if="relativeTime" class="relative-time">({{ relativeTime }})</div>
-          </div>
-          <button
-            v-if="dateResult"
-            :title="t('common.copy')"
-            type="button"
-            class="copy-btn"
-            @click="copyText(dateResult)"
-          >
-            <SvgIcon name="copy" />
+          <button type="button" class="btn-primary w-full mt-4" @click="() => convertToDate()">
+            <SvgIcon name="refresh-cw" /> {{ t('timestamp.convertButton') }}
           </button>
+        </div>
+
+        <div class="result-section">
+          <div class="pane-label">{{ t('timestamp.resultLabel') }}</div>
+          <div :class="{ 'result-flash': dateResult }" class="result-display">
+            <div class="result-text">{{ dateResult || '---' }}</div>
+            <div v-if="relativeTime" class="relative-time">({{ relativeTime }})</div>
+            <button
+              v-if="dateResult"
+              type="button"
+              class="copy-icon-btn"
+              @click="copyText(dateResult)"
+            >
+              <SvgIcon name="copy" />
+            </button>
+          </div>
         </div>
       </BaseCard>
 
       <!-- Date -> Timestamp -->
-      <BaseCard :title="t('timestamp.titleReverse')" heading-tag="h2" class="reveal-delay-3">
-        <!-- 格式切換 -->
-        <div class="format-toggle">
-          <span :class="{ active: !useMilliseconds }">{{ t('timestamp.modeSeconds') }}</span>
-          <label class="switch">
+      <BaseCard :title="t('timestamp.titleReverse')" heading-tag="h2" class="tool-card">
+        <div class="format-toggle mb-4">
+          <span :class="{ active: !useMilliseconds }" class="text-0.85rem font-600">{{
+            t('timestamp.modeSeconds')
+          }}</span>
+          <label class="switch mx-3">
             <input
-              id="ms-switch"
               v-model="useMilliseconds"
               :aria-label="t('timestamp.switchSecOrMs')"
-              :aria-checked="useMilliseconds ? 'true' : 'false'"
-              name="msSwitch"
+              :aria-checked="useMilliseconds"
               type="checkbox"
             />
             <span class="slider" />
           </label>
-          <span :class="{ active: useMilliseconds }">{{ t('timestamp.modeMilliseconds') }}</span>
+          <span :class="{ active: useMilliseconds }" class="text-0.85rem font-600">{{
+            t('timestamp.modeMilliseconds')
+          }}</span>
         </div>
 
-        <div class="input-header">
-          <button
-            v-if="canPaste"
-            :title="t('common.paste')"
-            type="button"
-            class="paste-btn"
-            @click="pasteToDate"
-          >
-            <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
-          </button>
-        </div>
-        <div class="input-group">
-          <input
+        <div class="input-section mb-6">
+          <InputWithCopy
             id="date-input"
             v-model="dateInput"
             :placeholder="t('timestamp.datePlaceholder')"
-            :aria-label="t('timestamp.dateInputAria')"
-            name="dateInput"
-            type="text"
-            @keyup.enter="() => convertToTimestamp()"
-            @keyup.esc="clearDateInput"
+            allow-paste
+            @enter="() => convertToTimestamp()"
           />
-          <button
-            :aria-label="t('timestamp.convertToTimestampAria')"
-            type="button"
-            @click="() => convertToTimestamp()"
-          >
-            {{ t('timestamp.convertButton') }}
+          <button type="button" class="btn-primary w-full mt-4" @click="() => convertToTimestamp()">
+            <SvgIcon name="refresh-cw" /> {{ t('timestamp.convertButton') }}
           </button>
         </div>
-        <div class="result-container">
-          <div :class="{ 'result-flash': timestampResult }" class="result">
-            {{ timestampResult }}
+
+        <div class="result-section">
+          <div class="pane-label">{{ t('timestamp.resultLabel') }}</div>
+          <div :class="{ 'result-flash': timestampResult }" class="result-display">
+            <div class="result-text font-mono">{{ timestampResult || '---' }}</div>
+            <button
+              v-if="timestampResult"
+              type="button"
+              class="copy-icon-btn"
+              @click="copyText(timestampResult)"
+            >
+              <SvgIcon name="copy" />
+            </button>
           </div>
-          <button
-            v-if="timestampResult"
-            :title="t('common.copy')"
-            type="button"
-            class="copy-btn"
-            @click="copyText(timestampResult)"
-          >
-            <SvgIcon name="copy" />
-          </button>
         </div>
       </BaseCard>
-
-      <DurationCalculator />
     </div>
 
-    <HistoryList :history="history" @clear="clearHistory" @remove="removeFromHistory" />
-    <ToolContext tool-key="timestamp" />
-  </div>
+    <DurationCalculator class="mt-8" />
+  </ToolPageLayout>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
+import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import BaseCard from '@/components/common/BaseCard.vue';
-import HistoryList from '@/components/common/HistoryList.vue';
-import ToolContext from '@/components/common/ToolContext.vue';
+import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import { UseHistory } from '@/composables/use-history';
 import { UseTimestampConverter } from '@/composables/use-timestamp-converter';
 import { useCopyToClipboard } from '@/composables/use-copy-to-clipboard';
@@ -191,17 +138,6 @@ import SvgIcon from '@/components/icons/SvgIcon.vue';
 import { TIMEZONE_OPTIONS } from '@/utils/constants';
 
 const { t } = useI18n();
-
-useHead({
-  title: computed(() => `${t('app.tabs.timestamp')} - ${t('app.title')}`),
-  meta: [
-    { name: 'description', content: computed(() => t('seo.description')) },
-    {
-      property: 'og:title',
-      content: computed(() => `${t('app.tabs.timestamp')} - ${t('app.title')}`)
-    }
-  ]
-});
 
 const { history, addToHistory, clearHistory, removeFromHistory } = UseHistory();
 
@@ -215,16 +151,17 @@ const {
   timestampLength,
   utcOffset,
   relativeTime,
-  canPaste,
   convertToDate,
-  convertToTimestamp,
-  clearTimestampInput,
-  clearDateInput,
-  pasteToTimestamp,
-  pasteToDate
+  convertToTimestamp
 } = UseTimestampConverter(addToHistory);
 
 const { copyText } = useCopyToClipboard();
+
+const modeOptions = [
+  { value: 'auto', labelKey: 'timestamp.modeAuto' },
+  { value: 's', labelKey: 'timestamp.modeSeconds' },
+  { value: 'ms', labelKey: 'timestamp.modeMilliseconds' }
+];
 
 // Provide properties to the tests
 defineExpose({
@@ -238,134 +175,238 @@ defineExpose({
   timestampLength,
   utcOffset,
   relativeTime,
-  canPaste,
   convertToDate,
   convertToTimestamp,
-  clearTimestampInput,
-  clearDateInput,
-  pasteToTimestamp,
-  pasteToDate,
   copyText
 });
 </script>
 
 <style scoped>
-.timestamp-converter {
-  width: 100%;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-/* 時區選擇列 */
 .timezone-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 1.5rem;
-  padding: 10px 16px;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
+  padding: 12px;
+  background: var(--background-alt);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.92rem;
-  flex-shrink: 0;
-}
-
-.timezone-bar label {
-  font-weight: 600;
-  color: var(--text-primary);
+  border: 1px solid var(--border);
 }
 
 .timezone-bar select {
   padding: 6px 12px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  font-size: 0.88rem;
   background: var(--surface);
   color: var(--text-primary);
-  cursor: pointer;
-  transition: border-color var(--transition-fast);
-  font-family: inherit;
+  font-size: 0.9rem;
 }
 
-.timezone-bar select:focus {
-  border-color: var(--primary);
-  outline: none;
-  box-shadow: var(--shadow-focus);
-}
-
-/* Grid Layout */
 .converter-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
-  flex-shrink: 0;
 }
 
-.converter-grid > .card {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.converter-grid .result-container {
-  margin-top: auto;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .converter-grid {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: stretch;
   }
 }
 
-/* History Styles - Handled by common components */
-:deep(.history-card) {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+.tool-card {
+  height: 100%;
 }
 
-:deep(.history-list) {
-  flex-grow: 1;
-  overflow-y: auto;
+/* Mode Buttons */
+.mode-toggle {
+  display: flex;
+  gap: 8px;
+  background: var(--background-alt);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
 }
 
-.result-group {
+.mode-btn {
+  flex: 1;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.mode-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Input Hint */
+.input-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* Result Section */
+.pane-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.result-display {
+  position: relative;
+  min-height: 80px;
+  padding: 16px;
+  background: var(--background-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   transition: all var(--transition-normal);
 }
 
+.result-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.relative-time {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.copy-icon-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-icon-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Switch */
+.format-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border);
+  transition: 0.4s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
 .result-flash {
-  animation: resultFlash 1s var(--transition-spring-smooth);
+  animation: resultFlash 0.8s var(--transition-spring-smooth);
 }
 
 @keyframes resultFlash {
   0% {
-    filter: brightness(1);
-  }
-  20% {
-    filter: brightness(1.5) drop-shadow(0 0 8px var(--primary));
-    transform: scale(1.02);
-  }
-  100% {
-    filter: brightness(1);
     transform: scale(1);
   }
-}
-
-.reveal-delay-1 {
-  animation: pageReveal var(--transition-fluid) 0.1s backwards;
-}
-.reveal-delay-2 {
-  animation: pageReveal var(--transition-fluid) 0.2s backwards;
-}
-.reveal-delay-3 {
-  animation: pageReveal var(--transition-fluid) 0.3s backwards;
+  30% {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+    border-color: var(--primary);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
 }
 </style>

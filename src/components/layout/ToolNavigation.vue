@@ -32,30 +32,35 @@
       </div>
     </div>
 
-    <!-- Tool Tabs -->
-    <div class="tab-list-container">
-      <div v-for="tool in filteredTools" :key="tool.id" class="tab-item-wrapper">
-        <button
-          :class="[{ active: activeTab === tool.id }]"
-          :aria-label="tool.ariaLabel"
-          :aria-current="activeTab === tool.id ? 'page' : undefined"
-          type="button"
-          class="tab-btn"
-          @click="switchTab(tool)"
-        >
-          {{ tool.name }}
-        </button>
-        <button
-          :class="{ starred: favorites.includes(tool.id) }"
-          :aria-label="
-            favorites.includes(tool.id) ? t('app.ariaLabels.unstar') : t('app.ariaLabels.star')
-          "
-          type="button"
-          class="star-action-btn"
-          @click.stop="toggleFavorite(tool.id)"
-        >
-          <SvgIcon :name="favorites.includes(tool.id) ? 'star' : 'star-off'" size="0.85rem" />
-        </button>
+    <!-- Tool Groups -->
+    <div class="tool-groups-container">
+      <div v-for="(group, groupName) in groupedTools" :key="groupName" class="tool-group">
+        <h3 class="group-title">{{ t(`app.categories.${groupName}`) }}</h3>
+        <div class="tab-list-container">
+          <div v-for="tool in group" :key="tool.id" class="tab-item-wrapper">
+            <button
+              :class="[{ active: activeTab === tool.id }]"
+              :aria-label="tool.ariaLabel"
+              :aria-current="activeTab === tool.id ? 'page' : undefined"
+              type="button"
+              class="tab-btn"
+              @click="switchTab(tool)"
+            >
+              {{ tool.name }}
+            </button>
+            <button
+              :class="{ starred: favorites.includes(tool.id) }"
+              :aria-label="
+                favorites.includes(tool.id) ? t('app.ariaLabels.unstar') : t('app.ariaLabels.star')
+              "
+              type="button"
+              class="star-action-btn"
+              @click.stop="toggleFavorite(tool.id)"
+            >
+              <SvgIcon :name="favorites.includes(tool.id) ? 'star' : 'star-off'" size="0.85rem" />
+            </button>
+          </div>
+        </div>
       </div>
 
       <div v-if="filteredTools.length === 0" class="no-tools-msg">
@@ -150,6 +155,15 @@ const filteredTools = computed(() =>
     return true;
   })
 );
+
+const groupedTools = computed(() => {
+  const groups: Record<string, typeof filteredTools.value> = {};
+  for (const tool of filteredTools.value) {
+    if (!groups[tool.category]) groups[tool.category] = [];
+    groups[tool.category].push(tool);
+  }
+  return groups;
+});
 
 const switchTab = async (tool: ToolDefinition) => {
   await router.push({ name: tool.id, params: { lang: locale.value } });
@@ -251,6 +265,29 @@ onMounted(() => {
   margin-bottom: 2rem;
   position: relative;
   z-index: 10;
+}
+
+.tool-groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tool-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.group-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--primary);
 }
 
 .tab-list-container {

@@ -1,4 +1,4 @@
-import { ref, computed, watch, onMounted } from 'vue';
+import { ref, computed, watch, onMounted, getCurrentInstance } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { formatDistanceToNow, type Locale } from 'date-fns';
 import { UseLocalStorage } from './use-local-storage';
@@ -194,14 +194,22 @@ export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
     }
   });
 
-  onMounted(() => {
-    if (typeof navigator !== 'undefined' && typeof navigator.clipboard?.readText === 'function') {
-      canPaste.value = true;
-    }
-    // Initial Conversion
-    convertToDate(false);
-    convertToTimestamp(false);
-  });
+  if (getCurrentInstance()) {
+    onMounted(() => {
+      if (typeof navigator !== 'undefined' && typeof navigator.clipboard?.readText === 'function') {
+        canPaste.value = true;
+      }
+      // Initial Conversion
+      convertToDate(false);
+      convertToTimestamp(false);
+    });
+  } else if (
+    typeof navigator !== 'undefined' &&
+    typeof navigator.clipboard?.readText === 'function'
+  ) {
+    // Fallback for tests or non-component environment
+    canPaste.value = true;
+  }
 
   return {
     timestampInput,

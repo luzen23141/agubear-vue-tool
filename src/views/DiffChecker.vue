@@ -1,76 +1,59 @@
 <template>
-  <div class="diff-checker">
-    <div class="description-card">
-      <p>{{ t('diff.description') }}</p>
+  <ToolPageLayout :title="t('diff.title')" tool-key="diff">
+    <!-- Action Bar -->
+    <div class="action-buttons mb-8">
+      <button type="button" class="btn-primary" @click="computeDiff">
+        <SvgIcon name="search" /> {{ t('diff.compare') }}
+      </button>
+      <button type="button" class="btn-secondary" @click="swapInputs">
+        <SvgIcon name="arrow-down" /> {{ t('diff.swap') }}
+      </button>
+      <button type="button" class="btn-text" @click="clearAll">
+        <SvgIcon name="trash" /> {{ t('common.clear') }}
+      </button>
     </div>
 
-    <BaseCard :title="t('diff.title')">
-      <div class="diff-actions">
-        <button type="button" class="action-btn" @click="computeDiff">
-          <SvgIcon name="search" /> {{ t('diff.compare') }}
-        </button>
-        <button type="button" class="action-btn secondary" @click="swapInputs">
-          <SvgIcon name="arrow-down" /> {{ t('diff.swap') }}
-        </button>
-        <button type="button" class="action-btn secondary" @click="clearAll">
-          <SvgIcon name="trash" /> {{ t('common.clear') }}
-        </button>
+    <!-- Inputs Grid -->
+    <div class="editor-grid mb-8">
+      <div class="editor-pane">
+        <div class="pane-label">{{ t('diff.original') }}</div>
+        <InputWithCopy
+          id="diff-original"
+          v-model="text1"
+          :placeholder="t('diff.pasteOriginal')"
+          allow-paste
+        />
       </div>
-
-      <div class="inputs-grid">
-        <div class="input-col">
-          <label for="diff-original">{{ t('diff.original') }}</label>
-          <textarea
-            id="diff-original"
-            v-model="text1"
-            :placeholder="t('diff.pasteOriginal')"
-            class="diff-input"
-          />
-        </div>
-        <div class="input-col">
-          <label for="diff-modified">{{ t('diff.modified') }}</label>
-          <textarea
-            id="diff-modified"
-            v-model="text2"
-            :placeholder="t('diff.pasteModified')"
-            class="diff-input"
-          />
-        </div>
+      <div class="editor-pane">
+        <div class="pane-label">{{ t('diff.modified') }}</div>
+        <InputWithCopy
+          id="diff-modified"
+          v-model="text2"
+          :placeholder="t('diff.pasteModified')"
+          allow-paste
+        />
       </div>
+    </div>
 
-      <div v-if="diffResult.length > 0" class="diff-output-container">
-        <h2>{{ t('diff.result') }}</h2>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div class="diff-output" v-html="diffHtml" />
-      </div>
-    </BaseCard>
-
-    <ToolContext tool-key="diff" />
-  </div>
+    <!-- Result Display -->
+    <div v-if="diffResult.length > 0" class="result-section">
+      <h2 class="text-center text-1.1rem font-600 mb-4">{{ t('diff.result') }}</h2>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div class="diff-output" v-html="diffHtml" />
+    </div>
+  </ToolPageLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, inject } from 'vue';
 import { TOAST_KEY } from '@/composables/use-toast-key';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
 import { diff_match_patch as DiffMatchPatch, type Diff } from 'diff-match-patch';
-import BaseCard from '@/components/common/BaseCard.vue';
-import ToolContext from '@/components/common/ToolContext.vue';
+import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
+import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
 
 const { t } = useI18n();
-
-useHead({
-  title: computed(() => `${t('app.tabs.diff')} - ${t('app.title')}`),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('seo.diffDescription'))
-    }
-  ]
-});
-
 const showToast = inject(TOAST_KEY, () => {});
 
 const text1 = ref('');
@@ -104,24 +87,16 @@ const clearAll = () => {
 
 const diffHtml = computed(() => {
   if (diffResult.value.length === 0) return '';
-  // Custom HTML generation for better styling
-  // Standard dmp.diff_prettyHtml is okay but we might want custom classes
   return diffResult.value
-    .map(([op, text]) => {
-      // Escape HTML to prevent XSS
+    .map(([op, text]: Diff) => {
       const safeText = text
         .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
         .replaceAll('>', '&gt;')
         .replaceAll('\n', '<br/>');
 
-      if (op === 1) {
-        // Insert
-        return `<ins>${safeText}</ins>`;
-      } else if (op === -1) {
-        // Delete
-        return `<del>${safeText}</del>`;
-      } // Equal
+      if (op === 1) return `<ins>${safeText}</ins>`;
+      if (op === -1) return `<del>${safeText}</del>`;
       return `<span>${safeText}</span>`;
     })
     .join('');
@@ -129,122 +104,110 @@ const diffHtml = computed(() => {
 </script>
 
 <style scoped>
-.diff-checker {
-  width: 100%;
-}
-
-.description-card {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-.diff-actions {
+.action-buttons {
   display: flex;
+  justify-content: center;
   gap: 12px;
-  margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
-.action-btn {
+.action-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 16px;
-  background: var(--primary);
-  color: white;
-  border: none;
   border-radius: var(--radius-sm);
-  cursor: pointer;
   font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
   transition: all var(--transition-fast);
 }
 
-.action-btn:hover {
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
   background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 }
 
-.action-btn.secondary {
-  background: var(--surface-raised);
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-}
-
-.action-btn.secondary:hover {
-  border-color: var(--primary);
+.btn-secondary {
+  background: var(--surface);
   color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
-.inputs-grid {
+.btn-secondary:hover {
+  background: var(--primary-soft);
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+}
+
+.btn-text:hover {
+  color: #e05252;
+}
+
+.editor-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  .inputs-grid {
+@media (min-width: 1024px) {
+  .editor-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.input-col {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.input-col label {
-  font-weight: 600;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.diff-input {
-  width: 100%;
-  height: 200px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text-primary);
-  font-family: 'SF Mono', monospace;
+.pane-label {
   font-size: 0.85rem;
-  line-height: 1.5;
-  resize: vertical;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.diff-input:focus {
-  outline: 2px solid var(--primary-soft);
-  border-color: var(--primary);
-}
-
-.diff-output-container h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: var(--text-primary);
+.result-section {
+  padding: 1.5rem;
+  background: var(--background-alt);
+  border-radius: var(--radius-md);
 }
 
 .diff-output {
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--surface-raised);
-  font-family: 'SF Mono', monospace;
+  background: var(--surface);
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
   white-space: pre-wrap;
   line-height: 1.6;
   font-size: 0.9rem;
-  color: var(--text-primary); /* Default text color */
+  color: var(--text-primary);
 }
 
-/* Deep selection for v-html content */
 :deep(ins) {
-  background-color: rgba(45, 157, 106, 0.25); /* Greenish bg */
-  color: var(--text-primary); /* Keep text readable */
+  background-color: rgba(45, 157, 106, 0.25);
+  color: var(--text-primary);
   text-decoration: none;
   border-bottom: 2px solid var(--primary);
 }
 
 :deep(del) {
-  background-color: rgba(239, 68, 68, 0.25); /* Reddish bg */
+  background-color: rgba(239, 68, 68, 0.25);
   color: var(--text-muted);
   text-decoration: line-through;
+}
+
+:deep(.custom-textarea) {
+  height: 250px;
 }
 </style>

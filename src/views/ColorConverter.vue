@@ -1,117 +1,66 @@
 <template>
-  <div class="color-converter">
-    <div class="description-card">
-      <p>{{ t('color.description') }}</p>
-    </div>
-
-    <BaseCard :title="t('color.title')">
-      <div class="converter-grid">
-        <!-- Color Picker & Preview -->
-        <div class="picker-section">
-          <div :style="{ backgroundColor: hexValue }" class="color-preview" />
-          <input v-model="hexValue" type="color" class="native-picker" @input="updateFromPicker" />
-        </div>
-
-        <!-- Inputs -->
-        <div class="inputs-section">
-          <!-- HEX -->
-          <div class="input-group">
-            <label for="color-hex">HEX</label>
-            <div class="input-wrapper">
-              <input
-                id="color-hex"
-                v-model="hexInput"
-                type="text"
-                placeholder="#000000"
-                @input="updateFromHex"
-              />
-              <button type="button" class="copy-btn" @click="copy(hexInput)">
-                <SvgIcon name="copy" />
-              </button>
-            </div>
-          </div>
-
-          <!-- RGB -->
-          <div class="input-group">
-            <label for="color-rgb">RGB</label>
-            <div class="input-wrapper">
-              <input
-                id="color-rgb"
-                v-model="rgbInput"
-                type="text"
-                placeholder="rgb(0, 0, 0)"
-                @input="updateFromRgb"
-              />
-              <button type="button" class="copy-btn" @click="copy(rgbInput)">
-                <SvgIcon name="copy" />
-              </button>
-            </div>
-          </div>
-
-          <!-- HSL -->
-          <div class="input-group">
-            <label for="color-hsl">HSL</label>
-            <div class="input-wrapper">
-              <input
-                id="color-hsl"
-                v-model="hslInput"
-                type="text"
-                placeholder="hsl(0, 0%, 0%)"
-                @input="updateFromHsl"
-              />
-              <button type="button" class="copy-btn" @click="copy(hslInput)">
-                <SvgIcon name="copy" />
-              </button>
-            </div>
-          </div>
-
-          <!-- CMYK -->
-          <div class="input-group">
-            <label for="color-cmyk">CMYK</label>
-            <div class="input-wrapper">
-              <input
-                id="color-cmyk"
-                v-model="cmykInput"
-                type="text"
-                placeholder="cmyk(0%, 0%, 0%, 100%)"
-                @input="updateFromCmyk"
-              />
-              <button type="button" class="copy-btn" @click="copy(cmykInput)">
-                <SvgIcon name="copy" />
-              </button>
-            </div>
-          </div>
-        </div>
+  <ToolPageLayout :title="t('color.title')" tool-key="color">
+    <div class="converter-grid">
+      <!-- Color Picker & Preview -->
+      <div class="picker-section">
+        <div :style="{ backgroundColor: hexValue }" class="color-preview" />
+        <input v-model="hexValue" type="color" class="native-picker" @input="updateFromPicker" />
+        <div class="hex-label">{{ hexValue.toUpperCase() }}</div>
       </div>
-    </BaseCard>
 
-    <ToolContext tool-key="color" />
-  </div>
+      <!-- Inputs -->
+      <div class="inputs-section">
+        <!-- HEX -->
+        <InputWithCopy
+          id="color-hex"
+          v-model="hexInput"
+          label="HEX"
+          placeholder="#000000"
+          allow-copy
+          @update:model-value="updateFromHex"
+        />
+
+        <!-- RGB -->
+        <InputWithCopy
+          id="color-rgb"
+          v-model="rgbInput"
+          label="RGB"
+          placeholder="rgb(0, 0, 0)"
+          allow-copy
+          @update:model-value="updateFromRgb"
+        />
+
+        <!-- HSL -->
+        <InputWithCopy
+          id="color-hsl"
+          v-model="hslInput"
+          label="HSL"
+          placeholder="hsl(0, 0%, 0%)"
+          allow-copy
+          @update:model-value="updateFromHsl"
+        />
+
+        <!-- CMYK -->
+        <InputWithCopy
+          id="color-cmyk"
+          v-model="cmykInput"
+          label="CMYK"
+          placeholder="cmyk(0%, 0%, 0%, 100%)"
+          allow-copy
+          @update:model-value="updateFromCmyk"
+        />
+      </div>
+    </div>
+  </ToolPageLayout>
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue';
-import { TOAST_KEY } from '@/composables/use-toast-key';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
-import BaseCard from '@/components/common/BaseCard.vue';
-import ToolContext from '@/components/common/ToolContext.vue';
+import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
+import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import { UseColorConverter } from '@/composables/use-color-converter';
-import SvgIcon from '@/components/icons/SvgIcon.vue';
 
 const { t } = useI18n();
-
-useHead({
-  title: computed(() => `${t('app.tabs.color')} - ${t('app.title')}`),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('seo.colorDescription'))
-    }
-  ]
-});
-
-const showToast = inject(TOAST_KEY, () => {});
 
 const {
   hexValue,
@@ -125,34 +74,14 @@ const {
   updateFromHsl,
   updateFromCmyk
 } = UseColorConverter();
-
-const copy = async (text: string) => {
-  try {
-    await navigator.clipboard.writeText(text);
-    showToast(t('common.copied'), 'success');
-  } catch (error) {
-    console.error(error);
-    showToast('Failed to copy', 'error');
-  }
-};
 </script>
 
 <style scoped>
-.color-converter {
-  width: 100%;
-}
-
-.description-card {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
 .converter-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
+  padding: 1rem 0;
 }
 
 @media (min-width: 768px) {
@@ -166,26 +95,40 @@ const copy = async (text: string) => {
 .picker-section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: center;
-  flex: 0 0 200px;
+  flex: 0 0 220px;
+  padding: 1.5rem;
+  background: var(--background-alt);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
 }
 
 .color-preview {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 4px solid var(--surface);
-  box-shadow: var(--shadow-md);
-  transition: background-color 0.2s;
+  border: 6px solid var(--surface);
+  box-shadow: var(--shadow-lg);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .native-picker {
   width: 100%;
-  height: 50px;
+  height: 48px;
   cursor: pointer;
-  border: none;
-  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: 4px;
+}
+
+.hex-label {
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
 }
 
 /* Inputs */
@@ -193,55 +136,21 @@ const copy = async (text: string) => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+:deep(.input-group) {
+  margin-bottom: 0;
 }
 
-.input-group label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.input-wrapper {
-  display: flex;
-  gap: 8px;
-}
-
-.input-wrapper input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text-primary);
-  font-family: 'SF Mono', monospace;
-  font-size: 0.95rem;
-}
-
-.input-wrapper input:focus {
-  outline: 2px solid var(--primary-soft);
-  border-color: var(--primary);
-}
-
-.copy-btn {
-  padding: 0 12px;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: all var(--transition-fast);
-}
-
-.copy-btn:hover {
-  background: var(--primary-soft);
-  border-color: var(--primary);
+:deep(.custom-textarea) {
+  height: 48px !important;
+  min-height: 48px !important;
+  resize: none;
+  font-size: 1rem;
+  line-height: 28px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 </style>

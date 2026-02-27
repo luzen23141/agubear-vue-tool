@@ -1,39 +1,28 @@
 <template>
-  <div class="jwt-debugger">
-    <div class="description-card">
-      <p>{{ t('jwt.description') }}</p>
+  <ToolPageLayout :title="t('jwt.title')" tool-key="jwt">
+    <!-- Action Bar -->
+    <div class="action-buttons mb-8">
+      <button class="btn-text" type="button" @click="handleClear">
+        <SvgIcon name="trash" /> {{ t('common.clear') }}
+      </button>
     </div>
 
     <div class="converter-grid">
       <!-- Input Area -->
-      <BaseCard :title="t('jwt.inputLabel')">
-        <div class="input-header">
-          <div class="pane-controls">
-            <button
-              v-if="canPaste"
-              :title="t('common.paste')"
-              class="icon-btn"
-              type="button"
-              @click="pasteInput"
-            >
-              <SvgIcon name="clipboard-paste" /> {{ t('common.paste') }}
-            </button>
-            <button class="clear-btn" type="button" @click="handleClear">
-              {{ t('common.clear') }}
-            </button>
-          </div>
-        </div>
-        <textarea
+      <div class="input-section">
+        <label class="pane-label">{{ t('jwt.inputLabel') }}</label>
+        <InputWithCopy
+          id="jwt-input"
           v-model="jwtInput"
           :placeholder="t('jwt.inputPlaceholder')"
-          class="jwt-input"
-          spellcheck="false"
+          class="jwt-input-field"
+          allow-paste
         />
         <div v-if="error" class="error-message">
           <span class="error-icon"><SvgIcon name="alert-triangle" size="0.9rem" /></span>
           <span>{{ error }}</span>
         </div>
-      </BaseCard>
+      </div>
 
       <!-- Decoded Output -->
       <div v-if="decodedHeader || decodedPayload" class="output-section">
@@ -51,60 +40,51 @@
           </div>
         </div>
 
-        <!-- Header -->
-        <BaseCard title="Header" class="code-card header-card">
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <pre class="json-display" v-html="syntaxHighlight(decodedHeader)" />
-        </BaseCard>
+        <div class="decoded-grid">
+          <!-- Header -->
+          <BaseCard title="Header" class="code-card header-card">
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <pre class="json-display" v-html="syntaxHighlight(decodedHeader)" />
+          </BaseCard>
 
-        <!-- Payload -->
-        <BaseCard title="Payload" class="code-card payload-card">
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <pre class="json-display" v-html="syntaxHighlight(decodedPayload)" />
-        </BaseCard>
+          <!-- Payload -->
+          <BaseCard title="Payload" class="code-card payload-card">
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <pre class="json-display" v-html="syntaxHighlight(decodedPayload)" />
+          </BaseCard>
+        </div>
       </div>
     </div>
-
-    <ToolContext tool-key="jwt" />
-  </div>
+  </ToolPageLayout>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
 import { jwtDecode } from 'jwt-decode';
+import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import BaseCard from '@/components/common/BaseCard.vue';
-import ToolContext from '@/components/common/ToolContext.vue';
+import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
 
 const { t } = useI18n();
 
-useHead({
-  title: computed(() => `${t('app.tabs.jwt')} - ${t('app.title')}`),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('seo.jwtDescription'))
-    }
-  ]
-});
+interface JwtHeader {
+  alg?: string;
+  typ?: string;
+  [key: string]: unknown;
+}
+interface JwtPayload {
+  exp?: number;
+  iat?: number;
+  sub?: string;
+  [key: string]: unknown;
+}
 
 const jwtInput = ref('');
-const decodedHeader = ref<unknown>(null);
-const decodedPayload = ref<unknown>(null);
+const decodedHeader = ref<JwtHeader | null>(null);
+const decodedPayload = ref<JwtPayload | null>(null);
 const error = ref<string | null>(null);
-
-const canPaste = ref(false);
-
-const pasteInput = async () => {
-  try {
-    const text = await navigator.clipboard.readText();
-    if (text) jwtInput.value = text.trim();
-  } catch (error_) {
-    console.warn('Clipboard read failed', error_);
-  }
-};
 
 const handleClear = () => {
   jwtInput.value = '';
@@ -167,82 +147,59 @@ const syntaxHighlight = (json: unknown) => {
     }
   );
 };
-
-onMounted(() => {
-  if (navigator.clipboard) canPaste.value = true;
-});
 </script>
 
 <style scoped>
-.jwt-debugger {
-  width: 100%;
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.description-card {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
+.btn-text {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.btn-text:hover {
+  color: #e05252;
+  background: rgba(224, 82, 82, 0.1);
 }
 
 .converter-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-.input-header {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.5rem;
-}
-
-.pane-controls {
-  display: flex;
-  gap: 8px;
-}
-
-.icon-btn,
-.clear-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
+.pane-label {
+  display: block;
   font-size: 0.85rem;
-  transition: color var(--transition-fast);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.icon-btn:hover {
-  color: var(--primary);
-}
-.clear-btn:hover {
-  color: #e05252;
-}
-
-.jwt-input {
-  width: 100%;
-  height: 120px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface-raised);
-  color: var(--text-primary);
-  font-family: 'SF Mono', monospace;
-  font-size: 0.9rem;
-  resize: vertical;
-}
-
-.jwt-input:focus {
-  outline: 2px solid var(--primary-soft);
-  border-color: var(--primary);
+:deep(.jwt-input-field) textarea {
+  height: 140px;
 }
 
 .error-message {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background: #fef2f2;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(224, 82, 82, 0.1);
+  border-left: 3px solid #e05252;
   border-radius: var(--radius-sm);
-  color: #b91c1c;
+  color: #e05252;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
@@ -253,10 +210,10 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  animation: fadeIn 0.3s ease;
+  animation: slideUp 0.3s ease-out;
 }
 
-@keyframes fadeIn {
+@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -270,16 +227,16 @@ onMounted(() => {
 .status-bar {
   display: flex;
   justify-content: space-between;
-  padding: 12px 16px;
-  background: var(--surface-raised);
-  border-left: 4px solid var(--text-muted);
+  padding: 14px 20px;
+  background: var(--background-alt);
+  border-left: 5px solid var(--text-muted);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
 }
 
 .status-bar.valid {
   border-left-color: #10b981;
 }
+
 .status-bar.expired {
   border-left-color: #ef4444;
 }
@@ -287,8 +244,8 @@ onMounted(() => {
 .status-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
+  gap: 10px;
+  font-size: 0.95rem;
 }
 
 .status-item .label {
@@ -298,46 +255,62 @@ onMounted(() => {
 
 .status-item .value {
   font-family: 'SF Mono', monospace;
+  color: var(--text-primary);
 }
 
 .badge-valid {
-  background: #d1fae5;
-  color: #065f46;
-  padding: 2px 6px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .badge-expired {
-  background: #fee2e2;
-  color: #991b1b;
-  padding: 2px 6px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.decoded-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .decoded-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .code-card :deep(.card) {
   border-left: 4px solid;
+  height: 100%;
 }
 
 .header-card :deep(.card) {
   border-left-color: #fbbf24;
 }
+
 .payload-card :deep(.card) {
   border-left-color: #14b8a6;
 }
 
 .json-display {
   margin: 0;
-  padding: 12px;
-  background: var(--surface-raised);
-  border-radius: var(--radius-sm);
+  padding: 4px;
+  background: transparent;
   overflow-x: auto;
-  font-family: 'SF Mono', monospace;
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Syntax Highlighting */
@@ -348,7 +321,7 @@ onMounted(() => {
   color: #3b82f6;
 }
 :deep(.boolean) {
-  color: #10b981;
+  color: #f59e0b;
 }
 :deep(.null) {
   color: #9ca3af;
@@ -356,6 +329,4 @@ onMounted(() => {
 :deep(.key) {
   color: #ef4444;
 }
-
-/* Dark mode overrides would go here if not using vars */
 </style>

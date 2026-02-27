@@ -35,73 +35,73 @@ export const routes: RouteRecordRaw[] = [
     path: '/:lang/timestamp',
     name: 'timestamp',
     component: TimestampConverter,
-    meta: { title: 'app.tabs.timestamp' }
+    meta: { titleKey: 'app.tabs.timestamp', descriptionKey: 'timestamp.seo.description' }
   },
   {
     path: '/:lang/hash',
     name: 'hash',
     component: () => import('@/views/HashGenerator.vue'),
-    meta: { title: 'app.tabs.hash' }
+    meta: { titleKey: 'app.tabs.hash', descriptionKey: 'hash.seo.description' }
   },
   {
     path: '/:lang/base64',
     name: 'base64',
     component: () => import('@/views/Base64Converter.vue'),
-    meta: { title: 'app.tabs.base64' }
+    meta: { titleKey: 'app.tabs.base64', descriptionKey: 'base64.seo.description' }
   },
   {
     path: '/:lang/url',
     name: 'url',
     component: () => import('@/views/UrlConverter.vue'),
-    meta: { title: 'app.tabs.url' }
+    meta: { titleKey: 'app.tabs.url', descriptionKey: 'url.seo.description' }
   },
   {
     path: '/:lang/unicode',
     name: 'unicode',
     component: () => import('@/views/UnicodeConverter.vue'),
-    meta: { title: 'app.tabs.unicode' }
+    meta: { titleKey: 'app.tabs.unicode', descriptionKey: 'unicode.seo.description' }
   },
   {
     path: '/:lang/pinyin',
     name: 'pinyin',
     component: () => import('@/views/PinyinConverter.vue'),
-    meta: { title: 'app.tabs.pinyin' }
+    meta: { titleKey: 'app.tabs.pinyin', descriptionKey: 'pinyin.seo.description' }
   },
   {
     path: '/:lang/qrcode',
     name: 'qrcode',
     component: () => import('@/views/QrCodeGenerator.vue'),
-    meta: { title: 'app.tabs.qrcode' }
+    meta: { titleKey: 'app.tabs.qrcode', descriptionKey: 'qrcode.seo.description' }
   },
   {
     path: '/:lang/json',
     name: 'json',
     component: () => import('@/views/JsonFormatter.vue'),
-    meta: { title: 'app.tabs.json' }
+    meta: { titleKey: 'app.tabs.json', descriptionKey: 'json.seo.description' }
   },
   {
     path: '/:lang/jwt',
     name: 'jwt',
     component: () => import('@/views/JwtDebugger.vue'),
-    meta: { title: 'app.tabs.jwt' }
+    meta: { titleKey: 'app.tabs.jwt', descriptionKey: 'jwt.seo.description' }
   },
   {
     path: '/:lang/uuid',
     name: 'uuid',
     component: () => import('@/views/UuidGenerator.vue'),
-    meta: { title: 'app.tabs.uuid' }
+    meta: { titleKey: 'app.tabs.uuid', descriptionKey: 'uuid.seo.description' }
   },
   {
     path: '/:lang/color',
     name: 'color',
     component: () => import('@/views/ColorConverter.vue'),
-    meta: { title: 'app.tabs.color' }
+    meta: { titleKey: 'app.tabs.color', descriptionKey: 'color.seo.description' }
   },
   {
     path: '/:lang/diff',
     name: 'diff',
     component: () => import('@/views/DiffChecker.vue'),
-    meta: { title: 'app.tabs.diff' }
+    meta: { titleKey: 'app.tabs.diff', descriptionKey: 'diff.seo.description' }
   },
   // Catch-all for 404 - Redirect to default lang
   {

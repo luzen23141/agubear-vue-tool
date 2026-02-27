@@ -1,6 +1,7 @@
 import { vi, beforeEach } from 'vitest';
 import { ref } from 'vue';
 import { setActivePinia, createPinia } from 'pinia';
+process.env.TZ = 'UTC';
 
 beforeEach(() => {
   setActivePinia(createPinia());

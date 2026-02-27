@@ -42,8 +42,8 @@ describe('DiffChecker.vue', () => {
 
   it('renders correctly', () => {
     const wrapper = mount(DiffChecker, mountOptions);
-    expect(wrapper.find('.diff-checker').exists()).toBe(true);
-    // Two textareas
+    expect(wrapper.exists()).toBe(true);
+    // Two textareas (inside InputWithCopy)
     expect(wrapper.findAll('textarea').length).toBe(2);
   });
 
@@ -59,7 +59,7 @@ describe('DiffChecker.vue', () => {
     await computeButton?.trigger('click');
 
     // Result should be visible
-    expect(wrapper.find('.diff-output-container').exists()).toBe(true);
+    expect(wrapper.find('.result-section').exists()).toBe(true);
     const html = wrapper.find('.diff-output').html();
     // Should contain "World" as deleted and "Vue" as inserted ?
     // Or "Hello " as common.
@@ -97,7 +97,7 @@ describe('DiffChecker.vue', () => {
 
     expect(textareas[0]?.element.value).toBe('');
     expect(textareas[1]?.element.value).toBe('');
-    expect(wrapper.find('.diff-output-container').exists()).toBe(false);
+    expect(wrapper.find('.result-section').exists()).toBe(false);
   });
 
   it('shows warning on empty input', async () => {
@@ -107,6 +107,6 @@ describe('DiffChecker.vue', () => {
     await computeButton?.trigger('click');
 
     expect(showToast).toHaveBeenCalledWith(expect.anything(), 'info');
-    expect(wrapper.find('.diff-output-container').exists()).toBe(false);
+    expect(wrapper.find('.result-section').exists()).toBe(false);
   });
 });

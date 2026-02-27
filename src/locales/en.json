@@ -82,6 +82,7 @@
     "modeMilliseconds": "13-digit (ms)",
     "inputPlaceholder": "Enter Timestamp (e.g. 1700000000)",
     "inputAria": "Enter Unix Timestamp",
+    "resultLabel": "Result",
     "convertButton": "Convert ⬇",
     "convertToDateAria": "Convert Timestamp to Date",
     "currentDigits": "Current digits: {n}",
@@ -148,7 +149,10 @@
         "q": "How to convert timestamp to date?",
         "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
       }
-    ]
+    ],
+    "seo": {
+      "description": "Online Unix Timestamp Converter. Supports 10-digit and 13-digit timestamps, multi-timezone display, and conversion history. Essential for developers."
+    }
   },
   "hash": {
     "title": "🔐 Hash Generator",
@@ -185,7 +189,10 @@
         "q": "What is the difference between SHA-256 and MD5?",
         "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
       }
-    ]
+    ],
+    "seo": {
+      "description": "Free online Hash Generator. Supports MD5, SHA-1, SHA-256 algorithms. Pure client-side computation ensures your data privacy."
+    }
   },
   "base64": {
     "title": "🔢 Base64 Converter",
@@ -194,7 +201,10 @@
     "inputLabel": "Text Input",
     "base64Label": "Base64 Output",
     "inputPlaceholder": "Enter text to encode...",
-    "base64Placeholder": "Enter Base64 to decode..."
+    "base64Placeholder": "Enter Base64 to decode...",
+    "seo": {
+      "description": "Online Base64 Encoder and Decoder. Quickly convert plain text to Base64 format and vice versa. Supports UTF-8 characters."
+    }
   },
   "url": {
     "title": "🔗 URL Encoder",
@@ -203,7 +213,10 @@
     "inputLabel": "Text Input",
     "urlLabel": "URL Encoded",
     "inputPlaceholder": "Enter text...",
-    "urlPlaceholder": "Enter URL entities..."
+    "urlPlaceholder": "Enter URL entities...",
+    "seo": {
+      "description": "URL Encoder and Decoder. Ensure your URL parameters are handled correctly with special character safety."
+    }
   },
   "common": {
     "copy": "Copy",
@@ -232,7 +245,10 @@
     "historyTitle": "📜 Conversion History",
     "clear": "Clear",
     "clearAllAria": "Clear All History",
-    "deleteAria": "Delete This Record"
+    "deleteAria": "Delete This Record",
+    "seo": {
+      "description": "Unicode Converter tool. Convert between text and Unicode escapes (\\uXXXX). Supports CJK characters and Emojis."
+    }
   },
   "pinyin": {
     "title": "🗣️ Pinyin Converter",
@@ -250,7 +266,10 @@
     "historyTitle": "📜 Conversion History",
     "clear": "Clear",
     "clearAllAria": "Clear All History",
-    "deleteAria": "Delete This Record"
+    "deleteAria": "Delete This Record",
+    "seo": {
+      "description": "Chinese Pinyin Converter. Easily translate Chinese characters into Pinyin with tone marks and customizable formatting."
+    }
   },
   "qrcode": {
     "title": "📱 QR Code Generator",
@@ -303,71 +322,67 @@
     "historyTitle": "📜 Generation History",
     "clear": "Clear",
     "clearAllAria": "Clear All History",
-    "deleteAria": "Delete This Record"
+    "deleteAria": "Delete This Record",
+    "seo": {
+      "description": "Free online QR Code Generator. Customize size, colors, and error correction. Supports Plain Text, Wi-Fi, and vCards."
+    }
   },
   "json": {
     "title": "📋 JSON Formatter",
-    "description": "Online JSON formatter and validator. Supports unescaping, Unicode decoding, and error highlighting.",
-    "format": "Format",
-    "formatAria": "Format JSON",
-    "minify": "Minify",
-    "minifyAria": "Minify JSON",
-    "toTs": "To TS Interface",
-    "toTsAria": "Convert JSON to TypeScript Interfaces",
     "optionUnescape": "Unescape",
     "optionUnicode": "Decode Unicode",
+    "format": "Format JSON",
+    "minify": "Minify JSON",
+    "toTs": "To TypeScript",
+    "clear": "Clear",
     "inputLabel": "Input JSON",
     "inputPlaceholder": "Paste JSON here...",
-    "outputLabel": "Result",
+    "outputLabel": "Formatted Output",
     "outputPlaceholder": "Result will appear here...",
-    "clear": "Clear",
-    "copy": "Copy",
-    "copied": "Copied",
-    "error": "Error",
+    "error": "Syntax Error",
     "line": "Line",
-    "column": "Col"
+    "column": "Col",
+    "seo": {
+      "description": "Online JSON Formatter and Validator. Pretty print, minify, and convert JSON to TypeScript interfaces instantly."
+    }
   },
   "jwt": {
     "title": "🔓 JWT Debugger",
-    "description": "Decode, verify custom claims, and check expiration of JSON Web Tokens.",
     "inputLabel": "JWT Token",
-    "inputPlaceholder": "Paste JWT Token (eyJ...)",
+    "inputPlaceholder": "Paste your JWT token here...",
     "invalidToken": "Invalid JWT Token",
     "seo": {
-      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+      "description": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims."
     }
   },
   "uuid": {
     "title": "🆔 UUID/ULID Generator",
-    "description": "Bulk generate UUID v4 (Random), v7 (Time-sortable), and ULID. One-click copy.",
-    "typeLabel": "Format Type",
+    "typeLabel": "ID Type",
     "quantityLabel": "Quantity",
     "generate": "Generate",
     "resultLabel": "Result",
     "seo": {
-      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+      "description": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
     }
   },
   "color": {
     "title": "🎨 Color Converter",
-    "description": "Real-time color format conversion and picker. Supports HEX, RGB, HSL, CMYK.",
     "seo": {
-      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+      "description": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
     }
   },
   "diff": {
     "title": "🔍 Diff Checker",
-    "description": "Online text difference checker. Improve readability of differences with semantic comparison.",
-    "original": "Original Text",
-    "modified": "Modified Text",
-    "pasteOriginal": "Paste original text...",
-    "pasteModified": "Paste modified text...",
+    "noInput": "Please enter text in both fields before comparing.",
     "compare": "Compare",
-    "swap": "Swap",
-    "result": "Difference",
-    "noInput": "Please enter text to compare",
+    "swap": "Swap sides",
+    "original": "Original text",
+    "pasteOriginal": "Paste original text here...",
+    "modified": "Modified text",
+    "pasteModified": "Paste modified text here...",
+    "result": "Comparison result",
     "seo": {
-      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+      "description": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
     },
     "context": {
       "title": "About Diff Checker",

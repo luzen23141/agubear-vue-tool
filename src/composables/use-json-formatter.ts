@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function, max-statements */
 
-import { ref, reactive, watch, onMounted } from 'vue';
+import { ref, reactive, watch, onMounted, getCurrentInstance } from 'vue';
 import JsonToTS from 'json-to-ts';
 import { formatJson, type JsonError } from '../utils/json-utils';
 
@@ -66,9 +66,13 @@ export function UseJsonFormatter() {
     }
   };
 
-  onMounted(() => {
-    if (typeof navigator?.clipboard?.readText === 'function') canPaste.value = true;
-  });
+  if (getCurrentInstance()) {
+    onMounted(() => {
+      if (typeof navigator?.clipboard?.readText === 'function') canPaste.value = true;
+    });
+  } else if (typeof navigator?.clipboard?.readText === 'function') {
+    canPaste.value = true;
+  }
   watch(inputJson, () => {
     if (error.value) error.value = null;
   });

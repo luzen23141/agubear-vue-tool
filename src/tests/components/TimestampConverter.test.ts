@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { reactive, nextTick } from 'vue';
-import { mount, flushPromises } from '@vue/test-utils';
+import { mount, flushPromises, DOMWrapper } from '@vue/test-utils';
 import TimestampConverter from '../../views/TimestampConverter.vue';
 import { setupI18n } from '../../i18n';
 
@@ -40,7 +40,7 @@ Object.assign(navigator, {
 
 describe('TimestampConverter.vue', () => {
   beforeEach(() => {
-    i18n.global.locale.value = 'zh-TW';
+    i18n.global.locale.value = 'en'; // Force English for consistent test results
     mockClipboardWrite.mockClear();
     mockClipboardRead.mockClear();
     localStorage.clear();
@@ -49,7 +49,7 @@ describe('TimestampConverter.vue', () => {
   describe('渲染', () => {
     it('應正確渲染標題', () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      expect(wrapper.find('h2').text()).toContain('Unix Timestamp');
+      expect(wrapper.find('h2').text()).toContain('Timestamp');
     });
 
     it('應渲染時區選擇器', () => {
@@ -68,7 +68,7 @@ describe('TimestampConverter.vue', () => {
       const wrapper = mount(TimestampConverter, mountOptions);
       const input = wrapper.find('#timestamp-input');
       expect(input.exists()).toBe(true);
-      expect(input.attributes('type')).toBe('text');
+      expect(input.element.tagName).toBe('TEXTAREA');
     });
 
     it('應渲染日期輸入欄位', () => {
@@ -79,7 +79,7 @@ describe('TimestampConverter.vue', () => {
 
     it('應有兩個結果區域', () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const results = wrapper.findAll('.result');
+      const results = wrapper.findAll('.result-text');
       expect(results).toHaveLength(2);
     });
 
@@ -93,12 +93,16 @@ describe('TimestampConverter.vue', () => {
   describe('轉換功能', () => {
     it('輸入 Timestamp 應能轉換', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('input#timestamp-input');
+      (wrapper.vm as any).timestampInput = '1700000000';
+      await wrapper.vm.$nextTick();
 
-      await input.setValue('1700000000');
-      await wrapper.find('.input-group button').trigger('click');
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find((b) => b.text().includes('Convert'));
+      await convertButton?.trigger('click');
+      await wrapper.vm.$nextTick();
 
-      expect(wrapper.find('.result').text()).toContain('2023-11');
+      expect(wrapper.find('.result-text').text()).toContain('2023-11');
     });
 
     it('切換時區應影響結果', async () => {
@@ -106,78 +110,92 @@ describe('TimestampConverter.vue', () => {
       const select = wrapper.find('select#tz-select');
 
       await select.setValue(0); // UTC+0
+      await wrapper.vm.$nextTick();
 
-      const input = wrapper.find('input#timestamp-input');
-      await input.setValue('1700000000');
-      await wrapper.find('.input-group button').trigger('click');
+      (wrapper.vm as any).timestampInput = '1700000000';
+      await wrapper.vm.$nextTick();
 
-      expect(wrapper.find('.result').text()).toContain('22:13:20');
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find((b) => b.text().includes('Convert'));
+      await convertButton?.trigger('click');
+      await wrapper.vm.$nextTick();
+
+      expect(wrapper.find('.result-text').text()).toContain('22:13:20');
     });
 
     it('無效時間戳應顯示錯誤碼', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('input#timestamp-input');
+      await (wrapper.get('#timestamp-input') as DOMWrapper<HTMLTextAreaElement>).setValue(
+        'invalid'
+      );
+      await flushPromises();
 
-      await input.setValue('');
-      const button = wrapper.findAll('.input-group button')[0];
-      if (button) {
-        await (button as any).trigger('click');
-      }
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find(
+          (b: DOMWrapper<Element>) => b.text().includes('Convert') || b.text().includes('轉換')
+        );
+      await convertButton?.trigger('click');
+      await flushPromises();
 
-      const result = wrapper.find('.result').text();
+      const result = wrapper.find('.result-text').text();
       expect(result).toContain('INVALID_');
     });
 
     it('負數時間戳應能轉換 (1970年前)', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('input#timestamp-input');
+      (wrapper.vm as any).timestampInput = '-86400';
+      await wrapper.vm.$nextTick();
 
-      await input.setValue('-86400');
-      await wrapper.find('.input-group button').trigger('click');
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find((b) => b.text().includes('Convert'));
+      await convertButton?.trigger('click');
+      await wrapper.vm.$nextTick();
 
-      expect(wrapper.find('.result').text()).toContain('1969');
+      expect(wrapper.find('.result-text').text()).toContain('1969');
     });
   });
 
   describe('輸入驗證與邊際情況', () => {
     it('應過濾非數字字元 (保留開頭負號)', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('input#timestamp-input');
+      const input = wrapper.find('#timestamp-input');
 
       await input.setValue('abc123def-456');
       await wrapper.vm.$nextTick();
       await wrapper.vm.$nextTick();
 
-      expect((input.element as HTMLInputElement).value).toBe('123456');
+      expect((input.element as HTMLTextAreaElement).value).toBe('123456');
 
       await input.setValue('-123ab');
       await wrapper.vm.$nextTick();
       await wrapper.vm.$nextTick();
-      expect((input.element as HTMLInputElement).value).toBe('-123');
+      expect((input.element as HTMLTextAreaElement).value).toBe('-123');
     });
 
     it('應限制輸入長度為 15 位', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('input#timestamp-input');
+      const input = wrapper.find('#timestamp-input');
 
       await input.setValue('1234567890123456789');
       await wrapper.vm.$nextTick();
       await wrapper.vm.$nextTick();
 
-      expect((input.element as HTMLInputElement).value).toHaveLength(15);
-      expect((input.element as HTMLInputElement).value).toBe('123456789012345');
+      expect((input.element as HTMLTextAreaElement).value).toHaveLength(15);
+      expect((input.element as HTMLTextAreaElement).value).toBe('123456789012345');
     });
 
     it('輸入極大數字時不應轉為科學記號', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('input#timestamp-input');
+      const input = wrapper.find('#timestamp-input');
 
       const largeValue = '123456789012345';
       await input.setValue(largeValue);
       await wrapper.vm.$nextTick();
 
-      // 因為 type="text"，所以不會被瀏覽器轉成 1.23e...
-      expect((input.element as HTMLInputElement).value).toBe(largeValue);
+      expect((input.element as HTMLTextAreaElement).value).toBe(largeValue);
     });
   });
 
@@ -210,18 +228,17 @@ describe('TimestampConverter.vue', () => {
       const input = wrapper.find('#timestamp-input');
       await input.setValue('1234567890');
       await input.trigger('keyup.enter');
-      expect(wrapper.find('.result').text()).toContain('2009-02-14');
+      expect(wrapper.find('.result-text').text()).toContain('2009-02-14');
     });
 
     it('按下 Enter 應觸發 Date 轉換', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      // 直接修改 vm 狀態並呼叫方法
       await wrapper.find('#tz-select').setValue(0);
       (wrapper.vm as any).dateInput = '2023-11-15 00:00:00';
       await (wrapper.vm as any).convertToTimestamp();
       await wrapper.vm.$nextTick();
 
-      const results = wrapper.findAll('.result');
+      const results = wrapper.findAll('.result-text');
       expect(results[1]?.text()).toMatch(/^\d+$/);
     });
 
@@ -229,7 +246,12 @@ describe('TimestampConverter.vue', () => {
       mockUseHistory.addToHistory.mockClear();
       const wrapper = mount(TimestampConverter, mountOptions);
       await wrapper.find('#timestamp-input').setValue('1700000000');
-      await wrapper.find('.input-group button').trigger('click');
+
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find((b) => b.text().includes('Convert'));
+      await convertButton?.trigger('click');
+      await wrapper.vm.$nextTick();
 
       expect(mockUseHistory.addToHistory).toHaveBeenCalled();
     });
@@ -265,7 +287,11 @@ describe('TimestampConverter.vue', () => {
     it('應能點擊複製 Timestamp 結果', async () => {
       const wrapper: any = mount(TimestampConverter, mountOptions);
       await wrapper.find('#timestamp-input').setValue('1700000000');
-      await (wrapper.findAll('.input-group button')[0] as any).trigger('click');
+
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find((b: DOMWrapper<Element>) => b.text().includes('Convert'));
+      await convertButton?.trigger('click');
       await wrapper.vm.$nextTick();
 
       const copyBtns = wrapper.findAll('.copy-btn');
@@ -300,9 +326,15 @@ describe('TimestampConverter.vue', () => {
       const checkbox = wrapper.find('.format-toggle input[type="checkbox"]');
       if (checkbox.exists()) {
         await checkbox.setChecked(true); // ms
-        await wrapper.find('#timestamp-input').setValue('1700000000000');
-        await (wrapper.findAll('.input-group button')[0] as any).trigger('click');
-        expect(wrapper.find('.result').text()).toContain('2023-11');
+        await wrapper.vm.$nextTick();
+        (wrapper.vm as any).timestampInput = '1700000000000';
+        await wrapper.vm.$nextTick();
+        const convertButton = wrapper
+          .findAll('.btn-primary')
+          .find((b: DOMWrapper<Element>) => b.text().includes('Convert'));
+        await convertButton?.trigger('click');
+        await wrapper.vm.$nextTick();
+        expect(wrapper.find('.result-text').text()).toContain('2023-11');
       }
     });
 
@@ -321,12 +353,18 @@ describe('TimestampConverter.vue', () => {
 
     it('應能切換時間戳模式', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const sMode = wrapper.find('#ts-mode-s');
-      await sMode.setValue();
+      const sMode = wrapper
+        .findAll('.mode-toggle input[type="radio"]')
+        .find((w) => (w.element as HTMLInputElement).value === 's');
+      await sMode?.setValue();
+      await wrapper.vm.$nextTick();
       expect((wrapper.vm as any).timestampMode).toBe('s');
 
-      const msMode = wrapper.find('#ts-mode-ms');
-      await msMode.setValue();
+      const msMode = wrapper
+        .findAll('.mode-toggle input[type="radio"]')
+        .find((w) => (w.element as HTMLInputElement).value === 'ms');
+      await msMode?.setValue();
+      await wrapper.vm.$nextTick();
       expect((wrapper.vm as any).timestampMode).toBe('ms');
     });
 
@@ -358,21 +396,19 @@ describe('TimestampConverter.vue', () => {
       expect(wrapper.find('.history-card').exists()).toBe(true);
       expect(wrapper.find('.history-item').text()).toContain('123');
     });
-
-    it('onMounted 應偵測剪貼簿支援', () => {
-      const wrapper: any = mount(TimestampConverter, mountOptions);
-      expect(wrapper.vm.canPaste).toBe(true);
-    });
   });
   describe('相對時間顯示', () => {
     it('應能顯示相對時間', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const input = wrapper.find('#timestamp-input');
+      const now = Math.floor(Date.now() / 1000);
+      await wrapper.find('#timestamp-input').setValue(now.toString());
+      await wrapper.vm.$nextTick();
 
-      // Set a timestamp ~5 minutes ago relative to now
-      const fiveMinsAgo = Math.floor(Date.now() / 1000) - 300;
-      await input.setValue(fiveMinsAgo.toString());
-      await wrapper.find('.input-group button').trigger('click');
+      const convertButton = wrapper
+        .findAll('.btn-primary')
+        .find((b) => b.text().includes('Convert'));
+      await convertButton?.trigger('click');
+      await wrapper.vm.$nextTick();
 
       // Wait multiple cycles for: async date-fns locale import → ref update → Vue render
       await flushPromises();

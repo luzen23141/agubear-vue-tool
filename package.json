@@ -18,6 +18,7 @@
     "type-check": "vue-tsc --noEmit",
     "audit": "pnpm audit --audit-level=critical",
     "verify": "pnpm run lint:strict && pnpm run lint:arch && pnpm run type-check && pnpm run test && pnpm run audit",
+    "check-short": "pnpm run lint:strict && pnpm run type-check && pnpm run test:unit",
     "check-all": "node scripts/check-all.js",
     "sonar": "node scripts/run-sonar.js",
     "test:e2e": "playwright test",

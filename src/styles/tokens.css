@@ -10,12 +10,12 @@
   --primary-soft: rgba(239, 208, 207, 0.15);
   --primary-glow: rgba(239, 208, 207, 0.25);
 
-  --secondary: #ad9098; /* 藕紫色 (灰紫) */
+  --secondary: #90adad; /* 青磁色 (灰綠藍) */
   --accent: #e9dedf; /* 淺淡粉灰 */
   --accent-soft: rgba(233, 222, 223, 0.15);
   --surface-soft: rgba(146, 169, 189, 0.2);
 
-  --gradient-primary: linear-gradient(135deg, #efd0cf 0%, #ad9098 100%);
+  --gradient-primary: linear-gradient(135deg, #efd0cf 0%, #90adad 100%);
   --gradient-accent: linear-gradient(135deg, #e9dedf 0%, #efd0cf 100%);
   --gradient-subtle: linear-gradient(
     135deg,
@@ -42,7 +42,7 @@
   --border-iridescent: linear-gradient(
     135deg,
     rgba(239, 208, 207, 0.2),
-    rgba(173, 144, 152, 0.2),
+    rgba(144, 173, 173, 0.2),
     rgba(233, 222, 223, 0.2)
   );
 

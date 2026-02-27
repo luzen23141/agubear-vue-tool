@@ -4,19 +4,14 @@
     :mode="mode"
     :encode-label="t('base64.encode')"
     :decode-label="t('base64.decode')"
-    :input-label="mode === 'encode' ? t('base64.inputLabel') : t('base64.base64Label')"
-    :output-label="mode === 'encode' ? t('base64.base64Label') : t('base64.inputLabel')"
-    :input-placeholder="
-      mode === 'encode' ? t('base64.inputPlaceholder') : t('base64.base64Placeholder')
-    "
+    :input-label="t('base64.inputLabel')"
+    :output-label="t('base64.base64Label')"
+    :input-placeholder="t('base64.inputPlaceholder')"
+    :output-placeholder="t('base64.base64Placeholder')"
     :input-text="inputText"
     :output-text="outputText"
     :history="history"
-    :spellcheck="false"
     name="base64"
-    encode-value="encode"
-    decode-value="decode"
-    output-placeholder=""
     @update:mode="mode = $event as 'encode' | 'decode'"
     @update:input-text="inputText = $event"
     @record="recordHistory"
@@ -26,25 +21,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
 import TwoWayConverter from '@/components/common/TwoWayConverter.vue';
 import { UseHistory } from '@/composables/use-history';
 import { UseTwoWayConverter } from '@/composables/use-two-way-converter';
 import { toBase64, fromBase64 } from '@/utils/crypto';
 
 const { t } = useI18n();
-
-useHead({
-  title: computed(() => `${t('app.tabs.base64')} - ${t('app.title')}`),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('seo.description'))
-    }
-  ]
-});
 
 const { history, clearHistory, removeFromHistory } = UseHistory();
 

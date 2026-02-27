@@ -35,104 +35,124 @@ describe('JsonFormatter.vue', () => {
 
   it('應正確渲染輸入與輸出區域', () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    expect(wrapper.find('textarea.json-input').exists()).toBe(true);
-    expect(wrapper.find('textarea.json-output').exists()).toBe(true);
+    expect(wrapper.find('#json-input').exists()).toBe(true);
+    expect(wrapper.find('#json-output').exists()).toBe(true);
   });
 
   it('應能格式化有效的 JSON', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    const input = wrapper.find('textarea.json-input');
+    const input = wrapper.find('#json-input');
     await input.setValue('{"a":1}');
 
-    await wrapper.find('.btn-format').trigger('click');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
 
-    const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
+    const output = (wrapper.find('#json-output').element as HTMLTextAreaElement).value;
     expect(output).toContain('"a": 1');
     expect(wrapper.find('.error-message').exists()).toBe(false);
   });
 
   it('應能壓縮 JSON', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    const input = wrapper.find('textarea.json-input');
+    const input = wrapper.find('#json-input');
     await input.setValue('{\n  "a": 1\n}');
 
-    await wrapper.find('.btn-minify').trigger('click');
+    const minifyButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('Minify') || b.text().includes('壓縮'));
+    await minifyButton?.trigger('click');
 
-    const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
+    const output = (wrapper.find('#json-output').element as HTMLTextAreaElement).value;
     expect(output).toBe('{"a":1}');
   });
 
   it('輸入無效 JSON 時應顯示錯誤訊息', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    const input = wrapper.find('textarea.json-input');
+    const input = wrapper.find('#json-input');
     await input.setValue('{"a":1'); // Missing closing brace
 
-    await wrapper.find('.btn-format').trigger('click');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
 
     expect(wrapper.find('.error-message').exists()).toBe(true);
-    expect(wrapper.find('.error-text').text()).toContain('JSON');
+    expect(wrapper.find('.error-message').text()).toContain('JSON');
   });
 
   it('清除按鈕應清空所有內容', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    await wrapper.find('textarea.json-input').setValue('{"a":1}');
-    await wrapper.find('.btn-format').trigger('click');
+    await wrapper.find('#json-input').setValue('{"a":1}');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
 
-    await wrapper.find('.clear-btn').trigger('click');
+    const clearButton = wrapper
+      .findAll('button')
+      .find(
+        (b) =>
+          b.text().includes('Clear') ||
+          b.text().includes('清空') ||
+          b.text().includes('清除') ||
+          b.text().includes('Clear')
+      );
+    await clearButton?.trigger('click');
 
-    expect((wrapper.find('textarea.json-input').element as HTMLTextAreaElement).value).toBe('');
-    expect((wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value).toBe('');
+    expect((wrapper.find('#json-input').element as HTMLTextAreaElement).value).toBe('');
+    expect((wrapper.find('#json-output').element as HTMLTextAreaElement).value).toBe('');
     expect(wrapper.find('.error-message').exists()).toBe(false);
   });
 
   it('測試反轉義選項', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    const unescapeToggle = wrapper.find('.toggle-unescape');
+    const unescapeToggle = wrapper.find('input[type="checkbox"]');
 
-    // Just set state directly if UI trigger is flaky, or try proper trigger
-    await unescapeToggle.trigger('click');
+    await unescapeToggle.setValue(true);
     await wrapper.vm.$nextTick();
 
-    // If trigger didn't work, set it manually to ensure we test the logic
-    if (!(wrapper.vm as any).options.unescape) {
-      (wrapper.vm as any).options.unescape = true;
-    }
-
-    await wrapper.find('textarea.json-input').setValue('{\\"a\\": 1}');
-    await wrapper.find('.btn-format').trigger('click');
+    await wrapper.find('#json-input').setValue('{\\"a\\": 1}');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
     await wrapper.vm.$nextTick();
 
-    const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
+    const output = (wrapper.find('#json-output').element as HTMLTextAreaElement).value;
     expect(output.replaceAll(/\s/g, '')).toContain('"a":1');
   });
 
   it('測試 Unicode 解碼選項', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    const unicodeToggle = wrapper.find('.toggle-unicode');
+    const unicodeToggle = wrapper.findAll('input[type="checkbox"]')[1];
 
-    await unicodeToggle.trigger('click');
+    await unicodeToggle?.setValue(true);
     await wrapper.vm.$nextTick();
 
-    if (!(wrapper.vm as any).options.decodeUnicode) {
-      (wrapper.vm as any).options.decodeUnicode = true;
-    }
-
-    await wrapper.find('textarea.json-input').setValue('{"a": "\\u4e2d"}');
-    await wrapper.find('.btn-format').trigger('click');
+    await wrapper.find('#json-input').setValue('{"a": "\\u4e2d"}');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
     await wrapper.vm.$nextTick();
 
-    const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
+    const output = (wrapper.find('#json-output').element as HTMLTextAreaElement).value;
     expect(output).toContain('"a": "中"');
   });
 
   it('複製按鈕應觸發 clipboard write', async () => {
     const wrapper = mount(JsonFormatter, mountOptions);
-    await wrapper.find('textarea.json-input').setValue('{"test": true}');
-    await wrapper.find('.btn-format').trigger('click');
+    await wrapper.find('#json-input').setValue('{"test": true}');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
     await wrapper.vm.$nextTick();
 
-    const copyButton = wrapper.find('.copy-btn');
-    await copyButton.trigger('click');
+    const copyButton = wrapper.findAll('.copy-btn-overlay').pop();
+    await copyButton?.trigger('click');
     expect(mockClipboardWrite).toHaveBeenCalledWith(expect.stringContaining('"test": true'));
   });
 
@@ -164,11 +184,14 @@ describe('JsonFormatter.vue', () => {
     const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const wrapper = mount(JsonFormatter, mountOptions);
     mockClipboardWrite.mockRejectedValueOnce(new Error('copy fail'));
-    await wrapper.find('textarea.json-input').setValue('{"a":1}');
-    await wrapper.find('.btn-format').trigger('click');
+    await wrapper.find('#json-input').setValue('{"a":1}');
+    const formatButton = wrapper
+      .findAll('button')
+      .find((b) => b.text().includes('格式化') || b.text().includes('Format'));
+    await formatButton?.trigger('click');
 
-    const copyButton = wrapper.find('.copy-btn');
-    await copyButton.trigger('click');
+    const copyButton = wrapper.findAll('.copy-btn-overlay').pop();
+    await copyButton?.trigger('click');
     // Error is logged to console
     expect(consoleSpy).toHaveBeenCalled();
     consoleSpy.mockRestore();
@@ -193,25 +216,30 @@ describe('JsonFormatter.vue', () => {
   });
 
   describe('Accessibility', () => {
-    it('按鈕應有 aria-label', () => {
+    it('按鈕應有可識別的文字內容', () => {
       const wrapper = mount(JsonFormatter, mountOptions);
-      expect(wrapper.find('.btn-format').attributes('aria-label')).toBeTruthy();
-      expect(wrapper.find('.btn-minify').attributes('aria-label')).toBeTruthy();
+      const buttons = wrapper.findAll('button');
+      for (const button of buttons) {
+        const hasText = button.text().trim().length > 0;
+        const hasAriaLabel = !!button.attributes('aria-label');
+        const hasTitle = !!button.attributes('title');
+        expect(hasText || hasAriaLabel || hasTitle).toBe(true);
+      }
     });
   });
   describe('TypeScript 介面轉換', () => {
     it('應能將 JSON 轉換為 TypeScript Interface', async () => {
       const wrapper = mount(JsonFormatter, mountOptions);
-      const input = wrapper.find('textarea.json-input');
+      const input = wrapper.find('#json-input');
       await input.setValue('{"name": "Alex", "age": 30}');
 
-      const toTsButton = wrapper.find('.btn-to-ts');
+      const toTsButton = wrapper.findAll('button').find((b) => b.text().includes('TS'));
 
       // Only execute if button exists (feature flag check effectively)
-      if (toTsButton.exists()) {
+      if (toTsButton?.exists()) {
         await toTsButton.trigger('click');
 
-        const output = (wrapper.find('textarea.json-output').element as HTMLTextAreaElement).value;
+        const output = (wrapper.find('#json-output').element as HTMLTextAreaElement).value;
         expect(output).toContain('interface');
         expect(output).toContain('name: string');
         expect(output).toContain('age: number');
@@ -220,11 +248,11 @@ describe('JsonFormatter.vue', () => {
 
     it('無效 JSON 轉換 TS 應顯示錯誤', async () => {
       const wrapper = mount(JsonFormatter, mountOptions);
-      const input = wrapper.find('textarea.json-input');
+      const input = wrapper.find('#json-input');
       await input.setValue('{"name": "Alex"'); // Invalid
 
-      const toTsButton = wrapper.find('.btn-to-ts');
-      if (toTsButton.exists()) {
+      const toTsButton = wrapper.findAll('button').find((b) => b.text().includes('TS'));
+      if (toTsButton?.exists()) {
         await toTsButton.trigger('click');
         expect(wrapper.find('.error-message').exists()).toBe(true);
       }

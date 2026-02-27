@@ -1,107 +1,80 @@
 <template>
-  <div class="uuid-generator">
-    <div class="description-card">
-      <p>{{ t('uuid.description') }}</p>
-    </div>
-
-    <BaseCard :title="t('uuid.title')">
-      <!-- Controls -->
-      <div class="controls-grid">
-        <!-- Type Selection -->
-        <fieldset class="control-group">
-          <legend class="group-label">{{ t('uuid.typeLabel') }}</legend>
-          <div class="type-toggles">
-            <label
-              v-for="type in idTypes"
-              :key="type.value"
-              :class="{ active: selectedType === type.value }"
-              class="type-radio"
-            >
-              <input
-                v-model="selectedType"
-                :value="type.value"
-                type="radio"
-                name="idType"
-                class="sr-only"
-              />
-              {{ type.label }}
-            </label>
-          </div>
-        </fieldset>
-
-        <!-- Quantity -->
-        <div class="control-group">
-          <label for="uuid-quantity" class="group-label">
-            {{ t('uuid.quantityLabel') }}: <span class="qty-val">{{ quantity }}</span>
+  <ToolPageLayout :title="t('uuid.title')" tool-key="uuid">
+    <!-- Controls Section -->
+    <div class="controls-grid mb-8">
+      <!-- Type Selection -->
+      <fieldset class="control-group">
+        <legend class="group-label">{{ t('uuid.typeLabel') }}</legend>
+        <div class="type-toggles">
+          <label
+            v-for="type in idTypes"
+            :key="type.value"
+            :class="{ active: selectedType === type.value }"
+            class="type-radio"
+          >
+            <input
+              v-model="selectedType"
+              :value="type.value"
+              type="radio"
+              name="idType"
+              class="sr-only"
+            />
+            {{ type.label }}
           </label>
-          <input
-            id="uuid-quantity"
-            v-model.number="quantity"
-            type="range"
-            min="1"
-            max="50"
-            class="qty-slider"
-          />
         </div>
+      </fieldset>
 
-        <!-- Action -->
-        <div class="control-group action-group">
-          <button class="generate-btn" type="button" @click="generateIds">
-            <SvgIcon name="refresh-cw" /> {{ t('uuid.generate') }}
-          </button>
-        </div>
-      </div>
-
-      <!-- Output -->
-      <div class="output-section">
-        <div class="output-header">
-          <h2>{{ t('uuid.resultLabel') }}</h2>
-          <div class="output-actions">
-            <button class="copy-btn" type="button" @click="copyAll">
-              <SvgIcon name="copy" /> {{ t('common.copy') }}
-            </button>
-          </div>
-        </div>
-        <textarea
-          id="uuid-output"
-          ref="outputRef"
-          :value="outputString"
-          :aria-label="t('uuid.resultLabel')"
-          class="uuid-output"
-          readonly
-          @click="selectAll"
+      <!-- Quantity Selection -->
+      <div class="control-group">
+        <label
+          for="uuid-quantity"
+          class="group-label text-0.9rem font-600 color-var(--text-secondary) mb-2"
+        >
+          {{ t('uuid.quantityLabel') }}: <span class="qty-val">{{ quantity }}</span>
+        </label>
+        <input
+          id="uuid-quantity"
+          v-model.number="quantity"
+          type="range"
+          min="1"
+          max="50"
+          class="qty-slider"
         />
       </div>
-    </BaseCard>
 
-    <ToolContext tool-key="uuid" />
-  </div>
+      <!-- Action -->
+      <div class="control-group flex items-end">
+        <button class="generate-btn w-full" type="button" @click="generateIds">
+          <SvgIcon name="refresh-cw" /> {{ t('uuid.generate') }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Output Section -->
+    <div class="output-section">
+      <div class="pane-label">{{ t('uuid.resultLabel') }}</div>
+      <InputWithCopy
+        id="uuid-output"
+        :model-value="outputString"
+        class="uuid-result-input"
+        readonly
+        allow-copy
+        @click="selectAll"
+      />
+    </div>
+  </ToolPageLayout>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, inject } from 'vue';
-import { TOAST_KEY } from '@/composables/use-toast-key';
+import { ref, computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
 import { v4 as uuidv4, v7 as uuidv7 } from 'uuid';
 import { ulid } from 'ulid';
-import BaseCard from '@/components/common/BaseCard.vue';
-import ToolContext from '@/components/common/ToolContext.vue';
+import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
+import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
 
 const { t } = useI18n();
-
-useHead({
-  title: computed(() => `${t('app.tabs.uuid')} - ${t('app.title')}`),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => t('seo.uuidDescription'))
-    }
-  ]
-});
-
-const showToast = inject(TOAST_KEY, () => {});
 
 const idTypes = [
   { value: 'v4', label: 'UUID v4' },
@@ -112,7 +85,6 @@ const idTypes = [
 const selectedType = ref('v4');
 const quantity = ref(1);
 const generatedIds = ref<string[]>([]);
-const outputRef = ref<HTMLTextAreaElement | null>(null);
 
 const outputString = computed(() => generatedIds.value.join('\n'));
 
@@ -122,38 +94,27 @@ const generateIds = () => {
     switch (selectedType.value) {
       case 'v4': {
         result.push(uuidv4());
-
         break;
       }
       case 'v7': {
         result.push(uuidv7());
-
         break;
       }
       case 'ulid': {
         result.push(ulid());
-
         break;
       }
-      // No default
     }
   }
   generatedIds.value = result;
 };
 
-const copyAll = async () => {
-  if (!outputString.value) return;
-  try {
-    await navigator.clipboard.writeText(outputString.value);
-    showToast(t('common.copied'), 'success');
-  } catch (error) {
-    console.error(error);
-    showToast('Failed to copy', 'error');
+const selectAll = (event: MouseEvent) => {
+  const container = event.currentTarget as HTMLElement;
+  const textarea = container.querySelector('textarea');
+  if (textarea) {
+    textarea.select();
   }
-};
-
-const selectAll = () => {
-  outputRef.value?.select();
 };
 
 onMounted(() => {
@@ -162,60 +123,47 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.uuid-generator {
-  width: 100%;
-}
-
-.description-card {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
 .controls-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .controls-grid {
-    flex-direction: row;
+    grid-template-columns: 2fr 1.5fr 1fr;
     align-items: flex-end;
   }
 }
 
 .control-group {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-.action-group {
-  flex: 0 0 auto;
 }
 
 .group-label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   display: flex;
   justify-content: space-between;
 }
 
 .qty-val {
   color: var(--primary);
+  font-family: 'SF Mono', monospace;
+  font-weight: 700;
 }
 
 /* Type Toggles */
 .type-toggles {
   display: flex;
-  background: var(--surface-raised);
+  background: var(--background-alt);
   padding: 4px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
@@ -224,12 +172,12 @@ onMounted(() => {
 .type-radio {
   flex: 1;
   text-align: center;
-  padding: 6px 12px;
+  padding: 8px 12px;
   font-size: 0.85rem;
   cursor: pointer;
   border-radius: calc(var(--radius-sm) - 2px);
   transition: all var(--transition-fast);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
@@ -240,7 +188,7 @@ onMounted(() => {
 .type-radio.active {
   background: var(--primary);
   color: white;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
 }
 
 .sr-only {
@@ -259,19 +207,23 @@ onMounted(() => {
   width: 100%;
   accent-color: var(--primary);
   height: 6px;
-  background: var(--surface-raised);
+  background: var(--border);
   border-radius: 4px;
+  cursor: pointer;
 }
 
 /* Generate Button */
 .generate-btn {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 10px 24px;
   background: var(--primary);
   color: white;
   border: none;
   border-radius: var(--radius-sm);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -279,54 +231,23 @@ onMounted(() => {
 .generate-btn:hover {
   background: var(--primary-hover);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 }
 
-.generate-btn:active {
-  transform: translateY(0);
-}
-
-/* Output */
-.output-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.output-header h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.copy-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
+.pane-label {
+  display: block;
   font-size: 0.85rem;
-  cursor: pointer;
-  padding: 4px 8px;
-}
-.copy-btn:hover {
-  color: var(--primary);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.uuid-output {
-  width: 100%;
+:deep(.uuid-result-input) textarea {
   height: 300px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface-raised);
-  color: var(--text-primary);
-  font-family: 'SF Mono', monospace;
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-  resize: vertical;
-}
-.uuid-output:focus {
-  outline: 2px solid var(--primary-soft);
-  border-color: var(--primary);
 }
 </style>

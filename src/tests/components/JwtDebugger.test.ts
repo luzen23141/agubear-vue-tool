@@ -46,7 +46,7 @@ describe('JwtDebugger.vue', () => {
 
   it('renders correctly', () => {
     const wrapper = mount(JwtDebugger, mountOptions);
-    expect(wrapper.find('.jwt-debugger').exists()).toBe(true);
+    expect(wrapper.find('.jwt-input-field').exists()).toBe(true);
     expect(wrapper.find('textarea').exists()).toBe(true);
   });
 

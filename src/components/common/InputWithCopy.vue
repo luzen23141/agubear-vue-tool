@@ -21,9 +21,11 @@
         :maxlength="maxlength"
         :inputmode="inputmode"
         :spellcheck="spellcheck"
+        :aria-label="ariaLabel || label"
         :class="{ 'is-readonly': readonly }"
         class="custom-textarea"
         @input="handleInput"
+        @keyup.enter="emit('enter')"
       />
       <button
         v-if="modelValue && allowCopy"
@@ -55,12 +57,14 @@ const props = withDefaults(
     maxlength?: number | string;
     inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
     spellcheck?: boolean;
+    ariaLabel?: string;
   }>(),
   {
     label: '',
     placeholder: '',
     maxlength: undefined,
-    inputmode: 'text'
+    inputmode: 'text',
+    ariaLabel: ''
   }
 );
 
@@ -68,6 +72,7 @@ const emit = defineEmits<{
   (_event: 'update:modelValue', _value: string): void;
   (_event: 'paste', _value: string): void;
   (_event: 'copy', _value: string): void;
+  (_event: 'enter'): void;
 }>();
 
 const showToast = inject(TOAST_KEY, () => {});

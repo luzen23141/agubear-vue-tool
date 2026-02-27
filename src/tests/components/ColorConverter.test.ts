@@ -47,45 +47,39 @@ describe('ColorConverter.vue', () => {
 
   it('renders correctly', () => {
     const wrapper = mount(ColorConverter, mountOptions);
-    expect(wrapper.find('.color-converter').exists()).toBe(true);
-    expect(wrapper.findAll('input').length).toBeGreaterThan(0);
+    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.findAll('input[type="color"]').length).toBe(1);
+    expect(wrapper.find('#color-hex').exists()).toBe(true);
   });
 
   it('updates all fields when HEX is changed', async () => {
     const wrapper = mount(ColorConverter, mountOptions);
-    const inputs = wrapper.findAll('.input-wrapper input');
-    const hexInput = inputs[0]; // HEX is first
-    const rgbInput = inputs[1]; // RGB is second
-
-    if (!hexInput || !rgbInput) throw new Error('Inputs not found');
+    const hexInput = wrapper.find('#color-hex');
+    const rgbInput = wrapper.find('#color-rgb');
+    const hslInput = wrapper.find('#color-hsl');
 
     // Set HEX to pure red
     await hexInput.setValue('#ff0000');
 
     // Check RGB
-    expect(rgbInput.element.value).toBe('rgb(255, 0, 0)');
+    expect((rgbInput.element as HTMLTextAreaElement).value).toBe('rgb(255, 0, 0)');
     // Check HSL (approx)
-    expect(wrapper.find('input[placeholder="hsl(0, 0%, 0%)"]').element.value).toContain(
-      'hsl(0, 100%, 50%)'
-    );
+    expect((hslInput.element as HTMLTextAreaElement).value).toContain('hsl(0, 100%, 50%)');
   });
 
   it('updates all fields when RGB is changed', async () => {
     const wrapper = mount(ColorConverter, mountOptions);
-    const inputs = wrapper.findAll('.input-wrapper input');
-    const hexInput = inputs[0];
-    const rgbInput = inputs[1];
-
-    if (!hexInput || !rgbInput) throw new Error('Inputs not found');
+    const hexInput = wrapper.find('#color-hex');
+    const rgbInput = wrapper.find('#color-rgb');
 
     await rgbInput.setValue('rgb(0, 0, 255)'); // Blue
 
-    expect(hexInput.element.value).toBe('#0000ff');
+    expect((hexInput.element as HTMLTextAreaElement).value).toBe('#0000ff');
   });
 
   it('copies to clipboard when button clicked', async () => {
     const wrapper = mount(ColorConverter, mountOptions);
-    const copyBtns = wrapper.findAll('.copy-btn');
+    const copyBtns = wrapper.findAll('.copy-btn-overlay');
 
     await copyBtns[0]?.trigger('click');
     expect(navigator.clipboard.writeText).toHaveBeenCalled();
@@ -94,19 +88,14 @@ describe('ColorConverter.vue', () => {
 
   it('ignores invalid input', async () => {
     const wrapper = mount(ColorConverter, mountOptions);
-    const inputs = wrapper.findAll('.input-wrapper input');
-    const hexInput = inputs[0];
-    const rgbInput = inputs[1];
+    const hexInput = wrapper.find('#color-hex');
+    const rgbInput = wrapper.find('#color-rgb');
 
-    if (!hexInput || !rgbInput) throw new Error('Inputs not found');
-
-    const originalRgb = rgbInput.element.value;
+    const originalRgb = (rgbInput.element as HTMLTextAreaElement).value;
 
     await hexInput.setValue('invalid-hex');
 
-    // RGB should NOT change (or stricter: stay same as before)
-    // The component logic says: if (color.isValid()) syncAll(color);
-    // So invalid input just doesn't trigger sync.
-    expect(rgbInput.element.value).toBe(originalRgb);
+    // RGB should NOT change
+    expect((rgbInput.element as HTMLTextAreaElement).value).toBe(originalRgb);
   });
 });
