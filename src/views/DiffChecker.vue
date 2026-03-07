@@ -125,7 +125,7 @@ const diffHtml = computed(() => {
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   border: none;
 }
 
@@ -152,7 +152,7 @@ const diffHtml = computed(() => {
 }
 
 .btn-text:hover {
-  color: #e05252;
+  color: var(--status-danger);
 }
 
 .editor-grid {
@@ -195,14 +195,14 @@ const diffHtml = computed(() => {
 }
 
 :deep(ins) {
-  background-color: rgba(45, 157, 106, 0.25);
+  background-color: var(--status-success-soft);
   color: var(--text-primary);
   text-decoration: none;
   border-bottom: 2px solid var(--primary);
 }
 
 :deep(del) {
-  background-color: rgba(239, 68, 68, 0.25);
+  background-color: var(--status-danger-soft);
   color: var(--text-muted);
   text-decoration: line-through;
 }

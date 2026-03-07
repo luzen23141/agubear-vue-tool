@@ -169,7 +169,7 @@ onMounted(() => {
 .action-buttons button {
   padding: 10px 20px;
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;

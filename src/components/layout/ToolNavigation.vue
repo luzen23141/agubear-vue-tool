@@ -35,7 +35,7 @@
     <!-- Tool Groups -->
     <div class="tool-groups-container">
       <div v-for="(group, groupName) in groupedTools" :key="groupName" class="tool-group">
-        <h3 class="group-title">{{ t(`app.categories.${groupName}`) }}</h3>
+        <h2 class="group-title">{{ t(`app.categories.${groupName}`) }}</h2>
         <div class="tab-list-container">
           <div v-for="tool in group" :key="tool.id" class="tab-item-wrapper">
             <button
@@ -127,23 +127,28 @@ const toolDefs: ToolDefinition[] = [
     category: 'generators'
   },
   { id: 'json', nameKey: 'app.tabs.json', ariaKey: 'app.ariaLabels.json', category: 'formatters' },
-  { id: 'jwt', nameKey: 'app.tabs.jwt', ariaKey: 'app.ariaLabels.json', category: 'formatters' },
+  { id: 'jwt', nameKey: 'app.tabs.jwt', ariaKey: 'app.ariaLabels.jwt', category: 'formatters' },
   { id: 'uuid', nameKey: 'app.tabs.uuid', ariaKey: 'app.ariaLabels.uuid', category: 'generators' },
   {
     id: 'color',
     nameKey: 'app.tabs.color',
-    ariaKey: 'app.ariaLabels.timestamp',
+    ariaKey: 'app.ariaLabels.color',
     category: 'conversion'
   },
-  { id: 'diff', nameKey: 'app.tabs.diff', ariaKey: 'app.ariaLabels.json', category: 'generators' }
+  { id: 'diff', nameKey: 'app.tabs.diff', ariaKey: 'app.ariaLabels.diff', category: 'generators' }
 ];
 
 const tools = computed(() =>
-  toolDefs.map((td) => ({
-    ...td,
-    name: t(td.nameKey),
-    ariaLabel: t(td.ariaKey)
-  }))
+  toolDefs.map((td) => {
+    const translatedAria = t(td.ariaKey);
+    const translatedName = t(td.nameKey);
+
+    return {
+      ...td,
+      name: translatedName,
+      ariaLabel: translatedAria === td.ariaKey ? translatedName : translatedAria
+    };
+  })
 );
 
 const activeTab = computed(() => (route.name as string) || 'timestamp');
@@ -236,14 +241,14 @@ onMounted(() => {
 }
 
 .fav-toggle-btn:hover {
-  background: rgba(251, 191, 36, 0.08);
-  color: #8b3e04;
-  border-color: rgba(251, 191, 36, 0.3);
+  background: var(--status-warning-soft);
+  color: var(--status-warning);
+  border-color: var(--status-warning);
 }
 
 .fav-toggle-btn.active {
   background: var(--gradient-accent);
-  color: white;
+  color: var(--text-on-primary);
   border-color: transparent;
   box-shadow: var(--shadow-glow);
 }
@@ -324,7 +329,7 @@ onMounted(() => {
 
 .tab-btn.active {
   background: var(--gradient-primary);
-  color: white;
+  color: var(--text-on-primary);
   font-weight: 700;
   box-shadow: var(--shadow-glow-strong);
   transform: scale(1.05);
@@ -381,11 +386,11 @@ onMounted(() => {
 .star-action-btn:hover {
   transform: translateY(-50%) scale(1.3);
   opacity: 1;
-  color: #fbbf24;
+  color: var(--status-warning);
 }
 
 .star-action-btn.starred {
-  color: #fbbf24;
+  color: var(--status-warning);
   opacity: 1;
 }
 
@@ -395,8 +400,8 @@ onMounted(() => {
 
 .tab-btn.active + .star-action-btn:hover,
 .tab-btn.active + .star-action-btn.starred {
-  color: #fbbf24;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: var(--status-warning);
+  text-shadow: 0 1px 4px var(--status-warning-soft);
 }
 
 .no-tools-msg {

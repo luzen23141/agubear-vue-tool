@@ -136,7 +136,7 @@ const {
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   border: none;
 }
 
@@ -163,7 +163,7 @@ const {
 }
 
 .btn-text:hover {
-  color: #e05252;
+  color: var(--status-danger);
 }
 
 .editor-grid {
@@ -193,10 +193,10 @@ const {
   align-items: flex-start;
   gap: 8px;
   padding: 10px 14px;
-  background: rgba(224, 82, 82, 0.1);
-  border-left: 3px solid #e05252;
+  background: var(--status-danger-soft);
+  border-left: 3px solid var(--status-danger);
   border-radius: var(--radius-sm);
-  color: #e05252;
+  color: var(--status-danger);
   font-size: 0.85rem;
   line-height: 1.4;
 }

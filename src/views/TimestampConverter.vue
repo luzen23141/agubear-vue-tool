@@ -61,6 +61,7 @@
             <div v-if="relativeTime" class="relative-time">({{ relativeTime }})</div>
             <button
               v-if="dateResult"
+              :aria-label="t('common.copy')"
               type="button"
               class="copy-icon-btn"
               @click="copyText(dateResult)"
@@ -110,6 +111,7 @@
             <div class="result-text font-mono">{{ timestampResult || '---' }}</div>
             <button
               v-if="timestampResult"
+              :aria-label="t('common.copy')"
               type="button"
               class="copy-icon-btn"
               @click="copyText(timestampResult)"
@@ -241,7 +243,7 @@ defineExpose({
 
 .mode-btn.active {
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
 }
 
@@ -325,7 +327,7 @@ defineExpose({
   gap: 8px;
   padding: 10px;
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   border: none;
   border-radius: var(--radius-sm);
   font-weight: 700;
@@ -378,7 +380,7 @@ defineExpose({
   width: 16px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: var(--text-on-primary);
   transition: 0.4s;
   border-radius: 50%;
 }

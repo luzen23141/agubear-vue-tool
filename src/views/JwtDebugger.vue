@@ -169,8 +169,8 @@ const syntaxHighlight = (json: unknown) => {
 }
 
 .btn-text:hover {
-  color: #e05252;
-  background: rgba(224, 82, 82, 0.1);
+  color: var(--status-danger);
+  background: var(--status-danger-soft);
 }
 
 .converter-grid {
@@ -196,10 +196,10 @@ const syntaxHighlight = (json: unknown) => {
 .error-message {
   margin-top: 12px;
   padding: 10px 14px;
-  background: rgba(224, 82, 82, 0.1);
-  border-left: 3px solid #e05252;
+  background: var(--status-danger-soft);
+  border-left: 3px solid var(--status-danger);
   border-radius: var(--radius-sm);
-  color: #e05252;
+  color: var(--status-danger);
   font-size: 0.9rem;
   display: flex;
   align-items: center;
@@ -234,11 +234,11 @@ const syntaxHighlight = (json: unknown) => {
 }
 
 .status-bar.valid {
-  border-left-color: #10b981;
+  border-left-color: var(--status-success);
 }
 
 .status-bar.expired {
-  border-left-color: #ef4444;
+  border-left-color: var(--status-danger);
 }
 
 .status-item {
@@ -259,23 +259,23 @@ const syntaxHighlight = (json: unknown) => {
 }
 
 .badge-valid {
-  background: rgba(16, 185, 129, 0.1);
-  color: #10b981;
+  background: var(--status-success-soft);
+  color: var(--status-success);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 800;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--status-success-soft);
 }
 
 .badge-expired {
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
+  background: var(--status-danger-soft);
+  color: var(--status-danger);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 800;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid var(--status-danger-soft);
 }
 
 .decoded-grid {
@@ -296,11 +296,11 @@ const syntaxHighlight = (json: unknown) => {
 }
 
 .header-card :deep(.card) {
-  border-left-color: #fbbf24;
+  border-left-color: var(--status-warning);
 }
 
 .payload-card :deep(.card) {
-  border-left-color: #14b8a6;
+  border-left-color: var(--interactive-secondary);
 }
 
 .json-display {
@@ -315,18 +315,18 @@ const syntaxHighlight = (json: unknown) => {
 
 /* Syntax Highlighting */
 :deep(.string) {
-  color: #10b981;
+  color: var(--status-success);
 }
 :deep(.number) {
-  color: #3b82f6;
+  color: var(--status-info);
 }
 :deep(.boolean) {
-  color: #f59e0b;
+  color: var(--status-warning);
 }
 :deep(.null) {
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 :deep(.key) {
-  color: #ef4444;
+  color: var(--status-danger);
 }
 </style>

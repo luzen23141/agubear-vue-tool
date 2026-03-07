@@ -31,7 +31,8 @@
       "categorySelect": "Filter by Category",
       "toggleFavorites": "Show Only Favorites",
       "star": "Add to Favorites",
-      "unstar": "Remove from Favorites"
+      "unstar": "Remove from Favorites",
+      "toolNavigation": "Tool navigation and category filters"
     },
     "footer": {
       "poweredBy": "Powered by 💚 Vue 3 & Vite",
@@ -149,7 +150,11 @@
         "q": "How to convert timestamp to date?",
         "a": "You can use this tool to automatically detect digits and convert based on your input. In JavaScript, you can use new Date(timestamp * 1000) to handle second-level timestamps."
       }
-    ]
+    ],
+    "resultLabel": "Result",
+    "seo": {
+      "description": "Online Unix Timestamp Converter. Supports 10-digit and 13-digit timestamps, multi-timezone display, and conversion history. Essential for developers."
+    }
   },
   "md5": {
     "title": "🔐 MD5 Hash Üretici",
@@ -186,7 +191,10 @@
     "historyTitle": "📜 Geçmiş",
     "clear": "Temizle",
     "clearAllAria": "Geçmişi temizle",
-    "deleteAria": "Kaydı sil"
+    "deleteAria": "Kaydı sil",
+    "seo": {
+      "description": "Unicode Converter tool. Convert between text and Unicode escapes (\\uXXXX). Supports CJK characters and Emojis."
+    }
   },
   "pinyin": {
     "title": "🗣️ Pinyin Dönüştürücü",
@@ -204,7 +212,10 @@
     "clearAllAria": "Geçmişi temizle",
     "deleteAria": "Kaydı sil",
     "showSpaces": "Boşlukları Göster",
-    "showSpacesAria": "Show Spaces"
+    "showSpacesAria": "Show Spaces",
+    "seo": {
+      "description": "Chinese Pinyin Converter. Easily translate Chinese characters into Pinyin with tone marks and customizable formatting."
+    }
   },
   "qrcode": {
     "title": "📱 QR Kod Oluşturucu",
@@ -235,7 +246,32 @@
     "historyTitle": "📜 Oluşturma geçmişi",
     "clear": "Temizle",
     "clearAllAria": "Geçmişi temizle",
-    "deleteAria": "Kaydı sil"
+    "deleteAria": "Kaydı sil",
+    "modeText": "Plain Text",
+    "modeWifi": "Wi-Fi Network",
+    "modeContact": "Contact Card (vCard)",
+    "textPlaceholder": "Enter text or URL to generate QR Code...",
+    "textAria": "Enter text or URL",
+    "wifiPlaceholder": "Configure Wi-Fi network details",
+    "wifiAria": "Wi-Fi settings",
+    "wifiSsid": "Network Name (SSID)",
+    "wifiSsidPlaceholder": "Enter Wi-Fi network name (SSID)",
+    "wifiPassword": "Password",
+    "wifiPasswordPlaceholder": "Enter Wi-Fi password",
+    "wifiEncryption": "Encryption",
+    "wifiHidden": "Hidden Network",
+    "contactPlaceholder": "Configure contact information",
+    "contactAria": "Contact details",
+    "contactName": "Name",
+    "contactNamePlaceholder": "Name",
+    "contactOrg": "Organization",
+    "contactPhone": "Phone",
+    "contactPhonePlaceholder": "Phone number",
+    "contactEmail": "Email",
+    "contactUrl": "Website",
+    "seo": {
+      "description": "Free online QR Code Generator. Customize size, colors, and error correction. Supports Plain Text, Wi-Fi, and vCards."
+    }
   },
   "hash": {
     "title": "🔐 Hash Generator",
@@ -272,7 +308,10 @@
         "q": "What is the difference between SHA-256 and MD5?",
         "a": "SHA-256 is more secure and has a lower collision probability than MD5, producing a longer hash (64 characters vs 32 characters). Modern security applications recommend using SHA-256 or higher."
       }
-    ]
+    ],
+    "seo": {
+      "description": "Free online Hash Generator. Supports MD5, SHA-1, SHA-256 algorithms. Pure client-side computation ensures your data privacy."
+    }
   },
   "base64": {
     "title": "🔢 Base64 Dönüştürücü",
@@ -281,7 +320,10 @@
     "inputLabel": "Metin Girdisi",
     "base64Label": "Base64 Çıktısı",
     "inputPlaceholder": "Kodlanacak metni girin...",
-    "base64Placeholder": "Çözülecek Base64'ü girin..."
+    "base64Placeholder": "Çözülecek Base64'ü girin...",
+    "seo": {
+      "description": "Online Base64 Encoder and Decoder. Quickly convert plain text to Base64 format and vice versa. Supports UTF-8 characters."
+    }
   },
   "url": {
     "title": "🔗 URL Kodlayıcı",
@@ -290,7 +332,10 @@
     "inputLabel": "Metin Girdisi",
     "urlLabel": "URL Kodlanmış",
     "inputPlaceholder": "Metin girin...",
-    "urlPlaceholder": "URL varlıklarını girin..."
+    "urlPlaceholder": "URL varlıklarını girin...",
+    "seo": {
+      "description": "URL Encoder and Decoder. Ensure your URL parameters are handled correctly with special character safety."
+    }
   },
   "common": {
     "copy": "Copy",
@@ -320,7 +365,10 @@
     "copied": "Copied",
     "error": "Error",
     "line": "Line",
-    "column": "Col"
+    "column": "Col",
+    "seo": {
+      "description": "Online JSON Formatter and Validator. Pretty print, minify, and convert JSON to TypeScript interfaces instantly."
+    }
   },
   "jwt": {
     "title": "🔓 JWT Hata Ayıklayıcı",
@@ -329,7 +377,8 @@
     "inputPlaceholder": "JWT Token yapıştır (eyJ...)",
     "invalidToken": "Geçersiz JWT Token",
     "seo": {
-      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only."
+      "jwtDescription": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims. Client-side only.",
+      "description": "Online JWT (JSON Web Token) debugger. Decode and verify RS256/HS256 tokens, check expiration, and view claims."
     }
   },
   "uuid": {
@@ -340,14 +389,16 @@
     "generate": "Oluştur",
     "resultLabel": "Sonuç",
     "seo": {
-      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
+      "uuidDescription": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers.",
+      "description": "Free online UUID generator. Supports UUID v4, v7, and ULID formats. Bulk generation for developers."
     }
   },
   "color": {
     "title": "🎨 Renk Dönüştürücü",
     "description": "HEX, RGB, HSL, CMYK arasında dönüştür.",
     "seo": {
-      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
+      "colorDescription": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers.",
+      "description": "Online color converter tool. Convert between HEX, RGB, HSL, CMYK formats. Built-in color picker for web designers."
     }
   },
   "diff": {
@@ -362,7 +413,8 @@
     "result": "Difference",
     "noInput": "Please enter text to compare",
     "seo": {
-      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
+      "diffDescription": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually.",
+      "description": "Free online Diff Checker. Compare two text files or code snippets. Highlight differences (insertions/deletions) visually."
     },
     "context": {
       "title": "About Diff Checker",

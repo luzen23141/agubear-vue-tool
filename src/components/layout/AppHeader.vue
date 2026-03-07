@@ -8,7 +8,15 @@
       </h1>
       <span class="sr-only">{{ t('seo.description') }}</span>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="header-actions">
+      <button
+        :aria-label="t('cmd.actions.toggleTheme')"
+        type="button"
+        class="theme-toggle"
+        @click="toggleTheme"
+      >
+        <SvgIcon name="moon-star" size="1rem" />
+      </button>
       <LanguageSwitcher ref="langSwitcherRef" />
     </div>
   </header>
@@ -17,10 +25,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { UseTheme } from '@/composables/use-theme';
 import SvgIcon from '../icons/SvgIcon.vue';
 import LanguageSwitcher from './LanguageSwitcher.vue';
 
 const { t } = useI18n();
+const { toggleTheme } = UseTheme();
 
 const langSwitcherRef = ref<InstanceType<typeof LanguageSwitcher> | null>(null);
 
@@ -32,6 +42,35 @@ defineExpose({
 </script>
 
 <style scoped>
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.theme-toggle:focus-visible {
+  box-shadow: var(--shadow-focus);
+}
+
 .app-title-h1 {
   margin: 0;
   font-size: 1.5rem;

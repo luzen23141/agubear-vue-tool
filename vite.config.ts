@@ -133,7 +133,7 @@ export default defineConfig(({ mode }) => {
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./src/tests/setup.ts'],
-      exclude: ['e2e/**', 'node_modules/**'],
+      exclude: ['e2e/**', 'node_modules/**', '.claude/**'],
       coverage: {
         provider: 'v8',
         enabled: process.env.COVERAGE === 'true', // Only run coverage if requested
@@ -148,6 +148,7 @@ export default defineConfig(({ mode }) => {
           'src/locales/**',
           '**/node_modules/**',
           '**/dist/**',
+          '**/.claude/**',
           '**/tests/**',
           '**/*.d.ts',
           'vite.config.ts'

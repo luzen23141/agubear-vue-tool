@@ -360,7 +360,7 @@ defineExpose({
 .ec-btn.active {
   background: var(--primary);
   border-color: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
 }
 
 .preview-section {
@@ -403,7 +403,7 @@ defineExpose({
 
 .download-btn {
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
 }
 
 .download-btn:hover {

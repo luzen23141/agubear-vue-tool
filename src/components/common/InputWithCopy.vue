@@ -155,7 +155,7 @@ const handleCopy = async () => {
 
 .action-btn:hover {
   background: var(--gradient-primary);
-  color: white;
+  color: var(--text-on-primary);
   border-color: transparent;
   transform: scale(1.04);
   box-shadow: var(--shadow-glow);

@@ -187,7 +187,7 @@ onMounted(() => {
 
 .type-radio.active {
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
 }
 
@@ -220,7 +220,7 @@ onMounted(() => {
   gap: 8px;
   padding: 10px 24px;
   background: var(--primary);
-  color: white;
+  color: var(--text-on-primary);
   border: none;
   border-radius: var(--radius-sm);
   font-weight: 700;

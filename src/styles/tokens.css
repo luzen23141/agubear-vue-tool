@@ -4,19 +4,53 @@
   --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
 
-  /* Design Tokens — Japanese Modern Theme (Unified - Denim Background) */
-  --primary: #efd0cf; /* 煙粉色 (作為亮部的視線焦點/按鈕) */
-  --primary-hover: #f4d9d8;
-  --primary-soft: rgba(239, 208, 207, 0.15);
-  --primary-glow: rgba(239, 208, 207, 0.25);
+  /* Semantic tokens - light */
+  --surface-page: #6b7d93;
+  --surface-base: #92a9bd;
+  --surface-muted: #829aaa;
+  --surface-hover: #9bb0c2;
+  --surface-overlay: rgba(146, 169, 189, 0.85);
+  --surface-glass: rgba(146, 169, 189, 0.35);
 
-  --secondary: #90adad; /* 青磁色 (灰綠藍) */
-  --accent: #e9dedf; /* 淺淡粉灰 */
-  --accent-soft: rgba(233, 222, 223, 0.15);
-  --surface-soft: rgba(146, 169, 189, 0.2);
+  --text-primary: #fcf8f8;
+  --text-secondary: #e9dedf;
+  --text-muted: #d1dee8;
+  --text-inverted: #2c3a48;
+  --text-on-primary: #1f2937;
 
-  --gradient-primary: linear-gradient(135deg, #efd0cf 0%, #90adad 100%);
-  --gradient-accent: linear-gradient(135deg, #e9dedf 0%, #efd0cf 100%);
+  --border-default: rgba(233, 222, 223, 0.2);
+  --border-hover: rgba(233, 222, 223, 0.35);
+  --border-focus: #efd0cf;
+  --border-glass: rgba(239, 208, 207, 0.15);
+  --border-glass-shine: rgba(239, 208, 207, 0.3);
+
+  --interactive-primary: #efd0cf;
+  --interactive-primary-hover: #f4d9d8;
+  --interactive-primary-soft: rgba(239, 208, 207, 0.15);
+  --interactive-primary-glow: rgba(239, 208, 207, 0.25);
+  --interactive-secondary: #90adad;
+  --interactive-accent: #e9dedf;
+  --interactive-accent-soft: rgba(233, 222, 223, 0.15);
+
+  --status-success: #10b981;
+  --status-success-soft: rgba(16, 185, 129, 0.14);
+  --status-warning: #f59e0b;
+  --status-warning-soft: rgba(245, 158, 11, 0.14);
+  --status-danger: #e05252;
+  --status-danger-soft: rgba(224, 82, 82, 0.12);
+  --status-info: #3b82f6;
+  --status-info-soft: rgba(59, 130, 246, 0.14);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--interactive-primary) 0%,
+    var(--interactive-secondary) 100%
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--interactive-accent) 0%,
+    var(--interactive-primary) 100%
+  );
   --gradient-subtle: linear-gradient(
     135deg,
     rgba(239, 208, 207, 0.05) 0%,
@@ -28,40 +62,17 @@
     rgba(255, 255, 255, 0.05) 100%
   );
 
-  --surface: #92a9bd; /* 淺霧藍 (做為放在背景上的卡片色) */
-  --surface-bg: #6b7d93; /* 灰藍色 (牛仔藍) 作為深底色 */
-  --surface-hover: #829aaa;
-  --surface-raised: #92a9bd;
-  --surface-overlay: rgba(146, 169, 189, 0.85);
-  --surface-glass: rgba(146, 169, 189, 0.4);
-
-  --border: rgba(233, 222, 223, 0.2); /* 淺粉灰邊框 */
-  --border-hover: rgba(233, 222, 223, 0.35);
-  --border-focus: var(--primary);
-  --border-glass: rgba(233, 222, 223, 0.15);
-  --border-iridescent: linear-gradient(
-    135deg,
-    rgba(239, 208, 207, 0.2),
-    rgba(144, 173, 173, 0.2),
-    rgba(233, 222, 223, 0.2)
-  );
-
-  --text-primary: #fcf8f8; /* 提亮粉灰至近白，打造最高對比度的極簡文字 */
-  --text-secondary: #e9dedf; /* 使用原先的淺淡粉灰，做為次要資訊 */
-  --text-muted: #d1dee8; /* 將淺霧藍調亮，讓弱文字層在灰藍底上仍舊清晰 */
-  --text-inverted: #2c3a48; /* 特調的極深灰藍，用於淺色按鈕上的高對比文字 */
-
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
   --shadow-elevated: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
-  --shadow-glow: 0 0 20px rgba(239, 208, 207, 0.15);
-  --shadow-glow-strong: 0 0 30px rgba(239, 208, 207, 0.25);
-  --shadow-focus: 0 0 0 4px rgba(239, 208, 207, 0.2);
+  --shadow-glow: 0 0 20px rgba(239, 208, 207, 0.18);
+  --shadow-glow-strong: 0 0 30px rgba(239, 208, 207, 0.28);
+  --shadow-focus: 0 0 0 4px rgba(239, 208, 207, 0.24);
 
-  --glass-bg: rgba(146, 169, 189, 0.35); /* 讓毛玻璃稍微偏向淺霧藍，但透出底部的灰藍 */
-  --glass-border: rgba(239, 208, 207, 0.15);
-  --glass-border-shine: rgba(239, 208, 207, 0.3);
+  --glass-bg: var(--surface-glass);
+  --glass-border: var(--border-glass);
+  --glass-border-shine: var(--border-glass-shine);
   --glass-blur: 24px;
   --glass-saturate: 1.2;
 
@@ -71,7 +82,6 @@
   --radius-xl: 24px;
   --radius-pill: 9999px;
 
-  /* Animation Tokens — Premium Spring Edition */
   --transition-fast: 0.12s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,4 +89,114 @@
   --transition-spring-bouncy: 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   --transition-spring-smooth: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   --transition-fluid: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Backward-compatible aliases */
+  --primary: var(--interactive-primary);
+  --primary-hover: var(--interactive-primary-hover);
+  --primary-soft: var(--interactive-primary-soft);
+  --primary-glow: var(--interactive-primary-glow);
+  --secondary: var(--interactive-secondary);
+  --accent: var(--interactive-accent);
+  --accent-soft: var(--interactive-accent-soft);
+
+  --surface: var(--surface-base);
+  --surface-bg: var(--surface-page);
+  --surface-raised: var(--surface-base);
+  --background-alt: var(--surface-muted);
+
+  --border: var(--border-default);
+
+  --primary-rgb: 239 208 207;
+}
+
+:root[data-theme='dark'] {
+  --surface-page: #0f172a;
+  --surface-base: #1e293b;
+  --surface-muted: #0b1220;
+  --surface-hover: #243247;
+  --surface-overlay: rgba(30, 41, 59, 0.88);
+  --surface-glass: rgba(30, 41, 59, 0.5);
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverted: #0f172a;
+  --text-on-primary: #0f172a;
+
+  --border-default: rgba(148, 163, 184, 0.24);
+  --border-hover: rgba(148, 163, 184, 0.42);
+  --border-focus: #a7f3d0;
+  --border-glass: rgba(148, 163, 184, 0.24);
+  --border-glass-shine: rgba(226, 232, 240, 0.2);
+
+  --interactive-primary: #a7f3d0;
+  --interactive-primary-hover: #baf7dc;
+  --interactive-primary-soft: rgba(167, 243, 208, 0.18);
+  --interactive-primary-glow: rgba(167, 243, 208, 0.3);
+  --interactive-secondary: #67e8f9;
+  --interactive-accent: #60a5fa;
+  --interactive-accent-soft: rgba(96, 165, 250, 0.18);
+
+  --status-success: #34d399;
+  --status-success-soft: rgba(52, 211, 153, 0.18);
+  --status-warning: #fbbf24;
+  --status-warning-soft: rgba(251, 191, 36, 0.2);
+  --status-danger: #f87171;
+  --status-danger-soft: rgba(248, 113, 113, 0.18);
+  --status-info: #60a5fa;
+  --status-info-soft: rgba(96, 165, 250, 0.2);
+
+  --shadow-glow: 0 0 20px rgba(167, 243, 208, 0.22);
+  --shadow-glow-strong: 0 0 30px rgba(167, 243, 208, 0.34);
+  --shadow-focus: 0 0 0 4px rgba(167, 243, 208, 0.28);
+
+  --primary-rgb: 167 243 208;
+}
+
+:root[data-theme='high-contrast'] {
+  --surface-page: #000000;
+  --surface-base: #111111;
+  --surface-muted: #000000;
+  --surface-hover: #1a1a1a;
+  --surface-overlay: rgba(0, 0, 0, 0.95);
+  --surface-glass: rgba(0, 0, 0, 0.9);
+
+  --text-primary: #ffffff;
+  --text-secondary: #f5f5f5;
+  --text-muted: #d4d4d4;
+  --text-inverted: #000000;
+  --text-on-primary: #000000;
+
+  --border-default: #ffffff;
+  --border-hover: #ffffff;
+  --border-focus: #ffeb3b;
+  --border-glass: #ffffff;
+  --border-glass-shine: #ffffff;
+
+  --interactive-primary: #ffeb3b;
+  --interactive-primary-hover: #fff176;
+  --interactive-primary-soft: rgba(255, 235, 59, 0.22);
+  --interactive-primary-glow: rgba(255, 235, 59, 0.35);
+  --interactive-secondary: #00e5ff;
+  --interactive-accent: #ffeb3b;
+  --interactive-accent-soft: rgba(0, 229, 255, 0.24);
+
+  --status-success: #00ff9d;
+  --status-success-soft: rgba(0, 255, 157, 0.2);
+  --status-warning: #ffe500;
+  --status-warning-soft: rgba(255, 229, 0, 0.24);
+  --status-danger: #ff5252;
+  --status-danger-soft: rgba(255, 82, 82, 0.25);
+  --status-info: #00e5ff;
+  --status-info-soft: rgba(0, 229, 255, 0.24);
+
+  --shadow-sm: 0 0 0 1px rgba(255, 255, 255, 0.7);
+  --shadow-md: 0 0 0 1px rgba(255, 255, 255, 0.8);
+  --shadow-lg: 0 0 0 2px rgba(255, 255, 255, 0.85);
+  --shadow-elevated: 0 0 0 2px rgba(255, 255, 255, 0.95);
+  --shadow-glow: 0 0 0 2px rgba(255, 235, 59, 0.85);
+  --shadow-glow-strong: 0 0 0 3px rgba(255, 235, 59, 0.9);
+  --shadow-focus: 0 0 0 3px rgba(255, 235, 59, 0.95);
+
+  --primary-rgb: 255 235 59;
 }

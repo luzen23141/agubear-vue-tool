@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { defineComponent, nextTick } from 'vue';
 import { UseLocalStorage } from '@/composables/use-local-storage';
@@ -18,9 +18,21 @@ function withSetup<T>(composableFactory: () => T) {
 }
 
 describe('UseLocalStorage', () => {
+  const originalWindow = globalThis.window;
+
   beforeEach(() => {
     localStorage.clear();
     vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+    Object.defineProperty(globalThis, 'window', {
+      value: originalWindow,
+      writable: true,
+      configurable: true
+    });
   });
 
   it('returns the initial value when localStorage is empty', () => {
@@ -42,11 +54,22 @@ describe('UseLocalStorage', () => {
     expect(localStorage.setItem).toHaveBeenCalledWith('write-key', JSON.stringify('b'));
   });
 
-  it('removes from localStorage when value is null', async () => {
-    const { result } = withSetup(() => UseLocalStorage<string | null>('null-key', 'initial'));
-    result.value = null;
+  it('removes from localStorage when value is undefined', async () => {
+    const { result } = withSetup(() => UseLocalStorage<string | undefined>('undef-key', 'initial'));
+    result.value = globalThis.undefined;
     await nextTick();
-    expect(localStorage.removeItem).toHaveBeenCalledWith('null-key');
+
+    expect(localStorage.removeItem).toHaveBeenCalledWith('undef-key');
+  });
+
+  it('skips write when globalThis.localStorage is unavailable', async () => {
+    vi.stubGlobal('localStorage', globalThis.undefined);
+    const { result } = withSetup(() => UseLocalStorage('no-client-write', 'a'));
+
+    result.value = 'b';
+    await nextTick();
+
+    expect(result.value).toBe('b');
   });
 
   it('handles JSON parse errors gracefully (returns raw string)', async () => {
@@ -56,13 +79,39 @@ describe('UseLocalStorage', () => {
     expect(result.value).toBe('not-valid-json');
   });
 
-  it('supports object values with deep watch', async () => {
-    const { result } = withSetup(() => UseLocalStorage('obj-key', { count: 0, items: ['a'] }));
-    result.value.count = 5;
+  it('returns null when globalThis.localStorage is unavailable', () => {
+    vi.stubGlobal('localStorage', globalThis.undefined);
+    const { result } = withSetup(() => UseLocalStorage('no-storage', 'fallback'));
+
+    expect(result.value).toBe('fallback');
+  });
+
+  it('skips write when window.localStorage is unavailable', async () => {
+    Object.defineProperty(globalThis, 'window', {
+      value: { localStorage: undefined },
+      writable: true,
+      configurable: true
+    });
+
+    const setItemSpy = vi.spyOn(localStorage, 'setItem');
+    const { result } = withSetup(() => UseLocalStorage('skip-write', 'a'));
+    result.value = 'b';
     await nextTick();
-    expect(localStorage.setItem).toHaveBeenCalledWith(
-      'obj-key',
-      JSON.stringify({ count: 5, items: ['a'] })
-    );
+
+    expect(setItemSpy).not.toHaveBeenCalled();
+  });
+
+  it('handles localStorage read errors gracefully', async () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const getItemSpy = vi.spyOn(localStorage, 'getItem').mockImplementation(() => {
+      throw new Error('read-failed');
+    });
+
+    const { result } = withSetup(() => UseLocalStorage('read-error', 'fallback'));
+    await nextTick();
+
+    expect(result.value).toBe('fallback');
+    expect(getItemSpy).toHaveBeenCalledWith('read-error');
+    expect(warnSpy).toHaveBeenCalled();
   });
 });

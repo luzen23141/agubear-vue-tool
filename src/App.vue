@@ -32,6 +32,7 @@ import { useRoute } from 'vue-router';
 import { SUPPORTED_LOCALES } from './i18n';
 import { TOAST_KEY } from './composables/use-toast-key';
 import { useSeo } from './composables/use-seo';
+import { UseTheme } from './composables/use-theme';
 
 import AppHeader from './components/layout/AppHeader.vue';
 import AppFooter from './components/layout/AppFooter.vue';
@@ -43,6 +44,7 @@ import CommandPalette from './components/common/CommandPalette.vue';
 const route = useRoute();
 const { locale } = useI18n();
 const { setMeta } = useSeo();
+const { initTheme } = UseTheme();
 
 const headerRef = ref<InstanceType<typeof AppHeader> | null>(null);
 
@@ -69,6 +71,7 @@ watch(
 
 // SEO and Meta configuration (Default)
 setMeta({});
+initTheme();
 
 const closeLangMenu = () => {
   headerRef.value?.closeLangMenu();

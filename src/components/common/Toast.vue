@@ -61,8 +61,8 @@ defineExpose({ show });
   color: var(--primary);
 }
 .error {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--status-danger);
+  color: var(--status-danger);
 }
 .toast-enter-active,
 .toast-leave-active {

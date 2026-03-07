@@ -160,7 +160,7 @@ defineExpose({
 
 .lang-option.active {
   background: var(--gradient-primary);
-  color: white;
+  color: var(--text-on-primary);
   font-weight: 600;
   box-shadow: var(--shadow-glow);
 }

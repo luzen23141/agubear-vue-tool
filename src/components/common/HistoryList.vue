@@ -107,18 +107,22 @@ const { t } = useI18n();
   padding: 5px 14px;
   font-size: 0.8rem;
   background: transparent;
-  color: #c53030;
-  border: 1px solid rgba(229, 62, 62, 0.2);
+  color: var(--status-danger);
+  border: 1px solid var(--status-danger-soft);
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: all var(--transition-normal);
 }
 
 .clear-btn:hover {
-  background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
-  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--status-danger) 0%,
+    color-mix(in srgb, var(--status-danger) 70%, black) 100%
+  );
+  color: var(--text-on-primary);
   border-color: transparent;
-  box-shadow: 0 4px 16px rgba(229, 62, 62, 0.25);
+  box-shadow: 0 4px 16px var(--status-danger-soft);
   transform: scale(1.04);
 }
 
@@ -167,7 +171,7 @@ const { t } = useI18n();
   background: var(--primary);
   flex-shrink: 0;
   opacity: 0.8;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 6px var(--status-success-soft);
 }
 
 .history-body {
@@ -223,8 +227,12 @@ const { t } = useI18n();
 }
 
 .delete-btn:hover {
-  background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
-  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--status-danger) 0%,
+    color-mix(in srgb, var(--status-danger) 70%, black) 100%
+  );
+  color: var(--text-on-primary);
   opacity: 1;
   transform: scale(1.1);
 }
