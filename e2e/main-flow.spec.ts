@@ -15,7 +15,7 @@ test.describe('Timestamp Converter Flow', () => {
     await timestampInput.fill('1708416000');
     await timestampInput.press('Enter');
 
-    const dateResult = page.locator('.result-display .result-text').first();
+    const dateResult = page.locator('.timestamp-result-panel .result-text').first();
     await expect(dateResult).toContainText('2024-02-20');
   });
 
@@ -41,7 +41,7 @@ test.describe('Timestamp Converter Flow', () => {
     const copyButton = page.locator('button').filter({ hasText: /複製/ });
     if (await copyButton.isVisible()) {
       await copyButton.click();
-      await expect(page.locator('.toast-success'))
+      await expect(page.locator('.toast--success'))
         .toBeVisible({ timeout: 2000 })
         .catch(() => {});
     }
