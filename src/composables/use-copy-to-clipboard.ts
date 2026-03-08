@@ -2,6 +2,13 @@ import { inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { type ToastFunction, TOAST_KEY } from './use-toast-key';
 
+const CLIPBOARD_SUCCESS_FALLBACK = 'Copied!';
+const CLIPBOARD_COPY_ERROR = 'Failed to copy';
+const CLIPBOARD_PASTE_ERROR = 'Failed to paste';
+
+const resolveCopiedMessage = (translatedMessage: string) =>
+  translatedMessage || CLIPBOARD_SUCCESS_FALLBACK;
+
 /**
  * Composable for clipboard operations with toast feedback.
  */
@@ -11,15 +18,34 @@ export function useCopyToClipboard() {
   const { t } = useI18n();
 
   const copyText = async (text: string | number) => {
-    if (!text) return;
+    if (!text) return false;
     try {
       await navigator.clipboard.writeText(String(text));
-      showToast(t('common.copied') || 'Copied!', 'success');
+      showToast(resolveCopiedMessage(t('common.copied')), 'success');
+      return true;
     } catch (error) {
       console.warn('Clipboard write failed:', error);
-      showToast('Failed to copy', 'error');
+      showToast(CLIPBOARD_COPY_ERROR, 'error');
+      return false;
     }
   };
 
-  return { copyText };
+  const pasteText = async () => {
+    try {
+      return await navigator.clipboard.readText();
+    } catch (error) {
+      console.warn('Clipboard read failed:', error);
+      showToast(CLIPBOARD_PASTE_ERROR, 'error');
+      return '';
+    }
+  };
+
+  const hasClipboardReadSupport =
+    typeof navigator !== 'undefined' && typeof navigator.clipboard?.readText === 'function';
+
+  return {
+    copyText,
+    pasteText,
+    canPaste: hasClipboardReadSupport
+  };
 }

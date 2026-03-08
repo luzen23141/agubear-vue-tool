@@ -80,6 +80,77 @@ function getJsonLd(options: {
   return [webAppSchema];
 }
 
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+function buildFaqSchema(faqItems: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer
+      }
+    }))
+  };
+}
+
+function buildToolSchema(title: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: title,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    }
+  };
+}
+
+function buildToolContextSchemas(title: string, faqItems: FaqItem[]) {
+  return [buildFaqSchema(faqItems), buildToolSchema(title)];
+}
+
+type TranslateMessagesFunction = (_key: string) => unknown;
+
+function resolveFaqItems(toolKey: string, tm: TranslateMessagesFunction) {
+  const questions = tm(`${toolKey}.faq`);
+  if (!Array.isArray(questions)) return [] as FaqItem[];
+
+  return questions.map((q) => {
+    const item = q as { q: string; a: string };
+    return {
+      question: item.q,
+      answer: item.a
+    };
+  });
+}
+
+export function useToolContextSeo(toolKey: string) {
+  const { t, tm } = useI18n();
+
+  const schemas = computed(() =>
+    buildToolContextSchemas(t(`${toolKey}.title`), resolveFaqItems(toolKey, tm))
+  );
+
+  useHead({
+    script: computed(() =>
+      schemas.value.map((schema) => ({
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(schema)
+      }))
+    )
+  });
+}
+
 type SeoOverrides = {
   title?: string;
   titleKey?: string;

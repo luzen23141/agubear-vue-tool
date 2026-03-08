@@ -1,7 +1,7 @@
 <template>
   <ToolPageLayout :title="t('uuid.title')" tool-key="uuid">
     <!-- Controls Section -->
-    <div class="controls-grid mb-8">
+    <div class="controls-grid">
       <!-- Type Selection -->
       <fieldset class="control-group">
         <legend class="group-label">{{ t('uuid.typeLabel') }}</legend>
@@ -26,10 +26,7 @@
 
       <!-- Quantity Selection -->
       <div class="control-group">
-        <label
-          for="uuid-quantity"
-          class="group-label text-0.9rem font-600 color-var(--text-secondary) mb-2"
-        >
+        <label for="uuid-quantity" class="group-label quantity-label">
           {{ t('uuid.quantityLabel') }}: <span class="qty-val">{{ quantity }}</span>
         </label>
         <input
@@ -43,8 +40,8 @@
       </div>
 
       <!-- Action -->
-      <div class="control-group flex items-end">
-        <button class="generate-btn w-full" type="button" @click="generateIds">
+      <div class="control-group action-group">
+        <button class="generate-btn" type="button" @click="generateIds">
           <SvgIcon name="refresh-cw" /> {{ t('uuid.generate') }}
         </button>
       </div>
@@ -127,6 +124,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
@@ -143,6 +141,10 @@ onMounted(() => {
   flex-direction: column;
 }
 
+.action-group {
+  justify-content: flex-end;
+}
+
 .group-label {
   font-size: 0.85rem;
   font-weight: 600;
@@ -152,6 +154,11 @@ onMounted(() => {
   letter-spacing: 0.05em;
   display: flex;
   justify-content: space-between;
+}
+
+.quantity-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 .qty-val {
@@ -215,6 +222,7 @@ onMounted(() => {
 /* Generate Button */
 .generate-btn {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   gap: 8px;

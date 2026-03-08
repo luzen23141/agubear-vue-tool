@@ -44,15 +44,17 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, watch } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useHead } from '@unhead/vue';
+import { useToolContextSeo } from '@/composables/use-seo';
 
 const props = defineProps<{
   toolKey: string; // e.g., 'timestamp', 'hash'
 }>();
 
-const { t, tm, locale } = useI18n();
+const { t, tm } = useI18n();
+
+useToolContextSeo(props.toolKey);
 
 // Helper to get array from i18n messages
 const contextParagraphs = computed(() => {
@@ -70,56 +72,5 @@ const faqItems = computed(() => {
       answer: item.a
     };
   });
-});
-
-// JSON-LD Injection
-const generateJsonLd = () => {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.value.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer
-      }
-    }))
-  };
-
-  const appSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: t(`${props.toolKey}.title`),
-    applicationCategory: 'DeveloperApplication',
-    operatingSystem: 'Any',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD'
-    }
-  };
-
-  useHead({
-    script: [
-      {
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(faqSchema)
-      },
-      {
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(appSchema)
-      }
-    ]
-  });
-};
-
-// Update Schema when locale changes
-watch(locale, () => {
-  generateJsonLd();
-});
-
-onMounted(() => {
-  generateJsonLd();
 });
 </script>

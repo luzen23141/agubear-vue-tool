@@ -1,14 +1,17 @@
 <template>
-  <div class="w-full reveal-delay-100">
-    <BaseCard :title="title" :heading-tag="headingTag">
-      <slot />
+  <section class="tool-page-layout reveal-delay-100">
+    <BaseCard :title="title" :heading-tag="headingTag" class="tool-page-layout__card">
+      <div class="tool-page-layout__content">
+        <slot />
+      </div>
 
       <template v-if="$slots.footer" #footer>
-        <slot name="footer" />
+        <div class="tool-page-layout__footer">
+          <slot name="footer" />
+        </div>
       </template>
     </BaseCard>
 
-    <!-- History section (optional) -->
     <slot name="history">
       <HistoryList
         v-if="history && history.length > 0"
@@ -22,9 +25,8 @@
       </HistoryList>
     </slot>
 
-    <!-- SEO/GEO/AEO Context -->
     <ToolContext :tool-key="toolKey" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -47,3 +49,34 @@ defineEmits<{
   (_event: 'remove-history', _id: number): void;
 }>();
 </script>
+
+<style scoped>
+.tool-page-layout {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.tool-page-layout__card {
+  width: 100%;
+}
+
+.tool-page-layout__content {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.tool-page-layout__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .tool-page-layout,
+  .tool-page-layout__content {
+    gap: 1rem;
+  }
+}
+</style>

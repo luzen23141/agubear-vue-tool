@@ -6,20 +6,20 @@
     @clear-history="clearHistory"
     @remove-history="removeFromHistory"
   >
-    <!-- Options Bar -->
-    <div class="options-bar justify-end mb-4">
-      <label class="checkbox-label mr-4">
-        <input v-model="options.unescape" type="checkbox" />
-        <span>{{ t('json.optionUnescape') }}</span>
-      </label>
-      <label class="checkbox-label">
-        <input v-model="options.decodeUnicode" type="checkbox" />
-        <span>{{ t('json.optionUnicode') }}</span>
-      </label>
+    <div class="tool-toolbar json-toolbar">
+      <div class="json-options">
+        <label class="checkbox-label">
+          <input v-model="options.unescape" type="checkbox" />
+          <span>{{ t('json.optionUnescape') }}</span>
+        </label>
+        <label class="checkbox-label">
+          <input v-model="options.decodeUnicode" type="checkbox" />
+          <span>{{ t('json.optionUnicode') }}</span>
+        </label>
+      </div>
     </div>
 
-    <!-- Main Actions -->
-    <div class="action-buttons mb-6">
+    <div class="tool-actions">
       <button class="btn-primary" type="button" @click="handleFormat">
         {{ t('json.format') }}
       </button>
@@ -43,7 +43,6 @@
       </button>
     </div>
 
-    <!-- Editor Grid -->
     <div class="editor-grid">
       <div class="editor-pane">
         <div class="pane-label">{{ t('json.inputLabel') }}</div>
@@ -54,7 +53,6 @@
           :maxlength="1000000"
           allow-paste
         />
-        <!-- Error Display -->
         <div v-if="error" class="error-message mt-2">
           <SvgIcon name="alert-triangle" size="0.9rem" />
           <span>
@@ -104,95 +102,22 @@ const {
 </script>
 
 <style scoped>
-.options-bar {
-  display: flex;
-  align-items: center;
+.json-toolbar {
+  justify-content: flex-end;
 }
 
-.checkbox-label {
+.json-options {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.action-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
-}
-
-.action-buttons button {
-  padding: 8px 20px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--text-on-primary);
-  border: none;
-}
-
-.btn-primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
-}
-
-.btn-secondary {
-  background: var(--surface);
-  color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary-soft);
-}
-
-.btn-text {
-  background: transparent;
-  color: var(--text-muted);
-  border: none;
-}
-
-.btn-text:hover {
-  color: var(--status-danger);
-}
-
-.editor-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .editor-grid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
-}
-
-.pane-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .error-message {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  padding: 10px 14px;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
   background: var(--status-danger-soft);
   border-left: 3px solid var(--status-danger);
   border-radius: var(--radius-sm);
@@ -203,7 +128,14 @@ const {
 
 :deep(.custom-textarea) {
   height: 400px;
-  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .json-toolbar,
+  .json-options {
+    justify-content: flex-start;
+  }
 }
 </style>

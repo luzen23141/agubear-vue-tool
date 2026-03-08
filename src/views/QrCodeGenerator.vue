@@ -114,8 +114,8 @@
     </div>
 
     <!-- Preview Section -->
-    <div v-if="finalQrText" class="preview-section mt-8">
-      <h2 class="text-center text-1.1rem font-600 mb-6">{{ t('qrcode.preview') }}</h2>
+    <div v-if="finalQrText" class="preview-section">
+      <h2 class="preview-title">{{ t('qrcode.preview') }}</h2>
       <div class="canvas-wrapper">
         <canvas
           ref="canvasRef"
@@ -367,6 +367,14 @@ defineExpose({
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+}
+
+.preview-title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .canvas-wrapper {

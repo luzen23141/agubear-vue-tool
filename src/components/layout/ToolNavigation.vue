@@ -77,13 +77,9 @@ import { useRouter, useRoute } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { useAppStore } from '@/stores/app';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
+import { TOOL_REGISTRY, type ToolRegistryEntry } from '@/utils/tool-registry';
 
-interface ToolDefinition {
-  id: string;
-  nameKey: string;
-  ariaKey: string;
-  category: string;
-}
+interface ToolDefinition extends ToolRegistryEntry {}
 
 const { t, locale } = useI18n();
 const router = useRouter();
@@ -92,51 +88,7 @@ const appStore = useAppStore();
 
 const { favorites, selectedCategory, showFavoritesOnly } = storeToRefs(appStore);
 
-// Tool definitions
-const toolDefs: ToolDefinition[] = [
-  {
-    id: 'timestamp',
-    nameKey: 'app.tabs.timestamp',
-    ariaKey: 'app.ariaLabels.timestamp',
-    category: 'conversion'
-  },
-  { id: 'hash', nameKey: 'app.tabs.hash', ariaKey: 'app.ariaLabels.hash', category: 'generators' },
-  {
-    id: 'base64',
-    nameKey: 'app.tabs.base64',
-    ariaKey: 'app.ariaLabels.base64',
-    category: 'conversion'
-  },
-  { id: 'url', nameKey: 'app.tabs.url', ariaKey: 'app.ariaLabels.url', category: 'conversion' },
-  {
-    id: 'unicode',
-    nameKey: 'app.tabs.unicode',
-    ariaKey: 'app.ariaLabels.unicode',
-    category: 'conversion'
-  },
-  {
-    id: 'pinyin',
-    nameKey: 'app.tabs.pinyin',
-    ariaKey: 'app.ariaLabels.pinyin',
-    category: 'conversion'
-  },
-  {
-    id: 'qrcode',
-    nameKey: 'app.tabs.qrcode',
-    ariaKey: 'app.ariaLabels.qrcode',
-    category: 'generators'
-  },
-  { id: 'json', nameKey: 'app.tabs.json', ariaKey: 'app.ariaLabels.json', category: 'formatters' },
-  { id: 'jwt', nameKey: 'app.tabs.jwt', ariaKey: 'app.ariaLabels.jwt', category: 'formatters' },
-  { id: 'uuid', nameKey: 'app.tabs.uuid', ariaKey: 'app.ariaLabels.uuid', category: 'generators' },
-  {
-    id: 'color',
-    nameKey: 'app.tabs.color',
-    ariaKey: 'app.ariaLabels.color',
-    category: 'conversion'
-  },
-  { id: 'diff', nameKey: 'app.tabs.diff', ariaKey: 'app.ariaLabels.diff', category: 'generators' }
-];
+const toolDefs: ToolDefinition[] = TOOL_REGISTRY;
 
 const tools = computed(() =>
   toolDefs.map((td) => {
@@ -171,7 +123,7 @@ const groupedTools = computed(() => {
 });
 
 const switchTab = async (tool: ToolDefinition) => {
-  await router.push({ name: tool.id, params: { lang: locale.value } });
+  await router.push({ name: tool.routeName, params: { lang: locale.value } });
 };
 
 const toggleFavorite = (toolId: string) => {

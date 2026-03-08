@@ -6,9 +6,8 @@
     @clear-history="clearHistory"
     @remove-history="removeFromHistory"
   >
-    <!-- 設定 -->
-    <div class="options-bar justify-end mb-4">
-      <label class="checkbox-label mr-4">
+    <div class="tool-toolbar pinyin-toolbar">
+      <label class="checkbox-label">
         <input
           id="show-tone"
           v-model="showTone"
@@ -40,22 +39,21 @@
       @enter="convertToPinyin"
     />
 
-    <!-- 轉換按鈕 -->
-    <div class="action-buttons">
-      <button :aria-label="t('pinyin.convertAria')" type="button" @click="convertToPinyin">
+    <div class="tool-actions pinyin-actions">
+      <button
+        :aria-label="t('pinyin.convertAria')"
+        type="button"
+        class="btn-primary"
+        @click="convertToPinyin"
+      >
         {{ t('pinyin.convert') }}
       </button>
     </div>
 
-    <!-- 結果 -->
-    <div v-if="pinyinResult" class="mt-6">
-      <h2 class="text-0.9rem text-[var(--text-muted)] mb-2 font-500">
-        {{ t('pinyin.resultLabel') }}
-      </h2>
+    <div v-if="pinyinResult" class="pinyin-result">
+      <div class="pane-label">{{ t('pinyin.resultLabel') }}</div>
       <InputWithCopy id="pinyin-output" :model-value="pinyinResult" readonly allow-copy />
-      <p class="text-0.8rem text-[var(--text-muted)] text-center mt-2">
-        {{ t('pinyin.copyHint') }}
-      </p>
+      <p class="pinyin-hint">{{ t('pinyin.copyHint') }}</p>
     </div>
   </ToolPageLayout>
 </template>
@@ -102,40 +100,22 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.options-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.pinyin-toolbar {
+  justify-content: flex-end;
 }
 
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.action-buttons {
-  display: flex;
+.pinyin-actions {
   justify-content: center;
-  margin: 1.5rem 0;
 }
 
-.action-buttons button {
-  padding: 10px 24px;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all var(--transition-fast);
+.pinyin-result {
+  display: grid;
+  gap: 0.75rem;
 }
 
-.action-buttons button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+.pinyin-hint {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-muted);
 }
 </style>

@@ -1,24 +1,24 @@
 <template>
-  <div
-    class="max-w-840px mx-auto my-0 p-[2rem_2rem_calc(2rem_+_env(safe-area-inset-bottom))] min-h-100dvh flex flex-col app-container"
-    @click="closeLangMenu"
-  >
-    <AppHeader ref="headerRef" />
+  <div class="app-shell app-container" @click="closeHeaderOverlays">
+    <div class="app-shell__inner">
+      <AppHeader ref="headerRef" />
 
-    <ToolNavigation />
+      <div class="app-shell__nav">
+        <ToolNavigation />
+      </div>
 
-    <!-- Tab Content -->
-    <main class="flex-grow flex flex-col relative tab-content tool-container">
-      <router-view v-slot="{ Component }">
-        <transition name="page-fade" mode="out-in">
-          <keep-alive :max="5">
-            <component :is="Component" :key="route.fullPath" />
-          </keep-alive>
-        </transition>
-      </router-view>
-    </main>
+      <main class="app-shell__main tool-container" role="main">
+        <router-view v-slot="{ Component }">
+          <transition name="page-fade" mode="out-in">
+            <keep-alive :max="5">
+              <component :is="Component" :key="route.fullPath" />
+            </keep-alive>
+          </transition>
+        </router-view>
+      </main>
 
-    <AppFooter />
+      <AppFooter />
+    </div>
 
     <Toast ref="toastRef" />
     <CommandPalette />
@@ -48,14 +48,12 @@ const { initTheme } = UseTheme();
 
 const headerRef = ref<InstanceType<typeof AppHeader> | null>(null);
 
-// Global Toast logic
 const toastRef = ref<InstanceType<typeof Toast> | null>(null);
 const showToast = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
   toastRef.value?.show(message, type);
 };
 provide(TOAST_KEY, showToast);
 
-// Sync locale from route immediately (Fix for SSG)
 watch(
   () => route.params.lang,
   (newLang) => {
@@ -69,17 +67,41 @@ watch(
   { immediate: true }
 );
 
-// SEO and Meta configuration (Default)
 setMeta({});
 initTheme();
 
-const closeLangMenu = () => {
-  headerRef.value?.closeLangMenu();
+const closeHeaderOverlays = () => {
+  headerRef.value?.close();
 };
 </script>
 
 <style scoped>
-/* Keeping complex page transitions and media query fine-tuning */
+.app-shell {
+  min-height: 100dvh;
+  padding: 1.5rem 1.5rem calc(2rem + env(safe-area-inset-bottom));
+}
+
+.app-shell__inner {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app-shell__nav {
+  position: relative;
+  z-index: 5;
+}
+
+.app-shell__main {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .page-fade-enter-active,
 .page-fade-leave-active {
   transition:
@@ -108,10 +130,12 @@ const closeLangMenu = () => {
 }
 
 @media (max-width: 768px) {
-  .app-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  .app-shell {
+    padding: 1rem 1rem calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .app-shell__inner {
+    gap: 1.25rem;
   }
 }
 </style>

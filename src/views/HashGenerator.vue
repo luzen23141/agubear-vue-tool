@@ -6,14 +6,10 @@
     @clear-history="clearHistory"
     @remove-history="removeFromHistory"
   >
-    <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
-      <div class="flex items-center gap-2">
-        <label for="algo-select">{{ t('hash.algorithm') }}</label>
-        <select
-          id="algo-select"
-          v-model="algo"
-          class="px-2 py-1 rounded-sm border border-[var(--border)] bg-[var(--surface)] text-[var(--text-primary)]"
-        >
+    <div class="tool-toolbar hash-toolbar">
+      <div class="hash-settings">
+        <label for="algo-select" class="hash-label">{{ t('hash.algorithm') }}</label>
+        <select id="algo-select" v-model="algo" class="hash-select">
           <option value="MD5">MD5</option>
           <option value="SHA1">SHA1</option>
           <option value="SHA256">SHA256</option>
@@ -21,9 +17,7 @@
         </select>
       </div>
 
-      <label
-        class="checkbox-label flex items-center gap-2 cursor-pointer text-0.9rem text-[var(--text-secondary)] hover:text-[var(--primary)] transition-colors"
-      >
+      <label class="checkbox-label">
         <input
           id="hash-uppercase"
           v-model="isUpperCase"
@@ -47,33 +41,28 @@
       @paste="inputText = $event"
     />
 
-    <div v-if="hashResult" class="mt-6">
-      <h2 class="text-0.9rem text-[var(--text-muted)] mb-2 font-500">
-        {{ t('hash.resultLabel') }} ({{ algo }})
-      </h2>
+    <div v-if="hashResult" class="hash-result">
+      <div class="pane-label">{{ t('hash.resultLabel') }} ({{ algo }})</div>
       <InputWithCopy id="hash-output" :model-value="hashResult" readonly allow-copy />
-      <p class="text-0.8rem text-[var(--text-muted)] text-center mt-2">
-        {{ t('hash.copyHint') }}
-      </p>
+      <p class="hash-hint">{{ t('hash.copyHint') }}</p>
     </div>
 
     <template #footer>
-      <div v-if="hashResult" class="mt-4 flex justify-center">
-        <button
-          :aria-label="t('hash.recordAria')"
-          type="button"
-          class="btn-primary"
-          @click="generateAndRecord"
-        >
-          {{ t('hash.record') }}
-        </button>
-      </div>
+      <button
+        v-if="hashResult"
+        :aria-label="t('hash.recordAria')"
+        type="button"
+        class="btn-primary"
+        @click="generateAndRecord"
+      >
+        {{ t('hash.record') }}
+      </button>
     </template>
 
     <template #history-item="{ item }">
-      <span class="val">{{ item.input }}</span>
-      <span class="arrow">➜</span>
-      <span class="val text-[var(--primary)]!">{{ item.output }}</span>
+      <span class="history-value">{{ item.input }}</span>
+      <span class="history-separator" aria-hidden="true">→</span>
+      <span class="history-value history-value--output">{{ item.output }}</span>
     </template>
   </ToolPageLayout>
 </template>
@@ -129,3 +118,60 @@ onMounted(() => {
   performance.mark('HashGenerator-mounted');
 });
 </script>
+
+<style scoped>
+.hash-toolbar {
+  align-items: center;
+}
+
+.hash-settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hash-label {
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.hash-select {
+  min-height: 44px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.hash-result {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hash-hint {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.history-value {
+  word-break: break-all;
+}
+
+.history-value--output {
+  color: var(--primary);
+}
+
+.history-separator {
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .hash-toolbar,
+  .hash-settings {
+    align-items: flex-start;
+  }
+}
+</style>

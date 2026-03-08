@@ -1,7 +1,6 @@
 <template>
   <ToolPageLayout :title="t('diff.title')" tool-key="diff">
-    <!-- Action Bar -->
-    <div class="action-buttons mb-8">
+    <div class="tool-actions diff-actions">
       <button type="button" class="btn-primary" @click="computeDiff">
         <SvgIcon name="search" /> {{ t('diff.compare') }}
       </button>
@@ -13,8 +12,7 @@
       </button>
     </div>
 
-    <!-- Inputs Grid -->
-    <div class="editor-grid mb-8">
+    <div class="editor-grid">
       <div class="editor-pane">
         <div class="pane-label">{{ t('diff.original') }}</div>
         <InputWithCopy
@@ -35,11 +33,15 @@
       </div>
     </div>
 
-    <!-- Result Display -->
     <div v-if="diffResult.length > 0" class="result-section">
-      <h2 class="text-center text-1.1rem font-600 mb-4">{{ t('diff.result') }}</h2>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="diff-output" v-html="diffHtml" />
+      <h2 class="result-title">{{ t('diff.result') }}</h2>
+      <div class="diff-output">
+        <template v-for="(segment, index) in diffSegments" :key="`${segment.type}-${index}`">
+          <ins v-if="segment.type === 'insert'">{{ segment.text }}</ins>
+          <del v-else-if="segment.type === 'delete'">{{ segment.text }}</del>
+          <span v-else>{{ segment.text }}</span>
+        </template>
+      </div>
     </div>
   </ToolPageLayout>
 </template>
@@ -59,6 +61,11 @@ const showToast = inject(TOAST_KEY, () => {});
 const text1 = ref('');
 const text2 = ref('');
 const diffResult = ref<Diff[]>([]);
+
+type DiffSegment = {
+  type: 'insert' | 'delete' | 'equal';
+  text: string;
+};
 
 const dmp = new DiffMatchPatch();
 
@@ -85,109 +92,48 @@ const clearAll = () => {
   diffResult.value = [];
 };
 
-const diffHtml = computed(() => {
-  if (diffResult.value.length === 0) return '';
-  return diffResult.value
-    .map(([op, text]: Diff) => {
-      const safeText = text
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('\n', '<br/>');
+const diffSegments = computed<DiffSegment[]>(() => {
+  if (diffResult.value.length === 0) return [];
 
-      if (op === 1) return `<ins>${safeText}</ins>`;
-      if (op === -1) return `<del>${safeText}</del>`;
-      return `<span>${safeText}</span>`;
-    })
-    .join('');
+  return diffResult.value.map(([op, text]: Diff) => {
+    let type: DiffSegment['type'] = 'equal';
+
+    if (op === 1) {
+      type = 'insert';
+    } else if (op === -1) {
+      type = 'delete';
+    }
+
+    return {
+      type,
+      text
+    };
+  });
 });
 </script>
 
 <style scoped>
-.action-buttons {
-  display: flex;
+.diff-actions {
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.action-buttons button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--text-on-primary);
-  border: none;
-}
-
-.btn-primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
-}
-
-.btn-secondary {
-  background: var(--surface);
-  color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary-soft);
-}
-
-.btn-text {
-  background: transparent;
-  color: var(--text-muted);
-  border: none;
-}
-
-.btn-text:hover {
-  color: var(--status-danger);
-}
-
-.editor-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .editor-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.pane-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .result-section {
-  padding: 1.5rem;
-  background: var(--background-alt);
-  border-radius: var(--radius-md);
+  display: grid;
+  gap: 1rem;
+}
+
+.result-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .diff-output {
-  padding: 16px;
+  padding: 1rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   background: var(--surface);
-  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+  font-family: var(--font-mono);
   white-space: pre-wrap;
   line-height: 1.6;
   font-size: 0.9rem;

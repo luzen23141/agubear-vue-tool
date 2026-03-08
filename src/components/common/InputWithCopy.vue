@@ -40,10 +40,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, inject } from 'vue';
+import { useCopyToClipboard } from '@/composables/use-copy-to-clipboard';
 import { useI18n } from 'vue-i18n';
 import SvgIcon from '../icons/SvgIcon.vue';
-import { TOAST_KEY } from '@/composables/use-toast-key';
 
 const props = withDefaults(
   defineProps<{
@@ -75,16 +74,8 @@ const emit = defineEmits<{
   (_event: 'enter'): void;
 }>();
 
-const showToast = inject(TOAST_KEY, () => {});
 const { t } = useI18n();
-
-const canPaste = ref(false);
-
-onMounted(() => {
-  if (navigator.clipboard) {
-    canPaste.value = true;
-  }
-});
+const { copyText, pasteText, canPaste } = useCopyToClipboard();
 
 const handleInput = (event: Event) => {
   const { value } = event.target as HTMLTextAreaElement;
@@ -92,27 +83,18 @@ const handleInput = (event: Event) => {
 };
 
 const handlePaste = async () => {
-  try {
-    const text = await navigator.clipboard.readText();
-    if (text) {
-      emit('update:modelValue', text);
-      emit('paste', text);
-    }
-  } catch (error) {
-    console.warn('Clipboard read failed:', error);
-    showToast('Failed to paste', 'error');
+  const text = await pasteText();
+  if (text) {
+    emit('update:modelValue', text);
+    emit('paste', text);
   }
 };
 
 const handleCopy = async () => {
   if (!props.modelValue) return;
-  try {
-    await navigator.clipboard.writeText(props.modelValue);
+  const copied = await copyText(props.modelValue);
+  if (copied) {
     emit('copy', props.modelValue);
-    showToast(t('common.copied') || 'Copied!', 'success');
-  } catch (error) {
-    console.warn('Clipboard write failed:', error);
-    showToast('Failed to copy', 'error');
   }
 };
 </script>

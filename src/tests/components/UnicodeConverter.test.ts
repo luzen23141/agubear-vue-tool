@@ -28,7 +28,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue();
+const mockClipboardWrite = vi.fn().mockImplementation(async () => {});
 const mockClipboardRead = vi.fn().mockResolvedValue('test content');
 Object.assign(navigator, {
   clipboard: {
@@ -64,7 +64,7 @@ describe('UnicodeConverter.vue', () => {
     it('中文字應轉為 Unicode 編碼', async () => {
       await wrapper.find('#unicode-text-input').setValue('你好');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('文字 → Unicode'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-raw-input').element.value).toBe('\\u4f60\\u597d');
@@ -74,7 +74,7 @@ describe('UnicodeConverter.vue', () => {
       await wrapper.find('#unicode-mode-html').setValue();
       await wrapper.find('#unicode-text-input').setValue('你好');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('文字 → Unicode'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-raw-input').element.value).toBe('&#x4F60;&#x597D;');
@@ -84,7 +84,7 @@ describe('UnicodeConverter.vue', () => {
       await wrapper.find('#skip-ascii').setValue(true);
       await wrapper.find('#unicode-text-input').setValue('Hi你好');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('文字 → Unicode'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-raw-input').element.value).toBe('Hi\\u4f60\\u597d');
@@ -93,7 +93,7 @@ describe('UnicodeConverter.vue', () => {
     it('空輸入應提早回傳', async () => {
       await wrapper.find('#unicode-text-input').setValue('');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('文字 → Unicode'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-raw-input').element.value).toBe('');
@@ -105,7 +105,7 @@ describe('UnicodeConverter.vue', () => {
       await wrapper.find('#unicode-raw-input').setValue('\\u4f60\\u597d');
       // Use localized label or find by text if label is tricky
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('Unicode → 文字'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-text-input').element.value).toBe('你好');
@@ -115,7 +115,7 @@ describe('UnicodeConverter.vue', () => {
       await wrapper.find('#unicode-mode-html').setValue();
       await wrapper.find('#unicode-raw-input').setValue('&#x4F60;&#x597D;');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('Unicode → 文字'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-text-input').element.value).toBe('你好');
@@ -124,7 +124,7 @@ describe('UnicodeConverter.vue', () => {
     it('空編碼輸入應提早回傳', async () => {
       await wrapper.find('#unicode-raw-input').setValue('');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('Unicode → 文字'));
       await button?.trigger('click');
       expect(wrapper.find('#unicode-text-input').element.value).toBe('');
@@ -134,7 +134,7 @@ describe('UnicodeConverter.vue', () => {
   describe('歷史紀錄', () => {
     it('轉換後應記錄到歷史', async () => {
       await wrapper.find('#unicode-text-input').setValue('test');
-      await wrapper.find('button[aria-label*="Unicode"]').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalled();
     });
 
@@ -156,7 +156,7 @@ describe('UnicodeConverter.vue', () => {
     it('紀錄到歷史時應截斷長內容', async () => {
       await wrapper.find('#unicode-text-input').setValue('a'.repeat(50));
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('文字 → Unicode'));
       await button?.trigger('click');
       expect(historyMocks.addToHistory).toHaveBeenCalledWith(
@@ -180,14 +180,17 @@ describe('UnicodeConverter.vue', () => {
       const wrapper = mount(UnicodeConverter, mountOptions);
       await wrapper.find('#unicode-text-input').setValue('你好');
       const button = wrapper
-        .findAll('.action-buttons button')
+        .findAll('.tool-actions button')
         .find((b: any) => b.text().includes('文字 → Unicode'));
       await button?.trigger('click');
       await wrapper.vm.$nextTick();
       await wrapper.vm.$nextTick();
 
-      const copyButton = wrapper.find('#unicode-raw-input + .copy-btn-overlay');
-      await copyButton.trigger('click');
+      const copyButtons = wrapper.findAll('.copy-btn-overlay');
+      expect(copyButtons).toHaveLength(2);
+      const outputCopyButton = copyButtons.at(1);
+      expect(outputCopyButton).toBeDefined();
+      await outputCopyButton?.trigger('click');
       expect(mockClipboardWrite).toHaveBeenCalledWith('\\u4f60\\u597d');
     });
 

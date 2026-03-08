@@ -7,7 +7,7 @@
     @remove-history="(id: number) => $emit('removeFromHistory', id)"
   >
     <!-- Mode Selection -->
-    <div class="flex justify-center mb-6">
+    <div class="mode-switcher">
       <div class="mode-select">
         <label class="mode-label">
           <input
@@ -15,7 +15,7 @@
             :value="encodeValue"
             :checked="mode === encodeValue"
             type="radio"
-            class="hidden"
+            class="mode-input"
             @change="$emit('update:mode', encodeValue)"
           />
           <span>{{ encodeLabel }}</span>
@@ -26,7 +26,7 @@
             :value="decodeValue"
             :checked="mode === decodeValue"
             type="radio"
-            class="hidden"
+            class="mode-input"
             @change="$emit('update:mode', decodeValue)"
           />
           <span>{{ decodeLabel }}</span>
@@ -61,7 +61,7 @@
 
     <!-- History Action -->
     <template #footer>
-      <div v-if="outputText" class="mt-5 flex justify-center">
+      <div v-if="outputText" class="record-action">
         <button type="button" class="btn-primary" @click="$emit('record')">
           {{ t('common.record') }}
         </button>
@@ -115,6 +115,16 @@ const { t } = useI18n();
 </script>
 
 <style scoped>
+.mode-switcher {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.mode-input {
+  display: none;
+}
+
 .mode-label {
   display: flex;
   align-items: center;
@@ -126,10 +136,17 @@ const { t } = useI18n();
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
+
 .mode-label:has(input:checked) {
   background: var(--gradient-primary);
   color: var(--text-on-primary);
   font-weight: 600;
   box-shadow: var(--shadow-glow);
+}
+
+.record-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
 }
 </style>

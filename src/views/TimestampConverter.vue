@@ -6,9 +6,8 @@
     @clear-history="clearHistory"
     @remove-history="removeFromHistory"
   >
-    <!-- 時區選擇 -->
-    <div class="timezone-bar mb-8">
-      <label for="tz-select" class="mr-4 font-600">{{ t('timestamp.timezone') }}</label>
+    <div class="timezone-bar">
+      <label for="tz-select" class="timezone-label">{{ t('timestamp.timezone') }}</label>
       <select id="tz-select" v-model.number="utcOffset" :aria-label="t('timestamp.timezoneAria')">
         <option v-for="tz in TIMEZONE_OPTIONS" :key="tz.value" :value="tz.value">
           {{ tz.prefix ? `${tz.prefix} (${t(tz.labelKey)})` : t(tz.labelKey) }}
@@ -17,9 +16,8 @@
     </div>
 
     <div class="converter-grid">
-      <!-- Timestamp -> Date -->
       <BaseCard :title="t('timestamp.title')" heading-tag="h2" class="tool-card">
-        <div class="mode-toggle mb-4">
+        <div class="mode-toggle">
           <label
             v-for="mode in modeOptions"
             :key="mode.value"
@@ -37,7 +35,7 @@
           </label>
         </div>
 
-        <div class="input-section mb-6">
+        <div class="input-section">
           <InputWithCopy
             id="timestamp-input"
             v-model="timestampInput"
@@ -46,17 +44,17 @@
             allow-paste
             @enter="() => convertToDate()"
           />
-          <div v-if="timestampLength > 0" class="input-hint mt-2">
+          <div v-if="timestampLength > 0" class="input-hint">
             {{ t('timestamp.currentDigits', { n: timestampLength }) }}
           </div>
-          <button type="button" class="btn-primary w-full mt-4" @click="() => convertToDate()">
+          <button type="button" class="btn-primary timestamp-submit" @click="() => convertToDate()">
             <SvgIcon name="refresh-cw" /> {{ t('timestamp.convertButton') }}
           </button>
         </div>
 
         <div class="result-section">
           <div class="pane-label">{{ t('timestamp.resultLabel') }}</div>
-          <div :class="{ 'result-flash': dateResult }" class="result-display">
+          <div :class="{ 'result-flash': dateResult }" class="result-panel timestamp-result-panel">
             <div class="result-text">{{ dateResult || '---' }}</div>
             <div v-if="relativeTime" class="relative-time">({{ relativeTime }})</div>
             <button
@@ -72,13 +70,12 @@
         </div>
       </BaseCard>
 
-      <!-- Date -> Timestamp -->
       <BaseCard :title="t('timestamp.titleReverse')" heading-tag="h2" class="tool-card">
-        <div class="format-toggle mb-4">
-          <span :class="{ active: !useMilliseconds }" class="text-0.85rem font-600">{{
-            t('timestamp.modeSeconds')
-          }}</span>
-          <label class="switch mx-3">
+        <div class="format-toggle">
+          <span :class="{ active: !useMilliseconds }" class="format-toggle__label">
+            {{ t('timestamp.modeSeconds') }}
+          </span>
+          <label class="switch">
             <input
               v-model="useMilliseconds"
               :aria-label="t('timestamp.switchSecOrMs')"
@@ -87,12 +84,12 @@
             />
             <span class="slider" />
           </label>
-          <span :class="{ active: useMilliseconds }" class="text-0.85rem font-600">{{
-            t('timestamp.modeMilliseconds')
-          }}</span>
+          <span :class="{ active: useMilliseconds }" class="format-toggle__label">
+            {{ t('timestamp.modeMilliseconds') }}
+          </span>
         </div>
 
-        <div class="input-section mb-6">
+        <div class="input-section">
           <InputWithCopy
             id="date-input"
             v-model="dateInput"
@@ -100,14 +97,21 @@
             allow-paste
             @enter="() => convertToTimestamp()"
           />
-          <button type="button" class="btn-primary w-full mt-4" @click="() => convertToTimestamp()">
+          <button
+            type="button"
+            class="btn-primary timestamp-submit"
+            @click="() => convertToTimestamp()"
+          >
             <SvgIcon name="refresh-cw" /> {{ t('timestamp.convertButton') }}
           </button>
         </div>
 
         <div class="result-section">
           <div class="pane-label">{{ t('timestamp.resultLabel') }}</div>
-          <div :class="{ 'result-flash': timestampResult }" class="result-display">
+          <div
+            :class="{ 'result-flash': timestampResult }"
+            class="result-panel timestamp-result-panel"
+          >
             <div class="result-text font-mono">{{ timestampResult || '---' }}</div>
             <button
               v-if="timestampResult"
@@ -123,7 +127,7 @@
       </BaseCard>
     </div>
 
-    <DurationCalculator class="mt-8" />
+    <DurationCalculator class="timestamp-duration" />
   </ToolPageLayout>
 </template>
 
@@ -165,7 +169,6 @@ const modeOptions = [
   { value: 'ms', labelKey: 'timestamp.modeMilliseconds' }
 ];
 
-// Provide properties to the tests
 defineExpose({
   TIMEZONE_OPTIONS,
   timestampInput,
@@ -186,21 +189,27 @@ defineExpose({
 <style scoped>
 .timezone-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  background: var(--background-alt);
-  border-radius: var(--radius-md);
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface-hover);
   border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.timezone-label {
+  font-weight: 700;
+  color: var(--text-secondary);
 }
 
 .timezone-bar select {
-  padding: 6px 12px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm);
+  min-height: 44px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text-primary);
-  font-size: 0.9rem;
 }
 
 .converter-grid {
@@ -211,148 +220,96 @@ defineExpose({
 
 @media (min-width: 1024px) {
   .converter-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.tool-card {
-  height: 100%;
+.tool-card,
+.input-section,
+.result-section {
+  display: grid;
+  gap: 1rem;
 }
 
-/* Mode Buttons */
 .mode-toggle {
   display: flex;
-  gap: 8px;
-  background: var(--background-alt);
-  padding: 4px;
-  border-radius: var(--radius-sm);
+  gap: 0.35rem;
+  padding: 0.3rem;
+  background: var(--surface-hover);
   border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .mode-btn {
   flex: 1;
   text-align: center;
-  padding: 6px;
+  padding: 0.7rem 0.8rem;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   cursor: pointer;
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  border-radius: calc(var(--radius-md) - 6px);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .mode-btn.active {
-  background: var(--primary);
+  background: var(--gradient-primary);
   color: var(--text-on-primary);
-  box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
+  box-shadow: var(--shadow-glow);
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Input Hint */
 .input-hint {
   font-size: 0.75rem;
   color: var(--text-muted);
   text-align: right;
 }
 
-/* Result Section */
-.pane-label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
+.timestamp-submit {
+  width: 100%;
 }
 
-.result-display {
-  position: relative;
-  min-height: 80px;
-  padding: 16px;
-  background: var(--background-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all var(--transition-normal);
+.timestamp-result-panel {
+  padding-right: 4rem;
 }
 
 .result-text {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-primary);
   word-break: break-all;
 }
 
 .relative-time {
+  margin-top: 0.35rem;
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 4px;
 }
 
-.copy-icon-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 6px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.copy-icon-btn:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-  background: var(--primary-soft);
-}
-
-.btn-primary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  border: none;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.btn-primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
-}
-
-/* Switch */
 .format-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
+}
+
+.format-toggle__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.format-toggle__label.active {
+  color: var(--primary);
 }
 
 .switch {
   position: relative;
   display: inline-block;
   width: 44px;
-  height: 22px;
+  height: 24px;
 }
 
 .switch input {
@@ -363,38 +320,39 @@ defineExpose({
 
 .slider {
   position: absolute;
+  inset: 0;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: var(--border);
-  transition: 0.4s;
-  border-radius: 22px;
+  transition: background-color var(--transition-fast);
+  border-radius: 999px;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: '';
-  height: 16px;
-  width: 16px;
+  width: 18px;
+  height: 18px;
   left: 3px;
-  bottom: 3px;
+  top: 3px;
   background-color: var(--text-on-primary);
-  transition: 0.4s;
+  transition: transform var(--transition-fast);
   border-radius: 50%;
 }
 
-input:checked + .slider {
+.switch input:checked + .slider {
   background-color: var(--primary);
 }
 
-input:checked + .slider:before {
-  transform: translateX(22px);
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
 }
 
 .result-flash {
   animation: resultFlash 0.8s var(--transition-spring-smooth);
+}
+
+.timestamp-duration {
+  margin-top: 0.5rem;
 }
 
 @keyframes resultFlash {
@@ -403,12 +361,19 @@ input:checked + .slider:before {
   }
   30% {
     transform: scale(1.02);
-    filter: brightness(1.1);
+    filter: brightness(1.08);
     border-color: var(--primary);
   }
   100% {
     transform: scale(1);
     filter: brightness(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .mode-toggle,
+  .format-toggle {
+    flex-wrap: wrap;
   }
 }
 </style>

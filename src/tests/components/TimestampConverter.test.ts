@@ -29,7 +29,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue();
+const mockClipboardWrite = vi.fn().mockImplementation(async () => {});
 const mockClipboardRead = vi.fn().mockResolvedValue('1700000000');
 Object.assign(navigator, {
   clipboard: {
@@ -341,13 +341,14 @@ describe('TimestampConverter.vue', () => {
     it('貼上失敗時應處理錯誤', async () => {
       const wrapper: any = mount(TimestampConverter, mountOptions);
       mockClipboardRead.mockRejectedValueOnce(new Error('paste fail'));
-      wrapper.vm.timestampInput = 'original';
+      wrapper.vm.timestampInput = '1700000001';
+      await wrapper.vm.$nextTick();
 
       const pasteButton = wrapper.findAll('.paste-btn')[0];
       if (pasteButton) {
         await pasteButton.trigger('click');
         await wrapper.vm.$nextTick();
-        expect(wrapper.vm.timestampInput).toBe('original');
+        expect(wrapper.vm.timestampInput).toBe('1700000001');
       }
     });
 

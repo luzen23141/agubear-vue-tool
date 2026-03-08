@@ -67,17 +67,14 @@ type AddToHistoryFunction = (
 ) => void;
 
 type TimestampMode = 'auto' | 's' | 'ms';
+type PasteTarget = 'ts' | 'date';
 
-/**
- * Default timestamp (current time in seconds)
- */
-const getDefaultTimestamp = () => Math.floor(Date.now() / 1000).toString();
+function getDefaultTimestamp() {
+  return Math.floor(Date.now() / 1000).toString();
+}
 
-/**
- * Default date formatted as yyyy-mm-dd hh:mm:ss
- */
-const getDefaultDate = () =>
-  new Date()
+function getDefaultDate() {
+  return new Date()
     .toLocaleString('en-CA', {
       year: 'numeric',
       month: '2-digit',
@@ -88,11 +85,40 @@ const getDefaultDate = () =>
       hour12: false
     })
     .replace(/,/, '');
+}
 
-/**
- * Sanitize timestamp input (numbers only, max 15 digits)
- */
-const sanitizeTimestamp = (value: string) => value.replaceAll(/(?!^-)\D/g, '').slice(0, 15);
+function sanitizeTimestamp(value: string) {
+  return value.replaceAll(/(?!^-)\D/g, '').slice(0, 15);
+}
+
+function normalizeTimestampOnModeChange(
+  input: string,
+  nextMode: TimestampMode,
+  previousMode: TimestampMode
+) {
+  if (nextMode === 'ms' && previousMode === 's' && input.length === 10) {
+    return `${input}000`;
+  }
+
+  if (nextMode === 's' && previousMode === 'ms' && input.length === 13) {
+    return input.slice(0, 10);
+  }
+
+  return input;
+}
+
+function getRelativeTimeDate(value: string) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function shouldRecordHistory(
+  success: boolean,
+  recordHistory: boolean,
+  addToHistory?: AddToHistoryFunction
+) {
+  return success && recordHistory && Boolean(addToHistory);
+}
 
 /**
  * Composable for managing timestamp conversion and state
@@ -124,11 +150,13 @@ export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
       relativeTime.value = '';
       return;
     }
-    const date = new Date(dateResult.value);
-    if (Number.isNaN(date.getTime())) {
+
+    const date = getRelativeTimeDate(dateResult.value);
+    if (!date) {
       relativeTime.value = '';
       return;
     }
+
     const locale = await getDateFnsLocale(appLocale.value);
     relativeTime.value = formatDistanceToNow(date, { addSuffix: true, locale });
   };
@@ -139,20 +167,20 @@ export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
   const convertToDate = (recordHistory = true) => {
     const res = timestampToDate(timestampInput.value, timestampMode.value, utcOffset.value);
     dateResult.value = res.value;
-    if (res.success && recordHistory && addToHistory) {
-      addToHistory('ts2date', timestampInput.value, res.value);
+    if (shouldRecordHistory(res.success, recordHistory, addToHistory)) {
+      addToHistory?.('ts2date', timestampInput.value, res.value);
     }
   };
 
   const convertToTimestamp = (recordHistory = true) => {
     const res = dateToTimestamp(dateInput.value, useMilliseconds.value, utcOffset.value);
     timestampResult.value = res.value;
-    if (res.success && recordHistory && addToHistory) {
-      addToHistory('date2ts', dateInput.value, res.value);
+    if (shouldRecordHistory(res.success, recordHistory, addToHistory)) {
+      addToHistory?.('date2ts', dateInput.value, res.value);
     }
   };
 
-  const pasteInput = async (target: 'ts' | 'date') => {
+  const pasteInput = async (target: PasteTarget) => {
     try {
       const clipboardText = await navigator.clipboard.readText();
       const text = clipboardText.trim();
@@ -173,15 +201,14 @@ export const UseTimestampConverter = (addToHistory?: AddToHistoryFunction) => {
   // --- Watchers & Lifecycle ---
   // Re-run conversions when settings change without recording history
   watch([useMilliseconds, timestampMode, utcOffset], (newVals, oldVals) => {
-    // Auto-convert timestamp digits when mode changes between s and ms
-    const [, newMode] = newVals as [boolean, TimestampMode, number];
-    const [, oldMode] = oldVals as [boolean, TimestampMode, number];
+    const [, nextMode] = newVals as [boolean, TimestampMode, number];
+    const [, previousMode] = oldVals as [boolean, TimestampMode, number];
 
-    if (newMode === 'ms' && oldMode === 's' && timestampInput.value.length === 10) {
-      timestampInput.value += '000';
-    } else if (newMode === 's' && oldMode === 'ms' && timestampInput.value.length === 13) {
-      timestampInput.value = timestampInput.value.slice(0, 10);
-    }
+    timestampInput.value = normalizeTimestampOnModeChange(
+      timestampInput.value,
+      nextMode,
+      previousMode
+    );
 
     convertToDate(false);
     convertToTimestamp(false);

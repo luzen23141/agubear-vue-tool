@@ -1,14 +1,12 @@
 <template>
   <ToolPageLayout :title="t('jwt.title')" tool-key="jwt">
-    <!-- Action Bar -->
-    <div class="action-buttons mb-8">
+    <div class="tool-actions jwt-actions">
       <button class="btn-text" type="button" @click="handleClear">
         <SvgIcon name="trash" /> {{ t('common.clear') }}
       </button>
     </div>
 
-    <div class="converter-grid">
-      <!-- Input Area -->
+    <div class="converter-grid jwt-layout">
       <div class="input-section">
         <label class="pane-label">{{ t('jwt.inputLabel') }}</label>
         <InputWithCopy
@@ -24,16 +22,14 @@
         </div>
       </div>
 
-      <!-- Decoded Output -->
       <div v-if="decodedHeader || decodedPayload" class="output-section">
-        <!-- Status Bar -->
         <div :class="{ expired: isExpired, valid: !isExpired && expDate }" class="status-bar">
           <div class="status-item">
-            <span class="label">Algorithm:</span>
+            <span class="label">Algorithm</span>
             <span class="value">{{ decodedHeader?.alg || 'Unknown' }}</span>
           </div>
           <div v-if="expDate" class="status-item">
-            <span class="label">Expires:</span>
+            <span class="label">Expires</span>
             <span class="value">{{ expDate.toLocaleString() }}</span>
             <span v-if="isExpired" class="badge-expired">EXPIRED</span>
             <span v-else class="badge-valid">VALID</span>
@@ -41,16 +37,18 @@
         </div>
 
         <div class="decoded-grid">
-          <!-- Header -->
           <BaseCard title="Header" class="code-card header-card">
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <pre class="json-display" v-html="syntaxHighlight(decodedHeader)" />
+            <pre
+              class="json-display"
+            ><template v-for="(line, lineIndex) in highlightedHeaderLines" :key="`header-${lineIndex}`"><span v-for="(token, tokenIndex) in line" :key="`header-${lineIndex}-${tokenIndex}`" :class="token.className">{{ token.text }}</span>
+</template></pre>
           </BaseCard>
 
-          <!-- Payload -->
           <BaseCard title="Payload" class="code-card payload-card">
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <pre class="json-display" v-html="syntaxHighlight(decodedPayload)" />
+            <pre
+              class="json-display"
+            ><template v-for="(line, lineIndex) in highlightedPayloadLines" :key="`payload-${lineIndex}`"><span v-for="(token, tokenIndex) in line" :key="`payload-${lineIndex}-${tokenIndex}`" :class="token.className">{{ token.text }}</span>
+</template></pre>
           </BaseCard>
         </div>
       </div>
@@ -81,6 +79,15 @@ interface JwtPayload {
   [key: string]: unknown;
 }
 
+type JsonTokenClass = 'string' | 'number' | 'boolean' | 'null' | 'key';
+
+type JsonToken = {
+  text: string;
+  className?: JsonTokenClass;
+};
+
+type JsonTokenLine = JsonToken[];
+
 const jwtInput = ref('');
 const decodedHeader = ref<JwtHeader | null>(null);
 const decodedPayload = ref<JwtPayload | null>(null);
@@ -93,7 +100,6 @@ const handleClear = () => {
   error.value = null;
 };
 
-// Computed expiration
 const expDate = computed(() => {
   if (decodedPayload.value?.exp) {
     return new Date(decodedPayload.value.exp * 1000);
@@ -106,7 +112,82 @@ const isExpired = computed(() => {
   return expDate.value < new Date();
 });
 
-// Decode Logic
+const formatJsonValue = (value: unknown): JsonToken => {
+  if (typeof value === 'string') {
+    return { text: JSON.stringify(value), className: 'string' };
+  }
+
+  if (typeof value === 'number') {
+    return { text: String(value), className: 'number' };
+  }
+
+  if (typeof value === 'boolean') {
+    return { text: String(value), className: 'boolean' };
+  }
+
+  if (value === null) {
+    return { text: 'null', className: 'null' };
+  }
+
+  return { text: JSON.stringify(value) ?? String(value) };
+};
+
+const indentText = (depth: number) => '  '.repeat(depth);
+
+const buildJsonTokenLines = (value: unknown, depth = 0): JsonTokenLine[] => {
+  if (Array.isArray(value)) {
+    if (value.length === 0) return [[{ text: '[]' }]];
+
+    return [
+      [{ text: '[' }],
+      ...value.flatMap((item, index) => {
+        const itemLines = buildJsonTokenLines(item, depth + 1);
+        return itemLines.map((line, lineIndex) => [
+          { text: indentText(depth + 1) },
+          ...line,
+          ...(lineIndex === itemLines.length - 1 && index < value.length - 1 ? [{ text: ',' }] : [])
+        ]);
+      }),
+      [{ text: `${indentText(depth)}]` }]
+    ];
+  }
+
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value as Record<string, unknown>);
+    if (entries.length === 0) return [[{ text: '{}' }]];
+
+    return [
+      [{ text: '{' }],
+      ...entries.flatMap(([key, entryValue], index) => {
+        const valueLines = buildJsonTokenLines(entryValue, depth + 1);
+        return valueLines.map((line, lineIndex) => {
+          if (lineIndex === 0) {
+            return [
+              { text: indentText(depth + 1) },
+              { text: JSON.stringify(key), className: 'key' },
+              { text: ': ' },
+              ...line,
+              ...(index < entries.length - 1 ? [{ text: ',' }] : [])
+            ];
+          }
+
+          return [{ text: indentText(depth + 1) }, ...line];
+        });
+      }),
+      [{ text: `${indentText(depth)}}` }]
+    ];
+  }
+
+  return [[formatJsonValue(value)]];
+};
+
+const highlightedHeaderLines = computed(() =>
+  decodedHeader.value ? buildJsonTokenLines(decodedHeader.value) : []
+);
+const highlightedPayloadLines = computed(() =>
+  decodedPayload.value ? buildJsonTokenLines(decodedPayload.value) : []
+);
+
 watch(jwtInput, (newValue) => {
   if (!newValue.trim()) {
     handleClear();
@@ -117,76 +198,21 @@ watch(jwtInput, (newValue) => {
     error.value = null;
     decodedHeader.value = jwtDecode(newValue, { header: true });
     decodedPayload.value = jwtDecode(newValue);
-  } catch (error_) {
-    // eslint-disable-next-line no-console
-    console.debug('JWT decode failed', error_);
+  } catch {
     decodedHeader.value = null;
     decodedPayload.value = null;
     error.value = t('jwt.invalidToken');
   }
 });
-
-// Simple Syntax Highlighter
-const syntaxHighlight = (json: unknown) => {
-  if (!json) return '';
-  let jsonString = JSON.stringify(json, null, 2);
-  jsonString = jsonString.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-  return jsonString.replaceAll(
-    // eslint-disable-next-line security/detect-unsafe-regex, sonarjs/regex-complexity, no-useless-escape
-    /("(\\u[\dA-Za-z]{4}|\\[^u]|[^"\\])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[Ee][+\-]?\d+)?)/g,
-    (match) => {
-      let cls = 'number';
-      if (match.startsWith('"')) {
-        cls = match.endsWith(':') ? 'key' : 'string';
-      } else if (/true|false/.test(match)) {
-        cls = 'boolean';
-      } else if (/null/.test(match)) {
-        cls = 'null';
-      }
-      return `<span class="${cls}">${match}</span>`;
-    }
-  );
-};
 </script>
 
 <style scoped>
-.action-buttons {
-  display: flex;
+.jwt-actions {
   justify-content: flex-end;
 }
 
-.btn-text {
-  background: transparent;
-  color: var(--text-muted);
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.btn-text:hover {
-  color: var(--status-danger);
-  background: var(--status-danger-soft);
-}
-
-.converter-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.pane-label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.jwt-layout {
+  align-items: start;
 }
 
 :deep(.jwt-input-field) textarea {
@@ -194,43 +220,31 @@ const syntaxHighlight = (json: unknown) => {
 }
 
 .error-message {
-  margin-top: 12px;
-  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
   background: var(--status-danger-soft);
   border-left: 3px solid var(--status-danger);
   border-radius: var(--radius-sm);
   color: var(--status-danger);
   font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .output-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  animation: slideUp 0.3s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  display: grid;
+  gap: 1.25rem;
 }
 
 .status-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 14px 20px;
-  background: var(--background-alt);
-  border-left: 5px solid var(--text-muted);
-  border-radius: var(--radius-sm);
+  gap: 0.75rem 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface-hover);
+  border-left: 4px solid var(--text-muted);
+  border-radius: var(--radius-md);
 }
 
 .status-bar.valid {
@@ -243,50 +257,49 @@ const syntaxHighlight = (json: unknown) => {
 
 .status-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
   font-size: 0.95rem;
 }
 
 .status-item .label {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
 }
 
 .status-item .value {
-  font-family: 'SF Mono', monospace;
+  font-family: var(--font-mono);
   color: var(--text-primary);
+}
+
+.badge-valid,
+.badge-expired {
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 800;
 }
 
 .badge-valid {
   background: var(--status-success-soft);
   color: var(--status-success);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  border: 1px solid var(--status-success-soft);
 }
 
 .badge-expired {
   background: var(--status-danger-soft);
   color: var(--status-danger);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  border: 1px solid var(--status-danger-soft);
 }
 
 .decoded-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 @media (min-width: 1024px) {
   .decoded-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -305,27 +318,29 @@ const syntaxHighlight = (json: unknown) => {
 
 .json-display {
   margin: 0;
-  padding: 4px;
-  background: transparent;
+  padding: 0.25rem;
   overflow-x: auto;
-  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
-/* Syntax Highlighting */
 :deep(.string) {
   color: var(--status-success);
 }
+
 :deep(.number) {
   color: var(--status-info);
 }
+
 :deep(.boolean) {
   color: var(--status-warning);
 }
+
 :deep(.null) {
   color: var(--text-muted);
 }
+
 :deep(.key) {
   color: var(--status-danger);
 }

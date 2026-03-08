@@ -3,6 +3,20 @@ import { UseHistory } from './use-history';
 
 export type ConverterFunction = (_input: string) => string | null | Promise<string | null>;
 
+type ConverterMode = 'encode' | 'decode';
+
+function getNextInputOnModeChange(
+  nextMode: ConverterMode,
+  previousMode: ConverterMode | undefined,
+  currentOutput: string
+) {
+  if (!previousMode || nextMode === previousMode || !currentOutput) {
+    return null;
+  }
+
+  return currentOutput;
+}
+
 // eslint-disable-next-line max-lines-per-function
 export function UseTwoWayConverter(
   type: string,
@@ -10,7 +24,7 @@ export function UseTwoWayConverter(
   decode: ConverterFunction
 ) {
   const { addToHistory } = UseHistory();
-  const mode = ref<'encode' | 'decode'>('encode');
+  const mode = ref<ConverterMode>('encode');
   const inputText = ref('');
   const outputText = ref('');
   const isConverting = ref(false);
@@ -18,7 +32,7 @@ export function UseTwoWayConverter(
   // Watch for input/mode changes to trigger conversion
   const performConversion = async (
     text: string,
-    currentMode: 'encode' | 'decode',
+    currentMode: ConverterMode,
     checkCancelled: () => boolean
   ) => {
     isConverting.value = true;
@@ -39,9 +53,9 @@ export function UseTwoWayConverter(
   watch(
     [inputText, mode],
     ([newInput, newMode], [_oldInput, oldMode], onCleanup) => {
-      // Swap input/output if mode changes
-      if (oldMode && newMode !== oldMode && outputText.value) {
-        inputText.value = outputText.value;
+      const nextInput = getNextInputOnModeChange(newMode, oldMode, outputText.value);
+      if (nextInput !== null) {
+        inputText.value = nextInput;
         return;
       }
 

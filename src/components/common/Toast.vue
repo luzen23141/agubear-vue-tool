@@ -1,11 +1,7 @@
 <template>
   <Transition name="toast">
-    <div
-      v-if="visible"
-      :class="type"
-      class="fixed bottom-8 left-50% -translate-x-50% flex items-center gap-3 px-6 py-3 bg-[var(--surface-raised)] border border-[var(--border)] rounded-md shadow-lg z-9999 font-500 text-[var(--text-primary)] min-w-200px justify-center"
-    >
-      <span class="inline-flex items-center"><SvgIcon :name="icon" size="1.1rem" /></span>
+    <div v-if="visible" :class="type" class="toast">
+      <span class="toast-icon"><SvgIcon :name="icon" size="1.1rem" /></span>
       <span>{{ message }}</span>
     </div>
   </Transition>
@@ -56,6 +52,31 @@ defineExpose({ show });
 </script>
 
 <style scoped>
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 200px;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  font-weight: 500;
+}
+
+.toast-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
 .success {
   border-color: var(--primary);
   color: var(--primary);

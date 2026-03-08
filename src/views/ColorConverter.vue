@@ -1,16 +1,13 @@
 <template>
   <ToolPageLayout :title="t('color.title')" tool-key="color">
-    <div class="converter-grid">
-      <!-- Color Picker & Preview -->
-      <div class="picker-section">
+    <div class="converter-grid color-layout">
+      <section class="picker-section card">
         <div :style="{ backgroundColor: hexValue }" class="color-preview" />
         <input v-model="hexValue" type="color" class="native-picker" @input="updateFromPicker" />
         <div class="hex-label">{{ hexValue.toUpperCase() }}</div>
-      </div>
+      </section>
 
-      <!-- Inputs -->
-      <div class="inputs-section">
-        <!-- HEX -->
+      <section class="inputs-section">
         <InputWithCopy
           id="color-hex"
           v-model="hexInput"
@@ -20,7 +17,6 @@
           @update:model-value="updateFromHex"
         />
 
-        <!-- RGB -->
         <InputWithCopy
           id="color-rgb"
           v-model="rgbInput"
@@ -30,7 +26,6 @@
           @update:model-value="updateFromRgb"
         />
 
-        <!-- HSL -->
         <InputWithCopy
           id="color-hsl"
           v-model="hslInput"
@@ -40,7 +35,6 @@
           @update:model-value="updateFromHsl"
         />
 
-        <!-- CMYK -->
         <InputWithCopy
           id="color-cmyk"
           v-model="cmykInput"
@@ -49,7 +43,7 @@
           allow-copy
           @update:model-value="updateFromCmyk"
         />
-      </div>
+      </section>
     </div>
   </ToolPageLayout>
 </template>
@@ -77,66 +71,49 @@ const {
 </script>
 
 <style scoped>
-.converter-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  padding: 1rem 0;
+.color-layout {
+  align-items: start;
 }
 
-@media (min-width: 768px) {
-  .converter-grid {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-/* Picker */
 .picker-section {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
   align-items: center;
-  flex: 0 0 220px;
-  padding: 1.5rem;
-  background: var(--background-alt);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
+  justify-content: center;
+  min-height: 100%;
 }
 
 .color-preview {
-  width: 140px;
-  height: 140px;
+  width: min(180px, 100%);
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 6px solid var(--surface);
   box-shadow: var(--shadow-lg);
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-normal);
 }
 
 .native-picker {
-  width: 100%;
-  height: 48px;
+  width: min(100%, 240px);
+  height: 52px;
   cursor: pointer;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   background: var(--surface);
   padding: 4px;
 }
 
 .hex-label {
-  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-primary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
-/* Inputs */
 .inputs-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -145,12 +122,12 @@ const {
 }
 
 :deep(.custom-textarea) {
-  height: 48px !important;
-  min-height: 48px !important;
+  height: 52px !important;
+  min-height: 52px !important;
   resize: none;
   font-size: 1rem;
-  line-height: 28px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  line-height: 1.4;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 </style>

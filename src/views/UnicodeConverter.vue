@@ -6,10 +6,9 @@
     @clear-history="clearHistory"
     @remove-history="removeFromHistory"
   >
-    <!-- 格式與選項 -->
-    <div class="options-bar">
-      <div class="format-select">
-        <label>
+    <div class="tool-toolbar unicode-toolbar">
+      <div class="unicode-format-select">
+        <label class="unicode-format-option">
           <input
             id="unicode-mode-unicode"
             v-model="format"
@@ -19,7 +18,7 @@
           />
           <span>\uXXXX</span>
         </label>
-        <label>
+        <label class="unicode-format-option">
           <input
             id="unicode-mode-html"
             v-model="format"
@@ -52,12 +51,21 @@
       allow-copy
     />
 
-    <!-- 轉換按鈕 -->
-    <div class="action-buttons">
-      <button :aria-label="t('unicode.toUnicodeAria')" type="button" @click="convertToUnicode">
+    <div class="tool-actions unicode-actions">
+      <button
+        :aria-label="t('unicode.toUnicodeAria')"
+        type="button"
+        class="btn-primary"
+        @click="convertToUnicode"
+      >
         {{ t('unicode.toUnicode') }}
       </button>
-      <button :aria-label="t('unicode.toTextAria')" type="button" @click="convertToText">
+      <button
+        :aria-label="t('unicode.toTextAria')"
+        type="button"
+        class="btn-secondary"
+        @click="convertToText"
+      >
         {{ t('unicode.toText') }}
       </button>
     </div>
@@ -91,7 +99,6 @@ const unicodeInput = ref('');
 const skipAscii = ref(true);
 const format = ref<'unicode' | 'html'>('unicode');
 
-// 文字 → Unicode
 const convertToUnicode = () => {
   if (!textInput.value) return;
   unicodeInput.value =
@@ -105,7 +112,6 @@ const convertToUnicode = () => {
   addToHistory('unicode', displayInput, displayOutput);
 };
 
-// Unicode → 文字
 const convertToText = () => {
   if (!unicodeInput.value) return;
   textInput.value =
@@ -123,62 +129,30 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.options-bar {
-  display: flex;
+.unicode-toolbar {
   align-items: center;
-  justify-content: space-between;
+}
+
+.unicode-format-select {
+  display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
 }
 
-.format-select {
-  display: flex;
-  gap: 12px;
-}
-
-.format-select label {
-  display: flex;
+.unicode-format-option {
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.35rem;
   cursor: pointer;
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
-.format-select input[type='radio'] {
+.unicode-format-option input[type='radio'] {
   accent-color: var(--primary);
 }
 
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.action-buttons {
-  display: flex;
+.unicode-actions {
   justify-content: center;
-  gap: 12px;
-  margin: 1.5rem 0;
-}
-
-.action-buttons button {
-  padding: 10px 20px;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all var(--transition-fast);
-}
-
-.action-buttons button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 }
 </style>

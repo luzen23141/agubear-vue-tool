@@ -37,7 +37,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue();
+const mockClipboardWrite = vi.fn().mockImplementation(async () => {});
 const mockClipboardRead = vi.fn().mockResolvedValue('test content');
 Object.assign(navigator, {
   clipboard: {
@@ -70,7 +70,7 @@ describe('PinyinConverter.vue', () => {
 
     it('應渲染轉換按鈕', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
-      const button = wrapper.find('.action-buttons button');
+      const button = wrapper.find('.tool-actions .btn-primary');
       expect(button.exists()).toBe(true);
       expect(button.text()).toContain('轉換');
     });
@@ -86,7 +86,7 @@ describe('PinyinConverter.vue', () => {
     it('輸入中文應轉換為不帶聲調拼音 (預設)', async () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue('你好');
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
       expect((wrapper.get('#pinyin-output') as DOMWrapper<HTMLTextAreaElement>).element.value).toBe(
         'ni hao'
@@ -97,7 +97,7 @@ describe('PinyinConverter.vue', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       await wrapper.get('#show-tone').setValue(true);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue('你好');
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
       expect((wrapper.get('#pinyin-output') as DOMWrapper<HTMLTextAreaElement>).element.value).toBe(
         'nǐ hǎo'
@@ -108,7 +108,7 @@ describe('PinyinConverter.vue', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       await wrapper.get('#show-spaces').setValue(false);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue('你好');
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
       expect((wrapper.get('#pinyin-output') as DOMWrapper<HTMLTextAreaElement>).element.value).toBe(
         'nihao'
@@ -118,7 +118,7 @@ describe('PinyinConverter.vue', () => {
     it('空輸入不應產生結果', async () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue('');
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
       expect(wrapper.find('#pinyin-output').exists()).toBe(false);
     });
@@ -128,7 +128,7 @@ describe('PinyinConverter.vue', () => {
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue(
         '中華人民共和國'
       );
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
       const result = (wrapper.get('#pinyin-output') as DOMWrapper<HTMLTextAreaElement>).element
         .value;
@@ -140,7 +140,7 @@ describe('PinyinConverter.vue', () => {
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue(
         '你好 context'
       );
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
       const result = (wrapper.get('#pinyin-output') as DOMWrapper<HTMLTextAreaElement>).element
         .value;
@@ -152,7 +152,7 @@ describe('PinyinConverter.vue', () => {
     it('轉換後應記錄到歷史', async () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue('你好');
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
 
       expect(addToHistoryMock).toHaveBeenCalledWith('pinyin', '你好', 'ni hao');
@@ -162,7 +162,7 @@ describe('PinyinConverter.vue', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       const longText = '中'.repeat(20);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue(longText);
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
 
       const lastCall = addToHistoryMock.mock.calls.at(-1);
@@ -176,14 +176,14 @@ describe('PinyinConverter.vue', () => {
     it('點擊結果區域應觸發複製', async () => {
       const wrapper = mount(PinyinConverter, mountOptions);
       await (wrapper.get('#pinyin-input') as DOMWrapper<HTMLTextAreaElement>).setValue('你好');
-      await wrapper.find('.action-buttons button').trigger('click');
+      await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
 
       const copyButton = wrapper
         .find('#pinyin-output')
         .element.parentElement?.parentElement?.querySelector('.copy-btn-overlay');
       if (copyButton) {
-        await (copyButton as HTMLElement).click();
+        (copyButton as HTMLElement).click();
         expect(mockClipboardWrite).toHaveBeenCalled();
       }
     });
@@ -210,7 +210,7 @@ describe('PinyinConverter.vue', () => {
 
     it('轉換按鈕應有 aria-label', () => {
       const wrapper = mount(PinyinConverter, mountOptions);
-      const button = wrapper.find('.action-buttons button');
+      const button = wrapper.find('.tool-actions .btn-primary');
       expect(button.attributes('aria-label')).toBeTruthy();
     });
   });
