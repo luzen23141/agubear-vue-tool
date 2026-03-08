@@ -1,6 +1,7 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount, config } from '@vue/test-utils';
 import { createI18n } from 'vue-i18n';
+import { useHead } from '@unhead/vue';
 import ToolContext from '@/components/common/ToolContext.vue';
 
 // Mock @unhead/vue
@@ -32,6 +33,10 @@ const i18n = createI18n({
 config.global.plugins = [i18n];
 
 describe('ToolContext', () => {
+  beforeEach(() => {
+    vi.mocked(useHead).mockClear();
+  });
+
   it('renders the context title', () => {
     const wrapper = mount(ToolContext, {
       props: { toolKey: 'timestamp' }
@@ -64,6 +69,27 @@ describe('ToolContext', () => {
       props: { toolKey: 'timestamp' }
     });
     expect(wrapper.find('section h3').text()).toBe('FAQ');
+  });
+
+  it('registers FAQ and tool schemas through useHead', () => {
+    mount(ToolContext, {
+      props: { toolKey: 'timestamp' }
+    });
+
+    expect(useHead).toHaveBeenCalledTimes(1);
+    const headConfig = vi.mocked(useHead).mock.calls[0]?.[0] as {
+      script: { value: Array<{ key: string; innerHTML: string }> };
+    };
+    const scripts = headConfig.script.value;
+
+    expect(scripts).toHaveLength(2);
+    expect(scripts[0]?.key).toBe('timestamp-faq-schema');
+    expect(JSON.parse(scripts[0]?.innerHTML || '{}')).toMatchObject({ '@type': 'FAQPage' });
+    expect(scripts[1]?.key).toBe('timestamp-tool-schema');
+    expect(JSON.parse(scripts[1]?.innerHTML || '{}')).toMatchObject({
+      '@type': 'SoftwareApplication',
+      name: 'Timestamp Converter'
+    });
   });
 
   it('uses schema.org microdata attributes', () => {

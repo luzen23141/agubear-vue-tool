@@ -26,11 +26,11 @@ export function UseCommands() {
 
   const commands = computed<Command[]>(() => [
     ...TOOL_REGISTRY.map((tool) => ({
-      id: tool.commandId,
+      id: tool.id === 'timestamp' ? 'nav-home' : `nav-${tool.id}`,
       title: t(tool.nameKey),
       category: t(`app.categories.${tool.category}`),
       icon: tool.icon,
-      action: () => navigate(tool.routeName)
+      action: () => navigate(tool.id)
     })),
     {
       id: 'theme-toggle',

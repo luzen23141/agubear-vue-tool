@@ -221,6 +221,9 @@
   "common": {
     "copy": "Copy",
     "paste": "Paste",
+    "copied": "Copied",
+    "copyFailed": "Failed to copy",
+    "pasteFailed": "Failed to paste",
     "record": "Record",
     "clear": "Clear",
     "history": "History",

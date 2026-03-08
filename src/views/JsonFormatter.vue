@@ -77,15 +77,18 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import SvgIcon from '@/components/icons/SvgIcon.vue';
 import { UseJsonFormatter } from '@/composables/use-json-formatter';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore } from '@/stores/history';
 
 const { t } = useI18n();
-const { history, clearHistory, removeFromHistory } = UseHistory();
+const historyStore = useHistoryStore();
+const { history } = storeToRefs(historyStore);
+const { clearHistory, removeFromHistory } = historyStore;
 
 const {
   inputJson,

@@ -1,8 +1,9 @@
 /* eslint-disable max-lines-per-function, max-statements */
 
-import { ref, reactive, watch, onMounted, getCurrentInstance } from 'vue';
+import { ref, reactive, watch } from 'vue';
 import JsonToTS from 'json-to-ts';
 import { formatJson, type JsonError } from '../utils/json-utils';
+import { canUseClipboardRead, readClipboardText } from './use-copy-to-clipboard';
 
 // Helper logic extracted to reduce composable length
 const minifyJson = (json: string): string => {
@@ -27,7 +28,7 @@ export function UseJsonFormatter() {
   const outputJson = ref('');
   const error = ref<JsonError | null>(null);
   const options = reactive({ unescape: false, decodeUnicode: false });
-  const canPaste = ref(false);
+  const canPaste = ref(canUseClipboardRead());
 
   const handleFormat = () => {
     error.value = null;
@@ -57,22 +58,10 @@ export function UseJsonFormatter() {
   };
 
   const pasteInput = async () => {
-    try {
-      const clipboardText = await navigator.clipboard.readText();
-      const text = clipboardText.trim();
-      if (text) inputJson.value = text;
-    } catch {
-      /* ignore */
-    }
+    const text = await readClipboardText({ trim: true });
+    if (text) inputJson.value = text;
   };
 
-  if (getCurrentInstance()) {
-    onMounted(() => {
-      if (typeof navigator?.clipboard?.readText === 'function') canPaste.value = true;
-    });
-  } else if (typeof navigator?.clipboard?.readText === 'function') {
-    canPaste.value = true;
-  }
   watch(inputJson, () => {
     if (error.value) error.value = null;
   });

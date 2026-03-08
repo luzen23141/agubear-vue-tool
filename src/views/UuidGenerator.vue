@@ -9,7 +9,7 @@
           <label
             v-for="type in idTypes"
             :key="type.value"
-            :class="{ active: selectedType === type.value }"
+            :class="{ 'type-radio--active': selectedType === type.value }"
             class="type-radio"
           >
             <input
@@ -49,7 +49,7 @@
 
     <!-- Output Section -->
     <div class="output-section">
-      <div class="pane-label">{{ t('uuid.resultLabel') }}</div>
+      <div class="result-label">{{ t('uuid.resultLabel') }}</div>
       <InputWithCopy
         id="uuid-output"
         :model-value="outputString"
@@ -192,7 +192,7 @@ onMounted(() => {
   color: var(--text-primary);
 }
 
-.type-radio.active {
+.type-radio--active {
   background: var(--primary);
   color: var(--text-on-primary);
   box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
@@ -242,7 +242,7 @@ onMounted(() => {
   box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 }
 
-.pane-label {
+.result-label {
   display: block;
   font-size: 0.85rem;
   font-weight: 600;

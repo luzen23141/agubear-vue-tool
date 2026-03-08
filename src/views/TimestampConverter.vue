@@ -109,12 +109,14 @@
         <div class="result-section">
           <div class="pane-label">{{ t('timestamp.resultLabel') }}</div>
           <div
-            :class="{ 'result-flash': timestampResult }"
+            :class="{ 'result-flash': hasTimestampResult }"
             class="result-panel timestamp-result-panel"
           >
-            <div class="result-text font-mono">{{ timestampResult || '---' }}</div>
+            <div class="result-text font-mono">
+              {{ hasTimestampResult ? timestampResult : '---' }}
+            </div>
             <button
-              v-if="timestampResult"
+              v-if="hasTimestampResult"
               :aria-label="t('common.copy')"
               type="button"
               class="copy-icon-btn"
@@ -132,11 +134,13 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import BaseCard from '@/components/common/BaseCard.vue';
 import InputWithCopy from '@/components/common/InputWithCopy.vue';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore } from '@/stores/history';
 import { UseTimestampConverter } from '@/composables/use-timestamp-converter';
 import { useCopyToClipboard } from '@/composables/use-copy-to-clipboard';
 import DurationCalculator from '@/components/DurationCalculator.vue';
@@ -144,8 +148,9 @@ import SvgIcon from '@/components/icons/SvgIcon.vue';
 import { TIMEZONE_OPTIONS } from '@/utils/constants';
 
 const { t } = useI18n();
-
-const { history, addToHistory, clearHistory, removeFromHistory } = UseHistory();
+const historyStore = useHistoryStore();
+const { history } = storeToRefs(historyStore);
+const { addToHistory, clearHistory, removeFromHistory } = historyStore;
 
 const {
   timestampInput,
@@ -162,6 +167,7 @@ const {
 } = UseTimestampConverter(addToHistory);
 
 const { copyText } = useCopyToClipboard();
+const hasTimestampResult = computed(() => timestampResult.value !== '');
 
 const modeOptions = [
   { value: 'auto', labelKey: 'timestamp.modeAuto' },

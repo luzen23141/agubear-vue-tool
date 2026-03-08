@@ -61,8 +61,5 @@ export const useHistoryStore = defineStore('history', () => {
     }
   };
 
-  // Helper to filter history by type if needed
-  const getByType = (type: string) => history.value.filter((item) => item.type === type);
-
-  return { history, addToHistory, clearHistory, removeFromHistory, getByType };
+  return { history, addToHistory, clearHistory, removeFromHistory };
 });

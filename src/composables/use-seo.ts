@@ -80,7 +80,7 @@ function getJsonLd(options: {
   return [webAppSchema];
 }
 
-type FaqItem = {
+export type FaqItem = {
   question: string;
   answer: string;
 };
@@ -119,36 +119,52 @@ function buildToolContextSchemas(title: string, faqItems: FaqItem[]) {
   return [buildFaqSchema(faqItems), buildToolSchema(title)];
 }
 
+function getToolContextScriptKey(toolKey: string, suffix: 'faq' | 'tool') {
+  return `${toolKey}-${suffix}-schema`;
+}
+
 type TranslateMessagesFunction = (_key: string) => unknown;
 
-function resolveFaqItems(toolKey: string, tm: TranslateMessagesFunction) {
-  const questions = tm(`${toolKey}.faq`);
-  if (!Array.isArray(questions)) return [] as FaqItem[];
+function resolveArrayMessage(value: unknown) {
+  return Array.isArray(value) ? value : [];
+}
 
-  return questions.map((q) => {
+export function resolveFaqItems(toolKey: string, tm: TranslateMessagesFunction) {
+  return resolveArrayMessage(tm(`${toolKey}.faq`)).map((q) => {
     const item = q as { q: string; a: string };
     return {
       question: item.q,
       answer: item.a
     };
-  });
+  }) as FaqItem[];
 }
 
-export function useToolContextSeo(toolKey: string) {
+export function useToolContext(toolKey: string) {
   const { t, tm } = useI18n();
 
-  const schemas = computed(() =>
-    buildToolContextSchemas(t(`${toolKey}.title`), resolveFaqItems(toolKey, tm))
-  );
+  const contextParagraphs = computed(() => resolveArrayMessage(tm(`${toolKey}.context.content`)));
+  const faqItems = computed(() => resolveFaqItems(toolKey, tm));
+  const schemas = computed(() => buildToolContextSchemas(t(`${toolKey}.title`), faqItems.value));
 
   useHead({
-    script: computed(() =>
-      schemas.value.map((schema) => ({
+    script: computed(() => [
+      {
+        key: getToolContextScriptKey(toolKey, 'faq'),
         type: 'application/ld+json',
-        innerHTML: JSON.stringify(schema)
-      }))
-    )
+        innerHTML: JSON.stringify(schemas.value[0])
+      },
+      {
+        key: getToolContextScriptKey(toolKey, 'tool'),
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(schemas.value[1])
+      }
+    ])
   });
+
+  return {
+    contextParagraphs,
+    faqItems
+  };
 }
 
 type SeoOverrides = {

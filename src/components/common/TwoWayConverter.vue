@@ -9,7 +9,7 @@
     <!-- Mode Selection -->
     <div class="mode-switcher">
       <div class="mode-select">
-        <label class="mode-label">
+        <label :class="{ 'mode-label--active': mode === encodeValue }" class="mode-label">
           <input
             :name="name"
             :value="encodeValue"
@@ -20,7 +20,7 @@
           />
           <span>{{ encodeLabel }}</span>
         </label>
-        <label class="mode-label">
+        <label :class="{ 'mode-label--active': mode === decodeValue }" class="mode-label">
           <input
             :name="name"
             :value="decodeValue"
@@ -121,6 +121,16 @@ const { t } = useI18n();
   margin-bottom: 1.5rem;
 }
 
+.mode-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--background-alt);
+}
+
 .mode-input {
   display: none;
 }
@@ -137,7 +147,7 @@ const { t } = useI18n();
   color: var(--text-secondary);
 }
 
-.mode-label:has(input:checked) {
+.mode-label--active {
   background: var(--gradient-primary);
   color: var(--text-on-primary);
   font-weight: 600;

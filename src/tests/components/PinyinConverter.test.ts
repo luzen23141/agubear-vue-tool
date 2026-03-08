@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { flushPromises, mount, DOMWrapper } from '@vue/test-utils';
+import { ref } from 'vue';
 import PinyinConverter from '@/views/PinyinConverter.vue';
 import { setupI18n } from '@/i18n';
 import { TOAST_KEY } from '@/composables/use-toast-key';
-import { ref } from 'vue';
 
 const i18n = setupI18n();
 
@@ -16,19 +16,15 @@ const mountOptions = {
   }
 };
 
-// Mock UseHistory
-const addToHistoryMock = vi.fn();
-const clearHistoryMock = vi.fn();
-const removeFromHistoryMock = vi.fn();
-let mockHistory: any[] = [];
+const mockHistoryStore = {
+  history: ref<any[]>([]),
+  addToHistory: vi.fn(),
+  clearHistory: vi.fn(),
+  removeFromHistory: vi.fn()
+};
 
-vi.mock('@/composables/use-history', () => ({
-  UseHistory: () => ({
-    history: ref(mockHistory),
-    addToHistory: addToHistoryMock,
-    clearHistory: clearHistoryMock,
-    removeFromHistory: removeFromHistoryMock
-  })
+vi.mock('@/stores/history', () => ({
+  useHistoryStore: () => mockHistoryStore
 }));
 
 // Mock useHead
@@ -49,12 +45,12 @@ Object.assign(navigator, {
 describe('PinyinConverter.vue', () => {
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
-    addToHistoryMock.mockClear();
-    clearHistoryMock.mockClear();
-    removeFromHistoryMock.mockClear();
+    mockHistoryStore.history.value = [];
+    mockHistoryStore.addToHistory.mockClear();
+    mockHistoryStore.clearHistory.mockClear();
+    mockHistoryStore.removeFromHistory.mockClear();
     mockClipboardWrite.mockClear();
     mockClipboardRead.mockClear();
-    mockHistory = [];
   });
 
   describe('渲染', () => {
@@ -155,7 +151,7 @@ describe('PinyinConverter.vue', () => {
       await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
 
-      expect(addToHistoryMock).toHaveBeenCalledWith('pinyin', '你好', 'ni hao');
+      expect(mockHistoryStore.addToHistory).toHaveBeenCalledWith('pinyin', '你好', 'ni hao');
     });
 
     it('長文字應被截斷後記錄', async () => {
@@ -165,7 +161,7 @@ describe('PinyinConverter.vue', () => {
       await wrapper.find('.tool-actions .btn-primary').trigger('click');
       await flushPromises();
 
-      const lastCall = addToHistoryMock.mock.calls.at(-1);
+      const lastCall = mockHistoryStore.addToHistory.mock.calls.at(-1);
       const calledInput = lastCall ? lastCall[1] : '';
       expect(calledInput).toContain('...');
       expect(calledInput.length).toBeLessThanOrEqual(18); // 15 + '...'

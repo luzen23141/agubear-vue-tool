@@ -4,6 +4,7 @@ import { defineComponent } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { createRouter, createWebHistory } from 'vue-router';
 import { UseCommands, type Command } from '@/composables/use-commands';
+import { TOOL_REGISTRY, getToolRouteMeta } from '@/utils/tool-registry';
 
 const i18n = createI18n({
   legacy: false,
@@ -107,6 +108,29 @@ describe('UseCommands', () => {
     const { result } = withSetup(() => UseCommands());
     const ids = result.commands.value.map((c: Command) => c.id);
     expect(ids).toContain('theme-toggle');
+  });
+
+  it('uses route metadata from the shared tool registry', () => {
+    const timestampMeta = getToolRouteMeta('timestamp');
+    const unknownMeta = getToolRouteMeta('unknown');
+
+    expect(timestampMeta).toEqual({
+      titleKey: 'app.tabs.timestamp',
+      descriptionKey: 'timestamp.seo.description'
+    });
+    expect(unknownMeta).toBeUndefined();
+  });
+
+  it('shares navigation metadata through the tool registry', () => {
+    expect(TOOL_REGISTRY).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: 'hash',
+          nameKey: 'app.tabs.hash',
+          descriptionKey: 'hash.seo.description'
+        })
+      ])
+    );
   });
 
   it('nav actions call router.push', async () => {

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import HashGenerator from '../../views/HashGenerator.vue';
+import { ref } from 'vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -11,15 +12,15 @@ const mountOptions = {
   }
 };
 
-// Mock UseHistory
+// Mock history store
 const historyMocks = {
-  history: [] as any[],
+  history: ref<any[]>([]),
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 };
-vi.mock('../../composables/use-history', () => ({
-  UseHistory: () => historyMocks
+vi.mock('../../stores/history', () => ({
+  useHistoryStore: () => historyMocks
 }));
 
 // Mock useHead
@@ -47,7 +48,7 @@ vi.mock('../../utils/crypto', async () => {
 });
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue();
+const mockClipboardWrite = vi.fn().mockImplementation(async () => {});
 const mockClipboardRead = vi.fn().mockResolvedValue('pasted content');
 Object.assign(navigator, {
   clipboard: {
@@ -60,7 +61,7 @@ describe('HashGenerator.vue', () => {
   let wrapper: any;
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
-    historyMocks.history = [];
+    historyMocks.history.value = [];
     historyMocks.addToHistory.mockClear();
     historyMocks.clearHistory.mockClear();
     historyMocks.removeFromHistory.mockClear();
@@ -130,7 +131,7 @@ describe('HashGenerator.vue', () => {
     });
 
     it('應顯示並能清除歷史紀錄', async () => {
-      historyMocks.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
+      historyMocks.history.value = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
       const newWrapper = mount(HashGenerator, mountOptions);
       expect(newWrapper.find('.history-card').exists()).toBe(true);
       expect(newWrapper.find('.history-item').text()).toContain('test');
@@ -140,7 +141,7 @@ describe('HashGenerator.vue', () => {
     });
 
     it('應能刪除單筆紀錄', async () => {
-      historyMocks.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
+      historyMocks.history.value = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
       const newWrapper = mount(HashGenerator, mountOptions);
       await newWrapper.find('.delete-btn').trigger('click');
       expect(historyMocks.removeFromHistory).toHaveBeenCalledWith(1);

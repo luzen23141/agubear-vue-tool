@@ -11,7 +11,7 @@
       <button
         v-for="m in ['text', 'wifi', 'contact']"
         :key="m"
-        :class="[{ active: mode === m }]"
+        :class="{ 'tab-btn--active': mode === m }"
         :aria-pressed="mode === m"
         class="tab-btn"
         type="button"
@@ -40,7 +40,9 @@
     <div class="controls-grid">
       <!-- Size -->
       <div class="control-item">
-        <label for="qr-size">{{ t('qrcode.size', { n: qrOptions.qrSize }) }}</label>
+        <label for="qr-size" class="control-label">{{
+          t('qrcode.size', { n: qrOptions.qrSize })
+        }}</label>
         <input
           id="qr-size"
           v-model.number="qrOptions.qrSize"
@@ -49,12 +51,15 @@
           min="100"
           max="1000"
           step="10"
+          class="number-input"
         />
       </div>
 
       <!-- Margin -->
       <div class="control-item">
-        <label for="qr-margin">{{ t('qrcode.margin', { n: qrOptions.margin }) }}</label>
+        <label for="qr-margin" class="control-label">{{
+          t('qrcode.margin', { n: qrOptions.margin })
+        }}</label>
         <input
           id="qr-margin"
           v-model.number="qrOptions.margin"
@@ -63,31 +68,34 @@
           min="0"
           max="50"
           step="1"
+          class="number-input"
         />
       </div>
 
       <!-- Colors -->
       <div class="control-item color-control">
-        <label for="qr-fg-color">{{ t('qrcode.fgColor') }}</label>
+        <label for="qr-fg-color" class="control-label">{{ t('qrcode.fgColor') }}</label>
         <div class="color-picker-row">
           <input
             id="qr-fg-color"
             v-model="qrOptions.foregroundColor"
             :aria-label="t('qrcode.fgColorAria')"
             type="color"
+            class="color-input"
           />
           <span class="color-hex">{{ qrOptions.foregroundColor }}</span>
         </div>
       </div>
 
       <div class="control-item color-control">
-        <label for="qr-bg-color">{{ t('qrcode.bgColor') }}</label>
+        <label for="qr-bg-color" class="control-label">{{ t('qrcode.bgColor') }}</label>
         <div class="color-picker-row">
           <input
             id="qr-bg-color"
             v-model="qrOptions.backgroundColor"
             :aria-label="t('qrcode.bgColorAria')"
             type="color"
+            class="color-input"
           />
           <span class="color-hex">{{ qrOptions.backgroundColor }}</span>
         </div>
@@ -100,11 +108,11 @@
           <button
             v-for="ec in ecLevels"
             :key="ec.value"
-            :class="[{ active: qrOptions.errorCorrectionLevel === ec.value }]"
+            :class="{ 'ec-btn--active': qrOptions.errorCorrectionLevel === ec.value }"
             :aria-label="t('qrcode.ecAria', { level: ec.label })"
             :aria-pressed="qrOptions.errorCorrectionLevel === ec.value"
-            type="button"
             class="ec-btn"
+            type="button"
             @click="qrOptions.errorCorrectionLevel = ec.value"
           >
             {{ ec.label }}
@@ -126,11 +134,11 @@
         />
       </div>
 
-      <div v-if="hasQrCode" class="action-bar">
+      <div v-if="hasQrCode" class="preview-actions">
         <button
           :aria-label="t('qrcode.downloadAria')"
           type="button"
-          class="action-btn download-btn"
+          class="action-btn action-btn--primary download-btn"
           @click="downloadPng"
         >
           {{ downloadTriggered ? t('qrcode.downloaded') : t('qrcode.downloadPng') }}
@@ -138,7 +146,7 @@
         <button
           :aria-label="t('qrcode.copyAria')"
           type="button"
-          class="action-btn copy-btn"
+          class="action-btn action-btn--secondary copy-btn"
           @click="copyToClipboard"
         >
           {{ copySuccess ? t('qrcode.copied') : t('qrcode.copyImage') }}
@@ -146,7 +154,7 @@
         <button
           :aria-label="t('qrcode.recordAria')"
           type="button"
-          class="action-btn record-btn"
+          class="action-btn action-btn--secondary record-btn"
           @click="recordToHistory"
         >
           {{ t('qrcode.record') }}
@@ -172,18 +180,21 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import type { QRCodeErrorCorrectionLevel } from 'qrcode';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import InputWithCopy from '@/components/common/InputWithCopy.vue';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore } from '@/stores/history';
 import { UseQrCode } from '@/composables/use-qr-code';
 import QrWifiForm from '@/components/qrcode/QrWifiForm.vue';
 import QrContactForm from '@/components/qrcode/QrContactForm.vue';
 
 const { t } = useI18n();
-const { history, addToHistory, clearHistory, removeFromHistory } = UseHistory();
+const historyStore = useHistoryStore();
+const { history } = storeToRefs(historyStore);
+const { addToHistory, clearHistory, removeFromHistory } = historyStore;
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 const {
@@ -246,13 +257,13 @@ defineExpose({
   transition: all var(--transition-fast);
 }
 
-.tab-btn.active {
+.tab-btn--active {
   background: var(--primary-soft);
   color: var(--primary);
   font-weight: 600;
 }
 
-.tab-btn:hover:not(.active) {
+.tab-btn:hover:not(.tab-btn--active) {
   background: var(--surface-hover);
 }
 
@@ -276,13 +287,13 @@ defineExpose({
   gap: 8px;
 }
 
-.control-item label {
+.control-label {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
-.control-item input[type='number'] {
+.number-input {
   padding: 8px 12px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
@@ -292,18 +303,12 @@ defineExpose({
   transition: border-color var(--transition-fast);
 }
 
-.control-item input[type='number']:focus {
+.number-input:focus {
   border-color: var(--primary);
   outline: none;
 }
 
-.color-picker-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.color-picker-row input[type='color'] {
+.color-input {
   width: 42px;
   height: 38px;
   padding: 2px;
@@ -311,6 +316,12 @@ defineExpose({
   border-radius: var(--radius-sm);
   cursor: pointer;
   background: var(--surface);
+}
+
+.color-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .color-hex {
@@ -357,7 +368,7 @@ defineExpose({
   color: var(--primary);
 }
 
-.ec-btn.active {
+.ec-btn--active {
   background: var(--primary);
   border-color: var(--primary);
   color: var(--text-on-primary);
@@ -392,7 +403,7 @@ defineExpose({
   height: auto;
 }
 
-.action-bar {
+.preview-actions {
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -409,25 +420,23 @@ defineExpose({
   transition: all var(--transition-fast);
 }
 
-.download-btn {
+.action-btn--primary {
   background: var(--primary);
   color: var(--text-on-primary);
 }
 
-.download-btn:hover {
+.action-btn--primary:hover {
   background: var(--primary-hover);
   transform: translateY(-1px);
 }
 
-.copy-btn,
-.record-btn {
+.action-btn--secondary {
   background: var(--surface);
   color: var(--text-secondary);
   border: 1px solid var(--border);
 }
 
-.copy-btn:hover,
-.record-btn:hover {
+.action-btn--secondary:hover {
   background: var(--primary-soft);
   color: var(--primary);
   border-color: var(--primary);

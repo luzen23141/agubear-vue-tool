@@ -21,15 +21,17 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import TwoWayConverter from '@/components/common/TwoWayConverter.vue';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore } from '@/stores/history';
 import { UseTwoWayConverter } from '@/composables/use-two-way-converter';
 import { toUrl, fromUrl } from '@/utils/crypto';
 
 const { t } = useI18n();
-
-const { history, clearHistory, removeFromHistory } = UseHistory();
+const historyStore = useHistoryStore();
+const { history } = storeToRefs(historyStore);
+const { clearHistory, removeFromHistory } = historyStore;
 
 const { mode, inputText, outputText, recordHistory } = UseTwoWayConverter(
   'url',

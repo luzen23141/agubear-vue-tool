@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://agubear.black/</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -61,7 +61,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -119,7 +119,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -148,7 +148,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -177,7 +177,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -206,7 +206,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -235,7 +235,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -293,7 +293,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -351,7 +351,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-TW/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -380,7 +380,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -409,7 +409,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -438,7 +438,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -467,7 +467,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -496,7 +496,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -525,7 +525,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -554,7 +554,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -583,7 +583,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -612,7 +612,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -641,7 +641,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -670,7 +670,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -699,7 +699,7 @@
   </url>
   <url>
     <loc>https://agubear.black/zh-CN/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -728,7 +728,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -757,7 +757,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -786,7 +786,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -815,7 +815,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -844,7 +844,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -873,7 +873,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -902,7 +902,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -931,7 +931,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -960,7 +960,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -989,7 +989,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -1018,7 +1018,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -1047,7 +1047,7 @@
   </url>
   <url>
     <loc>https://agubear.black/yue/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -1076,7 +1076,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -1105,7 +1105,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -1134,7 +1134,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -1163,7 +1163,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -1192,7 +1192,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -1221,7 +1221,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -1250,7 +1250,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -1279,7 +1279,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -1308,7 +1308,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -1337,7 +1337,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -1366,7 +1366,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -1395,7 +1395,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ja/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -1424,7 +1424,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -1453,7 +1453,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -1482,7 +1482,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -1511,7 +1511,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -1540,7 +1540,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -1569,7 +1569,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -1598,7 +1598,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -1627,7 +1627,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -1656,7 +1656,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -1685,7 +1685,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -1714,7 +1714,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -1743,7 +1743,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ko/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -1772,7 +1772,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -1801,7 +1801,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -1830,7 +1830,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -1859,7 +1859,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -1888,7 +1888,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -1917,7 +1917,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -1946,7 +1946,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -1975,7 +1975,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -2004,7 +2004,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -2033,7 +2033,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -2062,7 +2062,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -2091,7 +2091,7 @@
   </url>
   <url>
     <loc>https://agubear.black/en/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -2120,7 +2120,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -2149,7 +2149,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -2178,7 +2178,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -2207,7 +2207,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -2236,7 +2236,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -2265,7 +2265,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -2294,7 +2294,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -2323,7 +2323,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -2352,7 +2352,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -2381,7 +2381,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -2410,7 +2410,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -2439,7 +2439,7 @@
   </url>
   <url>
     <loc>https://agubear.black/es/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -2468,7 +2468,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -2497,7 +2497,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -2526,7 +2526,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -2555,7 +2555,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -2584,7 +2584,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -2613,7 +2613,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -2642,7 +2642,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -2671,7 +2671,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -2700,7 +2700,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -2729,7 +2729,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -2758,7 +2758,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -2787,7 +2787,7 @@
   </url>
   <url>
     <loc>https://agubear.black/fr/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -2816,7 +2816,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -2845,7 +2845,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -2874,7 +2874,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -2903,7 +2903,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -2932,7 +2932,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -2961,7 +2961,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -2990,7 +2990,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -3019,7 +3019,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -3048,7 +3048,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -3077,7 +3077,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -3106,7 +3106,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -3135,7 +3135,7 @@
   </url>
   <url>
     <loc>https://agubear.black/de/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -3164,7 +3164,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -3193,7 +3193,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -3222,7 +3222,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -3251,7 +3251,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -3280,7 +3280,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -3309,7 +3309,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -3338,7 +3338,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -3367,7 +3367,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -3396,7 +3396,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -3425,7 +3425,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -3454,7 +3454,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -3483,7 +3483,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pt/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -3512,7 +3512,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -3541,7 +3541,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -3570,7 +3570,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -3599,7 +3599,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -3628,7 +3628,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -3657,7 +3657,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -3686,7 +3686,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -3715,7 +3715,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -3744,7 +3744,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -3773,7 +3773,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -3802,7 +3802,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -3831,7 +3831,7 @@
   </url>
   <url>
     <loc>https://agubear.black/it/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -3860,7 +3860,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -3889,7 +3889,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -3918,7 +3918,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -3947,7 +3947,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -3976,7 +3976,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -4005,7 +4005,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -4034,7 +4034,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -4063,7 +4063,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -4092,7 +4092,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -4121,7 +4121,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -4150,7 +4150,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -4179,7 +4179,7 @@
   </url>
   <url>
     <loc>https://agubear.black/nl/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -4208,7 +4208,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -4237,7 +4237,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -4266,7 +4266,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -4295,7 +4295,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -4324,7 +4324,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -4353,7 +4353,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -4382,7 +4382,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -4411,7 +4411,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -4440,7 +4440,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -4469,7 +4469,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -4498,7 +4498,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -4527,7 +4527,7 @@
   </url>
   <url>
     <loc>https://agubear.black/pl/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -4556,7 +4556,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -4585,7 +4585,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -4614,7 +4614,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -4643,7 +4643,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -4672,7 +4672,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -4701,7 +4701,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -4730,7 +4730,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -4759,7 +4759,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -4788,7 +4788,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -4817,7 +4817,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -4846,7 +4846,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -4875,7 +4875,7 @@
   </url>
   <url>
     <loc>https://agubear.black/tr/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -4904,7 +4904,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -4933,7 +4933,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -4962,7 +4962,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -4991,7 +4991,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -5020,7 +5020,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -5049,7 +5049,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -5078,7 +5078,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -5107,7 +5107,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -5136,7 +5136,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -5165,7 +5165,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -5194,7 +5194,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -5223,7 +5223,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ru/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -5252,7 +5252,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -5281,7 +5281,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -5310,7 +5310,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -5339,7 +5339,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -5368,7 +5368,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -5397,7 +5397,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -5426,7 +5426,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -5455,7 +5455,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -5484,7 +5484,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -5513,7 +5513,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -5542,7 +5542,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -5571,7 +5571,7 @@
   </url>
   <url>
     <loc>https://agubear.black/uk/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -5600,7 +5600,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -5629,7 +5629,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -5658,7 +5658,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -5687,7 +5687,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -5716,7 +5716,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -5745,7 +5745,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -5774,7 +5774,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -5803,7 +5803,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -5832,7 +5832,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -5861,7 +5861,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -5890,7 +5890,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -5919,7 +5919,7 @@
   </url>
   <url>
     <loc>https://agubear.black/th/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -5948,7 +5948,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -5977,7 +5977,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -6006,7 +6006,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -6035,7 +6035,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -6064,7 +6064,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -6093,7 +6093,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -6122,7 +6122,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -6151,7 +6151,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -6180,7 +6180,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -6209,7 +6209,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -6238,7 +6238,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -6267,7 +6267,7 @@
   </url>
   <url>
     <loc>https://agubear.black/vi/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -6296,7 +6296,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -6325,7 +6325,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -6354,7 +6354,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -6383,7 +6383,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -6412,7 +6412,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -6441,7 +6441,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -6470,7 +6470,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -6499,7 +6499,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -6528,7 +6528,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -6557,7 +6557,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -6586,7 +6586,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -6615,7 +6615,7 @@
   </url>
   <url>
     <loc>https://agubear.black/id/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -6644,7 +6644,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -6673,7 +6673,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -6702,7 +6702,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -6731,7 +6731,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -6760,7 +6760,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -6789,7 +6789,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -6818,7 +6818,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -6847,7 +6847,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -6876,7 +6876,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -6905,7 +6905,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -6934,7 +6934,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -6963,7 +6963,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ms/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -6992,7 +6992,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -7021,7 +7021,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -7050,7 +7050,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -7079,7 +7079,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -7108,7 +7108,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -7137,7 +7137,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -7166,7 +7166,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -7195,7 +7195,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -7224,7 +7224,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -7253,7 +7253,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -7282,7 +7282,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -7311,7 +7311,7 @@
   </url>
   <url>
     <loc>https://agubear.black/hi/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>
@@ -7340,7 +7340,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/timestamp</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/timestamp"/>
@@ -7369,7 +7369,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/hash</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/hash"/>
@@ -7398,7 +7398,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/base64</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/base64"/>
@@ -7427,7 +7427,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/url</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/url"/>
@@ -7456,7 +7456,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/unicode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/unicode"/>
@@ -7485,7 +7485,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/pinyin</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/pinyin"/>
@@ -7514,7 +7514,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/qrcode</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/qrcode"/>
@@ -7543,7 +7543,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/json</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/json"/>
@@ -7572,7 +7572,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/jwt</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/jwt"/>
@@ -7601,7 +7601,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/uuid</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/uuid"/>
@@ -7630,7 +7630,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/color</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/color"/>
@@ -7659,7 +7659,7 @@
   </url>
   <url>
     <loc>https://agubear.black/ar/diff</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://agubear.black/zh-TW/diff"/>

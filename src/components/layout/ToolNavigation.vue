@@ -123,7 +123,7 @@ const groupedTools = computed(() => {
 });
 
 const switchTab = async (tool: ToolDefinition) => {
-  await router.push({ name: tool.routeName, params: { lang: locale.value } });
+  await router.push({ name: tool.id, params: { lang: locale.value } });
 };
 
 const toggleFavorite = (toolId: string) => {

@@ -115,6 +115,20 @@ describe('UseJsonFormatter', () => {
     expect(result.inputJson.value).toBe('{"name":"alex"}');
   });
 
+  it('pasteInput keeps input when clipboard read fails', async () => {
+    vi.stubGlobal('navigator', {
+      clipboard: {
+        readText: vi.fn().mockRejectedValue(new Error('paste fail'))
+      }
+    });
+    const { result } = withSetup();
+    result.inputJson.value = 'keep-me';
+
+    await result.pasteInput();
+
+    expect(result.inputJson.value).toBe('keep-me');
+  });
+
   it('pasteInput keeps input when clipboard text is empty', async () => {
     vi.stubGlobal('navigator', {
       clipboard: {

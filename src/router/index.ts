@@ -1,6 +1,7 @@
 import { type RouteRecordRaw } from 'vue-router';
 import TimestampConverter from '@/views/TimestampConverter.vue';
 import { SUPPORTED_LOCALES } from '@/i18n';
+import { getToolRouteMeta } from '@/utils/tool-registry';
 
 // Extract locale codes
 const localeCodes = new Set(SUPPORTED_LOCALES.map((l) => l.code));
@@ -35,73 +36,73 @@ export const routes: RouteRecordRaw[] = [
     path: '/:lang/timestamp',
     name: 'timestamp',
     component: TimestampConverter,
-    meta: { titleKey: 'app.tabs.timestamp', descriptionKey: 'timestamp.seo.description' }
+    meta: getToolRouteMeta('timestamp')
   },
   {
     path: '/:lang/hash',
     name: 'hash',
     component: () => import('@/views/HashGenerator.vue'),
-    meta: { titleKey: 'app.tabs.hash', descriptionKey: 'hash.seo.description' }
+    meta: getToolRouteMeta('hash')
   },
   {
     path: '/:lang/base64',
     name: 'base64',
     component: () => import('@/views/Base64Converter.vue'),
-    meta: { titleKey: 'app.tabs.base64', descriptionKey: 'base64.seo.description' }
+    meta: getToolRouteMeta('base64')
   },
   {
     path: '/:lang/url',
     name: 'url',
     component: () => import('@/views/UrlConverter.vue'),
-    meta: { titleKey: 'app.tabs.url', descriptionKey: 'url.seo.description' }
+    meta: getToolRouteMeta('url')
   },
   {
     path: '/:lang/unicode',
     name: 'unicode',
     component: () => import('@/views/UnicodeConverter.vue'),
-    meta: { titleKey: 'app.tabs.unicode', descriptionKey: 'unicode.seo.description' }
+    meta: getToolRouteMeta('unicode')
   },
   {
     path: '/:lang/pinyin',
     name: 'pinyin',
     component: () => import('@/views/PinyinConverter.vue'),
-    meta: { titleKey: 'app.tabs.pinyin', descriptionKey: 'pinyin.seo.description' }
+    meta: getToolRouteMeta('pinyin')
   },
   {
     path: '/:lang/qrcode',
     name: 'qrcode',
     component: () => import('@/views/QrCodeGenerator.vue'),
-    meta: { titleKey: 'app.tabs.qrcode', descriptionKey: 'qrcode.seo.description' }
+    meta: getToolRouteMeta('qrcode')
   },
   {
     path: '/:lang/json',
     name: 'json',
     component: () => import('@/views/JsonFormatter.vue'),
-    meta: { titleKey: 'app.tabs.json', descriptionKey: 'json.seo.description' }
+    meta: getToolRouteMeta('json')
   },
   {
     path: '/:lang/jwt',
     name: 'jwt',
     component: () => import('@/views/JwtDebugger.vue'),
-    meta: { titleKey: 'app.tabs.jwt', descriptionKey: 'jwt.seo.description' }
+    meta: getToolRouteMeta('jwt')
   },
   {
     path: '/:lang/uuid',
     name: 'uuid',
     component: () => import('@/views/UuidGenerator.vue'),
-    meta: { titleKey: 'app.tabs.uuid', descriptionKey: 'uuid.seo.description' }
+    meta: getToolRouteMeta('uuid')
   },
   {
     path: '/:lang/color',
     name: 'color',
     component: () => import('@/views/ColorConverter.vue'),
-    meta: { titleKey: 'app.tabs.color', descriptionKey: 'color.seo.description' }
+    meta: getToolRouteMeta('color')
   },
   {
     path: '/:lang/diff',
     name: 'diff',
     component: () => import('@/views/DiffChecker.vue'),
-    meta: { titleKey: 'app.tabs.diff', descriptionKey: 'diff.seo.description' }
+    meta: getToolRouteMeta('diff')
   },
   // Catch-all for 404 - Redirect to default lang
   {

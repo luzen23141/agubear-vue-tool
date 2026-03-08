@@ -44,33 +44,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useToolContextSeo } from '@/composables/use-seo';
+import { useToolContext } from '@/composables/use-seo';
 
 const props = defineProps<{
   toolKey: string; // e.g., 'timestamp', 'hash'
 }>();
 
-const { t, tm } = useI18n();
-
-useToolContextSeo(props.toolKey);
-
-// Helper to get array from i18n messages
-const contextParagraphs = computed(() => {
-  const content = tm(`${props.toolKey}.context.content`);
-  return Array.isArray(content) ? content : [];
-});
-
-const faqItems = computed(() => {
-  const questions = tm(`${props.toolKey}.faq`);
-  if (!Array.isArray(questions)) return [];
-  return questions.map((q: unknown) => {
-    const item = q as { q: string; a: string };
-    return {
-      question: item.q,
-      answer: item.a
-    };
-  });
-});
+const { t } = useI18n();
+const { contextParagraphs, faqItems } = useToolContext(props.toolKey);
 </script>

@@ -1,16 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { UseTwoWayConverter } from '@/composables/use-two-way-converter';
-import { ref } from 'vue';
 import { flushPromises } from '@vue/test-utils';
 
 const mockAddToHistory = vi.fn();
 
-vi.mock('@/composables/use-history', () => ({
-  UseHistory: () => ({
-    addToHistory: mockAddToHistory,
-    history: ref([]),
-    clearHistory: vi.fn(),
-    removeFromHistory: vi.fn()
+vi.mock('@/stores/history', () => ({
+  useHistoryStore: () => ({
+    addToHistory: mockAddToHistory
   })
 }));
 

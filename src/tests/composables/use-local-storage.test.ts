@@ -86,6 +86,13 @@ describe('UseLocalStorage', () => {
     expect(result.value).toBe('fallback');
   });
 
+  it('reads an existing value outside component setup', () => {
+    localStorage.setItem('outside-setup-key', JSON.stringify('stored-outside'));
+    const result = UseLocalStorage('outside-setup-key', 'fallback');
+
+    expect(result.value).toBe('stored-outside');
+  });
+
   it('skips write when window.localStorage is unavailable', async () => {
     Object.defineProperty(globalThis, 'window', {
       value: { localStorage: undefined },

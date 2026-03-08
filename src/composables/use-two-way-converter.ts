@@ -1,20 +1,54 @@
 import { ref, watch } from 'vue';
-import { UseHistory } from './use-history';
+import { useHistoryStore } from '@/stores/history';
 
 export type ConverterFunction = (_input: string) => string | null | Promise<string | null>;
 
 type ConverterMode = 'encode' | 'decode';
 
-function getNextInputOnModeChange(
+type ModeChangeState = {
+  nextInput: string | null;
+  shouldConvert: boolean;
+};
+
+function resolveModeChangeState(
   nextMode: ConverterMode,
   previousMode: ConverterMode | undefined,
+  currentInput: string,
   currentOutput: string
-) {
-  if (!previousMode || nextMode === previousMode || !currentOutput) {
+): ModeChangeState {
+  if (!previousMode || nextMode === previousMode) {
+    return {
+      nextInput: null,
+      shouldConvert: Boolean(currentInput)
+    };
+  }
+
+  if (!currentOutput) {
+    return {
+      nextInput: null,
+      shouldConvert: Boolean(currentInput)
+    };
+  }
+
+  return {
+    nextInput: currentOutput,
+    shouldConvert: false
+  };
+}
+
+function truncateHistoryValue(value: string) {
+  return value.length > 20 ? `${value.slice(0, 20)}...` : value;
+}
+
+function getHistoryEntry(input: string, output: string) {
+  if (!output) {
     return null;
   }
 
-  return currentOutput;
+  return {
+    input: truncateHistoryValue(input),
+    output: truncateHistoryValue(output)
+  };
 }
 
 // eslint-disable-next-line max-lines-per-function
@@ -23,7 +57,7 @@ export function UseTwoWayConverter(
   encode: ConverterFunction,
   decode: ConverterFunction
 ) {
-  const { addToHistory } = UseHistory();
+  const { addToHistory } = useHistoryStore();
   const mode = ref<ConverterMode>('encode');
   const inputText = ref('');
   const outputText = ref('');
@@ -53,9 +87,9 @@ export function UseTwoWayConverter(
   watch(
     [inputText, mode],
     ([newInput, newMode], [_oldInput, oldMode], onCleanup) => {
-      const nextInput = getNextInputOnModeChange(newMode, oldMode, outputText.value);
-      if (nextInput !== null) {
-        inputText.value = nextInput;
+      const modeChangeState = resolveModeChangeState(newMode, oldMode, newInput, outputText.value);
+      if (modeChangeState.nextInput !== null) {
+        inputText.value = modeChangeState.nextInput;
         return;
       }
 
@@ -64,7 +98,7 @@ export function UseTwoWayConverter(
         isCancelled = true;
       });
 
-      if (!newInput) {
+      if (!modeChangeState.shouldConvert) {
         outputText.value = '';
         return;
       }
@@ -75,12 +109,10 @@ export function UseTwoWayConverter(
   );
 
   const recordHistory = () => {
-    if (!outputText.value) return;
-    const displayInput =
-      inputText.value.length > 20 ? `${inputText.value.slice(0, 20)}...` : inputText.value;
-    const displayOutput =
-      outputText.value.length > 20 ? `${outputText.value.slice(0, 20)}...` : outputText.value;
-    addToHistory(type, displayInput, displayOutput);
+    const entry = getHistoryEntry(inputText.value, outputText.value);
+    if (!entry) return;
+
+    addToHistory(type, entry.input, entry.output);
   };
 
   return {

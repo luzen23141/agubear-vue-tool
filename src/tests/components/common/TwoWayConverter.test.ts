@@ -16,17 +16,7 @@ vi.mock('@unhead/vue', () => ({
   useHead: vi.fn()
 }));
 
-// Mock composables if needed, or let them run if they are simple logic
-// use-two-way-converter is simple logic. UseHistory uses localStorage which might need mocking or JSDOM handles it.
-// mocking UseHistory to avoid side effects
-vi.mock('@/composables/use-history', () => ({
-  UseHistory: () => ({
-    history: [],
-    addToHistory: vi.fn(),
-    removeFromHistory: vi.fn(),
-    clearHistory: vi.fn()
-  })
-}));
+// use-two-way-converter is simple logic, no history store mock needed for this component test
 
 describe('TwoWayConverter.vue', () => {
   const defaultProps = {

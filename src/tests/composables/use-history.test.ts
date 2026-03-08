@@ -1,14 +1,21 @@
 /**
- * UseHistory Composable 測試
+ * history store 測試
  */
+import { storeToRefs } from 'pinia';
+import type { Ref } from 'vue';
 import { describe, it, expect, beforeEach } from 'vitest';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore, type HistoryItem } from '@/stores/history';
 
-describe('UseHistory', () => {
-  let history, addToHistory, clearHistory, removeFromHistory;
+describe('useHistoryStore', () => {
+  let history: Ref<HistoryItem[]>;
+  let addToHistory: ReturnType<typeof useHistoryStore>['addToHistory'];
+  let clearHistory: ReturnType<typeof useHistoryStore>['clearHistory'];
+  let removeFromHistory: ReturnType<typeof useHistoryStore>['removeFromHistory'];
 
   beforeEach(() => {
-    ({ history, addToHistory, clearHistory, removeFromHistory } = UseHistory());
+    const store = useHistoryStore();
+    ({ history } = storeToRefs(store));
+    ({ addToHistory, clearHistory, removeFromHistory } = store);
   });
 
   describe('addToHistory', () => {

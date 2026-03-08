@@ -2,121 +2,120 @@ export type ToolCategory = 'conversion' | 'generators' | 'formatters';
 
 export interface ToolRegistryEntry {
   id: string;
-  routeName: string;
   nameKey: string;
+  descriptionKey: string;
   ariaKey: string;
   category: ToolCategory;
   icon: string;
-  commandId: string;
 }
 
 export const TOOL_REGISTRY: ToolRegistryEntry[] = [
   {
     id: 'timestamp',
-    routeName: 'timestamp',
     nameKey: 'app.tabs.timestamp',
+    descriptionKey: 'timestamp.seo.description',
     ariaKey: 'app.ariaLabels.timestamp',
     category: 'conversion',
-    icon: 'clock',
-    commandId: 'nav-home'
+    icon: 'clock'
   },
   {
     id: 'hash',
-    routeName: 'hash',
     nameKey: 'app.tabs.hash',
+    descriptionKey: 'hash.seo.description',
     ariaKey: 'app.ariaLabels.hash',
     category: 'generators',
-    icon: 'hash',
-    commandId: 'nav-hash'
+    icon: 'hash'
   },
   {
     id: 'base64',
-    routeName: 'base64',
     nameKey: 'app.tabs.base64',
+    descriptionKey: 'base64.seo.description',
     ariaKey: 'app.ariaLabels.base64',
     category: 'conversion',
-    icon: 'package',
-    commandId: 'nav-base64'
+    icon: 'package'
   },
   {
     id: 'url',
-    routeName: 'url',
     nameKey: 'app.tabs.url',
+    descriptionKey: 'url.seo.description',
     ariaKey: 'app.ariaLabels.url',
     category: 'conversion',
-    icon: 'link',
-    commandId: 'nav-url'
+    icon: 'link'
   },
   {
     id: 'unicode',
-    routeName: 'unicode',
     nameKey: 'app.tabs.unicode',
+    descriptionKey: 'unicode.seo.description',
     ariaKey: 'app.ariaLabels.unicode',
     category: 'conversion',
-    icon: 'code',
-    commandId: 'nav-unicode'
+    icon: 'code'
   },
   {
     id: 'pinyin',
-    routeName: 'pinyin',
     nameKey: 'app.tabs.pinyin',
+    descriptionKey: 'pinyin.seo.description',
     ariaKey: 'app.ariaLabels.pinyin',
     category: 'conversion',
-    icon: 'type',
-    commandId: 'nav-pinyin'
+    icon: 'type'
   },
   {
     id: 'qrcode',
-    routeName: 'qrcode',
     nameKey: 'app.tabs.qrcode',
+    descriptionKey: 'qrcode.seo.description',
     ariaKey: 'app.ariaLabels.qrcode',
     category: 'generators',
-    icon: 'qr-code',
-    commandId: 'nav-qrcode'
+    icon: 'qr-code'
   },
   {
     id: 'json',
-    routeName: 'json',
     nameKey: 'app.tabs.json',
+    descriptionKey: 'json.seo.description',
     ariaKey: 'app.ariaLabels.json',
     category: 'formatters',
-    icon: 'wrench',
-    commandId: 'nav-json'
+    icon: 'wrench'
   },
   {
     id: 'jwt',
-    routeName: 'jwt',
     nameKey: 'app.tabs.jwt',
+    descriptionKey: 'jwt.seo.description',
     ariaKey: 'app.ariaLabels.jwt',
     category: 'formatters',
-    icon: 'key',
-    commandId: 'nav-jwt'
+    icon: 'key'
   },
   {
     id: 'uuid',
-    routeName: 'uuid',
     nameKey: 'app.tabs.uuid',
+    descriptionKey: 'uuid.seo.description',
     ariaKey: 'app.ariaLabels.uuid',
     category: 'generators',
-    icon: 'id-card',
-    commandId: 'nav-uuid'
+    icon: 'id-card'
   },
   {
     id: 'color',
-    routeName: 'color',
     nameKey: 'app.tabs.color',
+    descriptionKey: 'color.seo.description',
     ariaKey: 'app.ariaLabels.color',
     category: 'conversion',
-    icon: 'palette',
-    commandId: 'nav-color'
+    icon: 'palette'
   },
   {
     id: 'diff',
-    routeName: 'diff',
     nameKey: 'app.tabs.diff',
+    descriptionKey: 'diff.seo.description',
     ariaKey: 'app.ariaLabels.diff',
     category: 'generators',
-    icon: 'file-diff',
-    commandId: 'nav-diff'
+    icon: 'file-diff'
   }
 ];
+
+export function getToolRouteMeta(toolId: string) {
+  const tool = TOOL_REGISTRY.find((entry) => entry.id === toolId);
+  if (!tool) {
+    return;
+  }
+
+  return {
+    titleKey: tool.nameKey,
+    descriptionKey: tool.descriptionKey
+  };
+}

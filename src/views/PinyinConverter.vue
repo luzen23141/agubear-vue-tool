@@ -59,16 +59,18 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import InputWithCopy from '@/components/common/InputWithCopy.vue';
 import ToolPageLayout from '@/components/layout/ToolPageLayout.vue';
 import { pinyin } from 'pinyin-pro';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore } from '@/stores/history';
 
 const { t } = useI18n();
-
-const { history, addToHistory, clearHistory, removeFromHistory } = UseHistory();
+const historyStore = useHistoryStore();
+const { history } = storeToRefs(historyStore);
+const { addToHistory, clearHistory, removeFromHistory } = historyStore;
 
 const inputText = ref('');
 const showTone = ref(false);

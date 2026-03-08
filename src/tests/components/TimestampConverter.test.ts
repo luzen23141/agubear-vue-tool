@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { reactive, nextTick } from 'vue';
+import { nextTick, ref } from 'vue';
 import { mount, flushPromises, DOMWrapper } from '@vue/test-utils';
 import TimestampConverter from '../../views/TimestampConverter.vue';
 import { setupI18n } from '../../i18n';
@@ -12,15 +12,15 @@ const mountOptions = {
   }
 };
 
-const mockUseHistory = reactive({
-  history: [] as any[],
+const mockHistoryStore = {
+  history: ref<any[]>([]),
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
-});
+};
 
-vi.mock('../../composables/use-history', () => ({
-  UseHistory: () => mockUseHistory
+vi.mock('../../stores/history', () => ({
+  useHistoryStore: () => mockHistoryStore
 }));
 
 // Mock useHead
@@ -41,9 +41,10 @@ Object.assign(navigator, {
 describe('TimestampConverter.vue', () => {
   beforeEach(() => {
     i18n.global.locale.value = 'en'; // Force English for consistent test results
-    mockClipboardWrite.mockClear();
-    mockClipboardRead.mockClear();
-    localStorage.clear();
+    mockHistoryStore.addToHistory.mockClear();
+    mockHistoryStore.clearHistory.mockClear();
+    mockHistoryStore.removeFromHistory.mockClear();
+    mockHistoryStore.history.value = [];
   });
 
   describe('渲染', () => {
@@ -243,7 +244,7 @@ describe('TimestampConverter.vue', () => {
     });
 
     it('應能呼叫 addToHistory', async () => {
-      mockUseHistory.addToHistory.mockClear();
+      mockHistoryStore.addToHistory.mockClear();
       const wrapper = mount(TimestampConverter, mountOptions);
       await wrapper.find('#timestamp-input').setValue('1700000000');
 
@@ -253,12 +254,12 @@ describe('TimestampConverter.vue', () => {
       await convertButton?.trigger('click');
       await wrapper.vm.$nextTick();
 
-      expect(mockUseHistory.addToHistory).toHaveBeenCalled();
+      expect(mockHistoryStore.addToHistory).toHaveBeenCalled();
     });
 
     it('應能刪除歷史紀錄', async () => {
-      mockUseHistory.removeFromHistory.mockClear();
-      mockUseHistory.history = [
+      mockHistoryStore.removeFromHistory.mockClear();
+      mockHistoryStore.history.value = [
         { id: 1, timestamp: '12:00', input: '1700000000', output: '2023...' }
       ];
 
@@ -267,12 +268,12 @@ describe('TimestampConverter.vue', () => {
       const deleteButton = wrapper.find('.delete-btn');
       await (deleteButton as any).trigger('click');
 
-      expect(mockUseHistory.removeFromHistory).toHaveBeenCalledWith(1);
+      expect(mockHistoryStore.removeFromHistory).toHaveBeenCalledWith(1);
     });
 
     it('應能清空歷史紀錄', async () => {
-      mockUseHistory.clearHistory.mockClear();
-      mockUseHistory.history = [
+      mockHistoryStore.clearHistory.mockClear();
+      mockHistoryStore.history.value = [
         { id: 1, timestamp: '12:00', input: '1700000000', output: '2023...' }
       ];
 
@@ -281,7 +282,7 @@ describe('TimestampConverter.vue', () => {
       const clearButton = wrapper.find('.clear-btn');
       await (clearButton as any).trigger('click');
 
-      expect(mockUseHistory.clearHistory).toHaveBeenCalled();
+      expect(mockHistoryStore.clearHistory).toHaveBeenCalled();
     });
 
     it('應能點擊複製 Timestamp 結果', async () => {
@@ -380,18 +381,23 @@ describe('TimestampConverter.vue', () => {
       expect((wrapper.vm as any).utcOffset).toBe(-5);
     });
 
-    it('應能點擊轉換為時間戳按鈕', async () => {
+    it('時間戳結果為 0 時應顯示並可複製', async () => {
       const wrapper = mount(TimestampConverter, mountOptions);
-      const cards = wrapper.findAll('.card');
-      const convertButton = cards[1]?.find('button');
-      await convertButton?.trigger('click');
-      // Should trigger convertToTimestamp and update result
+      (wrapper.vm as any).timestampResult = 0;
       await wrapper.vm.$nextTick();
-      expect((wrapper.vm as any).timestampResult).toBeTruthy();
+
+      const resultPanels = wrapper.findAll('.timestamp-result-panel .result-text');
+      expect(resultPanels.at(-1)?.text()).toBe('0');
+
+      const copyButtons = wrapper.findAll('.timestamp-result-panel .copy-icon-btn');
+      expect(copyButtons.at(-1)?.exists()).toBe(true);
+
+      await copyButtons.at(-1)?.trigger('click');
+      expect(mockClipboardWrite).toHaveBeenCalledWith('0');
     });
 
     it('應能顯示歷史紀錄', async () => {
-      mockUseHistory.history = [{ id: 1, timestamp: '12:00', input: '123', output: '456' }];
+      mockHistoryStore.history.value = [{ id: 1, timestamp: '12:00', input: '123', output: '456' }];
       const wrapper = mount(TimestampConverter, mountOptions);
       await nextTick();
       expect(wrapper.find('.history-card').exists()).toBe(true);

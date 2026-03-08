@@ -221,6 +221,9 @@
   "common": {
     "copy": "複製",
     "paste": "貼上",
+    "copied": "已複製",
+    "copyFailed": "複製失敗",
+    "pasteFailed": "貼上失敗",
     "record": "記錄",
     "clear": "清除",
     "history": "歷史紀錄",

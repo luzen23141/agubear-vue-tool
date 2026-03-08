@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import UnicodeConverter from '../../views/UnicodeConverter.vue';
+import { ref } from 'vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -11,15 +12,15 @@ const mountOptions = {
   }
 };
 
-// Mock UseHistory
+// Mock history store
 const historyMocks = {
-  history: [] as any[],
+  history: ref<any[]>([]),
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 };
-vi.mock('../../composables/use-history', () => ({
-  UseHistory: () => historyMocks
+vi.mock('../../stores/history', () => ({
+  useHistoryStore: () => historyMocks
 }));
 
 // Mock useHead
@@ -41,7 +42,7 @@ describe('UnicodeConverter.vue', () => {
   let wrapper: any;
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
-    historyMocks.history = [];
+    historyMocks.history.value = [];
     historyMocks.addToHistory.mockClear();
     historyMocks.clearHistory.mockClear();
     historyMocks.removeFromHistory.mockClear();
@@ -139,7 +140,7 @@ describe('UnicodeConverter.vue', () => {
     });
 
     it('應顯示並能清除歷史紀錄', async () => {
-      historyMocks.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
+      historyMocks.history.value = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
       const newWrapper = mount(UnicodeConverter, mountOptions);
       expect(newWrapper.find('.history-card').exists()).toBe(true);
       await newWrapper.find('.clear-btn').trigger('click');
@@ -147,7 +148,7 @@ describe('UnicodeConverter.vue', () => {
     });
 
     it('應能刪除單筆紀錄', async () => {
-      historyMocks.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
+      historyMocks.history.value = [{ id: 1, timestamp: '12:00', input: 'test', output: 'output' }];
       const newWrapper = mount(UnicodeConverter, mountOptions);
       await newWrapper.find('.delete-btn').trigger('click');
       expect(historyMocks.removeFromHistory).toHaveBeenCalledWith(1);

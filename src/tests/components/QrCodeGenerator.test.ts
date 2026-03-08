@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { reactive, nextTick } from 'vue';
+import { nextTick, ref } from 'vue';
 import { mount, flushPromises } from '@vue/test-utils';
 import QrCodeGenerator from '../../views/QrCodeGenerator.vue';
 import { setupI18n } from '../../i18n';
@@ -24,15 +24,15 @@ vi.mock('@unhead/vue', () => ({
   useHead: vi.fn()
 }));
 
-// Mock UseHistory
-const mockUseHistory = reactive({
-  history: [] as any[],
+// Mock history store
+const mockHistoryStore = {
+  history: ref<any[]>([]),
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
-});
-vi.mock('@/composables/use-history', () => ({
-  UseHistory: () => mockUseHistory
+};
+vi.mock('@/stores/history', () => ({
+  useHistoryStore: () => mockHistoryStore
 }));
 
 // Mock clipboard API
@@ -76,10 +76,10 @@ describe('QrCodeGenerator.vue', () => {
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
     vi.mocked(qrcode.toCanvas).mockClear();
-    mockUseHistory.addToHistory.mockClear();
-    mockUseHistory.clearHistory.mockClear();
-    mockUseHistory.removeFromHistory.mockClear();
-    mockUseHistory.history = [];
+    mockHistoryStore.addToHistory.mockClear();
+    mockHistoryStore.clearHistory.mockClear();
+    mockHistoryStore.removeFromHistory.mockClear();
+    mockHistoryStore.history.value = [];
     mockClipboardWrite.mockClear();
     wrapper = mount(QrCodeGenerator, mountOptions);
   });
@@ -139,7 +139,7 @@ describe('QrCodeGenerator.vue', () => {
     it('M 等級應為預設選中', async () => {
       await nextTick();
       const ecBtns = wrapper.findAll('.ec-btn');
-      expect(ecBtns[1].classes()).toContain('active');
+      expect(ecBtns[1].classes()).toContain('ec-btn--active');
     });
 
     it('無輸入時不應顯示預覽區域', () => {
@@ -289,15 +289,15 @@ describe('QrCodeGenerator.vue', () => {
       const ecBtns = wrapper.findAll('.ec-btn');
       await ecBtns[0].trigger('click');
 
-      expect(ecBtns[0].classes()).toContain('active');
-      expect(ecBtns[1].classes()).not.toContain('active');
+      expect(ecBtns[0].classes()).toContain('ec-btn--active');
+      expect(ecBtns[1].classes()).not.toContain('ec-btn--active');
     });
 
     it('點擊 H 應切換到最高等級', async () => {
       const ecBtns = wrapper.findAll('.ec-btn');
       await ecBtns[3].trigger('click');
 
-      expect(ecBtns[3].classes()).toContain('active');
+      expect(ecBtns[3].classes()).toContain('ec-btn--active');
     });
   });
 
@@ -394,7 +394,7 @@ describe('QrCodeGenerator.vue', () => {
       const recordButton = wrapper.find('.record-btn');
       await recordButton.trigger('click');
 
-      expect(mockUseHistory.addToHistory).toHaveBeenCalledWith(
+      expect(mockHistoryStore.addToHistory).toHaveBeenCalledWith(
         'qrcode',
         'history test',
         expect.stringContaining('256px / medium / text'),
@@ -412,7 +412,7 @@ describe('QrCodeGenerator.vue', () => {
       const recordButton = wrapper.find('.record-btn');
       await recordButton.trigger('click');
 
-      expect(mockUseHistory.addToHistory).toHaveBeenCalledWith(
+      expect(mockHistoryStore.addToHistory).toHaveBeenCalledWith(
         'qrcode',
         expect.stringContaining('...'),
         expect.any(String),
@@ -441,7 +441,7 @@ describe('QrCodeGenerator.vue', () => {
     });
 
     it('應能刪除歷史紀錄', async () => {
-      mockUseHistory.history = [
+      mockHistoryStore.history.value = [
         { id: 1, timestamp: '12:00', input: 'test', output: 'config', extra: { dataUrl: 'data:' } }
       ];
 
@@ -451,18 +451,20 @@ describe('QrCodeGenerator.vue', () => {
       if (deleteButton.exists()) {
         await deleteButton.trigger('click');
       }
-      expect(mockUseHistory.removeFromHistory).toHaveBeenCalledWith(1);
+      expect(mockHistoryStore.removeFromHistory).toHaveBeenCalledWith(1);
     });
 
     it('應能清空歷史紀錄', async () => {
-      mockUseHistory.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'config' }];
+      mockHistoryStore.history.value = [
+        { id: 1, timestamp: '12:00', input: 'test', output: 'config' }
+      ];
 
       const wrapperWithHistory = mount(QrCodeGenerator, mountOptions);
       await nextTick();
       const clearButton = wrapperWithHistory.find('.clear-btn');
       await clearButton.trigger('click');
 
-      expect(mockUseHistory.clearHistory).toHaveBeenCalled();
+      expect(mockHistoryStore.clearHistory).toHaveBeenCalled();
     });
 
     it('無 QR Code 時不應執行下載、複製、拖曳或記錄', async () => {
@@ -483,7 +485,7 @@ describe('QrCodeGenerator.vue', () => {
 
       // Record
       await wrapper.vm.recordToHistory();
-      expect(mockUseHistory.addToHistory).not.toHaveBeenCalled();
+      expect(mockHistoryStore.addToHistory).not.toHaveBeenCalled();
     });
 
     it('應能執行貼上功能', async () => {
@@ -545,7 +547,7 @@ describe('QrCodeGenerator.vue', () => {
   describe('模式切換 (模式: Text/WiFi/Contact)', () => {
     it('應預設為 Text 模式', () => {
       const wrapper = mount(QrCodeGenerator, mountOptions);
-      const textMode = wrapper.find('.tab-btn.active');
+      const textMode = wrapper.find('.tab-btn--active');
       expect(textMode.text()).toContain('純文字');
       expect(wrapper.find('textarea').exists()).toBe(true);
     });

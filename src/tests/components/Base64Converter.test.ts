@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import Base64Converter from '../../views/Base64Converter.vue';
+import { ref } from 'vue';
 import { setupI18n } from '../../i18n';
 
 const i18n = setupI18n();
@@ -11,15 +12,15 @@ const mountOptions = {
   }
 };
 
-// Mock UseHistory
+// Mock history store
 const historyMocks = {
-  history: [] as any[],
+  history: ref<any[]>([]),
   addToHistory: vi.fn(),
   clearHistory: vi.fn(),
   removeFromHistory: vi.fn()
 };
-vi.mock('../../composables/use-history', () => ({
-  UseHistory: () => historyMocks
+vi.mock('../../stores/history', () => ({
+  useHistoryStore: () => historyMocks
 }));
 
 // Mock useHead
@@ -28,7 +29,7 @@ vi.mock('@unhead/vue', () => ({
 }));
 
 // Mock clipboard
-const mockClipboardWrite = vi.fn().mockResolvedValue();
+const mockClipboardWrite = vi.fn().mockImplementation(async () => {});
 const mockClipboardRead = vi.fn().mockResolvedValue('pasted text');
 Object.assign(navigator, {
   clipboard: {
@@ -46,7 +47,7 @@ describe('Base64Converter.vue', () => {
   });
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
-    historyMocks.history = [];
+    historyMocks.history.value = [];
     historyMocks.addToHistory.mockClear();
     historyMocks.clearHistory.mockClear();
     historyMocks.removeFromHistory.mockClear();
@@ -138,7 +139,9 @@ describe('Base64Converter.vue', () => {
     });
 
     it('應顯示並能清除歷史紀錄', async () => {
-      historyMocks.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'dGVzdA==' }];
+      historyMocks.history.value = [
+        { id: 1, timestamp: '12:00', input: 'test', output: 'dGVzdA==' }
+      ];
       // Need re-mount or ensure reactivity in mock (which we don't have easily here)
       const newWrapper = mount(Base64Converter, mountOptions);
       expect(newWrapper.find('.history-card').exists()).toBe(true);
@@ -160,7 +163,9 @@ describe('Base64Converter.vue', () => {
     });
 
     it('應能刪除單筆紀錄', async () => {
-      historyMocks.history = [{ id: 1, timestamp: '12:00', input: 'test', output: 'dGVzdA==' }];
+      historyMocks.history.value = [
+        { id: 1, timestamp: '12:00', input: 'test', output: 'dGVzdA==' }
+      ];
       const newWrapper = mount(Base64Converter, mountOptions);
       await newWrapper.find('.delete-btn').trigger('click');
       expect(historyMocks.removeFromHistory).toHaveBeenCalledWith(1);

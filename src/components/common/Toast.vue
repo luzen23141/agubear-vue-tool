@@ -1,8 +1,8 @@
 <template>
   <Transition name="toast">
-    <div v-if="visible" :class="type" class="toast">
+    <div v-if="visible" :class="[`toast--${type}`]" class="toast">
       <span class="toast-icon"><SvgIcon :name="icon" size="1.1rem" /></span>
-      <span>{{ message }}</span>
+      <span class="toast-message">{{ message }}</span>
     </div>
   </Transition>
 </template>
@@ -11,35 +11,33 @@
 import { ref } from 'vue';
 import SvgIcon from '../icons/SvgIcon.vue';
 
+type ToastType = 'success' | 'error' | 'info';
+
+function getToastIcon(toastType: ToastType) {
+  switch (toastType) {
+    case 'success': {
+      return 'check-circle';
+    }
+    case 'error': {
+      return 'x-circle';
+    }
+    case 'info': {
+      return 'info';
+    }
+  }
+}
+
 const visible = ref(false);
 const message = ref('');
-const type = ref<'success' | 'error' | 'info'>('info');
+const type = ref<ToastType>('info');
 const icon = ref('info');
 
 let timer: ReturnType<typeof setTimeout> | null = null;
 
-const show = (
-  message_: string,
-  toastType: 'success' | 'error' | 'info' = 'info',
-  duration = 2000
-) => {
+const show = (message_: string, toastType: ToastType = 'info', duration = 2000) => {
   message.value = message_;
   type.value = toastType;
-
-  switch (toastType) {
-    case 'success': {
-      icon.value = 'check-circle';
-      break;
-    }
-    case 'error': {
-      icon.value = 'x-circle';
-      break;
-    }
-    default: {
-      icon.value = 'info';
-    }
-  }
-
+  icon.value = getToastIcon(toastType);
   visible.value = true;
 
   if (timer) clearTimeout(timer);
@@ -77,11 +75,16 @@ defineExpose({ show });
   align-items: center;
 }
 
-.success {
+.toast-message {
+  line-height: 1.4;
+}
+
+.toast--success {
   border-color: var(--primary);
   color: var(--primary);
 }
-.error {
+
+.toast--error {
   border-color: var(--status-danger);
   color: var(--status-danger);
 }

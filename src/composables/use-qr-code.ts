@@ -4,6 +4,7 @@ import { ref, reactive, computed, watch, nextTick, type Ref } from 'vue';
 import type { QRCodeErrorCorrectionLevel } from 'qrcode';
 import { generateWifiString, downloadCanvasAsPng, copyCanvasToClipboard } from '../utils/qrcode';
 import { generateVCard } from '../utils/vcard';
+import { canUseClipboardRead, readClipboardText } from './use-copy-to-clipboard';
 
 export interface QrOptions {
   qrSize: number;
@@ -63,9 +64,7 @@ export function UseQrCode(canvasReference: Ref<HTMLCanvasElement | null>, addToH
   const hasQrCode = ref(false);
   const copySuccess = ref(false);
   const downloadTriggered = ref(false);
-  const canPaste = ref(
-    typeof navigator !== 'undefined' && typeof navigator.clipboard?.readText === 'function'
-  );
+  const canPaste = ref(canUseClipboardRead());
 
   // --- Computed ---
   const finalQrText = computed(() => {
@@ -157,12 +156,8 @@ export function UseQrCode(canvasReference: Ref<HTMLCanvasElement | null>, addToH
   };
 
   const pasteInput = async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      if (text) inputText.value = text;
-    } catch {
-      /* ignore */
-    }
+    const text = await readClipboardText();
+    if (text) inputText.value = text;
   };
 
   // --- Watchers & Lifecycle ---

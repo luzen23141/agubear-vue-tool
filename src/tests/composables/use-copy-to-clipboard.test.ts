@@ -1,7 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { defineComponent } from 'vue';
-import { useCopyToClipboard } from '../../composables/use-copy-to-clipboard';
+import {
+  useCopyToClipboard,
+  canUseClipboardRead,
+  readClipboardText
+} from '../../composables/use-copy-to-clipboard';
 import { TOAST_KEY, type ToastFunction } from '../../composables/use-toast-key';
 
 let copiedText = 'Copied!';
@@ -13,7 +17,7 @@ vi.mock('vue-i18n', () => ({
 }));
 
 function withSetup(showToast: ToastFunction) {
-  let copyText!: (text: string | number) => Promise<void>;
+  let copyText!: (text: string | number) => Promise<boolean>;
 
   const Comp = defineComponent({
     setup() {
@@ -39,7 +43,8 @@ describe('useCopyToClipboard', () => {
     copiedText = 'Copied!';
     vi.stubGlobal('navigator', {
       clipboard: {
-        writeText: vi.fn().mockImplementation(async () => {})
+        writeText: vi.fn().mockImplementation(async () => {}),
+        readText: vi.fn().mockResolvedValue('  hello  ')
       }
     });
   });
@@ -47,6 +52,40 @@ describe('useCopyToClipboard', () => {
   afterEach(() => {
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
+  });
+
+  it('reports clipboard read support when API exists', () => {
+    expect(canUseClipboardRead()).toBe(true);
+  });
+
+  it('returns false for clipboard read support when API is unavailable', () => {
+    vi.stubGlobal('navigator', {});
+
+    expect(canUseClipboardRead()).toBe(false);
+  });
+
+  it('reads clipboard text as-is by default', async () => {
+    const text = await readClipboardText();
+
+    expect(text).toBe('  hello  ');
+  });
+
+  it('reads trimmed clipboard text when requested', async () => {
+    const text = await readClipboardText({ trim: true });
+
+    expect(text).toBe('hello');
+  });
+
+  it('returns empty string when clipboard read fails', async () => {
+    vi.stubGlobal('navigator', {
+      clipboard: {
+        readText: vi.fn().mockRejectedValue(new Error('boom'))
+      }
+    });
+
+    const text = await readClipboardText({ trim: true });
+
+    expect(text).toBe('');
   });
 
   it('returns early when text is empty', async () => {
@@ -59,14 +98,14 @@ describe('useCopyToClipboard', () => {
     expect(showToast).not.toHaveBeenCalled();
   });
 
-  it('returns early when text is 0', async () => {
+  it('copies text when value is 0', async () => {
     const showToast = vi.fn();
     const { copyText } = withSetup(showToast);
 
     await copyText(0);
 
-    expect(navigator.clipboard.writeText).not.toHaveBeenCalled();
-    expect(showToast).not.toHaveBeenCalled();
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('0');
+    expect(showToast).toHaveBeenCalledWith('Copied!', 'success');
   });
 
   it('copies text and shows success toast', async () => {

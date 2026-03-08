@@ -2,12 +2,48 @@ import { inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { type ToastFunction, TOAST_KEY } from './use-toast-key';
 
-const CLIPBOARD_SUCCESS_FALLBACK = 'Copied!';
-const CLIPBOARD_COPY_ERROR = 'Failed to copy';
-const CLIPBOARD_PASTE_ERROR = 'Failed to paste';
+const CLIPBOARD_MESSAGES = {
+  copied: 'Copied!',
+  copyFailed: 'Failed to copy',
+  pasteFailed: 'Failed to paste'
+} as const;
 
-const resolveCopiedMessage = (translatedMessage: string) =>
-  translatedMessage || CLIPBOARD_SUCCESS_FALLBACK;
+function getDefaultClipboardMessage(key: keyof typeof CLIPBOARD_MESSAGES) {
+  switch (key) {
+    case 'copied': {
+      return CLIPBOARD_MESSAGES.copied;
+    }
+    case 'copyFailed': {
+      return CLIPBOARD_MESSAGES.copyFailed;
+    }
+    case 'pasteFailed': {
+      return CLIPBOARD_MESSAGES.pasteFailed;
+    }
+  }
+}
+
+function resolveClipboardMessage(
+  translate: (_key: string) => string,
+  key: keyof typeof CLIPBOARD_MESSAGES
+) {
+  const translatedMessage = translate(`common.${key}`);
+  return translatedMessage && translatedMessage !== `common.${key}`
+    ? translatedMessage
+    : getDefaultClipboardMessage(key);
+}
+
+export function canUseClipboardRead() {
+  return typeof navigator !== 'undefined' && typeof navigator.clipboard?.readText === 'function';
+}
+
+export async function readClipboardText(options: { trim?: boolean } = {}) {
+  try {
+    const text = await navigator.clipboard.readText();
+    return options.trim ? text.trim() : text;
+  } catch {
+    return '';
+  }
+}
 
 /**
  * Composable for clipboard operations with toast feedback.
@@ -18,14 +54,14 @@ export function useCopyToClipboard() {
   const { t } = useI18n();
 
   const copyText = async (text: string | number) => {
-    if (!text) return false;
+    if (text === '') return false;
     try {
       await navigator.clipboard.writeText(String(text));
-      showToast(resolveCopiedMessage(t('common.copied')), 'success');
+      showToast(resolveClipboardMessage(t, 'copied'), 'success');
       return true;
     } catch (error) {
       console.warn('Clipboard write failed:', error);
-      showToast(CLIPBOARD_COPY_ERROR, 'error');
+      showToast(resolveClipboardMessage(t, 'copyFailed'), 'error');
       return false;
     }
   };
@@ -35,17 +71,14 @@ export function useCopyToClipboard() {
       return await navigator.clipboard.readText();
     } catch (error) {
       console.warn('Clipboard read failed:', error);
-      showToast(CLIPBOARD_PASTE_ERROR, 'error');
+      showToast(resolveClipboardMessage(t, 'pasteFailed'), 'error');
       return '';
     }
   };
 
-  const hasClipboardReadSupport =
-    typeof navigator !== 'undefined' && typeof navigator.clipboard?.readText === 'function';
-
   return {
     copyText,
     pasteText,
-    canPaste: hasClipboardReadSupport
+    canPaste: canUseClipboardRead()
   };
 }

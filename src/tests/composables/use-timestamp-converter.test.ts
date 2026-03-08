@@ -2,7 +2,7 @@
  * UseTimestampConverter Composable 擴展測試
  * 覆蓋 watch 行為、utcOffset、useMilliseconds、timestampLength、邊界案例
  */
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { nextTick } from 'vue';
 import { UseTimestampConverter } from '../../composables/use-timestamp-converter';
 
@@ -11,6 +11,15 @@ const addToHistoryMock = vi.fn();
 describe('UseTimestampConverter (extended)', () => {
   beforeEach(() => {
     addToHistoryMock.mockClear();
+    vi.stubGlobal('navigator', {
+      clipboard: {
+        readText: vi.fn().mockResolvedValue(' 1700000000 ')
+      }
+    });
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
   });
 
   // --- timestampLength ---
@@ -200,6 +209,32 @@ describe('UseTimestampConverter (extended)', () => {
 
       // timestampResult should have been recalculated
       expect(timestampResult.value).not.toBe(result1);
+    });
+  });
+
+  describe('clipboard paste', () => {
+    it('timestamp paste trims clipboard text and converts value', async () => {
+      const { timestampInput, pasteToTimestamp, dateResult } =
+        UseTimestampConverter(addToHistoryMock);
+
+      await pasteToTimestamp();
+
+      expect(timestampInput.value).toBe('1700000000');
+      expect(dateResult.value).toBeTruthy();
+    });
+
+    it('date paste keeps previous value when clipboard read fails', async () => {
+      vi.stubGlobal('navigator', {
+        clipboard: {
+          readText: vi.fn().mockRejectedValue(new Error('paste fail'))
+        }
+      });
+      const { dateInput, pasteToDate } = UseTimestampConverter(addToHistoryMock);
+      dateInput.value = '2024-01-01 00:00:00';
+
+      await pasteToDate();
+
+      expect(dateInput.value).toBe('2024-01-01 00:00:00');
     });
   });
 

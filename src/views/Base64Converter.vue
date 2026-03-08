@@ -21,15 +21,17 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import TwoWayConverter from '@/components/common/TwoWayConverter.vue';
-import { UseHistory } from '@/composables/use-history';
+import { useHistoryStore } from '@/stores/history';
 import { UseTwoWayConverter } from '@/composables/use-two-way-converter';
 import { toBase64, fromBase64 } from '@/utils/crypto';
 
 const { t } = useI18n();
-
-const { history, clearHistory, removeFromHistory } = UseHistory();
+const historyStore = useHistoryStore();
+const { history } = storeToRefs(historyStore);
+const { clearHistory, removeFromHistory } = historyStore;
 
 // Adapter for fromBase64 which returns string | null vs logic expectation
 const { mode, inputText, outputText, recordHistory } = UseTwoWayConverter(

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { UseQrCode } from '../../composables/use-qr-code';
 import { ref } from 'vue';
 
@@ -17,6 +17,15 @@ describe('UseQrCode', () => {
     canvasReference = ref(document.createElement('canvas'));
     addToHistory = vi.fn();
     vi.clearAllMocks();
+    vi.stubGlobal('navigator', {
+      clipboard: {
+        readText: vi.fn().mockResolvedValue('pasted qr text')
+      }
+    });
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
   });
 
   it('should initialize with default values', () => {
@@ -47,6 +56,33 @@ describe('UseQrCode', () => {
     contact.value.name = 'Alex';
     expect(finalQrText.value).toContain('BEGIN:VCARD');
     expect(finalQrText.value).toContain('Alex');
+  });
+
+  it('should initialize canPaste from clipboard support', () => {
+    const { canPaste } = UseQrCode(canvasReference, addToHistory);
+    expect(canPaste.value).toBe(true);
+  });
+
+  it('should paste clipboard text into input', async () => {
+    const { inputText, pasteInput } = UseQrCode(canvasReference, addToHistory);
+
+    await pasteInput();
+
+    expect(inputText.value).toBe('pasted qr text');
+  });
+
+  it('should keep input when clipboard paste fails', async () => {
+    vi.stubGlobal('navigator', {
+      clipboard: {
+        readText: vi.fn().mockRejectedValue(new Error('paste fail'))
+      }
+    });
+    const { inputText, pasteInput } = UseQrCode(canvasReference, addToHistory);
+    inputText.value = 'keep-me';
+
+    await pasteInput();
+
+    expect(inputText.value).toBe('keep-me');
   });
 
   it('should record to history', () => {
