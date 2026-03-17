@@ -1,12 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import { resolve } from 'node:path';
 
 const isCI = !!process.env.CI;
+const projectRoot = resolve(import.meta.dirname, '..');
 const reporter = process.env.PLAYWRIGHT_JSON_OUTPUT_NAME
   ? [['list'], ['json', { outputFile: process.env.PLAYWRIGHT_JSON_OUTPUT_NAME }]]
-  : [['html', { outputFolder: 'playwright-report' }]];
+  : [['html', { outputFolder: resolve(projectRoot, 'playwright-report') }]];
 
 export default defineConfig({
-  testDir: '../e2e',
+  testDir: resolve(projectRoot, 'e2e'),
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
@@ -27,6 +29,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'pnpm run dev',
+    cwd: projectRoot,
     url: 'http://localhost:5173',
     reuseExistingServer: !isCI
   }
