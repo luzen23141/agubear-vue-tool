@@ -1,6 +1,4 @@
 /** @type {import('dependency-cruiser').IConfiguration} */
-const path = require('path');
-
 module.exports = {
   forbidden: [
     {

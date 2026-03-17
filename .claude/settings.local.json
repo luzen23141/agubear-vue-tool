@@ -12,7 +12,14 @@
       "Bash(pnpm run:*)",
       "Bash(npm run:*)",
       "Bash(NO_COLOR= git:*)",
-      "Bash(NO_COLOR= gh run:*)"
+      "Bash(NO_COLOR= gh run:*)",
+      "Bash(mkdir -p ~/.ai_trash)",
+      "Bash(mv GEMINI.md ~/.ai_trash/)",
+      "Bash(mv .antigravity-ignore-rules.md ~/.ai_trash/)",
+      "Bash(mv .scannerwork ~/.ai_trash/)",
+      "Bash(mv sonar-project.properties ~/.ai_trash/)",
+      "Bash(head:*)",
+      "Bash(npx playwright:*)"
     ]
   }
 }

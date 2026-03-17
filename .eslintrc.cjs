@@ -270,12 +270,26 @@ module.exports = {
   overrides: [
     // Node.js 腳本（允許 process、require 等）
     {
-      files: ['vite.config.*', 'scripts/**/*.mjs', '.eslintrc.cjs', '.commitlintrc.cjs', '.dependency-cruiser.cjs'],
+      files: ['vite.config.*', 'scripts/**/*.{js,mjs,cjs}', '.eslintrc.cjs', 'config/**/*.{js,mjs,cjs,ts}'],
       env: {
         node: true
       },
       rules: {
         'no-console': 'off'
+      }
+    },
+    // Build/utility scripts（放寬不適用於工具腳本的規則）
+    {
+      files: ['scripts/**/*.{js,mjs,cjs}'],
+      rules: {
+        'complexity': 'off',
+        'max-statements': 'off',
+        'no-nested-ternary': 'off',
+        'sonarjs/cognitive-complexity': 'off',
+        'sonarjs/no-nested-conditional': 'off',
+        'security/detect-non-literal-fs-filename': 'off',
+        'security/detect-object-injection': 'off',
+        'unicorn/prevent-abbreviations': 'off'
       }
     },
     // 測試檔案（放寬部分規則，但仍然嚴格）

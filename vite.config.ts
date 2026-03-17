@@ -10,7 +10,7 @@ import UnoCSS from 'unocss/vite';
 const getPlugins = (environment: Record<string, string>, _mode: string) =>
   [
     vue(),
-    UnoCSS(),
+    UnoCSS({ configFile: './config/uno.config.ts' }),
     createHtmlPlugin({
       minify: true,
       inject: {
@@ -68,13 +68,6 @@ const buildConfig = {
   cssCodeSplit: true,
   rollupOptions: {
     output: {
-      manualChunks(id: string) {
-        if (id.includes('node_modules')) {
-          if (id.includes('vue') || id.includes('@vue')) return 'vue-core';
-          if (id.includes('pinia')) return 'vue-store';
-          return 'vendor';
-        }
-      },
       chunkFileNames: 'assets/js/[name]-[hash].js',
       entryFileNames: 'assets/js/[name]-[hash].js',
       assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
@@ -116,6 +109,8 @@ const ssgOptions = {
 
 export default defineConfig(({ mode }) => {
   const environment = loadEnv(mode, process.cwd(), '');
+  const enableJsonReport = process.env.VITEST_JSON_REPORT === 'true';
+
   return {
     base: '/',
     resolve: {
@@ -133,11 +128,17 @@ export default defineConfig(({ mode }) => {
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./src/tests/setup.ts'],
-      exclude: ['e2e/**', 'node_modules/**', '.claude/**'],
+      exclude: ['e2e/**', 'node_modules/**', '.claude/**', '.stryker-tmp/**'],
+      reporters: enableJsonReport ? ['default', 'json'] : ['default'],
+      outputFile: enableJsonReport
+        ? {
+            json: 'reports/vitest/results.json'
+          }
+        : undefined,
       coverage: {
         provider: 'v8',
-        enabled: process.env.COVERAGE === 'true', // Only run coverage if requested
         reporter: ['text', 'json', 'html', 'lcov'],
+        reportsDirectory: './coverage',
         thresholds: {
           lines: 80,
           functions: 70,

@@ -1,12 +1,17 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const isCI = !!process.env.CI;
+const reporter = process.env.PLAYWRIGHT_JSON_OUTPUT_NAME
+  ? [['list'], ['json', { outputFile: process.env.PLAYWRIGHT_JSON_OUTPUT_NAME }]]
+  : [['html', { outputFolder: 'playwright-report' }]];
+
 export default defineConfig({
-  testDir: './e2e',
+  testDir: '../e2e',
   fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : undefined,
-  reporter: 'html',
+  forbidOnly: isCI,
+  retries: isCI ? 2 : 0,
+  workers: isCI ? 2 : undefined,
+  reporter,
   use: {
     baseURL: 'http://localhost:5173',
     trace: 'on-first-retry',
@@ -21,8 +26,8 @@ export default defineConfig({
     }
   ],
   webServer: {
-    command: 'npm run dev',
+    command: 'pnpm run dev',
     url: 'http://localhost:5173',
-    reuseExistingServer: !process.env.CI
+    reuseExistingServer: !isCI
   }
 });

@@ -75,3 +75,4 @@ npm-cache/
 dist-temp/
 *.test_results*.json
 fix_*.py
+.stryker-tmp/
