@@ -2,17 +2,14 @@
   "threshold": 15,
   "reporters": ["console", "html"],
   "ignore": [
-    "node_modules",
-    "dist",
-    "coverage",
-    "report",
-    ".dependency-cruiser.cjs",
-    "package-lock.json",
-    "README.md",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/coverage/**",
+    "**/reports/**",
     "**/tests/**",
     "**/*.test.ts",
     "**/*.spec.ts",
-    "src/locales/**"
+    "**/locales/**"
   ],
   "minLines": 5,
   "minTokens": 50,
