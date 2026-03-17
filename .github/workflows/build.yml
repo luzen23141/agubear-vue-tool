@@ -153,7 +153,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --workers=2
+        run: npx playwright test --config config/playwright.config.ts --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --workers=2
 
       - uses: actions/upload-artifact@v4
         if: failure()
