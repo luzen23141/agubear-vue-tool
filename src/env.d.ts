@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+declare module './scripts/generate-sitemap.mjs';
 declare module 'vite-plugin-eslint';
 
 declare module '*.vue' {

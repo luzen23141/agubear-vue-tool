@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#22c55e" />
+    <meta name="theme-color" content="#f3f7fb" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -64,6 +64,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+    <script>
+      (() => {
+        const storageKey = 'agubear-theme';
+        const stored = localStorage.getItem(storageKey);
+        const preferred =
+          stored === 'light' || stored === 'dark' || stored === 'high-contrast' || stored === 'system'
+            ? stored
+            : 'system';
+        const resolved =
+          preferred === 'system'
+            ? window.matchMedia?.('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : preferred;
+        const themeColorMap = {
+          light: '#f3f7fb',
+          dark: '#020817',
+          'high-contrast': '#000000'
+        };
+        const root = document.documentElement;
+        root.dataset.theme = resolved;
+        root.classList.toggle('dark', resolved === 'dark');
+        root.style.colorScheme = resolved === 'light' ? 'light' : 'dark';
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', themeColorMap[resolved] || themeColorMap.light);
+      })();
+    </script>
 
     <!-- Google Analytics 4 -->
     <script
@@ -126,7 +155,7 @@
         </p>
       </section>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.ts"></script>
     <script>
       if (window.performance?.mark) {
         performance.mark('page-init-end');

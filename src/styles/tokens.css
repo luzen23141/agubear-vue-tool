@@ -9,6 +9,7 @@
   --surface-base: #ffffff;
   --surface-muted: #e8eef5;
   --surface-hover: #f8fbff;
+  --surface-soft: rgba(37, 99, 235, 0.08);
   --surface-overlay: rgba(255, 255, 255, 0.9);
   --surface-glass: rgba(255, 255, 255, 0.72);
 
@@ -65,10 +66,19 @@
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 10px 24px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --shadow-xl: 0 24px 52px rgba(15, 23, 42, 0.16);
   --shadow-elevated: 0 24px 60px rgba(15, 23, 42, 0.14);
   --shadow-glow: 0 0 0 1px rgba(37, 99, 235, 0.08), 0 12px 30px rgba(37, 99, 235, 0.12);
   --shadow-glow-strong: 0 0 0 1px rgba(37, 99, 235, 0.14), 0 20px 45px rgba(37, 99, 235, 0.18);
   --shadow-focus: 0 0 0 4px rgba(37, 99, 235, 0.2);
+  --shadow-field-inset: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-field-focus: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+
+  --page-backdrop-top-left: var(--interactive-primary-soft);
+  --page-backdrop-top-right: var(--interactive-accent-soft);
+  --page-backdrop-bottom: rgba(var(--primary-rgb), 0.08);
+  --page-overlay-top: rgba(255, 255, 255, 0.18);
+  --page-overlay-center: rgba(255, 255, 255, 0.12);
 
   --glass-bg: var(--surface-glass);
   --glass-border: var(--border-glass);
@@ -114,6 +124,7 @@
   --surface-base: #0f172a;
   --surface-muted: #111c31;
   --surface-hover: #17233a;
+  --surface-soft: rgba(125, 211, 252, 0.1);
   --surface-overlay: rgba(15, 23, 42, 0.88);
   --surface-glass: rgba(15, 23, 42, 0.72);
 
@@ -149,10 +160,19 @@
   --shadow-sm: 0 1px 2px rgba(2, 8, 23, 0.5);
   --shadow-md: 0 14px 36px rgba(2, 8, 23, 0.36);
   --shadow-lg: 0 22px 50px rgba(2, 8, 23, 0.44);
+  --shadow-xl: 0 28px 64px rgba(2, 8, 23, 0.56);
   --shadow-elevated: 0 28px 72px rgba(2, 8, 23, 0.52);
   --shadow-glow: 0 0 0 1px rgba(125, 211, 252, 0.12), 0 18px 42px rgba(14, 165, 233, 0.18);
   --shadow-glow-strong: 0 0 0 1px rgba(125, 211, 252, 0.18), 0 24px 54px rgba(14, 165, 233, 0.24);
   --shadow-focus: 0 0 0 4px rgba(125, 211, 252, 0.24);
+  --shadow-field-inset: inset 0 1px 2px rgba(2, 8, 23, 0.32);
+  --shadow-field-focus: inset 0 1px 2px rgba(2, 8, 23, 0.24);
+
+  --page-backdrop-top-left: rgba(125, 211, 252, 0.16);
+  --page-backdrop-top-right: rgba(167, 139, 250, 0.14);
+  --page-backdrop-bottom: rgba(94, 234, 212, 0.12);
+  --page-overlay-top: rgba(15, 23, 42, 0.18);
+  --page-overlay-center: rgba(15, 23, 42, 0.08);
 
   --primary-rgb: 125 211 252;
 }
@@ -162,6 +182,7 @@
   --surface-base: #000000;
   --surface-muted: #0a0a0a;
   --surface-hover: #161616;
+  --surface-soft: rgba(255, 235, 59, 0.12);
   --surface-overlay: rgba(0, 0, 0, 0.98);
   --surface-glass: rgba(0, 0, 0, 0.94);
 
@@ -202,10 +223,19 @@
   --shadow-sm: 0 0 0 1px #ffffff;
   --shadow-md: 0 0 0 2px #ffffff;
   --shadow-lg: 0 0 0 2px #ffffff;
+  --shadow-xl: 0 0 0 3px #ffffff;
   --shadow-elevated: 0 0 0 3px #ffffff;
   --shadow-glow: 0 0 0 2px #ffeb3b;
   --shadow-glow-strong: 0 0 0 3px #ffeb3b;
   --shadow-focus: 0 0 0 4px #00e5ff;
+  --shadow-field-inset: inset 0 0 0 1px #ffffff;
+  --shadow-field-focus: inset 0 0 0 1px #ffffff;
+
+  --page-backdrop-top-left: transparent;
+  --page-backdrop-top-right: transparent;
+  --page-backdrop-bottom: transparent;
+  --page-overlay-top: transparent;
+  --page-overlay-center: transparent;
 
   --primary-rgb: 255 235 59;
 }

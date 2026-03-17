@@ -1,5 +1,7 @@
 <template>
   <div class="app-shell app-container" @click="closeHeaderOverlays">
+    <a class="skip-link" href="#app-main">{{ t('app.skipToContent') }}</a>
+
     <div class="app-shell__inner">
       <AppHeader ref="headerRef" />
 
@@ -7,7 +9,13 @@
         <ToolNavigation />
       </div>
 
-      <main class="app-shell__main tool-container" role="main">
+      <main
+        id="app-main"
+        ref="mainRef"
+        class="app-shell__main tool-container"
+        role="main"
+        tabindex="-1"
+      >
         <router-view v-slot="{ Component }">
           <transition name="page-fade" mode="out-in">
             <keep-alive :max="5">
@@ -16,6 +24,10 @@
           </transition>
         </router-view>
       </main>
+
+      <p class="route-live-region sr-only" aria-live="polite" aria-atomic="true">
+        {{ routeAnnouncement }}
+      </p>
 
       <AppFooter />
     </div>
@@ -26,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, provide } from 'vue';
+import { ref, watch, provide, computed, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import { SUPPORTED_LOCALES } from './i18n';
@@ -42,17 +54,24 @@ import Toast from './components/common/Toast.vue';
 import CommandPalette from './components/common/CommandPalette.vue';
 
 const route = useRoute();
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const { setMeta } = useSeo();
 const { initTheme } = UseTheme();
 
 const headerRef = ref<InstanceType<typeof AppHeader> | null>(null);
+const mainRef = ref<HTMLElement | null>(null);
 
 const toastRef = ref<InstanceType<typeof Toast> | null>(null);
 const showToast = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
   toastRef.value?.show(message, type);
 };
 provide(TOAST_KEY, showToast);
+
+const routeAnnouncement = computed(() => {
+  const routeName = route.name;
+  if (typeof routeName !== 'string') return t('app.title');
+  return t(`app.tabs.${routeName}`);
+});
 
 watch(
   () => route.params.lang,
@@ -67,6 +86,14 @@ watch(
   { immediate: true }
 );
 
+watch(
+  () => route.fullPath,
+  async () => {
+    await nextTick();
+    mainRef.value?.focus();
+  }
+);
+
 setMeta({});
 initTheme();
 
@@ -79,6 +106,25 @@ const closeHeaderOverlays = () => {
 .app-shell {
   min-height: 100dvh;
   padding: 1.5rem 1.5rem calc(2rem + env(safe-area-inset-bottom));
+}
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-150%);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .app-shell__inner {
@@ -100,6 +146,7 @@ const closeHeaderOverlays = () => {
   flex: 1;
   flex-direction: column;
   gap: 1.25rem;
+  outline: none;
 }
 
 .page-fade-enter-active,

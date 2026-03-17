@@ -47,6 +47,17 @@
     "favorites": {
       "showOnly": "Favorites Only",
       "empty": "No favorites found. Click the star icon to add tools!"
+    },
+    "skipToContent": "Skip to main content",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "highContrast": "High Contrast",
+      "system": "System",
+      "hintLight": "Bright UI with soft surfaces",
+      "hintDark": "Low-glare UI for dim spaces",
+      "hintHighContrast": "Maximum contrast for readability",
+      "hintSystem": "Follow your device preference"
     }
   },
   "seo": {

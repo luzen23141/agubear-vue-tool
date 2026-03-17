@@ -5,6 +5,16 @@ import QrCodeGenerator from '../../views/QrCodeGenerator.vue';
 import { setupI18n } from '../../i18n';
 import qrcode from 'qrcode';
 
+const { mockToCanvas, mockClipboardWrite } = vi.hoisted(() => ({
+  mockToCanvas: vi.fn().mockResolvedValue(),
+  mockClipboardWrite: vi.fn().mockResolvedValue()
+}));
+
+const mockCanvasToBlob = (callback: BlobCallback, type?: string | undefined) => {
+  const blob = new Blob(['mock-binary-data'], { type: type || 'image/png' });
+  callback(blob);
+};
+
 const i18n = setupI18n();
 
 const mountOptions = {
@@ -15,7 +25,7 @@ const mountOptions = {
 
 vi.mock('qrcode', () => ({
   default: {
-    toCanvas: vi.fn().mockResolvedValue()
+    toCanvas: mockToCanvas
   }
 }));
 
@@ -36,7 +46,6 @@ vi.mock('@/stores/history', () => ({
 }));
 
 // Mock clipboard API
-const mockClipboardWrite = vi.fn().mockResolvedValue();
 vi.stubGlobal('navigator', {
   ...navigator,
   clipboard: {
@@ -47,10 +56,7 @@ vi.stubGlobal('navigator', {
 });
 
 // Mock HTMLCanvasElement.prototype.toBlob
-vi.spyOn(HTMLCanvasElement.prototype, 'toBlob').mockImplementation((callback, type, _quality) => {
-  const blob = new Blob(['mock-binary-data'], { type: type || 'image/png' });
-  callback(blob);
-});
+vi.spyOn(HTMLCanvasElement.prototype, 'toBlob').mockImplementation(mockCanvasToBlob);
 
 // Mock ClipboardItem if not present
 if (typeof ClipboardItem === 'undefined') {
@@ -75,6 +81,8 @@ describe('QrCodeGenerator.vue', () => {
 
   beforeEach(() => {
     i18n.global.locale.value = 'zh-TW';
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(HTMLCanvasElement.prototype, 'toBlob').mockImplementation(mockCanvasToBlob);
     vi.mocked(qrcode.toCanvas).mockClear();
     mockHistoryStore.addToHistory.mockClear();
     mockHistoryStore.clearHistory.mockClear();
@@ -84,8 +92,11 @@ describe('QrCodeGenerator.vue', () => {
     wrapper = mount(QrCodeGenerator, mountOptions);
   });
 
-  afterEach(() => {
+  afterEach(async () => {
+    await flushPromises();
+    await nextTick();
     wrapper?.unmount();
+    vi.restoreAllMocks();
   });
 
   describe('渲染', () => {

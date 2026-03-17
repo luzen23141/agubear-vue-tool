@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import Base64Converter from '../../views/Base64Converter.vue';
 import { ref } from 'vue';
@@ -56,6 +56,10 @@ describe('Base64Converter.vue', () => {
     wrapper = mount(Base64Converter, mountOptions);
   });
 
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   describe('渲染', () => {
     it('應正確渲染標題', () => {
       expect(wrapper.find('h2').exists()).toBe(true);
@@ -102,10 +106,14 @@ describe('Base64Converter.vue', () => {
     });
 
     it('輸入無效 Base64 應顯示空', async () => {
+      const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+
       await wrapper.find('input[value="decode"]').setValue();
       await wrapper.find('#base64-input').setValue('!!invalid!!');
       await flushPromises();
+
       expect(wrapper.find('#base64-output').element.value).toBe('');
+      expect(errorSpy).toHaveBeenCalled();
     });
   });
 

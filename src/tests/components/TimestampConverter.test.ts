@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { nextTick, ref } from 'vue';
 import { mount, flushPromises, DOMWrapper } from '@vue/test-utils';
 import TimestampConverter from '../../views/TimestampConverter.vue';
@@ -39,6 +39,10 @@ Object.assign(navigator, {
 });
 
 describe('TimestampConverter.vue', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   beforeEach(() => {
     i18n.global.locale.value = 'en'; // Force English for consistent test results
     mockHistoryStore.addToHistory.mockClear();
@@ -340,6 +344,7 @@ describe('TimestampConverter.vue', () => {
     });
 
     it('貼上失敗時應處理錯誤', async () => {
+      const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
       const wrapper: any = mount(TimestampConverter, mountOptions);
       mockClipboardRead.mockRejectedValueOnce(new Error('paste fail'));
       wrapper.vm.timestampInput = '1700000001';
@@ -350,6 +355,7 @@ describe('TimestampConverter.vue', () => {
         await pasteButton.trigger('click');
         await wrapper.vm.$nextTick();
         expect(wrapper.vm.timestampInput).toBe('1700000001');
+        expect(warnSpy).toHaveBeenCalled();
       }
     });
 

@@ -47,6 +47,17 @@
     "favorites": {
       "showOnly": "只顯示收藏",
       "empty": "沒有收藏的工具。點擊星星圖示即可加入收藏！"
+    },
+    "skipToContent": "跳到主要內容",
+    "theme": {
+      "light": "淺色",
+      "dark": "深色",
+      "highContrast": "高對比",
+      "system": "系統",
+      "hintLight": "明亮介面與柔和表面",
+      "hintDark": "低眩光介面，適合昏暗環境",
+      "hintHighContrast": "最大化對比，提升可讀性",
+      "hintSystem": "跟隨你的裝置偏好"
     }
   },
   "seo": {

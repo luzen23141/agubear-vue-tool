@@ -147,7 +147,7 @@ select {
 input,
 textarea,
 select {
-  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+  box-shadow: var(--shadow-field-inset);
 }
 
 input:focus,
@@ -155,9 +155,7 @@ textarea:focus,
 select:focus {
   border-color: var(--primary) !important;
   outline: none;
-  box-shadow:
-    var(--shadow-focus),
-    inset 0 1px 2px rgba(15, 23, 42, 0.04);
+  box-shadow: var(--shadow-focus), var(--shadow-field-focus);
 }
 
 /* ---- Shared Layout Helpers ---- */
@@ -264,5 +262,11 @@ select:focus {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .card:hover,
+  .btn-primary:hover,
+  button:active {
+    transform: none;
   }
 }

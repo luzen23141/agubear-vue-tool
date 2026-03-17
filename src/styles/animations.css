@@ -62,23 +62,13 @@
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 6px rgba(34, 197, 94, 0.25);
+    box-shadow: 0 0 6px var(--status-success-soft);
   }
   50% {
-    box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+    box-shadow: 0 0 12px var(--interactive-primary-glow);
   }
 }
 
 .animate-in {
   animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0s !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0s !important;
-  }
 }

@@ -10,6 +10,8 @@ import { checkDependencyIntegrity } from './check-deps.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
+const isDeepAudit = process.env.CHECK_ALL_DEEP === 'true';
+const deepOnlySteps = ['Unit Timing Report', 'E2E Timing Report', 'E2E Flaky Report', 'Mutation'];
 
 const steps = [
   { name: 'Case Check', type: 'internal', fn: checkCaseSensitivity },
@@ -30,6 +32,17 @@ const steps = [
   { name: 'Lint (Architecture)', command: 'pnpm', args: ['run', 'lint:arch'] },
   { name: 'Type Check', command: 'pnpm', args: ['run', 'type-check'] },
   { name: 'Test', command: 'pnpm', args: ['run', 'test:unit'] },
+  ...(isDeepAudit
+    ? [{ name: 'Unit Timing Report', command: 'pnpm', args: ['run', 'test:unit:timing'] }]
+    : []),
+  ...(isDeepAudit
+    ? [{ name: 'E2E Timing Report', command: 'pnpm', args: ['run', 'test:e2e:timing'] }]
+    : []),
+  ...(isDeepAudit
+    ? [{ name: 'E2E Flaky Report', command: 'pnpm', args: ['run', 'test:e2e:flaky'] }]
+    : []),
+  { name: 'Coverage Groups', command: 'pnpm', args: ['run', 'coverage:groups'] },
+  ...(isDeepAudit ? [{ name: 'Mutation', command: 'pnpm', args: ['run', 'mutation'] }] : []),
   { name: 'Security Audit', command: 'pnpm', args: ['run', 'scan:security'] },
   { name: 'Duplicate Check', command: 'pnpm', args: ['run', 'scan:dup'] },
   { name: 'Build Check', command: 'pnpm', args: ['run', 'build'] },
@@ -104,6 +117,14 @@ function checkCaseSensitivity() {
 
 async function main() {
   console.log(chalk.cyan.bold('\nStarting Project Audit\n'));
+
+  if (!isDeepAudit) {
+    console.log(
+      chalk.gray(
+        `Deep-only steps skipped: ${deepOnlySteps.join(', ')} (set CHECK_ALL_DEEP=true to enable)\n`
+      )
+    );
+  }
 
   let allPassed = true;
 

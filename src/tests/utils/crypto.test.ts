@@ -1,5 +1,9 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { computeHash, toBase64, fromBase64, toUrl, fromUrl } from '../../utils/crypto';
+
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 describe('Crypto Utilities', () => {
   describe('computeHash', () => {
@@ -58,7 +62,10 @@ describe('Crypto Utilities', () => {
     });
 
     it('should return null for invalid Base64 input', async () => {
+      const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+
       expect(await fromBase64('invalid-base64!')).toBeNull();
+      expect(errorSpy).toHaveBeenCalled();
     });
   });
 
@@ -75,7 +82,10 @@ describe('Crypto Utilities', () => {
     });
 
     it('should handle malformed URI sequence gracefully', () => {
+      const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+
       expect(fromUrl('%E0%A4%A')).toBeNull(); // Incomplete sequence
+      expect(errorSpy).toHaveBeenCalled();
     });
   });
 });
